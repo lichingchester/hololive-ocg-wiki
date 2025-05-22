@@ -1,0 +1,28 @@
+# Official Site Data
+
+## URL pattern
+```
+https://hololive-official-cardgame.com
+
+/cardlist
+
+/?id=546
+
+&%2Fcardlist%2Fcardsearch_ex=
+
+&keyword=
+
+&attribute%5B0%5D=all
+
+&expansion_name=
+
+&card_kind%5B0%5D=all
+
+&rare%5B0%5D=all
+
+&bloom_level%5B0%5D=all
+
+&parallel%5B0%5D=all
+
+&view=image
+```
