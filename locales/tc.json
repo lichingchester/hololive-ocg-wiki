@@ -9511,7 +9511,7 @@
       ],
       "rarity": "SR",
       "set": "補充包「Elite Spark」",
-      "illustrator": "黑兎",
+      "illustrator": "黒兎",
       "arts": [
         {
           "name": "精英巫女",
@@ -9682,6 +9682,5916 @@
         "name": "快樂時光",
         "effect": "從牌庫公開1～4張〈小鳥遊琪亞拉〉存到檔案區，然後洗牌。"
       }
+    },
+    "720": {
+      "name": "莫可可・阿比斯加德",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "蒼樹うめ",
+      "arts": [
+        {
+          "name": "莫可可的甜甜圈烘焙"
+        }
+      ],
+      "keyword": {
+        "name": "遊戲時間到啦！",
+        "effect": "由Debut Bloom時，從牌庫公開1張1st〈芙哇哇・阿比斯加德〉加入手牌，然後洗牌。"
+      }
+    },
+    "721": {
+      "name": "莫可可・阿比斯加德",
+      "cardType": "Buzz Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "茶椿",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "毛茸茸的那位",
+          "effect": "[合作位置限定]自己中心成員為〈芙哇哇・阿比斯加德〉時，此Arts+30。"
+        }
+      ],
+      "keyword": {
+        "name": "魔界番犬的搗蛋鬼",
+        "effect": "自己重置步驟時，若中心成員為〈芙哇哇・阿比斯加德〉，此成員移動到後排也不進入休息。"
+      }
+    },
+    "722": {
+      "name": "芙哇哇・阿比斯加德",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "茶椿",
+      "arts": [
+        {
+          "name": "魔界番犬的總管"
+        },
+        {
+          "name": "蓬鬆的那位"
+        }
+      ]
+    },
+    "723": {
+      "name": "芙哇哇・阿比斯加德",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "みわべさくら",
+      "arts": [
+        {
+          "name": "芙哇哇與森林散步"
+        }
+      ],
+      "keyword": {
+        "name": "芙哇花流水",
+        "effect": "自己場上有〈莫可可・阿比斯加德〉時，對手中心或後排成員1人受到特殊傷害20（即使倒下也不減對手生命）。"
+      }
+    },
+    "724": {
+      "name": "芙哇哇・阿比斯加德",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "茶ちえ",
+      "arts": [
+        {
+          "name": "最愛甜甜圈"
+        },
+        {
+          "name": "一起吃嗎？",
+          "effect": "[中心位置限定]推しHolo成員為〈FUWAMOCO〉時，可將本成員1張應援裝備給〈莫可可・阿比斯加德〉：對手中心成員受到特殊傷害50。"
+        }
+      ]
+    },
+    "725": {
+      "name": "芙哇哇・阿比斯加德",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "茶ちえ",
+      "arts": [
+        {
+          "name": "最愛甜甜圈"
+        },
+        {
+          "name": "一起吃嗎？",
+          "effect": "[中心位置限定]推しHolo成員為〈FUWAMOCO〉時，可將本成員1張應援裝備給〈莫可可・阿比斯加德〉：對手中心成員受到特殊傷害50。"
+        }
+      ]
+    },
+    "726": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "えいひ",
+      "arts": [
+        {
+          "name": "虛擬幽靈",
+          "effect": "推しHolo成員為〈星街彗星〉時，可將本成員1張藍應援裝備給後排的〈星街彗星〉。"
+        }
+      ],
+      "keyword": {
+        "name": "行星舞台",
+        "effect": "查看牌庫上方4張，從中公開1張〈星街彗星〉加入手牌，剩餘依喜好順序放回牌庫底。"
+      }
+    },
+    "727": {
+      "name": "Kobo Kanaeru",
+      "cardType": "Buzz Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "きな",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "活力滿滿！",
+          "effect": "對手每1名HP減少的後排成員，此Arts+10。"
+        }
+      ],
+      "keyword": {
+        "name": "藍雨",
+        "effect": "可將自己1名持#ID成員的應援存到檔案區：對手後排可任意分配共30點特殊傷害（即使倒下也不減對手生命，每名最多10點）。"
+      }
+    },
+    "728": {
+      "name": "火威青",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "むっしゅ",
+      "arts": [
+        {
+          "name": "下午茶約會之後…"
+        }
+      ]
+    },
+    "729": {
+      "name": "火威青",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "我很帥氣對吧？"
+        },
+        {
+          "name": "ReGLOSS的帥氣擔當",
+          "effect": "可將本成員1張應援裝備給場上其他持#ReGLOSS的後排成員。"
+        }
+      ]
+    },
+    "730": {
+      "name": "火威青",
+      "cardType": "Buzz Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#繪"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "Qiu",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "帥哥交給我吧",
+          "effect": "對手中心或後排成員，各有1名持不同卡名#ReGLOSS後排成員時，每有1人造成特殊傷害10。"
+        }
+      ],
+      "keyword": {
+        "name": "這些公主們真傷腦筋呢",
+        "effect": "從應援牌庫公開1張與自己場上#ReGLOSS中心成員同色的應援給持#ReGLOSS的成員，然後洗牌。"
+      }
+    },
+    "731": {
+      "name": "FUWAMOCO",
+      "cardType": "Holo成員",
+      "color": "藍紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "© 2016 COVER Corp. MariA",
+      "extra": "此成員也視為〈芙哇哇・阿比斯加德〉〈莫可可・阿比斯加德〉",
+      "arts": [
+        {
+          "name": "魔界番犬姐妹",
+          "effect": "從應援牌庫公開1張[紅或藍應援]給持#Advent的成員，然後洗牌。"
+        },
+        {
+          "name": "兩人一起就是FUWAMOCO！"
+        }
+      ]
+    },
+    "732": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "秋赤音",
+      "arts": [
+        {
+          "name": "就是這種感覺",
+          "effect": "對手中心成員受到特殊傷害10。然後若推しHolo成員為〈常闇永遠〉，可將對手[中心或合作成員]裝備的1張道具存到檔案區。"
+        }
+      ]
+    },
+    "733": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "Guchico",
+      "arts": [
+        {
+          "name": "辛苦啦yappy"
+        },
+        {
+          "name": "Kyu-rin"
+        }
+      ]
+    },
+    "734": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "要讓一切大爆炸！",
+          "effect": "可將本成員4張紫應援存到檔案區：將對手場上1張應援放回其應援牌庫底。"
+        }
+      ],
+      "keyword": {
+        "name": "專屬於永遠的色彩",
+        "effect": "對手中心或合作成員受到特殊傷害20。"
+      }
+    },
+    "735": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "雨傘ゆん",
+      "arts": [
+        {
+          "name": "和永遠在家約會也可以"
+        },
+        {
+          "name": "TenQ",
+          "effect": "自己有持#歌的後排成員時，對手合作成員受到特殊傷害20。"
+        }
+      ]
+    },
+    "736": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "Mr.Lime",
+      "arts": [
+        {
+          "name": "打破束縛我的成見",
+          "effect": "對手中心或合作成員受到特殊傷害30。"
+        },
+        {
+          "name": "Break your ×××",
+          "effect": "對手中心或合作成員，每有1名自己持#歌的後排成員（最多4人），造成特殊傷害20。"
+        }
+      ]
+    },
+    "737": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "菊月",
+      "arts": [
+        {
+          "name": "打破束縛我的成見",
+          "effect": "對手中心或合作成員受到特殊傷害30。"
+        },
+        {
+          "name": "Break your ×××",
+          "effect": "對手中心或合作成員，每有1名自己持#歌的後排成員（最多4人），造成特殊傷害20。"
+        }
+      ]
+    },
+    "738": {
+      "name": "機器人醬",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#射手"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "イコモチ",
+      "arts": [
+        {
+          "name": "辛苦了robo—"
+        },
+        {
+          "name": "黏黏甜蜜女友"
+        }
+      ]
+    },
+    "739": {
+      "name": "機器人醬",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#射手"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "變成笑臉吧"
+        }
+      ],
+      "keyword": {
+        "name": "PON的次數",
+        "effect": "查看牌庫上方3張，從中公開1張持#0期生成員加入手牌，剩餘依喜好順序放回牌庫底。"
+      }
+    },
+    "740": {
+      "name": "機器人醬",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#射手"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "81",
+      "arts": [
+        {
+          "name": "自稱【高性能】",
+          "effect": "對手場上應援7張以上時，此Arts+70。"
+        }
+      ]
+    },
+    "741": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "フカヒレ",
+      "arts": [
+        {
+          "name": "點這道就對啦"
+        }
+      ],
+      "keyword": {
+        "name": "沁音餐館",
+        "effect": "可將本成員1張應援存到檔案區：從牌庫公開1張持#GAMERS的Debut成員加入手牌，然後洗牌。"
+      }
+    },
+    "742": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "フカヒレ",
+      "arts": [
+        {
+          "name": "辛苦啦ころ～ん"
+        }
+      ]
+    },
+    "743": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "ぶるぁあああああ!!!!!!!!!!!!!!",
+          "effect": "每減少1點初始生命，此Arts+10。"
+        },
+        {
+          "name": "おーしぇーい"
+        }
+      ]
+    },
+    "744": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "フカヒレ",
+      "arts": [
+        {
+          "name": "來啦～",
+          "effect": "將應援牌庫最上1張送給自己持#GAMERS的成員。"
+        }
+      ],
+      "keyword": {
+        "name": "拳擊風格",
+        "effect": "[合作位置限定]對手主要階段時，自己中心〈戌神沁音〉HP不會因對手能力減少，也不會變動。"
+      }
+    },
+    "745": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "砂利さや(か)",
+      "arts": [
+        {
+          "name": "最兇天災",
+          "effect": "此Arts目標為對手2nd成員時，可將本成員重疊的1張1st成員存到檔案區：此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "汪derful～♡",
+        "effect": "本成員倒下時，將應援牌庫最上1張送給自己〈戌神沁音〉。"
+      }
+    },
+    "746": {
+      "name": "戌神沁音",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "砂利さや(か)",
+      "arts": [
+        {
+          "name": "最兇天災",
+          "effect": "此Arts目標為對手2nd成員時，可將本成員重疊的1張1st成員存到檔案區：此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "汪derful～♡",
+        "effect": "本成員倒下時，將應援牌庫最上1張送給自己〈戌神沁音〉。"
+      }
+    },
+    "747": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ふーみ",
+      "arts": [
+        {
+          "name": "綿芽之歌",
+          "effect": "場上有裝備〈綿芽羊〉的成員時，可將檔案區1張應援送給自己黃屬性成員。"
+        }
+      ]
+    },
+    "748": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ふーみ",
+      "arts": [
+        {
+          "name": "療癒時光"
+        },
+        {
+          "name": "你會幫我應援對吧？"
+        }
+      ]
+    },
+    "749": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "請一路看到最後喔，綿芽羊們！",
+          "effect": "將應援牌庫最上1張送給自己後排〈角卷綿芽〉。"
+        }
+      ],
+      "keyword": {
+        "name": "全力唱跳！",
+        "effect": "自己場上成員5人以下時，從牌庫公開1張Debut〈角卷綿芽〉直接登場，然後洗牌。"
+      }
+    },
+    "750": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "久蒼穹",
+      "arts": [
+        {
+          "name": "角卷剪刀石頭布",
+          "effect": "可與對手剪刀石頭布直到分勝負：若自己獲勝，本回合本成員獲得對紅屬性特攻+30。"
+        }
+      ],
+      "keyword": {
+        "name": "Member sheep 歡迎回來～",
+        "effect": "可將檔案區1張〈綿芽羊〉回到手牌。"
+      }
+    },
+    "751": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ふーみ",
+      "arts": [
+        {
+          "name": "綿芽 Night Fever!!",
+          "effect": "[中心位置限定]本成員裝備6張以上應援時，本回合本成員與自己合作成員的Arts+100。"
+        }
+      ],
+      "keyword": {
+        "name": "還能再繼續衝！",
+        "effect": "本成員倒下時，將本成員1張應援裝備給自己其他〈角卷綿芽〉。"
+      }
+    },
+    "752": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "宇田川みぅ",
+      "arts": [
+        {
+          "name": "綿芽 Night Fever!!",
+          "effect": "[中心位置限定]本成員裝備6張以上應援時，本回合本成員與自己合作成員的Arts+100。"
+        }
+      ],
+      "keyword": {
+        "name": "還能再繼續衝！",
+        "effect": "本成員倒下時，將本成員1張應援裝備給自己其他〈角卷綿芽〉。"
+      }
+    },
+    "753": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "きな",
+      "arts": [
+        {
+          "name": "連繫的願望",
+          "effect": "■自己場上有〈艾拉妮·伊歐菲芙汀〉時，此Arts+10。\n■自己場上有〈Moona Hoshinova〉時，此Arts+10。"
+        }
+      ]
+    },
+    "754": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "やとみ",
+      "arts": [
+        {
+          "name": "辛苦了莉絲"
+        },
+        {
+          "name": "晚安回憶"
+        }
+      ]
+    },
+    "755": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "Puru puru, 辛苦了莉絲！！！"
+        }
+      ],
+      "keyword": {
+        "name": "耶呼～大家好嗎？",
+        "effect": "從應援牌庫公開1張[綠應援或黃應援]給自己的成員，然後洗牌。"
+      }
+    },
+    "756": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "やとみ",
+      "arts": [
+        {
+          "name": "堅果"
+        }
+      ],
+      "keyword": {
+        "name": "同期羈絆",
+        "effect": "自己場上成員5人以下時，從牌庫公開1張持#ID1期生Debut成員直接登場，然後洗牌。"
+      }
+    },
+    "757": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ねづみどし",
+      "arts": [
+        {
+          "name": "魔法森林的松鼠女孩",
+          "effect": "■本成員裝備綠應援時，此Arts+50。\n■本成員裝備藍應援時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "魔法支援",
+        "effect": "可將自己場上持#ID1期生成員的1張應援裝備給自己其他成員。"
+      }
+    },
+    "758": {
+      "name": "阿尤達·莉絲",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ねづみどし",
+      "arts": [
+        {
+          "name": "魔法森林的松鼠女孩",
+          "effect": "■本成員裝備綠應援時，此Arts+50。\n■本成員裝備藍應援時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "魔法支援",
+        "effect": "可將自己場上持#ID1期生成員的1張應援裝備給自己其他成員。"
+      }
+    },
+    "759": {
+      "name": "不知火芙蕾雅",
+      "cardType": "Buzz Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#半精靈"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "紅緒",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "Sunrise應援",
+          "effect": "本成員裝備3張以上應援時，此Arts+30。"
+        }
+      ],
+      "keyword": {
+        "name": "今天是美好的一天",
+        "effect": "從應援牌庫公開1張黃應援給此成員，然後洗牌。"
+      }
+    },
+    "760": {
+      "name": "不知火芙蕾雅",
+      "cardType": "Buzz Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#半精靈"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "紅緒",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "Sunrise應援",
+          "effect": "本成員裝備3張以上應援時，此Arts+30。"
+        }
+      ],
+      "keyword": {
+        "name": "今天是美好的一天",
+        "effect": "從應援牌庫公開1張黃應援給此成員，然後洗牌。"
+      }
+    },
+    "761": {
+      "name": "音乃瀨奏",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ルジエ",
+      "arts": [
+        {
+          "name": "明天就是星期一～♪"
+        }
+      ]
+    },
+    "762": {
+      "name": "音乃瀨奏",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "arts": [
+        {
+          "name": "不是軟Q的！"
+        }
+      ],
+      "keyword": {
+        "name": "這裡就是我的舞台！",
+        "effect": "可將自己場上1～2張應援裝備給此成員。"
+      }
+    },
+    "763": {
+      "name": "音乃瀨奏",
+      "cardType": "Buzz Holo成員",
+      "color": "黃",
+      "bloomLevel": "1st",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "有芳",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "歌姬 音乃瀨奏"
+        }
+      ],
+      "keyword": {
+        "name": "怎麼會這樣",
+        "effect": "對手Performance Step結束時，若該階段自己生命有減少，可將檔案區1張應援送給此成員。"
+      }
+    },
+    "767": {
+      "name": "豪華電腦",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "六九導イツキ",
+      "abilityText": "此卡只能在存1張Holo能量到檔案區時使用。\n\n從牌庫公開1張與推しHolo成員同色的1st成員加入手牌，然後洗牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "768": {
+      "name": "超級電腦",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "株式会社unieef",
+      "abilityText": "查看牌庫上方4張，從中各公開1張Debut成員與1st成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "769": {
+      "name": "雙螢幕電腦",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "株式会社unieef",
+      "abilityText": "從牌庫公開1～2張持有「此成員可在牌組內放任意張數」的Debut成員直接登場，然後洗牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "770": {
+      "name": "Call & Response",
+      "cardType": "支援・活動",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ちぇりっしゅ",
+      "abilityText": "可將場上1張應援重新分配給自己其他成員。"
+    },
+    "771": {
+      "name": "突發通話",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "さかなへん",
+      "abilityText": "此卡僅能在自己生命小於對手時使用。\n\n對手場上無合作成員時，對手需將1名後排成員移動到合作位置（不視為合作）。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "772": {
+      "name": "粉絲見面會",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "さかなへん",
+      "abilityText": "從牌庫公開1張粉絲卡加入手牌，然後洗牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "773": {
+      "name": "你會唸hololive嗎？",
+      "cardType": "支援・活動",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "丸山奈都希",
+      "abilityText": "查看牌庫上方4張，從中公開任意張Debut成員加入手牌，剩餘依喜好順序放回牌庫底。"
+    },
+    "774": {
+      "name": "hololive Indonesia 1期生",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "SAKON",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#ID1期生成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "775": {
+      "name": "hololive 0期生",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "misyune",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#0期生成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "776": {
+      "name": "hololive 4期生",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "成海七海",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#4期生成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "777": {
+      "name": "FPS實況",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "Gum Shrew",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#射手成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "778": {
+      "name": "holo帽",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "ぱとり",
+      "abilityText": "◆裝備於Debut或Spot成員時追加能力\n■裝備此道具的成員HP+30。\n■裝備此道具的成員不會受到特殊傷害。\n\n道具每位成員僅能裝備1張。"
+    },
+    "779": {
+      "name": "步槍",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "わにたろー。",
+      "abilityText": "裝備此道具的成員Arts+10。\n\n◆裝備於持#射手的1st以上成員時追加能力\n該成員對對手成員造成的特殊傷害+10。\n\n道具每位成員僅能裝備1張。"
+    },
+    "780": {
+      "name": "直笛",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "住咲ゆづな",
+      "abilityText": "裝備此道具的成員Arts+10。\n\n◆裝備於1st以上〈音乃瀨奏〉時追加能力\n裝備此道具的成員擊倒對手成員時，抽1張牌。\n\n道具每位成員僅能裝備1張。"
+    },
+    "781": {
+      "name": "金時",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈櫻巫女〉時追加能力\n裝備此吉祥物的成員進行合作時，抽1張牌。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "782": {
+      "name": "MAGUCHI",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈櫻巫女〉時追加能力\n裝備此吉祥物的成員進行合作時，本回合自己中心〈櫻巫女〉Arts+10。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "783": {
+      "name": "PERO",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈芙哇哇・阿比斯加德〉或〈莫可可・阿比斯加德〉時追加能力\n裝備此吉祥物的成員Arts所需所有應援顏色視為無色應援。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "784": {
+      "name": "BIBI",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈常闇永遠〉時追加能力\n裝備此吉祥物的成員對對手造成的特殊傷害+10。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "785": {
+      "name": "太犬",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈戌神沁音〉時追加能力\n裝備此吉祥物的成員進行合作時，可將檔案區1張黃應援送給此成員。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "786": {
+      "name": "細犬",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈戌神沁音〉時追加能力\n裝備此吉祥物的成員倒下時，可將1張Holo能量存到檔案區：將此吉祥物回到手牌。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "787": {
+      "name": "Riscot",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈阿尤達·莉絲〉時追加能力\n裝備此吉祥物的成員進行合作時，可將場上1張應援重新分配給此成員。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "788": {
+      "name": "ルーナイト",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "對手回合裝備此粉絲的成員受到傷害時，可將此粉絲存到檔案區：該成員受到傷害-30。\n\n此粉絲僅能附給自己的〈姬森露娜〉，每人可多張附加。"
+    },
+    "789": {
+      "name": "SSRB",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此粉絲的成員以能力存應援時，可改為存此粉絲。\n\n此粉絲僅能附給自己的〈獅白牡丹〉，每人可多張附加。"
+    },
+    "790": {
+      "name": "35P",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "■裝備此粉絲的成員使用Arts時，此粉絲也視為紅應援。\n■裝備此粉絲的成員倒下時，對手可抽1張牌。\n\n此粉絲僅能附給自己的〈櫻巫女〉，每人可多張附加。"
+    },
+    "791": {
+      "name": "心醬",
+      "cardType": "支援・粉絲",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此粉絲的成員以能力擲骰時，可將此粉絲存到檔案區：重擲且僅以新結果為準。\n\n此粉絲僅能附給自己的〈赤井心〉，每人可多張附加。"
+    },
+    "792": {
+      "name": "Ruffians",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "對手回合裝備此粉絲的成員倒下時，可將檔案區1張藍應援送給自己〈芙哇哇・阿比斯加德〉。\n\n此粉絲僅能附給自己的〈芙哇哇・阿比斯加德〉或〈莫可可・阿比斯加德〉，每人可多張附加。"
+    },
+    "793": {
+      "name": "robo-san",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "■裝備此粉絲的成員使用Arts時，此粉絲也視為紫應援。\n■裝備此粉絲的成員Arts-10。\n\n此粉絲僅能附給自己的〈機器人醬〉，每人可多張附加。"
+    },
+    "794": {
+      "name": "ころ音",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此粉絲的成員進行接棒所需無色應援-1。\n\n此粉絲僅能附給自己的〈戌神沁音〉，每人可多張附加。"
+    },
+    "795": {
+      "name": "綿芽羊",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "對手回合裝備此粉絲的成員倒下時，可將該成員1～2張黃應援裝備給自己其他〈角卷綿芽〉。\n\n此粉絲僅能附給自己的〈角卷綿芽〉，每人可多張附加。"
+    },
+    "796": {
+      "name": "Risuners",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "[每回合1次]裝備此粉絲的成員獲得應援時，本回合該成員Arts+10。\n\n此粉絲僅能附給自己的〈阿尤達·莉絲〉，每人可多張附加。"
+    },
+    "764": {
+      "name": "轟初芽",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#嬰兒"
+      ],
+      "rarity": "SR",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "BISAI",
+      "arts": [
+        {
+          "name": "滅紫之雷",
+          "effect": "自己場上有除〈轟初芽〉外的#ReGLOSS成員時，此Arts+30。"
+        }
+      ],
+      "keyword": {
+        "name": "用舞蹈為世界增添色彩！",
+        "effect": "從牌庫公開1張持#ReGLOSS的[Debut或1st成員]加入手牌，然後洗牌。"
+      }
+    },
+    "765": {
+      "name": "風真伊呂波",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "しろみにみ",
+      "arts": [
+        {
+          "name": "天才吧？",
+          "effect": "自己場上裝備5張以上應援時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "元氣送到",
+        "effect": "自己1名持#秘密結社holoX成員HP恢復30。"
+      }
+    },
+    "766": {
+      "name": "不知火芙蕾雅",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#半精靈"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "呱々唄七つ",
+      "arts": [
+        {
+          "name": "熱情舞台",
+          "effect": "自己生命3或以下時，此Arts+70。"
+        }
+      ],
+      "keyword": {
+        "name": "不知疲倦",
+        "effect": "[中心位置限定]本成員受到傷害-10。"
+      }
+    },
+    "370": {
+      "name": "白上吹雪",
+      "cardType": "最推Holo成員",
+      "color": "白",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "yuki",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "創造吉祥物",
+        "effect": "[每回合1次]從牌庫公開1張吉祥物卡加入手牌，然後洗牌。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "吹雪王國",
+        "effect": "[每場對戰1次]自己白屬性成員擊倒對手成員時，自己場上每2張吉祥物可擲骰1次：只要有出現奇數，對手生命-1。"
+      }
+    },
+    "371": {
+      "name": "白上吹雪",
+      "cardType": "最推Holo成員",
+      "color": "白",
+      "rarity": "SEC",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "yuki",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "創造吉祥物",
+        "effect": "[每回合1次]從牌庫公開1張吉祥物卡加入手牌，然後洗牌。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "吹雪王國",
+        "effect": "[每場對戰1次]自己白屬性成員擊倒對手成員時，自己場上每2張吉祥物可擲骰1次：只要有出現奇數，對手生命-1。"
+      }
+    },
+    "372": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "最推Holo成員",
+      "color": "綠",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "すなれ",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "HALU",
+        "effect": "[每回合1次]可將自己1張綠應援存到檔案區，從應援牌庫公開1張應援給自己成員，然後洗牌。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "極彩色盛宴",
+        "effect": "[每場對戰1次]本回合內，自己場上所有持#ID2期生成員，每持1種顏色的應援，Arts+20。"
+      }
+    },
+    "373": {
+      "name": "寶鐘瑪琳",
+      "cardType": "最推Holo成員",
+      "color": "紅",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "NOMISAKI",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "Ahoy!",
+        "effect": "[每回合1次]本回合Bloom的自己1名持#3期生成員，可用手牌成員再Bloom一次。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "出航～！",
+        "effect": "[每場對戰1次]對手中心或合作成員，每有1張本中心〈寶鐘瑪琳〉重疊的成員，造成特殊傷害50。"
+      }
+    },
+    "374": {
+      "name": "寶鐘瑪琳",
+      "cardType": "最推Holo成員",
+      "color": "紅",
+      "rarity": "SEC",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "NOMISAKI",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "Ahoy!",
+        "effect": "[每回合1次]本回合Bloom的自己1名持#3期生成員，可用手牌成員再Bloom一次。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "出航～！",
+        "effect": "[每場對戰1次]對手中心或合作成員，每有1張本中心〈寶鐘瑪琳〉重疊的成員，造成特殊傷害50。"
+      }
+    },
+    "375": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "最推Holo成員",
+      "color": "藍",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "江田島電気",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "poepoepoe～",
+        "effect": "[每回合1次]自己中心成員為〈沙花叉克蘿艾〉時可用：查看牌庫上方3張，全部存到檔案區或依喜好順序放回牌庫上方。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "人生重置按鈕",
+        "effect": "[每場對戰1次]數自己手牌，將[所有手牌與檔案區成員]洗回牌庫，然後手牌每回1張抽1張新牌。"
+      }
+    },
+    "376": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "最推Holo成員",
+      "color": "藍",
+      "rarity": "SEC",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "江田島電気",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "poepoepoe～",
+        "effect": "[每回合1次]自己中心成員為〈沙花叉克蘿艾〉時可用：查看牌庫上方3張，全部存到檔案區或依喜好順序放回牌庫上方。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "人生重置按鈕",
+        "effect": "[每場對戰1次]數自己手牌，將[所有手牌與檔案區成員]洗回牌庫，然後手牌每回1張抽1張新牌。"
+      }
+    },
+    "377": {
+      "name": "紫咲詩音",
+      "cardType": "最推Holo成員",
+      "color": "紫",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "雨ノ坂のの",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "欸欸欸欸欸欸欸欸",
+        "effect": "[每回合1次]自己以〈紫咲詩音〉能力擲骰時可用：重擲1次。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "詩音的超強魔法",
+        "effect": "[每場對戰1次]自己紫屬性中心成員使用Arts時可用：對手中心成員每有1張應援，造成特殊傷害50。"
+      }
+    },
+    "378": {
+      "name": "克雷西·歐莉",
+      "cardType": "最推Holo成員",
+      "color": "紫",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "soriya",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "殭屍戰術",
+        "effect": "[每回合1次]可用檔案區成員讓1名持#ID2期生成員Bloom。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "歐莉復活",
+        "effect": "[每場對戰1次]抽4張牌後將手牌2張存到檔案區，再選1名成員用檔案區成員Bloom。"
+      }
+    },
+    "379": {
+      "name": "森美聲",
+      "cardType": "最推Holo成員",
+      "color": "紫",
+      "rarity": "OUR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "夕城",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "取樣",
+        "effect": "[每回合1次]可將手牌2張存到檔案區，將檔案區2張持#EN成員回到手牌。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "死神RAP",
+        "effect": "[每場對戰1次]自己中心成員為〈森美聲〉時可用：本回合內，自己1名〈森美聲〉使用Arts後可再用1次相同Arts。"
+      }
+    },
+    "380": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "あさなや",
+      "arts": [
+        {
+          "name": "桂花吹雪"
+        },
+        {
+          "name": "Thank You Friends♥"
+        }
+      ]
+    },
+    "381": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "不行唷！"
+        }
+      ],
+      "keyword": {
+        "name": "別把目光移開吹雪",
+        "effect": "從牌庫公開1張持#白上's角色卡加入手牌，然後洗牌。"
+      }
+    },
+    "382": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "CNO",
+      "arts": [
+        {
+          "name": "請借我力量吧",
+          "effect": "本回合內，自己裝備吉祥物的[中心成員與合作成員]Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "稍微移動一下唷",
+        "effect": "可將場上1張吉祥物重新分配給自己其他成員。"
+      }
+    },
+    "383": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "むっちりしいたけ",
+      "arts": [
+        {
+          "name": "吉祥物們的饗宴",
+          "effect": "自己場上每有1張吉祥物，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "和大家一起！",
+        "effect": "此成員最多可裝備2張不同卡名的吉祥物。"
+      }
+    },
+    "384": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "むっちりしいたけ",
+      "arts": [
+        {
+          "name": "吉祥物們的饗宴",
+          "effect": "自己場上每有1張吉祥物，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "和大家一起！",
+        "effect": "此成員最多可裝備2張不同卡名的吉祥物。"
+      }
+    },
+    "385": {
+      "name": "白銀諾艾爾",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#酒"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "わたお",
+      "arts": [
+        {
+          "name": "早安muscle～！"
+        },
+        {
+          "name": "辛苦了muscle～"
+        }
+      ]
+    },
+    "386": {
+      "name": "白銀諾艾爾",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#酒"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "要好好記住唷♡"
+        }
+      ],
+      "keyword": {
+        "name": "諾醬的英姿……",
+        "effect": "由Debut Bloom時，從牌庫公開1張持#3期生的[Debut或1st或Spot成員]加入手牌，然後洗牌。"
+      }
+    },
+    "387": {
+      "name": "白銀諾艾爾",
+      "cardType": "Buzz Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#酒"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "しちがつ",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "軟萌腦肌女騎士"
+        },
+        {
+          "name": "3期生力量",
+          "effect": "[合作位置限定]自己場上除本成員外每有1名持#3期生的成員，此Arts+20（最多計算4人）。"
+        }
+      ]
+    },
+    "388": {
+      "name": "白銀諾艾爾",
+      "cardType": "Buzz Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#酒"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "しちがつ",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "軟萌腦肌女騎士"
+        },
+        {
+          "name": "3期生力量",
+          "effect": "[合作位置限定]自己場上除本成員外每有1名持#3期生的成員，此Arts+20（最多計算4人）。"
+        }
+      ]
+    },
+    "389": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "飯田ぽち。",
+      "arts": [
+        {
+          "name": "Very Easy!"
+        }
+      ],
+      "keyword": {
+        "name": "讓朋友HALU的方式",
+        "effect": "可將檔案區1張應援送給自己的成員。"
+      }
+    },
+    "390": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "飯田ぽち。",
+      "arts": [
+        {
+          "name": "Royal Halu Sleepover"
+        }
+      ]
+    },
+    "391": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "所以要看著我唷！最喜歡你了！",
+          "effect": "可將檔案區1張應援送給自己的成員。"
+        }
+      ],
+      "keyword": {
+        "name": "用心唱歌跳舞。",
+        "effect": "自己場上每有1種顏色的應援，回復1名成員HP10。"
+      }
+    },
+    "392": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "久賀フーナ",
+      "arts": [
+        {
+          "name": "Spicy Night",
+          "effect": "自己場上有2種以上顏色的應援時，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "What AreYou Waiting For?",
+        "effect": "從牌庫公開1張〈Tatang〉加入手牌，然後洗牌。"
+      }
+    },
+    "393": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "pbj",
+      "arts": [
+        {
+          "name": "孔雀之舞",
+          "effect": "自己場上每有1種顏色的應援，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "Kanjeng",
+        "effect": "從應援牌庫公開1張應援給自己成員，然後洗牌。"
+      }
+    },
+    "394": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "pbj",
+      "arts": [
+        {
+          "name": "孔雀之舞",
+          "effect": "自己場上每有1種顏色的應援，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "Kanjeng",
+        "effect": "從應援牌庫公開1張應援給自己成員，然後洗牌。"
+      }
+    },
+    "395": {
+      "name": "大神澪",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#料理"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "泉彩",
+      "arts": [
+        {
+          "name": "早安mio—n"
+        },
+        {
+          "name": "辛苦了mio—n"
+        }
+      ]
+    },
+    "396": {
+      "name": "大神澪",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#料理"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "今年也請繼續守護我！"
+        }
+      ],
+      "keyword": {
+        "name": "作為偶像成長的模樣",
+        "effect": "從應援牌庫公開1張與自己場上持#GAMERS成員同色的應援給成員，然後洗牌。"
+      }
+    },
+    "397": {
+      "name": "大神澪",
+      "cardType": "Buzz Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#料理"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "81",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "塔羅牌的指引",
+          "effect": "可將牌庫最上1張存到檔案區：若為成員卡，此Arts+20；若為支援卡，此Arts+50。"
+        }
+      ]
+    },
+    "398": {
+      "name": "大神澪",
+      "cardType": "Buzz Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#料理"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "81",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "塔羅牌的指引",
+          "effect": "可將牌庫最上1張存到檔案區：若為成員卡，此Arts+20；若為支援卡，此Arts+50。"
+        }
+      ]
+    },
+    "399": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "あかさあい",
+      "arts": [
+        {
+          "name": "船長，會被做什麼呢？"
+        },
+        {
+          "name": "真是個大色胚♥"
+        }
+      ]
+    },
+    "400": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "一起出航吧！（健康）"
+        }
+      ],
+      "keyword": {
+        "name": "你們的聲音是船長的支柱！",
+        "effect": "對手合作成員受到特殊傷害20。"
+      }
+    },
+    "401": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "あかさあい",
+      "arts": [
+        {
+          "name": "Yosoro"
+        }
+      ],
+      "keyword": {
+        "name": "寶鐘海賊團",
+        "effect": "從牌庫公開1張〈寶鐘瑪琳〉加入手牌，然後洗牌。此Bloom效果每回合僅能用1次。"
+      }
+    },
+    "402": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "ぐらしおん",
+      "arts": [
+        {
+          "name": "你們～？",
+          "effect": "本成員每重疊1張成員，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "哥德女王",
+        "effect": "可將檔案區1張成員回到手牌。若本成員重疊3張以上，對手中心或合作成員受到特殊傷害50。"
+      }
+    },
+    "403": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "ぐらしおん",
+      "arts": [
+        {
+          "name": "你們～？",
+          "effect": "本成員每重疊1張成員，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "哥德女王",
+        "effect": "可將檔案區1張成員回到手牌。若本成員重疊3張以上，對手中心或合作成員受到特殊傷害50。"
+      }
+    },
+    "404": {
+      "name": "百鬼綾目",
+      "cardType": "Buzz Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#射手"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "gaha",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "余是草"
+        },
+        {
+          "name": "Organic Shot",
+          "effect": "本成員裝備道具或吉祥物時，對手中心或合作成員受到特殊傷害30。"
+        }
+      ]
+    },
+    "405": {
+      "name": "百鬼綾目",
+      "cardType": "Buzz Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#射手"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "gaha",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "余是草"
+        },
+        {
+          "name": "Organic Shot",
+          "effect": "本成員裝備道具或吉祥物時，對手中心或合作成員受到特殊傷害30。"
+        }
+      ]
+    },
+    "406": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "TAiGA",
+      "arts": [
+        {
+          "name": "將現實掃進垃圾桶！"
+        }
+      ],
+      "keyword": {
+        "name": "打工掃除屋",
+        "effect": "查看牌庫上方3張，從中公開1張持#秘密結社holoX的2nd成員加入手牌，剩餘依喜好順序放回牌庫底。"
+      }
+    },
+    "407": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "パセリ",
+      "arts": [
+        {
+          "name": "專屬沙灘"
+        }
+      ]
+    },
+    "408": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "（這裡該開心唷）"
+        }
+      ],
+      "keyword": {
+        "name": "要讓你的心怦怦跳動♡",
+        "effect": "查看應援牌庫最上3張，從中公開1張應援給自己成員，剩下的依喜好順序放回應援牌庫底。"
+      }
+    },
+    "409": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "パセリ",
+      "arts": [
+        {
+          "name": "HoloX老虎機",
+          "effect": "可公開牌庫最上3張：每有1張成員卡，此Arts+20，然後全部存到檔案區。"
+        }
+      ],
+      "keyword": {
+        "name": "puipuipui～",
+        "effect": "[每回合1次]本成員以「HoloX老虎機」公開卡片時，公開的支援卡可選1張加入手牌，其他存到檔案區。"
+      }
+    },
+    "410": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "パセリ",
+      "arts": [
+        {
+          "name": "HoloX老虎機",
+          "effect": "可公開牌庫最上3張：每有1張成員卡，此Arts+20，然後全部存到檔案區。"
+        }
+      ],
+      "keyword": {
+        "name": "超級激熱！",
+        "effect": "[每回合1次]本成員以「HoloX老虎機」公開卡片時，若3張皆為同Bloom等級的成員，對手生命-1。"
+      }
+    },
+    "411": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "HoloX老虎機",
+          "effect": "可公開牌庫最上3張：每有1張成員卡，此Arts+20，然後全部存到檔案區。"
+        }
+      ],
+      "keyword": {
+        "name": "超級激熱！",
+        "effect": "[每回合1次]本成員以「HoloX老虎機」公開卡片時，若3張皆為同Bloom等級的成員，對手生命-1。"
+      }
+    },
+    "412": {
+      "name": "貓又小粥",
+      "cardType": "Buzz Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "つなかわ",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "毒貓",
+          "effect": "可將本成員1張藍應援存到檔案區：對手中心與1名後排成員各受到特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "毒之愛",
+        "effect": "[中心位置限定]自己場上所有〈貓又小粥〉對對手中心成員造成的特殊傷害+20。"
+      }
+    },
+    "413": {
+      "name": "貓又小粥",
+      "cardType": "Buzz Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "神岡ちろる",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "毒貓",
+          "effect": "可將本成員1張藍應援存到檔案區：對手中心與1名後排成員各受到特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "毒之愛",
+        "effect": "[中心位置限定]自己場上所有〈貓又小粥〉對對手中心成員造成的特殊傷害+20。"
+      }
+    },
+    "414": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#獸耳"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "Tam-U",
+      "arts": [
+        {
+          "name": "害羞"
+        },
+        {
+          "name": "不要啦"
+        }
+      ]
+    },
+    "415": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "超級Happy！！"
+        }
+      ],
+      "keyword": {
+        "name": "睽違已久的全體演唱會！！",
+        "effect": "查看牌庫上方3張，從中公開1張[藍或紫成員]加入手牌，剩餘依喜好順序放回牌庫底。"
+      }
+    },
+    "416": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "TSCR",
+      "arts": [
+        {
+          "name": "更換應援",
+          "effect": "可擲骰1次：5以上時，將對手場上一張應援重新分配給其成員。"
+        }
+      ],
+      "keyword": {
+        "name": "更換魔法",
+        "effect": "可將手牌1張存到檔案區：將檔案區1張持#魔法卡回到手牌。"
+      }
+    },
+    "417": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "夕城",
+      "arts": [
+        {
+          "name": "紫色魔法",
+          "effect": "對手中心與合作成員，每有1張對手中心成員裝備的應援，造成特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "惡作劇魔法",
+        "effect": "可擲骰1次：4以上時，將對手場上一張應援重新分配給其成員。"
+      }
+    },
+    "418": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "夕城",
+      "arts": [
+        {
+          "name": "紫色魔法",
+          "effect": "對手中心與合作成員，每有1張對手中心成員裝備的應援，造成特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "惡作劇魔法",
+        "effect": "可擲骰1次：4以上時，將對手場上一張應援重新分配給其成員。"
+      }
+    },
+    "419": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "さいね",
+      "arts": [
+        {
+          "name": "辛苦了Crazy！"
+        }
+      ],
+      "keyword": {
+        "name": "歐莉一直都在看著你",
+        "effect": "抽1張牌後，將手牌1張存到檔案區。"
+      }
+    },
+    "420": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "おむたつ",
+      "arts": [
+        {
+          "name": "最喜歡你的後輩"
+        },
+        {
+          "name": "呀～！前輩對不起～！"
+        }
+      ]
+    },
+    "421": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "看到推就大喊！！"
+        }
+      ],
+      "keyword": {
+        "name": "極限化！！",
+        "effect": "可用檔案區成員讓1名持#ID2期生Debut成員Bloom。此Bloom效果每回合僅能用1次。"
+      }
+    },
+    "422": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "LAM",
+      "arts": [
+        {
+          "name": "以正義之名，吾乃",
+          "effect": "本成員裝備非紫應援時，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "追尋真相",
+        "effect": "抽1張牌。"
+      }
+    },
+    "423": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "okojo",
+      "arts": [
+        {
+          "name": "計算過的戰術",
+          "effect": "自己場上有2名以上持#ID2期生2nd成員時，此Arts+40。"
+        }
+      ],
+      "keyword": {
+        "name": "復活的殭屍",
+        "effect": "可將手牌2張存到檔案區：本回合此成員Arts+40。"
+      }
+    },
+    "424": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "okojo",
+      "arts": [
+        {
+          "name": "計算過的戰術",
+          "effect": "自己場上有2名以上持#ID2期生2nd成員時，此Arts+40。"
+        }
+      ],
+      "keyword": {
+        "name": "復活的殭屍",
+        "effect": "可將手牌2張存到檔案區：本回合此成員Arts+40。"
+      }
+    },
+    "425": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "DSマイル",
+      "arts": [
+        {
+          "name": "My Stage"
+        }
+      ],
+      "keyword": {
+        "name": "Showtime",
+        "effect": "可將手牌1張成員存到檔案區：本回合自己場上1名持#Myth成員Arts+20。"
+      }
+    },
+    "426": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "SARUEI",
+      "arts": [
+        {
+          "name": "Cash-Money"
+        }
+      ]
+    },
+    "427": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "一起嗨起來吧！"
+        }
+      ],
+      "keyword": {
+        "name": "一起創造最棒的fes",
+        "effect": "可將手牌2張持相同標籤成員存到檔案區：抽2張牌。"
+      }
+    },
+    "428": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "ぶるー太",
+      "arts": [
+        {
+          "name": "Dead Beat",
+          "effect": "本成員裝備道具或吉祥物時，此Arts+30。"
+        }
+      ],
+      "keyword": {
+        "name": "What's up?",
+        "effect": "可將檔案區1張[〈森美聲之鐮〉或〈Death-sensei〉]回到手牌。"
+      }
+    },
+    "429": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "たむ",
+      "arts": [
+        {
+          "name": "Featuring Myth",
+          "effect": "檔案區有4張以上持#Myth成員時，此Arts+40。達8張以上時，再額外+40。"
+        }
+      ],
+      "keyword": {
+        "name": "Soul Voice",
+        "effect": "從牌庫公開1張卡片存到檔案區，然後洗牌。"
+      }
+    },
+    "430": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "たむ",
+      "arts": [
+        {
+          "name": "Featuring Myth",
+          "effect": "檔案區有4張以上持#Myth成員時，此Arts+40。達8張以上時，再額外+40。"
+        }
+      ],
+      "keyword": {
+        "name": "Soul Voice",
+        "effect": "從牌庫公開1張卡片存到檔案區，然後洗牌。"
+      }
+    },
+    "431": {
+      "name": "癒月巧可",
+      "cardType": "Buzz Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#料理"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "江田藤",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "無法隱藏的魅力"
+        }
+      ],
+      "keyword": {
+        "name": "誘惑的視線",
+        "effect": "可回復1名自己後排成員HP50：對手中心成員每回復10點，造成特殊傷害10。"
+      }
+    },
+    "432": {
+      "name": "一伊那尓栖",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "一伊那尓栖",
+      "arts": [
+        {
+          "name": "和你一起TakoGram"
+        }
+      ]
+    },
+    "433": {
+      "name": "一伊那尓栖",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "arts": [
+        {
+          "name": "一起享受吧！！！"
+        }
+      ],
+      "keyword": {
+        "name": "大家準備「WAH」好了嗎！",
+        "effect": "可回復1名自己持#Myth成員HP20。"
+      }
+    },
+    "434": {
+      "name": "一伊那尓栖",
+      "cardType": "Buzz Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "虎んと",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "古老的微笑",
+          "effect": "檔案區有5張以上持#Myth成員時，可將本成員1張應援裝備給其他成員。10張以上時，此Arts+50。"
+        }
+      ]
+    },
+    "435": {
+      "name": "一伊那尓栖",
+      "cardType": "Buzz Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "UR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "虎んと",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "古老的微笑",
+          "effect": "檔案區有5張以上持#Myth成員時，可將本成員1張應援裝備給其他成員。10張以上時，此Arts+50。"
+        }
+      ]
+    },
+    "436": {
+      "name": "奈莉莎·雷文克羅夫特",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#歌",
+        "#鳥"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "つなかわ",
+      "arts": [
+        {
+          "name": "響き真好"
+        },
+        {
+          "name": "所謂偶像歌曲"
+        }
+      ]
+    },
+    "437": {
+      "name": "奈莉莎·雷文克羅夫特",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#歌",
+        "#鳥"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "EB十",
+      "arts": [
+        {
+          "name": "比起咖啡還是紅茶"
+        }
+      ],
+      "keyword": {
+        "name": "和奈莉莎的下午茶會",
+        "effect": "查看牌庫上方3張，從中公開1張持#歌成員加入手牌，剩餘依喜好順序放回牌庫底。"
+      }
+    },
+    "438": {
+      "name": "奈莉莎·雷文克羅夫特",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Advent",
+        "#歌",
+        "#鳥"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "スコッティ",
+      "arts": [
+        {
+          "name": "寄宿於歌中的愛"
+        }
+      ],
+      "keyword": {
+        "name": "音之魔人",
+        "effect": "本回合內，自己場上所有持#歌的[中心成員與合作成員]Arts+30。"
+      }
+    },
+    "439": {
+      "name": "魔法少女巫女",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#0期生",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『巫女』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "讓大家的願望綻放的祈禱！",
+        "effect": "可擲骰1次：奇數時，從應援牌庫公開1張[紅或藍應援]送給自己後排成員，然後洗牌。"
+      }
+    },
+    "440": {
+      "name": "魔法少女天音",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#4期生",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『天使』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "伸出雙手，緊握彼此！",
+        "effect": "可擲骰1次：奇數時，從應援牌庫公開1張[白或綠應援]送給自己後排成員，然後洗牌。"
+      }
+    },
+    "441": {
+      "name": "魔法少女露娜",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#4期生",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『公主』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "甜蜜幸福大放送！",
+        "effect": "可擲骰1次：奇數時，從應援牌庫公開1張[紫或黃應援]送給自己後排成員，然後洗牌。"
+      }
+    },
+    "442": {
+      "name": "魔法少女詩音",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#2期生",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『魔女』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "掌握沉睡中的神秘！",
+        "effect": "可擲骰1次：偶數時，從牌庫公開1張活動卡加入手牌，然後洗牌。"
+      }
+    },
+    "443": {
+      "name": "魔法少女瑪琳",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#3期生",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『海賊』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "閃耀寶藏鎖定！",
+        "effect": "可擲骰1次：偶數時，從牌庫公開1張粉絲卡加入手牌，然後洗牌。"
+      }
+    },
+    "444": {
+      "name": "魔法少女克蘿艾",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#Holowitch",
+        "#秘密結社holoX",
+        "#魔法"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "シノイ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "『虎鯨』的『Holo』！"
+        }
+      ],
+      "keyword": {
+        "name": "馳騁狂浪的利牙！",
+        "effect": "可擲骰1次：偶數時，從牌庫公開1張道具卡加入手牌，然後洗牌。"
+      }
+    },
+    "448": {
+      "name": "偶像簽字筆",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#繪成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "449": {
+      "name": "客製化電腦",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "公開手牌1張Debut成員放回牌庫底，從牌庫公開1張同卡名的非Buzz 1st成員加入手牌，然後洗牌。"
+    },
+    "450": {
+      "name": "復古電腦",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "此卡僅能在自己生命3或以下時使用。\n\n可將檔案區1張成員回到手牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "451": {
+      "name": "天音建設",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "いちかわはる",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意張〈天音彼方〉、〈AZKi〉、〈沙花叉克蘿艾〉加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "452": {
+      "name": "爆炸魔法",
+      "cardType": "支援・活動",
+      "tags": [
+        "#魔法"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "對手中心或合作成員受到特殊傷害20（倒下也不減對手生命）。自己持#魔法的活動卡每回合僅能用1次。"
+    },
+    "453": {
+      "name": "秘密結社holoX",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "久坂んむり",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#秘密結社holoX成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "454": {
+      "name": "hololive Indonesia 2期生",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "SAKON",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#ID2期生成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "455": {
+      "name": "hololive GAMERS",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "さいね",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#GAMERS成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "456": {
+      "name": "魔法衣櫃",
+      "cardType": "支援・活動",
+      "tags": [
+        "#魔法"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "此卡只能在存1張Holo能量到檔案區時使用。\n\n可將檔案區1張紫應援送給自己〈紫咲詩音〉。自己持#魔法的活動卡每回合僅能用1次。"
+    },
+    "457": {
+      "name": "みっころね24",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "さまてる",
+      "abilityText": "抽2張牌並擲骰1次：3/5/6時，從牌庫公開1張Debut成員加入手牌，然後洗牌。2/4時，抽1張牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "458": {
+      "name": "みっころね24",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "SEC",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "yuki",
+      "abilityText": "抽2張牌並擲骰1次：3/5/6時，從牌庫公開1張Debut成員加入手牌，然後洗牌。2/4時，抽1張牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "459": {
+      "name": "HOLOLIVE FANTASY",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "mono",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#3期生成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "460": {
+      "name": "holo氣泡飲",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "■裝備此道具的成員Arts+20。\n■裝備此道具且未持#酒標籤成員受到傷害+10。\n\n道具每位成員僅能裝備1張。"
+    },
+    "461": {
+      "name": "紫咲詩音的魔法權杖",
+      "cardType": "支援・道具",
+      "tags": [
+        "#魔法"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此道具的成員Arts+10。\n\n◆裝備於1st以上〈紫咲詩音〉時追加能力\n當本成員為中心成員時，自己的推し技能「欸欸欸欸欸欸欸欸」[每回合1次]變成[每回合2次]。\n\n道具每位成員僅能裝備1張。"
+    },
+    "462": {
+      "name": "森美聲之鐮",
+      "cardType": "支援・道具",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此道具的成員Arts+10。\n\n◆裝備於1st以上〈森美聲〉時追加能力\n將此道具從手牌裝備給成員時，可將牌庫最上1張存到檔案區。\n\n道具每位成員僅能裝備1張。"
+    },
+    "463": {
+      "name": "Oruyanke",
+      "cardType": "支援・吉祥物",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈白上吹雪〉時追加能力\n裝備此吉祥物的成員進行合作時，抽1張牌。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "464": {
+      "name": "發條狐狸",
+      "cardType": "支援・吉祥物",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈白上吹雪〉時追加能力\n裝備此吉祥物的成員倒下時，可將其1張應援裝備給自己其他成員。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "465": {
+      "name": "吹啾啾",
+      "cardType": "支援・吉祥物",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈白上吹雪〉時追加能力\n裝備此吉祥物的成員進行合作時，可將檔案區1張吉祥物回到手牌。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "466": {
+      "name": "吹布拉",
+      "cardType": "支援・吉祥物",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈白上吹雪〉時追加能力\n[每回合1次]主要階段可將自己2張應援存到檔案區：本回合本成員Arts+50。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "467": {
+      "name": "看著你",
+      "cardType": "支援・吉祥物",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈白上吹雪〉時追加能力\n[僅限後排位置]裝備此吉祥物的成員不會受到對手傷害。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "468": {
+      "name": "Tatang",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈帕芙莉亞·蓮娜〉時追加能力\n裝備此吉祥物的成員HP+30。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "469": {
+      "name": "骷髏君",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈寶鐘瑪琳〉時追加能力\n[僅限中心位置]裝備此吉祥物的成員Bloom時，抽1張牌。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "470": {
+      "name": "狗狗",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈沙花叉克蘿艾〉時追加能力\n裝備此吉祥物的成員擊倒對手成員時，可將檔案區1張應援送給自己持#秘密結社holoX成員。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "471": {
+      "name": "UDIN",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員Arts+10。\n\n◆附於〈克雷西·歐莉〉時追加能力\n裝備此吉祥物的成員Bloom時，抽1張牌後將手牌1張存到檔案區。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "472": {
+      "name": "Death-sensei",
+      "cardType": "支援・吉祥物",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此吉祥物的成員HP+20。\n\n◆附於〈森美聲〉時追加能力\n裝備此吉祥物的成員Arts所需所有應援顏色視為無色應援。\n\n吉祥物每位成員僅能裝備1張。"
+    },
+    "473": {
+      "name": "Sukon部",
+      "cardType": "支援・粉絲",
+      "tags": [
+        "#白上's角色"
+      ],
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此粉絲的成員HP+10。\n\n此粉絲僅能附給自己的〈白上吹雪〉，每人可多張附加。"
+    },
+    "474": {
+      "name": "白銀聖騎士團",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "裝備此粉絲的成員受到傷害-10。\n\n此粉絲僅能附給自己的〈白銀諾艾爾〉，每人可多張附加。"
+    },
+    "475": {
+      "name": "Miofa",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "對手回合裝備此粉絲的成員倒下時，抽1張牌。\n\n此粉絲僅能附給自己的〈大神澪〉，每人可多張附加。"
+    },
+    "476": {
+      "name": "鹽之子",
+      "cardType": "支援・粉絲",
+      "rarity": "S",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "はずき",
+      "abilityText": "■裝備此粉絲的成員Arts+10。\n■裝備此粉絲的成員受到傷害時，將此粉絲存到檔案區。\n\n此粉絲僅能附給自己的〈紫咲詩音〉，每人可多張附加。"
+    },
+    "445": {
+      "name": "百鬼綾目",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#射手"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "soriya",
+      "arts": [
+        {
+          "name": "彩吹文的『彩』擔當"
+        },
+        {
+          "name": "余就是余",
+          "effect": "可將手牌1～3張存到檔案區：對手中心成員每張造成特殊傷害40。"
+        }
+      ]
+    },
+    "446": {
+      "name": "貓又小粥",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "江田藤",
+      "arts": [
+        {
+          "name": "MOGMOG"
+        },
+        {
+          "name": "小粥～",
+          "effect": "可將本成員2張藍應援存到檔案區：對手中心與1名後排成員各受到特殊傷害30。"
+        }
+      ]
+    },
+    "447": {
+      "name": "癒月巧可",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#料理"
+      ],
+      "rarity": "SR",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "saihate",
+      "arts": [
+        {
+          "name": "33… 22… 11…"
+        },
+        {
+          "name": "Act",
+          "effect": "本回合自己每用過1張活動卡，此Arts+40。"
+        }
+      ]
+    },
+    "484": {
+      "name": "兔田佩克拉",
+      "cardType": "最推Holo成員",
+      "color": "綠",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "チェリ子",
+      "oshiSkill": {
+        "name": "野兔們～",
+        "effect": "[每回合1次]對手回合自己成員倒下時可用：將該成員所有綠應援分配裝備給其他成員。"
+      },
+      "spOshiSkill": {
+        "name": "幸運兔",
+        "effect": "[每場對戰1次]本回合內，自己所有骰子點數皆視為6。"
+      }
+    },
+    "188": {
+      "name": "天音彼方",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "康彼方～",
+          "effect": "此Arts僅能指定對手中心成員。"
+        }
+      ]
+    },
+    "203": {
+      "name": "天音彼方",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "要多多幫我應援唷！"
+        }
+      ],
+      "keyword": {
+        "name": "偶像彼方醬",
+        "effect": "可擲骰1次：3以下時，從牌庫公開1張吉祥物卡裝備給自己成員，然後洗牌。"
+      }
+    },
+    "176": {
+      "name": "七詩穆梅",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Oh,Hi",
+          "effect": "本回合自己使用過支援卡時，此Arts+20。"
+        }
+      ]
+    },
+    "204": {
+      "name": "七詩穆梅",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "謝謝你一直支持我！"
+        }
+      ],
+      "keyword": {
+        "name": "想和大家一起唱跳！",
+        "effect": "由Debut Bloom時，從牌庫公開1張持#Promise非Buzz的[Debut或1st成員]加入手牌，然後洗牌。"
+      }
+    },
+    "487": {
+      "name": "七詩穆梅",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "高崎律",
+      "arts": [
+        {
+          "name": "大家一起",
+          "effect": "本回合內，每有1名自己後排成員，自己中心與合作成員Arts+10。"
+        }
+      ],
+      "keyword": {
+        "name": "那天的約定",
+        "effect": "從牌庫公開1張持#Promise成員加入手牌，然後洗牌。"
+      }
+    },
+    "189": {
+      "name": "時乃空",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "大家～空好～"
+        }
+      ]
+    },
+    "205": {
+      "name": "時乃空",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "一起度過最棒的一天吧♪"
+        }
+      ],
+      "keyword": {
+        "name": "你準備好享受了嗎！？",
+        "effect": "抽1張牌。"
+      }
+    },
+    "177": {
+      "name": "貝斯緹亞·澤塔",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "任務開始"
+        }
+      ]
+    },
+    "206": {
+      "name": "貝斯緹亞·澤塔",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "舞台上全部『都是我的』"
+        }
+      ],
+      "keyword": {
+        "name": "全新命運",
+        "effect": "由Debut Bloom時，從牌庫公開1張持#ID3期生非Buzz的[Debut或1st成員]加入手牌，然後洗牌。"
+      }
+    },
+    "509": {
+      "name": "IRyS",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "HiRyS！"
+        }
+      ]
+    },
+    "207": {
+      "name": "IRyS",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "我會全力歌唱請看著我！"
+        }
+      ],
+      "keyword": {
+        "name": "用希望包圍舞台！",
+        "effect": "本回合內，自己所有持#Promise的[中心成員與合作成員]Arts+30。"
+      }
+    },
+    "488": {
+      "name": "IRyS",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "mizu",
+      "arts": [
+        {
+          "name": "約定之力",
+          "effect": "自己每有1名持#Promise的成員，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "希望庭園",
+        "effect": "查看自己的Holo能量，從中公開1張加入手牌，然後將牌庫最上1張放入Holo能量。"
+      }
+    },
+    "178": {
+      "name": "亞綺・羅森塔爾",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#半精靈",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Alo~na！"
+        }
+      ]
+    },
+    "208": {
+      "name": "亞綺・羅森塔爾",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#半精靈",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "今天也要加油羅澤！"
+        }
+      ],
+      "keyword": {
+        "name": "羅澤隊大家要幫我加油唷！",
+        "effect": "可回復自己1名成員HP20。"
+      }
+    },
+    "489": {
+      "name": "亞綺・羅森塔爾",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#半精靈",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "りんけてん",
+      "arts": [
+        {
+          "name": "秘密鑰匙",
+          "effect": "本成員裝備道具時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "哥德娃娃",
+        "effect": "將應援牌庫最上1張送給自己成員，若本成員裝備道具時，回復本成員HP40。"
+      }
+    },
+    "191": {
+      "name": "兔田佩克拉",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "佩克拉好～",
+          "effect": "可擲骰1次：偶數時，此Arts+20。"
+        }
+      ]
+    },
+    "209": {
+      "name": "兔田佩克拉",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "不能錯過唷佩克拉！"
+        }
+      ],
+      "keyword": {
+        "name": "成長後的兔田佩克拉",
+        "effect": "將應援牌庫最上1張送給自己中心或合作成員。"
+      }
+    },
+    "190": {
+      "name": "AZKi",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "AZKi好～"
+        }
+      ]
+    },
+    "210": {
+      "name": "AZKi",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "能來到這美好的世界！"
+        }
+      ],
+      "keyword": {
+        "name": "因為有開拓者大家",
+        "effect": "可將場上1～3張應援重新分配給自己成員。"
+      }
+    },
+    "179": {
+      "name": "風真伊呂波",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "諸君，在下風真伊呂波也～"
+        }
+      ]
+    },
+    "211": {
+      "name": "風真伊呂波",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "全力為你們帶來元氣！",
+          "effect": "將應援牌庫最上1張送給自己〈風真伊呂波〉以外持#秘密結社holoX成員。"
+        }
+      ],
+      "keyword": {
+        "name": "保鑣",
+        "effect": "[合作位置限定]對手成員Arts僅能指定自己合作成員（特殊傷害除外）。"
+      }
+    },
+    "510": {
+      "name": "艾拉妮·伊歐菲芙汀",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Selamat Pagi！",
+          "effect": "可將場上1張應援重新分配給自己持#ID成員。"
+        }
+      ]
+    },
+    "212": {
+      "name": "艾拉妮·伊歐菲芙汀",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "很期待唷！"
+        }
+      ],
+      "keyword": {
+        "name": "綠光閃耀的大海",
+        "effect": "將應援牌庫最上1張送給自己〈艾拉妮·伊歐菲芙汀〉以外持#ID成員。"
+      }
+    },
+    "490": {
+      "name": "艾拉妮·伊歐菲芙汀",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "高崎律",
+      "arts": [
+        {
+          "name": "Relation Sky",
+          "effect": "自己場上有除〈艾拉妮·伊歐菲芙汀〉外的持#ID成員時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "AREA 15",
+        "effect": "可將檔案區各1張應援分別送給自己1～3名持#ID成員。"
+      }
+    },
+    "192": {
+      "name": "鷹嶺露伊",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#鳥",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "大家久等鷹了嗎？"
+        }
+      ]
+    },
+    "213": {
+      "name": "鷹嶺露伊",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#鳥",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "要好好跟上我唷！"
+        }
+      ],
+      "keyword": {
+        "name": "真的都多虧大家！！",
+        "effect": "由Debut Bloom時，可將手牌1張存到檔案區：抽2張牌。"
+      }
+    },
+    "491": {
+      "name": "鷹嶺露伊",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#鳥",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "でいりー",
+      "arts": [
+        {
+          "name": "Hawk Rave",
+          "effect": "可將手牌1～5張存到檔案區：對手中心或合作成員每張造成特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "組織的司令塔",
+        "effect": "可將檔案區1～2張持#秘密結社holoX成員回到手牌。"
+      }
+    },
+    "193": {
+      "name": "小鳥遊琪亞拉",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#鳥"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Kikkeriki！",
+          "effect": "可將手牌1張存到檔案區：此Arts+20。"
+        }
+      ]
+    },
+    "214": {
+      "name": "小鳥遊琪亞拉",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#鳥"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "想炒熱氣氛！"
+        }
+      ],
+      "keyword": {
+        "name": "Let's do this!!!!",
+        "effect": "查看牌庫上方3張，從中公開1張成員加入手牌，剩餘存到檔案區。"
+      }
+    },
+    "180": {
+      "name": "尾丸波爾卡",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#5期生",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "波爾卡在這唷！"
+        }
+      ]
+    },
+    "215": {
+      "name": "尾丸波爾卡",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#5期生",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "共依存",
+          "effect": "此Arts僅能於本成員裝備〈座員〉時使用。"
+        }
+      ],
+      "keyword": {
+        "name": "宴會開始啦！",
+        "effect": "從牌庫公開1張粉絲卡加入手牌，然後洗牌。"
+      }
+    },
+    "181": {
+      "name": "哈庫斯·貝爾茲",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "WAZZUP!!",
+          "effect": "本成員裝備紅應援時，可擲骰1次：奇數時，對手合作成員受到特殊傷害20。"
+        }
+      ]
+    },
+    "216": {
+      "name": "哈庫斯·貝爾茲",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "歡樂時光開始！"
+        }
+      ],
+      "keyword": {
+        "name": "鼠偶像正式登場！",
+        "effect": "由Debut Bloom時，可將檔案區[Debut或1st成員]1張回到手牌：若回收卡持#EN，對手合作成員受到特殊傷害20。"
+      }
+    },
+    "492": {
+      "name": "哈庫斯·貝爾茲",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "COGA",
+      "arts": [
+        {
+          "name": "Disorder"
+        }
+      ],
+      "keyword": {
+        "name": "Chaos Shuffle",
+        "effect": "雙方將所有手牌依喜好順序放回各自牌庫底，然後各自每放回1張抽1張新牌。"
+      }
+    },
+    "182": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "閃耀新星",
+          "effect": "對手1名後排成員受到特殊傷害10（倒下也不減對手生命）。"
+        }
+      ]
+    },
+    "198": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "水鈴",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "閃耀新星",
+          "effect": "對手1名後排成員受到特殊傷害10（倒下也不減對手生命）。"
+        }
+      ]
+    },
+    "486": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "ひなつ",
+      "arts": [
+        {
+          "name": "新衣裝"
+        }
+      ],
+      "keyword": {
+        "name": "閃耀衣櫃",
+        "effect": "推しHolo成員為〈星街彗星〉時，可將本成員1張藍應援存到檔案區：抽2張牌。"
+      }
+    },
+    "217": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "彗醬今天也很可愛！！"
+        }
+      ],
+      "keyword": {
+        "name": "一定讓你驚豔絕倫，別錯過唷！",
+        "effect": "對手1名後排成員受到特殊傷害20（倒下也不減對手生命）。"
+      }
+    },
+    "194": {
+      "name": "Kobo Kanaeru",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "bocobocoboco"
+        }
+      ]
+    },
+    "218": {
+      "name": "Kobo Kanaeru",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "OnAeru"
+        }
+      ],
+      "keyword": {
+        "name": "虛擬行銷",
+        "effect": "可將自己持#ID成員1張應援存到檔案區：對手所有後排成員各受到特殊傷害10（倒下也不減對手生命）。"
+      }
+    },
+    "493": {
+      "name": "Kobo Kanaeru",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "高崎律",
+      "arts": [
+        {
+          "name": "雨之咒語",
+          "effect": "可將本成員1張應援存到檔案區：對手所有後排成員各受到特殊傷害20（倒下也不減對手生命）。"
+        },
+        {
+          "name": "波之咒語",
+          "effect": "可將本成員2張應援存到檔案區：對手中心成員受到與所有後排成員已受傷害總合相同的特殊傷害。"
+        }
+      ]
+    },
+    "195": {
+      "name": "Moona Hoshinova",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Moon",
+          "effect": "可擲骰1次：偶數時，對手1名後排成員受到特殊傷害20（倒下也不減對手生命）。"
+        }
+      ]
+    },
+    "219": {
+      "name": "Moona Hoshinova",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "敬請期待！！"
+        }
+      ],
+      "keyword": {
+        "name": "青金石",
+        "effect": "從應援牌庫公開1張[綠或藍應援]給自己成員，然後洗牌。"
+      }
+    },
+    "183": {
+      "name": "歐洛·克蘿妮",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Promise"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Kuronichiwa～",
+          "effect": "可將本成員1張應援裝備給其他持#Promise成員。"
+        }
+      ]
+    },
+    "220": {
+      "name": "歐洛·克蘿妮",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#EN",
+        "#Promise"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "讓這次fes成為難忘回憶！"
+        }
+      ],
+      "keyword": {
+        "name": "Kuronichiwa！",
+        "effect": "從應援牌庫公開1張與自己持#Promise成員同色的應援給持#Promise成員，然後洗牌。"
+      }
+    },
+    "494": {
+      "name": "歐洛·克蘿妮",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Promise"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "syow",
+      "arts": [
+        {
+          "name": "快轉",
+          "effect": "可用手牌1st成員讓本回合出場的Debut後排成員Bloom。"
+        }
+      ],
+      "keyword": {
+        "name": "倒帶",
+        "effect": "將對手1名後排成員還原為Debut成員（消除傷害後保留1張Debut成員與所有應援，其餘回手牌）。"
+      }
+    },
+    "221": {
+      "name": "偶像麥克風",
+      "cardType": "支援・道具・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "DSマイル",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#歌成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "184": {
+      "name": "普通電腦",
+      "cardType": "支援・道具",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "JinArt KABAKURA",
+      "abilityText": "從牌庫公開1張Debut成員直接登場，然後洗牌。"
+    },
+    "834": {
+      "name": "那你就是敵人了",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "冬ゆき",
+      "abilityText": "將對手中心成員與1名後排成員交換位置。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "222": {
+      "name": "Promise",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "Hyde",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#Promise成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "824": {
+      "name": "星街彗星的麥克風",
+      "cardType": "支援・道具",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "裝備此道具的成員Arts+10。\n\n◆裝備於1st以上〈星街彗星〉時追加能力\n裝備此道具的成員擊倒對手成員時，將應援牌庫最上1張送給該成員。\n\n道具每位成員僅能裝備1張。"
+    },
+    "483": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "LAL!ROLE",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Konkonkitsune！"
+        }
+      ]
+    },
+    "500": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Konkonkitsune！"
+        }
+      ]
+    },
+    "482": {
+      "name": "白上吹雪",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#GAMERS",
+        "#獸耳",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "yadapot",
+      "arts": [
+        {
+          "name": "辛苦啦～"
+        }
+      ],
+      "keyword": {
+        "name": "早安Konkitsune！",
+        "effect": "[合作位置限定]自己場上所有裝備吉祥物的成員Arts+10。"
+      }
+    },
+    "511": {
+      "name": "白銀諾艾爾",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Konmuscle～！"
+        }
+      ]
+    },
+    "512": {
+      "name": "帕芙莉亞·蓮娜",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#鳥",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Perhatian！"
+        }
+      ]
+    },
+    "501": {
+      "name": "大神澪",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳",
+        "#料理"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "我是mio喔～我是大神澪喔～",
+          "effect": "可將場上1張應援裝備給自己持#JP成員。"
+        }
+      ]
+    },
+    "201": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "あかさあい",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "我是寶鐘海賊團船長寶鐘瑪琳！"
+        }
+      ]
+    },
+    "502": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "我是寶鐘海賊團船長寶鐘瑪琳！"
+        }
+      ]
+    },
+    "507": {
+      "name": "寶鐘瑪琳",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#繪",
+        "#海",
+        "#酒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しゅがお",
+      "arts": [
+        {
+          "name": "是瑪琳“船長”唷！？"
+        }
+      ],
+      "keyword": {
+        "name": "和瑪琳的宅飲",
+        "effect": "對手合作成員受到特殊傷害20。"
+      }
+    },
+    "513": {
+      "name": "沙花叉克蘿艾",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX",
+        "#海"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "baku baku baku～n"
+        }
+      ]
+    },
+    "514": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "大家好～"
+        }
+      ]
+    },
+    "508": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しゅがお",
+      "arts": [
+        {
+          "name": "一起走吧"
+        }
+      ],
+      "keyword": {
+        "name": "來讓你見識魔法",
+        "effect": "可擲骰1次：4以上時，從牌庫公開1張持#魔法卡加入手牌，然後洗牌。"
+      }
+    },
+    "485": {
+      "name": "紫咲詩音",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#2期生"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "チェリ子",
+      "arts": [
+        {
+          "name": "紫色魔法",
+          "effect": "對手中心與合作成員，每有1張對手中心成員裝備的應援，造成特殊傷害20。"
+        }
+      ],
+      "keyword": {
+        "name": "惡作劇魔法",
+        "effect": "可擲骰1次：4以上時，將對手場上一張應援重新分配給其成員。"
+      }
+    },
+    "503": {
+      "name": "克雷西·歐莉",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID2期生",
+        "#語言"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "殭晚安！"
+        }
+      ]
+    },
+    "504": {
+      "name": "森美聲",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "死神的第一弟子",
+          "effect": "檔案區有成員卡時，此Arts+10。"
+        }
+      ]
+    },
+    "515": {
+      "name": "一伊那尓栖",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#繪",
+        "#海"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "WAH!"
+        }
+      ]
+    },
+    "835": {
+      "name": "戌神沁音",
+      "cardType": "最推Holo成員",
+      "color": "黃",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "黒川ひゅい.",
+      "oshiSkill": {
+        "timing": "每回合1次",
+        "name": "無限體力",
+        "effect": "[每回合1次]可將1名休息狀態的〈戌神沁音〉轉為可行動狀態。"
+      },
+      "spOshiSkill": {
+        "timing": "每場對戰1次",
+        "name": "汪汪汪汪汪",
+        "effect": "[每場對戰1次]自己黃屬性成員倒下時可用：可將該成員1張應援裝備給其他成員，然後從該成員重疊的所有成員中選1張回到手牌。"
+      }
+    },
+    "812": {
+      "name": "姬森璐娜",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#嬰兒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "大家～在嗎～？",
+          "effect": "自己場上沒有裝備〈璐娜騎士〉的成員時，從牌庫公開1張〈璐娜騎士〉裝備給自己成員，然後洗牌。"
+        }
+      ]
+    },
+    "836": {
+      "name": "姬森璐娜",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#嬰兒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "惑星Y",
+      "arts": [
+        {
+          "name": "辛苦了なの啦",
+          "effect": "本成員裝備〈璐娜騎士〉時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "要跟著璐娜走唷～",
+        "effect": "推しHolo成員為〈姬森璐娜〉時，可將檔案區1張〈璐娜騎士〉裝備給自己〈姬森璐娜〉。"
+      }
+    },
+    "804": {
+      "name": "櫻巫女",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#嬰兒"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "ともず",
+      "arts": [
+        {
+          "name": "櫻花季節"
+        }
+      ],
+      "keyword": {
+        "name": "與你約定見面",
+        "effect": "可擲骰1次：2/4/6時，對手中心成員受到特殊傷害10。3/5時，抽1張牌並對手中心成員受到特殊傷害10。"
+      }
+    },
+    "813": {
+      "name": "赤井心",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#1期生",
+        "#料理"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "早安rouge！"
+        }
+      ]
+    },
+    "814": {
+      "name": "常闇永遠",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌",
+        "#射手"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Konyappy"
+        }
+      ]
+    },
+    "815": {
+      "name": "角卷綿芽",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#獸耳",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "晚安咩咩咩咩～！"
+        }
+      ]
+    },
+    "816": {
+      "name": "音乃瀨奏",
+      "cardType": "Holo成員",
+      "color": "黃",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#DEV_IS",
+        "#ReGLOSS",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "DoReMiFaSoLaSiDo～！"
+        },
+        {
+          "name": "音樂家的蛋！我是音乃瀨～奏～～～"
+        }
+      ]
+    },
+    "820": {
+      "name": "突發通話",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "夏色まつり",
+      "abilityText": "此卡僅能在自己生命小於對手時使用。\n\n對手場上無合作成員時，對手需將1名後排成員移動到合作位置（不視為合作）。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "821": {
+      "name": "突發通話",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "森カリオペ",
+      "abilityText": "此卡僅能在自己生命小於對手時使用。\n\n對手場上無合作成員時，對手需將1名後排成員移動到合作位置（不視為合作）。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "822": {
+      "name": "突發通話",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "綺々羅々ヴィヴィ",
+      "abilityText": "此卡僅能在自己生命小於對手時使用。\n\n對手場上無合作成員時，對手需將1名後排成員移動到合作位置（不視為合作）。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "823": {
+      "name": "35P",
+      "cardType": "支援・粉絲",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "くまらん",
+      "abilityText": "■裝備此粉絲的成員使用Arts時，此粉絲也視為紅應援。\n■裝備此粉絲的成員倒下時，對手可抽1張牌。\n\n此粉絲僅能附給自己的〈櫻巫女〉，每人可多張附加。"
+    },
+    "197": {
+      "name": "櫻巫女",
+      "cardType": "Holo成員",
+      "color": "◇",
+      "bloomLevel": "Spot",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "信澤 収/もちぷよ",
+      "extra": "此成員無法Bloom",
+      "arts": [
+        {
+          "name": "flower rhapsody"
+        }
+      ],
+      "keyword": {
+        "name": "若能成為誰的綻放也好",
+        "effect": "可擲骰1次：1/3/5時，從應援牌庫公開1張[紅或藍應援]給自己後排成員，然後洗牌。"
+      }
+    },
+    "202": {
+      "name": "ReGLOSS",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "Fajyobore",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#ReGLOSS成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "516": {
+      "name": "ReGLOSS",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "メレ",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意持#ReGLOSS成員加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "186": {
+      "name": "時乃空",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しゅがお",
+      "arts": [
+        {
+          "name": "On Stage！"
+        }
+      ],
+      "keyword": {
+        "name": "Let's dance！",
+        "effect": "本回合內，自己中心成員Arts+20。"
+      }
+    },
+    "495": {
+      "name": "時乃空",
+      "cardType": "Buzz Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "I☆LA",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "Dream Live"
+        },
+        {
+          "name": "SorAZ 共鳴",
+          "effect": "自己場上有〈AZKi〉時，此Arts+50。"
+        }
+      ]
+    },
+    "223": {
+      "name": "IRyS",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#EN",
+        "#Promise",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "希望化身"
+        }
+      ],
+      "keyword": {
+        "name": "HOPE",
+        "effect": "查看自己的Holo能量，從中公開1張加入手牌，然後將手牌1張放入Holo能量。"
+      }
+    },
+    "187": {
+      "name": "AZKi",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "三九呂",
+      "arts": [
+        {
+          "name": "Hoi de hoi de"
+        }
+      ],
+      "keyword": {
+        "name": "擴展地圖",
+        "effect": "可擲骰1次：4以下時，將應援牌庫最上1張送給自己後排成員。若為1，還可將本成員移動到後排位置。"
+      }
+    },
+    "496": {
+      "name": "AZKi",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "I☆LA",
+      "arts": [
+        {
+          "name": "SorAZ Gravity",
+          "effect": "自己場上有〈時乃空〉時，將應援牌庫最上1張送給自己成員。"
+        },
+        {
+          "name": "Destiny Song",
+          "effect": "可擲骰1次：奇數時，此Arts+50。若為1，則再+50。"
+        }
+      ]
+    },
+    "224": {
+      "name": "艾拉妮·伊歐菲芙汀",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#繪"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "畫畫好開心！"
+        }
+      ],
+      "keyword": {
+        "name": "一起畫畫！",
+        "effect": "可將檔案區1張[白或綠應援]送給自己中心成員。"
+      }
+    },
+    "833": {
+      "name": "SorAZ",
+      "cardType": "Holo成員",
+      "color": "白綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "はたほまめ",
+      "extra": "此成員也視為〈時乃空〉〈AZKi〉",
+      "arts": [
+        {
+          "name": "想超越的未來",
+          "effect": "可擲骰1次：奇數時，將應援牌庫最上1張送給本成員。偶數時，抽1張牌。"
+        }
+      ]
+    },
+    "185": {
+      "name": "春先野花",
+      "cardType": "支援・工作人員・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "Yoshimo",
+      "abilityText": "抽3張牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "829": {
+      "name": "春先野花",
+      "cardType": "支援・工作人員・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "ryota",
+      "abilityText": "抽3張牌。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "505": {
+      "name": "經紀人醬",
+      "cardType": "支援・工作人員・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "株式会社HIKE / Trigono",
+      "abilityText": "此卡只能在不含此卡的手牌數至少1張時使用。\n\n將所有手牌洗回牌庫並重抽5張。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "506": {
+      "name": "副用電腦",
+      "cardType": "支援・道具",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "JinArt こばやかわやまと",
+      "abilityText": "查看牌庫上方5張，從中公開1張LIMITED支援卡加入手牌，剩餘依喜好順序放回牌庫底。"
+    },
+    "817": {
+      "name": "百鬼綾目",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#射手"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Konnakiri～"
+        }
+      ]
+    },
+    "497": {
+      "name": "百鬼綾目",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#射手"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "閃耀的余別錯過～～！！"
+        }
+      ],
+      "keyword": {
+        "name": "哪個哪個♪",
+        "effect": "由Debut Bloom時，查看牌庫上方2張，公開1張加入手牌，剩餘存到檔案區。"
+      }
+    },
+    "803": {
+      "name": "irohanihoheto ayafubumi",
+      "cardType": "支援・活動・LIMITED",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "林けゐ",
+      "abilityText": "此卡只能在不含此卡的手牌數至多6張時使用。\n\n查看牌庫上方4張，從中公開任意張〈白上吹雪〉、〈大神澪〉、〈百鬼綾目〉加入手牌，剩餘依喜好順序放回牌庫底。\n\nLIMITED：每回合僅能使用1張。"
+    },
+    "811": {
+      "name": "貓又小粥",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "石原竜也 小奈きなこ",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Mogu mogu～小粥～"
+        }
+      ]
+    },
+    "818": {
+      "name": "貓又小粥",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "Mogu mogu～小粥～"
+        }
+      ]
+    },
+    "562": {
+      "name": "貓又小粥",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "はねこと",
+      "arts": [
+        {
+          "name": "請讓我回家吧"
+        }
+      ],
+      "keyword": {
+        "name": "打擾你家了…！",
+        "effect": "自己中心成員持#GAMERS時，對手中心與1名後排成員各受到特殊傷害10（倒下也不減對手生命）。"
+      }
+    },
+    "498": {
+      "name": "貓又小粥",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#GAMERS",
+        "#獸耳"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "全力把我的歌獻給你！"
+        }
+      ],
+      "keyword": {
+        "name": "要再多多笑唷！",
+        "effect": "可將檔案區1張應援送給自己持#GAMERS成員。"
+      }
+    },
+    "819": {
+      "name": "癒月巧可",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "Debut",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#料理"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "extra": "此成員可於牌組中無限張放入",
+      "arts": [
+        {
+          "name": "魔界保健醫"
+        }
+      ]
+    },
+    "499": {
+      "name": "癒月巧可",
+      "cardType": "Holo成員",
+      "color": "紫",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#2期生",
+        "#料理"
+      ],
+      "rarity": "P",
+      "set": "PR卡",
+      "arts": [
+        {
+          "name": "最喜歡你啦！啾♡",
+          "effect": "回復1名自己後排成員HP20。"
+        }
+      ],
+      "keyword": {
+        "name": "Chokko～n！",
+        "effect": "可將檔案區1張非LIMITED活動卡回到手牌。"
+      }
+    },
+    "23": {
+      "name": "天音彼方",
+      "cardType": "最推Holo成員",
+      "color": "白",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "Hiroko",
+      "oshiSkill": {
+        "name": "緊緊抱住",
+        "effect": "[每回合1次]將對手中心成員剩餘HP變為50。"
+      },
+      "spOshiSkill": {
+        "name": "要把你捏碎囉",
+        "effect": "[每場對戰1次]本回合內自己1名成員Arts+50。若該成員屬性為白，再額外+50。"
+      }
+    },
+    "25": {
+      "name": "七詩穆梅",
+      "cardType": "最推Holo成員",
+      "color": "白",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "Hiroko",
+      "oshiSkill": {
+        "name": "文明守護者",
+        "effect": "[每回合1次]對手回合，自己持#Promise成員受傷時可用：該成員受到傷害-50。"
+      },
+      "spOshiSkill": {
+        "name": "Amazing Drawing",
+        "effect": "[每場對戰1次]從牌庫公開1張活動卡加入手牌，然後洗牌。"
+      }
+    },
+    "27": {
+      "name": "亞綺・羅森塔爾",
+      "cardType": "最推Holo成員",
+      "color": "綠",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "Hiroko",
+      "oshiSkill": {
+        "name": "求生本能",
+        "effect": "[每回合1次]從牌庫公開1張〈石斧〉裝備給自己綠屬性成員，然後洗牌。"
+      },
+      "spOshiSkill": {
+        "name": "大地之歌",
+        "effect": "[每場對戰1次]自己綠色中心成員HP全回復。"
+      }
+    },
+    "29": {
+      "name": "兔田佩克拉",
+      "cardType": "最推Holo成員",
+      "color": "綠",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "神奈ぺろん",
+      "oshiSkill": {
+        "name": "野兔們～",
+        "effect": "[每回合1次]對手回合自己成員倒下時可用：將該成員所有綠應援分配裝備給其他成員。"
+      },
+      "spOshiSkill": {
+        "name": "幸運兔",
+        "effect": "[每場對戰1次]本回合內自己所有骰子點數皆視為6。"
+      }
+    },
+    "31": {
+      "name": "鷹嶺露伊",
+      "cardType": "最推Holo成員",
+      "color": "紅",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "須王 彩",
+      "oshiSkill": {
+        "name": "女幹部的調度",
+        "effect": "[每回合1次]自己紅屬性成員以能力存手牌時可用：每存1張可將1張Holo能量存到檔案區代替。"
+      },
+      "spOshiSkill": {
+        "name": "鷹之眼",
+        "effect": "[每場對戰1次]下個對手回合，對手中心與合作成員不能接棒、移動、交換位置。"
+      }
+    },
+    "33": {
+      "name": "小鳥遊琪亞拉",
+      "cardType": "最推Holo成員",
+      "color": "紅",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "水鈴",
+      "oshiSkill": {
+        "name": "鳳凰之尾",
+        "effect": "[每回合1次]可將檔案區1張成員回到手牌。"
+      },
+      "spOshiSkill": {
+        "name": "Rise from the ashes",
+        "effect": "[每場對戰1次]對手回合自己紅屬性成員倒下時可用：自己減少的生命-1。再選1人，將該成員重疊的所有成員回到手牌。"
+      }
+    },
+    "34": {
+      "name": "小鳥遊琪亞拉",
+      "cardType": "最推Holo成員",
+      "color": "紅",
+      "rarity": "SEC",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "水鈴",
+      "oshiSkill": {
+        "name": "鳳凰之尾",
+        "effect": "[每回合1次]可將檔案區1張成員回到手牌。"
+      },
+      "spOshiSkill": {
+        "name": "Rise from the ashes",
+        "effect": "[每場對戰1次]對手回合自己紅屬性成員倒下時可用：自己減少的生命-1。再選1人，將該成員重疊的所有成員回到手牌。"
+      }
+    },
+    "36": {
+      "name": "星街彗星",
+      "cardType": "最推Holo成員",
+      "color": "藍",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "水鈴",
+      "oshiSkill": {
+        "name": "彗星",
+        "effect": "[每回合1次]本最推或自己藍屬性成員對對手後排成員造成傷害時可用：對該後排成員造成特殊傷害50。"
+      },
+      "spOshiSkill": {
+        "name": "流星",
+        "effect": "[每場對戰1次]自己藍屬性成員對對手中心或合作成員造成傷害時可用：對對手1名後排成員造成等量特殊傷害。"
+      }
+    },
+    "37": {
+      "name": "星街彗星",
+      "cardType": "最推Holo成員",
+      "color": "藍",
+      "rarity": "SEC",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "水鈴",
+      "oshiSkill": {
+        "name": "彗星",
+        "effect": "[每回合1次]本最推或自己藍屬性成員對對手後排成員造成傷害時可用：對該後排成員造成特殊傷害50。"
+      },
+      "spOshiSkill": {
+        "name": "流星",
+        "effect": "[每場對戰1次]自己藍屬性成員對對手中心或合作成員造成傷害時可用：對對手1名後排成員造成等量特殊傷害。"
+      }
+    },
+    "39": {
+      "name": "Kobo Kanaeru",
+      "cardType": "最推Holo成員",
+      "color": "藍",
+      "rarity": "OUR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "タスキブ",
+      "oshiSkill": {
+        "name": "雨巫術",
+        "effect": "[每回合1次]自己藍屬性成員以能力存應援時可用：對手1名成員造成特殊傷害20。"
+      },
+      "spOshiSkill": {
+        "name": "求雨",
+        "effect": "[每場對戰1次]可將檔案區1～5張應援分配裝備給自己持#ID成員。"
+      }
+    },
+    "46": {
+      "name": "天音彼方",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#4期生",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "うなぽっぽ",
+      "arts": [
+        {
+          "name": "♰漆黑之翼♰",
+          "effect": "此Arts擊倒對手成員時，若給予傷害超過剩餘HP 50點以上，對手生命-1。"
+        }
+      ],
+      "keyword": {
+        "name": "墮天使",
+        "effect": "對手中心成員受到特殊傷害50。"
+      }
+    },
+    "56": {
+      "name": "時乃空",
+      "cardType": "Holo成員",
+      "color": "白",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "タスキブ",
+      "arts": [
+        {
+          "name": "停不下來",
+          "effect": "可擲骰1次：奇數時，對同一成員再使用一次此Arts（可重複使用，直到該成員倒下為止）。"
+        }
+      ],
+      "keyword": {
+        "name": "我們一起向前…！",
+        "effect": "抽2張牌。"
+      }
+    },
+    "61": {
+      "name": "貝斯緹亞·澤塔",
+      "cardType": "Buzz Holo成員",
+      "color": "白",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID3期生"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "いかけ",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "Access Code: ID",
+          "effect": "自己中心成員持#ID時，此Arts+50。"
+        }
+      ],
+      "keyword": {
+        "name": "V.7",
+        "effect": "[每回合1次][僅限合作位置]自己成員受到對手傷害時可擲骰1次：奇數時，不會受到該傷害。"
+      }
+    },
+    "78": {
+      "name": "兔田佩克拉",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#3期生",
+        "#獸耳"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "須王 彩",
+      "arts": [
+        {
+          "name": "全人類兔化計畫",
+          "effect": "可擲骰3次：每出現1點加此Arts+10。"
+        }
+      ],
+      "keyword": {
+        "name": "公主禮服",
+        "effect": "本成員回復HP50。"
+      }
+    },
+    "83": {
+      "name": "AZKi",
+      "cardType": "Holo成員",
+      "color": "綠",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "Hachi",
+      "arts": [
+        {
+          "name": "嶄新地圖"
+        }
+      ],
+      "keyword": {
+        "name": "生命軌跡",
+        "effect": "本成員回復HP40。然後可擲骰1次：奇數時，可將檔案區1～3張綠應援給本成員。"
+      }
+    },
+    "88": {
+      "name": "風真伊呂波",
+      "cardType": "Buzz Holo成員",
+      "color": "綠",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#秘密結社holoX"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "さまてる",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "凝聚的應援",
+          "effect": "[僅限合作位置]本成員每有1張應援，此Arts+20（最多5張）。"
+        },
+        {
+          "name": "風華閃耀"
+        }
+      ]
+    },
+    "105": {
+      "name": "小鳥遊琪亞拉",
+      "cardType": "Holo成員",
+      "color": "紅",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#EN",
+        "#Myth",
+        "#鳥"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "タスキブ",
+      "arts": [
+        {
+          "name": "焰色引導"
+        },
+        {
+          "name": "Majestic Phoenix",
+          "effect": "每有1張檔案區成員，此Arts+10。然後可將檔案區6張成員洗回牌庫。"
+        }
+      ]
+    },
+    "110": {
+      "name": "尾丸波爾卡",
+      "cardType": "Buzz Holo成員",
+      "color": "紅",
+      "bloomLevel": "1st",
+      "tags": [
+        "#JP",
+        "#5期生",
+        "#獸耳"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "南野あき",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "波爾卡馬戲團",
+          "effect": "自己所有成員每裝備1張粉絲卡，此Arts+20。"
+        }
+      ],
+      "keyword": {
+        "name": "波爾卡幻象",
+        "effect": "可將檔案區1張〈座員〉回到手牌。"
+      }
+    },
+    "121": {
+      "name": "星街彗星",
+      "cardType": "Holo成員",
+      "color": "藍",
+      "bloomLevel": "2nd",
+      "tags": [
+        "#JP",
+        "#0期生",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "arts": [
+        {
+          "name": "閃耀彗星",
+          "effect": "可將本成員2張藍應援存到檔案區：本成員每重疊1張成員，此Arts+60（此Arts可指定對手後排成員）。"
+        }
+      ],
+      "keyword": {
+        "name": "馳騁天際之光",
+        "effect": "將應援牌庫最上1張送給自己藍屬性成員。"
+      }
+    },
+    "132": {
+      "name": "Moona Hoshinova",
+      "cardType": "Buzz Holo成員",
+      "color": "藍",
+      "bloomLevel": "1st",
+      "tags": [
+        "#ID",
+        "#ID1期生",
+        "#歌"
+      ],
+      "rarity": "UR",
+      "set": "補充包「Blooming Radiance」",
+      "illustrator": "高崎律",
+      "extra": "此成員倒下時，自己生命-2",
+      "arts": [
+        {
+          "name": "月夜降臨。"
+        },
+        {
+          "name": "Moon Night Diva",
+          "effect": "可將本成員1張[綠或藍應援]存到檔案區：對手1名後排成員受到特殊傷害30。"
+        }
+      ]
+    },
+    "797": {
+      "name": "白應援",
+      "cardType": "應援",
+      "color": "白",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "798": {
+      "name": "綠應援",
+      "cardType": "應援",
+      "color": "綠",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "799": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "800": {
+      "name": "藍應援",
+      "cardType": "應援",
+      "color": "藍",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "801": {
+      "name": "紫應援",
+      "cardType": "應援",
+      "color": "紫",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "802": {
+      "name": "黃應援",
+      "cardType": "應援",
+      "color": "黃",
+      "rarity": "SY",
+      "set": "補充包「Elite Spark」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "477": {
+      "name": "白應援",
+      "cardType": "應援",
+      "color": "白",
+      "rarity": "SY",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "478": {
+      "name": "綠應援",
+      "cardType": "應援",
+      "color": "綠",
+      "rarity": "SY",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "479": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "SY",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "480": {
+      "name": "藍應援",
+      "cardType": "應援",
+      "color": "藍",
+      "rarity": "SY",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "481": {
+      "name": "紫應援",
+      "cardType": "應援",
+      "color": "紫",
+      "rarity": "SY",
+      "set": "補充包「五重奏光譜」",
+      "illustrator": "リズ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "196": {
+      "name": "白應援",
+      "cardType": "應援",
+      "color": "白",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "餡こたく",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "805": {
+      "name": "白應援",
+      "cardType": "應援",
+      "color": "白",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しろみにみ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "806": {
+      "name": "綠應援",
+      "cardType": "應援",
+      "color": "綠",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しろみにみ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "837": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "P",
+      "set": "PR卡",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "838": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "P",
+      "set": "PR卡",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "839": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "P",
+      "set": "PR卡",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "840": {
+      "name": "紅應援",
+      "cardType": "應援",
+      "color": "紅",
+      "rarity": "P",
+      "set": "PR卡",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "807": {
+      "name": "藍應援",
+      "cardType": "應援",
+      "color": "藍",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しろみにみ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
+    },
+    "808": {
+      "name": "黃應援",
+      "cardType": "應援",
+      "color": "黃",
+      "rarity": "P",
+      "set": "PR卡",
+      "illustrator": "しろみにみ",
+      "abilityText": "■成員離場時，該成員所有應援存到檔案區。\n■成員接棒時，指定張數的應援存到檔案區。"
     }
   }
 }
