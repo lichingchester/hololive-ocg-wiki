@@ -1,16 +1,22 @@
 <script setup lang="ts">
-const cards_data = await $fetch("/data/cards_structured.json");
-const cards_i18n = await $fetch("/data/cards_i18n.json");
+import { RecycleScroller } from "vue-virtual-scroller";
+import type { CardCollection } from "@/types/card";
+import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 
-// console.log(cards_data);
+const response: CardCollection = await $fetch("/data/cards_i18n.json");
 </script>
 
 <template>
   <div>
-    <template v-for="(card, index) in cards_data" :key="index">
-      <div>
-        {{ card.id }}
-      </div>
-    </template>
+    <RecycleScroller
+      v-slot="{ card }"
+      class="scroller"
+      :items="response"
+      :item-size="32"
+      key-field="id"
+    >
+      <div>{{ card }}</div>
+      <!-- <div>{{ card.id }} - {{ $t(`cards.${card.id}.name`) }}</div> -->
+    </RecycleScroller>
   </div>
 </template>
