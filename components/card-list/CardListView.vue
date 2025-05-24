@@ -21,7 +21,7 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
 </script>
 
 <template>
-  <div v-resize-observer="onResizeObserver" class="wrapper">
+  <div v-resize-observer="onResizeObserver" class="p-2">
     <RecycleScroller
       class="scroller"
       :items="response"
@@ -32,7 +32,7 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
     >
       <template #default="{ item }">
         <div class="p-2">
-          <NuxtImg :src="'/' + item.imagePath" loading="lazy" />
+          <CardItem :item="item" />
         </div>
       </template>
     </RecycleScroller>
