@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
+    "@vueuse/nuxt",
   ],
 
   colorMode: {
