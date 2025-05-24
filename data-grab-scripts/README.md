@@ -1,5 +1,12 @@
 # Official Site Data
 
+## Usage
+
+1. Use grab notebook to grab 
+   1. First grab all the card ids
+   2. Then use the ids to grab all card detail page
+2. Use process notebook to extract the data into structured data (HTML to data)
+
 ## URL pattern
 ```
 https://hololive-official-cardgame.com
