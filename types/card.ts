@@ -1,18 +1,51 @@
-export type CardTypeCodeType = 'buzzCharacter' | 'character' | 'oshiCharacter' | 'supportCheer' | 'supportEvent' | 'supportEventLimited' | 'supportFan' | 'supportItem' | 'supportLocation' | 'supportTool';
+export type CardTypeCodeType =
+  | "buzzCharacter"
+  | "character"
+  | "oshiCharacter"
+  | "supportCheer"
+  | "supportEvent"
+  | "supportEventLimited"
+  | "supportFan"
+  | "supportItem"
+  | "supportLocation"
+  | "supportTool";
 
-export type ColorCodeType = 'blue' | 'green' | 'purple' | 'red' | 'white' | 'yellow';
+export type ColorCodeType =
+  | "blue"
+  | "green"
+  | "purple"
+  | "red"
+  | "white"
+  | "yellow"
+  | "unknown"; // TODO: this is a temporary placeholder for blue_red color (ID: 614)
 
-export type RarityCodeType = 'C' | 'OC' | 'OSR' | 'OUR' | 'P' | 'R' | 'RR' | 'S' | 'SEC' | 'SR' | 'SY' | 'U' | 'UR';
+export type RarityCodeType =
+  | "C"
+  | "OC"
+  | "OSR"
+  | "OUR"
+  | "P"
+  | "R"
+  | "RR"
+  | "S"
+  | "SEC"
+  | "SR"
+  | "SY"
+  | "U"
+  | "UR";
 
-export type TimingCodeType = 'once_per_game' | 'once_per_turn';
+export type TimingCodeType = "once_per_game" | "once_per_turn";
 
-export type BloomLevelCodeType = 'debut' | 'first' | 'second';
+export type BloomLevelCodeType = "debut" | "first" | "second";
 
 export type ArtsItem = {
   costCount?: number;
   costTypes?: string[];
   damage?: number;
-}
+  isPlus?: boolean;
+  specialTargets?: string[];
+  specialValues?: number[];
+};
 
 export type Card = {
   arts?: ArtsItem[];
@@ -32,24 +65,24 @@ export type Card = {
   spOshiSkill?: SpOshiSkill;
   tags?: string[];
   translations?: Translations;
-}
+};
 
 export type Keyword = {
   type?: string;
   typeCode?: string;
-}
+};
 
 export type OshiSkill = {
   cost?: number;
-}
+};
 
 export type SpOshiSkill = {
   cost?: number;
-}
+};
 
 export type Translations = {
   ja?: TranslationsJa;
-}
+};
 
 export type TranslationsJa = {
   abilityText?: string;
@@ -59,6 +92,6 @@ export type TranslationsJa = {
   name?: string;
   rarity?: string;
   set?: string;
-}
+};
 
 export type CardCollection = Card[];
