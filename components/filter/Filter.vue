@@ -1,37 +1,71 @@
 <script lang="ts" setup>
-const [UseTemplate, FilterPanel] = createReusableTemplate();
-const isDesktop = useMediaQuery("(min-width: 768px)");
-const isOpen = ref(false);
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Funnel, PanelTopClose } from "lucide-vue-next";
 </script>
 
 <template>
-  <UseTemplate>
-    <form class="grid items-start gap-4 px-4">
-      <div class="grid gap-2">
-        <Label html-for="email">Email</Label>
-        <Input id="email" type="email" default-value="shadcn@example.com" />
-      </div>
-      <div class="grid gap-2">
-        <Label html-for="username">Username</Label>
-        <Input id="username" default-value="@shadcn" />
-      </div>
-      <Button type="submit"> Save changes </Button>
-    </form>
-  </UseTemplate>
+  <Sheet>
+    <SheetTrigger as-child>
+      <Button size="icon"> <Funnel /> </Button>
+    </SheetTrigger>
+    <SheetContent side="top">
+      <!-- quick filters -->
+      <div class="flex flex-col gap-4 pt-4 px-4">
+        <!-- color -->
+        <div class="">
+          <div class="font-semibold mb-2">Colors</div>
+          <div class="flex flex-wrap gap-2">
+            <template v-for="(color, key) in $tm('colors')" :key="key">
+              <Toggle size="sm" variant="outline" aria-label="Toggle Colors">
+                <NuxtPicture
+                  format="webp"
+                  :src="`/icons/type_${key}.png`"
+                  :img-attrs="{ class: 'w-4' }"
+                />
+                {{ $rt(color) }}
+              </Toggle>
+            </template>
+          </div>
+        </div>
 
-  <div class="">
-    <Drawer>
-      <DrawerTrigger>Open</DrawerTrigger>
-      <DrawerContent>
-        <FilterPanel />
+        <!-- CardTypeCodeType -->
+        <div class="">
+          <div class="font-semibold mb-2">Type</div>
+          <div class="flex flex-wrap gap-2">
+            <template v-for="(type, key) in $tm('cardTypes')" :key="key">
+              <Toggle size="sm" variant="outline" aria-label="Toggle Types">
+                {{ $rt(type) }}
+              </Toggle>
+            </template>
+          </div>
+        </div>
 
-        <DrawerFooter>
-          <Button>Submit</Button>
-          <DrawerClose>
-            <Button variant="outline"> Cancel </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
-  </div>
+        <!-- Rarity -->
+        <div class="">
+          <div class="font-semibold mb-2">Rarity</div>
+          <div class="flex flex-wrap gap-2">
+            <template v-for="(rarity, key) in $tm('rarity')" :key="key">
+              <Toggle size="sm" variant="outline" aria-label="Toggle Rarity">
+                {{ $rt(rarity) }}
+              </Toggle>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <SheetFooter>
+        <SheetClose as-child>
+          <Button> <PanelTopClose /> Close </Button>
+        </SheetClose>
+      </SheetFooter>
+    </SheetContent>
+  </Sheet>
 </template>
