@@ -5,8 +5,8 @@ const switchLocalePath = useSwitchLocalePath();
 
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger>
-      <Button variant="ghost">
+    <DropdownMenuTrigger as-child>
+      <Button variant="ghost" size="icon">
         <IconGlobe />
       </Button>
     </DropdownMenuTrigger>
