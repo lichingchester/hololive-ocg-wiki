@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 </script>
 
 <template>
@@ -11,7 +11,8 @@ import { Input } from "@/components/ui/input";
       <Filter />
 
       <!-- search -->
-      <Input id="search" type="text" placeholder="Search..." />
+      <!-- <Input id="search" type="text" placeholder="Search..." /> -->
+      <SearchInput />
 
       <div class="flex ml-auto">
         <AppLanguageSwitcher />

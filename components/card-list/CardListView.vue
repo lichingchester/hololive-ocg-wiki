@@ -3,9 +3,13 @@ import { vResizeObserver } from "@vueuse/components";
 import { RecycleScroller } from "vue-virtual-scroller";
 import type { CardCollection } from "@/types/card";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
+import Fuse from "fuse.js";
 
 const response: CardCollection = await $fetch("/data/cards_i18n.json");
 
+/**
+ * card size and padding
+ */
 let cardPadding = 8;
 const cardImageRatio =
   (558 + cardPadding + cardPadding) / (400 + cardPadding + cardPadding); // Ratio of card height to width
@@ -42,6 +46,58 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
   itemSecondarySize.value = width / gridColCount.value; // Adjust item size based on the width of the container
   itemSize.value = itemSecondarySize.value * cardImageRatio; // Adjust secondary size based on the item size
 }
+
+/**
+ * filter functions can be added here if needed
+ */
+// const { t } = useI18n();
+
+// const filterState = useFilterState();
+// const listForSearch = response.map((card) => {
+//   if(card.translations){
+//     card.translations.tc = {
+//       abilityText: t("cards.")
+//       // cardType
+//       // color
+//       // illustrator
+//       // name
+//       // rarity
+//       // set
+//     }
+//   }
+
+//   return {
+//     ...card,
+//   };
+// });
+
+// console.log("CardListView mounted", filterState.value.search);
+
+// const filteredCards = computed(() => {
+//   return response.filter((card) => {
+//     // filter by search term
+//     if (filterState.value.search) {
+//       const searchTerm = filterState.value.search.toLowerCase();
+//       return (
+//         card.name.toLowerCase().includes(searchTerm) ||
+//         card.description.toLowerCase().includes(searchTerm)
+//       );
+//     }
+
+//     return true;
+//   });
+// });
+
+// const list = [
+//   { title: "Hello World", content: "This is a post." },
+//   { title: "Nuxt Search", content: "How to implement search..." },
+// ];
+// const options = { keys: ["title", "content"] };
+// const fuse = new Fuse(list, options);
+
+// const result = fuse.search("Nuxt");
+
+console.log(response);
 </script>
 
 <template>
