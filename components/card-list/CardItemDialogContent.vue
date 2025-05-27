@@ -21,7 +21,9 @@ const getCostTypesString = (costTypes: string[]): string => {
 </script>
 
 <template>
-  <DialogContent class="p-1 sm:p-2 xl:p-4 sm:max-w-[80vw] 2xl:max-w-[1280px]">
+  <DialogContent
+    class="p-4 sm:p-2 xl:p-4 sm:max-w-[80vw] 2xl:max-w-[1280px] max-h-[90dvh] h-full md:h-auto"
+  >
     <VisuallyHidden as-child>
       <DialogTitle>
         {{ $t(`cards.${item.id}.name`) }}
@@ -34,19 +36,21 @@ const getCostTypesString = (costTypes: string[]): string => {
       </DialogDescription>
     </VisuallyHidden>
 
-    <div class="">
-      <div class="flex">
+    <div class="overflow-y-auto h-full">
+      <div class="md:flex">
         <NuxtPicture
-          class="w-2/5"
+          class=""
           format="webp"
           :src="'/' + item.imagePath"
           loading="lazy"
-          :img-attrs="{ class: 'w-full' }"
+          :img-attrs="{
+            class: 'w-full max-w-[300px] md:max-w-[400px] mx-auto',
+          }"
         />
 
-        <div class="w-3/5 pl-1 sm:pl-2">
+        <div class="mt-4 md:mt-0 pl-1 sm:pl-4">
           <div class="flex items-baseline gap-1">
-            <h2 class="xl:text-2xl font-bold mb-1">
+            <h2 class="text-2xl font-semibold mb-1">
               {{ $t(`cards.${item.id}.name`) }}
             </h2>
             <span class="text-sm text-muted-foreground ml-1">
