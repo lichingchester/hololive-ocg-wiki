@@ -48,6 +48,7 @@ export type ArtsItem = {
 };
 
 export type Card = {
+  name?: string;
   arts?: ArtsItem[];
   batonTouchCount?: number;
   bloomLevelCode?: BloomLevelCodeType;
@@ -65,6 +66,7 @@ export type Card = {
   spOshiSkill?: SpOshiSkill;
   tags?: string[];
   translations?: Translations;
+  set?: string;
 };
 
 export type Keyword = {
@@ -81,10 +83,11 @@ export type SpOshiSkill = {
 };
 
 export type Translations = {
-  ja?: TranslationsJa;
+  ja?: Translation;
+  tc?: Translation;
 };
 
-export type TranslationsJa = {
+export type Translation = {
   abilityText?: string;
   cardType?: string;
   color?: string;

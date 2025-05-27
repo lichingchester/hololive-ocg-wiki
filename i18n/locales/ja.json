@@ -63,6 +63,12 @@
     "U": "U",
     "UR": "UR"
   },
+  "bloomLevel": {
+    "Debut": "Debut",
+    "1st": "1st",
+    "2nd": "2nd",
+    "Spot": "Spot"
+  },
   "cards": {
     "565": {
       "name": "姫森ルーナ",

@@ -1,14 +1,7 @@
 <script lang="ts" setup>
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Funnel, PanelTopClose } from "lucide-vue-next";
+
+const filterState = useFilterState();
 </script>
 
 <template>
@@ -24,7 +17,12 @@ import { Funnel, PanelTopClose } from "lucide-vue-next";
           <div class="font-semibold mb-2">Colors</div>
           <div class="flex flex-wrap gap-2">
             <template v-for="(color, key) in $tm('colors')" :key="key">
-              <Toggle size="sm" variant="outline" aria-label="Toggle Colors">
+              <Toggle
+                v-model="filterState.colors[key]"
+                size="sm"
+                variant="outline"
+                aria-label="Toggle Colors"
+              >
                 <NuxtPicture
                   format="webp"
                   :src="`/icons/type_${key}.png`"
@@ -41,7 +39,12 @@ import { Funnel, PanelTopClose } from "lucide-vue-next";
           <div class="font-semibold mb-2">Type</div>
           <div class="flex flex-wrap gap-2">
             <template v-for="(type, key) in $tm('cardTypes')" :key="key">
-              <Toggle size="sm" variant="outline" aria-label="Toggle Types">
+              <Toggle
+                v-model="filterState.cardTypes[key]"
+                size="sm"
+                variant="outline"
+                aria-label="Toggle Types"
+              >
                 {{ $rt(type) }}
               </Toggle>
             </template>
@@ -53,8 +56,30 @@ import { Funnel, PanelTopClose } from "lucide-vue-next";
           <div class="font-semibold mb-2">Rarity</div>
           <div class="flex flex-wrap gap-2">
             <template v-for="(rarity, key) in $tm('rarity')" :key="key">
-              <Toggle size="sm" variant="outline" aria-label="Toggle Rarity">
+              <Toggle
+                v-model="filterState.rarity[key]"
+                size="sm"
+                variant="outline"
+                aria-label="Toggle Rarity"
+              >
                 {{ $rt(rarity) }}
+              </Toggle>
+            </template>
+          </div>
+        </div>
+
+        <!-- bloomLevel -->
+        <div class="">
+          <div class="font-semibold mb-2">Bloom Level</div>
+          <div class="flex flex-wrap gap-2">
+            <template v-for="(level, key) in $tm('bloomLevel')" :key="key">
+              <Toggle
+                v-model="filterState.bloomLevel[key]"
+                size="sm"
+                variant="outline"
+                aria-label="Toggle Bloom Level"
+              >
+                {{ $rt(level) }}
               </Toggle>
             </template>
           </div>
