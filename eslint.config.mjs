@@ -8,6 +8,7 @@ export default withNuxt(
       "@typescript-eslint/no-unused-vars": "warn",
       "no-unused-vars": "warn",
       "vue/no-v-html": "off", // Allow v-html for demonstration purposes
+      "tprefer-const": "warn",
     },
   }
 );

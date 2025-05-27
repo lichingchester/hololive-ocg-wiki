@@ -48,25 +48,25 @@ export type ArtsItem = {
 };
 
 export type Card = {
-  name?: string;
+  name: string;
   arts?: ArtsItem[];
   batonTouchCount?: number;
   bloomLevelCode?: BloomLevelCodeType;
-  cardNumber?: string;
-  cardTypeCode?: CardTypeCodeType;
-  colorCode?: ColorCodeType;
+  cardNumber: string;
+  cardTypeCode: CardTypeCodeType;
+  colorCode: ColorCodeType;
   hp?: number;
-  id?: string;
-  imagePath?: string;
-  imageUrl?: string;
+  id: string;
+  imagePath: string;
+  imageUrl: string;
   keyword?: Keyword;
   life?: number;
   oshiSkill?: OshiSkill;
-  rarityCode?: RarityCodeType;
+  rarityCode: RarityCodeType;
   spOshiSkill?: SpOshiSkill;
-  tags?: string[];
-  translations?: Translations;
-  set?: string;
+  tags: string[];
+  translations: Translations;
+  set: string;
 };
 
 export type Keyword = {
