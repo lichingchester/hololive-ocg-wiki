@@ -50,61 +50,144 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
 /**
  * filter functions can be added here if needed
  */
-// const { t } = useI18n();
+const filterState = useFilterState();
+const options = {
+  keys: [
+    "id",
+    "cardNumber",
+    "cardTypeCode",
+    "colorCode",
+    "life",
+    "rarityCode",
+    "oshiSkill.cost",
+    "spOshiSkill.cost",
+    "translations.ja.name",
+    "translations.ja.name",
+    "translations.ja.cardType",
+    "translations.ja.color",
+    "translations.ja.rarity",
+    "translations.ja.set",
+    "translations.ja.illustrator",
+    "translations.ja.oshiSkill.timing",
+    "translations.ja.oshiSkill.name",
+    "translations.ja.oshiSkill.effect",
+    "translations.ja.spOshiSkill.timing",
+    "translations.ja.spOshiSkill.name",
+    "translations.ja.spOshiSkill.effect",
+    "translations.tc.name",
+    "translations.tc.name",
+    "translations.tc.cardType",
+    "translations.tc.color",
+    "translations.tc.rarity",
+    "translations.tc.set",
+    "translations.tc.illustrator",
+    "translations.tc.oshiSkill.timing",
+    "translations.tc.oshiSkill.name",
+    "translations.tc.oshiSkill.effect",
+    "translations.tc.spOshiSkill.timing",
+    "translations.tc.spOshiSkill.name",
+    "translations.tc.spOshiSkill.effect",
+  ],
+};
+const fuse = new Fuse(response, options);
 
-// const filterState = useFilterState();
-// const listForSearch = response.map((card) => {
-//   if(card.translations){
-//     card.translations.tc = {
-//       abilityText: t("cards.")
-//       // cardType
-//       // color
-//       // illustrator
-//       // name
-//       // rarity
-//       // set
-//     }
-//   }
+const result = computed(() => {
+  let filteredCards = response;
 
-//   return {
-//     ...card,
-//   };
-// });
+  // filter search term
+  if (filterState.value.search) {
+    filteredCards = fuse
+      .search(filterState.value.search)
+      .map((result) => result.item);
+  }
 
-// console.log("CardListView mounted", filterState.value.search);
+  // filter by color - using OR logic
+  if (Object.values(filterState.value.colors).some((value) => value)) {
+    // console.log("filtering by color", filterState.value.colors);
 
-// const filteredCards = computed(() => {
-//   return response.filter((card) => {
-//     // filter by search term
-//     if (filterState.value.search) {
-//       const searchTerm = filterState.value.search.toLowerCase();
-//       return (
-//         card.name.toLowerCase().includes(searchTerm) ||
-//         card.description.toLowerCase().includes(searchTerm)
-//       );
-//     }
+    // Get the selected colors
+    const selectedColors = Object.entries(filterState.value.colors)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([color]) => color);
 
-//     return true;
-//   });
-// });
+    // Return cards that match ANY selected colors (OR logic)
+    if (selectedColors.length > 0) {
+      filteredCards = filteredCards.filter((item) =>
+        selectedColors.includes(item.colorCode)
+      );
+    }
+  }
 
-// const list = [
-//   { title: "Hello World", content: "This is a post." },
-//   { title: "Nuxt Search", content: "How to implement search..." },
-// ];
-// const options = { keys: ["title", "content"] };
-// const fuse = new Fuse(list, options);
+  // filter by card type - using OR logic
+  if (Object.values(filterState.value.cardTypes).some((value) => value)) {
+    // console.log("filtering by card type", filterState.value.cardTypes);
 
-// const result = fuse.search("Nuxt");
+    // Get the selected card types
+    const selectedCardTypes = Object.entries(filterState.value.cardTypes)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([type]) => type);
 
-console.log(response);
+    // Return cards that match ANY selected card types (OR logic)
+    if (selectedCardTypes.length > 0) {
+      filteredCards = filteredCards.filter((item) =>
+        selectedCardTypes.includes(item.cardTypeCode)
+      );
+    }
+  }
+
+  // filter by rarity - using OR logic
+  if (Object.values(filterState.value.rarity).some((value) => value)) {
+    // console.log("filtering by rarity", filterState.value.rarity);
+
+    // Get the selected rarities
+    const selectedRarities = Object.entries(filterState.value.rarity)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([rarity]) => rarity);
+
+    // Return cards that match ANY selected rarities (OR logic)
+    if (selectedRarities.length > 0) {
+      filteredCards = filteredCards.filter((item) =>
+        selectedRarities.includes(item.rarityCode)
+      );
+    }
+  }
+
+  // filter by bloomLevel - using OR logic
+  if (Object.values(filterState.value.bloomLevel).some((value) => value)) {
+    // console.log("filtering by bloom level", filterState.value.bloomLevel);
+
+    // Get the selected bloom levels
+    const selectedBloomLevels = Object.entries(filterState.value.bloomLevel)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([level]) => level);
+
+    // Return cards that match ANY selected bloom levels (OR logic)
+    if (selectedBloomLevels.length > 0) {
+      filteredCards = filteredCards.filter((item) => {
+        // If bloomLevelCode doesn't exist and any bloom level is selected, filter out this card
+        if (
+          !item.hasOwnProperty("bloomLevelCode") ||
+          item.bloomLevelCode === undefined
+        ) {
+          return false;
+        }
+        // Otherwise, check if the card's bloomLevelCode matches any selected level
+        return selectedBloomLevels.includes(item.bloomLevelCode);
+      });
+    }
+  }
+
+  return filteredCards;
+});
+
+// console.log("search", result.value);
 </script>
 
 <template>
   <div v-resize-observer="onResizeObserver" class="p-1 sm:p-2">
     <RecycleScroller
       class="scroller"
-      :items="response"
+      :items="result"
       :item-size="itemSize"
       :item-secondary-size="itemSecondarySize"
       :grid-items="gridColCount"

@@ -39,9 +39,9 @@ export const useFilterState = () =>
       UR: false,
     },
     bloomLevel: {
-      Debut: false,
+      debut: false,
       "1st": false,
       "2nd": false,
-      Spot: false,
+      spot: false,
     },
   }));

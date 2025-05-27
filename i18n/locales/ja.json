@@ -64,10 +64,10 @@
     "UR": "UR"
   },
   "bloomLevel": {
-    "Debut": "Debut",
+    "debut": "Debut",
     "1st": "1st",
     "2nd": "2nd",
-    "Spot": "Spot"
+    "spot": "Spot"
   },
   "cards": {
     "565": {
