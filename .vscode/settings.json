@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["collab", "Hololive", "oshi", "shadcn", "tokkou", "vueuse"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false
+}
