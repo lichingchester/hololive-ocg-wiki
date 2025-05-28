@@ -5147,7 +5147,7 @@
     "cardNumber": "hBP03-084",
     "imagePath": "card_images/hBP03-084_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-084_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -5173,7 +5173,7 @@
     "cardNumber": "hBP03-085",
     "imagePath": "card_images/hBP03-085_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-085_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -5199,7 +5199,7 @@
     "cardNumber": "hBP03-086",
     "imagePath": "card_images/hBP03-086_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-086_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "C"
   },
   {
@@ -5433,7 +5433,7 @@
     "cardNumber": "hBP03-095",
     "imagePath": "card_images/hBP03-095_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-095_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -5459,7 +5459,7 @@
     "cardNumber": "hBP03-096",
     "imagePath": "card_images/hBP03-096_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-096_U.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "U"
   },
   {
@@ -5485,7 +5485,7 @@
     "cardNumber": "hBP03-097",
     "imagePath": "card_images/hBP03-097_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-097_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -5511,7 +5511,7 @@
     "cardNumber": "hBP03-098",
     "imagePath": "card_images/hBP03-098_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-098_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "U"
   },
   {
@@ -5537,7 +5537,7 @@
     "cardNumber": "hBP03-099",
     "imagePath": "card_images/hBP03-099_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-099_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -5563,7 +5563,7 @@
     "cardNumber": "hBP03-100",
     "imagePath": "card_images/hBP03-100_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-100_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -5589,7 +5589,7 @@
     "cardNumber": "hBP03-101",
     "imagePath": "card_images/hBP03-101_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-101_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -5615,7 +5615,7 @@
     "cardNumber": "hBP03-102",
     "imagePath": "card_images/hBP03-102_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-102_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "U"
   },
   {
@@ -5641,7 +5641,7 @@
     "cardNumber": "hBP03-103",
     "imagePath": "card_images/hBP03-103_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-103_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -5667,7 +5667,7 @@
     "cardNumber": "hBP03-104",
     "imagePath": "card_images/hBP03-104_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-104_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -7499,7 +7499,7 @@
     "cardNumber": "hSD06-011",
     "imagePath": "card_images/hSD06-011_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD06/hSD06-011_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -7525,7 +7525,7 @@
     "cardNumber": "hSD06-012",
     "imagePath": "card_images/hSD06-012_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD06/hSD06-012_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -8363,7 +8363,7 @@
     "cardNumber": "hSD05-014",
     "imagePath": "card_images/hSD05-014_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD05/hSD05-014_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -9123,7 +9123,7 @@
     "cardNumber": "hSD04-014",
     "imagePath": "card_images/hSD04-014_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD04/hSD04-014_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -9863,7 +9863,7 @@
     "cardNumber": "hSD03-013",
     "imagePath": "card_images/hSD03-013_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD03/hSD03-013_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -10624,7 +10624,7 @@
     "cardNumber": "hSD02-013",
     "imagePath": "card_images/hSD02-013_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD02/hSD02-013_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -10652,7 +10652,7 @@
     "cardNumber": "hSD02-014",
     "imagePath": "card_images/hSD02-014_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD02/hSD02-014_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "C"
   },
@@ -15210,7 +15210,7 @@
     "cardNumber": "hBP02-075",
     "imagePath": "card_images/hBP02-075_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-075_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -15236,7 +15236,7 @@
     "cardNumber": "hBP02-077",
     "imagePath": "card_images/hBP02-077_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-077_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "C"
   },
   {
@@ -15450,7 +15450,7 @@
     "cardNumber": "hBP02-086",
     "imagePath": "card_images/hBP02-086_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-086_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -15478,7 +15478,7 @@
     "cardNumber": "hBP02-087",
     "imagePath": "card_images/hBP02-087_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-087_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "tags": ["魔法"],
     "rarityCode": "C"
   },
@@ -15505,7 +15505,7 @@
     "cardNumber": "hBP02-088",
     "imagePath": "card_images/hBP02-088_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-088_U.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "U"
   },
   {
@@ -15533,7 +15533,7 @@
     "cardNumber": "hBP02-089",
     "imagePath": "card_images/hBP02-089_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-089_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "C"
   },
@@ -15562,7 +15562,7 @@
     "cardNumber": "hBP02-090",
     "imagePath": "card_images/hBP02-090_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-090_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "C"
   },
@@ -15591,7 +15591,7 @@
     "cardNumber": "hBP02-091",
     "imagePath": "card_images/hBP02-091_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-091_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "C"
   },
@@ -15620,7 +15620,7 @@
     "cardNumber": "hBP02-092",
     "imagePath": "card_images/hBP02-092_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-092_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "U"
   },
@@ -15649,7 +15649,7 @@
     "cardNumber": "hBP02-093",
     "imagePath": "card_images/hBP02-093_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-093_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "C"
   },
@@ -15676,7 +15676,7 @@
     "cardNumber": "hBP02-094",
     "imagePath": "card_images/hBP02-094_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-094_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -15702,7 +15702,7 @@
     "cardNumber": "hBP02-095",
     "imagePath": "card_images/hBP02-095_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-095_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -15728,7 +15728,7 @@
     "cardNumber": "hBP02-096",
     "imagePath": "card_images/hBP02-096_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-096_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -15754,7 +15754,7 @@
     "cardNumber": "hBP02-097",
     "imagePath": "card_images/hBP02-097_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-097_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -15780,7 +15780,7 @@
     "cardNumber": "hBP02-098",
     "imagePath": "card_images/hBP02-098_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-098_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -23827,7 +23827,7 @@
     "cardNumber": "hBP01-102",
     "imagePath": "card_images/hBP01-102_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-102_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -23853,7 +23853,7 @@
     "cardNumber": "hBP01-103",
     "imagePath": "card_images/hBP01-103_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-103_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -24029,7 +24029,7 @@
     "cardNumber": "hBP01-114",
     "imagePath": "card_images/hBP01-114_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-114_C.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "C"
   },
   {
@@ -24055,7 +24055,7 @@
     "cardNumber": "hBP01-115",
     "imagePath": "card_images/hBP01-115_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-115_U.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "U"
   },
   {
@@ -24081,7 +24081,7 @@
     "cardNumber": "hBP01-116",
     "imagePath": "card_images/hBP01-116_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-116_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24107,7 +24107,7 @@
     "cardNumber": "hBP01-117",
     "imagePath": "card_images/hBP01-117_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-117_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24133,7 +24133,7 @@
     "cardNumber": "hBP01-118",
     "imagePath": "card_images/hBP01-118_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-118_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24159,7 +24159,7 @@
     "cardNumber": "hBP01-119",
     "imagePath": "card_images/hBP01-119_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-119_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24185,7 +24185,7 @@
     "cardNumber": "hBP01-120",
     "imagePath": "card_images/hBP01-120_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-120_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24211,7 +24211,7 @@
     "cardNumber": "hBP01-121",
     "imagePath": "card_images/hBP01-121_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-121_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "C"
   },
   {
@@ -24393,7 +24393,7 @@
     "cardNumber": "hBP01-105",
     "imagePath": "card_images/hBP01-105_U.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP01/hBP01-105_U.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "U"
   },
   {
@@ -24521,7 +24521,7 @@
     "cardNumber": "hSD01-016",
     "imagePath": "card_images/hSD01-016_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD01/hSD01-016_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportStaffLimited",
     "rarityCode": "C"
   },
   {
@@ -24547,7 +24547,7 @@
     "cardNumber": "hSD01-017",
     "imagePath": "card_images/hSD01-017_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD01/hSD01-017_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportStaffLimited",
     "rarityCode": "C"
   },
   {
@@ -24599,7 +24599,7 @@
     "cardNumber": "hSD01-019",
     "imagePath": "card_images/hSD01-019_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD01/hSD01-019_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "C"
   },
   {
@@ -24653,7 +24653,7 @@
     "cardNumber": "hY01-001",
     "imagePath": "card_images/hY01-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/COMMON/hY01-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "white",
     "rarityCode": "C"
   },
@@ -24682,7 +24682,7 @@
     "cardNumber": "hY02-001",
     "imagePath": "card_images/hY02-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/COMMON/hY02-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "green",
     "rarityCode": "C"
   },
@@ -24711,7 +24711,7 @@
     "cardNumber": "hY03-001",
     "imagePath": "card_images/hY03-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/COMMON/hY03-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "C"
   },
@@ -24740,7 +24740,7 @@
     "cardNumber": "hY04-001",
     "imagePath": "card_images/hY04-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/COMMON/hY04-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "blue",
     "rarityCode": "C"
   },
@@ -24769,7 +24769,7 @@
     "cardNumber": "hY05-001",
     "imagePath": "card_images/hY05-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/COMMON/hY05-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "purple",
     "rarityCode": "C"
   },
@@ -24798,7 +24798,7 @@
     "cardNumber": "hY06-001",
     "imagePath": "card_images/hY06-001_C.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hSD07/hY06-001_C.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "yellow",
     "rarityCode": "C"
   },
@@ -24877,7 +24877,7 @@
     "cardNumber": "hBP02-077",
     "imagePath": "card_images/hBP02-077_SR.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hBP02-077_SR.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "SR"
   },
   {
@@ -24929,7 +24929,7 @@
     "cardNumber": "hSD01-019",
     "imagePath": "card_images/hSD01-019_SR.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hSD01-019_SR.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "SR"
   },
   {
@@ -30408,7 +30408,7 @@
     "cardNumber": "hBP03-084",
     "imagePath": "card_images/hBP03-084_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-084_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "S"
   },
   {
@@ -30434,7 +30434,7 @@
     "cardNumber": "hBP03-085",
     "imagePath": "card_images/hBP03-085_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-085_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "S"
   },
   {
@@ -30460,7 +30460,7 @@
     "cardNumber": "hBP03-086",
     "imagePath": "card_images/hBP03-086_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-086_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "S"
   },
   {
@@ -30694,7 +30694,7 @@
     "cardNumber": "hBP03-095",
     "imagePath": "card_images/hBP03-095_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-095_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "S"
   },
   {
@@ -30720,7 +30720,7 @@
     "cardNumber": "hBP03-096",
     "imagePath": "card_images/hBP03-096_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-096_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "S"
   },
   {
@@ -30746,7 +30746,7 @@
     "cardNumber": "hBP03-097",
     "imagePath": "card_images/hBP03-097_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-097_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "S"
   },
   {
@@ -30772,7 +30772,7 @@
     "cardNumber": "hBP03-098",
     "imagePath": "card_images/hBP03-098_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-098_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30798,7 +30798,7 @@
     "cardNumber": "hBP03-099",
     "imagePath": "card_images/hBP03-099_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-099_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30824,7 +30824,7 @@
     "cardNumber": "hBP03-100",
     "imagePath": "card_images/hBP03-100_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-100_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30850,7 +30850,7 @@
     "cardNumber": "hBP03-101",
     "imagePath": "card_images/hBP03-101_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-101_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30876,7 +30876,7 @@
     "cardNumber": "hBP03-102",
     "imagePath": "card_images/hBP03-102_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-102_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30902,7 +30902,7 @@
     "cardNumber": "hBP03-103",
     "imagePath": "card_images/hBP03-103_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-103_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -30928,7 +30928,7 @@
     "cardNumber": "hBP03-104",
     "imagePath": "card_images/hBP03-104_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hBP03-104_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -36114,7 +36114,7 @@
     "cardNumber": "hBP02-075",
     "imagePath": "card_images/hBP02-075_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-075_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "S"
   },
   {
@@ -36166,7 +36166,7 @@
     "cardNumber": "hBP02-077",
     "imagePath": "card_images/hBP02-077_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-077_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "S"
   },
   {
@@ -36432,7 +36432,7 @@
     "cardNumber": "hBP02-086",
     "imagePath": "card_images/hBP02-086_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-086_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "S"
   },
   {
@@ -36460,7 +36460,7 @@
     "cardNumber": "hBP02-087",
     "imagePath": "card_images/hBP02-087_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-087_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "tags": ["魔法"],
     "rarityCode": "S"
   },
@@ -36487,7 +36487,7 @@
     "cardNumber": "hBP02-088",
     "imagePath": "card_images/hBP02-088_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-088_S.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "S"
   },
   {
@@ -36515,7 +36515,7 @@
     "cardNumber": "hBP02-089",
     "imagePath": "card_images/hBP02-089_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-089_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "S"
   },
@@ -36544,7 +36544,7 @@
     "cardNumber": "hBP02-090",
     "imagePath": "card_images/hBP02-090_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-090_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "S"
   },
@@ -36573,7 +36573,7 @@
     "cardNumber": "hBP02-091",
     "imagePath": "card_images/hBP02-091_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-091_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "S"
   },
@@ -36602,7 +36602,7 @@
     "cardNumber": "hBP02-092",
     "imagePath": "card_images/hBP02-092_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-092_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "S"
   },
@@ -36631,7 +36631,7 @@
     "cardNumber": "hBP02-093",
     "imagePath": "card_images/hBP02-093_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-093_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "tags": ["白上'sキャラクター"],
     "rarityCode": "S"
   },
@@ -36658,7 +36658,7 @@
     "cardNumber": "hBP02-094",
     "imagePath": "card_images/hBP02-094_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-094_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -36684,7 +36684,7 @@
     "cardNumber": "hBP02-095",
     "imagePath": "card_images/hBP02-095_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-095_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -36710,7 +36710,7 @@
     "cardNumber": "hBP02-096",
     "imagePath": "card_images/hBP02-096_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-096_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -36736,7 +36736,7 @@
     "cardNumber": "hBP02-097",
     "imagePath": "card_images/hBP02-097_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-097_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -36762,7 +36762,7 @@
     "cardNumber": "hBP02-098",
     "imagePath": "card_images/hBP02-098_S.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hBP02-098_S.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportMascot",
     "rarityCode": "S"
   },
   {
@@ -39897,7 +39897,7 @@
     "cardNumber": "hBP01-102",
     "imagePath": "card_images/hBP01-102_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hBP01-102_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportItemLimited",
     "rarityCode": "P"
   },
   {
@@ -40001,7 +40001,7 @@
     "cardNumber": "hBP01-115",
     "imagePath": "card_images/hBP01-115_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hBP01-115_P.png",
-    "cardTypeCode": "supportTool",
+    "cardTypeCode": "supportItem",
     "rarityCode": "P"
   },
   {
@@ -42052,7 +42052,7 @@
     "cardNumber": "hSD01-016",
     "imagePath": "card_images/hSD01-016_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hSD01-016_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportStaffLimited",
     "rarityCode": "P"
   },
   {
@@ -42078,7 +42078,7 @@
     "cardNumber": "hSD01-016",
     "imagePath": "card_images/hSD01-016_P_02.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hSD01-016_P_02.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportStaffLimited",
     "rarityCode": "P"
   },
   {
@@ -42104,7 +42104,7 @@
     "cardNumber": "hSD01-017",
     "imagePath": "card_images/hSD01-017_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hSD01-017_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportStaffLimited",
     "rarityCode": "P"
   },
   {
@@ -43824,7 +43824,7 @@
     "cardNumber": "hY01-004",
     "imagePath": "card_images/hY01-004_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY01-004_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "white",
     "rarityCode": "SY"
   },
@@ -43853,7 +43853,7 @@
     "cardNumber": "hY02-003",
     "imagePath": "card_images/hY02-003_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY02-003_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "green",
     "rarityCode": "SY"
   },
@@ -43882,7 +43882,7 @@
     "cardNumber": "hY03-003",
     "imagePath": "card_images/hY03-003_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY03-003_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "SY"
   },
@@ -43911,7 +43911,7 @@
     "cardNumber": "hY04-003",
     "imagePath": "card_images/hY04-003_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY04-003_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "blue",
     "rarityCode": "SY"
   },
@@ -43940,7 +43940,7 @@
     "cardNumber": "hY05-003",
     "imagePath": "card_images/hY05-003_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY05-003_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "purple",
     "rarityCode": "SY"
   },
@@ -43969,7 +43969,7 @@
     "cardNumber": "hY06-002",
     "imagePath": "card_images/hY06-002_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP03/hY06-002_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "yellow",
     "rarityCode": "SY"
   },
@@ -43998,7 +43998,7 @@
     "cardNumber": "hY01-003",
     "imagePath": "card_images/hY01-003_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hY01-003_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "white",
     "rarityCode": "SY"
   },
@@ -44027,7 +44027,7 @@
     "cardNumber": "hY02-002",
     "imagePath": "card_images/hY02-002_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hY02-002_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "green",
     "rarityCode": "SY"
   },
@@ -44056,7 +44056,7 @@
     "cardNumber": "hY03-002",
     "imagePath": "card_images/hY03-002_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hY03-002_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "SY"
   },
@@ -44085,7 +44085,7 @@
     "cardNumber": "hY04-002",
     "imagePath": "card_images/hY04-002_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hY04-002_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "blue",
     "rarityCode": "SY"
   },
@@ -44114,7 +44114,7 @@
     "cardNumber": "hY05-002",
     "imagePath": "card_images/hY05-002_SY.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hBP02/hY05-002_SY.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "purple",
     "rarityCode": "SY"
   },
@@ -44143,7 +44143,7 @@
     "cardNumber": "hY01-002",
     "imagePath": "card_images/hY01-002_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY01-002_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "white",
     "rarityCode": "P"
   },
@@ -44172,7 +44172,7 @@
     "cardNumber": "hY01-005",
     "imagePath": "card_images/hY01-005_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY01-005_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "white",
     "rarityCode": "P"
   },
@@ -44201,7 +44201,7 @@
     "cardNumber": "hY02-004",
     "imagePath": "card_images/hY02-004_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY02-004_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "green",
     "rarityCode": "P"
   },
@@ -44228,7 +44228,7 @@
     "cardNumber": "hY03-005",
     "imagePath": "card_images/hY03-005_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY03-005_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "P"
   },
@@ -44255,7 +44255,7 @@
     "cardNumber": "hY03-006",
     "imagePath": "card_images/hY03-006_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY03-006_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "P"
   },
@@ -44282,7 +44282,7 @@
     "cardNumber": "hY03-007",
     "imagePath": "card_images/hY03-007_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY03-007_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "P"
   },
@@ -44309,7 +44309,7 @@
     "cardNumber": "hY03-008",
     "imagePath": "card_images/hY03-008_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY03-008_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "red",
     "rarityCode": "P"
   },
@@ -44338,7 +44338,7 @@
     "cardNumber": "hY04-004",
     "imagePath": "card_images/hY04-004_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY04-004_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "blue",
     "rarityCode": "P"
   },
@@ -44367,7 +44367,7 @@
     "cardNumber": "hY06-003",
     "imagePath": "card_images/hY06-003_P.png",
     "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hY06-003_P.png",
-    "cardTypeCode": "unknown",
+    "cardTypeCode": "supportCheer",
     "colorCode": "yellow",
     "rarityCode": "P"
   }

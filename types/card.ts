@@ -2,13 +2,14 @@ export type CardTypeCodeType =
   | "buzzCharacter"
   | "character"
   | "oshiCharacter"
+  | "supportCheer"
   | "supportEvent"
   | "supportEventLimited"
   | "supportFan"
   | "supportItem"
   | "supportItemLimited"
-  | "supportLocation"
-  | "supportTool";
+  | "supportMascot"
+  | "supportStaffLimited";
 
 export type ColorCodeType =
   | "blue"
