@@ -25,3 +25,6 @@ logs
 
 # Python
 .venv
+
+# live test
+.live-test

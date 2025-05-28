@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     baseURL: "/hololive-ocg-wiki/",
   },
 
-  ssr: false,
+  // ssr: false,
 
   css: ["~/assets/css/app.css"],
 
@@ -68,5 +68,9 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  nitro: {
+    preset: "github-pages",
   },
 });
