@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",
@@ -26,6 +27,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.27.0",
     "fuse.js": "^7.1.0",
+    "gh-pages": "^6.3.0",
     "lucide-vue-next": "^0.511.0",
     "nuxt": "^3.17.4",
     "reka-ui": "^2.2.1",

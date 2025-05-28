@@ -38,15 +38,18 @@ const getCostTypesString = (costTypes: string[]): string => {
 
     <div class="overflow-y-auto h-full">
       <div class="md:flex">
-        <NuxtPicture
-          class=""
-          format="webp"
-          :src="'/' + item.imagePath"
-          loading="lazy"
-          :img-attrs="{
-            class: 'w-full max-w-[300px] md:max-w-[400px] mx-auto',
-          }"
-        />
+        <picture>
+          <source
+            :srcset="'/' + item.imagePath.replace('.png', '.webp')"
+            type="image/webp"
+          />
+          <img
+            class="w-full max-w-[300px] md:max-w-[400px] mx-auto"
+            :src="'/' + item.imagePath"
+            alt=""
+            loading="lazy"
+          />
+        </picture>
 
         <div class="mt-4 md:mt-0 pl-1 sm:pl-4">
           <div class="flex items-baseline gap-1">
@@ -103,14 +106,22 @@ const getCostTypesString = (costTypes: string[]): string => {
             <template v-if="item.colorCode">
               <Badge class="badge-text">{{ $t("fields.color") }}</Badge>
               <div class="flex items-center gap-1">
-                <NuxtPicture
-                  format="webp"
-                  :src="`/icons/type_${
-                    item.colorCode === 'unknown' ? 'blue_red' : item.colorCode
-                  }.png`"
-                  loading="lazy"
-                  :img-attrs="{ class: 'w-5' }"
-                />
+                <picture>
+                  <source
+                    :srcset="`/icons/type_${
+                      item.colorCode === 'unknown' ? 'blue_red' : item.colorCode
+                    }.webp`"
+                    type="image/webp"
+                  />
+                  <img
+                    class="w-5"
+                    :src="`/icons/type_${
+                      item.colorCode === 'unknown' ? 'blue_red' : item.colorCode
+                    }.png`"
+                    loading="lazy"
+                  />
+                </picture>
+
                 {{ $t(`cards.${item.id}.color`) }}
               </div>
             </template>
@@ -141,12 +152,17 @@ const getCostTypesString = (costTypes: string[]): string => {
 
               <div class="flex items-center">
                 <template v-for="index in item.batonTouchCount" :key="index">
-                  <NuxtPicture
-                    format="webp"
-                    src="/icons/arts_null.png"
-                    loading="lazy"
-                    :img-attrs="{ class: 'w-6 h-6' }"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`/icons/arts_null.webp`"
+                      type="image/webp"
+                    />
+                    <img
+                      class="w-6 h-6"
+                      :src="`/icons/arts_null.png`"
+                      loading="lazy"
+                    />
+                  </picture>
                 </template>
 
                 <span class="ml-1">
@@ -216,27 +232,29 @@ const getCostTypesString = (costTypes: string[]): string => {
               <div class="">
                 <!-- image -->
                 <div v-if="item.keyword.typeCode" class="flex items-end gap-2">
-                  <NuxtPicture
-                    v-if="item.keyword.typeCode === 'collab_effect'"
-                    format="webp"
-                    src="/icons/collabEF.png"
-                    loading="lazy"
-                    :img-attrs="{ class: 'w-48' }"
-                  />
-                  <NuxtPicture
-                    v-if="item.keyword.typeCode === 'bloom_effect'"
-                    format="webp"
-                    src="/icons/bloomEF.png"
-                    loading="lazy"
-                    :img-attrs="{ class: 'w-48' }"
-                  />
-                  <NuxtPicture
-                    v-if="item.keyword.typeCode === 'gift'"
-                    format="webp"
-                    src="/icons/gift.png"
-                    loading="lazy"
-                    :img-attrs="{ class: 'w-28' }"
-                  />
+                  <picture v-if="item.keyword.typeCode === 'collab_effect'">
+                    <source
+                      :srcset="`/icons/collabEF.webp`"
+                      type="image/webp"
+                    />
+                    <img
+                      class="w-48"
+                      :src="`/icons/collabEF.png`"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <picture v-if="item.keyword.typeCode === 'bloom_effect'">
+                    <source :srcset="`/icons/bloomEF.webp`" type="image/webp" />
+                    <img
+                      class="w-48"
+                      :src="`/icons/bloomEF.png`"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <picture v-if="item.keyword.typeCode === 'gift'">
+                    <source :srcset="`/icons/gift.webp`" type="image/webp" />
+                    <img class="w-28" :src="`/icons/gift.png`" loading="lazy" />
+                  </picture>
 
                   ({{ $t(`keywordType.${item.keyword.typeCode}`) }})
                 </div>
@@ -277,14 +295,21 @@ const getCostTypesString = (costTypes: string[]): string => {
                         v-for="(costType, costTypeIndex) in art.costTypes"
                         :key="costTypeIndex"
                       >
-                        <NuxtPicture
-                          format="webp"
-                          :src="`/icons/arts_${
-                            costType === 'neutral' ? 'null' : costType
-                          }.png`"
-                          loading="lazy"
-                          :img-attrs="{ class: 'w-6 h-6' }"
-                        />
+                        <picture>
+                          <source
+                            :srcset="`/icons/arts_${
+                              costType === 'neutral' ? 'null' : costType
+                            }.webp`"
+                            type="image/webp"
+                          />
+                          <img
+                            class="w-6 h-6"
+                            :src="`/icons/arts_${
+                              costType === 'neutral' ? 'null' : costType
+                            }.png`"
+                            loading="lazy"
+                          />
+                        </picture>
                       </template>
 
                       <span class="ml-1">
@@ -308,15 +333,25 @@ const getCostTypesString = (costTypes: string[]): string => {
                       :key="specialTargetIndex"
                     >
                       <div class="flex items-center">
-                        <NuxtPicture
-                          class="inline-block"
-                          format="webp"
-                          :src="`/icons/tokkou_50_${
-                            specialTarget === 'neutral' ? 'null' : specialTarget
-                          }.png`"
-                          loading="lazy"
-                          :img-attrs="{ class: 'w-16' }"
-                        />
+                        <picture>
+                          <source
+                            :srcset="`/icons/tokkou_50_${
+                              specialTarget === 'neutral'
+                                ? 'null'
+                                : specialTarget
+                            }.webp`"
+                            type="image/webp"
+                          />
+                          <img
+                            class="w-16"
+                            :src="`/icons/tokkou_50_${
+                              specialTarget === 'neutral'
+                                ? 'null'
+                                : specialTarget
+                            }.png`"
+                            loading="lazy"
+                          />
+                        </picture>
 
                         <span class="ml-1">
                           ({{ $t("fields.tokkouColor") }}:

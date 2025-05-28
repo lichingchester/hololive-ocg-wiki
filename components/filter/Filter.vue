@@ -23,11 +23,17 @@ const filterState = useFilterState();
                 variant="outline"
                 aria-label="Toggle Colors"
               >
-                <NuxtPicture
-                  format="webp"
-                  :src="`/icons/type_${key}.png`"
-                  :img-attrs="{ class: 'w-4' }"
-                />
+                <picture>
+                  <source
+                    :srcset="`/icons/type_${key}.webp`"
+                    type="image/webp"
+                  />
+                  <img
+                    class="w-4"
+                    :src="`/icons/type_${key}.png`"
+                    loading="lazy"
+                  />
+                </picture>
                 {{ $rt(color) }}
               </Toggle>
             </template>

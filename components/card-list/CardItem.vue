@@ -10,12 +10,18 @@ defineProps<{
   <div>
     <Dialog>
       <DialogTrigger class="w-full">
-        <NuxtPicture
-          format="webp"
-          :src="'/' + item.imagePath"
-          loading="lazy"
-          :img-attrs="{ class: 'w-full' }"
-        />
+        <picture>
+          <source
+            :srcset="'/' + item.imagePath.replace('.png', '.webp')"
+            type="image/webp"
+          />
+          <img
+            :src="'/' + item.imagePath"
+            alt=""
+            class="w-full"
+            loading="lazy"
+          />
+        </picture>
       </DialogTrigger>
 
       <CardItemDialogContent :item="item" />
