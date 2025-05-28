@@ -2,11 +2,11 @@ export type CardTypeCodeType =
   | "buzzCharacter"
   | "character"
   | "oshiCharacter"
-  | "supportCheer"
   | "supportEvent"
   | "supportEventLimited"
   | "supportFan"
   | "supportItem"
+  | "supportItemLimited"
   | "supportLocation"
   | "supportTool";
 
@@ -17,7 +17,9 @@ export type ColorCodeType =
   | "red"
   | "white"
   | "yellow"
-  | "unknown"; // TODO: this is a temporary placeholder for blue_red color (ID: 614)
+  | "null"
+  | "blue_red"
+  | "white_green";
 
 export type RarityCodeType =
   | "C"

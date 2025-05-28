@@ -34,17 +34,18 @@
     "purple": "紫",
     "yellow": "黄",
     "null": "なし",
-    "blue_red": "青赤"
+    "blue_red": "青赤",
+    "white_green": "白緑"
   },
   "cardTypes": {
     "buzzCharacter": "Buzzホロメン",
     "character": "ホロメン",
     "oshiCharacter": "推しホロメン",
-    "supportCheer": "応援チア",
     "supportEvent": "応援イベント",
     "supportEventLimited": "応援イベント(LIMITED)",
     "supportFan": "応援ファン",
     "supportItem": "応援アイテム",
+    "supportItemLimited": "応援アイテム(LIMITED)",
     "supportLocation": "応援ロケーション",
     "supportTool": "応援ツール"
   },

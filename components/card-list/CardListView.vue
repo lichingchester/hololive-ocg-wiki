@@ -9,7 +9,7 @@ import CardDataJson from "@/data/cards_i18n.json";
 let cardData = CardDataJson as unknown as CardCollection;
 
 // debug
-cardData = cardData.slice(80, 100); // Limit to the first 1000 cards for performance
+// cardData = cardData.slice(80, 100); // Limit to the first 1000 cards for performance
 
 /**
  * card size and padding

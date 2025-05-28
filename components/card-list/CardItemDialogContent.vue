@@ -25,7 +25,7 @@ const getCostTypesString = (costTypes: string[]): string => {
 <template>
   <DialogContent
     hide-top-right-close
-    class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-3xl"
+    class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
   >
     <DialogHeader class="h-0 overflow-hidden">
       <DialogTitle>{{ $t(`cards.${item.id}.name`) }}</DialogTitle>
@@ -47,15 +47,17 @@ const getCostTypesString = (costTypes: string[]): string => {
           />
         </picture>
 
-        <CardDataNameBlock
-          :name="$t(`cards.${item.id}.name`)"
-          :id="item.id"
-          :number="item.cardNumber"
-        />
+        <div class="flex flex-col grow gap-2 md:gap-4">
+          <CardDataNameBlock
+            :name="$t(`cards.${item.id}.name`)"
+            :id="item.id"
+            :number="item.cardNumber"
+          />
 
-        <CardDataRowsBlock :item="item" />
+          <CardDataRowsBlock :item="item" />
 
-        <CardDataDetailBlocks :item="item" />
+          <CardDataDetailBlocks :item="item" />
+        </div>
       </div>
     </ScrollArea>
     <DialogFooter class="p-4 pt-0">

@@ -34,17 +34,18 @@
     "purple": "紫",
     "yellow": "黃",
     "null": "無色",
-    "blue_red": "藍紅"
+    "blue_red": "藍紅",
+    "white_green": "白綠"
   },
   "cardTypes": {
     "buzzCharacter": "Buzz Holo成員",
     "character": "Holo成員",
     "oshiCharacter": "推しHolo成員",
-    "supportCheer": "應援卡",
     "supportEvent": "應援活動",
     "supportEventLimited": "應援活動（LIMITED）",
     "supportFan": "粉絲卡",
     "supportItem": "道具卡",
+    "supportItemLimited": "道具卡（LIMITED）",
     "supportLocation": "場地卡",
     "supportTool": "工具卡"
   },

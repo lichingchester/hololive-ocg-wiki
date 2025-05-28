@@ -119,7 +119,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    @apply text-sm;
+    @apply text-sm md:text-base;
   }
 
   button {
@@ -127,24 +127,5 @@
   }
 }
 
-@layer components {
-  .text-1 {
-    @apply text-xs;
-  }
-  .text-2 {
-    @apply text-sm;
-  }
-  .text-3 {
-    @apply text-base;
-  }
-  .text-4 {
-    @apply text-lg;
-  }
-
-  .font-weight-1 {
-    @apply font-normal;
-  }
-  .font-weight-2 {
-    @apply font-semibold;
-  }
-}
+/* @layer components {
+} */

@@ -35,13 +35,17 @@ const getCostTypesString = (costTypes: string[]): string => {
           <Badge
             v-if="item.oshiSkill.timingCode"
             variant="outline"
-            class="text-xs"
+            class="text-xs font-semibold"
           >
             {{ $t(`cards.${item.id}.oshiSkill.timing`) }}
           </Badge>
 
           <!-- cost -->
-          <Badge v-if="item.oshiSkill.cost" variant="outline" class="text-xs">
+          <Badge
+            v-if="item.oshiSkill.cost"
+            variant="outline"
+            class="text-xs font-semibold"
+          >
             {{ $t(`fields.cost`) }}: {{ item.oshiSkill.cost }}
           </Badge>
         </div>
