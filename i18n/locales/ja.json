@@ -33,7 +33,7 @@
     "blue": "青",
     "purple": "紫",
     "yellow": "黄",
-    "neutral": "なし",
+    "null": "なし",
     "blue_red": "青赤"
   },
   "cardTypes": {

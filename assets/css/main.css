@@ -1,0 +1,12 @@
+/* transition */
+.copied-enter-active,
+.copied-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease-out;
+}
+
+.copied-enter-from,
+.copied-leave-to {
+  transition: opacity 0.2s ease, transform 0.2s ease-in;
+  opacity: 0;
+  transform: translateY(5px);
+}

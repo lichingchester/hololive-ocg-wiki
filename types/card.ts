@@ -76,10 +76,12 @@ export type Keyword = {
 
 export type OshiSkill = {
   cost?: number;
+  timingCode?: TimingCodeType;
 };
 
 export type SpOshiSkill = {
   cost?: number;
+  timingCode?: TimingCodeType;
 };
 
 export type Translations = {
