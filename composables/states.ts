@@ -22,8 +22,8 @@ export const useFilterState = () =>
       supportFan: false,
       supportItem: false,
       supportItemLimited: false,
-      supportLocation: false,
-      supportTool: false,
+      supportMascot: false,
+      supportStaffLimited: false,
     },
     rarity: {
       C: false,
@@ -42,8 +42,8 @@ export const useFilterState = () =>
     },
     bloomLevel: {
       debut: false,
-      "1st": false,
-      "2nd": false,
+      first: false,
+      second: false,
       spot: false,
     },
   }));

@@ -41,13 +41,14 @@
     "buzzCharacter": "Buzzホロメン",
     "character": "ホロメン",
     "oshiCharacter": "推しホロメン",
-    "supportEvent": "応援イベント",
-    "supportEventLimited": "応援イベント(LIMITED)",
-    "supportFan": "応援ファン",
-    "supportItem": "応援アイテム",
-    "supportItemLimited": "応援アイテム(LIMITED)",
-    "supportLocation": "応援ロケーション",
-    "supportTool": "応援ツール"
+    "supportCheer": "エール",
+    "supportEvent": "サポート・イベント",
+    "supportEventLimited": "サポート・イベント・LIMITED",
+    "supportFan": "サポート・ファン",
+    "supportItem": "サポート・ツール",
+    "supportItemLimited": "サポート・アイテム・LIMITED",
+    "supportMascot": "サポート・マスコット",
+    "supportStaffLimited": "サポート・スタッフ・LIMITED"
   },
   "rarity": {
     "C": "C",
@@ -66,8 +67,8 @@
   },
   "bloomLevel": {
     "debut": "Debut",
-    "1st": "1st",
-    "2nd": "2nd",
+    "first": "1st",
+    "second": "2nd",
     "spot": "Spot"
   },
   "cards": {
