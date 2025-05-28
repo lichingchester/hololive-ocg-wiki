@@ -6,7 +6,10 @@ import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 import Fuse from "fuse.js";
 import CardDataJson from "@/data/cards_i18n.json";
 
-const cardData = CardDataJson as unknown as CardCollection;
+let cardData = CardDataJson as unknown as CardCollection;
+
+// debug
+cardData = cardData.slice(20, 40); // Limit to the first 1000 cards for performance
 
 /**
  * card size and padding

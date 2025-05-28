@@ -14,7 +14,7 @@
     "arts": "藝能效果",
     "keyword": "關鍵字效果",
     "oshiSkill": "推し技能",
-    "spOshiSkill": "特殊推し技能",
+    "spOshiSkill": "SP推し技能",
     "batonTouchCount": "接力觸碰",
     "cost": "能量",
     "damage": "傷害",
@@ -33,7 +33,7 @@
     "blue": "藍",
     "purple": "紫",
     "yellow": "黃",
-    "neutral": "無色",
+    "null": "無色",
     "blue_red": "藍紅"
   },
   "cardTypes": {

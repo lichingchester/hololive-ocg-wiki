@@ -8,7 +8,6 @@ export const useFilterState = () =>
       blue: false,
       purple: false,
       yellow: false,
-      neutral: false,
       blue_red: false,
     },
     cardTypes: {

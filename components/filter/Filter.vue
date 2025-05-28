@@ -16,7 +16,7 @@ const filterState = useFilterState();
         <div class="">
           <div class="font-semibold mb-2">Colors</div>
           <div class="flex flex-wrap gap-2">
-            <template v-for="(color, key) in $tm('colors')" :key="key">
+            <template v-for="(value, key) in filterState.colors" :key="key">
               <Toggle
                 v-model="filterState.colors[key]"
                 size="sm"
@@ -34,7 +34,7 @@ const filterState = useFilterState();
                     loading="lazy"
                   />
                 </picture>
-                {{ $rt(color) }}
+                {{ $t(`colors.${key}`) }}
               </Toggle>
             </template>
           </div>
@@ -44,14 +44,14 @@ const filterState = useFilterState();
         <div class="">
           <div class="font-semibold mb-2">Type</div>
           <div class="flex flex-wrap gap-2">
-            <template v-for="(type, key) in $tm('cardTypes')" :key="key">
+            <template v-for="(type, key) in filterState.cardTypes" :key="key">
               <Toggle
                 v-model="filterState.cardTypes[key]"
                 size="sm"
                 variant="outline"
                 aria-label="Toggle Types"
               >
-                {{ $rt(type) }}
+                {{ $t(`cardTypes.${key}`) }}
               </Toggle>
             </template>
           </div>
@@ -61,14 +61,14 @@ const filterState = useFilterState();
         <div class="">
           <div class="font-semibold mb-2">Rarity</div>
           <div class="flex flex-wrap gap-2">
-            <template v-for="(rarity, key) in $tm('rarity')" :key="key">
+            <template v-for="(rarity, key) in filterState.rarity" :key="key">
               <Toggle
                 v-model="filterState.rarity[key]"
                 size="sm"
                 variant="outline"
                 aria-label="Toggle Rarity"
               >
-                {{ $rt(rarity) }}
+                {{ $t(`rarity.${key}`) }}
               </Toggle>
             </template>
           </div>
@@ -78,14 +78,14 @@ const filterState = useFilterState();
         <div class="">
           <div class="font-semibold mb-2">Bloom Level</div>
           <div class="flex flex-wrap gap-2">
-            <template v-for="(level, key) in $tm('bloomLevel')" :key="key">
+            <template v-for="(level, key) in filterState.bloomLevel" :key="key">
               <Toggle
                 v-model="filterState.bloomLevel[key]"
                 size="sm"
                 variant="outline"
                 aria-label="Toggle Bloom Level"
               >
-                {{ $rt(level) }}
+                {{ $t(`bloomLevel.${key}`) }}
               </Toggle>
             </template>
           </div>
