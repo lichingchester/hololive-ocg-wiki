@@ -9,6 +9,8 @@ export const useFilterState = () =>
       purple: false,
       yellow: false,
       blue_red: false,
+      white_green: false,
+      null: false,
     },
     cardTypes: {
       buzzCharacter: false,
@@ -19,6 +21,7 @@ export const useFilterState = () =>
       supportEventLimited: false,
       supportFan: false,
       supportItem: false,
+      supportItemLimited: false,
       supportLocation: false,
       supportTool: false,
     },

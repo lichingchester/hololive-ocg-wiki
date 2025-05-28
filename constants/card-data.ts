@@ -6,6 +6,8 @@ export const COLORS = [
   "purple",
   "yellow",
   "blue_red",
+  "white_green",
+  "null",
 ];
 
 export const CARD_TYPES = [
