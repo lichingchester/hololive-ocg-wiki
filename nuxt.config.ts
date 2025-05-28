@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
+  app: {
+    baseURL: "/hololive-ocg-wiki/",
+  },
+
   ssr: false,
 
   css: ["~/assets/css/app.css"],
