@@ -26,7 +26,7 @@
     "bloom_effect": "ブルームエフェクト",
     "gift": "ギフト"
   },
-  "color": {
+  "colors": {
     "white": "白",
     "green": "緑",
     "red": "赤",
