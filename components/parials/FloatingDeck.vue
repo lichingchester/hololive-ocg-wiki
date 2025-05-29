@@ -16,9 +16,8 @@ watch(
   currentDeck,
   (newDeck, oldDeck) => {
     if (newDeck && newDeck.id !== oldDeck?.id) {
-      console.log("FloatingDeck: currentDeck changed", newDeck);
-      isActive.value = true;
       decks.isEditing.value = true;
+      isActive.value = true;
     }
   },
   { immediate: true }

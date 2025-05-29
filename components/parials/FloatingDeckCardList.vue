@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CircleMinus, CirclePlus } from "lucide-vue-next";
 import CardDataJson from "@/data/cards_i18n.json";
+import type { Card } from "~/types/card";
 
 const props = defineProps<{
   cardIds: string[];
@@ -34,6 +35,10 @@ const getImagePath = (cardId: string) => {
   const card = CardDataJson.find((c) => c.id === cardId);
   return card ? `${card.imagePath}` : "";
 };
+
+const getCard = (cardId: string): Card => {
+  return CardDataJson.find((c) => c.id === cardId) as unknown as Card;
+};
 </script>
 
 <template>
@@ -41,18 +46,24 @@ const getImagePath = (cardId: string) => {
     <!-- <TransitionGroup name="list"> -->
     <template v-for="(item, index) in uniqueCards" :key="index">
       <div class="relative">
-        <picture>
-          <source
-            :srcset="getImagePath(item.cardId).replace('.png', '.webp')"
-            type="image/webp"
-          />
-          <img
-            :src="getImagePath(item.cardId)"
-            alt=""
-            class=""
-            loading="lazy"
-          />
-        </picture>
+        <Dialog>
+          <DialogTrigger class="">
+            <picture>
+              <source
+                :srcset="getImagePath(item.cardId).replace('.png', '.webp')"
+                type="image/webp"
+              />
+              <img
+                :src="getImagePath(item.cardId)"
+                alt=""
+                class=""
+                loading="lazy"
+              />
+            </picture>
+          </DialogTrigger>
+
+          <CardItemDialogContent :item="getCard(item.cardId)" />
+        </Dialog>
 
         <!-- actions -->
         <button

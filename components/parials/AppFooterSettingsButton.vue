@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Settings } from "lucide-vue-next";
+import { CircleEllipsis } from "lucide-vue-next";
 import { toast } from "vue-sonner";
 import { useClipboard } from "@vueuse/core";
 
@@ -31,8 +31,8 @@ const shareDeck = () => {
     <DropdownMenu>
       <DropdownMenuTrigger as-child>
         <Button variant="outline">
-          <Settings />
-          <span class="hidden md:inline-flex"> Settings </span>
+          <CircleEllipsis />
+          <span class="hidden md:inline-flex"> Options </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
