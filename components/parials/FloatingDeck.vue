@@ -10,8 +10,8 @@ const toggleFloatingDeck = () => {
 };
 
 const isEditing = computed(() => decks.isEditing.value);
-
 const currentDeck = computed(() => decks.currentDeck.value);
+
 watch(
   currentDeck,
   (newDeck, oldDeck) => {
