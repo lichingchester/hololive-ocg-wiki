@@ -4,7 +4,7 @@ import "vue-sonner/style.css"; // vue-sonner v2 requires this import
 </script>
 
 <template>
-  <Toaster rich-colors close-button />
+  <Toaster rich-colors close-button position="top-center" />
 
   <NuxtLayout>
     <NuxtPage />

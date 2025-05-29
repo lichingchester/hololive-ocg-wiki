@@ -2,7 +2,7 @@ import type { Card } from "./card";
 
 export type Deck = {
   // 1
-  oshiCard: Card | null;
+  oshiCards: Card[];
 
   // 50
   mainCards: Card[];
@@ -10,6 +10,7 @@ export type Deck = {
   // 20
   yellCards: Card[];
 
+  id: string;
   name?: string;
   author?: string;
 };

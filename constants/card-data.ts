@@ -1,3 +1,5 @@
+// TODO: improve this
+
 export const COLORS = [
   "white",
   "green",
@@ -22,6 +24,18 @@ export const CARD_TYPES = [
   "supportLocation",
   "supportTool",
 ];
+export const CARD_TYPE_OSHI = ["oshiCharacter"];
+export const CARD_TYPE_MAIN = [
+  "buzzCharacter",
+  "character",
+  "supportEvent",
+  "supportEventLimited",
+  "supportFan",
+  "supportItem",
+  "supportLocation",
+  "supportTool",
+];
+export const CARD_TYPE_YELL = ["supportCheer"];
 
 export const CARD_RARITIES = [
   "C",
