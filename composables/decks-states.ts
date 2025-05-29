@@ -191,10 +191,17 @@ export const useDecks = () => {
     );
 
     // Create the URL with the encoded deck data
-    const url = new URL(window.location.href);
-    url.searchParams.set("sharedDeck", encodedDeck);
+    const localePath = useLocalePath();
+    const baseUrl = window.location.origin;
 
-    return url.toString();
+    const path = localePath({
+      name: "deck-code",
+      params: { code: encodedDeck },
+    });
+
+    const fullUrl = `${baseUrl}${path}`;
+
+    return fullUrl;
   };
 
   // Helper function to compress arrays of card IDs into {id: count} format

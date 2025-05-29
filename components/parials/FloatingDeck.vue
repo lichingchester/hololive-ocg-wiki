@@ -38,7 +38,10 @@ const yellCardIds = computed(() => {
 
 <template>
   <Transition name="fade-up">
-    <div v-if="isEditing" class="fixed bottom-full left-0 m-2 md:m-4 z-40">
+    <div
+      v-if="isEditing"
+      class="fixed bottom-13 md:bottom-16 left-0 m-2 md:m-4 z-40"
+    >
       <div class="bg-background/95 rounded-lg shadow-lg border">
         <div class="flex p-2">
           <Button

@@ -17,9 +17,7 @@ const shareDeck = () => {
       toast.error("Clipboard is not supported in this browser.");
       return;
     }
-    toast.success(
-      `Copied deck "${currentDeck.value.name}" sharing URL: ${source.value}`
-    );
+    toast.success(`Copied deck "${currentDeck.value.name}" sharing URL.`);
   } else {
     toast.warning("Select one deck to share.");
   }
@@ -37,7 +35,7 @@ const shareDeck = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem @click="shareDeck">
-          Share Current Deck
+          Copy current deck share URL
         </DropdownMenuItem>
         <!-- <DropdownMenuItem>Export Decks</DropdownMenuItem>
         <DropdownMenuItem>Import Decks</DropdownMenuItem> -->

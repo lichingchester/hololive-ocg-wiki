@@ -1,8 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AppHeader />
+  <div>
+    <AppHeader />
 
-  <!-- Card List -->
-  <CardListView />
+    <!-- Card List -->
+    <CardListView />
+
+    <!-- <FloatingDeck /> -->
+  </div>
 </template>
