@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",
@@ -18,6 +19,7 @@
     "@nuxtjs/i18n": "^9.5.4",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@tailwindcss/vite": "^4.1.7",
+    "@tanstack/vue-table": "^8.21.3",
     "@unhead/vue": "^2.0.9",
     "@vueuse/components": "^13.2.0",
     "@vueuse/core": "^13.3.0",
@@ -26,9 +28,10 @@
     "clsx": "^2.1.1",
     "eslint": "^9.27.0",
     "fuse.js": "^7.1.0",
+    "gh-pages": "^6.3.0",
     "lucide-vue-next": "^0.511.0",
     "nuxt": "^3.17.4",
-    "reka-ui": "^2.2.1",
+    "reka-ui": "^2.3.0",
     "shadcn-nuxt": "^2.1.0",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.7",
@@ -37,6 +40,7 @@
     "vue": "^3.5.14",
     "vue-i18n": "^11.1.4",
     "vue-router": "^4.5.1",
+    "vue-sonner": "^2.0.0",
     "vue-virtual-scroller": "^2.0.0-beta.8"
   },
   "devDependencies": {

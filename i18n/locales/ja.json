@@ -26,27 +26,29 @@
     "bloom_effect": "ブルームエフェクト",
     "gift": "ギフト"
   },
-  "color": {
+  "colors": {
     "white": "白",
     "green": "緑",
     "red": "赤",
     "blue": "青",
     "purple": "紫",
     "yellow": "黄",
-    "neutral": "なし",
-    "blue_red": "青赤"
+    "null": "なし",
+    "blue_red": "青赤",
+    "white_green": "白緑"
   },
   "cardTypes": {
     "buzzCharacter": "Buzzホロメン",
     "character": "ホロメン",
     "oshiCharacter": "推しホロメン",
-    "supportCheer": "応援チア",
-    "supportEvent": "応援イベント",
-    "supportEventLimited": "応援イベント(LIMITED)",
-    "supportFan": "応援ファン",
-    "supportItem": "応援アイテム",
-    "supportLocation": "応援ロケーション",
-    "supportTool": "応援ツール"
+    "supportCheer": "エール",
+    "supportEvent": "サポート・イベント",
+    "supportEventLimited": "サポート・イベント・LIMITED",
+    "supportFan": "サポート・ファン",
+    "supportItem": "サポート・ツール",
+    "supportItemLimited": "サポート・アイテム・LIMITED",
+    "supportMascot": "サポート・マスコット",
+    "supportStaffLimited": "サポート・スタッフ・LIMITED"
   },
   "rarity": {
     "C": "C",
@@ -65,8 +67,8 @@
   },
   "bloomLevel": {
     "debut": "Debut",
-    "1st": "1st",
-    "2nd": "2nd",
+    "first": "1st",
+    "second": "2nd",
     "spot": "Spot"
   },
   "cards": {

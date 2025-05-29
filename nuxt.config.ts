@@ -8,9 +8,32 @@ export default defineNuxtConfig({
 
   app: {
     baseURL: "/hololive-ocg-wiki/",
+
+    head: {
+      title: "Hololive OCG Wiki",
+      meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { charset: "utf-8" },
+        {
+          name: "description",
+          content:
+            "A fan-made wiki for Hololive OCG, featuring card information, deck building, and more.",
+        },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+      ],
+      base: {
+        href: "/hololive-ocg-wiki/",
+      },
+    },
   },
 
-  ssr: false,
+  // ssr: false,
 
   css: ["~/assets/css/app.css"],
 
@@ -68,5 +91,9 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  nitro: {
+    preset: "github-pages",
   },
 });

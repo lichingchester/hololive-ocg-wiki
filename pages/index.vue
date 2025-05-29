@@ -1,6 +1,8 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>
-    <!-- Card List -->
-    <CardListView />
-  </div>
+  <AppHeader />
+
+  <!-- Card List -->
+  <CardListView />
 </template>

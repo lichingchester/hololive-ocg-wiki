@@ -14,11 +14,11 @@
     "arts": "藝能效果",
     "keyword": "關鍵字效果",
     "oshiSkill": "推し技能",
-    "spOshiSkill": "特殊推し技能",
+    "spOshiSkill": "SP推し技能",
     "batonTouchCount": "接力觸碰",
     "cost": "能量",
     "damage": "傷害",
-    "tokkouColor": "特攻顏色",
+    "tokkouColor": "特攻",
     "ability": "能力"
   },
   "keywordType": {
@@ -33,20 +33,22 @@
     "blue": "藍",
     "purple": "紫",
     "yellow": "黃",
-    "neutral": "無色",
-    "blue_red": "藍紅"
+    "null": "無色",
+    "blue_red": "藍紅",
+    "white_green": "白綠"
   },
   "cardTypes": {
     "buzzCharacter": "Buzz Holo成員",
     "character": "Holo成員",
     "oshiCharacter": "推しHolo成員",
-    "supportCheer": "應援卡",
-    "supportEvent": "應援活動",
-    "supportEventLimited": "應援活動（LIMITED）",
-    "supportFan": "粉絲卡",
-    "supportItem": "道具卡",
-    "supportLocation": "場地卡",
-    "supportTool": "工具卡"
+    "supportCheer": "應援",
+    "supportEvent": "支援・活動",
+    "supportEventLimited": "支援・活動・LIMITED",
+    "supportFan": "支援・粉絲",
+    "supportItem": "支援・道具",
+    "supportItemLimited": "支援・道具・LIMITED",
+    "supportMascot": "支援・吉祥物",
+    "supportStaffLimited": "支援・工作人員・LIMITED"
   },
   "rarity": {
     "C": "C",
@@ -65,8 +67,8 @@
   },
   "bloomLevel": {
     "debut": "Debut",
-    "1st": "1st",
-    "2nd": "2nd",
+    "first": "1st",
+    "second": "2nd",
     "spot": "Spot"
   },
   "cards": {

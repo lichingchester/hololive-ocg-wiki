@@ -1,9 +1,9 @@
 <template>
   <div class="relative flex min-h-svh flex-col bg-background">
-    <AppHeader />
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
-    <!-- <AppFooter /> -->
+
+    <AppFooter />
   </div>
 </template>

@@ -4,8 +4,16 @@ import { RecycleScroller } from "vue-virtual-scroller";
 import type { CardCollection } from "@/types/card";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 import Fuse from "fuse.js";
+import CardDataJson from "@/data/cards_i18n.json";
 
-const response: CardCollection = await $fetch("/data/cards_i18n.json");
+let cardData = CardDataJson as unknown as CardCollection;
+
+// debug
+// cardData = [
+//   ...cardData.slice(0, 5),
+//   ...cardData.slice(70, 80),
+//   ...cardData.slice(400, 500),
+// ]; // Limit to the first 1000 cards for performance
 
 /**
  * card size and padding
@@ -89,10 +97,10 @@ const options = {
     "translations.tc.spOshiSkill.effect",
   ],
 };
-const fuse = new Fuse(response, options);
+const fuse = new Fuse(cardData, options);
 
 const result = computed(() => {
-  let filteredCards = response;
+  let filteredCards = cardData;
 
   // filter search term
   if (filterState.value.search) {
@@ -199,6 +207,8 @@ const result = computed(() => {
         </div>
       </template>
     </RecycleScroller>
+
+    <div class="h-[20vh]"></div>
   </div>
 </template>
 

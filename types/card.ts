@@ -7,8 +7,9 @@ export type CardTypeCodeType =
   | "supportEventLimited"
   | "supportFan"
   | "supportItem"
-  | "supportLocation"
-  | "supportTool";
+  | "supportItemLimited"
+  | "supportMascot"
+  | "supportStaffLimited";
 
 export type ColorCodeType =
   | "blue"
@@ -17,7 +18,9 @@ export type ColorCodeType =
   | "red"
   | "white"
   | "yellow"
-  | "unknown"; // TODO: this is a temporary placeholder for blue_red color (ID: 614)
+  | "null"
+  | "blue_red"
+  | "white_green";
 
 export type RarityCodeType =
   | "C"
@@ -76,10 +79,12 @@ export type Keyword = {
 
 export type OshiSkill = {
   cost?: number;
+  timingCode?: TimingCodeType;
 };
 
 export type SpOshiSkill = {
   cost?: number;
+  timingCode?: TimingCodeType;
 };
 
 export type Translations = {
