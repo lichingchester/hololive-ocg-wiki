@@ -1,0 +1,49 @@
+<script setup lang="ts">
+import { toast } from "vue-sonner";
+
+const decks = useDecks();
+
+const isEditing = computed(() => decks.isEditing.value);
+const currentDeck = computed(() => decks.currentDeck.value);
+
+const toggleEditing = () => {
+  if (decks.currentDeck.value === null) {
+    toast.info("Please select a deck to edit.");
+    return;
+  }
+
+  decks.toggleEditing();
+};
+</script>
+
+<template>
+  <div class="flex items-center gap-2 text-sm">
+    <button @click="toggleEditing">
+      <Badge
+        variant="outline"
+        class="text-xs"
+        :class="
+          isEditing
+            ? 'bg-emerald-500/15 border-emerald-500'
+            : 'bg-gray-500/15 border-gray-500'
+        "
+      >
+        <span class="relative flex size-1.5 mr-1">
+          <span
+            class="absolute inline-flex h-full w-full rounded-full opacity-75"
+            :class="isEditing ? 'animate-ping bg-emerald-400' : 'bg-gray-400'"
+          ></span>
+          <span
+            class="relative inline-flex size-1.5 rounded-full"
+            :class="isEditing ? 'bg-emerald-500' : 'bg-gray-500'"
+          ></span>
+        </span>
+        Edit
+      </Badge>
+    </button>
+
+    <!-- <Badge variant=""> -->
+    {{ currentDeck?.name || "Select one deck to edit" }}
+    <!-- </Badge> -->
+  </div>
+</template>
