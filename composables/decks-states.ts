@@ -1,3 +1,4 @@
+import type { Card } from "~/types/card";
 import type { Deck, DeckCollection } from "~/types/deck";
 import {
   CARD_TYPE_OSHI,

@@ -17,11 +17,11 @@ const toggleEditing = () => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2 text-sm">
+  <div class="flex items-center gap-2 md:gap-4">
     <button @click="toggleEditing">
       <Badge
         variant="outline"
-        class="text-xs"
+        class="text-xs md:text-sm"
         :class="
           isEditing
             ? 'bg-emerald-500/15 border-emerald-500'
@@ -42,8 +42,8 @@ const toggleEditing = () => {
       </Badge>
     </button>
 
-    <!-- <Badge variant=""> -->
-    {{ currentDeck?.name || "Select one deck to edit" }}
-    <!-- </Badge> -->
+    <span class="text-sm md:text-lg">
+      {{ currentDeck?.name || "Select one deck to edit" }}
+    </span>
   </div>
 </template>

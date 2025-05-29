@@ -21,8 +21,9 @@ export const CARD_TYPES = [
   "supportEventLimited",
   "supportFan",
   "supportItem",
-  "supportLocation",
-  "supportTool",
+  "supportItemLimited",
+  "supportMascot",
+  "supportStaffLimited",
 ];
 export const CARD_TYPE_OSHI = ["oshiCharacter"];
 export const CARD_TYPE_MAIN = [
@@ -32,8 +33,9 @@ export const CARD_TYPE_MAIN = [
   "supportEventLimited",
   "supportFan",
   "supportItem",
-  "supportLocation",
-  "supportTool",
+  "supportItemLimited",
+  "supportMascot",
+  "supportStaffLimited",
 ];
 export const CARD_TYPE_YELL = ["supportCheer"];
 

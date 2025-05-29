@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FilePlus2, CircleMinus, CirclePlus } from "lucide-vue-next";
+import { CircleMinus, CirclePlus } from "lucide-vue-next";
 import type { Card } from "@/types/card";
 
 const props = defineProps<{
@@ -48,31 +48,31 @@ const count = computed(() => {
     <!-- actions -->
     <button
       v-if="isEditing"
-      class="absolute bottom-3 left-2/4 -translate-x-2/4 w-[80%] bg-secondary/90 rounded-sm"
+      class="absolute bottom-3 md:bottom-5 left-2/4 -translate-x-2/4 w-[calc(100%_-_2rem)] bg-secondary/90 rounded-sm md:py-0.5"
       @click="add"
     >
-      <div class="flex items-center gap-1 justify-center text-xs">
-        <CirclePlus class="w-3" />
+      <div class="flex items-center gap-1 justify-center text-xs md:text-sm">
+        <CirclePlus class="w-3 md:w-4" />
         Add
       </div>
     </button>
     <button
       v-if="isEditing && count > 0"
-      class="absolute top-3 right-3 bg-red-500/90 rounded-sm size-6"
+      class="absolute top-3 right-3 bg-red-500/90 rounded-sm size-6 md:size-8"
       @click="remove"
     >
       <div class="flex items-center justify-center text-xs">
-        <CircleMinus class="w-3 text-white" />
+        <CircleMinus class="w-3 md:w-4 text-white" />
       </div>
     </button>
 
     <!-- count -->
     <div
       v-if="isEditing && count > 0"
-      class="absolute top-0 left-0 bg-primary/90 rounded-full size-4 flex items-center justify-center"
+      class="absolute top-0 left-0 bg-primary/95 rounded-full size-4 md:size-6 flex items-center justify-center"
     >
       <div
-        class="flex items-center justify-center text-[8px] text-white dark:text-black leading-none font-semibold"
+        class="flex items-center justify-center text-[8px] md:text-xs text-white dark:text-black leading-none font-semibold"
       >
         {{ count || 0 }}
       </div>
