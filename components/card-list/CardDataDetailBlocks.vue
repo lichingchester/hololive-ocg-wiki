@@ -126,16 +126,16 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex gap-2">
           <picture v-if="item.keyword.typeCode === 'collab_effect'">
-            <source :srcset="`/icons/collabEF.webp`" type="image/webp" />
-            <img class="w-28" :src="`/icons/collabEF.png`" loading="lazy" />
+            <source :srcset="`icons/collabEF.webp`" type="image/webp" />
+            <img class="w-28" :src="`icons/collabEF.png`" loading="lazy" />
           </picture>
           <picture v-if="item.keyword.typeCode === 'bloom_effect'">
-            <source :srcset="`/icons/bloomEF.webp`" type="image/webp" />
-            <img class="w-28" :src="`/icons/bloomEF.png`" loading="lazy" />
+            <source :srcset="`icons/bloomEF.webp`" type="image/webp" />
+            <img class="w-28" :src="`icons/bloomEF.png`" loading="lazy" />
           </picture>
           <picture v-if="item.keyword.typeCode === 'gift'">
-            <source :srcset="`/icons/gift.webp`" type="image/webp" />
-            <img class="w-14" :src="`/icons/gift.png`" loading="lazy" />
+            <source :srcset="`icons/gift.webp`" type="image/webp" />
+            <img class="w-14" :src="`icons/gift.png`" loading="lazy" />
           </picture>
         </div>
       </div>
@@ -176,12 +176,12 @@ const getCostTypesString = (costTypes: string[]): string => {
                   "
                 >
                   <source
-                    :srcset="`/icons/arts_${costType}.webp`"
+                    :srcset="`icons/arts_${costType}.webp`"
                     type="image/webp"
                   />
                   <img
                     class="size-6 min-w-6 min-h-6"
-                    :src="`/icons/arts_${costType}.png`"
+                    :src="`icons/arts_${costType}.png`"
                     loading="lazy"
                   />
                 </picture>
@@ -210,14 +210,14 @@ const getCostTypesString = (costTypes: string[]): string => {
                   <div class="flex items-center">
                     <picture>
                       <source
-                        :srcset="`/icons/tokkou_50_${
+                        :srcset="`icons/tokkou_50_${
                           specialTarget === 'neutral' ? 'null' : specialTarget
                         }.webp`"
                         type="image/webp"
                       />
                       <img
                         class="w-12 min-w-8"
-                        :src="`/icons/tokkou_50_${
+                        :src="`icons/tokkou_50_${
                           specialTarget === 'neutral' ? 'null' : specialTarget
                         }.png`"
                         loading="lazy"

@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { Card, CardCollection } from "~/types/card";
 import { CircleMinus, CirclePlus } from "lucide-vue-next";
+import CardDataJson from "@/data/cards_i18n.json";
 
 const props = defineProps<{
-  cards: CardCollection;
+  cardIds: string[];
 }>();
 
 // Group cards by ID and count occurrences
 const uniqueCards = computed(() => {
   const cardMap = new Map();
 
-  props.cards.forEach((card) => {
-    if (!cardMap.has(card.id)) {
-      cardMap.set(card.id, { card, count: 0 });
+  props.cardIds.forEach((cardId) => {
+    if (!cardMap.has(cardId)) {
+      cardMap.set(cardId, { cardId, count: 0 });
     }
-    cardMap.get(card.id).count++;
+    cardMap.get(cardId).count++;
   });
 
   return Array.from(cardMap.values());
@@ -22,12 +22,17 @@ const uniqueCards = computed(() => {
 
 const decks = useDecks();
 
-const add = ({ card }: { card: Card }) => {
-  decks.addCardToDeck(card);
+const add = ({ cardId }: { cardId: string }) => {
+  decks.addCardToDeck(cardId);
 };
 
-const remove = ({ card }: { card: Card }) => {
-  decks.removeCardFromDeck(card);
+const remove = ({ cardId }: { cardId: string }) => {
+  decks.removeCardFromDeck(cardId);
+};
+
+const getImagePath = (cardId: string) => {
+  const card = CardDataJson.find((c) => c.id === cardId);
+  return card ? `${card.imagePath}` : "";
 };
 </script>
 
@@ -38,11 +43,11 @@ const remove = ({ card }: { card: Card }) => {
       <div class="relative">
         <picture>
           <source
-            :srcset="'/' + item.card.imagePath.replace('.png', '.webp')"
+            :srcset="getImagePath(item.cardId).replace('.png', '.webp')"
             type="image/webp"
           />
           <img
-            :src="'/' + item.card.imagePath"
+            :src="getImagePath(item.cardId)"
             alt=""
             class=""
             loading="lazy"

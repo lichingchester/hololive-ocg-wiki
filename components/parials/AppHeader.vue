@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// import { Input } from "@/components/ui/input";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header
@@ -17,6 +15,7 @@
       <div class="flex ml-auto">
         <AppLanguageSwitcher />
         <AppColorModeSwitcher />
+        <AppInfoButton />
       </div>
     </div>
   </header>

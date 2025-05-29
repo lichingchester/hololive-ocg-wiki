@@ -1,14 +1,12 @@
-import type { Card } from "./card";
-
 export type Deck = {
   // 1
-  oshiCards: Card[];
+  oshiCardIds: string[];
 
   // 50
-  mainCards: Card[];
+  mainCardIds: string[];
 
   // 20
-  yellCards: Card[];
+  yellCardIds: string[];
 
   id: string;
   name?: string;

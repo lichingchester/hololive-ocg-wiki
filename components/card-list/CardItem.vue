@@ -11,16 +11,16 @@ const isEditing = computed(() => decks.isEditing.value);
 
 const add = () => {
   if (!isEditing.value) return;
-  decks.addCardToDeck(props.item);
+  decks.addCardToDeck(props.item.id);
 };
 
 const remove = () => {
   if (!isEditing.value) return;
-  decks.removeCardFromDeck(props.item);
+  decks.removeCardFromDeck(props.item.id);
 };
 
 const count = computed(() => {
-  return decks.getCardCount(props.item);
+  return decks.getCardCount(props.item.id);
 });
 </script>
 
@@ -30,11 +30,11 @@ const count = computed(() => {
       <DialogTrigger class="w-full">
         <picture>
           <source
-            :srcset="'/' + item.imagePath.replace('.png', '.webp')"
+            :srcset="'' + item.imagePath.replace('.png', '.webp')"
             type="image/webp"
           />
           <img
-            :src="'/' + item.imagePath"
+            :src="'' + item.imagePath"
             alt=""
             class="w-full"
             loading="lazy"

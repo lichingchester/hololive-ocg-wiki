@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Expand } from "lucide-vue-next";
+import { Expand, Shrink } from "lucide-vue-next";
 import { Separator } from "@/components/ui/separator";
 
 const decks = useDecks();
@@ -11,16 +11,29 @@ const toggleFloatingDeck = () => {
 
 const isEditing = computed(() => decks.isEditing.value);
 
-const oshiCards = computed(() => {
-  return decks.currentDeck.value?.oshiCards || [];
+const currentDeck = computed(() => decks.currentDeck.value);
+watch(
+  currentDeck,
+  (newDeck, oldDeck) => {
+    if (newDeck && newDeck.id !== oldDeck?.id) {
+      console.log("FloatingDeck: currentDeck changed", newDeck);
+      isActive.value = true;
+      decks.isEditing.value = true;
+    }
+  },
+  { immediate: true }
+);
+
+const oshiCardIds = computed(() => {
+  return decks.currentDeck.value?.oshiCardIds || [];
 });
 
-const mainCards = computed(() => {
-  return decks.currentDeck.value?.mainCards || [];
+const mainCardIds = computed(() => {
+  return decks.currentDeck.value?.mainCardIds || [];
 });
 
-const yellCards = computed(() => {
-  return decks.currentDeck.value?.yellCards || [];
+const yellCardIds = computed(() => {
+  return decks.currentDeck.value?.yellCardIds || [];
 });
 </script>
 
@@ -32,10 +45,11 @@ const yellCards = computed(() => {
           <Button
             size="sm"
             class="text-[12px] md:text-sm"
-            @click="isActive = !isActive"
+            @click="toggleFloatingDeck"
           >
-            <Expand class="size-3 md:size-4" />
-            Expand
+            <Expand v-if="!isActive" class="size-3 md:size-4" />
+            <Shrink v-else class="size-3 md:size-4" />
+            {{ !isActive ? "Expand" : "Collapse" }}
           </Button>
         </div>
 
@@ -50,22 +64,22 @@ const yellCards = computed(() => {
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
                     :class="
-                      oshiCards.length > 1
+                      oshiCardIds.length > 1
                         ? 'bg-red-500/15 border-red-500/50 text-red-500'
-                        : oshiCards.length === 1
+                        : oshiCardIds.length === 1
                         ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-500'
                         : 'border-gray-400 dark:border-gray-600 bg-gray-400/20 dark:bg-gray-600/20 text-gray-700 dark:text-gray-400'
                     "
                     variant="outline"
                     size="sm"
                   >
-                    {{ `${oshiCards.length}/1` }}
+                    {{ `${oshiCardIds.length}/1` }}
                   </Badge>
                 </div>
 
                 <FloatingDeckCardList
                   v-if="isActive"
-                  :cards="oshiCards"
+                  :card-ids="oshiCardIds"
                   class="mt-2"
                 />
               </div>
@@ -80,21 +94,21 @@ const yellCards = computed(() => {
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
                     :class="
-                      oshiCards.length > 50
+                      mainCardIds.length > 50
                         ? 'bg-red-500/15 border-red-500/50 text-red-500'
-                        : oshiCards.length === 50
+                        : mainCardIds.length === 50
                         ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-500'
                         : 'border-gray-400 dark:border-gray-600 bg-gray-400/20 dark:bg-gray-600/20 text-gray-700 dark:text-gray-400'
                     "
                     variant="outline"
                     size="sm"
                   >
-                    {{ `${mainCards.length}/50` }}
+                    {{ `${mainCardIds.length}/50` }}
                   </Badge>
                 </div>
                 <FloatingDeckCardList
                   v-if="isActive"
-                  :cards="mainCards"
+                  :card-ids="mainCardIds"
                   class="mt-2"
                 />
               </div>
@@ -110,21 +124,21 @@ const yellCards = computed(() => {
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
                     :class="
-                      oshiCards.length > 20
+                      yellCardIds.length > 20
                         ? 'bg-red-500/15 border-red-500/50 text-red-500'
-                        : oshiCards.length === 20
+                        : yellCardIds.length === 20
                         ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-500'
                         : 'border-gray-400 dark:border-gray-600 bg-gray-400/20 dark:bg-gray-600/20 text-gray-700 dark:text-gray-400'
                     "
                     variant="outline"
                     size="sm"
                   >
-                    {{ `${yellCards.length}/20` }}
+                    {{ `${yellCardIds.length}/20` }}
                   </Badge>
                 </div>
                 <FloatingDeckCardList
                   v-if="isActive"
-                  :cards="yellCards"
+                  :card-ids="yellCardIds"
                   class="mt-2"
                 />
               </div>
