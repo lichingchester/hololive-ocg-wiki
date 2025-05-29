@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{c as o,o as c}from"./PUBalsEI.js";const t={},n={class:"container mx-auto p-2 md:p-4"};function r(s,a){return c(),o("div",n)}const m=e(t,[["render",r]]);export{m as default};
