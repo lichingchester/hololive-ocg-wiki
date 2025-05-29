@@ -1,8 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AppHeader />
-
-  <!-- Card List -->
-  <CardListView />
+  <div class="container mx-auto p-2 md:p-4"></div>
 </template>
