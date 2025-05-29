@@ -7,6 +7,6 @@
     <!-- Card List -->
     <CardListView />
 
-    <!-- <FloatingDeck /> -->
+    <FloatingDeck />
   </div>
 </template>
