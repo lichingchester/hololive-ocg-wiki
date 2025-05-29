@@ -57,25 +57,27 @@ const deleteDeck = (deck: Deck) => {
         <template v-if="decks.decks.value.length">
           <DropdownMenuSeparator />
 
-          <ScrollArea class="max-h-20">
-            <template v-for="(deck, index) in decks.decks.value" :key="index">
-              <DropdownMenuItem
-                class="flex items-center justify-between"
-                @click="decks.setCurrentDeck(deck)"
-              >
-                {{ deck.name }}
-
-                <Button
-                  variant="outline"
-                  size="icon"
-                  class="size-6 hover:bg-red-500/10 dark:hover:bg-red-500/20"
-                  @click.stop.prevent="deleteDeck(deck)"
+          <div class="flex">
+            <ScrollArea class="w-full max-h-[50vh]">
+              <template v-for="(deck, index) in decks.decks.value" :key="index">
+                <DropdownMenuItem
+                  class="flex items-center justify-between"
+                  @click="decks.setCurrentDeck(deck)"
                 >
-                  <Trash2 class="text-red-500 size-3" />
-                </Button>
-              </DropdownMenuItem>
-            </template>
-          </ScrollArea>
+                  {{ deck.name }}
+
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    class="size-6 hover:bg-red-500/10 dark:hover:bg-red-500/20"
+                    @click.stop.prevent="deleteDeck(deck)"
+                  >
+                    <Trash2 class="text-red-500 size-3" />
+                  </Button>
+                </DropdownMenuItem>
+              </template>
+            </ScrollArea>
+          </div>
         </template>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -6,7 +6,7 @@
   >
     <FloatingDeck />
 
-    <div class="p-2 flex items-center">
+    <div class="p-2 md:p-4 flex items-center">
       <AppFooterCurrentDeck />
       <div class="ml-auto">
         <AppFooterDeckButton />
