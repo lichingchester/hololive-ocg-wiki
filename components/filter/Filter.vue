@@ -25,12 +25,12 @@ const filterState = useFilterState();
               >
                 <picture>
                   <source
-                    :srcset="`/icons/type_${key}.webp`"
+                    :srcset="`icons/type_${key}.webp`"
                     type="image/webp"
                   />
                   <img
                     class="w-4"
-                    :src="`/icons/type_${key}.png`"
+                    :src="`icons/type_${key}.png`"
                     loading="lazy"
                   />
                 </picture>

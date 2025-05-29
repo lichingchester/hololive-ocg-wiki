@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { PackagePlus, Trash2 } from "lucide-vue-next";
-import type { Deck, DeckCollection } from "@/types/deck";
+import { PackagePlus, Trash2, Layers } from "lucide-vue-next";
+import type { Deck } from "@/types/deck";
 import { toast } from "vue-sonner";
+import { useTimestamp } from "@vueuse/core";
 
 const decks = useDecks();
 
@@ -18,8 +19,12 @@ const createDeck = () => {
   }
 
   const newDeck: Deck = {
+    id: `${name.value}-${useTimestamp({ offset: 0 }).value.toString()}`, // Ensure the deck has a unique ID
     name: name.value,
     author: author.value,
+    oshiCardIds: [],
+    mainCardIds: [],
+    yellCardIds: [],
   };
 
   decks.addDeck(newDeck);
@@ -45,7 +50,7 @@ const deleteDeck = (deck: Deck) => {
   <Dialog v-model:open="isCreateDeckDialogOpen">
     <DropdownMenu>
       <DropdownMenuTrigger as-child>
-        <Button> Decks </Button>
+        <Button> <Layers />Decks </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DialogTrigger as-child>
