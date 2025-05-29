@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PackagePlus } from "lucide-vue-next";
+import { PackagePlus, Trash2 } from "lucide-vue-next";
 import type { Deck, DeckCollection } from "@/types/deck";
 import { toast } from "vue-sonner";
 
@@ -23,6 +23,7 @@ const createDeck = () => {
   };
 
   decks.addDeck(newDeck);
+  decks.setCurrentDeck(newDeck);
 
   // Close the dialog
   isCreateDeckDialogOpen.value = false;
@@ -33,6 +34,11 @@ const createDeck = () => {
 
   toast.success("Deck created successfully!");
 };
+
+const deleteDeck = (deck: Deck) => {
+  decks.deleteDeck(deck.id);
+  toast.success("Deck deleted successfully!");
+};
 </script>
 
 <template>
@@ -41,7 +47,7 @@ const createDeck = () => {
       <DropdownMenuTrigger as-child>
         <Button> Decks </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         <DialogTrigger as-child>
           <DropdownMenuItem @click="isCreateDeckDialogOpen = true">
             <PackagePlus /> New Deck
@@ -53,8 +59,20 @@ const createDeck = () => {
 
           <ScrollArea class="max-h-20">
             <template v-for="(deck, index) in decks.decks.value" :key="index">
-              <DropdownMenuItem @click="decks.setCurrentDeck(deck)">
+              <DropdownMenuItem
+                class="flex items-center justify-between"
+                @click="decks.setCurrentDeck(deck)"
+              >
                 {{ deck.name }}
+
+                <Button
+                  variant="outline"
+                  size="icon"
+                  class="size-6 hover:bg-red-500/10 dark:hover:bg-red-500/20"
+                  @click.stop.prevent="deleteDeck(deck)"
+                >
+                  <Trash2 class="text-red-500 size-3" />
+                </Button>
               </DropdownMenuItem>
             </template>
           </ScrollArea>
