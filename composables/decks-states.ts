@@ -97,22 +97,34 @@ export const useDecks = () => {
   };
 
   // Add a card to the current deck
-  const addCardToDeck = (cardId: string) => {
+  const addCardToDeck = ({
+    cardId,
+    amount,
+  }: {
+    cardId: string;
+    amount: number;
+  }) => {
     const cardTypeCode = CardDataJson.find(
       (c) => c.id === cardId
     )?.cardTypeCode;
 
     if (cardTypeCode && currentDeckState.value) {
       if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
-        currentDeckState.value.oshiCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.oshiCardIds.push(cardId);
+        }
       }
 
       if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
-        currentDeckState.value.mainCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.mainCardIds.push(cardId);
+        }
       }
 
       if (CARD_TYPE_YELL.includes(cardTypeCode)) {
-        currentDeckState.value.yellCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.yellCardIds.push(cardId);
+        }
       }
 
       // Update the deck in the main decks array
@@ -125,34 +137,70 @@ export const useDecks = () => {
   };
 
   // Remove a card from the current deck
-  const removeCardFromDeck = (cardId: string) => {
+  const removeCardFromDeck = ({
+    cardId,
+    amount,
+  }: {
+    cardId: string;
+    amount: number;
+  }) => {
     const cardTypeCode = CardDataJson.find(
       (c) => c.id === cardId
     )?.cardTypeCode;
 
     if (cardTypeCode && currentDeckState.value) {
-      // Find which array the card belongs to based on its type
+      for (let i = 0; i < amount; i++) {
+        // Find which array the card belongs to based on its type
+        if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.oshiCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.oshiCardIds.splice(cardIndex, 1);
+          }
+        } else if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.mainCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.mainCardIds.splice(cardIndex, 1);
+          }
+        } else if (CARD_TYPE_YELL.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.yellCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.yellCardIds.splice(cardIndex, 1);
+          }
+        }
+      }
+
+      // Update the deck in the main decks array
+      if (currentDeckState.value.id) {
+        updateDeck(currentDeckState.value.id, {
+          ...currentDeckState.value,
+        });
+      }
+    }
+  };
+
+  // Remove all instances of a card from the current deck
+  const removeAllCardFromDeck = (cardId: string) => {
+    const cardTypeCode = CardDataJson.find(
+      (c) => c.id === cardId
+    )?.cardTypeCode;
+
+    if (cardTypeCode && currentDeckState.value) {
+      // Remove all instances of the card based on its type
       if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.oshiCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.oshiCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.oshiCardIds =
+          currentDeckState.value.oshiCardIds.filter((id) => id !== cardId);
       } else if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.mainCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.mainCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.mainCardIds =
+          currentDeckState.value.mainCardIds.filter((id) => id !== cardId);
       } else if (CARD_TYPE_YELL.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.yellCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.yellCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.yellCardIds =
+          currentDeckState.value.yellCardIds.filter((id) => id !== cardId);
       }
 
       // Update the deck in the main decks array
@@ -322,6 +370,7 @@ export const useDecks = () => {
 
       return decodedDeck;
     } catch (error) {
+      console.error("Invalid deck code format:", error);
       return false;
     }
   };
@@ -330,11 +379,6 @@ export const useDecks = () => {
   const exportDecks = (): string => {
     return JSON.stringify(decksState.value);
   };
-
-  // Initialize - check for shared deck
-  // onMounted(() => {
-  //   checkForDeckCode();
-  // });
 
   return {
     decks: decksState,
@@ -348,6 +392,7 @@ export const useDecks = () => {
     saveDecks,
     addCardToDeck,
     removeCardFromDeck,
+    removeAllCardFromDeck,
     getCardCount,
 
     createNewDeck,
