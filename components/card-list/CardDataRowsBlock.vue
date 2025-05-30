@@ -47,17 +47,10 @@ defineProps<{
       <!-- colorCode -->
       <CardDataRowsBlockItem v-if="item.colorCode" :name="$t('fields.color')">
         <div class="flex items-center gap-1">
-          <picture>
-            <source
-              :srcset="`icons/type_${item.colorCode}.webp`"
-              type="image/webp"
-            />
-            <img
-              class="w-5"
-              :src="`icons/type_${item.colorCode}.png`"
-              loading="lazy"
-            />
-          </picture>
+          <Image
+            :src="`icons/type_${item.colorCode}.png`"
+            :img-attributes="{ class: 'w-5' }"
+          />
 
           {{ $t(`cards.${item.id}.color`) }}
         </div>
@@ -88,14 +81,10 @@ defineProps<{
       >
         <div class="flex items-center">
           <template v-for="index in item.batonTouchCount" :key="index">
-            <picture>
-              <source :srcset="`icons/arts_null.webp`" type="image/webp" />
-              <img
-                class="w-6 h-6"
-                :src="`icons/arts_null.png`"
-                loading="lazy"
-              />
-            </picture>
+            <Image
+              :src="`/icons/arts_null.png`"
+              :img-attributes="{ class: 'w-6 h-6' }"
+            />
           </template>
 
           <span class="ml-1">

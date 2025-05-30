@@ -11,7 +11,7 @@ const currentDeck = computed(() => decks.currentDeck.value);
 
 const toggleEditing = () => {
   if (decks.currentDeck.value === null) {
-    toast.info("Please select a deck to edit.");
+    toast.warning("Please select a deck to continue.");
     return;
   }
 

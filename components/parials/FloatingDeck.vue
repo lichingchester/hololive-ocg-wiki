@@ -18,6 +18,9 @@ watch(
     if (newDeck && newDeck.id !== oldDeck?.id) {
       decks.isEditing.value = true;
       isActive.value = true;
+    } else if (!newDeck) {
+      decks.isEditing.value = false;
+      isActive.value = false;
     }
   },
   { immediate: true }

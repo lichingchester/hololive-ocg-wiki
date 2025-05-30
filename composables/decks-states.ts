@@ -187,10 +187,12 @@ export const useDecks = () => {
     return 0;
   };
 
-  // Share a deck via URL
-  const shareDeck = (deckId: string): string => {
+  // Get the deck code for sharing
+  const getDeckCode = (
+    deckId: string
+  ): { code: string; localePath: string; fullUrl: string } => {
     const deck = decksState.value.find((d) => d.id === deckId);
-    if (!deck) return "";
+    if (!deck) return { code: "", localePath: "", fullUrl: "" };
 
     // Create a compressed version of the deck
     const compressedDeck = {
@@ -218,7 +220,11 @@ export const useDecks = () => {
 
     const fullUrl = `${baseUrl}${path}`;
 
-    return fullUrl;
+    return {
+      code: encodedDeck,
+      localePath: path,
+      fullUrl: fullUrl,
+    };
   };
 
   // Helper function to compress arrays of card IDs into {id: count} format
@@ -263,57 +269,61 @@ export const useDecks = () => {
     }
   };
 
-  // Check URL for shared deck and import it
-  const checkForSharedDeck = () => {
-    const url = new URL(window.location.href);
-    const sharedDeckParam = url.searchParams.get("sharedDeck");
+  // Import deck by code
+  const importDeckByCode = (
+    code: string
+  ): { status: boolean; message: string } => {
+    try {
+      const decodedDeck = checkForDeckCode(code);
 
-    if (sharedDeckParam) {
-      try {
-        // Decode the base64 encoded deck
-        const compressedDeck = JSON.parse(
-          decodeURIComponent(atob(sharedDeckParam))
-        );
+      if (!decodedDeck) {
+        return { status: false, message: "Invalid deck code" };
+      }
 
-        // Convert compressed format back to full deck
-        const decodedDeck: Deck = {
-          id: compressedDeck.id,
-          name: compressedDeck.name,
-          oshiCardIds: expandCompressedCards(compressedDeck.oshiCards),
-          mainCardIds: expandCompressedCards(compressedDeck.mainCards),
-          yellCardIds: expandCompressedCards(compressedDeck.yellCards),
-        };
+      // Check if a deck with this ID already exists
+      const existingDeckIndex = decksState.value.findIndex(
+        (d) => d.id === decodedDeck.id
+      );
 
-        // Check if this deck already exists
-        const existingDeckIndex = decksState.value.findIndex(
-          (d) => d.name === decodedDeck.name
-        );
-
-        if (existingDeckIndex === -1) {
-          // Add as a new deck
-          decksState.value.push(decodedDeck);
-        } else {
-          // Append a suffix to make the name unique
-          decodedDeck.name = `${decodedDeck.name} (Shared)`;
-          decksState.value.push(decodedDeck);
-        }
+      if (existingDeckIndex !== -1) {
+        // Update existing deck
+        decksState.value[existingDeckIndex] = decodedDeck;
 
         saveDecks();
+        return { status: true, message: "Deck updated successfully" };
+      } else {
+        // Add as a new deck
+        decksState.value.push(decodedDeck);
 
-        // Remove the shared deck parameter from the URL
-        url.searchParams.delete("sharedDeck");
-        window.history.replaceState({}, "", url.toString());
-
-        // Set the imported deck as current
-        setCurrentDeck(decodedDeck);
-
-        return true;
-      } catch (error) {
-        console.error("Failed to import shared deck:", error);
-        return false;
+        saveDecks();
+        return { status: true, message: "Deck imported successfully" };
       }
+    } catch (error) {
+      return { status: false, message: "Failed to import deck from code" };
     }
-    return false;
+  };
+
+  // Check for shared deck code
+  const checkForDeckCode = (code: string): Deck | false => {
+    try {
+      // Decode the base64 encoded deck
+      const compressedDeck = JSON.parse(decodeURIComponent(atob(code)));
+
+      // Convert compressed format back to full deck
+      const decodedDeck: Deck = {
+        id: compressedDeck.id,
+        name: compressedDeck.name,
+        author: compressedDeck.author,
+        oshiCardIds: expandCompressedCards(compressedDeck.oshiCards),
+        mainCardIds: expandCompressedCards(compressedDeck.mainCards),
+        yellCardIds: expandCompressedCards(compressedDeck.yellCards),
+        version: compressedDeck.version,
+      };
+
+      return decodedDeck;
+    } catch (error) {
+      return false;
+    }
   };
 
   // Export all decks as JSON
@@ -323,7 +333,7 @@ export const useDecks = () => {
 
   // Initialize - check for shared deck
   // onMounted(() => {
-  //   checkForSharedDeck();
+  //   checkForDeckCode();
   // });
 
   return {
@@ -343,9 +353,10 @@ export const useDecks = () => {
     createNewDeck,
 
     // Add new functions to the returned object
-    shareDeck,
+    getDeckCode,
     exportDecks,
     importDecks,
-    checkForSharedDeck,
+    checkForDeckCode,
+    importDeckByCode,
   };
 };

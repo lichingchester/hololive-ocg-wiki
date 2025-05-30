@@ -38,18 +38,11 @@ const getCard = (cardId: string): Card => {
       <div class="relative flex">
         <Dialog>
           <DialogTrigger class="">
-            <picture>
-              <source
-                :srcset="getImagePath(item.cardId).replace('.png', '.webp')"
-                type="image/webp"
-              />
-              <img
-                :src="getImagePath(item.cardId)"
-                alt=""
-                class=""
-                loading="lazy"
-              />
-            </picture>
+            <Image
+              class="flex-[0_0_400px]"
+              :src="`/${getImagePath(item.cardId)}`"
+              :img-attributes="{ class: '' }"
+            />
           </DialogTrigger>
 
           <CardItemDialogContent :item="getCard(item.cardId)" />
