@@ -4,10 +4,8 @@ import { toast } from "vue-sonner";
 import { useClipboard } from "@vueuse/core";
 
 const route = useRoute();
-const localeRoute = useLocaleRoute();
 
 const decks = useDecks();
-const currentDeck = computed(() => decks.currentDeck.value);
 
 const importDeck = () => {
   if (!route.params.code) {

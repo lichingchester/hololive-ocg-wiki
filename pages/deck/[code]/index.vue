@@ -123,6 +123,8 @@ onMounted(() => {
   </div>
 
   <AppFooter>
+    <AppFooterDeckDetailStatus />
+
     <div class="ml-auto flex items-center gap-2">
       <AppFooterDeckDetailOptionsButton />
     </div>

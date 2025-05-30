@@ -45,8 +45,10 @@ const yellCardIds = computed(() => {
       v-if="isEditing"
       class="fixed bottom-13 md:bottom-16 left-0 m-2 md:m-4 z-40"
     >
-      <div class="bg-background/95 rounded-lg shadow-lg border">
-        <div class="flex p-2">
+      <div
+        class="rounded-lg shadow-lg border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90"
+      >
+        <div class="flex p-2 md:p-4">
           <Button
             size="sm"
             class="text-[12px] md:text-sm"
@@ -58,13 +60,11 @@ const yellCardIds = computed(() => {
           </Button>
         </div>
 
-        <div class="flex">
+        <div class="flex md:pt-0 pb-2 md:pb-4">
           <ScrollArea class="max-h-[40vh]">
-            <div class="flex flex-col gap-3 py-3 px-3">
-              <div class="">
-                <div
-                  class="flex items-center gap-1 text-xs md:text-sm font-semibold"
-                >
+            <div class="flex flex-col gap-2 md:gap-4 px-2 md:px-4">
+              <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
+                <div class="flex items-center gap-2">
                   oshi
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
@@ -89,12 +89,8 @@ const yellCardIds = computed(() => {
                 />
               </div>
 
-              <Separator v-if="isActive" class="my-1 md:my-2" />
-
-              <div class="">
-                <div
-                  class="flex items-center gap-1 text-xs md:text-sm font-semibold"
-                >
+              <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
+                <div class="flex items-center gap-2">
                   main
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
@@ -118,12 +114,8 @@ const yellCardIds = computed(() => {
                 />
               </div>
 
-              <Separator v-if="isActive" class="my-1 md:my-2" />
-
-              <div class="">
-                <div
-                  class="flex items-center gap-1 text-xs md:text-sm font-semibold"
-                >
+              <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
+                <div class="flex items-center gap-2">
                   yell
 
                   <Badge
