@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { PackagePlus, Trash2, Layers } from "lucide-vue-next";
+import { PackagePlus, Trash2, Layers, Pencil, Eye } from "lucide-vue-next";
 import type { Deck } from "@/types/deck";
 import { toast } from "vue-sonner";
 
 const decks = useDecks();
+
+// popover
+const isActive = ref(false);
 
 // create deck
 const name = ref("");
@@ -32,52 +35,74 @@ const createDeck = () => {
   toast.success("Deck created successfully!");
 };
 
-const deleteDeck = (deck: Deck) => {
-  decks.deleteDeck(deck.id);
-  toast.success("Deck deleted successfully!");
+const onNewDeckButtonClick = () => {
+  isCreateDeckDialogOpen.value = true;
+  isActive.value = false; // Close the popover when creating a new deck
 };
 </script>
 
 <template>
   <Dialog v-model:open="isCreateDeckDialogOpen">
-    <DropdownMenu>
-      <DropdownMenuTrigger as-child>
+    <Popover v-model:open="isActive">
+      <PopoverTrigger as-child>
         <Button> <Layers />Decks </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      </PopoverTrigger>
+      <PopoverContent align="end" class="w-auto min-w-50 p-3 md:p-3">
         <DialogTrigger as-child>
-          <DropdownMenuItem @click="isCreateDeckDialogOpen = true">
+          <Button
+            variant="outline"
+            @click="onNewDeckButtonClick"
+            class="w-full"
+          >
             <PackagePlus /> New Deck
-          </DropdownMenuItem>
+          </Button>
         </DialogTrigger>
 
-        <template v-if="decks.decks.value.length">
-          <DropdownMenuSeparator />
+        <div v-if="decks.decks.value.length" class="mt-2 md:mt-3"></div>
 
-          <div class="flex">
-            <ScrollArea class="w-full max-h-[50vh]">
+        <div class="flex">
+          <ScrollArea class="w-full max-h-[50vh]">
+            <div class="flex flex-col gap-0">
               <template v-for="(deck, index) in decks.decks.value" :key="index">
-                <DropdownMenuItem
-                  class="flex items-center justify-between"
-                  @click="decks.setCurrentDeck(deck)"
-                >
-                  {{ deck.name }}
+                <Separator v-if="index !== 0" class="my-1" />
 
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    class="size-6 hover:bg-red-500/10 dark:hover:bg-red-500/20"
-                    @click.stop.prevent="deleteDeck(deck)"
-                  >
-                    <Trash2 class="text-red-500 size-3" />
-                  </Button>
-                </DropdownMenuItem>
+                <div class="flex items-center">
+                  <div class="pr-2 max-w-[50vw]">
+                    <button
+                      @click="decks.setCurrentDeck(deck), (isActive = false)"
+                    >
+                      {{ deck.name }}
+                    </button>
+                  </div>
+
+                  <div class="flex gap-1 ml-auto">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      class="size-8"
+                      as-child
+                      @click="isActive = false"
+                    >
+                      <NuxtLink :to="decks.getDeckCode(deck.id).localePath">
+                        <Eye class="size-4" />
+                      </NuxtLink>
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      class="size-8"
+                      @click="decks.setCurrentDeck(deck), (isActive = false)"
+                    >
+                      <Pencil class="size-4" />
+                    </Button>
+                  </div>
+                </div>
               </template>
-            </ScrollArea>
-          </div>
-        </template>
-      </DropdownMenuContent>
-    </DropdownMenu>
+            </div>
+          </ScrollArea>
+        </div>
+      </PopoverContent>
+    </Popover>
 
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>

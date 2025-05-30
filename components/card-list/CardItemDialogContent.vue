@@ -34,18 +34,11 @@ const getCostTypesString = (costTypes: string[]): string => {
 
     <ScrollArea class="py-0 px-4">
       <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-        <picture class="flex-[0_0_400px]">
-          <source
-            :srcset="'' + item.imagePath.replace('.png', '.webp')"
-            type="image/webp"
-          />
-          <img
-            class="mx-auto w-full max-w-[400px]"
-            :src="'' + item.imagePath"
-            alt=""
-            loading="lazy"
-          />
-        </picture>
+        <Image
+          class="flex-[0_0_400px]"
+          :src="`/${item.imagePath}`"
+          :img-attributes="{ class: 'mx-auto w-full max-w-[400px]' }"
+        />
 
         <div class="flex flex-col grow gap-2 md:gap-4">
           <CardDataNameBlock

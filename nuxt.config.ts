@@ -1,13 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import tailwindcss from "@tailwindcss/vite";
+import { APP_BASE_URL_NAME } from "./constants/app";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
   app: {
-    baseURL: "/hololive-ocg-wiki/",
+    baseURL: `/${APP_BASE_URL_NAME}/`,
 
     head: {
       title: "Hololive OCG Wiki",
@@ -28,7 +29,7 @@ export default defineNuxtConfig({
         },
       ],
       base: {
-        href: "/hololive-ocg-wiki/",
+        href: `/${APP_BASE_URL_NAME}/`,
       },
     },
   },
