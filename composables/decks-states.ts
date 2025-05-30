@@ -5,6 +5,8 @@ import {
   CARD_TYPE_YELL,
 } from "~/constants/card-data";
 import CardDataJson from "@/data/cards_i18n.json";
+import { APP_VERSION } from "~/constants/app";
+import { useTimestamp } from "@vueuse/core";
 
 // Comprehensive deck management with localStorage
 export const useDecks = () => {
@@ -24,6 +26,21 @@ export const useDecks = () => {
       console.error("Failed to load decks from localStorage:", error);
     }
   });
+
+  // Make new deck
+  const createNewDeck = (name: string, author: string): Deck => {
+    const newDeck: Deck = {
+      id: `${name}-${useTimestamp({ offset: 0 }).value.toString()}`,
+      name,
+      author,
+      oshiCardIds: [],
+      mainCardIds: [],
+      yellCardIds: [],
+      version: APP_VERSION, // Set initial version
+    };
+
+    return newDeck;
+  };
 
   // Save decks to localStorage
   const saveDecks = () => {
@@ -80,22 +97,34 @@ export const useDecks = () => {
   };
 
   // Add a card to the current deck
-  const addCardToDeck = (cardId: string) => {
+  const addCardToDeck = ({
+    cardId,
+    amount,
+  }: {
+    cardId: string;
+    amount: number;
+  }) => {
     const cardTypeCode = CardDataJson.find(
       (c) => c.id === cardId
     )?.cardTypeCode;
 
     if (cardTypeCode && currentDeckState.value) {
       if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
-        currentDeckState.value.oshiCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.oshiCardIds.push(cardId);
+        }
       }
 
       if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
-        currentDeckState.value.mainCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.mainCardIds.push(cardId);
+        }
       }
 
       if (CARD_TYPE_YELL.includes(cardTypeCode)) {
-        currentDeckState.value.yellCardIds.push(cardId);
+        for (let i = 0; i < amount; i++) {
+          currentDeckState.value.yellCardIds.push(cardId);
+        }
       }
 
       // Update the deck in the main decks array
@@ -108,34 +137,70 @@ export const useDecks = () => {
   };
 
   // Remove a card from the current deck
-  const removeCardFromDeck = (cardId: string) => {
+  const removeCardFromDeck = ({
+    cardId,
+    amount,
+  }: {
+    cardId: string;
+    amount: number;
+  }) => {
     const cardTypeCode = CardDataJson.find(
       (c) => c.id === cardId
     )?.cardTypeCode;
 
     if (cardTypeCode && currentDeckState.value) {
-      // Find which array the card belongs to based on its type
+      for (let i = 0; i < amount; i++) {
+        // Find which array the card belongs to based on its type
+        if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.oshiCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.oshiCardIds.splice(cardIndex, 1);
+          }
+        } else if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.mainCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.mainCardIds.splice(cardIndex, 1);
+          }
+        } else if (CARD_TYPE_YELL.includes(cardTypeCode)) {
+          const cardIndex = currentDeckState.value.yellCardIds.findIndex(
+            (c) => c === cardId
+          );
+          if (cardIndex !== -1) {
+            currentDeckState.value.yellCardIds.splice(cardIndex, 1);
+          }
+        }
+      }
+
+      // Update the deck in the main decks array
+      if (currentDeckState.value.id) {
+        updateDeck(currentDeckState.value.id, {
+          ...currentDeckState.value,
+        });
+      }
+    }
+  };
+
+  // Remove all instances of a card from the current deck
+  const removeAllCardFromDeck = (cardId: string) => {
+    const cardTypeCode = CardDataJson.find(
+      (c) => c.id === cardId
+    )?.cardTypeCode;
+
+    if (cardTypeCode && currentDeckState.value) {
+      // Remove all instances of the card based on its type
       if (CARD_TYPE_OSHI.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.oshiCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.oshiCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.oshiCardIds =
+          currentDeckState.value.oshiCardIds.filter((id) => id !== cardId);
       } else if (CARD_TYPE_MAIN.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.mainCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.mainCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.mainCardIds =
+          currentDeckState.value.mainCardIds.filter((id) => id !== cardId);
       } else if (CARD_TYPE_YELL.includes(cardTypeCode)) {
-        const cardIndex = currentDeckState.value.yellCardIds.findIndex(
-          (c) => c === cardId
-        );
-        if (cardIndex !== -1) {
-          currentDeckState.value.yellCardIds.splice(cardIndex, 1);
-        }
+        currentDeckState.value.yellCardIds =
+          currentDeckState.value.yellCardIds.filter((id) => id !== cardId);
       }
 
       // Update the deck in the main decks array
@@ -170,10 +235,12 @@ export const useDecks = () => {
     return 0;
   };
 
-  // Share a deck via URL
-  const shareDeck = (deckId: string): string => {
+  // Get the deck code for sharing
+  const getDeckCode = (
+    deckId: string
+  ): { code: string; localePath: string; fullUrl: string } => {
     const deck = decksState.value.find((d) => d.id === deckId);
-    if (!deck) return "";
+    if (!deck) return { code: "", localePath: "", fullUrl: "" };
 
     // Create a compressed version of the deck
     const compressedDeck = {
@@ -191,10 +258,21 @@ export const useDecks = () => {
     );
 
     // Create the URL with the encoded deck data
-    const url = new URL(window.location.href);
-    url.searchParams.set("sharedDeck", encodedDeck);
+    const localePath = useLocalePath();
+    const baseUrl = window.location.origin;
 
-    return url.toString();
+    const path = localePath({
+      name: "deck-code",
+      params: { code: encodedDeck },
+    });
+
+    const fullUrl = `${baseUrl}${path}`;
+
+    return {
+      code: encodedDeck,
+      localePath: path,
+      fullUrl: fullUrl,
+    };
   };
 
   // Helper function to compress arrays of card IDs into {id: count} format
@@ -239,68 +317,68 @@ export const useDecks = () => {
     }
   };
 
-  // Check URL for shared deck and import it
-  const checkForSharedDeck = () => {
-    const url = new URL(window.location.href);
-    const sharedDeckParam = url.searchParams.get("sharedDeck");
+  // Import deck by code
+  const importDeckByCode = (
+    code: string
+  ): { status: boolean; message: string } => {
+    try {
+      const decodedDeck = checkForDeckCode(code);
 
-    if (sharedDeckParam) {
-      try {
-        // Decode the base64 encoded deck
-        const compressedDeck = JSON.parse(
-          decodeURIComponent(atob(sharedDeckParam))
-        );
+      if (!decodedDeck) {
+        return { status: false, message: "Invalid deck code" };
+      }
 
-        // Convert compressed format back to full deck
-        const decodedDeck: Deck = {
-          id: compressedDeck.id,
-          name: compressedDeck.name,
-          oshiCardIds: expandCompressedCards(compressedDeck.oshiCards),
-          mainCardIds: expandCompressedCards(compressedDeck.mainCards),
-          yellCardIds: expandCompressedCards(compressedDeck.yellCards),
-        };
+      // Check if a deck with this ID already exists
+      const existingDeckIndex = decksState.value.findIndex(
+        (d) => d.id === decodedDeck.id
+      );
 
-        // Check if this deck already exists
-        const existingDeckIndex = decksState.value.findIndex(
-          (d) => d.name === decodedDeck.name
-        );
-
-        if (existingDeckIndex === -1) {
-          // Add as a new deck
-          decksState.value.push(decodedDeck);
-        } else {
-          // Append a suffix to make the name unique
-          decodedDeck.name = `${decodedDeck.name} (Shared)`;
-          decksState.value.push(decodedDeck);
-        }
+      if (existingDeckIndex !== -1) {
+        // Update existing deck
+        decksState.value[existingDeckIndex] = decodedDeck;
 
         saveDecks();
+        return { status: true, message: "Deck updated successfully" };
+      } else {
+        // Add as a new deck
+        decksState.value.push(decodedDeck);
 
-        // Remove the shared deck parameter from the URL
-        url.searchParams.delete("sharedDeck");
-        window.history.replaceState({}, "", url.toString());
-
-        // Set the imported deck as current
-        setCurrentDeck(decodedDeck);
-
-        return true;
-      } catch (error) {
-        console.error("Failed to import shared deck:", error);
-        return false;
+        saveDecks();
+        return { status: true, message: "Deck imported successfully" };
       }
+    } catch (error) {
+      return { status: false, message: "Failed to import deck from code" };
     }
-    return false;
+  };
+
+  // Check for shared deck code
+  const checkForDeckCode = (code: string): Deck | false => {
+    try {
+      // Decode the base64 encoded deck
+      const compressedDeck = JSON.parse(decodeURIComponent(atob(code)));
+
+      // Convert compressed format back to full deck
+      const decodedDeck: Deck = {
+        id: compressedDeck.id,
+        name: compressedDeck.name,
+        author: compressedDeck.author,
+        oshiCardIds: expandCompressedCards(compressedDeck.oshiCards),
+        mainCardIds: expandCompressedCards(compressedDeck.mainCards),
+        yellCardIds: expandCompressedCards(compressedDeck.yellCards),
+        version: compressedDeck.version,
+      };
+
+      return decodedDeck;
+    } catch (error) {
+      console.error("Invalid deck code format:", error);
+      return false;
+    }
   };
 
   // Export all decks as JSON
   const exportDecks = (): string => {
     return JSON.stringify(decksState.value);
   };
-
-  // Initialize - check for shared deck
-  // onMounted(() => {
-  //   checkForSharedDeck();
-  // });
 
   return {
     decks: decksState,
@@ -314,12 +392,16 @@ export const useDecks = () => {
     saveDecks,
     addCardToDeck,
     removeCardFromDeck,
+    removeAllCardFromDeck,
     getCardCount,
 
+    createNewDeck,
+
     // Add new functions to the returned object
-    shareDeck,
+    getDeckCode,
     exportDecks,
     importDecks,
-    checkForSharedDeck,
+    checkForDeckCode,
+    importDeckByCode,
   };
 };

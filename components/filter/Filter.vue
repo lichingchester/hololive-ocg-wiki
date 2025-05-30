@@ -23,17 +23,11 @@ const filterState = useFilterState();
                 variant="outline"
                 aria-label="Toggle Colors"
               >
-                <picture>
-                  <source
-                    :srcset="`icons/type_${key}.webp`"
-                    type="image/webp"
-                  />
-                  <img
-                    class="w-4"
-                    :src="`icons/type_${key}.png`"
-                    loading="lazy"
-                  />
-                </picture>
+                <Image
+                  :src="`/icons/type_${key}.png`"
+                  :img-attributes="{ class: 'w-4' }"
+                />
+
                 {{ $t(`colors.${key}`) }}
               </Toggle>
             </template>

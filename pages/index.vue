@@ -1,8 +1,27 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AppHeader />
+  <div>
+    <AppHeader>
+      <!-- filter -->
+      <Filter />
 
-  <!-- Card List -->
-  <CardListView />
+      <!-- search -->
+      <!-- <Input id="search" type="text" placeholder="Search..." /> -->
+      <SearchInput />
+    </AppHeader>
+
+    <!-- Card List -->
+    <CardListView />
+
+    <FloatingDeck />
+
+    <AppFooter>
+      <AppFooterCurrentDeck />
+      <div class="ml-auto flex items-center gap-2">
+        <AppFooterOptionsButton />
+        <AppFooterDeckButton />
+      </div>
+    </AppFooter>
+  </div>
 </template>

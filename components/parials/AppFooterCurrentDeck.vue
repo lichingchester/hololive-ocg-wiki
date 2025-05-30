@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { toast } from "vue-sonner";
 
+const route = useRoute();
+const getRouteBaseName = useRouteBaseName();
+
 const decks = useDecks();
 
 const isEditing = computed(() => decks.isEditing.value);
@@ -8,7 +11,7 @@ const currentDeck = computed(() => decks.currentDeck.value);
 
 const toggleEditing = () => {
   if (decks.currentDeck.value === null) {
-    toast.info("Please select a deck to edit.");
+    toast.warning("Please select a deck to continue.");
     return;
   }
 
@@ -17,7 +20,10 @@ const toggleEditing = () => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2 md:gap-4">
+  <div
+    v-if="getRouteBaseName(route) === 'index'"
+    class="flex items-center gap-2 md:gap-4"
+  >
     <button @click="toggleEditing">
       <Badge
         variant="outline"

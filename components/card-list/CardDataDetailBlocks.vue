@@ -125,18 +125,21 @@ const getCostTypesString = (costTypes: string[]): string => {
         </template>
 
         <div class="flex gap-2">
-          <picture v-if="item.keyword.typeCode === 'collab_effect'">
-            <source :srcset="`icons/collabEF.webp`" type="image/webp" />
-            <img class="w-28" :src="`icons/collabEF.png`" loading="lazy" />
-          </picture>
-          <picture v-if="item.keyword.typeCode === 'bloom_effect'">
-            <source :srcset="`icons/bloomEF.webp`" type="image/webp" />
-            <img class="w-28" :src="`icons/bloomEF.png`" loading="lazy" />
-          </picture>
-          <picture v-if="item.keyword.typeCode === 'gift'">
-            <source :srcset="`icons/gift.webp`" type="image/webp" />
-            <img class="w-14" :src="`icons/gift.png`" loading="lazy" />
-          </picture>
+          <Image
+            v-if="item.keyword.typeCode === 'collab_effect'"
+            src="/icons/collabEF.png"
+            :img-attributes="{ class: 'w-28' }"
+          />
+          <Image
+            v-if="item.keyword.typeCode === 'bloom_effect'"
+            src="/icons/bloomEF.png"
+            :img-attributes="{ class: 'w-28' }"
+          />
+          <Image
+            v-if="item.keyword.typeCode === 'gift'"
+            src="/icons/gift.png"
+            :img-attributes="{ class: 'w-14' }"
+          />
         </div>
       </div>
 
@@ -170,21 +173,13 @@ const getCostTypesString = (costTypes: string[]): string => {
                 v-for="(costType, costTypeIndex) in art.costTypes"
                 :key="costTypeIndex"
               >
-                <picture
+                <Image
                   :class="
                     costTypeIndex === art.costTypes.length - 1 ? 'mr-1' : ''
                   "
-                >
-                  <source
-                    :srcset="`icons/arts_${costType}.webp`"
-                    type="image/webp"
-                  />
-                  <img
-                    class="size-6 min-w-6 min-h-6"
-                    :src="`icons/arts_${costType}.png`"
-                    loading="lazy"
-                  />
-                </picture>
+                  :src="`/icons/arts_${costType}.png`"
+                  :img-attributes="{ class: 'size-6 min-w-6 min-h-6' }"
+                />
               </template>
 
               <span class=""> ({{ getCostTypesString(art.costTypes) }}) </span>
@@ -208,21 +203,12 @@ const getCostTypesString = (costTypes: string[]): string => {
               >
                 <Badge variant="outline" class="text-xs">
                   <div class="flex items-center">
-                    <picture>
-                      <source
-                        :srcset="`icons/tokkou_50_${
-                          specialTarget === 'neutral' ? 'null' : specialTarget
-                        }.webp`"
-                        type="image/webp"
-                      />
-                      <img
-                        class="w-12 min-w-8"
-                        :src="`icons/tokkou_50_${
-                          specialTarget === 'neutral' ? 'null' : specialTarget
-                        }.png`"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <Image
+                      :src="`/icons/tokkou_50_${
+                        specialTarget === 'neutral' ? 'null' : specialTarget
+                      }.png`"
+                      :img-attributes="{ class: 'w-12 min-w-8' }"
+                    />
 
                     <span class="ml-1">
                       {{ $t("fields.tokkouColor") }}:

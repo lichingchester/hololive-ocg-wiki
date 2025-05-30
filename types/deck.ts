@@ -11,6 +11,7 @@ export type Deck = {
   id: string;
   name?: string;
   author?: string;
+  version: string;
 };
 
 export type DeckCollection = Deck[];
