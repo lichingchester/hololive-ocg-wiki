@@ -2,7 +2,6 @@
 import { PackagePlus, Trash2, Layers } from "lucide-vue-next";
 import type { Deck } from "@/types/deck";
 import { toast } from "vue-sonner";
-import { useTimestamp } from "@vueuse/core";
 
 const decks = useDecks();
 
@@ -18,14 +17,7 @@ const createDeck = () => {
     return;
   }
 
-  const newDeck: Deck = {
-    id: `${name.value}-${useTimestamp({ offset: 0 }).value.toString()}`, // Ensure the deck has a unique ID
-    name: name.value,
-    author: author.value,
-    oshiCardIds: [],
-    mainCardIds: [],
-    yellCardIds: [],
-  };
+  const newDeck: Deck = decks.createNewDeck(name.value, author.value);
 
   decks.addDeck(newDeck);
   decks.setCurrentDeck(newDeck);
