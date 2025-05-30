@@ -5,6 +5,8 @@ import {
   CARD_TYPE_YELL,
 } from "~/constants/card-data";
 import CardDataJson from "@/data/cards_i18n.json";
+import { APP_VERSION } from "~/constants/app";
+import { useTimestamp } from "@vueuse/core";
 
 // Comprehensive deck management with localStorage
 export const useDecks = () => {
@@ -24,6 +26,21 @@ export const useDecks = () => {
       console.error("Failed to load decks from localStorage:", error);
     }
   });
+
+  // Make new deck
+  const createNewDeck = (name: string, author: string): Deck => {
+    const newDeck: Deck = {
+      id: `${name}-${useTimestamp({ offset: 0 }).value.toString()}`,
+      name,
+      author,
+      oshiCardIds: [],
+      mainCardIds: [],
+      yellCardIds: [],
+      version: APP_VERSION, // Set initial version
+    };
+
+    return newDeck;
+  };
 
   // Save decks to localStorage
   const saveDecks = () => {
@@ -322,6 +339,8 @@ export const useDecks = () => {
     addCardToDeck,
     removeCardFromDeck,
     getCardCount,
+
+    createNewDeck,
 
     // Add new functions to the returned object
     shareDeck,
