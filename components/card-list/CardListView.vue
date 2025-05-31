@@ -8,6 +8,8 @@ import CardDataJson from "@/data/cards_i18n.json";
 
 let cardData = CardDataJson as unknown as CardCollection;
 
+const { locale } = useI18n();
+
 // debug
 cardData = [
   ...cardData.slice(0, 5),
@@ -58,7 +60,7 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
 /**
  * filter functions can be added here if needed
  */
-const filterState = useFilterState();
+const filter = useFilter();
 const options = {
   keys: [
     "id",
@@ -103,18 +105,49 @@ const result = computed(() => {
   let filteredCards = cardData;
 
   // filter search term
-  if (filterState.value.search) {
+  if (filter.filter.value.search) {
     filteredCards = fuse
-      .search(filterState.value.search)
+      .search(filter.filter.value.search)
       .map((result) => result.item);
   }
 
+  // filter by name - using OR logic
+  if (filter.filter.value.name) {
+    // console.log("filtering by name", filter.filter.value.name);
+
+    // Return cards that match the name (OR logic)
+    filteredCards = filteredCards.filter((item) => {
+      return (
+        item.translations[locale.value]?.name
+          ?.toLowerCase()
+          ?.includes(filter.filter.value.name.toLowerCase()) || false
+      );
+    });
+  }
+
+  // filter by tag - using OR logic
+  if (filter.filter.value.tag) {
+    // console.log("filtering by tag", filter.filter.value.tag);
+
+    // Return cards that match the tag (OR logic)
+    filteredCards = filteredCards.filter((item) => {
+      // Skip cards that don't have tags field
+      if (!item.translations[locale.value]?.tags) {
+        return false;
+      }
+
+      return item.translations[locale.value]?.tags?.some((tag) =>
+        tag.toLowerCase().includes(filter.filter.value.tag.toLowerCase())
+      );
+    });
+  }
+
   // filter by color - using OR logic
-  if (Object.values(filterState.value.colors).some((value) => value)) {
-    // console.log("filtering by color", filterState.value.colors);
+  if (Object.values(filter.filter.value.colors).some((value) => value)) {
+    // console.log("filtering by color", filter.filter.value.colors);
 
     // Get the selected colors
-    const selectedColors = Object.entries(filterState.value.colors)
+    const selectedColors = Object.entries(filter.filter.value.colors)
       .filter(([_, isSelected]) => isSelected)
       .map(([color]) => color);
 
@@ -127,11 +160,11 @@ const result = computed(() => {
   }
 
   // filter by card type - using OR logic
-  if (Object.values(filterState.value.cardTypes).some((value) => value)) {
-    // console.log("filtering by card type", filterState.value.cardTypes);
+  if (Object.values(filter.filter.value.cardTypes).some((value) => value)) {
+    // console.log("filtering by card type", filter.filter.value.cardTypes);
 
     // Get the selected card types
-    const selectedCardTypes = Object.entries(filterState.value.cardTypes)
+    const selectedCardTypes = Object.entries(filter.filter.value.cardTypes)
       .filter(([_, isSelected]) => isSelected)
       .map(([type]) => type);
 
@@ -144,11 +177,11 @@ const result = computed(() => {
   }
 
   // filter by rarity - using OR logic
-  if (Object.values(filterState.value.rarity).some((value) => value)) {
-    // console.log("filtering by rarity", filterState.value.rarity);
+  if (Object.values(filter.filter.value.rarity).some((value) => value)) {
+    // console.log("filtering by rarity", filter.filter.value.rarity);
 
     // Get the selected rarities
-    const selectedRarities = Object.entries(filterState.value.rarity)
+    const selectedRarities = Object.entries(filter.filter.value.rarity)
       .filter(([_, isSelected]) => isSelected)
       .map(([rarity]) => rarity);
 
@@ -161,11 +194,11 @@ const result = computed(() => {
   }
 
   // filter by bloomLevel - using OR logic
-  if (Object.values(filterState.value.bloomLevel).some((value) => value)) {
-    // console.log("filtering by bloom level", filterState.value.bloomLevel);
+  if (Object.values(filter.filter.value.bloomLevel).some((value) => value)) {
+    // console.log("filtering by bloom level", filter.filter.value.bloomLevel);
 
     // Get the selected bloom levels
-    const selectedBloomLevels = Object.entries(filterState.value.bloomLevel)
+    const selectedBloomLevels = Object.entries(filter.filter.value.bloomLevel)
       .filter(([_, isSelected]) => isSelected)
       .map(([level]) => level);
 

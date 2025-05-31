@@ -50,13 +50,13 @@ import { Input } from "@/components/ui/input";
 //   { value: "astro", label: "Astro" },
 // ];
 
-const filterState = useFilterState();
+const filter = useFilter();
 </script>
 
 <template>
   <Input
     id="search"
-    v-model="filterState.search"
+    v-model="filter.filter.value.search"
     type="search"
     placeholder="Search"
   />
