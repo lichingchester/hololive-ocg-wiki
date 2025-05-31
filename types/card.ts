@@ -100,6 +100,7 @@ export type Translation = {
   name?: string;
   rarity?: string;
   set?: string;
+  tags?: string[];
 };
 
 export type CardCollection = Card[];
