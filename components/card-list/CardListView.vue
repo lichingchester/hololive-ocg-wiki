@@ -11,11 +11,11 @@ let cardData = CardDataJson as unknown as CardCollection;
 const { locale } = useI18n();
 
 // debug
-cardData = [
-  ...cardData.slice(0, 5),
-  ...cardData.slice(70, 80),
-  ...cardData.slice(400, 500),
-]; // Limit to the first 1000 cards for performance
+// cardData = [
+//   ...cardData.slice(0, 5),
+//   ...cardData.slice(70, 80),
+//   ...cardData.slice(400, 500),
+// ]; // Limit to the first 1000 cards for performance
 
 /**
  * card size and padding
