@@ -48,7 +48,7 @@ defineProps<{
       <CardDataRowsBlockItem v-if="item.colorCode" :name="$t('fields.color')">
         <div class="flex items-center gap-1">
           <Image
-            :src="`icons/type_${item.colorCode}.png`"
+            :src="`/icons/type_${item.colorCode}.png`"
             :img-attributes="{ class: 'w-5' }"
           />
 
