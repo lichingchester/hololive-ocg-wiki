@@ -56,7 +56,12 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
+    "nuxt-gtag",
   ],
+
+  gtag: {
+    id: "GTM-MZHVHBGQ",
+  },
 
   colorMode: {
     preference: "system",
