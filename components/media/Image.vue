@@ -10,6 +10,22 @@ const props = defineProps<{
 
 const isLoading = ref(true);
 const hasError = ref(false);
+const shouldLoad = ref(false);
+const imageRef = ref(null);
+
+// Only start loading when in viewport or near it
+useIntersectionObserver(
+  imageRef,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting && !shouldLoad.value) {
+      shouldLoad.value = true;
+    }
+  },
+  {
+    threshold: 0.01, // Start loading when even 1% is visible
+    rootMargin: "200px", // Start loading when within 200px of viewport
+  }
+);
 
 const webpSrc = computed(() => {
   // Extract the base name without extension
@@ -30,11 +46,12 @@ const handleImageError = () => {
 defineExpose({
   isLoading,
   hasError,
+  shouldLoad,
 });
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative" ref="imageRef">
     <!-- Skeleton placeholder -->
     <Skeleton
       v-if="isLoading"
@@ -46,21 +63,23 @@ defineExpose({
     />
 
     <!-- Actual image -->
-    <picture
-      :class="[
-        isLoading ? 'opacity-0' : 'opacity-100',
-        'transition-opacity duration-300',
-      ]"
-    >
-      <source :srcset="`/${APP_BASE_URL_NAME}${webpSrc}`" type="image/webp" />
-      <img
-        :src="`/${APP_BASE_URL_NAME}${src}`"
-        loading="lazy"
-        v-bind="imgAttributes || {}"
-        @load="handleImageLoaded"
-        @error="handleImageError"
-      />
-    </picture>
+    <template v-if="shouldLoad">
+      <picture
+        :class="[
+          isLoading ? 'opacity-0' : 'opacity-100',
+          'transition-opacity duration-300',
+        ]"
+      >
+        <source :srcset="`/${APP_BASE_URL_NAME}${webpSrc}`" type="image/webp" />
+        <img
+          :src="`/${APP_BASE_URL_NAME}${src}`"
+          loading="lazy"
+          v-bind="imgAttributes || {}"
+          @load="handleImageLoaded"
+          @error="handleImageError"
+        />
+      </picture>
+    </template>
 
     <!-- Fallback for error state -->
     <div
