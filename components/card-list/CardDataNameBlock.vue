@@ -40,7 +40,7 @@ const {
           v-if="copiedName"
           class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
         >
-          copied
+          {{ $t("Copied") }}
         </span>
       </Transition>
     </div>
@@ -59,7 +59,7 @@ const {
             v-if="copiedId"
             class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
           >
-            copied
+            {{ $t("Copied") }}
           </span>
         </Transition>
       </div>
@@ -77,7 +77,7 @@ const {
             v-if="copiedNumber"
             class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
           >
-            copied
+            {{ $t("Copied") }}
           </span>
         </Transition>
       </div>

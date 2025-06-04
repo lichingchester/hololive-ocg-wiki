@@ -1,4 +1,42 @@
 {
+  "No results found.": "Tidak ada hasil ditemukan.",
+  "Reset": "Atur Ulang",
+  "Close": "Tutup",
+  "Search": "Cari",
+  "Copied": "Disalin",
+  "Expand": "Perluas",
+  "Collapse": "Tutup",
+  "Oshi": "Oshi",
+  "Main Deck": "Main Deck",
+  "Yell Deck": "Yell Deck",
+  "Please select a deck to continue.": "Silakan pilih deck untuk melanjutkan.",
+  "Edit": "Edit",
+  "Select one deck to edit": "Pilih satu deck untuk diedit",
+  "Clipboard is not supported in this browser.": "Clipboard tidak didukung di browser ini.",
+  "Copied deck code URL.": "URL kode deck telah disalin.",
+  "Deck detail page not found.": "Halaman detail deck tidak ditemukan.",
+  "Deck deleted successfully!": "Deck berhasil dihapus!",
+  "Options": "Opsi",
+  "Copy Deck Code URL": "Salin URL Kode Deck",
+  "Go to Detail Page": "Pergi ke Halaman Detail",
+  "Delete": "Hapus",
+  "Sure?": "Yakin?",
+  "Cancel": "Batal",
+  "Deck name is required.": "Nama deck wajib diisi.",
+  "Deck created successfully!": "Deck berhasil dibuat!",
+  "New Deck": "Deck Baru",
+  "Deck Name": "Nama Deck",
+  "Author": "Penulis",
+  "Create Deck": "Buat Deck",
+  "No deck code provided.": "Tidak ada kode deck yang diberikan.",
+  "Failed to import shared deck.": "Gagal mengimpor deck yang dibagikan.",
+  "Card List": "Daftar Kartu",
+  "Saved In Local Storage": "Tersimpan di Penyimpanan Lokal",
+  "Can Import/Update This Deck": "Bisa Impor/Perbarui Deck Ini",
+  "Import This Deck": "Impor Deck Ini",
+  "Official Site": "Situs Resmi",
+  "Decks": "Decks",
+
   "fields": {
     "name": "Nama",
     "cardType": "Tipe Kartu",
@@ -87,7 +125,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Berkumpul, Lunaito!",
-        "effect": "[Sekali per Game] Bisa digunakan saat Holomen Pusat milikmu adalah <HimeMori Luna>: Tunjukkan 1 hingga 4 kartu <Lunaito> dari Dek milikmu, lalu pasangkan ke Holomen milikmu sesuai keinginan. Setelah itu, kocok Dek milikmu."
+        "effect": "[Sekali per Game] Bisa digunakan saat Holomen Pusat milikmu adalah 〈HimeMori Luna〉: Tunjukkan 1 hingga 4 kartu 〈Lunaito〉 dari Dek milikmu, lalu pasangkan ke Holomen milikmu sesuai keinginan. Setelah itu, kocok Dek milikmu."
       }
     },
     "566": {
@@ -100,7 +138,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "poi",
-        "effect": "[Sekali per Turn] Kirim 1 kartu Semangat dari Arsip milikmu ke Holomen Belakang milikmu yang bernama <Shishiro Botan>."
+        "effect": "[Sekali per Turn] Kirim 1 kartu Semangat dari Arsip milikmu ke Holomen Belakang milikmu yang bernama 〈Shishiro Botan〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -118,7 +156,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Apa 35P Bakal Balik!?",
-        "effect": "[Sekali per Turn] Lempar dadu sekali: Jika hasilnya 1, 2, 4, atau 6, kembalikan 1 kartu <35P> dari Arsip milikmu ke tanganmu. Jika hasilnya 3 atau 5, kembalikan 2 kartu <35P> dari Arsip milikmu ke tanganmu."
+        "effect": "[Sekali per Turn] Lempar dadu sekali: Jika hasilnya 1, 2, 4, atau 6, kembalikan 1 kartu 〈35P〉 dari Arsip milikmu ke tanganmu. Jika hasilnya 3 atau 5, kembalikan 2 kartu 〈35P〉 dari Arsip milikmu ke tanganmu."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -136,7 +174,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Moko-chan!",
-        "effect": "[Sekali per Turn] Kirim 1 kartu dari atas Dek Semangat milikmu ke Holomen 1st milikmu yang bernama <Mokoko AbyssGuard>."
+        "effect": "[Sekali per Turn] Kirim 1 kartu dari atas Dek Semangat milikmu ke Holomen 1st milikmu yang bernama 〈Mokoko AbyssGuard〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -159,7 +197,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Perbuatan Iblis",
-        "effect": "[Sekali per Game] Bisa digunakan pada turn lawan saat <Tokoyami Towa> milikmu jatuh: Kembalikan masing-masing 2 kartu Semangat dari Holomen Pusat dan Holomen Kolaborasi lawan ke bawah Dek Semangat mereka dengan urutan yang kamu suka."
+        "effect": "[Sekali per Game] Bisa digunakan pada turn lawan saat 〈Tokoyami Towa〉 milikmu jatuh: Kembalikan masing-masing 2 kartu Semangat dari Holomen Pusat dan Holomen Kolaborasi lawan ke bawah Dek Semangat mereka dengan urutan yang kamu suka."
       }
     },
     "570": {
@@ -172,7 +210,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Stamina Tak Terbatas",
-        "effect": "[Sekali per Turn] Aktifkan 1 <Inugami Korone> milikmu yang sedang beristirahat."
+        "effect": "[Sekali per Turn] Aktifkan 1 〈Inugami Korone〉 milikmu yang sedang beristirahat."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -195,7 +233,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Watame Tidak Salah, Kan?",
-        "effect": "[Sekali per Game] Kirim 2 kartu dari atas Dek Semangat milikmu ke 1 <Tsunomaki Watame> milikmu."
+        "effect": "[Sekali per Game] Kirim 2 kartu dari atas Dek Semangat milikmu ke 1 〈Tsunomaki Watame〉 milikmu."
       }
     },
     "572": {
@@ -213,7 +251,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Semangat, Risu!",
-        "effect": "[Sekali per Game] Selama turn ini, Seni dari semua <Ayunda Risu> di panggung milikmu mendapat +50."
+        "effect": "[Sekali per Game] Selama turn ini, Seni dari semua 〈Ayunda Risu〉 di panggung milikmu mendapat +50."
       }
     },
     "573": {
@@ -228,7 +266,7 @@
       "arts": [
         {
           "name": "Semuanya~, Ada di Sini~?",
-          "effect": "Jika tidak ada Holomen milikmu yang dilengkapi <Lunaito>, tunjukkan 1 kartu <Lunaito> dari Dek milikmu, lalu pasangkan ke Holomen milikmu. Setelah itu, kocok Dek milikmu."
+          "effect": "Jika tidak ada Holomen milikmu yang dilengkapi 〈Lunaito〉, tunjukkan 1 kartu 〈Lunaito〉 dari Dek milikmu, lalu pasangkan ke Holomen milikmu. Setelah itu, kocok Dek milikmu."
         }
       ]
     },
@@ -248,7 +286,7 @@
       ],
       "keyword": {
         "name": "Putri dari Negeri Permen",
-        "effect": "Saat Holomen Pusat milikmu adalah <HimeMori Luna>, ambil 1 kartu dari Dek milikmu."
+        "effect": "Saat Holomen Pusat milikmu adalah 〈HimeMori Luna〉, ambil 1 kartu dari Dek milikmu."
       }
     },
     "575": {
@@ -449,7 +487,7 @@
       "arts": [
         {
           "name": "Bidikan Dewa",
-          "effect": "Ketika Holomen favoritmu adalah <Shishiro Botan>, kamu bisa mengarsipkan 1 kartu Yell dari Back Holomenmu: Berikan 40 kerusakan khusus ke Center Holomen atau Collab Holomen lawan."
+          "effect": "Ketika Holomen favoritmu adalah 〈Shishiro Botan〉, kamu bisa mengarsipkan 1 kartu Yell dari Back Holomenmu: Berikan 40 kerusakan khusus ke Center Holomen atau Collab Holomen lawan."
         }
       ],
       "keyword": {
@@ -470,7 +508,7 @@
       "arts": [
         {
           "name": "Penari Perut Penuh Semangat",
-          "effect": "Ketika Holomen favoritmu adalah <Aki Rosenthal>, pulihkan HP sebanyak 10 untuk semua Holomen yang memiliki Tool terpasang."
+          "effect": "Ketika Holomen favoritmu adalah 〈Aki Rosenthal〉, pulihkan HP sebanyak 10 untuk semua Holomen yang memiliki Tool terpasang."
         }
       ],
       "keyword": {
@@ -491,7 +529,7 @@
       "arts": [
         {
           "name": "Main Kartu Pekora",
-          "effect": "Jika kamu telah melempar dadu minimal 1 kali dengan kemampuan <Usada Pekora> pada giliran ini, tambahkan +40 pada Arts ini."
+          "effect": "Jika kamu telah melempar dadu minimal 1 kali dengan kemampuan 〈Usada Pekora〉 pada giliran ini, tambahkan +40 pada Arts ini."
         }
       ],
       "keyword": {
@@ -516,7 +554,7 @@
       ],
       "keyword": {
         "name": "Kazama Melindungi",
-        "effect": "Kamu bisa mengirimkan masing-masing 1 kartu Yell dari arsipmu ke masing-masing 1 Holomen <Kazama Iroha> dan <Hoshimachi Suisei>."
+        "effect": "Kamu bisa mengirimkan masing-masing 1 kartu Yell dari arsipmu ke masing-masing 1 Holomen 〈Kazama Iroha〉 dan 〈Hoshimachi Suisei〉."
       }
     },
     "589": {
@@ -601,12 +639,12 @@
       "arts": [
         {
           "name": "Foto Kenangan dengan 35P",
-          "effect": "Jika <35P> terpasang pada Holomen ini, tambahkan +30 pada Arts ini."
+          "effect": "Jika 〈35P〉 terpasang pada Holomen ini, tambahkan +30 pada Arts ini."
         }
       ],
       "keyword": {
         "name": "Nye",
-        "effect": "Ungkapkan 1 kartu <35P> dari deck-mu dan tambahkan ke tanganmu. Kemudian, kocok deck-mu."
+        "effect": "Ungkapkan 1 kartu 〈35P〉 dari deck-mu dan tambahkan ke tanganmu. Kemudian, kocok deck-mu."
       }
     },
     "594": {
@@ -621,12 +659,12 @@
       "arts": [
         {
           "name": "Miko Elit",
-          "effect": "Tambahkan +20 pada Arts ini untuk setiap 1 kartu <35P> yang terpasang pada Holomen ini."
+          "effect": "Tambahkan +20 pada Arts ini untuk setiap 1 kartu 〈35P〉 yang terpasang pada Holomen ini."
         }
       ],
       "keyword": {
         "name": "Judi Elit",
-        "effect": "[Hanya untuk Posisi Center][Sekali per Giliran] Pada Langkah Utamamu, jika <35P> terpasang pada Holomen ini, kamu bisa melempar dadu sekali: Jika hasilnya 3 atau 5, selama giliran ini, tambahkan +50 pada Arts Holomen ini."
+        "effect": "[Hanya untuk Posisi Center][Sekali per Giliran] Pada Langkah Utamamu, jika 〈35P〉 terpasang pada Holomen ini, kamu bisa melempar dadu sekali: Jika hasilnya 3 atau 5, selama giliran ini, tambahkan +50 pada Arts Holomen ini."
       }
     },
     "595": {
@@ -711,7 +749,7 @@
       "arts": [
         {
           "name": "Challenger",
-          "effect": "Jika Holomen Favoritmu adalah <Takane Lui>, kamu bisa mengarsipkan 2 kartu dari tanganmu: Ambil 3 kartu dari dekmu."
+          "effect": "Jika Holomen Favoritmu adalah 〈Takane Lui〉, kamu bisa mengarsipkan 2 kartu dari tanganmu: Ambil 3 kartu dari dekmu."
         }
       ]
     },
@@ -731,7 +769,7 @@
       ],
       "keyword": {
         "name": "Waktu Bahagia",
-        "effect": "Perlihatkan 1 hingga 4 kartu <Takanashi Kiara> dari dekmu, lalu arsipkan. Kemudian, kocok dekmu."
+        "effect": "Perlihatkan 1 hingga 4 kartu 〈Takanashi Kiara〉 dari dekmu, lalu arsipkan. Kemudian, kocok dekmu."
       }
     },
     "601": {
@@ -746,7 +784,7 @@
       "arts": [
         {
           "name": "Bukan Fuwawa, ini Mococo",
-          "effect": "Seni ini bisa digunakan tanpa membutuhkan 1 Yell jika Holomen Pusatmu adalah <Fuwawa Abyssgard>."
+          "effect": "Seni ini bisa digunakan tanpa membutuhkan 1 Yell jika Holomen Pusatmu adalah 〈Fuwawa Abyssgard〉."
         }
       ]
     },
@@ -766,7 +804,7 @@
       ],
       "keyword": {
         "name": "Waktunya Bermain!",
-        "effect": "Ketika Bloom dari Debut, perlihatkan 1 kartu Holomen 1st <Fuwawa Abyssgard> dari dekmu, lalu tambahkan ke tangan. Kemudian, kocok dekmu."
+        "effect": "Ketika Bloom dari Debut, perlihatkan 1 kartu Holomen 1st 〈Fuwawa Abyssgard〉 dari dekmu, lalu tambahkan ke tangan. Kemudian, kocok dekmu."
       }
     },
     "603": {
@@ -782,12 +820,12 @@
       "arts": [
         {
           "name": "Yang Lembut dan Menggemaskan",
-          "effect": "[Hanya Posisi Kolaborasi] Jika Holomen Pusatmu adalah <Fuwawa Abyssgard>, tambahkan +30 pada Seni ini."
+          "effect": "[Hanya Posisi Kolaborasi] Jika Holomen Pusatmu adalah 〈Fuwawa Abyssgard〉, tambahkan +30 pada Seni ini."
         }
       ],
       "keyword": {
         "name": "Anjing Penjaga Dunia Bawah yang Liar",
-        "effect": "Pada Langkah Resetmu, jika Holomen Pusatmu adalah <Fuwawa Abyssgard>, Holomen ini tidak akan beristirahat meskipun berpindah ke Posisi Belakang."
+        "effect": "Pada Langkah Resetmu, jika Holomen Pusatmu adalah 〈Fuwawa Abyssgard〉, Holomen ini tidak akan beristirahat meskipun berpindah ke Posisi Belakang."
       }
     },
     "604": {
@@ -1255,7 +1293,7 @@
       ],
       "keyword": {
         "name": "Gaya Tinju",
-        "effect": "[Hanya Posisi Kolaborasi] Selama langkah utama lawan, HP dari Center Holomen <Inugami Korone> milikmu tidak berkurang atau berubah akibat kemampuan lawan."
+        "effect": "[Hanya Posisi Kolaborasi] Selama langkah utama lawan, HP dari Center Holomen 〈Inugami Korone〉 milikmu tidak berkurang atau berubah akibat kemampuan lawan."
       }
     },
     "630": {
@@ -1275,7 +1313,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "Ketika Holomen ini jatuh (down), kirim 1 kartu dari atas deck Yell-mu ke <Inugami Korone> milikmu."
+        "effect": "Ketika Holomen ini jatuh (down), kirim 1 kartu dari atas deck Yell-mu ke 〈Inugami Korone〉 milikmu."
       }
     },
     "631": {
@@ -1305,7 +1343,7 @@
       "arts": [
         {
           "name": "Lagu Watame",
-          "effect": "Jika ada Holomen dengan <Watameito> yang terpasang, kamu boleh mengirim 1 kartu Yell dari arsipmu ke Holomen kuning milikmu."
+          "effect": "Jika ada Holomen dengan 〈Watameito〉 yang terpasang, kamu boleh mengirim 1 kartu Yell dari arsipmu ke Holomen kuning milikmu."
         }
       ]
     },
@@ -1338,12 +1376,12 @@
       "arts": [
         {
           "name": "Tonton sampai akhir ya, Watameito!",
-          "effect": "Kirim 1 kartu dari atas deck Yell-mu ke Back Holomen <Tsunomaki Watame> milikmu."
+          "effect": "Kirim 1 kartu dari atas deck Yell-mu ke Back Holomen 〈Tsunomaki Watame〉 milikmu."
         }
       ],
       "keyword": {
         "name": "Aku akan bernyanyi dan menari sekuat tenaga!",
-        "effect": "Jika jumlah Holomen di panggungmu 5 atau kurang, tunjukkan 1 kartu Holomen Debut <Tsunomaki Watame> dari deckmu, lalu keluarkan ke panggung. Setelah itu, kocok deckmu."
+        "effect": "Jika jumlah Holomen di panggungmu 5 atau kurang, tunjukkan 1 kartu Holomen Debut 〈Tsunomaki Watame〉 dari deckmu, lalu keluarkan ke panggung. Setelah itu, kocok deckmu."
       }
     },
     "635": {
@@ -2736,7 +2774,7 @@
       ],
       "keyword": {
         "name": "Chiyokooo!!",
-        "effect": "Jika Center Holomenmu adalah <Yuzuki Choco>, kamu bisa mengirim 1 kartu Yell dari arsipmu ke Holomenmu."
+        "effect": "Jika Center Holomenmu adalah 〈Yuzuki Choco〉, kamu bisa mengirim 1 kartu Yell dari arsipmu ke Holomenmu."
       }
     },
     "263": {
@@ -2764,7 +2802,7 @@
       "rarity": "U",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "ガゥ",
-      "abilityText": "Kartu ini tidak bisa digunakan jika kartu di tanganmu lebih dari 6 (termasuk kartu ini).\n\nLihat 4 kartu teratas dari dekmu. Di antaranya, pilih <Oozora Subaru>, <Yuzuki Choco>, dan <Himemori Luna> sebanyak yang kamu inginkan, tunjukkan, lalu tambahkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah dekmu dalam urutan yang kamu inginkan.\n\nLIMITED: Hanya bisa digunakan 1 kartu per turn."
+      "abilityText": "Kartu ini tidak bisa digunakan jika kartu di tanganmu lebih dari 6 (termasuk kartu ini).\n\nLihat 4 kartu teratas dari dekmu. Di antaranya, pilih 〈Oozora Subaru〉, 〈Yuzuki Choco〉, dan 〈Himemori Luna〉 sebanyak yang kamu inginkan, tunjukkan, lalu tambahkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah dekmu dalam urutan yang kamu inginkan.\n\nLIMITED: Hanya bisa digunakan 1 kartu per turn."
     },
     "265": {
       "name": "Omurice Choco",
@@ -3289,7 +3327,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Berlayar~!",
-        "effect": "[Sekali per permainan] Berikan kerusakan khusus sebesar 50 kepada Center Holomen atau Collab Holomen lawan untuk setiap 1 Holomen yang bertumpuk di atas <Houshou Marine> milik Center Holomen kamu."
+        "effect": "[Sekali per permainan] Berikan kerusakan khusus sebesar 50 kepada Center Holomen atau Collab Holomen lawan untuk setiap 1 Holomen yang bertumpuk di atas 〈Houshou Marine〉 milik Center Holomen kamu."
       }
     },
     "271": {
@@ -3302,7 +3340,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Poe poe poe~",
-        "effect": "[Sekali per giliran] Dapat digunakan saat Center Holomen kamu adalah <Sakamata Chloe>: Lihat 3 kartu teratas dari dek kamu. Kamu boleh mengarsipkan semua kartu tersebut atau mengembalikannya ke atas dek dalam urutan yang kamu inginkan."
+        "effect": "[Sekali per giliran] Dapat digunakan saat Center Holomen kamu adalah 〈Sakamata Chloe〉: Lihat 3 kartu teratas dari dek kamu. Kamu boleh mengarsipkan semua kartu tersebut atau mengembalikannya ke atas dek dalam urutan yang kamu inginkan."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -3320,7 +3358,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Nee゛e゛e゛e゛e゛e゛e゛",
-        "effect": "[Sekali per giliran] Dapat digunakan saat kamu melempar dadu dengan kemampuan <Murasaki Shion>: Lempar ulang dadu sebanyak 1 kali."
+        "effect": "[Sekali per giliran] Dapat digunakan saat kamu melempar dadu dengan kemampuan 〈Murasaki Shion〉: Lempar ulang dadu sebanyak 1 kali."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -3361,7 +3399,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Rap Dewa Kematian",
-        "effect": "[Sekali per permainan] Dapat digunakan saat Center Holomen kamu adalah <Mori Calliope>: Selama giliran ini, 1 <Mori Calliope> kamu dapat menggunakan Arts yang sama sekali lagi setelah menggunakan Arts."
+        "effect": "[Sekali per permainan] Dapat digunakan saat Center Holomen kamu adalah 〈Mori Calliope〉: Selama giliran ini, 1 〈Mori Calliope〉 kamu dapat menggunakan Arts yang sama sekali lagi setelah menggunakan Arts."
       }
     },
     "275": {
@@ -4673,7 +4711,7 @@
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "Arts Holomen yang dilengkapi dengan tool ini bertambah +10.\n\n◆ Jika dilengkapi pada <Shion Murasaki> level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi tool ini menjadi Center Holomen, ubah skill oshi milikmu 'Nee゛e゛e゛e゛e゛e゛e゛' dari [1 kali per giliran] menjadi [2 kali per giliran].\n\nTool hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "Arts Holomen yang dilengkapi dengan tool ini bertambah +10.\n\n◆ Jika dilengkapi pada 〈Shion Murasaki〉 level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi tool ini menjadi Center Holomen, ubah skill oshi milikmu 'Nee゛e゛e゛e゛e゛e゛e゛' dari [1 kali per giliran] menjadi [2 kali per giliran].\n\nTool hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "355": {
       "name": "Sabit Calliope Mori",
@@ -4681,7 +4719,7 @@
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "Arts Holomen yang dilengkapi dengan tool ini bertambah +10.\n\n◆ Jika dilengkapi pada <Calliope Mori> level 1st atau lebih, tambah kemampuan berikut:\nKetika tool ini dilengkapi ke Holomen dari tanganmu, arsipkan 1 kartu teratas dari dekmu.\n\nTool hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "Arts Holomen yang dilengkapi dengan tool ini bertambah +10.\n\n◆ Jika dilengkapi pada 〈Calliope Mori〉 level 1st atau lebih, tambah kemampuan berikut:\nKetika tool ini dilengkapi ke Holomen dari tanganmu, arsipkan 1 kartu teratas dari dekmu.\n\nTool hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "356": {
       "name": "Oruyanke",
@@ -4690,7 +4728,7 @@
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, ambil 1 kartu dari dekmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, ambil 1 kartu dari dekmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "357": {
       "name": "Nejimaki Kitsune",
@@ -4699,7 +4737,7 @@
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini jatuh (down), pindahkan 1 kartu Yell dari Holomen ini ke Holomen lain milikmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini jatuh (down), pindahkan 1 kartu Yell dari Holomen ini ke Holomen lain milikmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "358": {
       "name": "Fubuchun",
@@ -4708,7 +4746,7 @@
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, kamu bisa mengembalikan 1 kartu maskot dari arsipmu ke tanganmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, kamu bisa mengembalikan 1 kartu maskot dari arsipmu ke tanganmu.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "359": {
       "name": "Fubura",
@@ -4717,7 +4755,7 @@
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada <Fubuki Shirakami>, tambah kemampuan berikut:\n[1 kali per giliran] Pada langkah utamamu, kamu bisa mengarsipkan 2 kartu Yell dari Holomen milikmu: Selama giliran ini, Arts Holomen ini bertambah +50.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\n[1 kali per giliran] Pada langkah utamamu, kamu bisa mengarsipkan 2 kartu Yell dari Holomen milikmu: Selama giliran ini, Arts Holomen ini bertambah +50.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "360": {
       "name": "Miteiru",
@@ -4726,7 +4764,7 @@
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada <Fubuki Shirakami>, tambah kemampuan berikut:\n[Hanya di Posisi Belakang] Holomen yang dilengkapi maskot ini tidak menerima kerusakan dari lawan.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dilengkapi pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\n[Hanya di Posisi Belakang] Holomen yang dilengkapi maskot ini tidak menerima kerusakan dari lawan.\n\nMaskot hanya bisa dilengkapi 1 per Holomen milikmu."
     },
     "361": {
       "name": "Tatang",
@@ -5048,7 +5086,7 @@
       "arts": [
         {
           "name": "SorAZ Gravity",
-          "effect": "Jika ada Holomen <Tokino Sora> di panggungmu, kirim 1 kartu dari atas dek Yell kamu ke Holomen milikmu."
+          "effect": "Jika ada Holomen 〈Tokino Sora〉 di panggungmu, kirim 1 kartu dari atas dek Yell kamu ke Holomen milikmu."
         },
         {
           "name": "Destiny Song",
@@ -5122,7 +5160,7 @@
       ],
       "keyword": {
         "name": "SoAzKo",
-        "effect": "■ Saat berkolaborasi dengan <Tokino Sora>, ambil 1 kartu dari dekmu.\n■ Saat berkolaborasi dengan <AZKi>, kirim 1 kartu dari atas dek Yell kamu ke Center Holomen milikmu."
+        "effect": "■ Saat berkolaborasi dengan 〈Tokino Sora〉, ambil 1 kartu dari dekmu.\n■ Saat berkolaborasi dengan 〈AZKi〉, kirim 1 kartu dari atas dek Yell kamu ke Center Holomen milikmu."
       }
     },
     "21": {
@@ -5131,7 +5169,7 @@
       "rarity": "C",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "illustrator": "© 2023 Victor Entertainment. © 2016 COVER Corp.",
-      "abilityText": "Kartu ini tidak dapat digunakan kecuali jumlah kartu di tanganmu 6 atau kurang, tidak termasuk kartu ini.\n\nLihat 4 kartu teratas dari dekmu. Dari kartu tersebut, tampilkan <Tokino Sora> dan <AZKi> sebanyak yang kamu inginkan, lalu tambahkan Holomen yang ditampilkan ke tanganmu. Kemudian, kembalikan kartu yang tersisa ke bawah dekmu dalam urutan yang kamu suka.\n\nLIMITED: Hanya dapat digunakan 1 kartu per giliran."
+      "abilityText": "Kartu ini tidak dapat digunakan kecuali jumlah kartu di tanganmu 6 atau kurang, tidak termasuk kartu ini.\n\nLihat 4 kartu teratas dari dekmu. Dari kartu tersebut, tampilkan 〈Tokino Sora〉 dan 〈AZKi〉 sebanyak yang kamu inginkan, lalu tambahkan Holomen yang ditampilkan ke tanganmu. Kemudian, kembalikan kartu yang tersisa ke bawah dekmu dalam urutan yang kamu suka.\n\nLIMITED: Hanya dapat digunakan 1 kartu per giliran."
     },
     "199": {
       "name": "Pavolia Reine",
@@ -5406,7 +5444,7 @@
       "illustrator": "Hiroko",
       "oshiSkill": {
         "name": "Survival Power",
-        "effect": "[Sekali per giliran] Tunjukkan 1 kartu <Kapak Batu> dari dekmu, lalu pasangkan ke Holomen Hijau milikmu. Setelah itu, kocok dekmu."
+        "effect": "[Sekali per giliran] Tunjukkan 1 kartu 〈Kapak Batu〉 dari dekmu, lalu pasangkan ke Holomen Hijau milikmu. Setelah itu, kocok dekmu."
       },
       "spOshiSkill": {
         "name": "Lagu Bumi",
@@ -6228,7 +6266,7 @@
       "arts": [
         {
           "name": "Mengirimkan Semangat dengan Sepenuh Hati!",
-          "effect": "Kirimkan 1 kartu dari atas dek Yell milikmu ke Holomen dengan tag #秘密結社holoX selain <Kazama Iroha> milikmu."
+          "effect": "Kirimkan 1 kartu dari atas dek Yell milikmu ke Holomen dengan tag #秘密結社holoX selain 〈Kazama Iroha〉 milikmu."
         }
       ],
       "keyword": {
@@ -6302,7 +6340,7 @@
       ],
       "keyword": {
         "name": "Lautan Cahaya Hijau yang Menyebar",
-        "effect": "Kirimkan 1 kartu dari atas dek Yell milikmu ke Holomen dengan tag #ID selain <Airani Iofifteen> milikmu."
+        "effect": "Kirimkan 1 kartu dari atas dek Yell milikmu ke Holomen dengan tag #ID selain 〈Airani Iofifteen〉 milikmu."
       }
     },
     "92": {
@@ -6317,7 +6355,7 @@
       "arts": [
         {
           "name": "Relation Sky",
-          "effect": "Saat ada Holomen dengan tag #ID selain <Airani Iofifteen> di panggungmu, Seni ini mendapatkan +50."
+          "effect": "Saat ada Holomen dengan tag #ID selain 〈Airani Iofifteen〉 di panggungmu, Seni ini mendapatkan +50."
         }
       ],
       "keyword": {
@@ -6585,7 +6623,7 @@
       "arts": [
         {
           "name": "Ketergantungan Bersama",
-          "effect": "Arts ini tidak bisa digunakan jika Holomen ini tidak memiliki <Anggota Kursi>."
+          "effect": "Arts ini tidak bisa digunakan jika Holomen ini tidak memiliki 〈Anggota Kursi〉."
         }
       ],
       "keyword": {
@@ -6611,7 +6649,7 @@
       ],
       "keyword": {
         "name": "Polka Illusion",
-        "effect": "Kamu bisa mengembalikan 1 kartu <Anggota Kursi> dari area arsipmu ke tanganmu."
+        "effect": "Kamu bisa mengembalikan 1 kartu 〈Anggota Kursi〉 dari area arsipmu ke tanganmu."
       }
     },
     "111": {
@@ -6714,7 +6752,7 @@
       ],
       "keyword": {
         "name": "Lemari Pakaian yang Berkilau",
-        "effect": "Jika Holomen Favoritmu adalah <Hoshimachi Suisei>, kamu bisa mengarsipkan 1 Semangat Biru dari Holomen ini: Tarik 2 kartu dari dekmu."
+        "effect": "Jika Holomen Favoritmu adalah 〈Hoshimachi Suisei〉, kamu bisa mengarsipkan 1 Semangat Biru dari Holomen ini: Tarik 2 kartu dari dekmu."
       }
     },
     "117": {
@@ -7187,14 +7225,14 @@
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Kartu ini tidak bisa digunakan kecuali jumlah kartu di tanganmu, tanpa menyertakan kartu ini, adalah 6 atau kurang.\n\nLihat 4 kartu teratas dari Deck-mu. Dari kartu tersebut, pilih <Usada Pekora> dan <Moona Hoshinova> sebanyak yang kamu mau untuk diperlihatkan, lalu tambahkan HoloMen yang diperlihatkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah Deck dalam urutan yang kamu inginkan.\n\nLIMITED: Hanya bisa digunakan 1 kali per giliran."
+      "abilityText": "Kartu ini tidak bisa digunakan kecuali jumlah kartu di tanganmu, tanpa menyertakan kartu ini, adalah 6 atau kurang.\n\nLihat 4 kartu teratas dari Deck-mu. Dari kartu tersebut, pilih 〈Usada Pekora〉 dan 〈Moona Hoshinova〉 sebanyak yang kamu mau untuk diperlihatkan, lalu tambahkan HoloMen yang diperlihatkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah Deck dalam urutan yang kamu inginkan.\n\nLIMITED: Hanya bisa digunakan 1 kali per giliran."
     },
     "151": {
       "name": "Aku Akan Memukulmu dengan Senjata Tumpul!",
       "cardType": "サポート・イベント・LIMITED",
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
-      "abilityText": "Lempar dadu sekali: Jika hasilnya 3 atau kurang, arsipkan 1 kartu Cheer dari HoloMen lawan.\n\n◆ Jika Oshi HoloMen-mu adalah <Nanashi Mumei>, kemampuan bisa diubah\n[Sekali per permainan] Arsipkan 2 kartu Cheer dari Center HoloMen lawan.\n\nLIMITED: Hanya bisa digunakan 1 kali per giliran."
+      "abilityText": "Lempar dadu sekali: Jika hasilnya 3 atau kurang, arsipkan 1 kartu Cheer dari HoloMen lawan.\n\n◆ Jika Oshi HoloMen-mu adalah 〈Nanashi Mumei〉, kemampuan bisa diubah\n[Sekali per permainan] Arsipkan 2 kartu Cheer dari Center HoloMen lawan.\n\nLIMITED: Hanya bisa digunakan 1 kali per giliran."
     },
     "152": {
       "name": "Hololive Indonesia Generasi 3",
@@ -7224,7 +7262,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ Arts Holomem yang dilengkapi alat ini +20.\n■ Ketika Holomem yang dilengkapi alat ini menggunakan Arts, berikan 10 kerusakan khusus pada Holomem ini.\n\n◆ Jika dilengkapi pada <Aki Rosenthal> level 1st atau lebih, tambah kemampuan berikut:\n[1 kali per giliran] Ketika Holomem ini pulih melalui kemampuanmu, ambil 1 kartu dari dekmu.\n\nAlat hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "■ Arts Holomem yang dilengkapi alat ini +20.\n■ Ketika Holomem yang dilengkapi alat ini menggunakan Arts, berikan 10 kerusakan khusus pada Holomem ini.\n\n◆ Jika dilengkapi pada 〈Aki Rosenthal〉 level 1st atau lebih, tambah kemampuan berikut:\n[1 kali per giliran] Ketika Holomem ini pulih melalui kemampuanmu, ambil 1 kartu dari dekmu.\n\nAlat hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "156": {
       "name": "Mikrofon Hoshimachi Suisei",
@@ -7232,7 +7270,7 @@
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Arts Holomem yang dilengkapi alat ini +10.\n\n◆ Jika dilengkapi pada <Hoshimachi Suisei> level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi alat ini mengalahkan Holomem lawan, kirim 1 kartu dari atas dek Yell-mu ke Holomem ini.\n\nAlat hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "Arts Holomem yang dilengkapi alat ini +10.\n\n◆ Jika dilengkapi pada 〈Hoshimachi Suisei〉 level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi alat ini mengalahkan Holomem lawan, kirim 1 kartu dari atas dek Yell-mu ke Holomem ini.\n\nAlat hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "157": {
       "name": "Upao",
@@ -7240,7 +7278,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada <Amane Kanata>, tambah kemampuan berikut:\n[1 kali per giliran] Pada giliran lawan, ketika Holomem yang dilengkapi maskot ini menerima kerusakan, berikan 20 kerusakan khusus pada Holomem pusat lawan.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada 〈Amane Kanata〉, tambah kemampuan berikut:\n[1 kali per giliran] Pada giliran lawan, ketika Holomem yang dilengkapi maskot ini menerima kerusakan, berikan 20 kerusakan khusus pada Holomem pusat lawan.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "158": {
       "name": "Friend",
@@ -7248,7 +7286,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada <Nanashi Mumei>, tambah kemampuan berikut:\nPada giliran lawan, ketika Holomem yang dilengkapi maskot ini akan menerima kerusakan, kamu dapat mengarsipkan maskot ini: Kurangi kerusakan yang diterima Holomem yang dilengkapi maskot ini sebesar 30.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada 〈Nanashi Mumei〉, tambah kemampuan berikut:\nPada giliran lawan, ketika Holomem yang dilengkapi maskot ini akan menerima kerusakan, kamu dapat mengarsipkan maskot ini: Kurangi kerusakan yang diterima Holomem yang dilengkapi maskot ini sebesar 30.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "159": {
       "name": "Ankimo",
@@ -7256,7 +7294,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada <Tokino Sora>, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts, maskot ini juga dianggap sebagai Yell Putih.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "HP Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada 〈Tokino Sora〉, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts, maskot ini juga dianggap sebagai Yell Putih.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "160": {
       "name": "Jobs",
@@ -7264,7 +7302,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "HP Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada <Aki Rosenthal>, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts, pulihkan HP salah satu Holomem milikmu sebesar 10.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "HP Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada 〈Aki Rosenthal〉, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts, pulihkan HP salah satu Holomem milikmu sebesar 10.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "161": {
       "name": "Ganmo",
@@ -7272,7 +7310,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada <Takane Lui>, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts di posisi pusat, ambil 1 kartu dari dekmu.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "Arts Holomem yang dilengkapi maskot ini +10.\n\n◆ Jika dilengkapi pada 〈Takane Lui〉, tambah kemampuan berikut:\nKetika Holomem yang dilengkapi maskot ini menggunakan Arts di posisi pusat, ambil 1 kartu dari dekmu.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "162": {
       "name": "Kotori",
@@ -7280,7 +7318,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Kerusakan yang diterima Holomem yang dilengkapi maskot ini di posisi pusat atau posisi kolaborasi -10.\n\n◆ Jika dilengkapi pada <Takanashi Kiara>, tambah kemampuan berikut:\nKetika level Bloom Holomem yang dilengkapi maskot ini naik, ambil 1 kartu dari dekmu.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
+      "abilityText": "Kerusakan yang diterima Holomem yang dilengkapi maskot ini di posisi pusat atau posisi kolaborasi -10.\n\n◆ Jika dilengkapi pada 〈Takanashi Kiara〉, tambah kemampuan berikut:\nKetika level Bloom Holomem yang dilengkapi maskot ini naik, ambil 1 kartu dari dekmu.\n\nMaskot hanya dapat dilengkapi 1 kartu per Holomem milikmu."
     },
     "163": {
       "name": "Pasukan Roze",
@@ -7288,7 +7326,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "Pada giliran lawan, ketika Holomem yang dilengkapi fan ini dikalahkan, kirim 1 kartu dari atas dek Yell-mu ke <Aki Rosenthal> milikmu.\n\nFan ini hanya dapat dilengkapi pada <Aki Rosenthal> milikmu, dan dapat dilengkapi sebanyak yang diinginkan per orang."
+      "abilityText": "Pada giliran lawan, ketika Holomem yang dilengkapi fan ini dikalahkan, kirim 1 kartu dari atas dek Yell-mu ke 〈Aki Rosenthal〉 milikmu.\n\nFan ini hanya dapat dilengkapi pada 〈Aki Rosenthal〉 milikmu, dan dapat dilengkapi sebanyak yang diinginkan per orang."
     },
     "164": {
       "name": "Aliansi Usagi Liar",
@@ -7296,7 +7334,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Ketika Holomem yang memiliki fan ini melempar dadu dengan kemampuan, kamu bisa mengarsipkan fan ini: Lempar ulang dadu sebanyak 1 kali.\n\nFan ini hanya bisa dipasang pada <Usada Pekora> milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
+      "abilityText": "Ketika Holomem yang memiliki fan ini melempar dadu dengan kemampuan, kamu bisa mengarsipkan fan ini: Lempar ulang dadu sebanyak 1 kali.\n\nFan ini hanya bisa dipasang pada 〈Usada Pekora〉 milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
     },
     "165": {
       "name": "Pionir",
@@ -7304,7 +7342,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Saat giliran lawan, jika Holomem yang memiliki fan ini jatuh (down), pindahkan 1 kartu Yell dari Holomem yang memiliki fan ini ke Holomem lain milikmu.\n\nFan ini hanya bisa dipasang pada <AZKi> milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
+      "abilityText": "Saat giliran lawan, jika Holomem yang memiliki fan ini jatuh (down), pindahkan 1 kartu Yell dari Holomem yang memiliki fan ini ke Holomem lain milikmu.\n\nFan ini hanya bisa dipasang pada 〈AZKi〉 milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
     },
     "166": {
       "name": "KFP",
@@ -7312,7 +7350,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Saat fan ini dipasang ke Holomem dari tanganmu, kamu bisa mengarsipkan 1 kartu dari tanganmu: Ambil 1 kartu dari deck milikmu.\n\nFan ini hanya bisa dipasang pada <Takanashi Kiara> milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
+      "abilityText": "Saat fan ini dipasang ke Holomem dari tanganmu, kamu bisa mengarsipkan 1 kartu dari tanganmu: Ambil 1 kartu dari deck milikmu.\n\nFan ini hanya bisa dipasang pada 〈Takanashi Kiara〉 milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
     },
     "167": {
       "name": "Anggota Teater",
@@ -7320,7 +7358,7 @@
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "■ Saat Holomem yang memiliki fan ini menggunakan Arts, fan ini juga dianggap sebagai Yell merah.\n■ Kerusakan yang diterima oleh Holomem yang memiliki fan ini bertambah +10.\n\nFan ini hanya bisa dipasang pada <Omaru Polka> milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
+      "abilityText": "■ Saat Holomem yang memiliki fan ini menggunakan Arts, fan ini juga dianggap sebagai Yell merah.\n■ Kerusakan yang diterima oleh Holomem yang memiliki fan ini bertambah +10.\n\nFan ini hanya bisa dipasang pada 〈Omaru Polka〉 milikmu, dan bisa dipasang sebanyak apa pun pada satu orang."
     },
     "145": {
       "name": "Komputer Biasa",
@@ -8372,7 +8410,7 @@
       ],
       "keyword": {
         "name": "Fuwahana Air Mengalir",
-        "effect": "Ketika ada <Mococo Abyssgard> di panggungmu, berikan kerusakan spesial 20 ke salah satu Center Holomen atau Back Holomen lawan. Namun, meskipun mereka kalah, nyawa lawan tidak akan berkurang."
+        "effect": "Ketika ada 〈Mococo Abyssgard〉 di panggungmu, berikan kerusakan spesial 20 ke salah satu Center Holomen atau Back Holomen lawan. Namun, meskipun mereka kalah, nyawa lawan tidak akan berkurang."
       }
     },
     "724": {
@@ -8390,7 +8428,7 @@
         },
         {
           "name": "Makan Bareng, Yuk?",
-          "effect": "[Hanya di Posisi Center] Ketika Holomen favoritmu adalah <FUWAMOCO>, kamu boleh memindahkan 1 kartu Yell dari Holomen ini ke <Mococo Abyssgard> milikmu: Berikan kerusakan spesial 50 ke Center Holomen lawan."
+          "effect": "[Hanya di Posisi Center] Ketika Holomen favoritmu adalah 〈FUWAMOCO〉, kamu boleh memindahkan 1 kartu Yell dari Holomen ini ke 〈Mococo Abyssgard〉 milikmu: Berikan kerusakan spesial 50 ke Center Holomen lawan."
         }
       ]
     },
@@ -8409,7 +8447,7 @@
         },
         {
           "name": "Makan Bareng, Yuk?",
-          "effect": "[Hanya di Posisi Center] Ketika Holomen favoritmu adalah <FUWAMOCO>, kamu boleh memindahkan 1 kartu Yell dari Holomen ini ke <Mococo Abyssgard> milikmu: Berikan kerusakan spesial 50 ke Center Holomen lawan."
+          "effect": "[Hanya di Posisi Center] Ketika Holomen favoritmu adalah 〈FUWAMOCO〉, kamu boleh memindahkan 1 kartu Yell dari Holomen ini ke 〈Mococo Abyssgard〉 milikmu: Berikan kerusakan spesial 50 ke Center Holomen lawan."
         }
       ]
     },
@@ -8425,12 +8463,12 @@
       "arts": [
         {
           "name": "Hantu Virtual",
-          "effect": "Ketika Holomen favoritmu adalah <Hoshimachi Suisei>, kamu boleh memindahkan 1 kartu Yell Biru dari Holomen ini ke <Hoshimachi Suisei> di posisi Back Holomen milikmu."
+          "effect": "Ketika Holomen favoritmu adalah 〈Hoshimachi Suisei〉, kamu boleh memindahkan 1 kartu Yell Biru dari Holomen ini ke 〈Hoshimachi Suisei〉 di posisi Back Holomen milikmu."
         }
       ],
       "keyword": {
         "name": "Planet Stage",
-        "effect": "Lihat 4 kartu teratas dari deck-mu. Di antara kartu tersebut, pilih 1 kartu <Hoshimachi Suisei>, tunjukkan, lalu tambahkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah deck-mu dalam urutan yang kamu inginkan."
+        "effect": "Lihat 4 kartu teratas dari deck-mu. Di antara kartu tersebut, pilih 1 kartu 〈Hoshimachi Suisei〉, tunjukkan, lalu tambahkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bawah deck-mu dalam urutan yang kamu inginkan."
       }
     },
     "727": {
@@ -8517,7 +8555,7 @@
       "rarity": "SR",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "© 2016 COVER Corp. MariA",
-      "extra": "Holomen ini juga dianggap sebagai <Fuwawa Abyssgard> dan <Mococo Abyssgard>.",
+      "extra": "Holomen ini juga dianggap sebagai 〈Fuwawa Abyssgard〉 dan 〈Mococo Abyssgard〉.",
       "arts": [
         {
           "name": "Saudari Anjing Penjaga Dunia Iblis",
@@ -8762,7 +8800,7 @@
       ],
       "keyword": {
         "name": "Boxing Style",
-        "effect": "[Hanya di Posisi Kolaborasi] Selama Main Step lawan, HP dari <Inugami Korone> di Center Holomen milikmu tidak akan berkurang atau berubah akibat kemampuan lawan."
+        "effect": "[Hanya di Posisi Kolaborasi] Selama Main Step lawan, HP dari 〈Inugami Korone〉 di Center Holomen milikmu tidak akan berkurang atau berubah akibat kemampuan lawan."
       }
     },
     "745": {
@@ -8782,7 +8820,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "Ketika Holomen ini jatuh (down), kirimkan 1 kartu dari atas Deck Yell milikmu ke <Inugami Korone> milikmu."
+        "effect": "Ketika Holomen ini jatuh (down), kirimkan 1 kartu dari atas Deck Yell milikmu ke 〈Inugami Korone〉 milikmu."
       }
     },
     "746": {
@@ -8802,7 +8840,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "Ketika Holomen ini jatuh (down), kirimkan 1 kartu dari atas Deck Yell milikmu ke <Inugami Korone> milikmu."
+        "effect": "Ketika Holomen ini jatuh (down), kirimkan 1 kartu dari atas Deck Yell milikmu ke 〈Inugami Korone〉 milikmu."
       }
     },
     "747": {
@@ -8817,7 +8855,7 @@
       "arts": [
         {
           "name": "Lagu Watame",
-          "effect": "Jika ada Holomen milikmu yang memiliki <Watameito>, kamu bisa mengirimkan 1 kartu Yell dari Area Arsip milikmu ke Holomen kuning milikmu."
+          "effect": "Jika ada Holomen milikmu yang memiliki 〈Watameito〉, kamu bisa mengirimkan 1 kartu Yell dari Area Arsip milikmu ke Holomen kuning milikmu."
         }
       ]
     },
@@ -8851,12 +8889,12 @@
       "arts": [
         {
           "name": "Tonton Sampai Akhir Ya, Watameito!",
-          "effect": "Kirimkan 1 kartu dari atas Deck Yell milikmu ke <Tsunomaki Watame> di Back Holomen milikmu."
+          "effect": "Kirimkan 1 kartu dari atas Deck Yell milikmu ke 〈Tsunomaki Watame〉 di Back Holomen milikmu."
         }
       ],
       "keyword": {
         "name": "Aku Akan Bernyanyi dan Menari Sepenuh Hati!",
-        "effect": "Jika jumlah Holomen di Stage milikmu 5 atau kurang, kamu bisa memperlihatkan 1 kartu Holomen Debut <Tsunomaki Watame> dari Deck milikmu dan menempatkannya di Stage. Kemudian, kocok ulang Deck milikmu."
+        "effect": "Jika jumlah Holomen di Stage milikmu 5 atau kurang, kamu bisa memperlihatkan 1 kartu Holomen Debut 〈Tsunomaki Watame〉 dari Deck milikmu dan menempatkannya di Stage. Kemudian, kocok ulang Deck milikmu."
       }
     },
     "750": {
@@ -8876,7 +8914,7 @@
       ],
       "keyword": {
         "name": "Member Sheep, Selamat Datang Kembali~",
-        "effect": "Kamu bisa mengembalikan 1 kartu <Watameito> dari Area Arsip milikmu ke tanganmu."
+        "effect": "Kamu bisa mengembalikan 1 kartu 〈Watameito〉 dari Area Arsip milikmu ke tanganmu."
       }
     },
     "751": {
@@ -8896,7 +8934,7 @@
       ],
       "keyword": {
         "name": "Masih Banyak Lagi Nih!",
-        "effect": "Ketika Holomen ini jatuh (down), kamu bisa memindahkan 1 kartu Yell dari Holomen ini ke <Tsunomaki Watame> lain milikmu."
+        "effect": "Ketika Holomen ini jatuh (down), kamu bisa memindahkan 1 kartu Yell dari Holomen ini ke 〈Tsunomaki Watame〉 lain milikmu."
       }
     },
     "752": {
@@ -8916,7 +8954,7 @@
       ],
       "keyword": {
         "name": "Masih Belum Selesai!",
-        "effect": "Saat Holomen ini tumbang, kamu bisa memindahkan 1 Yell dari Holomen ini ke <Tsunomaki Watame> lain milikmu."
+        "effect": "Saat Holomen ini tumbang, kamu bisa memindahkan 1 Yell dari Holomen ini ke 〈Tsunomaki Watame〉 lain milikmu."
       }
     },
     "753": {
@@ -8931,7 +8969,7 @@
       "arts": [
         {
           "name": "Harapan yang Terhubung",
-          "effect": "■ Saat ada <Airani Iofifteen> di panggungmu, Arts ini +10.\n■ Saat ada <Moona Hoshinova> di panggungmu, Arts ini +10."
+          "effect": "■ Saat ada 〈Airani Iofifteen〉 di panggungmu, Arts ini +10.\n■ Saat ada 〈Moona Hoshinova〉 di panggungmu, Arts ini +10."
         }
       ]
     },
@@ -10948,7 +10986,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "Arts Holomen yang dilengkapi dengan alat ini bertambah +10.\n\n◆ Jika dipasang pada <Shion Murasaki> level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi alat ini menjadi Center Holomen, ubah skill favoritmu 'Neeeeeee' dari [1 kali per giliran] menjadi [2 kali per giliran].\n\nAlat ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "Arts Holomen yang dilengkapi dengan alat ini bertambah +10.\n\n◆ Jika dipasang pada 〈Shion Murasaki〉 level 1st atau lebih, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi alat ini menjadi Center Holomen, ubah skill favoritmu 'Neeeeeee' dari [1 kali per giliran] menjadi [2 kali per giliran].\n\nAlat ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "462": {
       "name": "Sabit Mori Calliope",
@@ -10956,7 +10994,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "Arts Holomen yang dilengkapi dengan alat ini bertambah +10.\n\n◆ Jika dipasang pada <Mori Calliope> level 1st atau lebih, tambah kemampuan berikut:\nKetika alat ini dipasang ke Holomen dari tanganmu, arsipkan 1 kartu teratas dari dekmu.\n\nAlat ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "Arts Holomen yang dilengkapi dengan alat ini bertambah +10.\n\n◆ Jika dipasang pada 〈Mori Calliope〉 level 1st atau lebih, tambah kemampuan berikut:\nKetika alat ini dipasang ke Holomen dari tanganmu, arsipkan 1 kartu teratas dari dekmu.\n\nAlat ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "463": {
       "name": "Oruyanke",
@@ -10965,7 +11003,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, ambil 1 kartu dari dekmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, ambil 1 kartu dari dekmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "464": {
       "name": "Nejimaki Kitsune",
@@ -10974,7 +11012,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini jatuh (down), pindahkan 1 kartu Yell dari Holomen ini ke Holomen lain milikmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini jatuh (down), pindahkan 1 kartu Yell dari Holomen ini ke Holomen lain milikmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "465": {
       "name": "Fubuchun",
@@ -10983,7 +11021,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada <Fubuki Shirakami>, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, kamu bisa mengembalikan 1 kartu maskot dari area arsipmu ke tanganmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\nKetika Holomen yang dilengkapi maskot ini berkolaborasi, kamu bisa mengembalikan 1 kartu maskot dari area arsipmu ke tanganmu.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "466": {
       "name": "Fubura",
@@ -10992,7 +11030,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada <Fubuki Shirakami>, tambah kemampuan berikut:\n[1 kali per giliran] Pada langkah utamamu, kamu bisa mengarsipkan 2 kartu Yell dari Holomen milikmu: Selama giliran ini, Arts Holomen ini bertambah +50.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\n[1 kali per giliran] Pada langkah utamamu, kamu bisa mengarsipkan 2 kartu Yell dari Holomen milikmu: Selama giliran ini, Arts Holomen ini bertambah +50.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "467": {
       "name": "Miteiru",
@@ -11001,7 +11039,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada <Fubuki Shirakami>, tambah kemampuan berikut:\n[Terbatas pada posisi belakang] Holomen yang dilengkapi maskot ini tidak menerima kerusakan dari lawan.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
+      "abilityText": "HP Holomen yang dilengkapi dengan maskot ini bertambah +20.\n\n◆ Jika dipasang pada 〈Fubuki Shirakami〉, tambah kemampuan berikut:\n[Terbatas pada posisi belakang] Holomen yang dilengkapi maskot ini tidak menerima kerusakan dari lawan.\n\nMaskot ini hanya bisa dipasang 1 kartu per Holomen milikmu."
     },
     "468": {
       "name": "Tatang",
@@ -11502,7 +11540,7 @@
       "arts": [
         {
           "name": "Aku akan mengirimkan semangat dengan penuh tenaga!",
-          "effect": "Ambil 1 kartu dari atas deck Yell-mu, lalu kirim ke Holomen yang memiliki tag #秘密結社holoX selain <Kazama Iroha>."
+          "effect": "Ambil 1 kartu dari atas deck Yell-mu, lalu kirim ke Holomen yang memiliki tag #秘密結社holoX selain 〈Kazama Iroha〉."
         }
       ],
       "keyword": {
@@ -11541,7 +11579,7 @@
       ],
       "keyword": {
         "name": "Lautan yang dipenuhi cahaya hijau",
-        "effect": "Ambil 1 kartu dari atas deck Yell-mu, lalu kirim ke Holomen yang memiliki tag #ID selain <Airani Iofifteen>."
+        "effect": "Ambil 1 kartu dari atas deck Yell-mu, lalu kirim ke Holomen yang memiliki tag #ID selain 〈Airani Iofifteen〉."
       }
     },
     "490": {
@@ -11556,7 +11594,7 @@
       "arts": [
         {
           "name": "Relation Sky",
-          "effect": "Jika ada Holomen dengan tag #ID selain <Airani Iofifteen> di stage-mu, Arts ini +50."
+          "effect": "Jika ada Holomen dengan tag #ID selain 〈Airani Iofifteen〉 di stage-mu, Arts ini +50."
         }
       ],
       "keyword": {
@@ -11677,7 +11715,7 @@
       "arts": [
         {
           "name": "Ketergantungan Bersama",
-          "effect": "Seni ini tidak bisa digunakan jika Holomem ini tidak memiliki <Anggota Kursi>."
+          "effect": "Seni ini tidak bisa digunakan jika Holomem ini tidak memiliki 〈Anggota Kursi〉."
         }
       ],
       "keyword": {
@@ -11787,7 +11825,7 @@
       ],
       "keyword": {
         "name": "Lemari Pakaian yang Berkilau",
-        "effect": "Jika Holomem Favoritmu adalah <Hoshimachi Suisei>, kamu bisa mengarsipkan 1 Semangat Biru dari Holomem ini: Tarik 2 kartu dari dekmu."
+        "effect": "Jika Holomem Favoritmu adalah 〈Hoshimachi Suisei〉, kamu bisa mengarsipkan 1 Semangat Biru dari Holomem ini: Tarik 2 kartu dari dekmu."
       }
     },
     "217": {
@@ -12260,7 +12298,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Stamina Tak Terbatas",
-        "effect": "[Sekali per Turn] Aktifkan kembali 1 <Inugami Korone> milikmu yang sedang istirahat."
+        "effect": "[Sekali per Turn] Aktifkan kembali 1 〈Inugami Korone〉 milikmu yang sedang istirahat."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -12280,7 +12318,7 @@
       "arts": [
         {
           "name": "Semuanya~, ada di sini nggak~?",
-          "effect": "Jika tidak ada Holomen milikmu yang memiliki <Lunanite> terpasang, tunjukkan 1 kartu <Lunanite> dari deck-mu, lalu pasang ke Holomen milikmu. Setelah itu, kocok deck-mu."
+          "effect": "Jika tidak ada Holomen milikmu yang memiliki 〈Lunanite〉 terpasang, tunjukkan 1 kartu 〈Lunanite〉 dari deck-mu, lalu pasang ke Holomen milikmu. Setelah itu, kocok deck-mu."
         }
       ]
     },
@@ -12296,12 +12334,12 @@
       "arts": [
         {
           "name": "Terima kasih atas kerja kerasnya, ya",
-          "effect": "Jika Holomen ini memiliki <Lunanite> terpasang, Arts ini +50."
+          "effect": "Jika Holomen ini memiliki 〈Lunanite〉 terpasang, Arts ini +50."
         }
       ],
       "keyword": {
         "name": "Ikut Luna, ya~",
-        "effect": "Jika Holomen Oshi-mu adalah <Himemori Luna>, kamu bisa memasang 1 kartu <Lunanite> dari area arsip-mu ke <Himemori Luna> milikmu."
+        "effect": "Jika Holomen Oshi-mu adalah 〈Himemori Luna〉, kamu bisa memasang 1 kartu 〈Lunanite〉 dari area arsip-mu ke 〈Himemori Luna〉 milikmu."
       }
     },
     "804": {
@@ -12416,7 +12454,7 @@
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "くまらん",
-      "abilityText": "■ Ketika Holomem yang dilengkapi dengan Fan ini menggunakan Arts, Fan ini juga dianggap sebagai Sorak Merah.\n■ Ketika Holomem yang dilengkapi dengan Fan ini kalah, lawan boleh mengambil 1 kartu dari dek miliknya.\n\nFan ini hanya bisa dilengkapi pada <Sakura Miko> milik Anda, dan bisa dilengkapi sebanyak apapun pada 1 orang."
+      "abilityText": "■ Ketika Holomem yang dilengkapi dengan Fan ini menggunakan Arts, Fan ini juga dianggap sebagai Sorak Merah.\n■ Ketika Holomem yang dilengkapi dengan Fan ini kalah, lawan boleh mengambil 1 kartu dari dek miliknya.\n\nFan ini hanya bisa dilengkapi pada 〈Sakura Miko〉 milik Anda, dan bisa dilengkapi sebanyak apapun pada 1 orang."
     },
     "197": {
       "name": "Sakura Miko",
@@ -12489,7 +12527,7 @@
         },
         {
           "name": "SorAZ Sympathy",
-          "effect": "Jika ada Holomem <AZKi> di panggung Anda, Arts ini +50."
+          "effect": "Jika ada Holomem 〈AZKi〉 di panggung Anda, Arts ini +50."
         }
       ]
     },
@@ -12542,7 +12580,7 @@
       "arts": [
         {
           "name": "SorAZ Gravity",
-          "effect": "Jika ada Holomem <Tokino Sora> di panggung Anda, kirimkan 1 kartu teratas dari dek Sorak Anda ke Holomem Anda."
+          "effect": "Jika ada Holomem 〈Tokino Sora〉 di panggung Anda, kirimkan 1 kartu teratas dari dek Sorak Anda ke Holomem Anda."
         },
         {
           "name": "Destiny Song",
@@ -12801,7 +12839,7 @@
       "illustrator": "Hiroko",
       "oshiSkill": {
         "name": "Kekuatan Bertahan Hidup",
-        "effect": "[Sekali per Turn] Tunjukkan 1 kartu <Kapak Batu> dari deck milikmu, lalu pasang ke Holomen Hijau milikmu. Kemudian, shuffle deck."
+        "effect": "[Sekali per Turn] Tunjukkan 1 kartu 〈Kapak Batu〉 dari deck milikmu, lalu pasang ke Holomen Hijau milikmu. Kemudian, shuffle deck."
       },
       "spOshiSkill": {
         "name": "Lagu Bumi",

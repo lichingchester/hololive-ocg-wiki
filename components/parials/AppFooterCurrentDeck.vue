@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { toast } from "vue-sonner";
 
+const { t } = useI18n();
+
 const route = useRoute();
 const getRouteBaseName = useRouteBaseName();
 
@@ -11,7 +13,7 @@ const currentDeck = computed(() => decks.currentDeck.value);
 
 const toggleEditing = () => {
   if (decks.currentDeck.value === null) {
-    toast.warning("Please select a deck to continue.");
+    toast.warning(t("Please select a deck to continue."));
     return;
   }
 
@@ -44,12 +46,12 @@ const toggleEditing = () => {
             :class="isEditing ? 'bg-emerald-500' : 'bg-gray-500'"
           ></span>
         </span>
-        Edit
+        {{ $t("Edit") }}
       </Badge>
     </button>
 
     <span class="text-sm md:text-lg">
-      {{ currentDeck?.name || "Select one deck to edit" }}
+      {{ currentDeck?.name || $t("Select one deck to edit") }}
     </span>
   </div>
 </template>

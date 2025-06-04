@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Github } from "lucide-vue-next";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="border-solid sticky top-0 z-50 w-full border-b bg-background">
@@ -16,7 +14,7 @@ import { Github } from "lucide-vue-next";
             href="https://github.com/lichingchester/hololive-ocg-wiki"
             target="_blank"
           >
-            <Github />
+            <IconGithub class="w-5 h-5" />
           </a>
         </Button>
       </div>

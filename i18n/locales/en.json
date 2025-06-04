@@ -1,4 +1,42 @@
 {
+  "No results found.": "No results found.",
+  "Reset": "Reset",
+  "Close": "Close",
+  "Search": "Search",
+  "Copied": "Copied",
+  "Expand": "Expand",
+  "Collapse": "Collapse",
+  "Oshi": "Oshi",
+  "Main Deck": "Main Deck",
+  "Yell Deck": "Yell Deck",
+  "Please select a deck to continue.": "Please select a deck to continue.",
+  "Edit": "Edit",
+  "Select one deck to edit": "Select one deck to edit",
+  "Clipboard is not supported in this browser.": "Clipboard is not supported in this browser.",
+  "Copied deck code URL.": "Copied deck code URL.",
+  "Deck detail page not found.": "Deck detail page not found.",
+  "Deck deleted successfully!": "Deck deleted successfully!",
+  "Options": "Options",
+  "Copy Deck Code URL": "Copy Deck Code URL",
+  "Go to Detail Page": "Go to Detail Page",
+  "Delete": "Delete",
+  "Sure?": "Sure?",
+  "Cancel": "Cancel",
+  "Deck name is required.": "Deck name is required.",
+  "Deck created successfully!": "Deck created successfully!",
+  "New Deck": "New Deck",
+  "Deck Name": "Deck Name",
+  "Author": "Author",
+  "Create Deck": "Create Deck",
+  "No deck code provided.": "No deck code provided.",
+  "Failed to import shared deck.": "Failed to import shared deck.",
+  "Card List": "Card List",
+  "Saved In Local Storage": "Saved In Local Storage",
+  "Can Import/Update This Deck": "Can Import/Update This Deck",
+  "Import This Deck": "Import This Deck",
+  "Official Site": "Official Site",
+  "Decks": "Decks",
+
   "fields": {
     "name": "Name",
     "cardType": "Card Type",
@@ -71,6 +109,7 @@
     "second": "2nd",
     "spot": "Spot"
   },
+
   "cards": {
     "565": {
       "name": "Himemori Luna",
@@ -87,7 +126,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Lunanite Assemble",
-        "effect": "[Once per game] Usable when your Center Holomem is <Himemori Luna>: Reveal 1 to 4 <Lunanite> cards from your deck and assign them to your Holomem. Then, shuffle your deck."
+        "effect": "[Once per game] Usable when your Center Holomem is 〈Himemori Luna〉: Reveal 1 to 4 〈Lunanite〉 cards from your deck and assign them to your Holomem. Then, shuffle your deck."
       }
     },
     "566": {
@@ -100,7 +139,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "poi",
-        "effect": "[Once per turn] Send 1 Cheer card from your Archive to your Back Holomem <Shishiro Botan>."
+        "effect": "[Once per turn] Send 1 Cheer card from your Archive to your Back Holomem 〈Shishiro Botan〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -118,7 +157,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Is 35P Coming Back!? Huh!?",
-        "effect": "[Once per turn] Roll a die once: If the result is 1, 2, 4, or 6, return 1 <35P> card from your Archive to your hand. If the result is 3 or 5, return 2 <35P> cards from your Archive to your hand."
+        "effect": "[Once per turn] Roll a die once: If the result is 1, 2, 4, or 6, return 1 〈35P〉 card from your Archive to your hand. If the result is 3 or 5, return 2 〈35P〉 cards from your Archive to your hand."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -136,7 +175,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Moco-chan!",
-        "effect": "[Once per turn] Send the top card of your Cheer Deck to your 1st Holomem <Mococo Abyssgard>."
+        "effect": "[Once per turn] Send the top card of your Cheer Deck to your 1st Holomem 〈Mococo Abyssgard〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -159,7 +198,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Demonic Deed",
-        "effect": "[Once per game] Usable during your opponent's turn when your <Tokoyami Towa> is downed: Return 2 Cheer cards each from your opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
+        "effect": "[Once per game] Usable during your opponent's turn when your 〈Tokoyami Towa〉 is downed: Return 2 Cheer cards each from your opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
       }
     },
     "570": {
@@ -172,7 +211,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Infinite Stamina",
-        "effect": "[Once per turn] Activate 1 of your resting <Inugami Korone>."
+        "effect": "[Once per turn] Activate 1 of your resting 〈Inugami Korone〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -195,7 +234,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Watame Isn't Bad, Right?",
-        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your <Tsunomaki Watame>."
+        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your 〈Tsunomaki Watame〉."
       }
     },
     "572": {
@@ -213,7 +252,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Keep Going, Risu!",
-        "effect": "[Once per game] For this turn, increase the Arts of all your <Ayunda Risu> on the stage by +50."
+        "effect": "[Once per game] For this turn, increase the Arts of all your 〈Ayunda Risu〉 on the stage by +50."
       }
     },
     "573": {
@@ -228,7 +267,7 @@
       "arts": [
         {
           "name": "Everyone~, Are You Here~?",
-          "effect": "If none of your Holomem have a <Lunanite> attached, reveal 1 <Lunanite> card from your deck and attach it to one of your Holomem. Then, shuffle your deck."
+          "effect": "If none of your Holomem have a 〈Lunanite〉 attached, reveal 1 〈Lunanite〉 card from your deck and attach it to one of your Holomem. Then, shuffle your deck."
         }
       ]
     },
@@ -248,7 +287,7 @@
       ],
       "keyword": {
         "name": "Princess of the Candy Kingdom",
-        "effect": "When your Center Holomem is <Himemori Luna>, draw 1 card from your deck."
+        "effect": "When your Center Holomem is 〈Himemori Luna〉, draw 1 card from your deck."
       }
     },
     "575": {
@@ -299,12 +338,12 @@
       "arts": [
         {
           "name": "Moon Galaxy",
-          "effect": "You may attach one <Lunanite> from your Archive to your <Himemori Luna>."
+          "effect": "You may attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
         }
       ],
       "keyword": {
         "name": "Let's Go to Space with Nnatan~!",
-        "effect": "[Collab Position Only] Increase the Arts of your Center Holomem's <Himemori Luna> with a Fan attached by +20."
+        "effect": "[Collab Position Only] Increase the Arts of your Center Holomem's 〈Himemori Luna〉 with a Fan attached by +20."
       }
     },
     "578": {
@@ -319,12 +358,12 @@
       "arts": [
         {
           "name": "Thanks for Your Hard Work, NanoRaNe",
-          "effect": "If this Holomem has a <Lunanite> attached, increase this Arts by +50."
+          "effect": "If this Holomem has a 〈Lunanite〉 attached, increase this Arts by +50."
         }
       ],
       "keyword": {
         "name": "Follow Luna, NanoRa~",
-        "effect": "If your Oshi Holomem is <Himemori Luna>, you may attach one <Lunanite> from your Archive to your <Himemori Luna>."
+        "effect": "If your Oshi Holomem is 〈Himemori Luna〉, you may attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
       }
     },
     "579": {
@@ -378,7 +417,7 @@
       ],
       "keyword": {
         "name": "Prepare",
-        "effect": "If your Oshi Holomem is <Shishiro Botan>, you may archive the top card of your Cheer Deck: Restore 10 HP to one of your Holomem."
+        "effect": "If your Oshi Holomem is 〈Shishiro Botan〉, you may archive the top card of your Cheer Deck: Restore 10 HP to one of your Holomem."
       }
     },
     "582": {
@@ -410,7 +449,7 @@
       "arts": [
         {
           "name": "Slurp",
-          "effect": "You may reveal one <Tsunomaki Watame> from your hand and place it at the bottom of your deck: Restore 20 HP to this Holomem."
+          "effect": "You may reveal one 〈Tsunomaki Watame〉 from your hand and place it at the bottom of your deck: Restore 20 HP to this Holomem."
         }
       ],
       "keyword": {
@@ -434,7 +473,7 @@
       ],
       "keyword": {
         "name": "SSSSR",
-        "effect": "Send the top card of your Cheer Deck to your Back Holomem's <Shishiro Botan>."
+        "effect": "Send the top card of your Cheer Deck to your Back Holomem's 〈Shishiro Botan〉."
       }
     },
     "585": {
@@ -449,7 +488,7 @@
       "arts": [
         {
           "name": "Godlike Aim",
-          "effect": "If your Oshi Holomem is <Shishiro Botan>, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
+          "effect": "If your Oshi Holomem is 〈Shishiro Botan〉, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
         }
       ],
       "keyword": {
@@ -470,7 +509,7 @@
       "arts": [
         {
           "name": "Passionate Belly Dancer",
-          "effect": "If your Oshi Holomem is <Aki Rosenthal>, restore 10 HP to all your Holomem with a Tool attached."
+          "effect": "If your Oshi Holomem is 〈Aki Rosenthal〉, restore 10 HP to all your Holomem with a Tool attached."
         }
       ],
       "keyword": {
@@ -491,7 +530,7 @@
       "arts": [
         {
           "name": "Pekora Plays Cards",
-          "effect": "If you’ve rolled the dice at least once with <Usada Pekora>’s ability this turn, this Arts gains +40."
+          "effect": "If you’ve rolled the dice at least once with 〈Usada Pekora〉’s ability this turn, this Arts gains +40."
         }
       ],
       "keyword": {
@@ -516,7 +555,7 @@
       ],
       "keyword": {
         "name": "Kazama Protects",
-        "effect": "You may send 1 Cheer from your Archive to each of one <Kazama Iroha> and one <Hoshimachi Suisei>."
+        "effect": "You may send 1 Cheer from your Archive to each of one 〈Kazama Iroha〉 and one 〈Hoshimachi Suisei〉."
       }
     },
     "589": {
@@ -601,12 +640,12 @@
       "arts": [
         {
           "name": "Commemorative Photo with 35P",
-          "effect": "If this Holomem has <35P> attached, this Arts gains +30."
+          "effect": "If this Holomem has 〈35P〉 attached, this Arts gains +30."
         }
       ],
       "keyword": {
         "name": "Nye",
-        "effect": "Reveal 1 <35P> from your deck and add it to your hand. Then shuffle your deck."
+        "effect": "Reveal 1 〈35P〉 from your deck and add it to your hand. Then shuffle your deck."
       }
     },
     "594": {
@@ -621,12 +660,12 @@
       "arts": [
         {
           "name": "Elite Shrine Maiden",
-          "effect": "For each <35P> attached to this Holomem, this Arts gains +20."
+          "effect": "For each 〈35P〉 attached to this Holomem, this Arts gains +20."
         }
       ],
       "keyword": {
         "name": "Elite Gamble",
-        "effect": "[Center Position only] [Once per turn] During your Main Step, if this Holomem has <35P> attached, roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for this turn."
+        "effect": "[Center Position only] [Once per turn] During your Main Step, if this Holomem has 〈35P〉 attached, roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for this turn."
       }
     },
     "595": {
@@ -711,7 +750,7 @@
       "arts": [
         {
           "name": "Challenger",
-          "effect": "If your Oshi Holomem is <Takane Lui>, you may Archive 2 cards from your hand to draw 3 cards from your deck."
+          "effect": "If your Oshi Holomem is 〈Takane Lui〉, you may Archive 2 cards from your hand to draw 3 cards from your deck."
         }
       ]
     },
@@ -731,7 +770,7 @@
       ],
       "keyword": {
         "name": "Happy Time",
-        "effect": "Reveal 1 to 4 <Takanashi Kiara> cards from your deck and Archive them. Then shuffle your deck."
+        "effect": "Reveal 1 to 4 〈Takanashi Kiara〉 cards from your deck and Archive them. Then shuffle your deck."
       }
     },
     "601": {
@@ -746,7 +785,7 @@
       "arts": [
         {
           "name": "Not Fuwawa, It's Mococo!",
-          "effect": "You can use this Arts without needing 1 Cheer if your Center Holomem is <Fuwawa Abyssgard>."
+          "effect": "You can use this Arts without needing 1 Cheer if your Center Holomem is 〈Fuwawa Abyssgard〉."
         }
       ]
     },
@@ -766,7 +805,7 @@
       ],
       "keyword": {
         "name": "Playtime, Let's Go!",
-        "effect": "When Blooming from Debut, reveal 1 1st Holomem <Fuwawa Abyssgard> from your deck and add it to your hand. Then shuffle your deck."
+        "effect": "When Blooming from Debut, reveal 1 1st Holomem 〈Fuwawa Abyssgard〉 from your deck and add it to your hand. Then shuffle your deck."
       }
     },
     "603": {
@@ -782,12 +821,12 @@
       "arts": [
         {
           "name": "The Fluffy One",
-          "effect": "[Collab Position Only] If your Center Holomem is <Fuwawa Abyssgard>, increase this Arts by +30."
+          "effect": "[Collab Position Only] If your Center Holomem is 〈Fuwawa Abyssgard〉, increase this Arts by +30."
         }
       ],
       "keyword": {
         "name": "Wild Hellhound of the Abyss",
-        "effect": "During your Reset Step, if your Center Holomem is <Fuwawa Abyssgard>, this Holomem does not rest even if moved to the Back Position."
+        "effect": "During your Reset Step, if your Center Holomem is 〈Fuwawa Abyssgard〉, this Holomem does not rest even if moved to the Back Position."
       }
     },
     "604": {
@@ -839,7 +878,7 @@
       ],
       "keyword": {
         "name": "Fuwawa Floral Stream",
-        "effect": "When you have <Mococo Abyssgard> on your stage, deal 20 special damage to one of your opponent’s Center Holomem or Back Holomem. However, even if they are downed, your opponent’s Life does not decrease."
+        "effect": "When you have 〈Mococo Abyssgard〉 on your stage, deal 20 special damage to one of your opponent’s Center Holomem or Back Holomem. However, even if they are downed, your opponent’s Life does not decrease."
       }
     },
     "607": {
@@ -857,7 +896,7 @@
         },
         {
           "name": "Wanna Eat Together?",
-          "effect": "[Center Position Only] When your Oshi Holomem is <FUWAMOCO>, you may transfer 1 Cheer from this Holomem to your <Mococo Abyssgard>: Deal 50 special damage to your opponent’s Center Holomem."
+          "effect": "[Center Position Only] When your Oshi Holomem is 〈FUWAMOCO〉, you may transfer 1 Cheer from this Holomem to your 〈Mococo Abyssgard〉: Deal 50 special damage to your opponent’s Center Holomem."
         }
       ]
     },
@@ -873,12 +912,12 @@
       "arts": [
         {
           "name": "Virtual Ghost",
-          "effect": "When your Oshi Holomem is <Hoshimachi Suisei>, you may transfer 1 Blue Cheer from this Holomem to your Back Holomem <Hoshimachi Suisei>."
+          "effect": "When your Oshi Holomem is 〈Hoshimachi Suisei〉, you may transfer 1 Blue Cheer from this Holomem to your Back Holomem 〈Hoshimachi Suisei〉."
         }
       ],
       "keyword": {
         "name": "Planet Stage",
-        "effect": "Look at the top 4 cards of your deck. Reveal 1 <Hoshimachi Suisei> from among them and add it to your hand. Then, return the remaining cards to the bottom of your deck in any order."
+        "effect": "Look at the top 4 cards of your deck. Reveal 1 〈Hoshimachi Suisei〉 from among them and add it to your hand. Then, return the remaining cards to the bottom of your deck in any order."
       }
     },
     "609": {
@@ -983,7 +1022,7 @@
       "rarity": "R",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "© 2016 COVER Corp. MariA",
-      "extra": "This Holomem is also treated as <Fuwawa Abyssgard> and <Mococo Abyssgard>.",
+      "extra": "This Holomem is also treated as 〈Fuwawa Abyssgard〉 and 〈Mococo Abyssgard〉.",
       "arts": [
         {
           "name": "Demonic Guard Dog Sisters",
@@ -1021,7 +1060,7 @@
       "arts": [
         {
           "name": "So That's How It Is",
-          "effect": "Deal 10 special damage to the opponent's Center Holomem. Then, if your Oshi Holomem is <Tokoyami Towa>, you may archive 1 Tool attached to the opponent's [Center Holomem or Collab Holomem]."
+          "effect": "Deal 10 special damage to the opponent's Center Holomem. Then, if your Oshi Holomem is 〈Tokoyami Towa〉, you may archive 1 Tool attached to the opponent's [Center Holomem or Collab Holomem]."
         }
       ]
     },
@@ -1255,7 +1294,7 @@
       ],
       "keyword": {
         "name": "Boxing Style",
-        "effect": "[Collab Position Only] During your opponent’s Main Step, the HP of your Center Holomem <Inugami Korone> cannot be reduced or altered by your opponent’s abilities."
+        "effect": "[Collab Position Only] During your opponent’s Main Step, the HP of your Center Holomem 〈Inugami Korone〉 cannot be reduced or altered by your opponent’s abilities."
       }
     },
     "630": {
@@ -1275,7 +1314,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "When this Holomem is downed, send the top 1 card of your Cheer deck to your <Inugami Korone>."
+        "effect": "When this Holomem is downed, send the top 1 card of your Cheer deck to your 〈Inugami Korone〉."
       }
     },
     "631": {
@@ -1305,7 +1344,7 @@
       "arts": [
         {
           "name": "Watame’s Song",
-          "effect": "If you have a Holomem with <Watamates> attached, you may send 1 Cheer from your archive to one of your Yellow Holomem."
+          "effect": "If you have a Holomem with 〈Watamates〉 attached, you may send 1 Cheer from your archive to one of your Yellow Holomem."
         }
       ]
     },
@@ -1338,12 +1377,12 @@
       "arts": [
         {
           "name": "Watch until the end, Watamates!",
-          "effect": "Send the top 1 card of your Cheer deck to your Back Holomem <Tsunomaki Watame>."
+          "effect": "Send the top 1 card of your Cheer deck to your Back Holomem 〈Tsunomaki Watame〉."
         }
       ],
       "keyword": {
         "name": "I’ll sing and dance with all my heart!",
-        "effect": "If you have 5 or fewer Holomem on your stage, you may reveal 1 Debut Holomem <Tsunomaki Watame> from your deck and place it on your stage. Then, shuffle your deck."
+        "effect": "If you have 5 or fewer Holomem on your stage, you may reveal 1 Debut Holomem 〈Tsunomaki Watame〉 from your deck and place it on your stage. Then, shuffle your deck."
       }
     },
     "635": {
@@ -1363,7 +1402,7 @@
       ],
       "keyword": {
         "name": "Member Sheep, Welcome Back~",
-        "effect": "You may return 1 <Watamate> from your Archive to your hand."
+        "effect": "You may return 1 〈Watamate〉 from your Archive to your hand."
       }
     },
     "636": {
@@ -1383,7 +1422,7 @@
       ],
       "keyword": {
         "name": "Let’s Keep Going!",
-        "effect": "When this Holomem is downed, you may transfer 1 Cheer from this Holomem to another of your <Tsunomaki Watame>."
+        "effect": "When this Holomem is downed, you may transfer 1 Cheer from this Holomem to another of your 〈Tsunomaki Watame〉."
       }
     },
     "637": {
@@ -1401,7 +1440,7 @@
         },
         {
           "name": "PuruPuru~",
-          "effect": "You may transfer 1 Cheer from this Holomem to your <Inugami Korone>."
+          "effect": "You may transfer 1 Cheer from this Holomem to your 〈Inugami Korone〉."
         }
       ]
     },
@@ -1417,7 +1456,7 @@
       "arts": [
         {
           "name": "Connected Wishes",
-          "effect": "■ If <Airani Iofifteen> is on your Stage, this Arts gains +10.\n■ If <Moona Hoshinova> is on your Stage, this Arts gains +10."
+          "effect": "■ If 〈Airani Iofifteen〉 is on your Stage, this Arts gains +10.\n■ If 〈Moona Hoshinova〉 is on your Stage, this Arts gains +10."
         }
       ]
     },
@@ -1730,7 +1769,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets HP +20.\n\n◆ Additional effect when attached to <Tokoyami Towa>:\nThe Holomem this Mascot is attached to deals +10 special damage to one opponent's Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets HP +20.\n\n◆ Additional effect when attached to 〈Tokoyami Towa〉:\nThe Holomem this Mascot is attached to deals +10 special damage to one opponent's Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "666": {
       "name": "Futoinu",
@@ -1738,7 +1777,7 @@
       "rarity": "U",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Inugami Korone>:\nWhen the Holomem this Mascot is attached to collaborates, you may send 1 Yellow Cheer from your Archive to this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Inugami Korone〉:\nWhen the Holomem this Mascot is attached to collaborates, you may send 1 Yellow Cheer from your Archive to this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "667": {
       "name": "Hosoinu",
@@ -1746,7 +1785,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Inugami Korone>:\nWhen the Holomem this Mascot is attached to is knocked down, you may Archive 1 of your Holo Power: Return this Mascot to your hand.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Inugami Korone〉:\nWhen the Holomem this Mascot is attached to is knocked down, you may Archive 1 of your Holo Power: Return this Mascot to your hand.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "668": {
       "name": "Riscot",
@@ -1754,7 +1793,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Ayunda Risu>:\nWhen the Holomem this Mascot is attached to collaborates, you may reattach 1 Cheer from your Stage to this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Ayunda Risu〉:\nWhen the Holomem this Mascot is attached to collaborates, you may reattach 1 Cheer from your Stage to this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "669": {
       "name": "Lunaito",
@@ -1762,7 +1801,7 @@
       "rarity": "U",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to would take damage, you may Archive this Fan: Reduce the damage taken by the Holomem this Fan was attached to by 30.\n\nThis Fan can only be attached to your <Himemori Luna>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to would take damage, you may Archive this Fan: Reduce the damage taken by the Holomem this Fan was attached to by 30.\n\nThis Fan can only be attached to your 〈Himemori Luna〉, and any number of this Fan can be attached to one Holomem."
     },
     "670": {
       "name": "SSRB",
@@ -1770,7 +1809,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "When the Holomem this Fan is attached to would Archive a Cheer with their ability, you may Archive this Fan instead of 1 Cheer.\n\nThis Fan can only be attached to your <Shishiro Botan>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "When the Holomem this Fan is attached to would Archive a Cheer with their ability, you may Archive this Fan instead of 1 Cheer.\n\nThis Fan can only be attached to your 〈Shishiro Botan〉, and any number of this Fan can be attached to one Holomem."
     },
     "671": {
       "name": "35P",
@@ -1778,7 +1817,7 @@
       "rarity": "U",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ When the Holomem this Fan is attached to uses an Arts, treat this Fan as a Red Cheer as well.\n■ When the Holomem this Fan is attached to is knocked down, your opponent may draw 1 card from their deck.\n\nThis Fan can only be attached to your <Sakura Miko>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "■ When the Holomem this Fan is attached to uses an Arts, treat this Fan as a Red Cheer as well.\n■ When the Holomem this Fan is attached to is knocked down, your opponent may draw 1 card from their deck.\n\nThis Fan can only be attached to your 〈Sakura Miko〉, and any number of this Fan can be attached to one Holomem."
     },
     "672": {
       "name": "Haaton",
@@ -1787,7 +1826,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "When the Holomem this Fan is attached to rolls dice with an ability, you may Archive this Fan: Ignore the result of that roll and reroll the dice from scratch.\n\nThis Fan can only be attached to your <Akai Haato>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "When the Holomem this Fan is attached to rolls dice with an ability, you may Archive this Fan: Ignore the result of that roll and reroll the dice from scratch.\n\nThis Fan can only be attached to your 〈Akai Haato〉, and any number of this Fan can be attached to one Holomem."
     },
     "673": {
       "name": "Ruffians",
@@ -1795,7 +1834,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to is knocked down, you may send 1 Blue Cheer from your Archive to your <Fuwawa Abyssgard>.\n\nThis Fan can only be attached to your <Fuwawa Abyssgard> or <Mococo Abyssgard>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to is knocked down, you may send 1 Blue Cheer from your Archive to your 〈Fuwawa Abyssgard〉.\n\nThis Fan can only be attached to your 〈Fuwawa Abyssgard〉 or 〈Mococo Abyssgard〉, and any number of this Fan can be attached to one Holomem."
     },
     "674": {
       "name": "Robosa",
@@ -1803,7 +1842,7 @@
       "rarity": "U",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ When the Holomem this Fan is attached to uses an Arts, treat this Fan as a Purple Cheer as well.\n■ The Holomem this Fan is attached to gets Arts -10.\n\nThis Fan can only be attached to your <Roboco-san>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "■ When the Holomem this Fan is attached to uses an Arts, treat this Fan as a Purple Cheer as well.\n■ The Holomem this Fan is attached to gets Arts -10.\n\nThis Fan can only be attached to your 〈Roboco-san〉, and any number of this Fan can be attached to one Holomem."
     },
     "675": {
       "name": "Koronesuki",
@@ -1811,7 +1850,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Reduce the ◇ cost by 1 for the Baton Touch of the Holomem this fan is attached to.\n\nThis fan can only be attached to your own <Inugami Korone>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "Reduce the ◇ cost by 1 for the Baton Touch of the Holomem this fan is attached to.\n\nThis fan can only be attached to your own 〈Inugami Korone〉, and any number of this fan can be attached to one Holomem."
     },
     "676": {
       "name": "Watamate",
@@ -1819,7 +1858,7 @@
       "rarity": "U",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During your opponent's turn, when the Holomem this fan is attached to is downed, you may transfer 1-2 Yellow Cheer cards from this Holomem to another of your <Tsunomaki Watame>.\n\nThis fan can only be attached to your own <Tsunomaki Watame>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "During your opponent's turn, when the Holomem this fan is attached to is downed, you may transfer 1-2 Yellow Cheer cards from this Holomem to another of your 〈Tsunomaki Watame〉.\n\nThis fan can only be attached to your own 〈Tsunomaki Watame〉, and any number of this fan can be attached to one Holomem."
     },
     "677": {
       "name": "Risuners",
@@ -1827,7 +1866,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "[Once per turn] When a Cheer is attached to the Holomem this fan is attached to, increase this Holomem's Arts by +10 for the duration of this turn.\n\nThis fan can only be attached to your own <Ayunda Risu>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "[Once per turn] When a Cheer is attached to the Holomem this fan is attached to, increase this Holomem's Arts by +10 for the duration of this turn.\n\nThis fan can only be attached to your own 〈Ayunda Risu〉, and any number of this fan can be attached to one Holomem."
     },
     "546": {
       "name": "Shiranui Flare",
@@ -1881,7 +1920,7 @@
       ],
       "keyword": {
         "name": "With My Precious Friends",
-        "effect": "When there are 5 or fewer Holomem on your stage, reveal 1 Debut Holomem [<Omaru Polka>, <Sakura Miko>, <Hoshimachi Suisei>, or <Shirogane Noel>] from your deck and place it on your stage. Then, shuffle your deck."
+        "effect": "When there are 5 or fewer Holomem on your stage, reveal 1 Debut Holomem [〈Omaru Polka〉, 〈Sakura Miko〉, 〈Hoshimachi Suisei〉, or 〈Shirogane Noel〉] from your deck and place it on your stage. Then, shuffle your deck."
       }
     },
     "549": {
@@ -1935,7 +1974,7 @@
       ],
       "keyword": {
         "name": "Chirps of Elfriends",
-        "effect": "Reveal 1 <Elfriend> from your deck and add it to your hand. Then, shuffle your deck."
+        "effect": "Reveal 1 〈Elfriend〉 from your deck and add it to your hand. Then, shuffle your deck."
       }
     },
     "552": {
@@ -1969,7 +2008,7 @@
       "arts": [
         {
           "name": "Elfure Party",
-          "effect": "You may attach 1 <Elfure Friend> from your Archive to this Holomem."
+          "effect": "You may attach 1 〈Elfure Friend〉 from your Archive to this Holomem."
         }
       ]
     },
@@ -2044,7 +2083,7 @@
       ],
       "keyword": {
         "name": "Give Us Water",
-        "effect": "If your Center Holomem is <Shiranui Flare> and you have fewer cards in your hand than your opponent, draw 1 card from your Deck."
+        "effect": "If your Center Holomem is 〈Shiranui Flare〉 and you have fewer cards in your hand than your opponent, draw 1 card from your Deck."
       }
     },
     "558": {
@@ -2062,7 +2101,7 @@
       ],
       "keyword": {
         "name": "Running Out of Food...",
-        "effect": "If your Center Holomem is <Shiranui Flare>, you may send 1 Cheer from your Archive to one of your other Holomems."
+        "effect": "If your Center Holomem is 〈Shiranui Flare〉, you may send 1 Cheer from your Archive to one of your other Holomems."
       }
     },
     "559": {
@@ -2071,7 +2110,7 @@
       "rarity": "U",
       "set": "スタートデッキ 黄 不知火フレア",
       "illustrator": "茨乃",
-      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your Deck. Reveal any number of <Shiranui Flare>, <Omaru Polka>, <Sakura Miko>, <Hoshimachi Suisei>, and <Shirogane Noel> from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your Deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
+      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your Deck. Reveal any number of 〈Shiranui Flare〉, 〈Omaru Polka〉, 〈Sakura Miko〉, 〈Hoshimachi Suisei〉, and 〈Shirogane Noel〉 from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your Deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
     },
     "560": {
       "name": "Elfure Friend",
@@ -2079,7 +2118,7 @@
       "rarity": "C",
       "set": "スタートデッキ 黄 不知火フレア",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Increase the HP of the Holomem this Fan is attached to by 10.\n\nThis Fan can only be attached to your <Shiranui Flare>, and you can attach any number of this Fan to a single Holomem."
+      "abilityText": "Increase the HP of the Holomem this Fan is attached to by 10.\n\nThis Fan can only be attached to your 〈Shiranui Flare〉, and you can attach any number of this Fan to a single Holomem."
     },
     "533": {
       "name": "Kazama Iroha",
@@ -2107,7 +2146,7 @@
       "arts": [
         {
           "name": "Delivering Full Energy!",
-          "effect": "Send the top card of your Cheer Deck to one of your Holomems with the #秘密結社holoX tag, other than <Kazama Iroha>."
+          "effect": "Send the top card of your Cheer Deck to one of your Holomems with the #秘密結社holoX tag, other than 〈Kazama Iroha〉."
         }
       ],
       "keyword": {
@@ -2219,7 +2258,7 @@
       ],
       "keyword": {
         "name": "Samurai Girl",
-        "effect": "Reveal one [<Chakimaru> or <Pokobee>] from your deck and add it to your hand. Then shuffle your deck."
+        "effect": "Reveal one [〈Chakimaru〉 or 〈Pokobee〉] from your deck and add it to your hand. Then shuffle your deck."
       }
     },
     "540": {
@@ -2299,7 +2338,7 @@
       "rarity": "C",
       "set": "Starter Deck Green Kazama Iroha",
       "illustrator": "なかだ絵眞",
-      "abilityText": "The Holomem equipped with this Tool gets Arts +10.\n\n◆If equipped to a 1st or higher <Kazama Iroha>, gain this additional ability:\n[Once per turn] During the opponent's turn, when the Holomem equipped with this Tool takes damage, deal 20 special damage to the opponent's Center Holomem. However, even if they are downed, the opponent's Life does not decrease.\n\nOnly one Tool can be equipped to each of your Holomem."
+      "abilityText": "The Holomem equipped with this Tool gets Arts +10.\n\n◆If equipped to a 1st or higher 〈Kazama Iroha〉, gain this additional ability:\n[Once per turn] During the opponent's turn, when the Holomem equipped with this Tool takes damage, deal 20 special damage to the opponent's Center Holomem. However, even if they are downed, the opponent's Life does not decrease.\n\nOnly one Tool can be equipped to each of your Holomem."
     },
     "545": {
       "name": "Pokobee",
@@ -2307,7 +2346,7 @@
       "rarity": "C",
       "set": "Starter Deck Green Kazama Iroha",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this Mascot gets HP +10.\n\n◆If equipped to <Kazama Iroha>, gain this additional ability:\nThe Holomem equipped with this Mascot gets HP +20.\n\nOnly one Mascot can be equipped to each of your Holomem."
+      "abilityText": "The Holomem equipped with this Mascot gets HP +10.\n\n◆If equipped to 〈Kazama Iroha〉, gain this additional ability:\nThe Holomem equipped with this Mascot gets HP +20.\n\nOnly one Mascot can be equipped to each of your Holomem."
     },
     "530": {
       "name": "ReGLOSS",
@@ -2468,7 +2507,7 @@
       "arts": [
         {
           "name": "Thunder of Annihilation",
-          "effect": "If there is a Holomem with #ReGLOSS other than <Hajime Todoroki> on your stage, increase this Arts by +30."
+          "effect": "If there is a Holomem with #ReGLOSS other than 〈Hajime Todoroki〉 on your stage, increase this Arts by +30."
         }
       ],
       "keyword": {
@@ -2555,7 +2594,7 @@
       "rarity": "C",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Increase the Arts of the Holomem this Mascot is attached to by +10.\n\n◆ Additional ability if attached to <Hajime Todoroki>\nIncrease the HP of the Holomem this Mascot is attached to by +20.\n\nOnly one Mascot can be attached to each of your Holomem."
+      "abilityText": "Increase the Arts of the Holomem this Mascot is attached to by +10.\n\n◆ Additional ability if attached to 〈Hajime Todoroki〉\nIncrease the HP of the Holomem this Mascot is attached to by +20.\n\nOnly one Mascot can be attached to each of your Holomem."
     },
     "253": {
       "name": "Choco Yuzuki",
@@ -2736,7 +2775,7 @@
       ],
       "keyword": {
         "name": "Chiyokooo~!!",
-        "effect": "If your Center Holomem is <Yuzuki Choco>, you may send 1 Cheer card from your archive to one of your Holomems."
+        "effect": "If your Center Holomem is 〈Yuzuki Choco〉, you may send 1 Cheer card from your archive to one of your Holomems."
       }
     },
     "263": {
@@ -2764,7 +2803,7 @@
       "rarity": "U",
       "set": "Start Deck Purple Yuzuki Choco",
       "illustrator": "ガゥ",
-      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Oozora Subaru>, <Yuzuki Choco>, and <Himemori Luna> from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
+      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Oozora Subaru〉, 〈Yuzuki Choco〉, and 〈Himemori Luna〉 from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
     },
     "265": {
       "name": "Choco's Omelette Rice",
@@ -2781,7 +2820,7 @@
       "rarity": "C",
       "set": "Starter Deck Purple Yuzuki Choco",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this Mascot is attached to gains HP +20.\n\n◆ Additional Ability when attached to <Yuzuki Choco>\nWhen the Holomem this Mascot is attached to Blooms, recover 20 HP for this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gains HP +20.\n\n◆ Additional Ability when attached to 〈Yuzuki Choco〉\nWhen the Holomem this Mascot is attached to Blooms, recover 20 HP for this Holomem.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "239": {
       "name": "Nekomata Okayu",
@@ -2926,7 +2965,7 @@
       ],
       "keyword": {
         "name": "Thief Construction CEO",
-        "effect": "[Center Position Only] Increase the Arts of all [<Takane Lui>, <Ookami Mio>, <Shirakami Fubuki>, <La+ Darknesss>, and <Inugami Korone>] on your Stage by +20."
+        "effect": "[Center Position Only] Increase the Arts of all [〈Takane Lui〉, 〈Ookami Mio〉, 〈Shirakami Fubuki〉, 〈La+ Darknesss〉, and 〈Inugami Korone〉] on your Stage by +20."
       }
     },
     "247": {
@@ -2964,7 +3003,7 @@
       ],
       "keyword": {
         "name": "Thief Construction Intern",
-        "effect": "When your Center Holomem is <Nekomata Okayu>, reveal 1 [Mascot or Fan] card from your deck and add it to your hand. Then, shuffle your deck."
+        "effect": "When your Center Holomem is 〈Nekomata Okayu〉, reveal 1 [Mascot or Fan] card from your deck and add it to your hand. Then, shuffle your deck."
       }
     },
     "249": {
@@ -2992,7 +3031,7 @@
       "rarity": "U",
       "set": "Start Deck Blue Nekomata Okayu",
       "illustrator": "ぴ助",
-      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Nekomata Okayu>, <Takane Lui>, <Ookami Mio>, <Shirakami Fubuki>, <La+ Darknesss>, and <Inugami Korone> from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 card per turn."
+      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Nekomata Okayu〉, 〈Takane Lui〉, 〈Ookami Mio〉, 〈Shirakami Fubuki〉, 〈La+ Darknesss〉, and 〈Inugami Korone〉 from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 card per turn."
     },
     "251": {
       "name": "Okayun",
@@ -3000,7 +3039,7 @@
       "rarity": "C",
       "set": "Start Deck Blue Nekomata Okayu",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "Damage taken by the Holomem this Mascot is attached to is reduced by 10 when in the Center or Collab position.\n\n◆ Additional effect when attached to <Nekomata Okayu>\nWhen the Holomem this Mascot is attached to archives Cheer using their ability, you may archive this Mascot instead of 1 Blue Cheer.\n\nMascots can only be attached to 1 of your Holomems at a time."
+      "abilityText": "Damage taken by the Holomem this Mascot is attached to is reduced by 10 when in the Center or Collab position.\n\n◆ Additional effect when attached to 〈Nekomata Okayu〉\nWhen the Holomem this Mascot is attached to archives Cheer using their ability, you may archive this Mascot instead of 1 Blue Cheer.\n\nMascots can only be attached to 1 of your Holomems at a time."
     },
     "252": {
       "name": "Onigirya",
@@ -3008,7 +3047,7 @@
       "rarity": "C",
       "set": "Start Deck Blue Nekomata Okayu",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Fan is attached to gains +10 HP.\n\nThis Fan can only be attached to your <Nekomata Okayu>, but you can attach any number of them to a single Holomem."
+      "abilityText": "The Holomem this Fan is attached to gains +10 HP.\n\nThis Fan can only be attached to your 〈Nekomata Okayu〉, but you can attach any number of them to a single Holomem."
     },
     "225": {
       "name": "Nakiri Ayame",
@@ -3078,7 +3117,7 @@
       ],
       "keyword": {
         "name": "Ayame’s One Year",
-        "effect": "If <Poyo Yo> is attached to this Holomem, for this turn, your Center Holomem’s Arts gain +20."
+        "effect": "If 〈Poyo Yo〉 is attached to this Holomem, for this turn, your Center Holomem’s Arts gain +20."
       }
     },
     "229": {
@@ -3219,7 +3258,7 @@
       "rarity": "U",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "林けゐ",
-      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Shirakami Fubuki>, <Ookami Mio>, and <Nakiri Ayame> from among them and add the revealed Holomen to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 per turn."
+      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Shirakami Fubuki〉, 〈Ookami Mio〉, and 〈Nakiri Ayame〉 from among them and add the revealed Holomen to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 per turn."
     },
     "237": {
       "name": "Asura & Rakshasa",
@@ -3227,7 +3266,7 @@
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "はずき",
-      "abilityText": "The Holomen equipped with this Tool gains +10 Arts.\n\n◆If equipped to a 1st or higher <Nakiri Ayame>, additional effect:\nThe Holomen equipped with this Tool gains +10 Arts.\n\nOnly 1 Tool can be equipped to each of your Holomen."
+      "abilityText": "The Holomen equipped with this Tool gains +10 Arts.\n\n◆If equipped to a 1st or higher 〈Nakiri Ayame〉, additional effect:\nThe Holomen equipped with this Tool gains +10 Arts.\n\nOnly 1 Tool can be equipped to each of your Holomen."
     },
     "238": {
       "name": "Poyo Ayame",
@@ -3236,7 +3275,7 @@
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "はずき",
-      "abilityText": "The Holomen equipped with this Mascot gains +20 HP.\n\n◆If equipped to <Nakiri Ayame>, additional effect:\nWhen the Holomen equipped with this Mascot Blooms, draw 1 card from your deck.\n\nOnly 1 Mascot can be equipped to each of your Holomen."
+      "abilityText": "The Holomen equipped with this Mascot gains +20 HP.\n\n◆If equipped to 〈Nakiri Ayame〉, additional effect:\nWhen the Holomen equipped with this Mascot Blooms, draw 1 card from your deck.\n\nOnly 1 Mascot can be equipped to each of your Holomen."
     },
     "268": {
       "name": "Shirakami Fubuki",
@@ -3289,7 +3328,7 @@
       "spOshiSkill": {
         "timing": "Once per game",
         "name": "Set Sail~!",
-        "effect": "[Once per game] Deal 50 special damage to either the opponent’s Center Holomem or Collab Holomem for each Holomem stacked on your Center Holomem <Houshou Marine>."
+        "effect": "[Once per game] Deal 50 special damage to either the opponent’s Center Holomem or Collab Holomem for each Holomem stacked on your Center Holomem 〈Houshou Marine〉."
       }
     },
     "271": {
@@ -3302,7 +3341,7 @@
       "oshiSkill": {
         "timing": "Once per turn",
         "name": "Poe Poe Poe~",
-        "effect": "[Once per turn] Usable when your Center Holomem is <Sakamata Chloe>: Look at the top 3 cards of your deck. Archive all of those cards or return them to the top of your deck in any order."
+        "effect": "[Once per turn] Usable when your Center Holomem is 〈Sakamata Chloe〉: Look at the top 3 cards of your deck. Archive all of those cards or return them to the top of your deck in any order."
       },
       "spOshiSkill": {
         "timing": "Once per game",
@@ -3320,7 +3359,7 @@
       "oshiSkill": {
         "timing": "Once per turn",
         "name": "Neeehhh!",
-        "effect": "[Once per turn] Usable when you roll a die with <Murasaki Shion>'s ability: Reroll the die once."
+        "effect": "[Once per turn] Usable when you roll a die with 〈Murasaki Shion〉's ability: Reroll the die once."
       },
       "spOshiSkill": {
         "timing": "Once per game",
@@ -3361,7 +3400,7 @@
       "spOshiSkill": {
         "timing": "Once per game",
         "name": "Reaper Rap",
-        "effect": "[Once per game] Usable when your Center Holomem is <Mori Calliope>: For this turn, one of your <Mori Calliope> can use the same Arts again after using it once."
+        "effect": "[Once per game] Usable when your Center Holomem is 〈Mori Calliope〉: For this turn, one of your 〈Mori Calliope〉 can use the same Arts again after using it once."
       }
     },
     "275": {
@@ -3630,7 +3669,7 @@
       ],
       "keyword": {
         "name": "What Are You Waiting For?",
-        "effect": "Reveal 1 <Tatang> from your deck and add it to your hand. Then, shuffle your deck."
+        "effect": "Reveal 1 〈Tatang〉 from your deck and add it to your hand. Then, shuffle your deck."
       }
     },
     "290": {
@@ -3808,7 +3847,7 @@
       ],
       "keyword": {
         "name": "Houshou Pirate Crew",
-        "effect": "Reveal 1 <Houshou Marine> from your deck and add it to your hand. Then, shuffle your deck. Your Bloom Effect 'Houshou Pirate Crew' can only be used once per turn."
+        "effect": "Reveal 1 〈Houshou Marine〉 from your deck and add it to your hand. Then, shuffle your deck. Your Bloom Effect 'Houshou Pirate Crew' can only be used once per turn."
       }
     },
     "300": {
@@ -3976,7 +4015,7 @@
       ],
       "keyword": {
         "name": "Poisonous Love",
-        "effect": "[Center Position Only] All <Nekomata Okayu> on your stage deal +20 Special Damage to the opponent's Center Holomem."
+        "effect": "[Center Position Only] All 〈Nekomata Okayu〉 on your stage deal +20 Special Damage to the opponent's Center Holomem."
       }
     },
     "309": {
@@ -4284,7 +4323,7 @@
       ],
       "keyword": {
         "name": "What's up?",
-        "effect": "You may return 1 [<Mori Calliope's Scythe> or <Death-sensei>] from your archive to your hand."
+        "effect": "You may return 1 [〈Mori Calliope's Scythe〉 or 〈Death-sensei〉] from your archive to your hand."
       }
     },
     "326": {
@@ -4606,7 +4645,7 @@
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "いちかわはる",
-      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Amane Kanata>, <AZKi>, or <Sakamata Chloe> from among them and add the revealed HoloMems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
+      "abilityText": "You cannot use this card unless your hand has 6 or fewer cards, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Amane Kanata〉, 〈AZKi〉, or 〈Sakamata Chloe〉 from among them and add the revealed HoloMems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
     },
     "346": {
       "name": "Explosion Magic",
@@ -4640,7 +4679,7 @@
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "You cannot use this card unless you Archive 1 of your Holo Power cards.\n\nSend 1 Purple Cheer from your Archive to your <Murasaki Shion>. You can only use 1 Event with the #Magic tag per turn."
+      "abilityText": "You cannot use this card unless you Archive 1 of your Holo Power cards.\n\nSend 1 Purple Cheer from your Archive to your 〈Murasaki Shion〉. You can only use 1 Event with the #Magic tag per turn."
     },
     "351": {
       "name": "Mikkorone24",
@@ -4673,7 +4712,7 @@
       "rarity": "C",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "はずき",
-      "abilityText": "The Arts of the Holomem equipped with this tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher <Shion Murasaki>:\nWhen the Holomem equipped with this tool is the Center Holomem, change the [Once per turn] limit of your Oshi Skill 'Neeeeee' to [Twice per turn].\n\nOnly 1 tool can be equipped to each of your Holomem."
+      "abilityText": "The Arts of the Holomem equipped with this tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher 〈Shion Murasaki〉:\nWhen the Holomem equipped with this tool is the Center Holomem, change the [Once per turn] limit of your Oshi Skill 'Neeeeee' to [Twice per turn].\n\nOnly 1 tool can be equipped to each of your Holomem."
     },
     "355": {
       "name": "Mori Calliope's Scythe",
@@ -4681,7 +4720,7 @@
       "rarity": "U",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "はずき",
-      "abilityText": "The Arts of the Holomem equipped with this tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher <Mori Calliope>:\nWhen you equip this tool to a Holomem from your hand, archive the top card of your deck.\n\nOnly 1 tool can be equipped to each of your Holomem."
+      "abilityText": "The Arts of the Holomem equipped with this tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher 〈Mori Calliope〉:\nWhen you equip this tool to a Holomem from your hand, archive the top card of your deck.\n\nOnly 1 tool can be equipped to each of your Holomem."
     },
     "356": {
       "name": "Oruyanke",
@@ -4690,7 +4729,7 @@
       "rarity": "C",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>:\nWhen the Holomem equipped with this mascot collaborates, draw 1 card from your deck.\n\nOnly 1 mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉:\nWhen the Holomem equipped with this mascot collaborates, draw 1 card from your deck.\n\nOnly 1 mascot can be equipped to each of your Holomem."
     },
     "357": {
       "name": "Wind-Up Fox",
@@ -4699,7 +4738,7 @@
       "rarity": "C",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>:\nWhen the Holomem equipped with this mascot is downed, transfer 1 Cheer card from this Holomem to another of your Holomem.\n\nOnly 1 mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉:\nWhen the Holomem equipped with this mascot is downed, transfer 1 Cheer card from this Holomem to another of your Holomem.\n\nOnly 1 mascot can be equipped to each of your Holomem."
     },
     "358": {
       "name": "Fubuchun",
@@ -4708,7 +4747,7 @@
       "rarity": "C",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>:\nWhen the Holomem equipped with this mascot collaborates, you may return 1 Mascot card from your archive to your hand.\n\nOnly 1 mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉:\nWhen the Holomem equipped with this mascot collaborates, you may return 1 Mascot card from your archive to your hand.\n\nOnly 1 mascot can be equipped to each of your Holomem."
     },
     "359": {
       "name": "Fubura",
@@ -4717,7 +4756,7 @@
       "rarity": "U",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "はずき",
-      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>:\n[Once per turn] During your Main Step, you may archive 2 Cheer cards from your Holomem: For this turn, increase this Holomem's Arts by +50.\n\nOnly 1 mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉:\n[Once per turn] During your Main Step, you may archive 2 Cheer cards from your Holomem: For this turn, increase this Holomem's Arts by +50.\n\nOnly 1 mascot can be equipped to each of your Holomem."
     },
     "360": {
       "name": "Miteiru",
@@ -4726,7 +4765,7 @@
       "rarity": "C",
       "set": "Booster Pack 「Quintet Spectrum」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>:\n[Back Position Only] The Holomem equipped with this mascot does not take damage from the opponent.\n\nOnly 1 mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉:\n[Back Position Only] The Holomem equipped with this mascot does not take damage from the opponent.\n\nOnly 1 mascot can be equipped to each of your Holomem."
     },
     "361": {
       "name": "Tatang",
@@ -4734,7 +4773,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\r\n◆ Additional ability if attached to <Pavolia Reine>:\nThe Holomem this Mascot is attached to gets HP +30.\n\r\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\r\n◆ Additional ability if attached to 〈Pavolia Reine〉:\nThe Holomem this Mascot is attached to gets HP +30.\n\r\nOnly one Mascot can be attached to each of your Holomems."
     },
     "362": {
       "name": "Dokuro-kun",
@@ -4742,7 +4781,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Houshou Marine>:\n[Center Position only] When the Holomem this Mascot is attached to Blooms, draw 1 card from your deck.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Houshou Marine〉:\n[Center Position only] When the Holomem this Mascot is attached to Blooms, draw 1 card from your deck.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "363": {
       "name": "Inu",
@@ -4750,7 +4789,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Sakamata Chloe>:\nWhen the Holomem this Mascot is attached to downs an opponent’s Holomem, you may send 1 Cheer from your Archive to one of your Holomems with #Secret Society holoX.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Sakamata Chloe〉:\nWhen the Holomem this Mascot is attached to downs an opponent’s Holomem, you may send 1 Cheer from your Archive to one of your Holomems with #Secret Society holoX.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "364": {
       "name": "UDIN",
@@ -4758,7 +4797,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Kureiji Ollie>:\nWhen the Holomem this Mascot is attached to Blooms, draw 1 card from your deck, then archive 1 card from your hand.\n\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Kureiji Ollie〉:\nWhen the Holomem this Mascot is attached to Blooms, draw 1 card from your deck, then archive 1 card from your hand.\n\nOnly one Mascot can be attached to each of your Holomems."
     },
     "365": {
       "name": "Death-sensei",
@@ -4766,7 +4805,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Mascot is attached to gets HP +20.\n\r\n◆ Additional ability if attached to <Mori Calliope>:\nAll Cheer colors required for the Arts of the Holomem this Mascot is attached to become colorless Cheer.\n\r\nOnly one Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this Mascot is attached to gets HP +20.\n\r\n◆ Additional ability if attached to 〈Mori Calliope〉:\nAll Cheer colors required for the Arts of the Holomem this Mascot is attached to become colorless Cheer.\n\r\nOnly one Mascot can be attached to each of your Holomems."
     },
     "366": {
       "name": "Sukonbu",
@@ -4775,7 +4814,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this Fan is attached to gets HP +10.\n\nThis Fan can only be attached to your <Shirakami Fubuki>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "The Holomem this Fan is attached to gets HP +10.\n\nThis Fan can only be attached to your 〈Shirakami Fubuki〉, and any number of this Fan can be attached to one Holomem."
     },
     "367": {
       "name": "Shirogane Knights",
@@ -4783,7 +4822,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this Fan is attached to takes -10 damage.\n\nThis Fan can only be attached to your <Shirogane Noel>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "The Holomem this Fan is attached to takes -10 damage.\n\nThis Fan can only be attached to your 〈Shirogane Noel〉, and any number of this Fan can be attached to one Holomem."
     },
     "368": {
       "name": "Miofa",
@@ -4791,7 +4830,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent’s turn, when the Holomem this Fan is attached to is downed, draw 1 card from your deck.\n\nThis Fan can only be attached to your <Ookami Mio>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "During the opponent’s turn, when the Holomem this Fan is attached to is downed, draw 1 card from your deck.\n\nThis Fan can only be attached to your 〈Ookami Mio〉, and any number of this Fan can be attached to one Holomem."
     },
     "369": {
       "name": "Shio-kko",
@@ -4799,7 +4838,7 @@
       "rarity": "C",
       "set": "Booster Pack \"Quintet Spectrum\"",
       "illustrator": "はずき",
-      "abilityText": "■ The Holomem this Fan is attached to gets Arts +10.\n■ When the Holomem this Fan is attached to takes damage, archive this Fan.\n\nThis Fan can only be attached to your <Murasaki Shion>, and any number of this Fan can be attached to one Holomem."
+      "abilityText": "■ The Holomem this Fan is attached to gets Arts +10.\n■ When the Holomem this Fan is attached to takes damage, archive this Fan.\n\nThis Fan can only be attached to your 〈Murasaki Shion〉, and any number of this Fan can be attached to one Holomem."
     },
     "172": {
       "name": "Nanashi Mumei",
@@ -4965,7 +5004,7 @@
         },
         {
           "name": "SorAZ Sympathy",
-          "effect": "If a Holomem named <AZKi> is on your Stage, increase this Arts by +50."
+          "effect": "If a Holomem named 〈AZKi〉 is on your Stage, increase this Arts by +50."
         }
       ]
     },
@@ -5406,7 +5445,7 @@
       "illustrator": "Hiroko",
       "oshiSkill": {
         "name": "Survival Power",
-        "effect": "[Once per turn] Reveal one <Stone Axe> card from your deck and equip it to one of your Green Holomems. Then, shuffle your deck."
+        "effect": "[Once per turn] Reveal one 〈Stone Axe〉 card from your deck and equip it to one of your Green Holomems. Then, shuffle your deck."
       },
       "spOshiSkill": {
         "name": "Song of the Earth",
@@ -6041,7 +6080,7 @@
       ],
       "keyword": {
         "name": "Galaxy Idol",
-        "effect": "When your favorite Holomem is <Usada Pekora>, you may roll a die once: If the result is even, send the top card of your Cheer Deck to your Holomem."
+        "effect": "When your favorite Holomem is 〈Usada Pekora〉, you may roll a die once: If the result is even, send the top card of your Cheer Deck to your Holomem."
       }
     },
     "74": {
@@ -6147,7 +6186,7 @@
       ],
       "keyword": {
         "name": "Overwrite",
-        "effect": "While your Life is 3 or less, this Holomem can Bloom into a 2nd <AZKi> from your hand, ignoring Bloom Level requirements."
+        "effect": "While your Life is 3 or less, this Holomem can Bloom into a 2nd 〈AZKi〉 from your hand, ignoring Bloom Level requirements."
       }
     },
     "81": {
@@ -6231,7 +6270,7 @@
       "arts": [
         {
           "name": "Delivering Energy with All My Might!",
-          "effect": "Send the top card of your Cheer Deck to a Holomem with #SecretSocietyholoX, other than <Kazama Iroha>."
+          "effect": "Send the top card of your Cheer Deck to a Holomem with #SecretSocietyholoX, other than 〈Kazama Iroha〉."
         }
       ],
       "keyword": {
@@ -6305,7 +6344,7 @@
       ],
       "keyword": {
         "name": "Sea of Spreading Green Light",
-        "effect": "Send the top card of your Cheer Deck to a Holomem with #ID, other than <Airani Iofifteen>."
+        "effect": "Send the top card of your Cheer Deck to a Holomem with #ID, other than 〈Airani Iofifteen〉."
       }
     },
     "92": {
@@ -6320,7 +6359,7 @@
       "arts": [
         {
           "name": "Relation Sky",
-          "effect": "If there is a Holomem with #ID other than <Airani Iofifteen> on your Stage, this Art gains +50."
+          "effect": "If there is a Holomem with #ID other than 〈Airani Iofifteen〉 on your Stage, this Art gains +50."
         }
       ],
       "keyword": {
@@ -6588,7 +6627,7 @@
       "arts": [
         {
           "name": "Codependency",
-          "effect": "This Art can only be used if this Holomem has a <Troupe Member> attached."
+          "effect": "This Art can only be used if this Holomem has a 〈Troupe Member〉 attached."
         }
       ],
       "keyword": {
@@ -6614,7 +6653,7 @@
       ],
       "keyword": {
         "name": "Polka Illusion",
-        "effect": "You may return 1 <Troupe Member> from your Archive to your hand."
+        "effect": "You may return 1 〈Troupe Member〉 from your Archive to your hand."
       }
     },
     "111": {
@@ -6717,7 +6756,7 @@
       ],
       "keyword": {
         "name": "Sparkling Wardrobe",
-        "effect": "If your Oshi Holomem is <Hoshimachi Suisei>, you may send 1 Blue Cheer from this Holomem to the Archive: Draw 2 cards from your deck."
+        "effect": "If your Oshi Holomem is 〈Hoshimachi Suisei〉, you may send 1 Blue Cheer from this Holomem to the Archive: Draw 2 cards from your deck."
       }
     },
     "117": {
@@ -7190,14 +7229,14 @@
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "You can only use this card if you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Usada Pekora> and <Moona Hoshinova> from among them and add the revealed Holomem to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
+      "abilityText": "You can only use this card if you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Usada Pekora〉 and 〈Moona Hoshinova〉 from among them and add the revealed Holomem to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 of this card per turn."
     },
     "151": {
       "name": "I'll Smash You with a Blunt Weapon!",
       "cardType": "サポート・イベント・LIMITED",
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
-      "abilityText": "Roll a die once: If the result is 3 or lower, archive 1 Cheer card attached to an opponent's Holomem.\n\n◆ If your Oshi Holomem is <Nanashi Mumei>, you can change the ability to:\n[Once per game] Archive 2 Cheer cards attached to your opponent's Center Holomem.\n\nLIMITED: You can only use 1 of this card per turn."
+      "abilityText": "Roll a die once: If the result is 3 or lower, archive 1 Cheer card attached to an opponent's Holomem.\n\n◆ If your Oshi Holomem is 〈Nanashi Mumei〉, you can change the ability to:\n[Once per game] Archive 2 Cheer cards attached to your opponent's Center Holomem.\n\nLIMITED: You can only use 1 of this card per turn."
     },
     "152": {
       "name": "Hololive Indonesia 3rd Gen",
@@ -7227,7 +7266,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ The Holomem equipped with this tool gets +20 to Arts.\n■ When the Holomem equipped with this tool uses an Arts, deal 10 special damage to this Holomem.\n\n◆ Additional effect if equipped to a 1st or higher <Aki Rosenthal>:\n[Once per turn] When this Holomem recovers HP through your ability, draw 1 card from your deck.\n\nTools can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "■ The Holomem equipped with this tool gets +20 to Arts.\n■ When the Holomem equipped with this tool uses an Arts, deal 10 special damage to this Holomem.\n\n◆ Additional effect if equipped to a 1st or higher 〈Aki Rosenthal〉:\n[Once per turn] When this Holomem recovers HP through your ability, draw 1 card from your deck.\n\nTools can only be equipped to 1 of your Holomems at a time."
     },
     "156": {
       "name": "Suisei Hoshimachi's Microphone",
@@ -7235,7 +7274,7 @@
       "rarity": "U",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this tool gets +10 to Arts.\n\n◆ Additional effect if equipped to a 1st or higher <Suisei Hoshimachi>:\nWhen the Holomem equipped with this tool downs an opponent's Holomem, send the top card of your Cheer deck to this Holomem.\n\nTools can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this tool gets +10 to Arts.\n\n◆ Additional effect if equipped to a 1st or higher 〈Suisei Hoshimachi〉:\nWhen the Holomem equipped with this tool downs an opponent's Holomem, send the top card of your Cheer deck to this Holomem.\n\nTools can only be equipped to 1 of your Holomems at a time."
     },
     "157": {
       "name": "Upao",
@@ -7243,7 +7282,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to <Kanata Amane>:\n[Once per turn] During the opponent's turn, when the Holomem equipped with this mascot takes damage, deal 20 special damage to the opponent's Center Holomem.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to 〈Kanata Amane〉:\n[Once per turn] During the opponent's turn, when the Holomem equipped with this mascot takes damage, deal 20 special damage to the opponent's Center Holomem.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "158": {
       "name": "Friend",
@@ -7251,7 +7290,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to <Nanashi Mumei>:\nDuring the opponent's turn, when the Holomem equipped with this mascot would take damage, you may archive this mascot: Reduce the damage taken by the equipped Holomem by 30.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to 〈Nanashi Mumei〉:\nDuring the opponent's turn, when the Holomem equipped with this mascot would take damage, you may archive this mascot: Reduce the damage taken by the equipped Holomem by 30.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "159": {
       "name": "Ankimo",
@@ -7259,7 +7298,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this mascot gets +10 to HP.\n\n◆ Additional effect if equipped to <Tokino Sora>:\nWhen the Holomem equipped with this mascot uses an Arts, treat this mascot as a White Cheer as well.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot gets +10 to HP.\n\n◆ Additional effect if equipped to 〈Tokino Sora〉:\nWhen the Holomem equipped with this mascot uses an Arts, treat this mascot as a White Cheer as well.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "160": {
       "name": "Jobs",
@@ -7267,7 +7306,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "The Holomem equipped with this mascot gets +10 to HP.\n\n◆ Additional effect if equipped to <Aki Rosenthal>:\nWhen the Holomem equipped with this mascot uses an Arts, recover 10 HP for 1 of your Holomems.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot gets +10 to HP.\n\n◆ Additional effect if equipped to 〈Aki Rosenthal〉:\nWhen the Holomem equipped with this mascot uses an Arts, recover 10 HP for 1 of your Holomems.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "161": {
       "name": "Ganmo",
@@ -7275,7 +7314,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to <Takanashi Rui>:\nWhen the Holomem equipped with this mascot uses an Arts while in the Center position, draw 1 card from your deck.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot gets +10 to Arts.\n\n◆ Additional effect if equipped to 〈Takanashi Rui〉:\nWhen the Holomem equipped with this mascot uses an Arts while in the Center position, draw 1 card from your deck.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "162": {
       "name": "Kotori",
@@ -7283,7 +7322,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this mascot takes 10 less damage when in the Center or Collab position.\n\n◆ Additional effect if equipped to <Takanotsume Kiara>:\nWhen the Bloom level of the Holomem equipped with this mascot increases, draw 1 card from your deck.\n\nMascots can only be equipped to 1 of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this mascot takes 10 less damage when in the Center or Collab position.\n\n◆ Additional effect if equipped to 〈Takanotsume Kiara〉:\nWhen the Bloom level of the Holomem equipped with this mascot increases, draw 1 card from your deck.\n\nMascots can only be equipped to 1 of your Holomems at a time."
     },
     "163": {
       "name": "Roze-tai",
@@ -7291,7 +7330,7 @@
       "rarity": "C",
       "set": "Booster Pack 'Blooming Radiance'",
       "illustrator": "JinArt KABAKURA",
-      "abilityText": "During the opponent's turn, when the Holomem equipped with this fan is downed, send the top card of your Cheer deck to your <Aki Rosenthal>.\n\nThis fan can only be equipped to your <Aki Rosenthal>, and any number of this fan can be equipped to a single Holomem."
+      "abilityText": "During the opponent's turn, when the Holomem equipped with this fan is downed, send the top card of your Cheer deck to your 〈Aki Rosenthal〉.\n\nThis fan can only be equipped to your 〈Aki Rosenthal〉, and any number of this fan can be equipped to a single Holomem."
     },
     "164": {
       "name": "Usaken Alliance",
@@ -7522,7 +7561,7 @@
       "spOshiSkill": {
         "timing": "Once per game",
         "name": "Lunanite Assemble",
-        "effect": "[Once per game] Usable when your Center Holomem is <Himemori Luna>: Reveal 1 to 4 <Lunanite> cards from your deck and assign them to your Holomems. Then, shuffle your deck."
+        "effect": "[Once per game] Usable when your Center Holomem is 〈Himemori Luna〉: Reveal 1 to 4 〈Lunanite〉 cards from your deck and assign them to your Holomems. Then, shuffle your deck."
       }
     },
     "679": {
@@ -7535,7 +7574,7 @@
       "oshiSkill": {
         "timing": "Once per turn",
         "name": "poi",
-        "effect": "[Once per turn] Send 1 Cheer from your archive to your Back Holomem <Shishiro Botan>."
+        "effect": "[Once per turn] Send 1 Cheer from your archive to your Back Holomem 〈Shishiro Botan〉."
       },
       "spOshiSkill": {
         "timing": "Once per game",
@@ -7553,7 +7592,7 @@
       "oshiSkill": {
         "timing": "Once per turn",
         "name": "poi",
-        "effect": "[Once per turn] Send 1 Cheer from your archive to your Back Holomem <Shishiro Botan>."
+        "effect": "[Once per turn] Send 1 Cheer from your archive to your Back Holomem 〈Shishiro Botan〉."
       },
       "spOshiSkill": {
         "timing": "Once per game",
@@ -7571,7 +7610,7 @@
       "oshiSkill": {
         "timing": "Once per turn",
         "name": "Will 35P Come Back!? Huh!?",
-        "effect": "[Once per turn] Roll a die once: If the result is 1, 2, 4, or 6, return 1 <35P> from your archive to your hand. If the result is 3 or 5, return 2 <35P> from your archive to your hand."
+        "effect": "[Once per turn] Roll a die once: If the result is 1, 2, 4, or 6, return 1 〈35P〉 from your archive to your hand. If the result is 3 or 5, return 2 〈35P〉 from your archive to your hand."
       },
       "spOshiSkill": {
         "timing": "Once per game",
@@ -7589,7 +7628,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "35P, Are You Coming Back!?",
-        "effect": "[Once per turn] You may roll a die: If the result is 1, 2, 4, or 6, return 1 <35P> from your Archive to your hand. If the result is 3 or 5, return 2 <35P> from your Archive to your hand."
+        "effect": "[Once per turn] You may roll a die: If the result is 1, 2, 4, or 6, return 1 〈35P〉 from your Archive to your hand. If the result is 3 or 5, return 2 〈35P〉 from your Archive to your hand."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -7607,7 +7646,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Moko-chan!",
-        "effect": "[Once per turn] Send the top card of your Cheer Deck to your 1st Holomem's <Mokoco Abyssgard>."
+        "effect": "[Once per turn] Send the top card of your Cheer Deck to your 1st Holomem's 〈Mokoco Abyssgard〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -7630,7 +7669,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Demonic Deed",
-        "effect": "[Once per game] Usable on the opponent's turn when your <Tokoyami Towa> is downed: Return 2 Cheer cards each from the opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
+        "effect": "[Once per game] Usable on the opponent's turn when your 〈Tokoyami Towa〉 is downed: Return 2 Cheer cards each from the opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
       }
     },
     "685": {
@@ -7648,7 +7687,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Demonic Deed",
-        "effect": "[Once per game] Usable on the opponent's turn when your <Tokoyami Towa> is downed: Return 2 Cheer cards each from the opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
+        "effect": "[Once per game] Usable on the opponent's turn when your 〈Tokoyami Towa〉 is downed: Return 2 Cheer cards each from the opponent's Center Holomem and Collab Holomem to the bottom of their Cheer Deck in any order."
       }
     },
     "686": {
@@ -7661,7 +7700,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Infinite Stamina",
-        "effect": "[Once per turn] Activate 1 of your resting <Inugami Korone>."
+        "effect": "[Once per turn] Activate 1 of your resting 〈Inugami Korone〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -7684,7 +7723,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Watame Isn't Bad, Right?",
-        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your <Tsunomaki Watame>."
+        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your 〈Tsunomaki Watame〉."
       }
     },
     "688": {
@@ -7702,7 +7741,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Watame Isn't Bad, Right?",
-        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your <Tsunomaki Watame>."
+        "effect": "[Once per game] Send the top 2 cards of your Cheer Deck to 1 of your 〈Tsunomaki Watame〉."
       }
     },
     "689": {
@@ -7720,7 +7759,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Ganbari~Risu!",
-        "effect": "[Once per game] For this turn, increase the Arts of all your <Ayunda Risu> on the stage by +50."
+        "effect": "[Once per game] For this turn, increase the Arts of all your 〈Ayunda Risu〉 on the stage by +50."
       }
     },
     "690": {
@@ -7739,7 +7778,7 @@
       ],
       "keyword": {
         "name": "Princess of the Candy Kingdom",
-        "effect": "When your Center Holomem is <Himemori Luna>, draw 1 card from your deck."
+        "effect": "When your Center Holomem is 〈Himemori Luna〉, draw 1 card from your deck."
       }
     },
     "691": {
@@ -7790,12 +7829,12 @@
       "arts": [
         {
           "name": "Moon Galaxy",
-          "effect": "You may attach one <Lunanite> from your Archive to your <Himemori Luna>."
+          "effect": "You may attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
         }
       ],
       "keyword": {
         "name": "Let's Go to Space with Nnatan, nano ra~!",
-        "effect": "[Collab Position Only] Increase the Arts of your Center Holomem <Himemori Luna> with a Fan attached by +20."
+        "effect": "[Collab Position Only] Increase the Arts of your Center Holomem 〈Himemori Luna〉 with a Fan attached by +20."
       }
     },
     "694": {
@@ -7810,12 +7849,12 @@
       "arts": [
         {
           "name": "Thanks for Your Hard Work, nano ra ne",
-          "effect": "If this Holomem has a <Lunanite> attached, increase this Arts by +50."
+          "effect": "If this Holomem has a 〈Lunanite〉 attached, increase this Arts by +50."
         }
       ],
       "keyword": {
         "name": "Follow Luna, nano ra~",
-        "effect": "If your Oshi Holomem is <Himemori Luna>, you may attach one <Lunanite> from your Archive to your <Himemori Luna>."
+        "effect": "If your Oshi Holomem is 〈Himemori Luna〉, you may attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
       }
     },
     "695": {
@@ -7830,12 +7869,12 @@
       "arts": [
         {
           "name": "Thanks for Your Hard Work, nano ra ne",
-          "effect": "If this Holomem has a <Lunanite> attached, increase this Arts by +50."
+          "effect": "If this Holomem has a 〈Lunanite〉 attached, increase this Arts by +50."
         }
       ],
       "keyword": {
         "name": "Follow Luna, nano ra~",
-        "effect": "If your Oshi Holomem is <Himemori Luna>, you may attach one <Lunanite> from your Archive to your <Himemori Luna>."
+        "effect": "If your Oshi Holomem is 〈Himemori Luna〉, you may attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
       }
     },
     "696": {
@@ -7894,7 +7933,7 @@
       ],
       "keyword": {
         "name": "Prepare",
-        "effect": "If your Oshi Holomem is <Shishiro Botan>, you may send the top card of your Cheer Deck to your Archive: Restore 10 HP to one of your Holomem."
+        "effect": "If your Oshi Holomem is 〈Shishiro Botan〉, you may send the top card of your Cheer Deck to your Archive: Restore 10 HP to one of your Holomem."
       }
     },
     "699": {
@@ -7926,7 +7965,7 @@
       "arts": [
         {
           "name": "Slurp",
-          "effect": "You may reveal one <Tsunomaki Watame> from your hand and place it at the bottom of your deck: Restore 20 HP to this Holomem."
+          "effect": "You may reveal one 〈Tsunomaki Watame〉 from your hand and place it at the bottom of your deck: Restore 20 HP to this Holomem."
         }
       ],
       "keyword": {
@@ -7950,7 +7989,7 @@
       ],
       "keyword": {
         "name": "SSSSR",
-        "effect": "Send the top card of your Cheer Deck to your Back Holomem <Shishiro Botan>."
+        "effect": "Send the top card of your Cheer Deck to your Back Holomem 〈Shishiro Botan〉."
       }
     },
     "702": {
@@ -7965,7 +8004,7 @@
       "arts": [
         {
           "name": "Godlike Aim",
-          "effect": "If your Oshi Holomem is <Shishiro Botan>, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
+          "effect": "If your Oshi Holomem is 〈Shishiro Botan〉, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
         }
       ],
       "keyword": {
@@ -7985,7 +8024,7 @@
       "arts": [
         {
           "name": "Godlike Aim",
-          "effect": "If your Oshi Holomem is <Shishiro Botan>, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
+          "effect": "If your Oshi Holomem is 〈Shishiro Botan〉, you may archive 1 Cheer from your Back Holomem: Deal 40 special damage to the opponent's Center Holomem or Collab Holomem."
         }
       ],
       "keyword": {
@@ -8006,7 +8045,7 @@
       "arts": [
         {
           "name": "Passionate Belly Dancer",
-          "effect": "If your Oshi Holomem is <Aki Rosenthal>, restore 10 HP to all your Holomem with a Tool attached."
+          "effect": "If your Oshi Holomem is 〈Aki Rosenthal〉, restore 10 HP to all your Holomem with a Tool attached."
         }
       ],
       "keyword": {
@@ -8027,7 +8066,7 @@
       "arts": [
         {
           "name": "Peko Card Play",
-          "effect": "If you have rolled the dice at least once with an ability of your <Usada Pekora> this turn, this Arts +40."
+          "effect": "If you have rolled the dice at least once with an ability of your 〈Usada Pekora〉 this turn, this Arts +40."
         }
       ],
       "keyword": {
@@ -8052,7 +8091,7 @@
       ],
       "keyword": {
         "name": "Kazama Protects",
-        "effect": "You may send 1 Cheer from your Archive to each of one <Kazama Iroha> and one <Hoshimachi Suisei>."
+        "effect": "You may send 1 Cheer from your Archive to each of one 〈Kazama Iroha〉 and one 〈Hoshimachi Suisei〉."
       }
     },
     "707": {
@@ -8072,7 +8111,7 @@
       ],
       "keyword": {
         "name": "Kazama Protects",
-        "effect": "You may send 1 Cheer from your Archive to each of one <Kazama Iroha> and one <Hoshimachi Suisei>."
+        "effect": "You may send 1 Cheer from your Archive to each of one 〈Kazama Iroha〉 and one 〈Hoshimachi Suisei〉."
       }
     },
     "708": {
@@ -8142,12 +8181,12 @@
       "arts": [
         {
           "name": "Commemorative Photo with 35P",
-          "effect": "If this Holomem has <35P> attached, this Arts +30."
+          "effect": "If this Holomem has 〈35P〉 attached, this Arts +30."
         }
       ],
       "keyword": {
         "name": "Nye",
-        "effect": "Reveal 1 <35P> from your deck and add it to your hand. Then shuffle your deck."
+        "effect": "Reveal 1 〈35P〉 from your deck and add it to your hand. Then shuffle your deck."
       }
     },
     "712": {
@@ -8162,12 +8201,12 @@
       "arts": [
         {
           "name": "Elite Miko",
-          "effect": "For each <35P> attached to this Holomem, this Arts gains +20."
+          "effect": "For each 〈35P〉 attached to this Holomem, this Arts gains +20."
         }
       ],
       "keyword": {
         "name": "Elite Gamble",
-        "effect": "[Center Position Only][Once per Turn] During your Main Step, if this Holomem has <35P> attached, you may roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for the turn."
+        "effect": "[Center Position Only][Once per Turn] During your Main Step, if this Holomem has 〈35P〉 attached, you may roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for the turn."
       }
     },
     "713": {
@@ -8182,12 +8221,12 @@
       "arts": [
         {
           "name": "Elite Miko",
-          "effect": "For each <35P> attached to this Holomem, this Arts gains +20."
+          "effect": "For each 〈35P〉 attached to this Holomem, this Arts gains +20."
         }
       ],
       "keyword": {
         "name": "Elite Gamble",
-        "effect": "[Center Position Only][Once per Turn] During your Main Step, if this Holomem has <35P> attached, you may roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for the turn."
+        "effect": "[Center Position Only][Once per Turn] During your Main Step, if this Holomem has 〈35P〉 attached, you may roll a die once: If the result is 3 or 5, this Holomem’s Arts gains +50 for the turn."
       }
     },
     "714": {
@@ -8278,7 +8317,7 @@
       "arts": [
         {
           "name": "Challenger",
-          "effect": "If your Oshi Holomem is <Takane Lui>, you may Archive 2 cards from your hand: Draw 3 cards from your deck."
+          "effect": "If your Oshi Holomem is 〈Takane Lui〉, you may Archive 2 cards from your hand: Draw 3 cards from your deck."
         }
       ]
     },
@@ -8298,7 +8337,7 @@
       ],
       "keyword": {
         "name": "Happy Time",
-        "effect": "Reveal 1 to 4 <Takanashi Kiara> cards from your deck and Archive them. Then shuffle your deck."
+        "effect": "Reveal 1 to 4 〈Takanashi Kiara〉 cards from your deck and Archive them. Then shuffle your deck."
       }
     },
     "720": {
@@ -8317,7 +8356,7 @@
       ],
       "keyword": {
         "name": "Time to Play!",
-        "effect": "When Blooming from Debut, reveal 1 <Fuwawa Abyssgard> 1st Holomem from your deck and add it to your hand. Then shuffle your deck."
+        "effect": "When Blooming from Debut, reveal 1 〈Fuwawa Abyssgard〉 1st Holomem from your deck and add it to your hand. Then shuffle your deck."
       }
     },
     "721": {
@@ -8333,12 +8372,12 @@
       "arts": [
         {
           "name": "The Fluffy One",
-          "effect": "[Collab Position Only] If your Center Holomem is <Fuwawa Abyssgard>, this Arts gains +30."
+          "effect": "[Collab Position Only] If your Center Holomem is 〈Fuwawa Abyssgard〉, this Arts gains +30."
         }
       ],
       "keyword": {
         "name": "Hellhound Ruffian",
-        "effect": "During your Reset Step, if your Center Holomem is <Fuwawa Abyssgard>, this Holomem does not rest even if moved to the Back Position."
+        "effect": "During your Reset Step, if your Center Holomem is 〈Fuwawa Abyssgard〉, this Holomem does not rest even if moved to the Back Position."
       }
     },
     "722": {
@@ -8375,7 +8414,7 @@
       ],
       "keyword": {
         "name": "Fuwawa Floral Stream",
-        "effect": "When <Mococo Abyssgard> is on your stage, deal 20 special damage to one of your opponent's Center Holomem or Back Holomem. However, even if they are downed, your opponent's Life does not decrease."
+        "effect": "When 〈Mococo Abyssgard〉 is on your stage, deal 20 special damage to one of your opponent's Center Holomem or Back Holomem. However, even if they are downed, your opponent's Life does not decrease."
       }
     },
     "724": {
@@ -8393,7 +8432,7 @@
         },
         {
           "name": "Wanna Eat Together?",
-          "effect": "[Center Position Only] When your Favorite Holomem is <FUWAMOCO>, you may transfer 1 Cheer from this Holomem to your <Mococo Abyssgard>: Deal 50 special damage to your opponent's Center Holomem."
+          "effect": "[Center Position Only] When your Favorite Holomem is 〈FUWAMOCO〉, you may transfer 1 Cheer from this Holomem to your 〈Mococo Abyssgard〉: Deal 50 special damage to your opponent's Center Holomem."
         }
       ]
     },
@@ -8412,7 +8451,7 @@
         },
         {
           "name": "Wanna Eat Together?",
-          "effect": "[Center Position Only] When your Favorite Holomem is <FUWAMOCO>, you may transfer 1 Cheer from this Holomem to your <Mococo Abyssgard>: Deal 50 special damage to your opponent's Center Holomem."
+          "effect": "[Center Position Only] When your Favorite Holomem is 〈FUWAMOCO〉, you may transfer 1 Cheer from this Holomem to your 〈Mococo Abyssgard〉: Deal 50 special damage to your opponent's Center Holomem."
         }
       ]
     },
@@ -8428,12 +8467,12 @@
       "arts": [
         {
           "name": "Virtual Ghost",
-          "effect": "When your Favorite Holomem is <Hoshimachi Suisei>, you may transfer 1 Blue Cheer from this Holomem to your Back Holomem <Hoshimachi Suisei>."
+          "effect": "When your Favorite Holomem is 〈Hoshimachi Suisei〉, you may transfer 1 Blue Cheer from this Holomem to your Back Holomem 〈Hoshimachi Suisei〉."
         }
       ],
       "keyword": {
         "name": "Planet Stage",
-        "effect": "Look at the top 4 cards of your deck. Reveal 1 <Hoshimachi Suisei> from among them and add it to your hand. Then, return the remaining cards to the bottom of your deck in any order."
+        "effect": "Look at the top 4 cards of your deck. Reveal 1 〈Hoshimachi Suisei〉 from among them and add it to your hand. Then, return the remaining cards to the bottom of your deck in any order."
       }
     },
     "727": {
@@ -8520,7 +8559,7 @@
       "rarity": "SR",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "© 2016 COVER Corp. MariA",
-      "extra": "This Holomem is also treated as <Fuwawa Abyssgard> and <Mococo Abyssgard>",
+      "extra": "This Holomem is also treated as 〈Fuwawa Abyssgard〉 and 〈Mococo Abyssgard〉",
       "arts": [
         {
           "name": "Demonic Guard Dog Sisters",
@@ -8543,7 +8582,7 @@
       "arts": [
         {
           "name": "So That's How It Is",
-          "effect": "Deal 10 special damage to the opponent's Center Holomem. Then, if your Favorite Holomem is <Tokoyami Towa>, you may archive 1 Tool attached to the opponent's [Center Holomem or Collab Holomem]."
+          "effect": "Deal 10 special damage to the opponent's Center Holomem. Then, if your Favorite Holomem is 〈Tokoyami Towa〉, you may archive 1 Tool attached to the opponent's [Center Holomem or Collab Holomem]."
         }
       ]
     },
@@ -8764,7 +8803,7 @@
       ],
       "keyword": {
         "name": "Boxing Style",
-        "effect": "[Collab Position Only] During your opponent’s Main Step, the HP of your Center Holomem <Inugami Korone> cannot be reduced or altered by your opponent’s abilities."
+        "effect": "[Collab Position Only] During your opponent’s Main Step, the HP of your Center Holomem 〈Inugami Korone〉 cannot be reduced or altered by your opponent’s abilities."
       }
     },
     "745": {
@@ -8784,7 +8823,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "When this Holomem is downed, send the top card of your Cheer Deck to your <Inugami Korone>."
+        "effect": "When this Holomem is downed, send the top card of your Cheer Deck to your 〈Inugami Korone〉."
       }
     },
     "746": {
@@ -8804,7 +8843,7 @@
       ],
       "keyword": {
         "name": "Wonderful~♡",
-        "effect": "When this Holomem is downed, send the top card of your Cheer Deck to your <Inugami Korone>."
+        "effect": "When this Holomem is downed, send the top card of your Cheer Deck to your 〈Inugami Korone〉."
       }
     },
     "747": {
@@ -8819,7 +8858,7 @@
       "arts": [
         {
           "name": "Watame's Song",
-          "effect": "If you have a Holomem with <Watamates> attached, you may send one Cheer card from your Archive to one of your Yellow Holomem."
+          "effect": "If you have a Holomem with 〈Watamates〉 attached, you may send one Cheer card from your Archive to one of your Yellow Holomem."
         }
       ]
     },
@@ -8852,12 +8891,12 @@
       "arts": [
         {
           "name": "Watch till the end, Watamates!",
-          "effect": "Send the top card of your Cheer Deck to your Back Holomem <Tsunomaki Watame>."
+          "effect": "Send the top card of your Cheer Deck to your Back Holomem 〈Tsunomaki Watame〉."
         }
       ],
       "keyword": {
         "name": "I'll Sing and Dance with All My Might!",
-        "effect": "If you have 5 or fewer Holomem on your Stage, reveal one Debut Holomem <Tsunomaki Watame> from your Deck and place it on the Stage. Then, shuffle your Deck."
+        "effect": "If you have 5 or fewer Holomem on your Stage, reveal one Debut Holomem 〈Tsunomaki Watame〉 from your Deck and place it on the Stage. Then, shuffle your Deck."
       }
     },
     "750": {
@@ -8877,7 +8916,7 @@
       ],
       "keyword": {
         "name": "Member Sheep, Welcome Back~",
-        "effect": "You may return one <Watamates> from your Archive to your Hand."
+        "effect": "You may return one 〈Watamates〉 from your Archive to your Hand."
       }
     },
     "751": {
@@ -8897,7 +8936,7 @@
       ],
       "keyword": {
         "name": "Let's Keep Going!",
-        "effect": "When this Holomem is downed, you may transfer one Cheer card from this Holomem to another of your <Tsunomaki Watame>."
+        "effect": "When this Holomem is downed, you may transfer one Cheer card from this Holomem to another of your 〈Tsunomaki Watame〉."
       }
     },
     "752": {
@@ -8917,7 +8956,7 @@
       ],
       "keyword": {
         "name": "Let's Keep Going!",
-        "effect": "When this Holomem is downed, you may transfer 1 Cheer from this Holomem to another of your <Tsunomaki Watame>."
+        "effect": "When this Holomem is downed, you may transfer 1 Cheer from this Holomem to another of your 〈Tsunomaki Watame〉."
       }
     },
     "753": {
@@ -8932,7 +8971,7 @@
       "arts": [
         {
           "name": "Connected Wishes",
-          "effect": "■ When <Airani Iofifteen> is on your stage, this Arts +10.\n■ When <Moona Hoshinova> is on your stage, this Arts +10."
+          "effect": "■ When 〈Airani Iofifteen〉 is on your stage, this Arts +10.\n■ When 〈Moona Hoshinova〉 is on your stage, this Arts +10."
         }
       ]
     },
@@ -9236,7 +9275,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "住咲ゆづな",
-      "abilityText": "The Holomem with this tool attached gains +10 Arts.\n\n◆If attached to a 1st or higher <Kanade Otonose>, gain the following ability:\nWhen the Holomem with this tool attached downs an opponent's Holomem, draw 1 card from your deck.\n\nOnly 1 tool can be attached to each of your Holomems."
+      "abilityText": "The Holomem with this tool attached gains +10 Arts.\n\n◆If attached to a 1st or higher 〈Kanade Otonose〉, gain the following ability:\nWhen the Holomem with this tool attached downs an opponent's Holomem, draw 1 card from your deck.\n\nOnly 1 tool can be attached to each of your Holomems."
     },
     "781": {
       "name": "Kinji",
@@ -9244,7 +9283,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to <Miko Sakura>, gain the following ability:\nWhen the Holomem with this mascot attached collaborates, draw 1 card from your deck.\n\nOnly 1 mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to 〈Miko Sakura〉, gain the following ability:\nWhen the Holomem with this mascot attached collaborates, draw 1 card from your deck.\n\nOnly 1 mascot can be attached to each of your Holomems."
     },
     "782": {
       "name": "Maguchi",
@@ -9252,7 +9291,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem with this mascot attached gains +10 Arts.\n\n◆If attached to <Miko Sakura>, gain the following ability:\nWhen the Holomem with this mascot attached collaborates, for this turn, your Center Holomem <Miko Sakura> gains +10 Arts.\n\nOnly 1 mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem with this mascot attached gains +10 Arts.\n\n◆If attached to 〈Miko Sakura〉, gain the following ability:\nWhen the Holomem with this mascot attached collaborates, for this turn, your Center Holomem 〈Miko Sakura〉 gains +10 Arts.\n\nOnly 1 mascot can be attached to each of your Holomems."
     },
     "783": {
       "name": "Pero",
@@ -9260,7 +9299,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to <Fuwawa Abyssgard> or <Mococo Abyssgard>, gain the following ability:\nAll Cheer colors required for the Arts of the Holomem with this mascot attached become colorless Cheer.\n\nOnly 1 mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to 〈Fuwawa Abyssgard〉 or 〈Mococo Abyssgard〉, gain the following ability:\nAll Cheer colors required for the Arts of the Holomem with this mascot attached become colorless Cheer.\n\nOnly 1 mascot can be attached to each of your Holomems."
     },
     "784": {
       "name": "Bibi",
@@ -9268,7 +9307,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to <Towa Tokoyami>, gain the following ability:\nThe Holomem with this mascot attached deals +10 special damage to 1 opponent's Holomem.\n\nOnly 1 mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem with this mascot attached gains +20 HP.\n\n◆If attached to 〈Towa Tokoyami〉, gain the following ability:\nThe Holomem with this mascot attached deals +10 special damage to 1 opponent's Holomem.\n\nOnly 1 mascot can be attached to each of your Holomems."
     },
     "785": {
       "name": "FutoInu",
@@ -9276,7 +9315,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Inugami Korone>:\nWhen the Holomem this mascot is attached to collaborates, you may send 1 Yellow Cheer from your Archive to this Holomem.\n\nOnly 1 Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Inugami Korone〉:\nWhen the Holomem this mascot is attached to collaborates, you may send 1 Yellow Cheer from your Archive to this Holomem.\n\nOnly 1 Mascot can be attached to each of your Holomems."
     },
     "786": {
       "name": "HosoInu",
@@ -9284,7 +9323,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Inugami Korone>:\nWhen the Holomem this mascot is attached to is downed, you may archive 1 of your Holo Power: Return this mascot to your hand.\n\nOnly 1 Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Inugami Korone〉:\nWhen the Holomem this mascot is attached to is downed, you may archive 1 of your Holo Power: Return this mascot to your hand.\n\nOnly 1 Mascot can be attached to each of your Holomems."
     },
     "787": {
       "name": "Riscot",
@@ -9292,7 +9331,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to <Ayunda Risu>:\nWhen the Holomem this mascot is attached to collaborates, you may reattach 1 Cheer from your Stage to this Holomem.\n\nOnly 1 Mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional effect when attached to 〈Ayunda Risu〉:\nWhen the Holomem this mascot is attached to collaborates, you may reattach 1 Cheer from your Stage to this Holomem.\n\nOnly 1 Mascot can be attached to each of your Holomems."
     },
     "788": {
       "name": "Lunaito",
@@ -9300,7 +9339,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent's turn, when the Holomem this fan is attached to would take damage, you may archive this fan: Reduce the damage taken by the Holomem this fan was attached to by 30.\n\nThis fan can only be attached to your <Himemori Luna>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "During the opponent's turn, when the Holomem this fan is attached to would take damage, you may archive this fan: Reduce the damage taken by the Holomem this fan was attached to by 30.\n\nThis fan can only be attached to your 〈Himemori Luna〉, and any number of this fan can be attached to one Holomem."
     },
     "789": {
       "name": "SSRB",
@@ -9308,7 +9347,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "When the Holomem this fan is attached to archives a Cheer with their ability, you may archive this fan instead of 1 Cheer.\n\nThis fan can only be attached to your <Shishiro Botan>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "When the Holomem this fan is attached to archives a Cheer with their ability, you may archive this fan instead of 1 Cheer.\n\nThis fan can only be attached to your 〈Shishiro Botan〉, and any number of this fan can be attached to one Holomem."
     },
     "790": {
       "name": "35P",
@@ -9316,7 +9355,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ When the Holomem this fan is attached to uses an Arts, treat this fan as a Red Cheer.\n■ When the Holomem this fan is attached to is downed, your opponent may draw 1 card from their deck.\n\nThis fan can only be attached to your <Sakura Miko>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "■ When the Holomem this fan is attached to uses an Arts, treat this fan as a Red Cheer.\n■ When the Holomem this fan is attached to is downed, your opponent may draw 1 card from their deck.\n\nThis fan can only be attached to your 〈Sakura Miko〉, and any number of this fan can be attached to one Holomem."
     },
     "791": {
       "name": "Haaton",
@@ -9325,7 +9364,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "When the Holomem this fan is attached to rolls a die with their ability, you may archive this fan: Ignore the result of that die roll and roll the die again from scratch.\n\nThis fan can only be attached to your <Akai Haato>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "When the Holomem this fan is attached to rolls a die with their ability, you may archive this fan: Ignore the result of that die roll and roll the die again from scratch.\n\nThis fan can only be attached to your 〈Akai Haato〉, and any number of this fan can be attached to one Holomem."
     },
     "792": {
       "name": "Ruffians",
@@ -9333,7 +9372,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent's turn, when the Holomem this fan is attached to is downed, you may send 1 Blue Cheer from your Archive to your <Fuwawa Abyssgard>.\n\nThis fan can only be attached to your <Fuwawa Abyssgard> or <Mococo Abyssgard>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "During the opponent's turn, when the Holomem this fan is attached to is downed, you may send 1 Blue Cheer from your Archive to your 〈Fuwawa Abyssgard〉.\n\nThis fan can only be attached to your 〈Fuwawa Abyssgard〉 or 〈Mococo Abyssgard〉, and any number of this fan can be attached to one Holomem."
     },
     "793": {
       "name": "Robo-sa",
@@ -9341,7 +9380,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "■ When the Holomem this fan is attached to uses an Arts, treat this fan as a Purple Cheer.\n■ The Holomem this fan is attached to gets Arts -10.\n\nThis fan can only be attached to your <Roboco-san>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "■ When the Holomem this fan is attached to uses an Arts, treat this fan as a Purple Cheer.\n■ The Holomem this fan is attached to gets Arts -10.\n\nThis fan can only be attached to your 〈Roboco-san〉, and any number of this fan can be attached to one Holomem."
     },
     "794": {
       "name": "Koronesuki",
@@ -9349,7 +9388,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Elite Spark'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Colorless Cheer cost required for the Holomem this fan is attached to perform a Baton Pass is reduced by 1.\n\nThis fan can only be attached to your <Inugami Korone>, and any number of this fan can be attached to one Holomem."
+      "abilityText": "The Colorless Cheer cost required for the Holomem this fan is attached to perform a Baton Pass is reduced by 1.\n\nThis fan can only be attached to your 〈Inugami Korone〉, and any number of this fan can be attached to one Holomem."
     },
     "795": {
       "name": "Watamates",
@@ -9357,7 +9396,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to is downed, you may transfer 1 to 2 yellow Cheer cards from this Holomem to one of your other <Tsunomaki Watame>.\n\nThis Fan can only be attached to your <Tsunomaki Watame>, and any number of this Fan can be attached to a single one."
+      "abilityText": "During the opponent's turn, when the Holomem this Fan is attached to is downed, you may transfer 1 to 2 yellow Cheer cards from this Holomem to one of your other 〈Tsunomaki Watame〉.\n\nThis Fan can only be attached to your 〈Tsunomaki Watame〉, and any number of this Fan can be attached to a single one."
     },
     "796": {
       "name": "Risuners",
@@ -9365,7 +9404,7 @@
       "rarity": "S",
       "set": "Booster Pack \"Elite Spark\"",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "[Once per turn] When a Cheer is attached to the Holomem this Fan is attached to, for the rest of this turn, this Holomem gains +10 Arts.\n\nThis Fan can only be attached to your <Ayunda Risu>, and any number of this Fan can be attached to a single one."
+      "abilityText": "[Once per turn] When a Cheer is attached to the Holomem this Fan is attached to, for the rest of this turn, this Holomem gains +10 Arts.\n\nThis Fan can only be attached to your 〈Ayunda Risu〉, and any number of this Fan can be attached to a single one."
     },
     "764": {
       "name": "Todoroki Hajime",
@@ -9379,7 +9418,7 @@
       "arts": [
         {
           "name": "Thunder of Annihilation",
-          "effect": "If there is a Holomem with #ReGLOSS on your stage other than <Todoroki Hajime>, this Arts gains +30."
+          "effect": "If there is a Holomem with #ReGLOSS on your stage other than 〈Todoroki Hajime〉, this Arts gains +30."
         }
       ],
       "keyword": {
@@ -9496,7 +9535,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Set Sail~!",
-        "effect": "[Once per game] Deal 50 special damage to either the opponent's Center Holomem or Collab Holomem for each Holomem stacked under your Center Holomem's <Houshou Marine>."
+        "effect": "[Once per game] Deal 50 special damage to either the opponent's Center Holomem or Collab Holomem for each Holomem stacked under your Center Holomem's 〈Houshou Marine〉."
       }
     },
     "374": {
@@ -9514,7 +9553,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Set Sail~!",
-        "effect": "[Once per game] Deal 50 special damage to either the opponent's Center Holomem or Collab Holomem for each Holomem stacked under your Center Holomem's <Houshou Marine>."
+        "effect": "[Once per game] Deal 50 special damage to either the opponent's Center Holomem or Collab Holomem for each Holomem stacked under your Center Holomem's 〈Houshou Marine〉."
       }
     },
     "375": {
@@ -9527,7 +9566,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Poe Poe Poe~",
-        "effect": "[Once per turn] Usable when your Center Holomem is <Sakamata Chloe>: Look at the top 3 cards of your deck. You may archive all of those cards or return them to the top of your deck in any order."
+        "effect": "[Once per turn] Usable when your Center Holomem is 〈Sakamata Chloe〉: Look at the top 3 cards of your deck. You may archive all of those cards or return them to the top of your deck in any order."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -9545,7 +9584,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Poe Poe Poe~",
-        "effect": "[Once per turn] Usable when your Center Holomem is <Sakamata Chloe>: Look at the top 3 cards of your deck. You may archive all of those cards or return them to the top of your deck in any order."
+        "effect": "[Once per turn] Usable when your Center Holomem is 〈Sakamata Chloe〉: Look at the top 3 cards of your deck. You may archive all of those cards or return them to the top of your deck in any order."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -9563,7 +9602,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Neeehhh!",
-        "effect": "[Once per turn] Usable when rolling a die with an ability of <Murasaki Shion>: Reroll the die once."
+        "effect": "[Once per turn] Usable when rolling a die with an ability of 〈Murasaki Shion〉: Reroll the die once."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -9604,7 +9643,7 @@
       "spOshiSkill": {
         "timing": "ゲームに1回",
         "name": "Reaper Rap",
-        "effect": "[Once per game] Usable when your Center Holomem is <Mori Calliope>: For this turn, one of your <Mori Calliope> can use the same Arts again after using it once."
+        "effect": "[Once per game] Usable when your Center Holomem is 〈Mori Calliope〉: For this turn, one of your 〈Mori Calliope〉 can use the same Arts again after using it once."
       }
     },
     "380": {
@@ -9849,7 +9888,7 @@
       ],
       "keyword": {
         "name": "What Are You Waiting For?",
-        "effect": "Reveal 1 <Tatang> from your deck and add it to your hand. Then, shuffle your deck."
+        "effect": "Reveal 1 〈Tatang〉 from your deck and add it to your hand. Then, shuffle your deck."
       }
     },
     "393": {
@@ -10014,7 +10053,7 @@
       ],
       "keyword": {
         "name": "Houshou Pirate Crew",
-        "effect": "Reveal 1 <Houshou Marine> from your deck and add it to your hand. Then, shuffle your deck. Your Bloom Effect 'Houshou Pirate Crew' can only be used once per turn."
+        "effect": "Reveal 1 〈Houshou Marine〉 from your deck and add it to your hand. Then, shuffle your deck. Your Bloom Effect 'Houshou Pirate Crew' can only be used once per turn."
       }
     },
     "402": {
@@ -10226,7 +10265,7 @@
       ],
       "keyword": {
         "name": "Poisonous Love",
-        "effect": "[Center Position Only] All <Nekomata Okayu> on your stage deal +20 special damage to the opponent's Center Holomem."
+        "effect": "[Center Position Only] All 〈Nekomata Okayu〉 on your stage deal +20 special damage to the opponent's Center Holomem."
       }
     },
     "413": {
@@ -10247,7 +10286,7 @@
       ],
       "keyword": {
         "name": "Poisonous Love",
-        "effect": "[Center Position Only] All <Nekomata Okayu> on your stage deal +20 special damage to the opponent's Center Holomem."
+        "effect": "[Center Position Only] All 〈Nekomata Okayu〉 on your stage deal +20 special damage to the opponent's Center Holomem."
       }
     },
     "414": {
@@ -10866,7 +10905,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "いちかわはる",
-      "abilityText": "You can only use this card if you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of <Amane Kanata>, <AZKi>, or <Sakamata Chloe> from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 per turn."
+      "abilityText": "You can only use this card if you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your deck. Reveal any number of 〈Amane Kanata〉, 〈AZKi〉, or 〈Sakamata Chloe〉 from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your deck in any order.\n\nLIMITED: You can only use 1 per turn."
     },
     "452": {
       "name": "Explosion Magic",
@@ -10908,7 +10947,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "You can only use this card if you Archive 1 of your Holo Power.\n\nSend 1 Purple Cheer from your Archive to your <Shion Murasaki>. You can only use 1 Event with the #Magic tag per turn."
+      "abilityText": "You can only use this card if you Archive 1 of your Holo Power.\n\nSend 1 Purple Cheer from your Archive to your 〈Shion Murasaki〉. You can only use 1 Event with the #Magic tag per turn."
     },
     "457": {
       "name": "MikoKoro24",
@@ -10949,7 +10988,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "The Arts of the Holomem equipped with this Tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher <Shion Murasaki>\nWhen the Holomem equipped with this Tool is the Center Holomem, change the [Once per turn] limit of your Oshi Skill 'Neeeeee' to [Twice per turn].\n\nOnly 1 Tool can be equipped to each of your Holomem."
+      "abilityText": "The Arts of the Holomem equipped with this Tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher 〈Shion Murasaki〉\nWhen the Holomem equipped with this Tool is the Center Holomem, change the [Once per turn] limit of your Oshi Skill 'Neeeeee' to [Twice per turn].\n\nOnly 1 Tool can be equipped to each of your Holomem."
     },
     "462": {
       "name": "Mori Calliope's Scythe",
@@ -10957,7 +10996,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "The Arts of the Holomem equipped with this Tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher <Mori Calliope>\nWhen you equip this Tool to a Holomem from your hand, archive the top card of your deck.\n\nOnly 1 Tool can be equipped to each of your Holomem."
+      "abilityText": "The Arts of the Holomem equipped with this Tool is increased by +10.\n\n◆ Additional effect if equipped to a 1st or higher 〈Mori Calliope〉\nWhen you equip this Tool to a Holomem from your hand, archive the top card of your deck.\n\nOnly 1 Tool can be equipped to each of your Holomem."
     },
     "463": {
       "name": "Oruyanke",
@@ -10966,7 +11005,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>\nWhen the Holomem equipped with this Mascot collaborates, draw 1 card from your deck.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉\nWhen the Holomem equipped with this Mascot collaborates, draw 1 card from your deck.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
     },
     "464": {
       "name": "Nejimaki Kitsune",
@@ -10975,7 +11014,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>\nWhen the Holomem equipped with this Mascot is downed, transfer 1 Cheer from this Holomem to one of your other Holomem.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉\nWhen the Holomem equipped with this Mascot is downed, transfer 1 Cheer from this Holomem to one of your other Holomem.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
     },
     "465": {
       "name": "Fubuchun",
@@ -10984,7 +11023,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>\nWhen the Holomem equipped with this Mascot collaborates, you may return 1 Mascot from your archive to your hand.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉\nWhen the Holomem equipped with this Mascot collaborates, you may return 1 Mascot from your archive to your hand.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
     },
     "466": {
       "name": "Fubura",
@@ -10993,7 +11032,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
-      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>\n[Once per turn] During your Main Step, you may archive 2 Cheer from your Holomem: For this turn, increase this Holomem's Arts by +50.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉\n[Once per turn] During your Main Step, you may archive 2 Cheer from your Holomem: For this turn, increase this Holomem's Arts by +50.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
     },
     "467": {
       "name": "Miteiru",
@@ -11002,7 +11041,7 @@
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to <Fubuki Shirakami>\n[Back Position Only] The Holomem equipped with this Mascot does not take damage from the opponent.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
+      "abilityText": "The HP of the Holomem equipped with this Mascot is increased by +20.\n\n◆ Additional effect if equipped to 〈Fubuki Shirakami〉\n[Back Position Only] The Holomem equipped with this Mascot does not take damage from the opponent.\n\nOnly 1 Mascot can be equipped to each of your Holomem."
     },
     "468": {
       "name": "Tatang",
@@ -11010,7 +11049,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\r\n◆ Additional ability if attached to <Pavolia Reine>:\nThe Holomem this mascot is attached to gets HP +30.\n\r\nOnly one mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\r\n◆ Additional ability if attached to 〈Pavolia Reine〉:\nThe Holomem this mascot is attached to gets HP +30.\n\r\nOnly one mascot can be attached to each of your Holomems."
     },
     "469": {
       "name": "Dokuro-kun",
@@ -11018,7 +11057,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Houshou Marine>:\n[Center Position only] When the Holomem this mascot is attached to Blooms, draw 1 card from your deck.\n\nOnly one mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Houshou Marine〉:\n[Center Position only] When the Holomem this mascot is attached to Blooms, draw 1 card from your deck.\n\nOnly one mascot can be attached to each of your Holomems."
     },
     "470": {
       "name": "Inu",
@@ -11026,7 +11065,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "はずき",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Sakamata Chloe>:\nWhen the Holomem this mascot is attached to downs an opponent’s Holomem, you may send 1 Cheer card from your Archive to one of your Holomems with #SecretSocietyholoX.\n\nOnly one mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Sakamata Chloe〉:\nWhen the Holomem this mascot is attached to downs an opponent’s Holomem, you may send 1 Cheer card from your Archive to one of your Holomems with #SecretSocietyholoX.\n\nOnly one mascot can be attached to each of your Holomems."
     },
     "471": {
       "name": "UDIN",
@@ -11034,7 +11073,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to <Kureiji Ollie>:\nWhen the Holomem this mascot is attached to Blooms, draw 1 card from your deck, then Archive 1 card from your hand.\n\nOnly one mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets Arts +10.\n\n◆ Additional ability if attached to 〈Kureiji Ollie〉:\nWhen the Holomem this mascot is attached to Blooms, draw 1 card from your deck, then Archive 1 card from your hand.\n\nOnly one mascot can be attached to each of your Holomems."
     },
     "472": {
       "name": "Death-sensei",
@@ -11042,7 +11081,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this mascot is attached to gets HP +20.\n\r\n◆ Additional ability if attached to <Mori Calliope>:\nAll Cheer colors required for the Arts of the Holomem this mascot is attached to become colorless Cheer.\n\r\nOnly one mascot can be attached to each of your Holomems."
+      "abilityText": "The Holomem this mascot is attached to gets HP +20.\n\r\n◆ Additional ability if attached to 〈Mori Calliope〉:\nAll Cheer colors required for the Arts of the Holomem this mascot is attached to become colorless Cheer.\n\r\nOnly one mascot can be attached to each of your Holomems."
     },
     "473": {
       "name": "Sukonbu",
@@ -11051,7 +11090,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem this fan is attached to gets HP +10.\n\nThis fan can only be attached to your <Shirakami Fubuki>, and any number of them can be attached to one Holomem."
+      "abilityText": "The Holomem this fan is attached to gets HP +10.\n\nThis fan can only be attached to your 〈Shirakami Fubuki〉, and any number of them can be attached to one Holomem."
     },
     "474": {
       "name": "Shirogane Knights",
@@ -11059,7 +11098,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "はずき",
-      "abilityText": "Damage taken by the Holomem this fan is attached to is reduced by 10.\n\nThis fan can only be attached to your <Shirogane Noel>, and any number of them can be attached to one Holomem."
+      "abilityText": "Damage taken by the Holomem this fan is attached to is reduced by 10.\n\nThis fan can only be attached to your 〈Shirogane Noel〉, and any number of them can be attached to one Holomem."
     },
     "475": {
       "name": "Miofa",
@@ -11067,7 +11106,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "During the opponent’s turn, when the Holomem this fan is attached to is downed, draw 1 card from your deck.\n\nThis fan can only be attached to your <Ookami Mio>, and any number of them can be attached to one Holomem."
+      "abilityText": "During the opponent’s turn, when the Holomem this fan is attached to is downed, draw 1 card from your deck.\n\nThis fan can only be attached to your 〈Ookami Mio〉, and any number of them can be attached to one Holomem."
     },
     "476": {
       "name": "Shio-kko",
@@ -11075,7 +11114,7 @@
       "rarity": "S",
       "set": "Booster Pack 'Quintet Spectrum'",
       "illustrator": "はずき",
-      "abilityText": "■ The Holomem this fan is attached to gets Arts +10.\n■ When the Holomem this fan is attached to takes damage, Archive this fan.\n\nThis fan can only be attached to your <Murasaki Shion>, and any number of them can be attached to one Holomem."
+      "abilityText": "■ The Holomem this fan is attached to gets Arts +10.\n■ When the Holomem this fan is attached to takes damage, Archive this fan.\n\nThis fan can only be attached to your 〈Murasaki Shion〉, and any number of them can be attached to one Holomem."
     },
     "445": {
       "name": "Nakiri Ayame",
@@ -11503,7 +11542,7 @@
       "arts": [
         {
           "name": "I’ll deliver energy with all my might!",
-          "effect": "Send the top card of your Cheer deck to a Holomem with #holoX other than <Kazama Iroha>."
+          "effect": "Send the top card of your Cheer deck to a Holomem with #holoX other than 〈Kazama Iroha〉."
         }
       ],
       "keyword": {
@@ -11542,7 +11581,7 @@
       ],
       "keyword": {
         "name": "Sea of Spreading Green Light",
-        "effect": "Send the top card of your Cheer deck to a Holomem with #ID other than <Airani Iofifteen>."
+        "effect": "Send the top card of your Cheer deck to a Holomem with #ID other than 〈Airani Iofifteen〉."
       }
     },
     "490": {
@@ -11557,7 +11596,7 @@
       "arts": [
         {
           "name": "Relation Sky",
-          "effect": "If there is a Holomem with #ID other than <Airani Iofifteen> on your stage, this Art gains +50."
+          "effect": "If there is a Holomem with #ID other than 〈Airani Iofifteen〉 on your stage, this Art gains +50."
         }
       ],
       "keyword": {
@@ -11678,7 +11717,7 @@
       "arts": [
         {
           "name": "Codependency",
-          "effect": "This Arts cannot be used unless this Holomem has a <Troupe Member> attached."
+          "effect": "This Arts cannot be used unless this Holomem has a 〈Troupe Member〉 attached."
         }
       ],
       "keyword": {
@@ -11788,7 +11827,7 @@
       ],
       "keyword": {
         "name": "Sparkling Wardrobe",
-        "effect": "If your Oshi Holomem is <Hoshimachi Suisei>, you may archive 1 Blue Cheer attached to this Holomem: Draw 2 cards from your deck."
+        "effect": "If your Oshi Holomem is 〈Hoshimachi Suisei〉, you may archive 1 Blue Cheer attached to this Holomem: Draw 2 cards from your deck."
       }
     },
     "217": {
@@ -11988,7 +12027,7 @@
       "rarity": "P",
       "set": "PR Card",
       "illustrator": "JinArt こばやかわやまと",
-      "abilityText": "The Holomem equipped with this tool gets +10 Arts.\n\n◆If equipped to a 1st or higher <Hoshimachi Suisei>, gain the following ability:\nWhen the Holomem equipped with this tool downs an opponent's Holomem, send 1 card from the top of your Cheer deck to this Holomem.\n\nTools can only be equipped to one of your Holomems at a time."
+      "abilityText": "The Holomem equipped with this tool gets +10 Arts.\n\n◆If equipped to a 1st or higher 〈Hoshimachi Suisei〉, gain the following ability:\nWhen the Holomem equipped with this tool downs an opponent's Holomem, send 1 card from the top of your Cheer deck to this Holomem.\n\nTools can only be equipped to one of your Holomems at a time."
     },
     "483": {
       "name": "Shirakami Fubuki",
@@ -12261,7 +12300,7 @@
       "oshiSkill": {
         "timing": "ターンに1回",
         "name": "Infinite Stamina",
-        "effect": "[Once per turn] Activate one of your resting <Inugami Korone>."
+        "effect": "[Once per turn] Activate one of your resting 〈Inugami Korone〉."
       },
       "spOshiSkill": {
         "timing": "ゲームに1回",
@@ -12281,7 +12320,7 @@
       "arts": [
         {
           "name": "Everyone~, are you there~?",
-          "effect": "If none of your Holomem has <Lunanite> attached, reveal one <Lunanite> from your deck and attach it to one of your Holomem. Then, shuffle your deck."
+          "effect": "If none of your Holomem has 〈Lunanite〉 attached, reveal one 〈Lunanite〉 from your deck and attach it to one of your Holomem. Then, shuffle your deck."
         }
       ]
     },
@@ -12297,12 +12336,12 @@
       "arts": [
         {
           "name": "Thanks for your hard work, nano ra ne",
-          "effect": "If this Holomem has <Lunanite> attached, this Arts gets +50."
+          "effect": "If this Holomem has 〈Lunanite〉 attached, this Arts gets +50."
         }
       ],
       "keyword": {
         "name": "Follow Luna, nano ra~",
-        "effect": "If your Oshi Holomem is <Himemori Luna>, you can attach one <Lunanite> from your Archive to your <Himemori Luna>."
+        "effect": "If your Oshi Holomem is 〈Himemori Luna〉, you can attach one 〈Lunanite〉 from your Archive to your 〈Himemori Luna〉."
       }
     },
     "804": {
@@ -12417,7 +12456,7 @@
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "くまらん",
-      "abilityText": "■ When the Holomem this Fan is attached to uses an Art, treat this Fan as a Red Cheer as well.\n■ When the Holomem this Fan is attached to is Downed, the opponent may draw 1 card from their Deck.\n\nThis Fan can only be attached to your <Sakura Miko>, and any number of this Fan can be attached to a single Holomem."
+      "abilityText": "■ When the Holomem this Fan is attached to uses an Art, treat this Fan as a Red Cheer as well.\n■ When the Holomem this Fan is attached to is Downed, the opponent may draw 1 card from their Deck.\n\nThis Fan can only be attached to your 〈Sakura Miko〉, and any number of this Fan can be attached to a single Holomem."
     },
     "197": {
       "name": "Sakura Miko",
@@ -12490,7 +12529,7 @@
         },
         {
           "name": "SorAZ Sympathy",
-          "effect": "If you have the Holomem <AZKi> on your Stage, increase this Art by +50."
+          "effect": "If you have the Holomem 〈AZKi〉 on your Stage, increase this Art by +50."
         }
       ]
     },
@@ -12543,7 +12582,7 @@
       "arts": [
         {
           "name": "SorAZ Gravity",
-          "effect": "If you have the Holomem <Tokino Sora> on your Stage, send the top card of your Cheer Deck to one of your Holomem."
+          "effect": "If you have the Holomem 〈Tokino Sora〉 on your Stage, send the top card of your Cheer Deck to one of your Holomem."
         },
         {
           "name": "Destiny Song",
@@ -12578,7 +12617,7 @@
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "はたほまめ",
-      "extra": "This Holomem is also treated as <Tokino Sora> and <AZKi>.",
+      "extra": "This Holomem is also treated as 〈Tokino Sora〉 and 〈AZKi〉.",
       "arts": [
         {
           "name": "A Future I Want to Surpass",
@@ -12657,7 +12696,7 @@
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "林けゐ",
-      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your Deck. Reveal any number of <Shirakami Fubuki>, <Ookami Mio>, and <Nakiri Ayame> from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your Deck in any order.\n\nLIMITED: You can only use 1 card per turn."
+      "abilityText": "You cannot use this card unless you have 6 or fewer cards in your hand, excluding this card.\n\nLook at the top 4 cards of your Deck. Reveal any number of 〈Shirakami Fubuki〉, 〈Ookami Mio〉, and 〈Nakiri Ayame〉 from among them and add the revealed Holomems to your hand. Then, return the remaining cards to the bottom of your Deck in any order.\n\nLIMITED: You can only use 1 card per turn."
     },
     "811": {
       "name": "Nekomata Okayu",
@@ -12802,7 +12841,7 @@
       "illustrator": "Hiroko",
       "oshiSkill": {
         "name": "Survival Power",
-        "effect": "[Once per turn] Reveal 1 <Stone Axe> from your deck and attach it to one of your Green Holomems. Then, shuffle your deck."
+        "effect": "[Once per turn] Reveal 1 〈Stone Axe〉 from your deck and attach it to one of your Green Holomems. Then, shuffle your deck."
       },
       "spOshiSkill": {
         "name": "Song of the Earth",
@@ -13078,7 +13117,7 @@
       ],
       "keyword": {
         "name": "Polka Illusion",
-        "effect": "You may return 1 <Troupe Member> from your Archive to your hand."
+        "effect": "You may return 1 〈Troupe Member〉 from your Archive to your hand."
       }
     },
     "121": {

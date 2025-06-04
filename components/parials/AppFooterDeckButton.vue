@@ -3,6 +3,8 @@ import { PackagePlus, Trash2, Layers, Pencil, Eye } from "lucide-vue-next";
 import type { Deck } from "@/types/deck";
 import { toast } from "vue-sonner";
 
+const { t } = useI18n();
+
 const decks = useDecks();
 
 // popover
@@ -16,7 +18,7 @@ const isCreateDeckDialogOpen = ref(false);
 
 const createDeck = () => {
   if (!name.value) {
-    toast.error("Deck name is required.");
+    toast.error(t("Deck name is required."));
     return;
   }
 
@@ -32,7 +34,7 @@ const createDeck = () => {
   name.value = "";
   author.value = "";
 
-  toast.success("Deck created successfully!");
+  toast.success(t("Deck created successfully!"));
 };
 
 const onNewDeckButtonClick = () => {
@@ -45,7 +47,10 @@ const onNewDeckButtonClick = () => {
   <Dialog v-model:open="isCreateDeckDialogOpen">
     <Popover v-model:open="isActive">
       <PopoverTrigger as-child>
-        <Button> <Layers />Decks </Button>
+        <Button>
+          <Layers />
+          {{ $t("Decks") }}
+        </Button>
       </PopoverTrigger>
       <PopoverContent align="end" class="w-auto min-w-50 p-3 md:p-3">
         <DialogTrigger as-child>
@@ -54,7 +59,7 @@ const onNewDeckButtonClick = () => {
             @click="onNewDeckButtonClick"
             class="w-full"
           >
-            <PackagePlus /> New Deck
+            <PackagePlus /> {{ $t("New Deck") }}
           </Button>
         </DialogTrigger>
 
@@ -106,12 +111,14 @@ const onNewDeckButtonClick = () => {
 
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>
-        <DialogTitle>New Deck</DialogTitle>
+        <DialogTitle>{{ $t("New Deck") }}</DialogTitle>
       </DialogHeader>
 
       <div class="space-y-4">
         <div class="grid gap-2">
-          <Label for="name">Name</Label>
+          <Label for="name">
+            {{ `${$t("Deck Name")}*` }}
+          </Label>
           <Input
             id="name"
             type="text"
@@ -121,12 +128,16 @@ const onNewDeckButtonClick = () => {
         </div>
 
         <div class="grid gap-2">
-          <Label for="author">Author</Label>
+          <Label for="author">
+            {{ $t("Author") }}
+          </Label>
           <Input id="author" type="text" placeholder="Me" v-model="author" />
         </div>
 
         <DialogFooter>
-          <Button class="w-full" @click="createDeck">Create Deck</Button>
+          <Button class="w-full" @click="createDeck">
+            {{ $t("Create Deck") }}
+          </Button>
         </DialogFooter>
       </div>
     </DialogContent>
