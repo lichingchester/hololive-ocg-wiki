@@ -290,7 +290,7 @@ const getCostTypesString = (costTypes: string[]): string => {
         rel="noopener noreferrer"
         class="flex items-center gap-1"
       >
-        <ExternalLink />Official Site
+        <ExternalLink /> {{ $t("Official Site") }}
       </a>
     </Button>
   </div>

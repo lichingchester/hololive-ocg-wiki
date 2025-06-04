@@ -60,7 +60,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- name -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Name
+                  {{ $t("fields.name") }}
 
                   <button @click="filter.resetName">
                     <RotateCcw class="size-4" />
@@ -77,7 +77,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                       <template v-if="name">
                         {{ name }}
                       </template>
-                      <template v-else> + Set Name </template>
+                      <template v-else> + {{ $t("fields.name") }} </template>
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent
@@ -89,7 +89,9 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                     <Command v-model="filter.filter.value.name">
                       <CommandInput placeholder="Change name..." />
                       <CommandList>
-                        <CommandEmpty>No results found.</CommandEmpty>
+                        <CommandEmpty>
+                          {{ $t("No results found.") }}
+                        </CommandEmpty>
                         <CommandGroup>
                           <CommandItem
                             v-for="nameOption in nameFilterOptions"
@@ -113,7 +115,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- tag -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Tag
+                  {{ $t("fields.tags") }}
 
                   <button @click="filter.resetTag">
                     <RotateCcw class="size-4" />
@@ -130,7 +132,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                       <template v-if="tag">
                         {{ tag }}
                       </template>
-                      <template v-else> + Set Tag </template>
+                      <template v-else> + {{ $t("fields.tags") }} </template>
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent
@@ -142,7 +144,9 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                     <Command v-model="filter.filter.value.tag">
                       <CommandInput placeholder="Change tag..." />
                       <CommandList>
-                        <CommandEmpty>No results found.</CommandEmpty>
+                        <CommandEmpty>
+                          {{ $t("No results found.") }}
+                        </CommandEmpty>
                         <CommandGroup>
                           <CommandItem
                             v-for="tagOption in tagFilterOptions"
@@ -166,7 +170,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- color -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Colors
+                  {{ $t("fields.color") }}
 
                   <button @click="filter.resetColors">
                     <RotateCcw class="size-4" />
@@ -194,7 +198,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- CardTypeCodeType -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Type
+                  {{ $t("fields.cardType") }}
 
                   <button @click="filter.resetCardTypes">
                     <RotateCcw class="size-4" />
@@ -217,7 +221,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- Rarity -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Rarity
+                  {{ $t("fields.rarity") }}
 
                   <button @click="filter.resetRarity">
                     <RotateCcw class="size-4" />
@@ -240,7 +244,7 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
               <!-- bloomLevel -->
               <div class="">
                 <div class="flex items-center gap-2 font-semibold mb-2">
-                  Bloom Level
+                  {{ $t("fields.bloomLevel") }}
 
                   <button @click="filter.resetBloomLevel">
                     <RotateCcw class="size-4" />
@@ -267,11 +271,11 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
       <SheetFooter class="pt-0 md:pt-4">
         <div class="flex items-center w-full gap-4">
           <Button class="grow" variant="outline" @click="filter.reset">
-            <RotateCcw /> Reset
+            <RotateCcw /> {{ $t("Reset") }}
           </Button>
 
           <SheetClose as-child>
-            <Button class="grow"> <PanelTopClose /> Close </Button>
+            <Button class="grow"> <PanelTopClose /> {{ $t("Close") }} </Button>
           </SheetClose>
         </div>
       </SheetFooter>

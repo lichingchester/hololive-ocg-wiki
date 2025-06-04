@@ -56,7 +56,7 @@ const yellCardIds = computed(() => {
           >
             <Expand v-if="!isActive" class="size-3 md:size-4" />
             <Shrink v-else class="size-3 md:size-4" />
-            {{ !isActive ? "Expand" : "Collapse" }}
+            {{ !isActive ? $t("Expand") : $t("Collapse") }}
           </Button>
         </div>
 
@@ -65,7 +65,7 @@ const yellCardIds = computed(() => {
             <div class="flex flex-col gap-2 md:gap-4 px-2 md:px-4">
               <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
                 <div class="flex items-center gap-2">
-                  oshi
+                  {{ $t("Oshi") }}
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
                     :class="
@@ -91,7 +91,7 @@ const yellCardIds = computed(() => {
 
               <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
                 <div class="flex items-center gap-2">
-                  main
+                  {{ $t("Main Deck") }}
                   <Badge
                     class="px-1 text-[8px] md:text-xs"
                     :class="
@@ -116,7 +116,7 @@ const yellCardIds = computed(() => {
 
               <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
                 <div class="flex items-center gap-2">
-                  yell
+                  {{ $t("Yell Deck") }}
 
                   <Badge
                     class="px-1 text-[8px] md:text-xs"

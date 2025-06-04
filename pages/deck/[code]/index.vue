@@ -3,6 +3,8 @@ import { toast } from "vue-sonner";
 import type { Deck } from "~/types/deck";
 import { Database } from "lucide-vue-next";
 
+const { t } = useI18n();
+
 const route = useRoute();
 
 const decks = useDecks();
@@ -11,7 +13,7 @@ const deck = ref<Deck | null>(null);
 
 onMounted(() => {
   if (!route.params.code) {
-    toast.error("No deck code provided.");
+    toast.error(t("No deck code provided."));
     return;
   }
 
@@ -23,7 +25,7 @@ onMounted(() => {
   if (checked) {
     deck.value = checked;
   } else {
-    toast.error(`Failed to import shared deck.`, {
+    toast.error(t(`Failed to import shared deck.`), {
       duration: Infinity,
     });
   }
@@ -34,7 +36,7 @@ onMounted(() => {
   <AppHeader>
     <Button class="text-[12px] md:text-sm" @click="$router.push('/')">
       <Database class="size-3 md:size-4" />
-      Card List
+      {{ $t("Card List") }}
     </Button>
   </AppHeader>
 
@@ -56,7 +58,9 @@ onMounted(() => {
 
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
         <div class="flex items-center gap-2">
-          <div class="text-md md:text-lg font-semibold">oshi</div>
+          <div class="text-md md:text-lg font-semibold">
+            {{ $t("Oshi") }}
+          </div>
           <Badge
             class="px-1 text-[8px] md:text-xs"
             :class="
@@ -78,7 +82,9 @@ onMounted(() => {
 
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
         <div class="flex items-center gap-2">
-          <div class="text-md md:text-lg font-semibold">main</div>
+          <div class="text-md md:text-lg font-semibold">
+            {{ $t("Main Deck") }}
+          </div>
           <Badge
             class="px-1 text-[8px] md:text-xs"
             :class="
@@ -100,7 +106,9 @@ onMounted(() => {
 
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
         <div class="flex items-center gap-2">
-          <div class="text-md md:text-lg font-semibold">yell</div>
+          <div class="text-md md:text-lg font-semibold">
+            {{ $t("Yell Deck") }}
+          </div>
           <Badge
             class="px-1 text-[8px] md:text-xs"
             :class="
