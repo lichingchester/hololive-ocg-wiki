@@ -36,6 +36,11 @@
   "Import This Deck": "このデッキをインポート",
   "Official Site": "公式サイト",
   "Decks": "デッキ一覧",
+  "No cards to display": "表示するカードがありません",
+  "Invalid deck code": "無効なデッキコードです",
+  "Deck updated successfully": "デッキが正常に更新されました",
+  "Deck imported successfully": "デッキが正常にインポートされました",
+  "Failed to import deck from code": "コードからデッキのインポートに失敗しました",
 
   "fields": {
     "name": "名前",

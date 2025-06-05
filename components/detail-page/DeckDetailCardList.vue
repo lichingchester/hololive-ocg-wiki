@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import CardDataJson from "@/data/cards_i18n.json";
-import type { Card } from "~/types/card";
-
 const props = defineProps<{
   cardIds: string[];
 }>();
+
+// const cardStore = useCardStore();
+const decksStore = useDecks();
 
 // Group cards by ID and count occurrences
 const uniqueCards = computed(() => {
   const cardMap = new Map();
 
+  // Skip processing if there are no card IDs
+  if (!props.cardIds.length) return [];
+
+  // Collect card IDs and count occurrences
   props.cardIds.forEach((cardId) => {
     if (!cardMap.has(cardId)) {
       cardMap.set(cardId, { cardId, count: 0 });
@@ -17,17 +21,24 @@ const uniqueCards = computed(() => {
     cardMap.get(cardId).count++;
   });
 
-  return Array.from(cardMap.values());
+  // Get unique card IDs for efficient lookup
+  const uniqueCardIds = Array.from(cardMap.keys());
+
+  // Use the optimized getCardsByIds method which now returns sorted cards
+  const sortedCards = decksStore.getCardsByIds(uniqueCardIds);
+
+  // Create a result array that preserves the sorting from getCardsByIds
+  const cards = sortedCards.map((card) => {
+    const count = cardMap.get(card.id).count;
+    return {
+      cardId: card.id,
+      count,
+      card,
+    };
+  });
+
+  return cards;
 });
-
-const getImagePath = (cardId: string) => {
-  const card = CardDataJson.find((c) => c.id === cardId);
-  return card ? `${card.imagePath}` : "";
-};
-
-const getCard = (cardId: string): Card => {
-  return CardDataJson.find((c) => c.id === cardId) as unknown as Card;
-};
 </script>
 
 <template>
@@ -37,15 +48,16 @@ const getCard = (cardId: string): Card => {
     <template v-for="(item, index) in uniqueCards" :key="index">
       <div class="relative flex">
         <Dialog>
-          <DialogTrigger class="">
+          <DialogTrigger class="w-full">
             <Image
-              class="flex-[0_0_400px]"
-              :src="`/${getImagePath(item.cardId)}`"
+              v-if="item.card.imagePath"
+              class="flex-[0_0_400px] aspect-400/559"
+              :src="`/${item.card.imagePath}`"
               :img-attributes="{ class: '' }"
             />
           </DialogTrigger>
 
-          <CardItemDialogContent :item="getCard(item.cardId)" />
+          <CardItemDialogContent v-if="item.card" :item="item.card" />
         </Dialog>
 
         <CardCountBadge :count="item.count" :size="'large'" />

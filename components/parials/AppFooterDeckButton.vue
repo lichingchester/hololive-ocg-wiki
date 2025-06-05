@@ -72,8 +72,9 @@ const onNewDeckButtonClick = () => {
                 <Separator v-if="index !== 0" class="my-1" />
 
                 <div class="flex items-center">
-                  <div class="pr-2 max-w-[50vw]">
+                  <div class="pr-2 max-w-[50vw] grow">
                     <button
+                      class="w-full text-left"
                       @click="decks.setCurrentDeck(deck), (isActive = false)"
                     >
                       {{ deck.name }}

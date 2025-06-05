@@ -1,8 +1,19 @@
 <script setup lang="ts">
-import { Expand, Shrink } from "lucide-vue-next";
-import { Separator } from "@/components/ui/separator";
+import { Expand, Shrink, Eye } from "lucide-vue-next";
+import { toast } from "vue-sonner";
+
+const { t } = useI18n();
+const localeRoute = useLocaleRoute();
 
 const decks = useDecks();
+const cardStore = useCardStore();
+
+// Load cards when component mounts if needed
+onMounted(async () => {
+  if (cardStore.allCards.value.length === 0) {
+    await cardStore.loadCards();
+  }
+});
 
 const isActive = ref(false);
 const toggleFloatingDeck = () => {
@@ -37,12 +48,31 @@ const mainCardIds = computed(() => {
 const yellCardIds = computed(() => {
   return decks.currentDeck.value?.yellCardIds || [];
 });
+
+// Pre-fetch cards in deck for better performance
+// const allDeckCardIds = computed(() => {
+//   return [...oshiCardIds.value, ...mainCardIds.value, ...yellCardIds.value];
+// });
+
+const goToDetailPage = () => {
+  if (!currentDeck.value) {
+    toast.warning(t("Please select a deck to continue."));
+    return;
+  }
+  const code = decks.getDeckCode(currentDeck.value.id).code;
+  const route = localeRoute({ name: "deck-code", params: { code } });
+  if (route) {
+    navigateTo(route.fullPath);
+  } else {
+    toast.error(t("Deck detail page not found."));
+  }
+};
 </script>
 
 <template>
   <Transition name="fade-up">
     <div
-      v-if="isEditing"
+      v-show="isEditing"
       class="fixed bottom-13 md:bottom-16 left-0 m-2 md:m-4 z-40"
     >
       <div
@@ -51,12 +81,21 @@ const yellCardIds = computed(() => {
         <div class="flex p-2 md:p-4">
           <Button
             size="sm"
-            class="text-[12px] md:text-sm"
+            class="text-[12px] md:text-sm mr-2"
             @click="toggleFloatingDeck"
           >
             <Expand v-if="!isActive" class="size-3 md:size-4" />
             <Shrink v-else class="size-3 md:size-4" />
             {{ !isActive ? $t("Expand") : $t("Collapse") }}
+          </Button>
+
+          <Button
+            size="sm"
+            variant="outline"
+            class="text-[12px] md:text-sm ml-auto"
+            @click="goToDetailPage"
+          >
+            <Eye /> {{ $t("Go to Detail Page") }}
           </Button>
         </div>
 
@@ -83,7 +122,7 @@ const yellCardIds = computed(() => {
                 </div>
 
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="oshiCardIds"
                   class="mt-2"
                 />
@@ -108,7 +147,7 @@ const yellCardIds = computed(() => {
                   </Badge>
                 </div>
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="mainCardIds"
                   class="mt-2"
                 />
@@ -134,7 +173,7 @@ const yellCardIds = computed(() => {
                   </Badge>
                 </div>
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="yellCardIds"
                   class="mt-2"
                 />
