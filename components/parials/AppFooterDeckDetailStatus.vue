@@ -39,7 +39,11 @@ const isImported = computed(() => {
           : 'bg-gray-500/15 border-gray-500'
       "
     >
-      {{ isImported ? "In Local Storage" : "New Deck" }}
+      {{
+        isImported
+          ? $t("Saved In Local Storage")
+          : $t("Can Import/Update This Deck")
+      }}
     </Badge>
   </div>
 </template>

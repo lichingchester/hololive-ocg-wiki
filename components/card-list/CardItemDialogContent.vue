@@ -55,7 +55,7 @@ const getCostTypesString = (costTypes: string[]): string => {
     </ScrollArea>
     <DialogFooter class="p-4 pt-0">
       <DialogClose as-child>
-        <Button type="button" variant="secondary"> Close </Button>
+        <Button type="button" variant="secondary"> {{ $t("Close") }} </Button>
       </DialogClose>
     </DialogFooter>
   </DialogContent>

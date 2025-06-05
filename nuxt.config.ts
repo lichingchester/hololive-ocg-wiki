@@ -70,9 +70,12 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: "tc", name: "Traditional Chinese", file: "tc.json" },
-      { code: "ja", name: "Japanese", file: "ja.json" },
-      // { code: 'en', name: 'English', file: 'en.json' },
+      { code: "tc", name: "繁體中文", file: "tc.json" },
+      { code: "ja", name: "日本語", file: "ja.json" },
+      { code: "en", name: "English", file: "en.json" },
+      { code: "id", name: "Bahasa Indonesia", file: "id.json" },
+      { code: "ko", name: "한국어", file: "ko.json" },
+      { code: "th", name: "ภาษาไทย", file: "th.json" },
     ],
     defaultLocale: "tc",
     strategy: "prefix",

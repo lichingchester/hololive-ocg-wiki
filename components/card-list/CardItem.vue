@@ -25,7 +25,7 @@ const count = computed(() => {
 </script>
 
 <template>
-  <div class="relative flex">
+  <div class="relative flex aspect-400/559">
     <Dialog>
       <DialogTrigger class="w-full">
         <Image

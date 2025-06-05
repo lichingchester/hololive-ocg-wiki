@@ -3,6 +3,8 @@ import { CircleEllipsis, Trash2, ClipboardCopy, Eye } from "lucide-vue-next";
 import { toast } from "vue-sonner";
 import { useClipboard } from "@vueuse/core";
 
+const { t } = useI18n();
+
 const localeRoute = useLocaleRoute();
 
 const decks = useDecks();
@@ -16,18 +18,18 @@ const shareDeck = () => {
     source.value = decks.getDeckCode(currentDeck.value.id).fullUrl;
     copy();
     if (!isSupported.value) {
-      toast.error("Clipboard is not supported in this browser.");
+      toast.error(t("Clipboard is not supported in this browser."));
       return;
     }
-    toast.success(`Copied deck code URL.`);
+    toast.success(t("Copied deck code URL."));
   } else {
-    toast.warning("Select one deck to continue.");
+    toast.warning(t("Please select a deck to continue."));
   }
 };
 
 const goToDetailPage = () => {
   if (!currentDeck.value) {
-    toast.warning("Select one deck to continue.");
+    toast.warning(t("Please select a deck to continue."));
     return;
   }
   const code = decks.getDeckCode(currentDeck.value.id).code;
@@ -35,18 +37,18 @@ const goToDetailPage = () => {
   if (route) {
     navigateTo(route.fullPath);
   } else {
-    toast.error("Deck detail page not found.");
+    toast.error(t("Deck detail page not found."));
   }
 };
 
 const deleteDeck = () => {
   if (!currentDeck.value) {
-    toast.warning("Select one deck to continue.");
+    toast.warning(t("Please select a deck to continue."));
     return;
   }
 
   decks.deleteDeck(currentDeck.value.id);
-  toast.success("Deck deleted successfully!");
+  toast.success(t("Deck deleted successfully!"));
 };
 </script>
 
@@ -57,23 +59,23 @@ const deleteDeck = () => {
         <DropdownMenuTrigger as-child>
           <Button variant="outline">
             <CircleEllipsis />
-            <span class="hidden md:inline-flex"> Options </span>
+            <span class="hidden md:inline-flex"> {{ $t("Options") }} </span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuGroup>
             <DropdownMenuItem @click="shareDeck">
-              <ClipboardCopy /> Copy Deck Code URL
+              <ClipboardCopy /> {{ $t("Copy Deck Code URL") }}
             </DropdownMenuItem>
             <DropdownMenuItem @click="goToDetailPage">
-              <Eye /> Go to Detail Page
+              <Eye /> {{ $t("Go to Detail Page") }}
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <AlertDialogTrigger as-child>
               <DropdownMenuItem>
-                <Trash2 class="text-red-500 size-4" /> Delete
+                <Trash2 class="text-red-500 size-4" /> {{ $t("Delete") }}
               </DropdownMenuItem>
             </AlertDialogTrigger>
           </DropdownMenuGroup>
@@ -84,12 +86,16 @@ const deleteDeck = () => {
 
       <AlertDialogContent class="md:max-w-xs">
         <AlertDialogHeader>
-          <AlertDialogTitle>Sure?</AlertDialogTitle>
+          <AlertDialogTitle>
+            {{ $t("Sure?") }}
+          </AlertDialogTitle>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>
+            {{ $t("Cancel") }}
+          </AlertDialogCancel>
           <AlertDialogAction variant="destructive" @click="deleteDeck">
-            Delete
+            {{ $t("Delete") }}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
