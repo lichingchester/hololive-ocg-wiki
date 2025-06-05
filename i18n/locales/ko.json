@@ -36,11 +36,11 @@
   "Import This Deck": "이 덱 가져오기",
   "Official Site": "공식 사이트",
   "Decks": "덱 목록",
-  "No cards to display": "No cards to display",
-  "Invalid deck code": "Invalid deck code",
-  "Deck updated successfully": "Deck updated successfully",
-  "Deck imported successfully": "Deck imported successfully",
-  "Failed to import deck from code": "Failed to import deck from code",
+  "No cards to display": "표시할 카드가 없습니다",
+  "Invalid deck code": "잘못된 덱 코드입니다",
+  "Deck updated successfully": "덱이 성공적으로 업데이트되었습니다",
+  "Deck imported successfully": "덱이 성공적으로 가져와졌습니다",
+  "Failed to import deck from code": "코드에서 덱 가져오기에 실패했습니다",
 
   "fields": {
     "name": "이름",
