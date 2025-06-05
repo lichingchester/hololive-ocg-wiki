@@ -1,0 +1,1 @@
+import{_ as o}from"./DlAUqK2U.js";import{c as t,o as r,E as s}from"./7eGpgKia.js";const c={},a={class:"relative flex min-h-svh flex-col bg-background"};function n(e,l){return r(),t("div",a,[s(e.$slots,"default")])}const d=o(c,[["render",n]]);export{d as default};
