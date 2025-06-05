@@ -5,7 +5,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   // Load cards once at app startup with error handling
   try {
     await cardStore.loadCards();
-    console.log("Cards data loaded successfully");
+    // console.log("Cards data loaded successfully");
   } catch (error) {
     console.error("Failed to load cards data:", error);
   }
