@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { Expand, Shrink } from "lucide-vue-next";
+import { Expand, Shrink, Eye } from "lucide-vue-next";
+import { toast } from "vue-sonner";
+
+const { t } = useI18n();
+const localeRoute = useLocaleRoute();
 
 const decks = useDecks();
 const cardStore = useCardStore();
@@ -49,6 +53,20 @@ const yellCardIds = computed(() => {
 // const allDeckCardIds = computed(() => {
 //   return [...oshiCardIds.value, ...mainCardIds.value, ...yellCardIds.value];
 // });
+
+const goToDetailPage = () => {
+  if (!currentDeck.value) {
+    toast.warning(t("Please select a deck to continue."));
+    return;
+  }
+  const code = decks.getDeckCode(currentDeck.value.id).code;
+  const route = localeRoute({ name: "deck-code", params: { code } });
+  if (route) {
+    navigateTo(route.fullPath);
+  } else {
+    toast.error(t("Deck detail page not found."));
+  }
+};
 </script>
 
 <template>
@@ -63,12 +81,21 @@ const yellCardIds = computed(() => {
         <div class="flex p-2 md:p-4">
           <Button
             size="sm"
-            class="text-[12px] md:text-sm"
+            class="text-[12px] md:text-sm mr-2"
             @click="toggleFloatingDeck"
           >
             <Expand v-if="!isActive" class="size-3 md:size-4" />
             <Shrink v-else class="size-3 md:size-4" />
             {{ !isActive ? $t("Expand") : $t("Collapse") }}
+          </Button>
+
+          <Button
+            size="sm"
+            variant="outline"
+            class="text-[12px] md:text-sm ml-auto"
+            @click="goToDetailPage"
+          >
+            <Eye /> {{ $t("Go to Detail Page") }}
           </Button>
         </div>
 
