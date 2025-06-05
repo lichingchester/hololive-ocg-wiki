@@ -1,4 +1,5 @@
 import Fuse from "fuse.js";
+import { LOCALES } from "~/constants/app";
 import type { Card, CardCollection, Locales, Translations } from "~/types/card";
 import type { FilterOptions } from "~/types/filter";
 
@@ -15,6 +16,15 @@ export const useCardStore = () => {
     () => new Map()
   );
 
+  // Cache for names and tags to improve filter component performance
+  const nameOptionsCache = useState<
+    Map<string, { value: string; label: string }[]>
+  >("nameOptionsCache", () => new Map());
+
+  const tagOptionsCache = useState<
+    Map<string, { value: string; label: string }[]>
+  >("tagOptionsCache", () => new Map());
+
   // Load cards only once
   const loadCards = async () => {
     if (allCards.value.length === 0) {
@@ -23,11 +33,63 @@ export const useCardStore = () => {
         // Using dynamic import for better code splitting
         const { default: cardData } = await import("@/data/cards_i18n.json");
         allCards.value = cardData as unknown as CardCollection;
+
+        // Pre-compute frequently used filter options after initial load
+        // This will help reduce computation in UI components
+        process.server
+          ? null
+          : setTimeout(() => precomputeFilterOptions(), 100);
       } finally {
         isLoading.value = false;
       }
     }
     return allCards.value;
+  };
+
+  // Precompute filter options for better performance
+  const precomputeFilterOptions = () => {
+    // Don't run on server side
+    if (process.server) return;
+
+    // Get available locales
+    const locales: Locales[] = LOCALES; // Add all supported locales
+
+    // Precompute for each locale
+    locales.forEach((locale) => {
+      if (!nameOptionsCache.value.has(locale)) {
+        const nameSet = new Set<string>();
+        const tagSet = new Set<string>();
+
+        // Build sets of unique names and tags
+        allCards.value.forEach((card) => {
+          const translation = card.translations[locale];
+          if (translation?.name) {
+            nameSet.add(translation.name);
+          }
+
+          if (translation?.tags && Array.isArray(translation.tags)) {
+            translation.tags.forEach((tag) => {
+              if (tag && typeof tag === "string") {
+                tagSet.add(tag);
+              }
+            });
+          }
+        });
+
+        // Convert to sorted option arrays
+        const nameOptions = Array.from(nameSet)
+          .sort()
+          .map((name) => ({ value: name, label: name }));
+
+        const tagOptions = Array.from(tagSet)
+          .sort()
+          .map((tag) => ({ value: tag, label: tag }));
+
+        // Cache the results
+        nameOptionsCache.value.set(locale, nameOptions);
+        tagOptionsCache.value.set(locale, tagOptions);
+      }
+    });
   };
 
   // Get card by ID
@@ -145,6 +207,43 @@ export const useCardStore = () => {
   // Clear cache when needed (e.g., language change)
   const clearCache = () => {
     filterCache.value.clear();
+
+    // No need to clear name and tag caches as they're precomputed per locale
+    // This improves performance when switching languages
+  };
+
+  // Get cached name options for a given locale
+  const getNameOptions = (locale: Locales) => {
+    // Try to get from cache first
+    if (nameOptionsCache.value.has(locale)) {
+      return nameOptionsCache.value.get(locale) || [];
+    }
+
+    // If not in cache and we have cards, compute it now
+    if (allCards.value.length > 0) {
+      precomputeFilterOptions();
+      return nameOptionsCache.value.get(locale) || [];
+    }
+
+    // Otherwise return empty array
+    return [];
+  };
+
+  // Get cached tag options for a given locale
+  const getTagOptions = (locale: Locales) => {
+    // Try to get from cache first
+    if (tagOptionsCache.value.has(locale)) {
+      return tagOptionsCache.value.get(locale) || [];
+    }
+
+    // If not in cache and we have cards, compute it now
+    if (allCards.value.length > 0) {
+      precomputeFilterOptions();
+      return tagOptionsCache.value.get(locale) || [];
+    }
+
+    // Otherwise return empty array
+    return [];
   };
 
   return {
@@ -155,5 +254,8 @@ export const useCardStore = () => {
     getFilteredCards,
     getCardById,
     clearCache,
+    getNameOptions,
+    getTagOptions,
+    precomputeFilterOptions,
   };
 };
