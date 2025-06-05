@@ -55,7 +55,7 @@ const allDeckCardIds = computed(() => {
 <template>
   <Transition name="fade-up">
     <div
-      v-if="isEditing"
+      v-show="isEditing"
       class="fixed bottom-13 md:bottom-16 left-0 m-2 md:m-4 z-40"
     >
       <div
@@ -96,7 +96,7 @@ const allDeckCardIds = computed(() => {
                 </div>
 
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="oshiCardIds"
                   class="mt-2"
                 />
@@ -121,7 +121,7 @@ const allDeckCardIds = computed(() => {
                   </Badge>
                 </div>
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="mainCardIds"
                   class="mt-2"
                 />
@@ -147,7 +147,7 @@ const allDeckCardIds = computed(() => {
                   </Badge>
                 </div>
                 <FloatingDeckCardList
-                  v-if="isActive"
+                  v-show="isActive"
                   :card-ids="yellCardIds"
                   class="mt-2"
                 />

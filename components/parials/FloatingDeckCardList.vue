@@ -108,10 +108,11 @@ const getImagePath = (cardId: string) => {
 
   <div v-else class="grid grid-cols-4 md:grid-cols-10 gap-1 md:gap-2">
     <template v-for="item in uniqueCards" :key="item.cardId">
-      <div class="relative flex aspect-400/559">
+      <div class="relative flex">
         <Dialog>
-          <DialogTrigger>
+          <DialogTrigger class="w-full">
             <Image
+              class="aspect-400/559"
               :src="`/${getImagePath(item.cardId)}`"
               :img-attributes="{ class: '' }"
             />
