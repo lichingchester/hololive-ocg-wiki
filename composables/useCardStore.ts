@@ -118,6 +118,10 @@ export const useCardStore = () => {
           "id",
           "cardNumber",
           "rarityCode",
+          `translations.en.name`,
+          `translations.en.color`,
+          `translations.en.oshiSkill.name`,
+          `translations.en.spOshiSkill.name`,
           `translations.${locale}.name`,
           `translations.${locale}.cardType`,
           `translations.${locale}.color`,
@@ -128,6 +132,9 @@ export const useCardStore = () => {
           `translations.${locale}.spOshiSkill.name`,
           `translations.${locale}.spOshiSkill.effect`,
         ],
+        threshold: 0.35,
+        ignoreLocation: true,
+        minMatchCharLength: 2,
       });
       result = fuse.search(filterOptions.search).map((item) => item.item);
     }

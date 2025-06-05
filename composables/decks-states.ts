@@ -471,9 +471,57 @@ export const useDecks = () => {
     const uniqueIds = [...new Set(cardIds)];
 
     // Get cards from the store
-    return uniqueIds
+    const cards = uniqueIds
       .map((id) => cardStore.getCardById(id))
       .filter((card): card is Card => card !== undefined);
+
+    // Define card type priority order (highest to lowest)
+    const cardTypePriority: Record<string, number> = {
+      oshiCharacter: 11, // Should be highest priority based on requested sort order
+      buzzCharacter: 10,
+      character: 9,
+      supportCheer: 8,
+      supportEvent: 7,
+      supportEventLimited: 6,
+      supportFan: 5,
+      supportItem: 4,
+      supportItemLimited: 3,
+      supportMascot: 2,
+      supportStaffLimited: 1,
+    };
+
+    // Define bloom level priority order (highest to lowest)
+    const bloomLevelPriority: Record<string, number> = {
+      debut: 3,
+      first: 2,
+      second: 1,
+      spot: 0,
+      "": -1, // Fallback for cards without bloom level
+    };
+
+    // Sort cards by type, bloom level, and card number
+    return cards.sort((a, b) => {
+      // First by card type (highest priority)
+      const typePriorityA = cardTypePriority[a.cardTypeCode] || 0;
+      const typePriorityB = cardTypePriority[b.cardTypeCode] || 0;
+      if (typePriorityA !== typePriorityB) {
+        return typePriorityB - typePriorityA; // Descending order (higher priority first)
+      }
+
+      // Then by bloom level (medium priority)
+      const bloomA = a.bloomLevelCode || "";
+      const bloomB = b.bloomLevelCode || "";
+      const bloomPriorityA = bloomLevelPriority[bloomA] || 0;
+      const bloomPriorityB = bloomLevelPriority[bloomB] || 0;
+      if (bloomPriorityA !== bloomPriorityB) {
+        return bloomPriorityB - bloomPriorityA; // Descending order (higher priority first)
+      }
+
+      // Finally by card number (lowest priority)
+      return a.cardNumber.localeCompare(b.cardNumber, undefined, {
+        numeric: true,
+      });
+    });
   };
 
   return {
