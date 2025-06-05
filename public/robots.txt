@@ -1,2 +1,8 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+# Disallow performance test pages
+Disallow: /performance-test/
+
+# Sitemaps
+# Sitemap: https://lichingchester.github.io/hololive-ocg-wiki/sitemap.xml

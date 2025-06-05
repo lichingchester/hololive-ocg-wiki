@@ -7,19 +7,27 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
+  // site: {
+  //   url: "https://lichingchester.github.io/hololive-ocg-wiki",
+  // },
+
+  // runtimeConfig: {
+  //   public: {
+  //     siteUrl:
+  //       process.env.NUXT_PUBLIC_SITE_URL ||
+  //       "https://lichingchester.github.io/hololive-ocg-wiki",
+  //   },
+  // },
+
   app: {
     baseURL: `/${APP_BASE_URL_NAME}/`,
 
     head: {
+      // We set a default title and description, but these will be overridden by our SEO plugin
       title: "Hololive OCG Wiki",
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { charset: "utf-8" },
-        {
-          name: "description",
-          content:
-            "A fan-made wiki for Hololive OCG, featuring card information, deck building, and more.",
-        },
       ],
       link: [
         {
@@ -34,7 +42,7 @@ export default defineNuxtConfig({
     },
   },
 
-  ssr: false,
+  ssr: true,
 
   css: ["~/assets/css/app.css"],
 
@@ -57,6 +65,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "nuxt-gtag",
+    // "@nuxtjs/sitemap",
   ],
 
   gtag: {
