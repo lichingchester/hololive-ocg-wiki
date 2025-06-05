@@ -53,10 +53,10 @@ const uniqueCards = computed(() => {
     <template v-for="(item, index) in uniqueCards" :key="index">
       <div class="relative flex">
         <Dialog>
-          <DialogTrigger class="">
+          <DialogTrigger class="w-full">
             <Image
               v-if="item.card.imagePath"
-              class="flex-[0_0_400px]"
+              class="flex-[0_0_400px] aspect-400/559"
               :src="`/${item.card.imagePath}`"
               :img-attributes="{ class: '' }"
             />

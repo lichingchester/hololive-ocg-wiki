@@ -18,6 +18,8 @@ export const useDecks = () => {
   // Use card store instead of direct JSON import
   const cardStore = useCardStore();
 
+  const { t } = useI18n();
+
   // Ensure cards are loaded
   onMounted(async () => {
     if (cardStore.allCards.value.length === 0) {
@@ -91,10 +93,10 @@ export const useDecks = () => {
     saveDecks();
 
     setCurrentDeck(null); // Clear current deck if deleted
-    console.log(
-      `Deck with ID ${deckId} deleted. currentDeckState.value:`,
-      currentDeckState.value
-    );
+    // console.log(
+    //   `Deck with ID ${deckId} deleted. currentDeckState.value:`,
+    //   currentDeckState.value
+    // );
   };
 
   // Set current deck
@@ -406,7 +408,7 @@ export const useDecks = () => {
       const decodedDeck = checkForDeckCode(code);
 
       if (!decodedDeck) {
-        return { status: false, message: "Invalid deck code" };
+        return { status: false, message: t("Invalid deck code") };
       }
 
       // Check if a deck with this ID already exists
@@ -419,16 +421,16 @@ export const useDecks = () => {
         decksState.value[existingDeckIndex] = decodedDeck;
 
         saveDecks();
-        return { status: true, message: "Deck updated successfully" };
+        return { status: true, message: t("Deck updated successfully") };
       } else {
         // Add as a new deck
         decksState.value.push(decodedDeck);
 
         saveDecks();
-        return { status: true, message: "Deck imported successfully" };
+        return { status: true, message: t("Deck imported successfully") };
       }
     } catch (error) {
-      return { status: false, message: "Failed to import deck from code" };
+      return { status: false, message: t("Failed to import deck from code") };
     }
   };
 
