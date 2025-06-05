@@ -24,21 +24,16 @@ const uniqueCards = computed(() => {
   // Get unique card IDs for efficient lookup
   const uniqueCardIds = Array.from(cardMap.keys());
 
-  // Use the optimized getCardsByIds method
-  const cardsById = decksStore
-    .getCardsByIds(uniqueCardIds)
-    .reduce((acc, card) => {
-      if (card) {
-        acc[card.id] = card;
-      }
-      return acc;
-    }, {} as Record<string, any>);
+  // Use the optimized getCardsByIds method which now returns sorted cards
+  const sortedCards = decksStore.getCardsByIds(uniqueCardIds);
 
-  // Map the results
-  const cards = Array.from(cardMap.values()).map((item) => {
+  // Create a result array that preserves the sorting from getCardsByIds
+  const cards = sortedCards.map((card) => {
+    const count = cardMap.get(card.id).count;
     return {
-      ...item,
-      card: cardsById[item.cardId],
+      cardId: card.id,
+      count,
+      card,
     };
   });
 

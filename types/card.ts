@@ -41,7 +41,7 @@ export type RarityCodeType =
 
 export type TimingCodeType = "once_per_game" | "once_per_turn";
 
-export type BloomLevelCodeType = "debut" | "first" | "second";
+export type BloomLevelCodeType = "debut" | "first" | "second" | "spot";
 
 export type ArtsItem = {
   costCount?: number;

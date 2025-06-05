@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Expand, Shrink } from "lucide-vue-next";
-import { Separator } from "@/components/ui/separator";
 
 const decks = useDecks();
 const cardStore = useCardStore();
@@ -47,9 +46,9 @@ const yellCardIds = computed(() => {
 });
 
 // Pre-fetch cards in deck for better performance
-const allDeckCardIds = computed(() => {
-  return [...oshiCardIds.value, ...mainCardIds.value, ...yellCardIds.value];
-});
+// const allDeckCardIds = computed(() => {
+//   return [...oshiCardIds.value, ...mainCardIds.value, ...yellCardIds.value];
+// });
 </script>
 
 <template>
