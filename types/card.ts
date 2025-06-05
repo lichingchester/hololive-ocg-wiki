@@ -1,3 +1,5 @@
+export type Locales = "ja" | "tc" | "en" | "id" | "ko" | "th";
+
 export type CardTypeCodeType =
   | "buzzCharacter"
   | "character"
@@ -50,6 +52,36 @@ export type ArtsItem = {
   specialValues?: number[];
 };
 
+export type Keyword = {
+  type?: string;
+  typeCode?: string;
+};
+
+export type OshiSkill = {
+  cost?: number;
+  timingCode?: TimingCodeType;
+};
+
+export type SpOshiSkill = {
+  cost?: number;
+  timingCode?: TimingCodeType;
+};
+
+export type Translations = {
+  [L in Locales]?: Translation;
+};
+
+export type Translation = {
+  abilityText?: string;
+  cardType?: string;
+  color?: string;
+  illustrator?: string;
+  name?: string;
+  rarity?: string;
+  set?: string;
+  tags?: string[];
+};
+
 export type Card = {
   name: string;
   arts?: ArtsItem[];
@@ -70,37 +102,6 @@ export type Card = {
   tags: string[];
   translations: Translations;
   set: string;
-};
-
-export type Keyword = {
-  type?: string;
-  typeCode?: string;
-};
-
-export type OshiSkill = {
-  cost?: number;
-  timingCode?: TimingCodeType;
-};
-
-export type SpOshiSkill = {
-  cost?: number;
-  timingCode?: TimingCodeType;
-};
-
-export type Translations = {
-  ja?: Translation;
-  tc?: Translation;
-};
-
-export type Translation = {
-  abilityText?: string;
-  cardType?: string;
-  color?: string;
-  illustrator?: string;
-  name?: string;
-  rarity?: string;
-  set?: string;
-  tags?: string[];
 };
 
 export type CardCollection = Card[];

@@ -179,7 +179,8 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                 <div class="flex flex-wrap gap-2">
                   <template v-for="(value, key) in colors" :key="key">
                     <Toggle
-                      v-model="colors[key]"
+                      :model-value="!!colors[key]"
+                      @update:model-value="(val) => (colors[key] = val)"
                       size="sm"
                       variant="outline"
                       aria-label="Toggle Colors"
@@ -207,7 +208,8 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                 <div class="flex flex-wrap gap-2">
                   <template v-for="(type, key) in cardTypes" :key="key">
                     <Toggle
-                      v-model="cardTypes[key]"
+                      :model-value="!!cardTypes[key]"
+                      @update:model-value="(val) => (cardTypes[key] = val)"
                       size="sm"
                       variant="outline"
                       aria-label="Toggle Types"
@@ -230,7 +232,8 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                 <div class="flex flex-wrap gap-2">
                   <template v-for="(rarity, key) in rarities" :key="key">
                     <Toggle
-                      v-model="rarities[key]"
+                      :model-value="!!rarities[key]"
+                      @update:model-value="(val) => (rarities[key] = val)"
                       size="sm"
                       variant="outline"
                       aria-label="Toggle Rarity"
@@ -253,7 +256,8 @@ const tagFilterOptions = [...uniqueTags].map((tag) => ({
                 <div class="flex flex-wrap gap-2">
                   <template v-for="(level, key) in bloomLevel" :key="key">
                     <Toggle
-                      v-model="bloomLevel[key]"
+                      :model-value="!!bloomLevel[key]"
+                      @update:model-value="(val) => (bloomLevel[key] = val)"
                       size="sm"
                       variant="outline"
                       aria-label="Toggle Bloom Level"
