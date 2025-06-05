@@ -36,11 +36,11 @@
   "Import This Deck": "匯入此牌組",
   "Official Site": "官方網站",
   "Decks": "牌組",
-  "No cards to display": "No cards to display",
-  "Invalid deck code": "Invalid deck code",
-  "Deck updated successfully": "Deck updated successfully",
-  "Deck imported successfully": "Deck imported successfully",
-  "Failed to import deck from code": "Failed to import deck from code",
+  "No cards to display": "沒有可顯示的卡片",
+  "Invalid deck code": "無效的牌組代碼",
+  "Deck updated successfully": "牌組已成功更新",
+  "Deck imported successfully": "牌組已成功匯入",
+  "Failed to import deck from code": "從代碼匯入牌組失敗",
 
   "fields": {
     "name": "名稱",

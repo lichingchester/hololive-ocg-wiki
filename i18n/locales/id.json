@@ -36,11 +36,11 @@
   "Import This Deck": "Impor Deck Ini",
   "Official Site": "Situs Resmi",
   "Decks": "Decks",
-  "No cards to display": "No cards to display",
-  "Invalid deck code": "Invalid deck code",
-  "Deck updated successfully": "Deck updated successfully",
-  "Deck imported successfully": "Deck imported successfully",
-  "Failed to import deck from code": "Failed to import deck from code",
+  "No cards to display": "Tidak ada kartu untuk ditampilkan",
+  "Invalid deck code": "Kode deck tidak valid",
+  "Deck updated successfully": "Deck berhasil diperbarui",
+  "Deck imported successfully": "Deck berhasil diimpor",
+  "Failed to import deck from code": "Gagal mengimpor deck dari kode",
 
   "fields": {
     "name": "Nama",
