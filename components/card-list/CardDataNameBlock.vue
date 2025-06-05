@@ -37,8 +37,8 @@ const {
       </button>
       <Transition name="copied">
         <span
-          v-if="copiedName"
-          class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
+          v-show="copiedName"
+          class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
         >
           {{ $t("Copied") }}
         </span>
@@ -57,7 +57,7 @@ const {
         <Transition name="copied">
           <span
             v-if="copiedId"
-            class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
+            class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
           >
             {{ $t("Copied") }}
           </span>
@@ -75,7 +75,7 @@ const {
         <Transition name="copied">
           <span
             v-if="copiedNumber"
-            class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2"
+            class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
           >
             {{ $t("Copied") }}
           </span>
