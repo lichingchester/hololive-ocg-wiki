@@ -6,6 +6,9 @@ const props = defineProps<{
   cardIds: string[];
 }>();
 
+// Use the decks store's optimized method to get cards
+// const decksStore = useDecks();
+
 const cardStore = useCardStore();
 
 // Create a reactive state to track card loading - with improved initial state check
