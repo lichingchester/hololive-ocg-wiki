@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import type { CardCollection, Locales, Translations } from "~/types/card";
+import type { Card, CardCollection, Locales, Translations } from "~/types/card";
 import type { FilterOptions } from "~/types/filter";
 
 // composables/useCardStore.ts
@@ -28,6 +28,11 @@ export const useCardStore = () => {
       }
     }
     return allCards.value;
+  };
+
+  // Get card by ID
+  const getCardById = (id: string): Card | undefined => {
+    return allCards.value.find((card) => card.id === id);
   };
 
   // Get filtered cards with caching
@@ -148,6 +153,7 @@ export const useCardStore = () => {
     isLoading,
     loadCards,
     getFilteredCards,
+    getCardById,
     clearCache,
   };
 };

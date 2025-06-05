@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import CardDataJson from "@/data/cards_i18n.json";
-import type { Card } from "~/types/card";
-
 const props = defineProps<{
   cardIds: string[];
 }>();
+
+const cardStore = useCardStore();
 
 // Group cards by ID and count occurrences
 const uniqueCards = computed(() => {
@@ -17,17 +16,13 @@ const uniqueCards = computed(() => {
     cardMap.get(cardId).count++;
   });
 
-  return Array.from(cardMap.values());
+  const cards = Array.from(cardMap.values()).map((item) => {
+    const card = cardStore.getCardById(item.cardId);
+    return { ...item, card };
+  });
+
+  return cards;
 });
-
-const getImagePath = (cardId: string) => {
-  const card = CardDataJson.find((c) => c.id === cardId);
-  return card ? `${card.imagePath}` : "";
-};
-
-const getCard = (cardId: string): Card => {
-  return CardDataJson.find((c) => c.id === cardId) as unknown as Card;
-};
 </script>
 
 <template>
@@ -39,13 +34,14 @@ const getCard = (cardId: string): Card => {
         <Dialog>
           <DialogTrigger class="">
             <Image
+              v-if="item.card.imagePath"
               class="flex-[0_0_400px]"
-              :src="`/${getImagePath(item.cardId)}`"
+              :src="`/${item.card.imagePath}`"
               :img-attributes="{ class: '' }"
             />
           </DialogTrigger>
 
-          <CardItemDialogContent :item="getCard(item.cardId)" />
+          <CardItemDialogContent v-if="item.card" :item="item.card" />
         </Dialog>
 
         <CardCountBadge :count="item.count" :size="'large'" />
