@@ -3,6 +3,14 @@ import { Expand, Shrink } from "lucide-vue-next";
 import { Separator } from "@/components/ui/separator";
 
 const decks = useDecks();
+const cardStore = useCardStore();
+
+// Load cards when component mounts if needed
+onMounted(async () => {
+  if (cardStore.allCards.value.length === 0) {
+    await cardStore.loadCards();
+  }
+});
 
 const isActive = ref(false);
 const toggleFloatingDeck = () => {
@@ -36,6 +44,11 @@ const mainCardIds = computed(() => {
 
 const yellCardIds = computed(() => {
   return decks.currentDeck.value?.yellCardIds || [];
+});
+
+// Pre-fetch cards in deck for better performance
+const allDeckCardIds = computed(() => {
+  return [...oshiCardIds.value, ...mainCardIds.value, ...yellCardIds.value];
 });
 </script>
 

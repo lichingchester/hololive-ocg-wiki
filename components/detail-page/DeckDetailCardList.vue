@@ -3,12 +3,17 @@ const props = defineProps<{
   cardIds: string[];
 }>();
 
-const cardStore = useCardStore();
+// const cardStore = useCardStore();
+const decksStore = useDecks();
 
 // Group cards by ID and count occurrences
 const uniqueCards = computed(() => {
   const cardMap = new Map();
 
+  // Skip processing if there are no card IDs
+  if (!props.cardIds.length) return [];
+
+  // Collect card IDs and count occurrences
   props.cardIds.forEach((cardId) => {
     if (!cardMap.has(cardId)) {
       cardMap.set(cardId, { cardId, count: 0 });
@@ -16,9 +21,25 @@ const uniqueCards = computed(() => {
     cardMap.get(cardId).count++;
   });
 
+  // Get unique card IDs for efficient lookup
+  const uniqueCardIds = Array.from(cardMap.keys());
+
+  // Use the optimized getCardsByIds method
+  const cardsById = decksStore
+    .getCardsByIds(uniqueCardIds)
+    .reduce((acc, card) => {
+      if (card) {
+        acc[card.id] = card;
+      }
+      return acc;
+    }, {} as Record<string, any>);
+
+  // Map the results
   const cards = Array.from(cardMap.values()).map((item) => {
-    const card = cardStore.getCardById(item.cardId);
-    return { ...item, card };
+    return {
+      ...item,
+      card: cardsById[item.cardId],
+    };
   });
 
   return cards;
