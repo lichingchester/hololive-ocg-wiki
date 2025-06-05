@@ -37,6 +37,10 @@
   "Official Site": "공식 사이트",
   "Decks": "덱 목록",
   "No cards to display": "No cards to display",
+  "Invalid deck code": "Invalid deck code",
+  "Deck updated successfully": "Deck updated successfully",
+  "Deck imported successfully": "Deck imported successfully",
+  "Failed to import deck from code": "Failed to import deck from code",
 
   "fields": {
     "name": "이름",
