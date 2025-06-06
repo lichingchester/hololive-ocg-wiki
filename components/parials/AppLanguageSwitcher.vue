@@ -13,9 +13,9 @@ const switchLocalePath = useSwitchLocalePath();
     <DropdownMenuContent>
       <template v-for="(_locale, index) in locales" :key="index">
         <DropdownMenuItem>
-          <NuxtLink :to="switchLocalePath(_locale.code)">
+          <a :href="switchLocalePath(_locale.code)">
             {{ _locale.name }}
-          </NuxtLink>
+          </a>
         </DropdownMenuItem>
       </template>
     </DropdownMenuContent>
