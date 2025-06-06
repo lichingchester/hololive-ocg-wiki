@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { APP_BASE_URL_NAME } from "~/constants/app";
-
 const props = defineProps<{
   src: string;
   imgAttributes?: Record<string, string>;
@@ -70,9 +68,9 @@ defineExpose({
           'transition-opacity duration-300',
         ]"
       >
-        <source :srcset="`/${APP_BASE_URL_NAME}${webpSrc}`" type="image/webp" />
+        <source :srcset="`${webpSrc}`" type="image/webp" />
         <img
-          :src="`/${APP_BASE_URL_NAME}${src}`"
+          :src="`${src}`"
           loading="lazy"
           v-bind="imgAttributes || {}"
           @load="handleImageLoaded"

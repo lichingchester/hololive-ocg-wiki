@@ -18,7 +18,15 @@ import { APP_VERSION } from "~/constants/app";
             <span class="text-xs">{{ `v${APP_VERSION}` }}</span>
           </Badge>
         </DialogTitle>
-        <DialogDescription> wip... </DialogDescription>
+        <DialogDescription>
+          <div>wip...</div>
+          <br />
+          <div>
+            Just got suspended without reason, really upsetting, looking for a
+            new platform for this open-source project, keep you all updated
+            here.
+          </div>
+        </DialogDescription>
       </DialogHeader>
     </DialogContent>
   </Dialog>
