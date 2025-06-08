@@ -134,7 +134,7 @@ export const useCardStore = () => {
         ],
         threshold: 0.35,
         ignoreLocation: true,
-        minMatchCharLength: 2,
+        // minMatchCharLength: 2,
       });
       result = fuse.search(filterOptions.search).map((item) => item.item);
     }
