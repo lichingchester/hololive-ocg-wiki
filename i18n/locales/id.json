@@ -1,4 +1,9 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Hololive OCG Wiki",
+    "description": "Wiki buatan penggemar untuk Hololive OCG, berisi informasi kartu, pembuat deck, dan lainnya."
+  },
+
   "No results found.": "Tidak ada hasil ditemukan.",
   "Reset": "Atur Ulang",
   "Close": "Tutup",

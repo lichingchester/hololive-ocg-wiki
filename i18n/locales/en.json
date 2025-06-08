@@ -1,4 +1,9 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Hololive OCG Wiki",
+    "description": "A fan-made wiki for Hololive OCG, featuring card information, deck builder, and more."
+  },
+
   "No results found.": "No results found.",
   "Reset": "Reset",
   "Close": "Close",

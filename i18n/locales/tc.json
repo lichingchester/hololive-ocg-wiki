@@ -1,4 +1,9 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Hololive OCG Wiki",
+    "description": "一個由粉絲製作的 Hololive OCG Wiki，提供卡片資訊、牌組制作等功能。"
+  },
+
   "No results found.": "查無結果。",
   "Reset": "重設",
   "Close": "關閉",

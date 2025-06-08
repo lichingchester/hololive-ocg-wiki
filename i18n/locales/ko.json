@@ -1,4 +1,9 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Hololive OCG Wiki",
+    "description": "Hololive OCG를 위한 팬 제작 위키로, 카드 정보, 덱 빌더 등 다양한 기능을 제공합니다."
+  },
+
   "No results found.": "검색 결과가 없습니다.",
   "Reset": "초기화",
   "Close": "닫기",
@@ -353,11 +358,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -373,11 +374,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "しぐれうい",
@@ -396,11 +393,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "かんざきひろ",
@@ -418,11 +411,7 @@
       "cardType": "호로멘",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -448,11 +437,7 @@
       "cardType": "호로멘",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "かんざきひろ",
@@ -472,11 +457,7 @@
       "cardType": "호로멘",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "かんざきひろ",
@@ -496,11 +477,7 @@
       "cardType": "호로멘",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#베이비"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#베이비"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "© 2016 COVER Corp. MariA",
@@ -520,12 +497,7 @@
       "cardType": "호로멘",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "extra": "이 호로멘은 덱에 몇 장이든 넣을 수 있다",
@@ -540,12 +512,7 @@
       "cardType": "호로멘",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "東西",
@@ -572,12 +539,7 @@
       "cardType": "호로멘",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "トマリ",
@@ -595,12 +557,7 @@
       "cardType": "호로멘",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -633,12 +590,7 @@
       "cardType": "호로멘",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "薫子",
@@ -657,12 +609,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "RR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "江田藤",
@@ -690,12 +637,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "R",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "鴨見カモミ",
@@ -730,11 +672,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "R",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "さいとうなおき",
@@ -763,10 +701,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "RR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "古弥月",
@@ -786,11 +721,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -805,11 +736,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "おるだん",
@@ -828,11 +755,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "おるだん",
@@ -850,11 +773,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -872,11 +791,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "R",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "おるだん",
@@ -896,11 +811,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "RR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "黒兎",
@@ -928,11 +839,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -947,11 +854,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "はる雪",
@@ -966,11 +869,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "U",
       "set": "부스터 팩「엘리트 스파크」",
       "arts": [
@@ -996,11 +895,7 @@
       "cardType": "Buzz호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "RR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "ハナモト",
@@ -1021,12 +916,7 @@
       "cardType": "Buzz호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "R",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "かかげ",
@@ -1051,11 +941,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "R",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "huke",
@@ -1082,11 +968,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -1102,11 +984,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "蒼樹うめ",
@@ -1133,11 +1011,7 @@
       "cardType": "Buzz호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "R",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "茶椿",
@@ -1172,11 +1046,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -1191,11 +1061,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "茶椿",
@@ -1213,11 +1079,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "みわべさくら",
@@ -1244,11 +1106,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "茶ちえ",
@@ -1281,11 +1139,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "えいひ",
@@ -1305,10 +1159,7 @@
       "cardType": "Buzz홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "きな",
@@ -1329,11 +1180,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -1351,11 +1198,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "むっしゅ",
@@ -1370,11 +1213,7 @@
       "cardType": "홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -1392,11 +1231,7 @@
       "cardType": "Buzz홀로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "Qiu",
@@ -1417,11 +1252,7 @@
       "cardType": "홀로멤",
       "color": "파랑빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "© 2016 COVER Corp. MariA",
@@ -1441,12 +1272,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -1461,12 +1287,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "U",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "秋赤音",
@@ -1482,12 +1303,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "Guchico",
@@ -1505,12 +1321,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "U",
       "set": "부스터 팩「엘리트 스파크」",
       "arts": [
@@ -1529,12 +1340,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "R",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "雨傘ゆん",
@@ -1553,12 +1359,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "RR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "Mr.Lime",
@@ -1578,11 +1379,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -1597,11 +1394,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "C",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "イコモチ",
@@ -1619,11 +1412,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "U",
       "set": "부스터 팩「엘리트 스파크」",
       "arts": [
@@ -1641,11 +1430,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "R",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "81",
@@ -1661,11 +1446,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있습니다",
@@ -1683,11 +1464,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "フカヒレ",
@@ -1706,11 +1483,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "フカヒレ",
@@ -1725,11 +1498,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -1747,11 +1516,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "R",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "フカヒレ",
@@ -1771,11 +1536,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "RR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "砂利さや(か)",
@@ -1795,12 +1556,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있습니다",
@@ -1815,12 +1571,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ふーみ",
@@ -1836,12 +1587,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ふーみ",
@@ -1859,12 +1605,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -1883,12 +1624,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#케모미미", "#노래"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "久蒼穹",
@@ -1908,12 +1644,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#케모미미", "#노래"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "ふーみ",
@@ -1933,12 +1664,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "extra": "이 호로멘은 덱에 몇 장이든 넣을 수 있다.",
@@ -1957,12 +1683,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "きな",
@@ -1986,12 +1707,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "やとみ",
@@ -2009,12 +1725,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "U",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -2032,12 +1743,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "R",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "やとみ",
@@ -2064,12 +1770,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "ねづみどし",
@@ -2097,11 +1798,7 @@
       "cardType": "Buzz호로멘",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "RR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "紅緒",
@@ -2130,11 +1827,7 @@
       "cardType": "호로멘",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#노래"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#노래"],
       "rarity": "C",
       "set": "부스터팩「엘리트 스파크」",
       "extra": "이 호로멘은 덱에 몇 장이든 넣을 수 있다.",
@@ -2152,11 +1845,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#歌"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#歌"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ルジエ",
@@ -2171,11 +1860,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#歌"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#歌"],
       "rarity": "U",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -2201,11 +1886,7 @@
       "cardType": "Buzzホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#歌"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#歌"],
       "rarity": "R",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "有芳",
@@ -2607,9 +2288,7 @@
     "672": {
       "name": "하아톤",
       "cardType": "サポート・ファン",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "JinArt こばやかわやまと",
@@ -2700,11 +2379,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "C",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있습니다.",
@@ -2722,11 +2397,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "C",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "illustrator": "サクミチ",
@@ -2745,11 +2416,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "U",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "illustrator": "lack",
@@ -2773,11 +2440,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "C",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "illustrator": "サクミチ",
@@ -2795,11 +2458,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "C",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "illustrator": "lack",
@@ -2819,11 +2478,7 @@
       "cardType": "홀로멤버",
       "color": "노랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "U",
       "set": "스타트 덱 노랑 시라누이 플레어",
       "arts": [
@@ -2867,11 +2522,7 @@
       "cardType": "Buzz호로멤",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "R",
       "set": "スタートデッキ 黄 不知火フレア",
       "illustrator": "lack",
@@ -2888,11 +2539,7 @@
       "cardType": "호로멤",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "RR",
       "set": "スタートデッキ 黄 不知火フレア",
       "illustrator": "呱々唄七つ",
@@ -2912,11 +2559,7 @@
       "cardType": "호로멤",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "U",
       "set": "スタートデッキ 黄 不知火フレア",
       "arts": [
@@ -2934,11 +2577,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "U",
       "set": "スタートデッキ 黄 不知火フレア",
       "arts": [
@@ -2956,11 +2595,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "U",
       "set": "スタートデッキ 黄 不知火フレ아",
       "arts": [
@@ -2992,11 +2627,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "U",
       "set": "スタートデッキ 黄 不知火フレア",
       "arts": [
@@ -3030,10 +2661,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "C",
       "set": "スタートデッキ 緑 風真いろは",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -3048,10 +2676,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "U",
       "set": "スタートデッキ 緑 風真いろは",
       "arts": [
@@ -3108,10 +2733,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "C",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "広江礼威",
@@ -3130,10 +2752,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "U",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "TAiGA",
@@ -3149,10 +2768,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "C",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "ぴ助",
@@ -3167,10 +2783,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "C",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "猫屋敷ぷしお",
@@ -3189,10 +2802,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "R",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "黒井ススム",
@@ -3212,10 +2822,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "RR",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "しろみにみ",
@@ -3235,11 +2842,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#秘密結社holoX", "#ケモミミ"],
       "rarity": "U",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "広江礼威",
@@ -3258,12 +2861,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX",
-        "#トリ",
-        "#お酒"
-      ],
+      "tags": ["#JP", "#秘密結社holoX", "#トリ", "#お酒"],
       "rarity": "U",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "広江礼威",
@@ -3279,11 +2877,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#秘密結社holoX", "#シューター"],
       "rarity": "U",
       "set": "スタートデッキ 緑 風真いろは",
       "illustrator": "広江礼威",
@@ -3349,11 +2943,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "C",
       "set": "スタートデッキ 白 轟はじめ",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -3368,11 +2958,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "C",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "ナナテトラ",
@@ -3391,11 +2977,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Watersnake",
@@ -3410,11 +2992,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "C",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "詰め木",
@@ -3432,11 +3010,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "C",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "HASU",
@@ -3455,11 +3029,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "arts": [
@@ -3477,11 +3047,7 @@
       "cardType": "Buzz호로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#베이비"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#베이비"],
       "rarity": "R",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Fajyobore",
@@ -3498,11 +3064,7 @@
       "cardType": "호로멤",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#베이비"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#베이비"],
       "rarity": "RR",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "BISAI",
@@ -3522,11 +3084,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#お酒"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#お酒"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Watersnake",
@@ -3542,11 +3100,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#요리"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#요리"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Watersnake",
@@ -3565,11 +3119,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Watersnake",
@@ -3588,11 +3138,7 @@
       "cardType": "호로멤",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#노래"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#노래"],
       "rarity": "U",
       "set": "スタートデッキ 白 轟はじめ",
       "illustrator": "Watersnake",
@@ -3637,11 +3183,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "C",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -3656,11 +3198,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "C",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "さとうぽて",
@@ -3679,11 +3217,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "U",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "とぴあ",
@@ -3702,11 +3236,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "C",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "桝石きのと",
@@ -3724,11 +3254,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "C",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "Nardack",
@@ -3744,11 +3270,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "U",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "arts": [
@@ -3767,11 +3289,7 @@
       "cardType": "Buzzホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "R",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "いちかわはる",
@@ -3791,11 +3309,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "RR",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "saihate",
@@ -3814,10 +3328,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "U",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "extra": "이 홀로멤은 Bloom할 수 없다",
@@ -3836,10 +3347,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#4기생"
-      ],
+      "tags": ["#JP", "#4기생"],
       "rarity": "U",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "extra": "이 홀로멤은 Bloom할 수 없다",
@@ -3872,9 +3380,7 @@
     "265": {
       "name": "초코의 오므라이스",
       "cardType": "サポート・イベント",
-      "tags": [
-        "#음식"
-      ],
+      "tags": ["#음식"],
       "rarity": "C",
       "set": "スタートデッキ 紫 癒月ちょこ",
       "illustrator": "JinArt こばやかわやまと",
@@ -3933,11 +3439,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "C",
       "set": "スタートデッキ 青 猫又おかゆ",
       "extra": "이 홀로멤버는 덱에 몇 장이든 넣을 수 있습니다.",
@@ -3952,11 +3454,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "C",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "神岡ちろる",
@@ -3975,11 +3473,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "U",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "神岡ちろる",
@@ -3998,11 +3492,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "C",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "神岡ちろる",
@@ -4020,12 +3510,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ", "#歌"],
       "rarity": "C",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "相音光",
@@ -4044,11 +3529,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "U",
       "set": "スタートデッキ 青 猫又おかゆ",
       "arts": [
@@ -4066,11 +3547,7 @@
       "cardType": "Buzzホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "R",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "ぴ助",
@@ -4090,11 +3567,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "RR",
       "set": "スタートデッキ 青 猫又おかゆ",
       "illustrator": "江田藤",
@@ -4113,11 +3586,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "U",
       "set": "スタートデッキ 青 猫又おかゆ",
       "extra": "このホロメンはBloomできない",
@@ -4136,11 +3605,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#秘密結社holoX", "#シューター"],
       "rarity": "U",
       "set": "スタートデッキ 青 猫又おかゆ",
       "extra": "このホロメンはBloomできない",
@@ -4223,11 +3688,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "extra": "このホロメンはデッキに何枚でも入れられる",
@@ -4242,11 +3703,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "うさの",
@@ -4265,11 +3722,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "U",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "ななかぐら",
@@ -4288,11 +3741,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "ななかぐら",
@@ -4310,11 +3759,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "ななかぐら",
@@ -4333,11 +3778,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "U",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "arts": [
@@ -4355,11 +3796,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "R",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "和錆",
@@ -4379,11 +3816,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "RR",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "soriya",
@@ -4410,13 +3843,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "U",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "extra": "이 홀로멤버는 Bloom할 수 없다",
@@ -4435,12 +3862,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미", "#요리"],
       "rarity": "U",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "extra": "이 홀로멤버는 Bloom할 수 없다",
@@ -4481,9 +3903,7 @@
     "238": {
       "name": "포요 나",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#시라카미's 캐릭터"
-      ],
+      "tags": ["#시라카미's 캐릭터"],
       "rarity": "C",
       "set": "スタートデッキ 赤 百鬼あやめ",
       "illustrator": "はずき",
@@ -4742,13 +4162,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -4763,13 +4177,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "夏炉",
@@ -4788,13 +4196,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あさなや",
@@ -4812,13 +4214,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -4836,13 +4232,7 @@
       "cardType": "홀로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "R",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "CNO",
@@ -4876,13 +4266,7 @@
       "cardType": "홀로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "むっちりしいたけ",
@@ -4910,11 +4294,7 @@
       "cardType": "홀로멤",
       "color": "백",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -4929,11 +4309,7 @@
       "cardType": "홀로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "わたお",
@@ -4951,11 +4327,7 @@
       "cardType": "홀로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "arts": [
@@ -4973,11 +4345,7 @@
       "cardType": "Buzz홀로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "しちがつ",
@@ -5005,12 +4373,7 @@
       "cardType": "홀로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -5025,12 +4388,7 @@
       "cardType": "홀로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "飯田ぽち。",
@@ -5049,12 +4407,7 @@
       "cardType": "홀로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "飯田ぽち。",
@@ -5069,12 +4422,7 @@
       "cardType": "홀로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "arts": [
@@ -5093,12 +4441,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "久賀フーナ",
@@ -5118,12 +4461,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "RR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "pbj",
@@ -5143,12 +4481,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#짐승귀",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#짐승귀", "#요리"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -5164,12 +4497,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#짐승귀",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#짐승귀", "#요리"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "泉彩",
@@ -5187,12 +4515,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#짐승귀",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#짐승귀", "#요리"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -5218,12 +4541,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#짐승귀",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#짐승귀", "#요리"],
       "rarity": "RR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "81",
@@ -5240,12 +4558,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -5260,13 +4573,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다", "#술"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あかさあい",
@@ -5285,12 +4592,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あかさあい",
@@ -5308,12 +4610,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -5331,12 +4628,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "R",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "あかさあい",
@@ -5363,12 +4655,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "ぐらしおん",
@@ -5388,11 +4675,7 @@
       "cardType": "Buzz호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "gaha",
@@ -5412,11 +4695,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -5431,11 +4710,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "TAiGA",
@@ -5454,11 +4729,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "パセリ",
@@ -5473,11 +4744,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "arts": [
@@ -5495,11 +4762,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "R",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "パセリ",
@@ -5519,11 +4782,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "パセリ",
@@ -5563,12 +4822,7 @@
       "cardType": "Buzz호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미", "#노래"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "つなかわ",
@@ -5589,10 +4843,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -5607,10 +4858,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "ほし",
@@ -5629,11 +4877,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#2기생", "#케모미미"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "Tam-U",
@@ -5651,10 +4895,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "arts": [
@@ -5672,10 +4913,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "R",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "TSCR",
@@ -5703,10 +4941,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "RR",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "夕城",
@@ -5726,11 +4961,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "extra": "이 호로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -5745,11 +4976,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "さいね",
@@ -5776,11 +5003,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "C",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "illustrator": "おむたつ",
@@ -5798,11 +5021,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "U",
       "set": "부스터팩「퀸테트 스펙트럼」",
       "arts": [
@@ -5834,11 +5053,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#언어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#언어학"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "LAM",
@@ -5858,11 +5073,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#언어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#언어학"],
       "rarity": "RR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "okojo",
@@ -5882,11 +5093,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있다",
@@ -5902,11 +5109,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "DSマイル",
@@ -5925,11 +5128,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "SARUEI",
@@ -5944,11 +5143,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -5974,11 +5169,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "ぶるー太",
@@ -5998,11 +5189,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "RR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "たむ",
@@ -6030,11 +5217,7 @@
       "cardType": "Buzzホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "江田藤",
@@ -6062,12 +5245,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#EN", "#Myth", "#그림", "#바다"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있다",
@@ -6082,12 +5260,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#EN", "#Myth", "#그림", "#바다"],
       "rarity": "C",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "一伊那尓栖",
@@ -6102,12 +5275,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#EN", "#Myth", "#그림", "#바다"],
       "rarity": "U",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "arts": [
@@ -6125,12 +5293,7 @@
       "cardType": "Buzz호로멘",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#EN", "#Myth", "#그림", "#바다"],
       "rarity": "RR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "虎んと",
@@ -6147,12 +5310,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#노래",
-        "#새"
-      ],
+      "tags": ["#EN", "#Advent", "#노래", "#새"],
       "rarity": "C",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "extra": "이 호로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -6168,12 +5326,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#노래",
-        "#새"
-      ],
+      "tags": ["#EN", "#Advent", "#노래", "#새"],
       "rarity": "C",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "つなかわ",
@@ -6191,12 +5344,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#노래",
-        "#새"
-      ],
+      "tags": ["#EN", "#Advent", "#노래", "#새"],
       "rarity": "U",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "EB十",
@@ -6215,12 +5363,7 @@
       "cardType": "호로멘",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#노래",
-        "#새"
-      ],
+      "tags": ["#EN", "#Advent", "#노래", "#새"],
       "rarity": "R",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "スコッティ",
@@ -6239,11 +5382,7 @@
       "cardType": "호로멘",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#0기생",
-        "#마법"
-      ],
+      "tags": ["#홀로위치", "#0기생", "#마법"],
       "rarity": "R",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "なな",
@@ -6263,11 +5402,7 @@
       "cardType": "호로멘",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#4기생",
-        "#마법"
-      ],
+      "tags": ["#홀로위치", "#4기생", "#마법"],
       "rarity": "R",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "なな",
@@ -6287,11 +5422,7 @@
       "cardType": "호로멘",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#4기생",
-        "#마법"
-      ],
+      "tags": ["#홀로위치", "#4기생", "#마법"],
       "rarity": "R",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "なな",
@@ -6311,11 +5442,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#ホロウィッチ",
-        "#2期生",
-        "#魔法"
-      ],
+      "tags": ["#ホロウィッチ", "#2期生", "#魔法"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "なな",
@@ -6335,11 +5462,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#ホロウィッチ",
-        "#3期生",
-        "#魔法"
-      ],
+      "tags": ["#ホロウィッチ", "#3期生", "#魔法"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "なな",
@@ -6359,11 +5482,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#ホロウィッチ",
-        "#秘密結社holoX",
-        "#魔法"
-      ],
+      "tags": ["#ホロウィッチ", "#秘密結社holoX", "#魔法"],
       "rarity": "R",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "なな",
@@ -6421,9 +5540,7 @@
     "346": {
       "name": "폭발의 마법",
       "cardType": "サポート・イベント",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -6456,9 +5573,7 @@
     "350": {
       "name": "마법의 옷장",
       "cardType": "サポート・イベント",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -6513,9 +5628,7 @@
     "354": {
       "name": "무라사키 시온의 마법 지팡이",
       "cardType": "サポート・ツール",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -6546,9 +5659,7 @@
     "356": {
       "name": "오루얀케",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -6577,9 +5688,7 @@
     "357": {
       "name": "네지마키 여우",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -6588,9 +5697,7 @@
     "358": {
       "name": "후부춘",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -6607,9 +5714,7 @@
     "359": {
       "name": "후부라",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "U",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -6638,9 +5743,7 @@
     "360": {
       "name": "미테일",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -6697,9 +5800,7 @@
     "366": {
       "name": "스콘부",
       "cardType": "サポート・ファン",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "C",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -6900,11 +6001,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "C",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "illustrator": "はこに",
@@ -6919,11 +6016,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "R",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "illustrator": "りんけてん",
@@ -6956,11 +6049,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "U",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "illustrator": "おるだん",
@@ -6978,11 +6067,7 @@
       "cardType": "Buzzホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "RR",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "illustrator": "I☆LA",
@@ -7016,11 +6101,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Promise", "#歌"],
       "rarity": "C",
       "set": "スタートデッキ「ときのそら＆AZKi」",
       "arts": [
@@ -7046,11 +6127,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "C",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "illustrator": "はこに",
@@ -7065,11 +6142,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "R",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "illustrator": "ヒノ",
@@ -7108,11 +6181,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "U",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "illustrator": "松うに",
@@ -7127,11 +6196,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "RR",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "illustrator": "I☆LA",
@@ -7159,11 +6224,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "C",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "arts": [
@@ -7181,11 +6242,7 @@
       "cardType": "홀로멤",
       "color": "백녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "R",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "illustrator": "© 2023 Victor Entertainment.",
@@ -7252,11 +6309,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "U",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "extra": "이 홀로멤은 Bloom할 수 없다",
@@ -7271,11 +6324,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#케모미미"],
       "rarity": "U",
       "set": "스타트 덱「토키노 소라＆AZKi」",
       "extra": "이 홀로멤은 Bloom할 수 없다",
@@ -7916,11 +6965,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "C",
       "set": "부스터팩「블루밍 레디언스」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -7944,11 +6989,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "U",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "さとうぽて",
@@ -7981,11 +7022,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "C",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "おしおしお",
@@ -8000,11 +7037,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "U",
       "set": "부스터팩「블루밍 레디언스」",
       "arts": [
@@ -8030,11 +7063,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "R",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "須王 彩",
@@ -8067,11 +7096,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "RR",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "須王 彩",
@@ -8111,12 +7136,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "C",
       "set": "부스터팩「블루밍 레디언스」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -8146,12 +7166,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "U",
       "set": "부스터팩「블루밍 레디언스」",
       "arts": [
@@ -8169,12 +7184,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "C",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "WERI",
@@ -8192,12 +7202,7 @@
       "cardType": "홀로멤",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "C",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "あずーる",
@@ -8221,12 +7226,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#トリ",
-        "#絵"
-      ],
+      "tags": ["#EN", "#Promise", "#トリ", "#絵"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -8252,12 +7252,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#トリ",
-        "#絵"
-      ],
+      "tags": ["#EN", "#Promise", "#トリ", "#絵"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "高崎律",
@@ -8277,11 +7272,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이든 넣을 수 있다",
@@ -8296,11 +7287,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -8318,11 +7305,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "タスキブ",
@@ -8362,10 +7345,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이든 넣을 수 있다",
@@ -8380,10 +7360,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "あるてら",
@@ -8402,10 +7379,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -8431,10 +7405,7 @@
       "cardType": "Buzzホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "いかけ",
@@ -8493,11 +7464,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Promise", "#歌"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이든 넣을 수 있다",
@@ -8512,11 +7479,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "トロメラ",
@@ -8531,11 +7494,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "arts": [
@@ -8567,11 +7526,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "R",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "mizu",
@@ -8599,12 +7554,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다.",
@@ -8619,12 +7569,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "安曇アキタケ",
@@ -8651,12 +7596,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "千種みのり",
@@ -8706,12 +7646,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "夏炉",
@@ -8745,12 +7680,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "arts": [
@@ -8776,12 +7706,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "R",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "りんけてん",
@@ -8821,11 +7746,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다.",
@@ -8841,11 +7762,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "憂姫はぐれ",
@@ -8872,11 +7789,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "憂姫はぐれ",
@@ -8891,11 +7804,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -8913,11 +7822,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "憂姫はぐれ",
@@ -8936,11 +7841,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "須王 彩",
@@ -8960,11 +7861,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -8979,11 +7876,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "美和野らぐ",
@@ -9016,11 +7909,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9046,11 +7935,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "チェリ子",
@@ -9083,10 +7968,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -9101,10 +7983,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "はな森",
@@ -9122,10 +8001,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9164,10 +8040,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "でいりー",
@@ -9187,11 +8060,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -9207,11 +8076,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "夜ノみつき",
@@ -9226,11 +8091,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9256,11 +8117,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "高崎律",
@@ -9294,12 +8151,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -9314,12 +8166,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "TAiGA",
@@ -9347,12 +8194,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "MyungYi",
@@ -9370,12 +8212,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "ごろー＊",
@@ -9394,12 +8231,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9425,12 +8257,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "でいりー",
@@ -9464,11 +8291,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있다",
@@ -9484,11 +8307,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "Akizone",
@@ -9507,11 +8326,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "スコッティ",
@@ -9526,11 +8341,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9568,11 +8379,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "タスキブ",
@@ -9617,11 +8424,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "タスキブ",
@@ -9648,11 +8451,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있다",
@@ -9667,11 +8466,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "スコッティ",
@@ -9689,11 +8484,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "arts": [
@@ -9712,11 +8503,7 @@
       "cardType": "Buzz호로멤",
       "color": "빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "RR",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "さとうさなえ",
@@ -9737,11 +8524,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Promise", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -9757,11 +8540,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Promise", "#케모미미"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "おしるこ",
@@ -9776,11 +8555,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Promise", "#케모미미"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "arts": [
@@ -9806,11 +8581,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Promise", "#케모미미"],
       "rarity": "R",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "COGA",
@@ -9837,11 +8608,7 @@
       "cardType": "호로멤",
       "color": "파랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -9857,11 +8624,7 @@
       "cardType": "호로멤",
       "color": "파랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "U",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "ひなつ",
@@ -9880,11 +8643,7 @@
       "cardType": "호로멤",
       "color": "파랑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "うごんば",
@@ -9902,11 +8661,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -9932,11 +8687,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "でいりー",
@@ -9955,11 +8706,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "でいりー",
@@ -10011,10 +8758,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -10029,10 +8773,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "ぽんかん⑧",
@@ -10059,10 +8800,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "ゆづあ",
@@ -10077,10 +8815,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "Salmon88",
@@ -10107,10 +8842,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -10128,10 +8860,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "高崎律",
@@ -10159,11 +8888,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -10179,11 +8904,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#노래"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "により",
@@ -10198,11 +8919,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#노래"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -10220,11 +8937,7 @@
       "cardType": "Buzzホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#노래"],
       "rarity": "RR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "高崎律",
@@ -10244,10 +8957,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "extra": "이 홀로멤버는 덱에 몇 장이라도 넣을 수 있다",
@@ -10263,10 +8973,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "C",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "ワダアルコ",
@@ -10284,10 +8991,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "U",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "arts": [
@@ -10313,10 +9017,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "syow",
@@ -10356,11 +9057,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#짐승귀"
-      ],
+      "tags": ["#JP", "#3기생", "#짐승귀"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "mono",
@@ -10394,11 +9091,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "mono",
@@ -10418,11 +9111,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "R",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "mono",
@@ -10442,12 +9131,7 @@
       "cardType": "호로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "R",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "mono",
@@ -10467,11 +9151,7 @@
       "cardType": "호로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "mono",
@@ -10491,10 +9171,7 @@
       "cardType": "호로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#EN",
-        "#Myth"
-      ],
+      "tags": ["#EN", "#Myth"],
       "rarity": "C",
       "set": "부스터 팩「블루밍 레디언스」",
       "illustrator": "mono",
@@ -11601,11 +10278,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "しぐれうい",
@@ -11624,11 +10297,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "かんざきひろ",
@@ -11646,11 +10315,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -11676,11 +10341,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "かんざきひろ",
@@ -11700,11 +10361,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "かんざきひろ",
@@ -11724,11 +10381,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#4기생", "#베이비"],
       "rarity": "UR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "近藤",
@@ -11748,11 +10401,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#베이비"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#베이비"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "© 2016 COVER Corp. MariA",
@@ -11772,11 +10421,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#베이비"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#베이비"],
       "rarity": "UR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "© 2016 COVER Corp. MariA",
@@ -11796,12 +10441,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "東西",
@@ -11828,12 +10468,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "トマリ",
@@ -11851,12 +10486,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -11889,12 +10519,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "薫子",
@@ -11913,12 +10538,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "SR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "江田藤",
@@ -11946,12 +10566,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미", "#슈터"],
       "rarity": "UR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "江田藤",
@@ -11979,12 +10594,7 @@
       "cardType": "Buzz호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "SR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "鴨見カモミ",
@@ -12019,11 +10629,7 @@
       "cardType": "Buzz호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "SR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "さいとうなおき",
@@ -12052,10 +10658,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "SR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "古弥月",
@@ -12075,10 +10678,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "UR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "古弥月",
@@ -12098,11 +10698,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "S",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "おるだん",
@@ -12121,11 +10717,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "S",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "おるだん",
@@ -12143,11 +10735,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "S",
       "set": "부스터 팩「엘리트 스파크」",
       "arts": [
@@ -12165,11 +10753,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "SR",
       "set": "부스터 팩「엘리트 스파크」",
       "illustrator": "おるだん",
@@ -12189,11 +10773,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "黒兎",
@@ -12221,11 +10801,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#베이비"
-      ],
+      "tags": ["#JP", "#0기생", "#베이비"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ののこ",
@@ -12253,11 +10829,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "はる雪",
@@ -12272,11 +10844,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -12302,11 +10870,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ハナモト",
@@ -12327,11 +10891,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#1기생", "#요리"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ハナモト",
@@ -12352,12 +10912,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "かかげ",
@@ -12382,11 +10937,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#새"
-      ],
+      "tags": ["#EN", "#Myth", "#새"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "huke",
@@ -12413,11 +10964,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "蒼樹うめ",
@@ -12444,11 +10991,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "茶椿",
@@ -12483,11 +11026,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "茶椿",
@@ -12505,11 +11044,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "みわべさくら",
@@ -12536,11 +11071,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "茶ちえ",
@@ -12573,11 +11104,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "UR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "茶ちえ",
@@ -12610,11 +11137,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "えいひ",
@@ -12634,10 +11157,7 @@
       "cardType": "버즈 홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "きな",
@@ -12666,11 +11186,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "むっしゅ",
@@ -12685,11 +11201,7 @@
       "cardType": "홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -12707,11 +11219,7 @@
       "cardType": "버즈 홀로멤",
       "color": "청",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#그림"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#그림"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "Qiu",
@@ -12740,11 +11248,7 @@
       "cardType": "홀로멤",
       "color": "청적",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#케모미미"
-      ],
+      "tags": ["#EN", "#Advent", "#케모미미"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "© 2016 COVER Corp. MariA",
@@ -12814,12 +11318,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "秋赤音",
@@ -12843,12 +11342,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "Guchico",
@@ -12866,12 +11360,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -12890,12 +11379,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "雨傘ゆん",
@@ -12914,12 +11398,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "Mr.Lime",
@@ -12953,12 +11432,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#4기생", "#노래", "#슈터"],
       "rarity": "UR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "菊月",
@@ -12992,11 +11466,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "イコモチ",
@@ -13014,11 +11484,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -13036,11 +11502,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#0기생", "#슈터"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "81",
@@ -13056,11 +11518,7 @@
       "cardType": "호로멤",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "フカヒレ",
@@ -13087,11 +11545,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "フカヒレ",
@@ -13106,11 +11560,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -13136,11 +11586,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "フカヒレ",
@@ -13174,11 +11620,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "砂利さや(か)",
@@ -13218,11 +11660,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "砂利さや(か)",
@@ -13262,12 +11700,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ふーみ",
@@ -13283,12 +11716,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ふーみ",
@@ -13306,12 +11734,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -13330,12 +11753,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "久蒼穹",
@@ -13355,12 +11773,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ふーみ",
@@ -13394,12 +11807,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#케모미미", "#노래"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "宇田川みぅ",
@@ -13433,12 +11841,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "きな",
@@ -13462,12 +11865,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "やとみ",
@@ -13485,12 +11883,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "arts": [
@@ -13508,12 +11901,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "やとみ",
@@ -13540,12 +11928,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ねづみどし",
@@ -13573,12 +11956,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#케모미미", "#노래"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ねづみどし",
@@ -13606,11 +11984,7 @@
       "cardType": "Buzzホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "紅緒",
@@ -13639,11 +12013,7 @@
       "cardType": "Buzzホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#하프엘프"
-      ],
+      "tags": ["#JP", "#3기생", "#하프엘프"],
       "rarity": "UR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "紅緒",
@@ -13672,11 +12042,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#노래"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#노래"],
       "rarity": "S",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "ルジエ",
@@ -13691,11 +12057,7 @@
       "cardType": "호로멤",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#노래"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#노래"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "arts": [
@@ -13721,11 +12083,7 @@
       "cardType": "Buzz호로멤",
       "color": "黄",
       "bloomLevel": "1st",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#노래"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#노래"],
       "rarity": "SR",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "有芳",
@@ -14127,9 +12485,7 @@
     "791": {
       "name": "하아톤",
       "cardType": "서포트・팬",
-      "tags": [
-        "#시라카미's 캐릭터"
-      ],
+      "tags": ["#시라카미's 캐릭터"],
       "rarity": "S",
       "set": "부스터팩「엘리트 스파크」",
       "illustrator": "JinArt こばやかわやまと",
@@ -14202,11 +12558,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#ベイビー"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#ベイビー"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "BISAI",
@@ -14226,10 +12578,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#秘密結社holoX"
-      ],
+      "tags": ["#JP", "#秘密結社holoX"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "しろみにみ",
@@ -14249,11 +12598,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#ハーフエルフ"
-      ],
+      "tags": ["#JP", "#3期生", "#ハーフエルフ"],
       "rarity": "SR",
       "set": "ブースターパック「エリートスパーク」",
       "illustrator": "呱々唄七つ",
@@ -14603,13 +12948,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あさなや",
@@ -14627,13 +12966,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -14651,13 +12984,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "CNO",
@@ -14691,13 +13018,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "むっちりしいたけ",
@@ -14725,13 +13046,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#絵"
-      ],
+      "tags": ["#JP", "#1期生", "#ゲーマーズ", "#ケモミミ", "#絵"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "むっちりしいたけ",
@@ -14759,11 +13074,7 @@
       "cardType": "홀로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "S",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "わたお",
@@ -14781,11 +13092,7 @@
       "cardType": "홀로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "S",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "わたお",
@@ -14804,11 +13111,7 @@
       "cardType": "Buzz 홀로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "SR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "しちがつ",
@@ -14836,11 +13139,7 @@
       "cardType": "Buzz 홀로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "UR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "しちがつ",
@@ -14868,12 +13167,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "S",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "飯田ぽち。",
@@ -14892,12 +13186,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "S",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "飯田ぽち。",
@@ -14912,12 +13201,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "S",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "arts": [
@@ -14936,12 +13220,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "SR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "久賀フーナ",
@@ -14961,12 +13240,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "SR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "pbj",
@@ -14986,12 +13260,7 @@
       "cardType": "홀로멤",
       "color": "녹색",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "UR",
       "set": "부스터 팩「퀸텟 스펙트럼」",
       "illustrator": "pbj",
@@ -15011,12 +13280,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#料理"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ", "#料理"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "泉彩",
@@ -15034,12 +13298,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#料理"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ", "#料理"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15065,12 +13324,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#料理"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ", "#料理"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "81",
@@ -15087,12 +13341,7 @@
       "cardType": "Buzzホロメン",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#ゲーマーズ",
-        "#ケモミミ",
-        "#料理"
-      ],
+      "tags": ["#JP", "#ゲーマーズ", "#ケモミミ", "#料理"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "81",
@@ -15109,12 +13358,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#JP", "#3期生", "#絵", "#海"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あかさあい",
@@ -15132,12 +13376,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#JP", "#3期生", "#絵", "#海"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15155,12 +13394,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#JP", "#3期生", "#絵", "#海"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "あかさあい",
@@ -15187,12 +13421,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#JP", "#3期生", "#絵", "#海"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "ぐらしおん",
@@ -15212,12 +13441,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#JP", "#3期生", "#絵", "#海"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "ぐらしおん",
@@ -15237,11 +13461,7 @@
       "cardType": "Buzzホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "gaha",
@@ -15261,11 +13481,7 @@
       "cardType": "Buzz홀로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "gaha",
@@ -15285,11 +13501,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "TAiGA",
@@ -15308,11 +13520,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "パセリ",
@@ -15327,11 +13535,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15349,11 +13553,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "パセリ",
@@ -15373,11 +13573,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "パセリ",
@@ -15417,11 +13613,7 @@
       "cardType": "홀로멤",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15460,12 +13652,7 @@
       "cardType": "Buzz홀로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미", "#노래"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "つなかわ",
@@ -15486,12 +13673,7 @@
       "cardType": "Buzz홀로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미",
-        "#노래"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미", "#노래"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "神岡ちろる",
@@ -15512,11 +13694,7 @@
       "cardType": "홀로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#2기생", "#케모미미"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "Tam-U",
@@ -15534,10 +13712,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15555,10 +13730,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "TSCR",
@@ -15586,10 +13758,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "夕城",
@@ -15609,10 +13778,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "夕城",
@@ -15632,11 +13798,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "さいね",
@@ -15663,11 +13825,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "おむたつ",
@@ -15685,11 +13843,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15721,11 +13875,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "LAM",
@@ -15745,11 +13895,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "okojo",
@@ -15769,11 +13915,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#어학"
-      ],
+      "tags": ["#ID", "#ID2기생", "#어학"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "okojo",
@@ -15793,11 +13935,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "DSマイル",
@@ -15816,11 +13954,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "SARUEI",
@@ -15835,11 +13969,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -15865,11 +13995,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "ぶるー太",
@@ -15889,11 +14015,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "たむ",
@@ -15921,11 +14043,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Myth", "#歌"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "たむ",
@@ -15953,11 +14071,7 @@
       "cardType": "Buzzホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#料理"
-      ],
+      "tags": ["#JP", "#2期生", "#料理"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "江田藤",
@@ -15985,12 +14099,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#EN", "#Myth", "#絵", "#海"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "一伊那尓栖",
@@ -16005,12 +14114,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#EN", "#Myth", "#絵", "#海"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "arts": [
@@ -16028,12 +14132,7 @@
       "cardType": "Buzzホロメン",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#EN", "#Myth", "#絵", "#海"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "虎んと",
@@ -16050,12 +14149,7 @@
       "cardType": "Buzz홀로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#絵",
-        "#海"
-      ],
+      "tags": ["#EN", "#Myth", "#絵", "#海"],
       "rarity": "UR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "虎んと",
@@ -16072,12 +14166,7 @@
       "cardType": "홀로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#歌",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Advent", "#歌", "#トリ"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "つなかわ",
@@ -16095,12 +14184,7 @@
       "cardType": "홀로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#歌",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Advent", "#歌", "#トリ"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "EB十",
@@ -16119,12 +14203,7 @@
       "cardType": "홀로멤",
       "color": "紫",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Advent",
-        "#歌",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Advent", "#歌", "#トリ"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "スコッティ",
@@ -16143,11 +14222,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#0기생",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#0기생", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16167,11 +14242,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#4기생",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#4기생", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16191,11 +14262,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#4기생",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#4기생", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16215,11 +14282,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#2기생",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#2기생", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16239,11 +14302,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#3기생",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#3기생", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16263,11 +14322,7 @@
       "cardType": "홀로멤",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#홀로위치",
-        "#비밀결사holoX",
-        "#魔法"
-      ],
+      "tags": ["#홀로위치", "#비밀결사holoX", "#魔法"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "シノイ",
@@ -16341,9 +14396,7 @@
     "452": {
       "name": "폭발의 마법",
       "cardType": "サポート・イベント",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -16384,9 +14437,7 @@
     "456": {
       "name": "마법의 옷장",
       "cardType": "サポート・イベント",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -16463,9 +14514,7 @@
     "461": {
       "name": "무라사키 시온의 마법 지팡이",
       "cardType": "サポート・ツール",
-      "tags": [
-        "#魔法"
-      ],
+      "tags": ["#魔法"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -16496,9 +14545,7 @@
     "463": {
       "name": "오루얀케",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -16527,9 +14574,7 @@
     "464": {
       "name": "네지마키 여우",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -16538,9 +14583,7 @@
     "465": {
       "name": "후부춘",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -16557,9 +14600,7 @@
     "466": {
       "name": "후부라",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "はずき",
@@ -16588,9 +14629,7 @@
     "467": {
       "name": "미테일",
       "cardType": "サポート・マスコット",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -16647,9 +14686,7 @@
     "473": {
       "name": "스콘부",
       "cardType": "サポート・ファン",
-      "tags": [
-        "#白上'sキャラクター"
-      ],
+      "tags": ["#白上'sキャラクター"],
       "rarity": "S",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "JinArt こばやかわやまと",
@@ -16706,11 +14743,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2期生",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#2期生", "#シューター"],
       "rarity": "SR",
       "set": "ブースターパック「クインテットスペクトラム」",
       "illustrator": "soriya",
@@ -16737,11 +14770,7 @@
       "cardType": "호로멤",
       "color": "파랑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "SR",
       "set": "부스터 팩「퀸테트 스펙트럼」",
       "illustrator": "江田藤",
@@ -16760,11 +14789,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "SR",
       "set": "부스터 팩「퀸테트 스펙트럼」",
       "illustrator": "saihate",
@@ -16819,11 +14844,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "P",
       "set": "PR 카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -16847,11 +14868,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#4기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#4기생", "#노래"],
       "rarity": "P",
       "set": "PR 카드",
       "arts": [
@@ -16877,12 +14894,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "P",
       "set": "PR 카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -16912,12 +14924,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "P",
       "set": "PR 카드",
       "arts": [
@@ -16943,12 +14950,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#EN", "#Promise", "#새", "#그림"],
       "rarity": "P",
       "set": "PR 카드",
       "illustrator": "高崎律",
@@ -16968,11 +14970,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "P",
       "set": "PR 카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -16987,11 +14985,7 @@
       "cardType": "호로멤",
       "color": "흰색",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "P",
       "set": "PR 카드",
       "arts": [
@@ -17009,10 +15003,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17027,10 +15018,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3기생"
-      ],
+      "tags": ["#ID", "#ID3기생"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17056,11 +15044,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17075,11 +15059,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17111,11 +15091,7 @@
       "cardType": "호로멤",
       "color": "백",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Promise", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "mizu",
@@ -17143,12 +15119,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17163,12 +15134,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17194,12 +15160,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#하프엘프",
-        "#술"
-      ],
+      "tags": ["#JP", "#1기생", "#하프엘프", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "りんけてん",
@@ -17239,11 +15200,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17259,11 +15216,7 @@
       "cardType": "호로멤",
       "color": "녹",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#3기생", "#케모미미"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17281,11 +15234,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17300,11 +15249,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17330,10 +15275,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17348,10 +15290,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17390,11 +15329,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17410,11 +15345,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17440,11 +15371,7 @@
       "cardType": "호로멤",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "高崎律",
@@ -17478,12 +15405,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17498,12 +15420,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "arts": [
@@ -17529,12 +15446,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#새",
-        "#술"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#새", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "でいりー",
@@ -17568,11 +15480,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Myth", "#トリ"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17588,11 +15496,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Myth", "#トリ"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17630,11 +15534,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#5期生",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#5期生", "#ケモミミ"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17649,11 +15549,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5期生",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#5期生", "#ケモミミ"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17672,11 +15568,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#ケモミミ"
-      ],
+      "tags": ["#EN", "#Promise", "#ケモミミ"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17692,11 +15584,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#ケモミミ"
-      ],
+      "tags": ["#EN", "#Promise", "#ケモミミ"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17722,11 +15610,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#ケモミミ"
-      ],
+      "tags": ["#EN", "#Promise", "#ケモミミ"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "COGA",
@@ -17753,11 +15637,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -17773,11 +15653,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "水鈴",
@@ -17794,11 +15670,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "ひなつ",
@@ -17817,11 +15689,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17847,10 +15715,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -17865,10 +15730,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17886,10 +15748,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "高崎律",
@@ -17917,11 +15776,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1期生",
-        "#歌"
-      ],
+      "tags": ["#ID", "#ID1期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -17937,11 +15792,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1期生",
-        "#歌"
-      ],
+      "tags": ["#ID", "#ID1期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -17959,10 +15810,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멘은 덱에 몇 장이라도 넣을 수 있다",
@@ -17978,10 +15826,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -18007,10 +15852,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Promise"
-      ],
+      "tags": ["#EN", "#Promise"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "syow",
@@ -18154,13 +15996,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "LAL!ROLE",
@@ -18176,13 +16012,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다.",
@@ -18197,13 +16027,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1기생",
-        "#게이머즈",
-        "#케모미미",
-        "#그림"
-      ],
+      "tags": ["#JP", "#1기생", "#게이머즈", "#케모미미", "#그림"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "yadapot",
@@ -18222,11 +16046,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#술"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다.",
@@ -18241,12 +16061,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#새",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID2기생", "#새", "#그림"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다.",
@@ -18261,12 +16076,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미",
-        "#요리"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미", "#요리"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다.",
@@ -18282,12 +16092,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "あかさあい",
@@ -18303,12 +16108,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18323,13 +16123,7 @@
       "cardType": "호로멤",
       "color": "빨강",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#3기생",
-        "#그림",
-        "#바다",
-        "#술"
-      ],
+      "tags": ["#JP", "#3기생", "#그림", "#바다", "#술"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "しゅがお",
@@ -18348,11 +16142,7 @@
       "cardType": "호로멤",
       "color": "파랑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX",
-        "#바다"
-      ],
+      "tags": ["#JP", "#비밀결사holoX", "#바다"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18367,10 +16157,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18385,10 +16172,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "しゅがお",
@@ -18407,10 +16191,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#2기생"
-      ],
+      "tags": ["#JP", "#2기생"],
       "rarity": "P",
       "set": "PR카드",
       "illustrator": "チェリ子",
@@ -18430,11 +16211,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID2기생",
-        "#언어"
-      ],
+      "tags": ["#ID", "#ID2기생", "#언어"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18449,11 +16226,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#노래"
-      ],
+      "tags": ["#EN", "#Myth", "#노래"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18469,12 +16242,7 @@
       "cardType": "호로멤",
       "color": "보라",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#그림",
-        "#바다"
-      ],
+      "tags": ["#EN", "#Myth", "#그림", "#바다"],
       "rarity": "P",
       "set": "PR카드",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있습니다.",
@@ -18527,11 +16295,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -18547,11 +16311,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#4期生", "#ベイビー"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "惑星Y",
@@ -18571,11 +16331,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#ベイビー"
-      ],
+      "tags": ["#JP", "#0期生", "#ベイビー"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "ともず",
@@ -18594,11 +16350,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#1期生",
-        "#料理"
-      ],
+      "tags": ["#JP", "#1期生", "#料理"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -18613,12 +16365,7 @@
       "cardType": "ホロメン",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#歌",
-        "#シューター"
-      ],
+      "tags": ["#JP", "#4期生", "#歌", "#シューター"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -18633,12 +16380,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#ケモミミ",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#ケモミミ", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -18653,11 +16395,7 @@
       "cardType": "ホロメン",
       "color": "黄",
       "bloomLevel": "Debut",
-      "tags": [
-        "#DEV_IS",
-        "#ReGLOSS",
-        "#歌"
-      ],
+      "tags": ["#DEV_IS", "#ReGLOSS", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이라도 넣을 수 있다",
@@ -18847,11 +16585,7 @@
       "cardType": "ホロメン",
       "color": "◇",
       "bloomLevel": "Spot",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "信澤 収/もちぷよ",
@@ -18887,11 +16621,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "しゅがお",
@@ -18924,11 +16654,7 @@
       "cardType": "Buzzホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "I☆LA",
@@ -18962,11 +16688,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "Debut",
-      "tags": [
-        "#EN",
-        "#Promise",
-        "#歌"
-      ],
+      "tags": ["#EN", "#Promise", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -18992,11 +16714,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "三九呂",
@@ -19035,11 +16753,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "I☆LA",
@@ -19067,11 +16781,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "Debut",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#그림"
-      ],
+      "tags": ["#ID", "#ID1기생", "#그림"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -19089,11 +16799,7 @@
       "cardType": "ホロメン",
       "color": "白緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "はたほまめ",
@@ -19200,11 +16906,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 홀로멤은 덱에 몇 장이든 넣을 수 있다.",
@@ -19219,11 +16921,7 @@
       "cardType": "ホロメン",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#슈터"
-      ],
+      "tags": ["#JP", "#2기생", "#슈터"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -19257,11 +16955,7 @@
       "cardType": "ホロメン",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "石原竜也 小奈きなこ",
@@ -19277,11 +16971,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -19296,11 +16986,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "P",
       "set": "PRカード",
       "illustrator": "はねこと",
@@ -19319,11 +17005,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#게이머즈",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#게이머즈", "#케모미미"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -19341,11 +17023,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "Debut",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "P",
       "set": "PRカード",
       "extra": "이 호로멤은 덱에 몇 장이든 넣을 수 있다",
@@ -19360,11 +17038,7 @@
       "cardType": "호로멤",
       "color": "紫",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#2기생",
-        "#요리"
-      ],
+      "tags": ["#JP", "#2기생", "#요리"],
       "rarity": "P",
       "set": "PRカード",
       "arts": [
@@ -19827,11 +17501,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#4期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#4期生", "#歌"],
       "rarity": "UR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "うなぽっぽ",
@@ -19871,11 +17541,7 @@
       "cardType": "ホロメン",
       "color": "白",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "UR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "タスキブ",
@@ -19915,10 +17581,7 @@
       "cardType": "Buzzホロメン",
       "color": "白",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID3期生"
-      ],
+      "tags": ["#ID", "#ID3期生"],
       "rarity": "UR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "いかけ",
@@ -19977,11 +17640,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#3期生",
-        "#ケモミミ"
-      ],
+      "tags": ["#JP", "#3期生", "#ケモミミ"],
       "rarity": "UR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "須王 彩",
@@ -20001,11 +17660,7 @@
       "cardType": "ホロメン",
       "color": "緑",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0期生",
-        "#歌"
-      ],
+      "tags": ["#JP", "#0期生", "#歌"],
       "rarity": "UR",
       "set": "ブースターパック「ブルーミングレディアンス」",
       "illustrator": "Hachi",
@@ -20038,10 +17693,7 @@
       "cardType": "Buzz호로멤",
       "color": "緑",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#비밀결사holoX"
-      ],
+      "tags": ["#JP", "#비밀결사holoX"],
       "rarity": "UR",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "さまてる",
@@ -20061,11 +17713,7 @@
       "cardType": "호로멤",
       "color": "赤",
       "bloomLevel": "2nd",
-      "tags": [
-        "#EN",
-        "#Myth",
-        "#トリ"
-      ],
+      "tags": ["#EN", "#Myth", "#トリ"],
       "rarity": "UR",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "タスキブ",
@@ -20092,11 +17740,7 @@
       "cardType": "Buzz호로멤",
       "color": "赤",
       "bloomLevel": "1st",
-      "tags": [
-        "#JP",
-        "#5기생",
-        "#케모미미"
-      ],
+      "tags": ["#JP", "#5기생", "#케모미미"],
       "rarity": "UR",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "南野あき",
@@ -20117,11 +17761,7 @@
       "cardType": "호로멤",
       "color": "青",
       "bloomLevel": "2nd",
-      "tags": [
-        "#JP",
-        "#0기생",
-        "#노래"
-      ],
+      "tags": ["#JP", "#0기생", "#노래"],
       "rarity": "UR",
       "set": "부스터팩「블루밍 레디언스」",
       "arts": [
@@ -20172,11 +17812,7 @@
       "cardType": "Buzz호로멤",
       "color": "青",
       "bloomLevel": "1st",
-      "tags": [
-        "#ID",
-        "#ID1기생",
-        "#노래"
-      ],
+      "tags": ["#ID", "#ID1기생", "#노래"],
       "rarity": "UR",
       "set": "부스터팩「블루밍 레디언스」",
       "illustrator": "高崎律",
