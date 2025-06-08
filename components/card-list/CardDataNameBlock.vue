@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Copy } from "lucide-vue-next";
+
 const props = defineProps<{
   id: string;
   name: string;
@@ -32,7 +34,8 @@ const {
     class="p-2 justify-between flex items-center gap-2 rounded-lg border bg-accent/50"
   >
     <div class="relative">
-      <button class="font-semibold" @click="copyName()">
+      <button class="flex items-center gap-1 font-semibold" @click="copyName()">
+        <Copy class="size-3" />
         {{ name }}
       </button>
       <Transition name="copied">
@@ -52,6 +55,7 @@ const {
           class="text-1 cursor-pointer"
           @click="copyId()"
         >
+          <Copy />
           {{ id }}
         </Badge>
         <Transition name="copied">
@@ -70,6 +74,7 @@ const {
           class="text-1 cursor-pointer"
           @click="copyNumber()"
         >
+          <Copy />
           {{ number }}
         </Badge>
         <Transition name="copied">

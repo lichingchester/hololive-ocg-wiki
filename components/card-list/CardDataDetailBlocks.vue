@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Card } from "@/types/card";
-import { ExternalLink } from "lucide-vue-next";
 
 defineProps<{
   item: Card;
@@ -280,18 +279,4 @@ const getCostTypesString = (costTypes: string[]): string => {
       </div>
     </div>
   </template>
-
-  <!-- links -->
-  <div class="flex justify-end">
-    <Button variant="link" class="px-0 text-xs" as-child>
-      <a
-        :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-1"
-      >
-        <ExternalLink /> {{ $t("Official Site") }}
-      </a>
-    </Button>
-  </div>
 </template>

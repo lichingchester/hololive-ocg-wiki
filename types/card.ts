@@ -67,6 +67,13 @@ export type SpOshiSkill = {
   timingCode?: TimingCodeType;
 };
 
+export type QaItem = {
+  title: string;
+  question: string;
+  answer: string;
+  related_cards: string;
+};
+
 export type Translations = {
   [L in Locales]?: Translation;
 };
@@ -80,6 +87,7 @@ export type Translation = {
   rarity?: string;
   set?: string;
   tags?: string[];
+  qa_items?: QaItem[];
 };
 
 export type Card = {

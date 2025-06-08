@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { VisuallyHidden } from "reka-ui";
+import { ExternalLink } from "lucide-vue-next";
 import type { Card } from "@/types/card";
 import { Badge } from "@/components/ui/badge";
-import { VisuallyHidden } from "reka-ui";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -35,9 +36,11 @@ const getCostTypesString = (costTypes: string[]): string => {
     <ScrollArea class="py-0 px-4">
       <div class="flex flex-col md:flex-row gap-2 md:gap-4">
         <Image
-          class="flex-[0_0_400px]"
+          class="flex-[0_0_300px] lg:flex-[0_0_400px]"
           :src="`/${item.imagePath}`"
-          :img-attributes="{ class: 'mx-auto w-full max-w-[400px]' }"
+          :img-attributes="{
+            class: 'mx-auto w-full max-w-[400px]',
+          }"
         />
 
         <div class="flex flex-col grow gap-2 md:gap-4">
@@ -50,6 +53,22 @@ const getCostTypesString = (costTypes: string[]): string => {
           <CardDataRowsBlock :item="item" />
 
           <CardDataDetailBlocks :item="item" />
+
+          <CardDataQnaBlocks :item="item" />
+
+          <!-- links -->
+          <div class="flex justify-end">
+            <Button variant="link" class="px-0 text-xs" as-child>
+              <a
+                :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1"
+              >
+                <ExternalLink /> {{ $t("Official Site") }}
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </ScrollArea>

@@ -4,12 +4,12 @@ import type { Deck } from "~/types/deck";
 import { Database } from "lucide-vue-next";
 
 const { t } = useI18n();
-
 const route = useRoute();
-
 const decks = useDecks();
-
 const deck = ref<Deck | null>(null);
+
+// seo
+const title = ref("Deck Detail Page");
 
 onMounted(() => {
   if (!route.params.code) {
@@ -24,11 +24,23 @@ onMounted(() => {
 
   if (checked) {
     deck.value = checked;
+
+    if (checked.name) {
+      if (checked.author) {
+        title.value = checked.name + " by " + checked.author;
+      } else {
+        title.value = checked.name;
+      }
+    }
   } else {
     toast.error(t(`Failed to import shared deck.`), {
       duration: Infinity,
     });
   }
+});
+
+useSeoMeta({
+  title,
 });
 </script>
 

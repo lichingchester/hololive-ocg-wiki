@@ -6,23 +6,25 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
+  site: {
+    url: "https://hololive-ocg-wiki.lichingchester.dev",
+  },
+
+  seo: {
+    fallbackTitle: false,
+  },
+
   app: {
     head: {
-      title: "Hololive OCG Wiki",
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { charset: "utf-8" },
-        {
-          name: "description",
-          content:
-            "A fan-made wiki for Hololive OCG, featuring card information, deck building, and more.",
-        },
       ],
       link: [
         {
           rel: "icon",
           type: "image/x-icon",
-          href: "favicon.ico",
+          href: "/favicon.ico",
         },
       ],
     },
@@ -51,7 +53,12 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "nuxt-gtag",
+    "@nuxtjs/seo",
   ],
+
+  ogImage: {
+    enabled: false,
+  },
 
   gtag: {
     id: "GTM-MZHVHBGQ",
@@ -63,6 +70,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: "https://hololive-ocg-wiki.lichingchester.dev",
     locales: [
       { code: "tc", name: "繁體中文", file: "tc.json" },
       { code: "ja", name: "日本語", file: "ja.json" },

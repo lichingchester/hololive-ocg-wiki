@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Languages } from "lucide-vue-next";
+
 const { locales } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 </script>
@@ -7,7 +9,7 @@ const switchLocalePath = useSwitchLocalePath();
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
       <Button variant="ghost" size="icon">
-        <IconGlobe />
+        <Languages />
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>

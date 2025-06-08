@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Copyright } from "lucide-vue-next";
+import { Info } from "lucide-vue-next";
 import { APP_VERSION } from "~/constants/app";
 </script>
 
@@ -7,7 +7,7 @@ import { APP_VERSION } from "~/constants/app";
   <Dialog>
     <DialogTrigger as-child>
       <Button variant="ghost" size="icon">
-        <Copyright />
+        <Info />
       </Button>
     </DialogTrigger>
     <DialogContent>

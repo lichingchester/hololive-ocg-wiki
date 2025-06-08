@@ -12,6 +12,7 @@ const colors = computed(() => filter.filter.value.colors);
 const cardTypes = computed(() => filter.filter.value.cardTypes);
 const rarities = computed(() => filter.filter.value.rarity);
 const bloomLevel = computed(() => filter.filter.value.bloomLevel);
+const isFiltered = computed(() => filter.isFiltered);
 
 // Toggle states for dropdowns
 const isNameOpen = ref(false);
@@ -43,7 +44,15 @@ const tagFilterOptions = computed(() => {
 <template>
   <Sheet>
     <SheetTrigger as-child>
-      <Button size="icon"> <Funnel /> </Button>
+      <Button size="icon" class="relative">
+        <!-- filtered dot -->
+        <div
+          v-if="isFiltered()"
+          class="absolute left-0 top-0 -translate-2/4 size-2.5 bg-red-500 rounded-full"
+        ></div>
+
+        <Funnel />
+      </Button>
     </SheetTrigger>
     <SheetContent side="top" hide-top-right-close>
       <div class="flex grow">
@@ -66,7 +75,7 @@ const tagFilterOptions = computed(() => {
                     <Button
                       variant="outline"
                       size="sm"
-                      class="w-[150px] justify-start"
+                      class="w-max justify-start"
                     >
                       <template v-if="name">
                         {{ name }}
@@ -130,7 +139,7 @@ const tagFilterOptions = computed(() => {
                     <Button
                       variant="outline"
                       size="sm"
-                      class="w-[150px] justify-start"
+                      class="w-max justify-start"
                     >
                       <template v-if="tag">
                         {{ tag }}

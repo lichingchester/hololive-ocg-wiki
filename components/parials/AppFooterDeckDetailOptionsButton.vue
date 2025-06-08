@@ -25,10 +25,12 @@ const importDeck = () => {
   }
 };
 
-const source = ref(window.location.href);
+const source = ref(import.meta.client ? window.location.href : "");
 const { text, copy, copied, isSupported } = useClipboard({ source });
 
 const shareDeck = () => {
+  if (!import.meta.client) return;
+
   copy();
   if (!isSupported.value) {
     toast.error(t("Clipboard is not supported in this browser."));
