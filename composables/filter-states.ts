@@ -141,6 +141,41 @@ export const useFilter = () => {
     });
   };
 
+  const isFiltered = () => {
+    const filter = filterState.value;
+
+    // Check if search fields have values
+    if (
+      filter.search.trim() !== "" ||
+      filter.name.trim() !== "" ||
+      filter.tag.trim() !== ""
+    ) {
+      return true;
+    }
+
+    // Check if any color filters are active
+    if (Object.values(filter.colors).some((value) => value === true)) {
+      return true;
+    }
+
+    // Check if any card type filters are active
+    if (Object.values(filter.cardTypes).some((value) => value === true)) {
+      return true;
+    }
+
+    // Check if any rarity filters are active
+    if (Object.values(filter.rarity).some((value) => value === true)) {
+      return true;
+    }
+
+    // Check if any bloom level filters are active
+    if (Object.values(filter.bloomLevel).some((value) => value === true)) {
+      return true;
+    }
+
+    return false;
+  };
+
   return {
     filter: filterState,
     reset,
@@ -150,5 +185,6 @@ export const useFilter = () => {
     resetCardTypes,
     resetRarity,
     resetBloomLevel,
+    isFiltered,
   };
 };
