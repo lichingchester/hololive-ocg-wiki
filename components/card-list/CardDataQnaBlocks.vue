@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { MessagesSquare } from "lucide-vue-next";
+import { MessagesSquare, Copy } from "lucide-vue-next";
 import type { Card } from "@/types/card";
+import { UseClipboard } from "@vueuse/components";
 
 const { locale } = useI18n();
 
@@ -19,7 +20,7 @@ defineProps<{
           </div>
         </AccordionTrigger>
         <AccordionContent
-          class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4"
+          class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4 overflow-visible"
         >
           <template
             v-for="(qaItem, index) in item.translations[locale]?.qa_items"
@@ -50,14 +51,51 @@ defineProps<{
                       '\n'
                     )"
                   >
-                    <Badge :index="cardIndex" variant="outline">
-                      {{ card }}
-                    </Badge>
+                    <UseClipboard v-slot="{ copy, copied }" source="copy">
+                      <div class="relative">
+                        <Badge
+                          :index="cardIndex"
+                          variant="outline"
+                          class="cursor-pointer"
+                          @click="copy()"
+                        >
+                          <Copy />
+                          {{ card }}
+                        </Badge>
+                        <Transition name="copied">
+                          <span
+                            v-if="copied"
+                            class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
+                          >
+                            {{ $t("Copied") }}
+                          </span>
+                        </Transition>
+                      </div>
+                    </UseClipboard>
                   </template>
                 </template>
 
                 <template v-else>
-                  <Badge variant="outline"> {{ qaItem.related_cards }} </Badge>
+                  <UseClipboard v-slot="{ copy, copied }" source="copy">
+                    <div class="relative">
+                      <Badge
+                        variant="outline"
+                        class="cursor-pointer"
+                        @click="copy()"
+                      >
+                        <Copy />
+                        {{ qaItem.related_cards }}
+                      </Badge>
+                      <Transition name="copied">
+                        <span
+                          v-if="copied"
+                          class="absolute bottom-full md:bottom-auto md:top-[calc(100%+0.5rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
+                        >
+                          {{ $t("Copied") }}
+                        </span>
+                      </Transition>
+                    </div>
+                  </UseClipboard>
                 </template>
               </div>
             </div>

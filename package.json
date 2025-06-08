@@ -25,7 +25,7 @@
     "@tanstack/vue-table": "^8.21.3",
     "@tanstack/vue-virtual": "^3.13.9",
     "@unhead/vue": "^2.0.9",
-    "@vueuse/components": "^13.2.0",
+    "@vueuse/components": "^13.3.0",
     "@vueuse/core": "^13.3.0",
     "@vueuse/nuxt": "^13.2.0",
     "class-variance-authority": "^0.7.1",
