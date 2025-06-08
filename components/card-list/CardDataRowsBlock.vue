@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Card } from "@/types/card";
 
+const { locale } = useI18n();
+
 defineProps<{
   item: Card;
 }>();
@@ -14,7 +16,8 @@ defineProps<{
         v-if="item.cardTypeCode"
         :name="$t('fields.cardType')"
       >
-        {{ $t(`cards.${item.id}.cardType`) }}
+        {{ $t(`cardTypes.${item.cardTypeCode}`) }}
+        <!-- {{ $t(`cards.${item.id}.cardType`) }} -->
       </CardDataRowsBlockItem>
 
       <!-- tags -->
@@ -52,7 +55,8 @@ defineProps<{
             :img-attributes="{ class: 'w-5' }"
           />
 
-          {{ $t(`cards.${item.id}.color`) }}
+          {{ $t(`colors.${item.colorCode}`) }}
+          <!-- {{ $t(`cards.${item.id}.color`) }} -->
         </div>
       </CardDataRowsBlockItem>
 
