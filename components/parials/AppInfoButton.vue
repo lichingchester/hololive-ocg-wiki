@@ -19,13 +19,19 @@ import { APP_VERSION } from "~/constants/app";
           </Badge>
         </DialogTitle>
         <DialogDescription>
-          <div>wip...</div>
-          <br />
-          <div>
-            Just got suspended without reason, really upsetting, looking for a
-            new platform for this open-source project, keep you all updated
-            here.
-          </div>
+          <p class="leading-5 [&:not(:first-child)]:mt-4">
+            I was suspended by GitHub without reason, which was really
+            upsetting. <br />
+            I've now moved the project to GitLab and will continue development
+            there.
+          </p>
+          <p class="leading-5 [&:not(:first-child)]:mt-4">
+            This is an open-source project—pull requests are welcome!
+          </p>
+          <p class="leading-5 [&:not(:first-child)]:mt-4">
+            A new Discord community group is being prepared. I'll keep you all
+            updated once it's ready.
+          </p>
         </DialogDescription>
       </DialogHeader>
     </DialogContent>
