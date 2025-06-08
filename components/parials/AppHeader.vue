@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { X } from "lucide-vue-next";
+// import { X } from "lucide-vue-next";
 </script>
 
 <template>
@@ -14,13 +14,13 @@ import { X } from "lucide-vue-next";
         <Button variant="ghost" size="icon" as-child>
           <a
             class="relative"
-            href="https://github.com/lichingchester/hololive-ocg-wiki"
+            href="https://gitlab.com/lichingchester/hololive-ocg-wiki"
             target="_blank"
           >
-            <X
+            <!-- <X
               class="absolute left-2/4 top-2/4 -translate-2/4 text-red-500 size-10"
-            />
-            <IconGithub class="w-5 h-5" />
+            /> -->
+            <IconGitlab class="w-5 h-5" />
           </a>
         </Button>
       </div>
