@@ -8,16 +8,30 @@
       <div class="flex ml-auto">
         <AppLanguageSwitcher />
         <AppColorModeSwitcher />
-        <AppInfoButton />
-        <Button variant="ghost" size="icon" as-child>
+        <Button
+          variant="ghost"
+          size="icon"
+          as-child
+          class="hidden sm:inline-flex"
+        >
           <a
-            class="relative"
             href="https://gitlab.com/lichingchester/hololive-ocg-wiki"
             target="_blank"
           >
             <IconGitlab class="w-5 h-5" />
           </a>
         </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          as-child
+          class="hidden sm:inline-flex"
+        >
+          <a href="https://discord.gg/USMgkeYujz" target="_blank">
+            <IconDiscord />
+          </a>
+        </Button>
+        <AppInfoButton />
       </div>
     </div>
   </header>
