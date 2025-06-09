@@ -20,7 +20,7 @@ defineProps<{
           </div>
         </AccordionTrigger>
         <AccordionContent
-          class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4 overflow-visible"
+          class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4"
         >
           <template
             v-for="(qaItem, index) in item.translations[locale]?.qa_items"
@@ -44,7 +44,7 @@ defineProps<{
                 </div>
               </div>
 
-              <div class="flex gap-2">
+              <div class="flex flex-wrap gap-2">
                 <template v-if="qaItem.related_cards.includes('\n')">
                   <template
                     v-for="(card, cardIndex) in qaItem.related_cards.split(
