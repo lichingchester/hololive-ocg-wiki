@@ -25,6 +25,10 @@ export const useCardStore = () => {
     Map<string, { value: string; label: string }[]>
   >("tagOptionsCache", () => new Map());
 
+  const setOptionsCache = useState<
+    Map<string, { value: string; label: string }[]>
+  >("setOptionsCache", () => new Map());
+
   // Load cards only once
   const loadCards = async () => {
     if (allCards.value.length === 0) {
@@ -59,8 +63,9 @@ export const useCardStore = () => {
       if (!nameOptionsCache.value.has(locale)) {
         const nameSet = new Set<string>();
         const tagSet = new Set<string>();
+        const setSet = new Set<string>();
 
-        // Build sets of unique names and tags
+        // Build sets of unique names, tags and sets
         allCards.value.forEach((card) => {
           const translation = card.translations[locale];
           if (translation?.name) {
@@ -74,6 +79,10 @@ export const useCardStore = () => {
               }
             });
           }
+
+          if (translation?.set) {
+            setSet.add(translation.set);
+          }
         });
 
         // Convert to sorted option arrays
@@ -85,9 +94,14 @@ export const useCardStore = () => {
           .sort()
           .map((tag) => ({ value: tag, label: tag }));
 
+        const setOptions = Array.from(setSet)
+          .sort()
+          .map((set) => ({ value: set, label: set }));
+
         // Cache the results
         nameOptionsCache.value.set(locale, nameOptions);
         tagOptionsCache.value.set(locale, tagOptions);
+        setOptionsCache.value.set(locale, setOptions);
       }
     });
   };
@@ -160,6 +174,18 @@ export const useCardStore = () => {
           translation?.tags?.some((tag) =>
             tag.toLowerCase().includes(filterOptions.tag.toLowerCase())
           ) || false
+        );
+      });
+    }
+
+    // filter by set
+    if (filterOptions.set) {
+      result = result.filter((card) => {
+        const translation = card.translations[locale];
+        return (
+          translation?.set
+            ?.toLowerCase()
+            ?.includes(filterOptions.set.toLowerCase()) || false
         );
       });
     }
@@ -253,6 +279,23 @@ export const useCardStore = () => {
     return [];
   };
 
+  // Get cached set options for a given locale
+  const getSetOptions = (locale: Locales) => {
+    // Try to get from cache first
+    if (setOptionsCache.value.has(locale)) {
+      return setOptionsCache.value.get(locale) || [];
+    }
+
+    // If not in cache and we have cards, compute it now
+    if (allCards.value.length > 0) {
+      precomputeFilterOptions();
+      return setOptionsCache.value.get(locale) || [];
+    }
+
+    // Otherwise return empty array
+    return [];
+  };
+
   return {
     allCards,
     filteredCards,
@@ -263,6 +306,7 @@ export const useCardStore = () => {
     clearCache,
     getNameOptions,
     getTagOptions,
+    getSetOptions,
     precomputeFilterOptions,
   };
 };

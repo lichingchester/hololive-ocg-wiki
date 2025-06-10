@@ -46,6 +46,8 @@
   "Deck updated successfully": "牌組已成功更新",
   "Deck imported successfully": "牌組已成功匯入",
   "Failed to import deck from code": "從代碼匯入牌組失敗",
+  "Compact Mode": "精簡模式",
+
   "fields": {
     "name": "名稱",
     "cardType": "卡片類型",
@@ -92,6 +94,7 @@
     "supportEvent": "支援・活動",
     "supportEventLimited": "支援・活動・LIMITED",
     "supportFan": "支援・粉絲",
+    "supportTool": "支援・工具",
     "supportItem": "支援・道具",
     "supportItemLimited": "支援・道具・LIMITED",
     "supportMascot": "支援・吉祥物",

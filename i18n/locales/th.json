@@ -46,6 +46,8 @@
   "Deck updated successfully": "อัปเดตเด็คสำเร็จแล้ว",
   "Deck imported successfully": "นำเข้าเด็คสำเร็จแล้ว",
   "Failed to import deck from code": "นำเข้าเด็คจากรหัสล้มเหลว",
+  "Compact Mode": "โหมดกะทัดรัด",
+
   "fields": {
     "name": "ชื่อ",
     "cardType": "ประเภทการ์ด",
@@ -92,6 +94,7 @@
     "supportEvent": "ซัพพอร์ต อีเวนต์",
     "supportEventLimited": "ซัพพอร์ต อีเวนต์ LIMITED",
     "supportFan": "ซัพพอร์ต แฟน",
+    "supportTool": "ซัพพอร์ต เครื่องมือ",
     "supportItem": "ซัพพอร์ต ไอเทม",
     "supportItemLimited": "ซัพพอร์ต ไอเทม LIMITED",
     "supportMascot": "ซัพพอร์ต มาสคอต",

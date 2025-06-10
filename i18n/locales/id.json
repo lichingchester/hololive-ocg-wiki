@@ -46,6 +46,8 @@
   "Deck updated successfully": "Deck berhasil diperbarui",
   "Deck imported successfully": "Deck berhasil diimpor",
   "Failed to import deck from code": "Gagal mengimpor deck dari kode",
+  "Compact Mode": "Mode Kompak",
+
   "fields": {
     "name": "Nama",
     "cardType": "Tipe Kartu",
@@ -89,13 +91,14 @@
     "character": "Holomem",
     "oshiCharacter": "Oshi Holomem",
     "supportCheer": "Yell",
-    "supportEvent": "Support Event",
-    "supportEventLimited": "Support Event LIMITED",
-    "supportFan": "Support Fan",
-    "supportItem": "Support Item",
-    "supportItemLimited": "Support Item LIMITED",
-    "supportMascot": "Support Maskot",
-    "supportStaffLimited": "Support Staff LIMITED"
+    "supportEvent": "Event Dukungan",
+    "supportEventLimited": "Event Dukungan TERBATAS",
+    "supportFan": "Penggemar Dukungan",
+    "supportTool": "Dukungan・Alat",
+    "supportItem": "Item Dukungan",
+    "supportItemLimited": "Item Dukungan TERBATAS",
+    "supportMascot": "Maskot Dukungan",
+    "supportStaffLimited": "Staf Dukungan TERBATAS"
   },
   "rarity": {
     "C": "C",
