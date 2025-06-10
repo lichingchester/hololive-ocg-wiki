@@ -477,13 +477,14 @@ export const useDecks = () => {
 
     // Define card type priority order (highest to lowest)
     const cardTypePriority: Record<string, number> = {
-      oshiCharacter: 11, // Should be highest priority based on requested sort order
-      buzzCharacter: 10,
-      character: 9,
-      supportCheer: 8,
-      supportEvent: 7,
-      supportEventLimited: 6,
-      supportFan: 5,
+      oshiCharacter: 12, // Should be highest priority based on requested sort order
+      buzzCharacter: 11,
+      character: 10,
+      supportCheer: 9,
+      supportEvent: 8,
+      supportEventLimited: 7,
+      supportFan: 6,
+      supportTool: 5,
       supportItem: 4,
       supportItemLimited: 3,
       supportMascot: 2,

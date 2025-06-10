@@ -7,6 +7,7 @@ export const useFilter = () => {
       search: "",
       name: "",
       tag: "",
+      set: "",
       colors: {
         white: false,
         green: false,
@@ -26,6 +27,7 @@ export const useFilter = () => {
         supportEvent: false,
         supportEventLimited: false,
         supportFan: false,
+        supportTool: false,
         supportItem: false,
         supportItemLimited: false,
         supportMascot: false,
@@ -60,6 +62,7 @@ export const useFilter = () => {
       search: "",
       name: "",
       tag: "",
+      set: "",
       colors: {
         white: false,
         green: false,
@@ -79,6 +82,7 @@ export const useFilter = () => {
         supportEvent: false,
         supportEventLimited: false,
         supportFan: false,
+        supportTool: false,
         supportItem: false,
         supportItemLimited: false,
         supportMascot: false,

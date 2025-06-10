@@ -2,6 +2,7 @@ export type FilterOptions = {
   search: string;
   name: string;
   tag: string;
+  set: string;
   colors: {
     white: Boolean;
     green: Boolean;
@@ -21,6 +22,7 @@ export type FilterOptions = {
     supportEvent: Boolean;
     supportEventLimited: Boolean;
     supportFan: Boolean;
+    supportTool: Boolean;
     supportItem: Boolean;
     supportItemLimited: Boolean;
     supportMascot: Boolean;

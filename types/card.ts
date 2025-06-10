@@ -8,6 +8,7 @@ export type CardTypeCodeType =
   | "supportEvent"
   | "supportEventLimited"
   | "supportFan"
+  | "supportTool"
   | "supportItem"
   | "supportItemLimited"
   | "supportMascot"

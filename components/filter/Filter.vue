@@ -8,6 +8,7 @@ const cardStore = useCardStore();
 const filter = useFilter();
 const name = computed(() => filter.filter.value.name);
 const tag = computed(() => filter.filter.value.tag);
+const set = computed(() => filter.filter.value.set);
 const colors = computed(() => filter.filter.value.colors);
 const cardTypes = computed(() => filter.filter.value.cardTypes);
 const rarities = computed(() => filter.filter.value.rarity);
@@ -17,6 +18,7 @@ const isFiltered = computed(() => filter.isFiltered);
 // Toggle states for dropdowns
 const isNameOpen = ref(false);
 const isTagOpen = ref(false);
+const isSetOpen = ref(false);
 
 // Get options from cache instead of computing them in the component
 const nameFilterOptions = computed(() => {
@@ -38,6 +40,17 @@ const tagFilterOptions = computed(() => {
 
   // Get from cardStore's cached options
   return cardStore.getTagOptions(locale.value);
+});
+
+// Get set options from cache
+const setFilterOptions = computed(() => {
+  // Only load options when dropdown is open (lazily)
+  if (!isSetOpen.value) {
+    return [];
+  }
+
+  // Get from cardStore's cached options
+  return cardStore.getSetOptions(locale.value);
 });
 </script>
 
@@ -96,7 +109,7 @@ const tagFilterOptions = computed(() => {
                       <div
                         class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
                       />
-                      {{ $t("Loading...") }}
+                      Loading...
                     </div>
                     <Command v-else v-model="filter.filter.value.name">
                       <CommandInput placeholder="Change name..." />
@@ -160,7 +173,7 @@ const tagFilterOptions = computed(() => {
                       <div
                         class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
                       />
-                      {{ $t("Loading...") }}
+                      Loading...
                     </div>
                     <Command v-else v-model="filter.filter.value.tag">
                       <CommandInput placeholder="Change tag..." />
@@ -180,6 +193,70 @@ const tagFilterOptions = computed(() => {
                             "
                           >
                             {{ tagOption.label }}
+                          </CommandItem>
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              <!-- set -->
+              <div class="">
+                <div class="flex items-center gap-2 font-semibold mb-2">
+                  {{ $t("fields.set") }}
+
+                  <button @click="filter.resetSet">
+                    <RotateCcw class="size-4" />
+                  </button>
+                </div>
+
+                <Popover v-model:open="isSetOpen">
+                  <PopoverTrigger as-child>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      class="w-max justify-start"
+                    >
+                      <template v-if="set">
+                        {{ set }}
+                      </template>
+                      <template v-else> + {{ $t("fields.set") }} </template>
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    class="p-0"
+                    side="bottom"
+                    align="start"
+                    avoid-collisions
+                  >
+                    <div
+                      v-if="setFilterOptions.length === 0"
+                      class="p-2 text-center text-sm text-muted-foreground"
+                    >
+                      <div
+                        class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
+                      />
+                      Loading...
+                    </div>
+                    <Command v-else v-model="filter.filter.value.set">
+                      <CommandInput placeholder="Change set..." />
+                      <CommandList>
+                        <CommandEmpty>
+                          {{ $t("No results found.") }}
+                        </CommandEmpty>
+                        <CommandGroup>
+                          <CommandItem
+                            v-for="setOption in setFilterOptions"
+                            :key="setOption.value"
+                            :value="setOption.value"
+                            @select="
+                              () => {
+                                isSetOpen = false;
+                              }
+                            "
+                          >
+                            {{ setOption.label }}
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
