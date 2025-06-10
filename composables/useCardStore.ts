@@ -68,6 +68,8 @@ export const useCardStore = () => {
         // Build sets of unique names, tags and sets
         allCards.value.forEach((card) => {
           const translation = card.translations[locale];
+          const jaTranslation = card.translations["ja"];
+
           if (translation?.name) {
             nameSet.add(translation.name);
           }
@@ -80,8 +82,8 @@ export const useCardStore = () => {
             });
           }
 
-          if (translation?.set) {
-            setSet.add(translation.set);
+          if (jaTranslation?.set) {
+            setSet.add(jaTranslation.set);
           }
         });
 
@@ -139,6 +141,7 @@ export const useCardStore = () => {
           `translations.${locale}.name`,
           `translations.${locale}.cardType`,
           `translations.${locale}.color`,
+          `translations.ja.set`,
           `translations.${locale}.set`,
           `translations.${locale}.illustrator`,
           `translations.${locale}.oshiSkill.name`,
@@ -181,7 +184,7 @@ export const useCardStore = () => {
     // filter by set
     if (filterOptions.set) {
       result = result.filter((card) => {
-        const translation = card.translations[locale];
+        const translation = card.translations["ja"];
         return (
           translation?.set
             ?.toLowerCase()
