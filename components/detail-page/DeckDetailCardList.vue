@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   cardIds: string[];
+  isCompactMode: Boolean;
 }>();
 
 // const cardStore = useCardStore();
@@ -43,7 +44,12 @@ const uniqueCards = computed(() => {
 
 <template>
   <div
-    class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1 md:gap-3"
+    class="grid"
+    :class="
+      isCompactMode
+        ? 'grid-cols-6 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 2xl:grid-cols-14 gap-1 md:gap-2'
+        : 'grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1 md:gap-3'
+    "
   >
     <template v-for="(item, index) in uniqueCards" :key="index">
       <div class="relative flex">
