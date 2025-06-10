@@ -46,6 +46,8 @@
   "Deck updated successfully": "牌組已成功更新",
   "Deck imported successfully": "牌組已成功匯入",
   "Failed to import deck from code": "從代碼匯入牌組失敗",
+  "Compact Mode": "精簡模式",
+
   "fields": {
     "name": "名稱",
     "cardType": "卡片類型",

@@ -46,6 +46,8 @@
   "Deck updated successfully": "Deck berhasil diperbarui",
   "Deck imported successfully": "Deck berhasil diimpor",
   "Failed to import deck from code": "Gagal mengimpor deck dari kode",
+  "Compact Mode": "Mode Kompak",
+
   "fields": {
     "name": "Nama",
     "cardType": "Tipe Kartu",

@@ -46,6 +46,8 @@
   "Deck updated successfully": "デッキが正常に更新されました",
   "Deck imported successfully": "デッキが正常にインポートされました",
   "Failed to import deck from code": "コードからデッキのインポートに失敗しました",
+  "Compact Mode": "コンパクトモード",
+
   "fields": {
     "name": "名前",
     "cardType": "カードタイプ",

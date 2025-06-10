@@ -46,6 +46,8 @@
   "Deck updated successfully": "Deck updated successfully",
   "Deck imported successfully": "Deck imported successfully",
   "Failed to import deck from code": "Failed to import deck from code",
+  "Compact Mode": "Compact Mode",
+
   "fields": {
     "name": "Name",
     "cardType": "Card Type",

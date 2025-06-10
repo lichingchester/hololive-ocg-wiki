@@ -46,6 +46,8 @@
   "Deck updated successfully": "덱이 성공적으로 업데이트되었습니다",
   "Deck imported successfully": "덱이 성공적으로 가져와졌습니다",
   "Failed to import deck from code": "코드에서 덱 가져오기에 실패했습니다",
+  "Compact Mode": "컴팩트 모드",
+
   "fields": {
     "name": "이름",
     "cardType": "카드 타입",

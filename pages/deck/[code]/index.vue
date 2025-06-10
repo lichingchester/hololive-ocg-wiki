@@ -55,10 +55,10 @@ useSeoMeta({
   </AppHeader>
 
   <div class="grow p-2 md:p-4">
-    <div v-if="deck" class="flex flex-col gap-3 md:gap-4">
+    <div v-if="deck" class="flex flex-col gap-2 md:gap-4">
       <div class="flex gap-2">
         <div
-          class="grow border rounded-md px-2 md:px-3 py-1 bg-gray-100/95 dark:bg-gray-800/95"
+          class="flex items-center grow border rounded-md px-2 md:px-3 py-1 bg-gray-100/95 dark:bg-gray-800/95"
         >
           <div class="flex items-center gap-2">
             <h1 class="text-md md:text-lg font-semibold">{{ deck.name }}</h1>
@@ -74,7 +74,7 @@ useSeoMeta({
         <div class="flex items-center">
           <Toggle size="lg" variant="outline" v-model="compactModeState">
             <Scaling />
-            Compact Mode
+            <span class="hidden md:inline"> Compact Mode </span>
           </Toggle>
         </div>
       </div>
