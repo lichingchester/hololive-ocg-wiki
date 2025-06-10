@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { toast } from "vue-sonner";
 import type { Deck } from "~/types/deck";
-import { Database } from "lucide-vue-next";
+import { Database, Scaling } from "lucide-vue-next";
 
 const { t } = useI18n();
 const route = useRoute();
 const decks = useDecks();
 const deck = ref<Deck | null>(null);
+
+const compactModeState = ref(false);
 
 // seo
 const title = ref("Deck Detail Page");
@@ -54,20 +56,38 @@ useSeoMeta({
 
   <div class="grow p-2 md:p-4">
     <div v-if="deck" class="flex flex-col gap-3 md:gap-4">
-      <div
-        class="border rounded-lg p-2 md:p-3 bg-gray-100/95 dark:bg-gray-800/95"
-      >
-        <div class="flex items-center gap-2">
-          <h1 class="text-md md:text-lg font-semibold">{{ deck.name }}</h1>
-          <span
-            v-if="deck.author"
-            class="text-sm text-gray-500 dark:text-gray-400"
-          >
-            by {{ deck.author }}
-          </span>
+      <div class="flex gap-2">
+        <div
+          class="grow border rounded-md px-2 md:px-3 py-1 bg-gray-100/95 dark:bg-gray-800/95"
+        >
+          <div class="flex items-center gap-2">
+            <h1 class="text-md md:text-lg font-semibold">{{ deck.name }}</h1>
+            <span
+              v-if="deck.author"
+              class="text-sm text-gray-500 dark:text-gray-400"
+            >
+              by {{ deck.author }}
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <Toggle size="lg" variant="outline" v-model="compactModeState">
+            <Scaling />
+            Compact Mode
+          </Toggle>
         </div>
       </div>
 
+      <!-- <template v-if="compactModeState">
+        <DeckDetailCompactModeCardList
+          :oshi-card-ids="deck.oshiCardIds"
+          :main-card-ids="deck.mainCardIds"
+          :yell-card-ids="deck.yellCardIds"
+        />
+      </template>
+
+      <template v-else> -->
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
         <div class="flex items-center gap-2">
           <div class="text-md md:text-lg font-semibold">
@@ -89,7 +109,10 @@ useSeoMeta({
           </Badge>
         </div>
 
-        <DeckDetailCardList :card-ids="deck.oshiCardIds" />
+        <DeckDetailCardList
+          :card-ids="deck.oshiCardIds"
+          :is-compact-mode="compactModeState"
+        />
       </div>
 
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
@@ -113,7 +136,10 @@ useSeoMeta({
           </Badge>
         </div>
 
-        <DeckDetailCardList :card-ids="deck.mainCardIds" />
+        <DeckDetailCardList
+          :card-ids="deck.mainCardIds"
+          :is-compact-mode="compactModeState"
+        />
       </div>
 
       <div class="border rounded-lg p-2 md:p-3 flex flex-col gap-3">
@@ -137,8 +163,12 @@ useSeoMeta({
           </Badge>
         </div>
 
-        <DeckDetailCardList :card-ids="deck.yellCardIds" />
+        <DeckDetailCardList
+          :card-ids="deck.yellCardIds"
+          :is-compact-mode="compactModeState"
+        />
       </div>
+      <!-- </template> -->
     </div>
   </div>
 
