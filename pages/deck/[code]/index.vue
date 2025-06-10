@@ -74,7 +74,7 @@ useSeoMeta({
         <div class="flex items-center">
           <Toggle size="lg" variant="outline" v-model="compactModeState">
             <Scaling />
-            <span class="hidden md:inline"> Compact Mode </span>
+            <span class="hidden md:inline"> {{ $t("Compact Mode") }} </span>
           </Toggle>
         </div>
       </div>
