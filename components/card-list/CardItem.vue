@@ -37,7 +37,6 @@ const count = computed(() => {
       <CardItemDialogContent :item="item" />
     </Dialog>
 
-    <!-- actions -->
     <div
       v-if="isEditing"
       class="absolute bottom-0 left-0 flex gap-1 p-1 w-full"
@@ -80,21 +79,10 @@ const count = computed(() => {
       </button>
     </div>
 
-    <!-- count -->
     <CardCountBadge
       v-if="isEditing && count > 0"
       :count="count || 0"
       :size="'normal'"
     />
-    <!-- <div
-      v-if="isEditing && count > 0"
-      class="absolute top-0 left-0 bg-primary/95 rounded-full size-4 md:size-6 flex items-center justify-center"
-    >
-      <div
-        class="flex items-center justify-center text-[8px] md:text-xs text-white dark:text-black leading-none font-semibold"
-      >
-        {{ count || 0 }}
-      </div>
-    </div> -->
   </div>
 </template>

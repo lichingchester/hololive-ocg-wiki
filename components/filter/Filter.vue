@@ -15,6 +15,9 @@ const rarities = computed(() => filter.filter.value.rarity);
 const bloomLevel = computed(() => filter.filter.value.bloomLevel);
 const isFiltered = computed(() => filter.isFiltered);
 
+// Add loading state
+const isLoading = computed(() => cardStore.isLoading.value);
+
 // Toggle states for dropdowns
 const isNameOpen = ref(false);
 const isTagOpen = ref(false);
@@ -68,6 +71,21 @@ const setFilterOptions = computed(() => {
       </Button>
     </SheetTrigger>
     <SheetContent side="top" hide-top-right-close>
+      <!-- Add loading overlay -->
+      <div
+        v-if="isLoading"
+        class="absolute inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center"
+      >
+        <div class="flex flex-col items-center gap-2">
+          <div
+            class="animate-spin h-8 w-8 border-4 border-primary rounded-full border-t-transparent"
+          ></div>
+          <span class="text-sm text-muted-foreground">{{
+            $t("Filtering...")
+          }}</span>
+        </div>
+      </div>
+
       <div class="flex grow">
         <ScrollArea>
           <div class="w-full max-h-[calc(100dvh-68px)]">

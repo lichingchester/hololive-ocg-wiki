@@ -59,8 +59,8 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
  * filter functions can be added here if needed
  */
 // Debounced filter application
-const applyFilters = useDebounceFn(() => {
-  cardStore.getFilteredCards(filter.filter.value, locale.value);
+const applyFilters = useDebounceFn(async () => {
+  await cardStore.getFilteredCards(filter.filter.value, locale.value);
 }, 250);
 
 // Apply filters when filter changes
@@ -82,13 +82,48 @@ onMounted(() => {
 
 // Use the filtered cards from the store
 const result = computed(() => cardStore.filteredCards.value);
+
+// Pagination state
+const pageSize = ref(250);
+const currentPage = ref(1);
+const displayedCards = computed(() => {
+  return result.value.slice(0, currentPage.value * pageSize.value);
+});
+
+// Infinite scroll
+onMounted(() => {
+  const { reset } = useInfiniteScroll(
+    window,
+    () => {
+      // Check if we have more cards to load
+      if (currentPage.value * pageSize.value < result.value.length) {
+        currentPage.value++;
+      }
+    },
+    {
+      distance: 10,
+      canLoadMore: () => {
+        return currentPage.value * pageSize.value < result.value.length;
+      },
+    }
+  );
+
+  // Reset pagination when filters change
+  watch(
+    () => result.value,
+    () => {
+      reset();
+      currentPage.value = 1;
+    }
+  );
+});
 </script>
 
 <template>
   <div v-resize-observer="onResizeObserver" class="p-1 sm:p-2">
     <RecycleScroller
       class="scroller"
-      :items="result"
+      :items="displayedCards"
       :item-size="itemSize"
       :item-secondary-size="itemSecondarySize"
       :grid-items="gridColCount"

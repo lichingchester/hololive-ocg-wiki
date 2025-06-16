@@ -118,6 +118,9 @@ export const useFilter = () => {
   const resetTag = () => {
     filterState.value.tag = "";
   };
+  const resetSet = () => {
+    filterState.value.set = "";
+  };
   const resetColors = () => {
     Object.keys(filterState.value.colors).forEach((key) => {
       filterState.value.colors[key as keyof typeof filterState.value.colors] =
@@ -185,6 +188,7 @@ export const useFilter = () => {
     reset,
     resetName,
     resetTag,
+    resetSet,
     resetColors,
     resetCardTypes,
     resetRarity,
