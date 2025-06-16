@@ -16,51 +16,11 @@ const cardStore = useCardStore();
 // ]; // Limit to the first 1000 cards for performance
 
 /**
- * card size and padding
- */
-let cardPadding = 8;
-const cardImageRatio =
-  (558 + cardPadding + cardPadding) / (400 + cardPadding + cardPadding); // Ratio of card height to width
-const gridColCount = shallowRef(6);
-const itemSize = shallowRef(400);
-const itemSecondarySize = shallowRef(558);
-
-function onResizeObserver(entries: ResizeObserverEntry[]) {
-  const [entry] = entries;
-  const { width } = entry.contentRect;
-
-  if (width < 640) {
-    cardPadding = 4; // Adjust ratio for smaller screens
-  } else {
-    cardPadding = 8; // Default padding for larger screens
-  }
-
-  if (width < 640) {
-    gridColCount.value = 3;
-  } else if (width < 768) {
-    gridColCount.value = 4;
-  } else if (width < 1024) {
-    gridColCount.value = 5;
-  } else if (width < 1280) {
-    gridColCount.value = 6;
-  } else if (width < 1536) {
-    gridColCount.value = 7;
-  } else if (width < 2000) {
-    gridColCount.value = 8;
-  } else {
-    gridColCount.value = 8;
-  }
-
-  itemSecondarySize.value = width / gridColCount.value; // Adjust item size based on the width of the container
-  itemSize.value = itemSecondarySize.value * cardImageRatio; // Adjust secondary size based on the item size
-}
-
-/**
  * filter functions can be added here if needed
  */
 // Debounced filter application
-const applyFilters = useDebounceFn(() => {
-  cardStore.getFilteredCards(filter.filter.value, locale.value);
+const applyFilters = useDebounceFn(async () => {
+  await cardStore.getFilteredCards(filter.filter.value, locale.value);
 }, 250);
 
 // Apply filters when filter changes
@@ -82,25 +42,52 @@ onMounted(() => {
 
 // Use the filtered cards from the store
 const result = computed(() => cardStore.filteredCards.value);
+
+// Pagination state
+const pageSize = ref(500);
+const currentPage = ref(1);
+const displayedCards = computed(() => {
+  return result.value.slice(0, currentPage.value * pageSize.value);
+});
+
+// Infinite scroll
+onMounted(() => {
+  const { reset } = useInfiniteScroll(
+    window,
+    () => {
+      // Check if we have more cards to load
+      if (currentPage.value * pageSize.value < result.value.length) {
+        currentPage.value++;
+      }
+    },
+    {
+      distance: 10,
+      canLoadMore: () => {
+        return currentPage.value * pageSize.value < result.value.length;
+      },
+    }
+  );
+
+  // Reset pagination when filters change
+  watch(
+    () => result.value,
+    () => {
+      reset();
+      currentPage.value = 1;
+    }
+  );
+});
 </script>
 
 <template>
-  <div v-resize-observer="onResizeObserver" class="p-1 sm:p-2">
-    <RecycleScroller
-      class="scroller"
-      :items="result"
-      :item-size="itemSize"
-      :item-secondary-size="itemSecondarySize"
-      :grid-items="gridColCount"
-      key-field="id"
-    >
-      <template #default="{ item }">
-        <div class="p-1">
-          <CardItem :item="item" />
-        </div>
-      </template>
-    </RecycleScroller>
-
-    <div class="h-[65vh]"></div>
+  <div
+    class="p-1 sm:p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-1 sm:gap-2"
+  >
+    <template v-for="(item, index) in displayedCards" :key="index">
+      <CardItem :item="item" class="aspect-400/559" />
+    </template>
   </div>
+  <!-- <div class="h-[65vh]"></div> -->
 </template>
+
+<style scoped></style>
