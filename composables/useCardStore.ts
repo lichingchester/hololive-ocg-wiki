@@ -10,6 +10,102 @@ export const useCardStore = () => {
   const filteredCards = useState<CardCollection>("filteredCards", () => []);
   const isLoading = useState<boolean>("cardsLoading", () => false);
 
+  // Add these new state variables at the top of useCardStore
+  const colorIndex = useState<Map<string, Card[]>>(
+    "colorIndex",
+    () => new Map()
+  );
+  const cardTypeIndex = useState<Map<string, Card[]>>(
+    "cardTypeIndex",
+    () => new Map()
+  );
+  const rarityIndex = useState<Map<string, Card[]>>(
+    "rarityIndex",
+    () => new Map()
+  );
+  const bloomLevelIndex = useState<Map<string, Card[]>>(
+    "bloomLevelIndex",
+    () => new Map()
+  );
+  const nameIndex = useState<Map<string, Card[]>>("nameIndex", () => new Map());
+  const tagIndex = useState<Map<string, Card[]>>("tagIndex", () => new Map());
+  const setIndex = useState<Map<string, Card[]>>("setIndex", () => new Map());
+
+  // Add this new function to create indexes
+  const createIndexes = () => {
+    // Clear existing indexes
+    colorIndex.value.clear();
+    cardTypeIndex.value.clear();
+    rarityIndex.value.clear();
+    bloomLevelIndex.value.clear();
+    nameIndex.value.clear();
+    tagIndex.value.clear();
+    setIndex.value.clear();
+
+    // Create indexes
+    allCards.value.forEach((card) => {
+      // Index by color
+      if (!colorIndex.value.has(card.colorCode)) {
+        colorIndex.value.set(card.colorCode, []);
+      }
+      colorIndex.value.get(card.colorCode)!.push(card);
+
+      // Index by card type
+      if (!cardTypeIndex.value.has(card.cardTypeCode)) {
+        cardTypeIndex.value.set(card.cardTypeCode, []);
+      }
+      cardTypeIndex.value.get(card.cardTypeCode)!.push(card);
+
+      // Index by rarity
+      if (!rarityIndex.value.has(card.rarityCode)) {
+        rarityIndex.value.set(card.rarityCode, []);
+      }
+      rarityIndex.value.get(card.rarityCode)!.push(card);
+
+      // Index by bloom level
+      if (card.bloomLevelCode) {
+        if (!bloomLevelIndex.value.has(card.bloomLevelCode)) {
+          bloomLevelIndex.value.set(card.bloomLevelCode, []);
+        }
+        bloomLevelIndex.value.get(card.bloomLevelCode)!.push(card);
+      }
+
+      // Index by name and tag for each locale
+      Object.keys(card.translations).forEach((locale) => {
+        const translation = card.translations[locale as Locales];
+
+        // Index by name
+        if (translation?.name) {
+          const nameKey = `${locale}:${translation.name.toLowerCase()}`;
+          if (!nameIndex.value.has(nameKey)) {
+            nameIndex.value.set(nameKey, []);
+          }
+          nameIndex.value.get(nameKey)!.push(card);
+        }
+
+        // Index by tags
+        if (translation?.tags) {
+          translation.tags.forEach((tag) => {
+            const tagKey = `${locale}:${tag.toLowerCase()}`;
+            if (!tagIndex.value.has(tagKey)) {
+              tagIndex.value.set(tagKey, []);
+            }
+            tagIndex.value.get(tagKey)!.push(card);
+          });
+        }
+
+        // Index by set
+        if (translation?.set) {
+          const setKey = `${locale}:${translation.set.toLowerCase()}`;
+          if (!setIndex.value.has(setKey)) {
+            setIndex.value.set(setKey, []);
+          }
+          setIndex.value.get(setKey)!.push(card);
+        }
+      });
+    });
+  };
+
   // Cache for filter results to avoid repeated calculations
   const filterCache = useState<Map<string, CardCollection>>(
     "filterCache",
@@ -37,6 +133,9 @@ export const useCardStore = () => {
         // Using dynamic import for better code splitting
         const { default: cardData } = await import("@/data/cards_i18n.json");
         allCards.value = cardData as unknown as CardCollection;
+
+        // Create indexes after loading cards
+        createIndexes();
 
         // Pre-compute frequently used filter options after initial load
         // This will help reduce computation in UI components
@@ -156,80 +255,75 @@ export const useCardStore = () => {
             `translations.${locale}.spOshiSkill.name`,
             `translations.${locale}.spOshiSkill.effect`,
           ],
-          threshold: 0.35,
+          threshold: 0.5,
           ignoreLocation: true,
-          // minMatchCharLength: 2,
+          minMatchCharLength: locale === "en" ? 2 : 1,
+          useExtendedSearch: true,
         });
         result = fuse.search(filterOptions.search).map((item) => item.item);
       }
 
-      // Apply other filters (colors, cardTypes, etc.)
-      // filter by name
+      // Apply filters using indexes
+      const filters: Card[] = [];
+
+      // Filter by name using index
       if (filterOptions.name) {
-        result = result.filter((card) => {
-          const translation = card.translations[locale];
-          return (
-            translation?.name
-              ?.toLowerCase()
-              ?.includes(filterOptions.name.toLowerCase()) || false
-          );
-        });
+        const nameKey = `${locale}:${filterOptions.name.toLowerCase()}`;
+        const nameMatches = nameIndex.value.get(nameKey) || [];
+        filters.push(...nameMatches);
       }
 
-      // filter by tag
+      // Filter by tag using index
       if (filterOptions.tag) {
-        result = result.filter((card) => {
-          const translation = card.translations[locale];
-          return (
-            translation?.tags?.some((tag) =>
-              tag.toLowerCase().includes(filterOptions.tag.toLowerCase())
-            ) || false
-          );
-        });
+        const tagKey = `${locale}:${filterOptions.tag.toLowerCase()}`;
+        const tagMatches = tagIndex.value.get(tagKey) || [];
+        filters.push(...tagMatches);
       }
 
-      // filter by set
+      // Filter by set using index
       if (filterOptions.set) {
-        result = result.filter((card) => {
-          const translation = card.translations["ja"];
-          return (
-            translation?.set
-              ?.toLowerCase()
-              ?.includes(filterOptions.set.toLowerCase()) || false
-          );
-        });
+        const setKey = `ja:${filterOptions.set.toLowerCase()}`;
+        const setMatches = setIndex.value.get(setKey) || [];
+        filters.push(...setMatches);
       }
 
-      // filter by colors
+      // Filter by colors using index
       const colorCodes = Object.keys(filterOptions.colors).filter(
         (color) =>
           filterOptions.colors[color as keyof typeof filterOptions.colors]
       );
       if (colorCodes.length > 0) {
-        result = result.filter((card) => colorCodes.includes(card.colorCode));
+        colorCodes.forEach((color) => {
+          const colorMatches = colorIndex.value.get(color) || [];
+          filters.push(...colorMatches);
+        });
       }
 
-      // filter by card types
+      // Filter by card types using index
       const cardTypeCodes = Object.keys(filterOptions.cardTypes).filter(
         (type) =>
           filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
       );
       if (cardTypeCodes.length > 0) {
-        result = result.filter((card) =>
-          cardTypeCodes.includes(card.cardTypeCode)
-        );
+        cardTypeCodes.forEach((type) => {
+          const typeMatches = cardTypeIndex.value.get(type) || [];
+          filters.push(...typeMatches);
+        });
       }
 
-      // filter by rarity
+      // Filter by rarity using index
       const rarityCodes = Object.keys(filterOptions.rarity).filter(
         (rarity) =>
           filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
       );
       if (rarityCodes.length > 0) {
-        result = result.filter((card) => rarityCodes.includes(card.rarityCode));
+        rarityCodes.forEach((rarity) => {
+          const rarityMatches = rarityIndex.value.get(rarity) || [];
+          filters.push(...rarityMatches);
+        });
       }
 
-      // filter by bloom level
+      // Filter by bloom level using index
       const bloomLevelCodes = Object.keys(filterOptions.bloomLevel).filter(
         (level) =>
           filterOptions.bloomLevel[
@@ -237,10 +331,15 @@ export const useCardStore = () => {
           ]
       );
       if (bloomLevelCodes.length > 0) {
-        result = result.filter(
-          (card) =>
-            card.bloomLevelCode && bloomLevelCodes.includes(card.bloomLevelCode)
-        );
+        bloomLevelCodes.forEach((level) => {
+          const levelMatches = bloomLevelIndex.value.get(level) || [];
+          filters.push(...levelMatches);
+        });
+      }
+
+      // If we have any filters, intersect the results
+      if (filters.length > 0) {
+        result = result.filter((card) => filters.includes(card));
       }
 
       // Cache and return the result
@@ -256,6 +355,7 @@ export const useCardStore = () => {
   // Clear cache when needed (e.g., language change)
   const clearCache = () => {
     filterCache.value.clear();
+    createIndexes(); // Recreate indexes when cache is cleared
 
     // No need to clear name and tag caches as they're precomputed per locale
     // This improves performance when switching languages

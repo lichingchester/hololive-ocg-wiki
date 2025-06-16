@@ -44,7 +44,7 @@ onMounted(() => {
 const result = computed(() => cardStore.filteredCards.value);
 
 // Pagination state
-const pageSize = ref(500);
+const pageSize = ref(250);
 const currentPage = ref(1);
 const displayedCards = computed(() => {
   return result.value.slice(0, currentPage.value * pageSize.value);
@@ -87,7 +87,7 @@ onMounted(() => {
       <CardItem :item="item" class="aspect-400/559" />
     </template>
   </div>
-  <!-- <div class="h-[65vh]"></div> -->
+  <div class="h-[65vh]"></div>
 </template>
 
 <style scoped></style>

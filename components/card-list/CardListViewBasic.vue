@@ -19,8 +19,8 @@ const cardStore = useCardStore();
  * filter functions can be added here if needed
  */
 // Debounced filter application
-const applyFilters = useDebounceFn(() => {
-  cardStore.getFilteredCards(filter.filter.value, locale.value);
+const applyFilters = useDebounceFn(async () => {
+  await cardStore.getFilteredCards(filter.filter.value, locale.value);
 }, 250);
 
 // Apply filters when filter changes
@@ -42,18 +42,52 @@ onMounted(() => {
 
 // Use the filtered cards from the store
 const result = computed(() => cardStore.filteredCards.value);
+
+// Pagination state
+const pageSize = ref(250);
+const currentPage = ref(1);
+const displayedCards = computed(() => {
+  return result.value.slice(0, currentPage.value * pageSize.value);
+});
+
+// Infinite scroll
+onMounted(() => {
+  const { reset } = useInfiniteScroll(
+    window,
+    () => {
+      // Check if we have more cards to load
+      if (currentPage.value * pageSize.value < result.value.length) {
+        currentPage.value++;
+      }
+    },
+    {
+      distance: 10,
+      canLoadMore: () => {
+        return currentPage.value * pageSize.value < result.value.length;
+      },
+    }
+  );
+
+  // Reset pagination when filters change
+  watch(
+    () => result.value,
+    () => {
+      reset();
+      currentPage.value = 1;
+    }
+  );
+});
 </script>
 
 <template>
   <div
     class="p-1 sm:p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-1 sm:gap-2"
   >
-    <template v-for="(item, index) in result" :key="index">
+    <template v-for="(item, index) in displayedCards" :key="index">
       <CardItem :item="item" class="aspect-400/559" />
     </template>
-
-    <div class="h-[65vh]"></div>
   </div>
+  <div class="h-[65vh]"></div>
 </template>
 
 <style scoped></style>

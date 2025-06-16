@@ -37,7 +37,7 @@ const count = computed(() => {
       <CardItemDialogContent :item="item" />
     </Dialog>
 
-    <!-- <div
+    <div
       v-if="isEditing"
       class="absolute bottom-0 left-0 flex gap-1 p-1 w-full"
     >
@@ -83,6 +83,6 @@ const count = computed(() => {
       v-if="isEditing && count > 0"
       :count="count || 0"
       :size="'normal'"
-    /> -->
+    />
   </div>
 </template>
