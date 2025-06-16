@@ -44,7 +44,7 @@ defineProps<{
         v-if="item.translations?.ja?.set"
         :name="$t('fields.set')"
       >
-        {{ $t(`cards.${item.id}.set`) }}
+        {{ item.translations?.ja?.set }}
       </CardDataRowsBlockItem>
 
       <!-- colorCode -->
