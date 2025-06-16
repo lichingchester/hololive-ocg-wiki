@@ -114,7 +114,10 @@ export const useCardStore = () => {
   };
 
   // Get filtered cards with caching
-  const getFilteredCards = (filterOptions: FilterOptions, locale: Locales) => {
+  const getFilteredCards = async (
+    filterOptions: FilterOptions,
+    locale: Locales
+  ) => {
     // Create a cache key from the filter options
     const cacheKey = JSON.stringify({ ...filterOptions, locale });
 
@@ -124,120 +127,130 @@ export const useCardStore = () => {
       return filteredCards.value;
     }
 
-    // Otherwise, apply filters
-    let result = allCards.value;
+    // Set loading state to true before filtering
+    isLoading.value = true;
 
-    // Apply search filter if needed
-    if (filterOptions.search) {
-      const fuse = new Fuse(result, {
-        keys: [
-          "id",
-          "cardNumber",
-          "rarityCode",
-          `translations.en.name`,
-          `translations.en.color`,
-          `translations.en.oshiSkill.name`,
-          `translations.en.spOshiSkill.name`,
-          `translations.${locale}.name`,
-          `translations.${locale}.cardType`,
-          `translations.${locale}.color`,
-          `translations.ja.set`,
-          `translations.${locale}.set`,
-          `translations.${locale}.illustrator`,
-          `translations.${locale}.oshiSkill.name`,
-          `translations.${locale}.oshiSkill.effect`,
-          `translations.${locale}.spOshiSkill.name`,
-          `translations.${locale}.spOshiSkill.effect`,
-        ],
-        threshold: 0.35,
-        ignoreLocation: true,
-        // minMatchCharLength: 2,
-      });
-      result = fuse.search(filterOptions.search).map((item) => item.item);
-    }
+    try {
+      // Otherwise, apply filters
+      let result = allCards.value;
 
-    // Apply other filters (colors, cardTypes, etc.)
-    // filter by name
-    if (filterOptions.name) {
-      result = result.filter((card) => {
-        const translation = card.translations[locale];
-        return (
-          translation?.name
-            ?.toLowerCase()
-            ?.includes(filterOptions.name.toLowerCase()) || false
-        );
-      });
-    }
+      // Apply search filter if needed
+      if (filterOptions.search) {
+        const fuse = new Fuse(result, {
+          keys: [
+            "id",
+            "cardNumber",
+            "rarityCode",
+            `translations.en.name`,
+            `translations.en.color`,
+            `translations.en.oshiSkill.name`,
+            `translations.en.spOshiSkill.name`,
+            `translations.${locale}.name`,
+            `translations.${locale}.cardType`,
+            `translations.${locale}.color`,
+            `translations.ja.set`,
+            `translations.${locale}.set`,
+            `translations.${locale}.illustrator`,
+            `translations.${locale}.oshiSkill.name`,
+            `translations.${locale}.oshiSkill.effect`,
+            `translations.${locale}.spOshiSkill.name`,
+            `translations.${locale}.spOshiSkill.effect`,
+          ],
+          threshold: 0.35,
+          ignoreLocation: true,
+          // minMatchCharLength: 2,
+        });
+        result = fuse.search(filterOptions.search).map((item) => item.item);
+      }
 
-    // filter by tag
-    if (filterOptions.tag) {
-      result = result.filter((card) => {
-        const translation = card.translations[locale];
-        return (
-          translation?.tags?.some((tag) =>
-            tag.toLowerCase().includes(filterOptions.tag.toLowerCase())
-          ) || false
-        );
-      });
-    }
+      // Apply other filters (colors, cardTypes, etc.)
+      // filter by name
+      if (filterOptions.name) {
+        result = result.filter((card) => {
+          const translation = card.translations[locale];
+          return (
+            translation?.name
+              ?.toLowerCase()
+              ?.includes(filterOptions.name.toLowerCase()) || false
+          );
+        });
+      }
 
-    // filter by set
-    if (filterOptions.set) {
-      result = result.filter((card) => {
-        const translation = card.translations["ja"];
-        return (
-          translation?.set
-            ?.toLowerCase()
-            ?.includes(filterOptions.set.toLowerCase()) || false
-        );
-      });
-    }
+      // filter by tag
+      if (filterOptions.tag) {
+        result = result.filter((card) => {
+          const translation = card.translations[locale];
+          return (
+            translation?.tags?.some((tag) =>
+              tag.toLowerCase().includes(filterOptions.tag.toLowerCase())
+            ) || false
+          );
+        });
+      }
 
-    // filter by colors
-    const colorCodes = Object.keys(filterOptions.colors).filter(
-      (color) =>
-        filterOptions.colors[color as keyof typeof filterOptions.colors]
-    );
-    if (colorCodes.length > 0) {
-      result = result.filter((card) => colorCodes.includes(card.colorCode));
-    }
+      // filter by set
+      if (filterOptions.set) {
+        result = result.filter((card) => {
+          const translation = card.translations["ja"];
+          return (
+            translation?.set
+              ?.toLowerCase()
+              ?.includes(filterOptions.set.toLowerCase()) || false
+          );
+        });
+      }
 
-    // filter by card types
-    const cardTypeCodes = Object.keys(filterOptions.cardTypes).filter(
-      (type) =>
-        filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
-    );
-    if (cardTypeCodes.length > 0) {
-      result = result.filter((card) =>
-        cardTypeCodes.includes(card.cardTypeCode)
+      // filter by colors
+      const colorCodes = Object.keys(filterOptions.colors).filter(
+        (color) =>
+          filterOptions.colors[color as keyof typeof filterOptions.colors]
       );
-    }
+      if (colorCodes.length > 0) {
+        result = result.filter((card) => colorCodes.includes(card.colorCode));
+      }
 
-    // filter by rarity
-    const rarityCodes = Object.keys(filterOptions.rarity).filter(
-      (rarity) =>
-        filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
-    );
-    if (rarityCodes.length > 0) {
-      result = result.filter((card) => rarityCodes.includes(card.rarityCode));
-    }
-
-    // filter by bloom level
-    const bloomLevelCodes = Object.keys(filterOptions.bloomLevel).filter(
-      (level) =>
-        filterOptions.bloomLevel[level as keyof typeof filterOptions.bloomLevel]
-    );
-    if (bloomLevelCodes.length > 0) {
-      result = result.filter(
-        (card) =>
-          card.bloomLevelCode && bloomLevelCodes.includes(card.bloomLevelCode)
+      // filter by card types
+      const cardTypeCodes = Object.keys(filterOptions.cardTypes).filter(
+        (type) =>
+          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
       );
-    }
+      if (cardTypeCodes.length > 0) {
+        result = result.filter((card) =>
+          cardTypeCodes.includes(card.cardTypeCode)
+        );
+      }
 
-    // Cache and return the result
-    filterCache.value.set(cacheKey, result);
-    filteredCards.value = result;
-    return result;
+      // filter by rarity
+      const rarityCodes = Object.keys(filterOptions.rarity).filter(
+        (rarity) =>
+          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
+      );
+      if (rarityCodes.length > 0) {
+        result = result.filter((card) => rarityCodes.includes(card.rarityCode));
+      }
+
+      // filter by bloom level
+      const bloomLevelCodes = Object.keys(filterOptions.bloomLevel).filter(
+        (level) =>
+          filterOptions.bloomLevel[
+            level as keyof typeof filterOptions.bloomLevel
+          ]
+      );
+      if (bloomLevelCodes.length > 0) {
+        result = result.filter(
+          (card) =>
+            card.bloomLevelCode && bloomLevelCodes.includes(card.bloomLevelCode)
+        );
+      }
+
+      // Cache and return the result
+      filterCache.value.set(cacheKey, result);
+      filteredCards.value = result;
+      return result;
+    } finally {
+      // Set loading state to false after filtering is complete
+      isLoading.value = false;
+    }
   };
 
   // Clear cache when needed (e.g., language change)
