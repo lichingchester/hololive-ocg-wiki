@@ -53,7 +53,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "nuxt-gtag",
-    "@nuxtjs/seo",
+    // "@nuxtjs/seo",
   ],
 
   ogImage: {
@@ -102,9 +102,5 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
-  },
-
-  nitro: {
-    preset: "github-pages",
   },
 });
