@@ -90,6 +90,11 @@ async function searchCards(
   locale: string = "en",
   limit: number = 100
 ): Promise<Card[]> {
+  // Return empty results for empty or whitespace-only queries
+  if (!query || query.trim().length === 0) {
+    return [];
+  }
+
   try {
     // Try FTS search first
     const ftsStmt = env.DB.prepare(`
@@ -97,8 +102,7 @@ async function searchCards(
       FROM cards_fts cf
       JOIN cards c ON cf.card_id = c.id
       LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
-      WHERE cf MATCH ? AND cf.locale = ?
-      ORDER BY cf.rank
+      WHERE cards_fts MATCH ? AND cf.locale = ?
       LIMIT ?
     `);
 
@@ -176,12 +180,12 @@ async function filterCards(
 
   // Add search condition - try FTS first, fallback to LIKE search
   let useFTS = false;
-  if (filters.search) {
+  if (filters.search && filters.search.trim().length > 0) {
     try {
       // Test if FTS table exists and FTS search works by trying the actual query structure
       const testStmt = env.DB.prepare(`
         SELECT card_id FROM cards_fts cf 
-        WHERE cf MATCH ? AND cf.locale = ? 
+        WHERE cards_fts MATCH ? AND cf.locale = ? 
         LIMIT 1
       `);
       await testStmt.bind(filters.search, locale).first();
@@ -189,7 +193,7 @@ async function filterCards(
       // FTS table exists and works, use FTS search
       query += ` JOIN cards_fts cf ON c.id = cf.card_id AND cf.locale = ?`;
       params.push(locale);
-      whereConditions.push(`cf MATCH ?`);
+      whereConditions.push(`cards_fts MATCH ?`);
       params.push(filters.search);
       useFTS = true;
     } catch (error) {
@@ -278,12 +282,11 @@ async function filterCards(
   const total = countResult?.total || 0;
 
   // Get paginated results
-  const orderBy = useFTS ? "cf.rank, c.card_number" : "c.card_number";
   const cardsQuery = `
     SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
     ${query}
     ${whereClause}
-    ORDER BY ${orderBy}
+    ORDER BY c.card_number
     LIMIT ? OFFSET ?
   `;
 

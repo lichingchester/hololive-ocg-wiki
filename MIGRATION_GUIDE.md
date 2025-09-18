@@ -61,14 +61,14 @@ or run manually
 ```bash
 # Execute migration in batches (D1 has query limits)
 # For local development:
-wrangler d1 execute hololive-ocg-db --local --file=./migration.sql
-wrangler d1 execute hololive-ocg-db --local --file=./migration_batch_1.sql
-wrangler d1 execute hololive-ocg-db --local --file=./migration_batch_2.sql
+npx wrangler d1 execute hololive-ocg-db --local --file=./migration.sql
+npx wrangler d1 execute hololive-ocg-db --local --file=./migration_batch_1.sql
+npx wrangler d1 execute hololive-ocg-db --local --file=./migration_batch_2.sql
 # ... continue for all batch files
 
 # For production:
-wrangler d1 execute hololive-ocg-db --file=./migration_batch_1.sql
-wrangler d1 execute hololive-ocg-db --file=./migration_batch_2.sql
+npx wrangler d1 execute hololive-ocg-db --file=./migration_batch_1.sql
+npx wrangler d1 execute hololive-ocg-db --file=./migration_batch_2.sql
 # ... continue for all batch files
 ```
 
@@ -121,7 +121,7 @@ npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_ft
 
 ```bash
 # Deploy to Cloudflare
-wrangler deploy
+npx wrangler deploy
 
 # Note the deployed URL (e.g., https://hololive-ocg-worker.your-subdomain.workers.dev)
 

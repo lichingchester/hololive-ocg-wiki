@@ -127,60 +127,8 @@ CREATE INDEX idx_oshi_skills_card_locale ON oshi_skills(card_id, locale);
 
 CREATE INDEX idx_arts_card_locale ON arts(card_id, locale);
 
--- Full-text search indexes for better search performance
-CREATE VIRTUAL TABLE cards_fts USING fts5(
-    card_id,
-    card_number,
-    name,
-    card_type,
-    color,
-    set_name,
-    ability_text,
-    oshi_skill_name,
-    oshi_skill_effect,
-    sp_oshi_skill_name,
-    sp_oshi_skill_effect,
-    tags,
-    locale
-);
-
--- Trigger to keep FTS table in sync
-CREATE TRIGGER cards_fts_insert AFTER INSERT ON card_translations BEGIN
-    INSERT INTO cards_fts(
-        card_id, 
-        card_number, 
-        name, 
-        card_type, 
-        color, 
-        set_name, 
-        ability_text,
-        locale
-    ) 
-    SELECT 
-        NEW.card_id,
-        c.card_number,
-        NEW.name,
-        NEW.card_type,
-        NEW.color,
-        NEW.set_name,
-        NEW.ability_text,
-        NEW.locale
-    FROM cards c WHERE c.id = NEW.card_id;
-END;
-
-CREATE TRIGGER cards_fts_update AFTER UPDATE ON card_translations BEGIN
-    UPDATE cards_fts SET
-        name = NEW.name,
-        card_type = NEW.card_type,
-        color = NEW.color,
-        set_name = NEW.set_name,
-        ability_text = NEW.ability_text
-    WHERE card_id = NEW.card_id AND locale = NEW.locale;
-END;
-
-CREATE TRIGGER cards_fts_delete AFTER DELETE ON card_translations BEGIN
-    DELETE FROM cards_fts WHERE card_id = OLD.card_id AND locale = OLD.locale;
-END;
+-- Note: Full-text search (FTS) is set up separately using setup-fts.sql
+-- This allows for better control and optional setup of FTS functionality
 
 -- Materialized view for frequently accessed card data with translations
 CREATE VIEW card_details AS
