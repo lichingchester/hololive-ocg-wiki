@@ -6,6 +6,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
+  ssr: false,
+
   site: {
     url: "https://hololive-ocg-wiki.lichingchester.dev",
   },
@@ -29,8 +31,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  ssr: true,
 
   css: ["~/assets/css/app.css"],
 
