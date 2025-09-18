@@ -98,7 +98,7 @@ async function searchCards(
       JOIN cards c ON cf.card_id = c.id
       LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
       WHERE cf MATCH ? AND cf.locale = ?
-      ORDER BY rank
+      ORDER BY cf.rank
       LIMIT ?
     `);
 
@@ -175,17 +175,26 @@ async function filterCards(
   params.push(locale);
 
   // Add search condition - try FTS first, fallback to LIKE search
-  let useFTS = true;
+  let useFTS = false;
   if (filters.search) {
     try {
-      // Test if FTS table exists by trying a simple query
-      await env.DB.prepare("SELECT 1 FROM cards_fts LIMIT 1").first();
+      // Test if FTS table exists and FTS search works by trying the actual query structure
+      const testStmt = env.DB.prepare(`
+        SELECT card_id FROM cards_fts cf 
+        WHERE cf MATCH ? AND cf.locale = ? 
+        LIMIT 1
+      `);
+      await testStmt.bind(filters.search, locale).first();
+
+      // FTS table exists and works, use FTS search
       query += ` JOIN cards_fts cf ON c.id = cf.card_id AND cf.locale = ?`;
       params.push(locale);
       whereConditions.push(`cf MATCH ?`);
       params.push(filters.search);
+      useFTS = true;
     } catch (error) {
-      // FTS table doesn't exist, use regular LIKE search
+      // FTS table doesn't exist or FTS search failed, use regular LIKE search
+      console.log("FTS search failed, falling back to regular search:", error);
       useFTS = false;
       const searchPattern = `%${filters.search}%`;
       whereConditions.push(`(
@@ -269,11 +278,12 @@ async function filterCards(
   const total = countResult?.total || 0;
 
   // Get paginated results
+  const orderBy = useFTS ? "cf.rank, c.card_number" : "c.card_number";
   const cardsQuery = `
     SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
     ${query}
     ${whereClause}
-    ORDER BY c.card_number
+    ORDER BY ${orderBy}
     LIMIT ? OFFSET ?
   `;
 

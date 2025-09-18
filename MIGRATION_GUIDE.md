@@ -72,7 +72,52 @@ wrangler d1 execute hololive-ocg-db --file=./migration_batch_2.sql
 # ... continue for all batch files
 ```
 
-### 3. Deploy Cloudflare Worker
+### 3. Set up Full-Text Search (FTS) for Optimal Performance
+
+After migrating your data, set up FTS for lightning-fast search performance:
+
+```bash
+# Navigate to cloudflare directory
+cd cloudflare
+
+# Make the FTS setup script executable
+chmod +x setup-fts.sh
+
+# Set up FTS for local development
+./setup-fts.sh hololive-ocg-db
+
+# For production, specify the production database name
+./setup-fts.sh your-production-database-name
+```
+
+The FTS setup will:
+
+- Create a `cards_fts` virtual table using SQLite FTS5
+- Populate it with searchable content from cards, translations, and oshi skills
+- Set up triggers to automatically keep FTS data synchronized
+- Enable fast full-text search across card names, abilities, skills, and tags
+
+**Benefits of FTS:**
+
+- **10x faster searches** compared to LIKE queries
+- **Relevance ranking** - most relevant results first
+- **Multi-language support** - works with Japanese, English, and other locales
+- **Automatic fallback** - gracefully degrades to LIKE queries if FTS unavailable
+
+**Manual FTS setup (if script doesn't work):**
+
+```bash
+# Apply FTS setup manually
+npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
+
+# For production
+npx wrangler d1 execute your-production-db --file=./setup-fts.sql
+
+# Verify FTS is working
+npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+```
+
+### 4. Deploy Cloudflare Worker
 
 ```bash
 # Deploy to Cloudflare
@@ -84,7 +129,7 @@ wrangler deploy
 npx wrangler dev
 ```
 
-### 4. Update Frontend Configuration
+### 5. Update Frontend Configuration
 
 ```bash
 # In the main project directory
@@ -97,7 +142,7 @@ echo "NUXT_PUBLIC_API_URL=https://hololive-ocg-worker.your-subdomain.workers.dev
 echo "NUXT_PUBLIC_API_URL=http://localhost:8787" >> .env
 ```
 
-### 5. Switch to API-based Components
+### 6. Switch to API-based Components
 
 Update your pages to use the new API-based components:
 
@@ -133,7 +178,7 @@ Update your pages to use the new API-based components:
 </template>
 ```
 
-### 6. Test the Migration
+### 7. Test the Migration
 
 ```bash
 # Test the API endpoints
@@ -232,6 +277,15 @@ wrangler d1 execute hololive-ocg-db --command="SELECT name FROM sqlite_master WH
 # Check record counts
 wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards;"
 wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM card_translations;"
+
+# Verify FTS table
+wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+
+# Test FTS search
+wrangler d1 execute hololive-ocg-db --command="SELECT card_id, name FROM cards_fts WHERE cards_fts MATCH 'luna' LIMIT 5;"
+
+# Check FTS triggers
+wrangler d1 execute hololive-ocg-db --command="SELECT name FROM sqlite_master WHERE type='trigger' AND name LIKE '%fts%';"
 ```
 
 ### Worker Logs
@@ -259,13 +313,81 @@ If you need to rollback to the original frontend-only implementation:
 1. Update `data/cards_i18n.json`
 2. Run the migration script: `node cloudflare/migrate.js`
 3. Execute the new migration SQL files in D1
-4. Clear any frontend caches
+4. **Rebuild FTS index**: `./cloudflare/setup-fts.sh hololive-ocg-db`
+5. Clear any frontend caches
+
+**FTS Maintenance:**
+
+The FTS table automatically stays in sync with changes through database triggers. However, if you notice search performance issues or missing results:
+
+```bash
+# Rebuild FTS index from scratch
+cd cloudflare
+./setup-fts.sh hololive-ocg-db
+
+# Or manually drop and recreate
+npx wrangler d1 execute hololive-ocg-db --command="DROP TABLE IF EXISTS cards_fts;"
+npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
+```
 
 ### Scale Up
 
 - D1 can handle millions of records
 - Worker has generous free tier limits
 - Consider adding Redis/KV for heavy caching if needed
+
+## Troubleshooting
+
+### FTS Issues
+
+**"FTS search failed, falling back to regular search" messages:**
+
+This is normal behavior when FTS isn't set up yet. The API automatically falls back to LIKE queries. To resolve:
+
+```bash
+cd cloudflare
+./setup-fts.sh hololive-ocg-db
+```
+
+**Search returns no results:**
+
+1. Verify FTS table exists and has data:
+
+   ```bash
+   npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+   ```
+
+2. Test FTS directly:
+
+   ```bash
+   npx wrangler d1 execute hololive-ocg-db --command="SELECT * FROM cards_fts WHERE cards_fts MATCH 'test' LIMIT 1;"
+   ```
+
+3. If no results, rebuild FTS:
+   ```bash
+   ./setup-fts.sh hololive-ocg-db
+   ```
+
+**"no such column: cf" errors:**
+
+This indicates the FTS table structure doesn't match the query. Rebuild FTS:
+
+```bash
+cd cloudflare
+./setup-fts.sh hololive-ocg-db
+```
+
+### General Issues
+
+**API returns 500 errors:**
+
+1. Check worker logs: `wrangler tail`
+2. Verify database connection in `wrangler.toml`
+3. Ensure all migration batches were executed successfully
+
+**CORS errors:**
+
+Update the `CORS_ORIGIN` environment variable in `wrangler.toml` to match your frontend domain.
 
 ## Security Notes
 
