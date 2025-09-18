@@ -141,8 +141,7 @@ CREATE VIRTUAL TABLE cards_fts USING fts5(
     sp_oshi_skill_name,
     sp_oshi_skill_effect,
     tags,
-    locale,
-    content='card_translations'
+    locale
 );
 
 -- Trigger to keep FTS table in sync

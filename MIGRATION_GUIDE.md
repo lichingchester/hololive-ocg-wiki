@@ -37,6 +37,9 @@ npx wrangler d1 execute hololive-ocg-db --file=./schema.sql  # For production
 # Navigate to cloudflare directory first
 cd cloudflare
 
+# Generate migration SQL from cards.json
+node migrate.js
+
 # Run migration for local development (default)
 ./run-migration.sh
 
@@ -56,9 +59,6 @@ cd cloudflare
 or run manually
 
 ```bash
-# Generate migration SQL from cards.json
-node migrate.js
-
 # Execute migration in batches (D1 has query limits)
 # For local development:
 wrangler d1 execute hololive-ocg-db --local --file=./migration.sql
