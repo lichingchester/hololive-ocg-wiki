@@ -16,6 +16,15 @@ export default defineNuxtConfig({
     fallbackTitle: false,
   },
 
+  // Runtime configuration for API endpoints
+  runtimeConfig: {
+    public: {
+      apiUrl:
+        process.env.NUXT_PUBLIC_API_URL ||
+        "https://your-worker.your-subdomain.workers.dev",
+    },
+  },
+
   app: {
     head: {
       meta: [
