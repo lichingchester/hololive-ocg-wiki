@@ -90,9 +90,11 @@ npx wrangler dev
 # In the main project directory
 # Set the API URL environment variable
 export NUXT_PUBLIC_API_URL="https://hololive-ocg-worker.your-subdomain.workers.dev"
+export NUXT_PUBLIC_API_URL="http://localhost:8787"
 
 # Or add to .env file:
 echo "NUXT_PUBLIC_API_URL=https://hololive-ocg-worker.your-subdomain.workers.dev" >> .env
+echo "NUXT_PUBLIC_API_URL=http://localhost:8787" >> .env
 ```
 
 ### 5. Switch to API-based Components
@@ -136,12 +138,15 @@ Update your pages to use the new API-based components:
 ```bash
 # Test the API endpoints
 curl "https://hololive-ocg-worker.your-subdomain.workers.dev/api/cards/filter?locale=en&limit=10"
+curl "http://localhost:8787/api/cards/filter?locale=en&limit=10"
 
 # Test search
 curl "https://hololive-ocg-worker.your-subdomain.workers.dev/api/cards/search?q=luna&locale=en"
+curl "http://localhost:8787/api/cards/search?q=luna&locale=en"
 
 # Test filter options
 curl "https://hololive-ocg-worker.your-subdomain.workers.dev/api/filter-options?locale=en"
+curl "http://localhost:8787/api/filter-options?locale=en"
 
 # Start the Nuxt development server
 npm run dev

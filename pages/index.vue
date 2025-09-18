@@ -7,12 +7,14 @@
 
     <!-- search -->
     <!-- <Input id="search" type="text" placeholder="Search..." /> -->
-    <SearchInput />
+    <!-- <SearchInput /> -->
+    <SearchInputAPI />
   </AppHeader>
 
   <!-- Card List -->
   <div class="grow">
-    <CardListView />
+    <!-- <CardListView /> -->
+    <CardListViewAPI />
   </div>
 
   <FloatingDeck />

@@ -25,7 +25,7 @@ interface Card {
   id: string;
   cardNumber: string;
   cardTypeCode: string;
-  colorCode: string;
+  colorCodes: string[]; // Always parsed array
   rarityCode: string;
   bloomLevelCode?: string;
   imagePath: string;
@@ -33,12 +33,15 @@ interface Card {
   hp?: number;
   life?: number;
   batonTouchCount?: number;
+  batonTouchTypes?: string[]; // Always parsed array
+  illustrator?: string;
+  cardSets?: string[]; // Always parsed array
+  tags?: string[]; // Always parsed array
   translations: Record<string, any>;
   oshiSkill?: any;
   spOshiSkill?: any;
   arts?: any[];
   keyword?: any;
-  tags?: string[];
 }
 
 // CORS headers
@@ -56,25 +59,98 @@ function handleCORS(request: Request): Response | null {
   return null;
 }
 
-// Search cards with full-text search
+// Helper function to safely parse JSON arrays
+function parseJsonArray(jsonString: string | null | undefined): string[] {
+  if (!jsonString) return [];
+  try {
+    const parsed = JSON.parse(jsonString);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+// Helper function to parse JSON fields in card objects
+function parseCardJsonFields(card: any): Card {
+  return {
+    ...card,
+    colorCodes: parseJsonArray(card.color_codes || card.colorCodes),
+    batonTouchTypes: parseJsonArray(
+      card.baton_touch_types || card.batonTouchTypes
+    ),
+    cardSets: parseJsonArray(card.card_sets || card.cardSets),
+    tags: parseJsonArray(card.tags),
+  };
+}
+
+// Search cards with fallback for when FTS is not available
 async function searchCards(
   env: Env,
   query: string,
   locale: string = "en",
   limit: number = 100
 ): Promise<Card[]> {
-  const stmt = env.DB.prepare(`
-    SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.illustrator, ct.ability_text
-    FROM cards_fts cf
-    JOIN cards c ON cf.card_id = c.id
-    LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
-    WHERE cf MATCH ? AND cf.locale = ?
-    ORDER BY rank
-    LIMIT ?
-  `);
+  try {
+    // Try FTS search first
+    const ftsStmt = env.DB.prepare(`
+      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+      FROM cards_fts cf
+      JOIN cards c ON cf.card_id = c.id
+      LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+      WHERE cf MATCH ? AND cf.locale = ?
+      ORDER BY rank
+      LIMIT ?
+    `);
 
-  const results = await stmt.bind(locale, query, locale, limit).all();
-  return results.results as Card[];
+    const ftsResults = await ftsStmt.bind(locale, query, locale, limit).all();
+    return ftsResults.results.map((card: any) => parseCardJsonFields(card));
+  } catch (error) {
+    // Fallback to regular search if FTS table doesn't exist
+    console.log("FTS search failed, falling back to regular search:", error);
+
+    const fallbackStmt = env.DB.prepare(`
+      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+      FROM cards c
+      LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+      WHERE (
+        ct.name LIKE ? OR
+        ct.card_type LIKE ? OR
+        ct.ability_text LIKE ? OR
+        c.card_number LIKE ? OR
+        c.tags LIKE ?
+      )
+      ORDER BY 
+        CASE 
+          WHEN ct.name LIKE ? THEN 1
+          WHEN ct.name LIKE ? THEN 2
+          ELSE 3
+        END,
+        ct.name
+      LIMIT ?
+    `);
+
+    const searchPattern = `%${query}%`;
+    const exactPattern = query;
+    const startPattern = `${query}%`;
+
+    const fallbackResults = await fallbackStmt
+      .bind(
+        locale,
+        searchPattern,
+        searchPattern,
+        searchPattern,
+        searchPattern,
+        searchPattern,
+        exactPattern,
+        startPattern,
+        limit
+      )
+      .all();
+
+    return fallbackResults.results.map((card: any) =>
+      parseCardJsonFields(card)
+    );
+  }
 }
 
 // Filter cards with multiple criteria
@@ -98,19 +174,49 @@ async function filterCards(
   `;
   params.push(locale);
 
-  // Add search condition
+  // Add search condition - try FTS first, fallback to LIKE search
+  let useFTS = true;
   if (filters.search) {
-    query += ` JOIN cards_fts cf ON c.id = cf.card_id AND cf.locale = ?`;
-    params.push(locale);
-    whereConditions.push(`cf MATCH ?`);
-    params.push(filters.search);
+    try {
+      // Test if FTS table exists by trying a simple query
+      await env.DB.prepare("SELECT 1 FROM cards_fts LIMIT 1").first();
+      query += ` JOIN cards_fts cf ON c.id = cf.card_id AND cf.locale = ?`;
+      params.push(locale);
+      whereConditions.push(`cf MATCH ?`);
+      params.push(filters.search);
+    } catch (error) {
+      // FTS table doesn't exist, use regular LIKE search
+      useFTS = false;
+      const searchPattern = `%${filters.search}%`;
+      whereConditions.push(`(
+        ct.name LIKE ? OR
+        ct.card_type LIKE ? OR
+        ct.ability_text LIKE ? OR
+        c.card_number LIKE ? OR
+        c.tags LIKE ?
+      )`);
+      params.push(
+        searchPattern,
+        searchPattern,
+        searchPattern,
+        searchPattern,
+        searchPattern
+      );
+    }
   }
 
   // Add color filters
   if (filters.colors && filters.colors.length > 0) {
-    const colorPlaceholders = filters.colors.map(() => "?").join(",");
-    whereConditions.push(`c.color_code IN (${colorPlaceholders})`);
-    params.push(...filters.colors);
+    // Since color_codes is now a JSON array, we need to use JSON operations
+    // Use JSON_EXTRACT or LIKE for better JSON array searching
+    const colorConditions = filters.colors
+      .map(() => `c.color_codes LIKE ?`)
+      .join(" OR ");
+    whereConditions.push(`(${colorConditions})`);
+    // Add wildcards for JSON array search - match exact values in JSON array
+    filters.colors.forEach((color) => {
+      params.push(`%"${color}"%`);
+    });
   }
 
   // Add card type filters
@@ -140,12 +246,10 @@ async function filterCards(
     params.push(filters.name);
   }
 
-  // Add tag filter
+  // Add tag filter - now searching in JSON array
   if (filters.tag) {
-    query += ` JOIN tags t ON c.id = t.card_id AND t.locale = ?`;
-    params.push(locale);
-    whereConditions.push(`t.tag = ?`);
-    params.push(filters.tag);
+    whereConditions.push(`c.tags LIKE ?`);
+    params.push(`%"${filters.tag}"%`);
   }
 
   // Add set filter
@@ -166,7 +270,7 @@ async function filterCards(
 
   // Get paginated results
   const cardsQuery = `
-    SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.illustrator, ct.ability_text
+    SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
     ${query}
     ${whereClause}
     ORDER BY c.card_number
@@ -177,7 +281,7 @@ async function filterCards(
   const cardsResult = await cardsStmt.bind(...params, limit, offset).all();
 
   return {
-    cards: cardsResult.results as Card[],
+    cards: cardsResult.results.map((card: any) => parseCardJsonFields(card)),
     total: total as number,
   };
 }
@@ -192,7 +296,7 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
 
   // Get all translations
   const translationsStmt = env.DB.prepare(`
-    SELECT locale, name, card_type, color, rarity, set_name, illustrator, ability_text
+    SELECT locale, name, card_type, color, rarity, set_name, ability_text, extra
     FROM card_translations 
     WHERE card_id = ?
   `);
@@ -206,15 +310,7 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
   `);
   const oshiSkills = await oshiSkillsStmt.bind(cardId).all();
 
-  // Get tags
-  const tagsStmt = env.DB.prepare(`
-    SELECT locale, tag
-    FROM tags 
-    WHERE card_id = ?
-  `);
-  const tags = await tagsStmt.bind(cardId).all();
-
-  // Get arts
+  // Get arts (now with locale support)
   const artsStmt = env.DB.prepare(`
     SELECT *
     FROM arts 
@@ -232,7 +328,7 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
 
   // Get QA items
   const qaStmt = env.DB.prepare(`
-    SELECT locale, title, question, answer, related_cards
+    SELECT locale, title, question, answer, related_cards_html, related_card_numbers
     FROM qa_items 
     WHERE card_id = ?
   `);
@@ -250,21 +346,11 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
       color: t.color,
       rarity: t.rarity,
       set: t.set_name,
-      illustrator: t.illustrator,
       abilityText: t.ability_text,
-      tags: [],
+      extra: t.extra,
       qa_items: [],
+      arts: [],
     };
-  });
-
-  // Add tags to translations
-  tags.results.forEach((t: any) => {
-    if (card.translations[t.locale]) {
-      if (!card.translations[t.locale].tags) {
-        card.translations[t.locale].tags = [];
-      }
-      card.translations[t.locale].tags.push(t.tag);
-    }
   });
 
   // Add QA items to translations
@@ -277,7 +363,8 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
         title: qa.title,
         question: qa.question,
         answer: qa.answer,
-        related_cards: qa.related_cards,
+        relatedCardsHtml: qa.related_cards_html,
+        relatedCardNumbers: parseJsonArray(qa.related_card_numbers),
       });
     }
   });
@@ -293,26 +380,37 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
       };
 
       if (skill.skill_type === "oshi") {
-        if (!card.translations[skill.locale].oshiSkill) {
-          card.translations[skill.locale].oshiSkill = skillData;
-        }
+        card.translations[skill.locale].oshiSkill = skillData;
       } else if (skill.skill_type === "sp_oshi") {
-        if (!card.translations[skill.locale].spOshiSkill) {
-          card.translations[skill.locale].spOshiSkill = skillData;
-        }
+        card.translations[skill.locale].spOshiSkill = skillData;
       }
     }
   });
 
-  // Add arts data
-  card.arts = arts.results.map((art: any) => ({
-    costCount: art.cost_count,
-    costTypes: art.cost_types ? JSON.parse(art.cost_types) : [],
-    damage: art.damage,
-    isPlus: art.is_plus,
-    specialTargets: art.special_targets ? JSON.parse(art.special_targets) : [],
-    specialValues: art.special_values ? JSON.parse(art.special_values) : [],
-  }));
+  // Add arts data with locale support
+  const artsByLocale: Record<string, any[]> = {};
+  arts.results.forEach((art: any) => {
+    if (!artsByLocale[art.locale]) {
+      artsByLocale[art.locale] = [];
+    }
+    artsByLocale[art.locale].push({
+      costCount: art.cost_count,
+      costTypes: parseJsonArray(art.cost_types),
+      damage: art.damage,
+      isPlus: art.is_plus,
+      specialTargets: parseJsonArray(art.special_targets),
+      specialValues: parseJsonArray(art.special_values),
+      name: art.name,
+      effect: art.effect,
+    });
+  });
+
+  // Add arts to translations
+  Object.keys(artsByLocale).forEach((locale) => {
+    if (card.translations[locale]) {
+      card.translations[locale].arts = artsByLocale[locale];
+    }
+  });
 
   // Add keyword data
   if (keywords.results.length > 0) {
@@ -322,19 +420,17 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
     };
   }
 
-  return card;
+  // Parse JSON fields using helper function
+  const parsedCard = parseCardJsonFields(card);
+
+  return parsedCard;
 }
 
 // Get filter options (unique values for dropdowns)
 async function getFilterOptions(env: Env, locale: string = "en") {
-  const [names, tags, sets] = await Promise.all([
+  const [names, sets] = await Promise.all([
     env.DB.prepare(
       "SELECT DISTINCT name FROM card_translations WHERE locale = ? ORDER BY name"
-    )
-      .bind(locale)
-      .all(),
-    env.DB.prepare(
-      "SELECT DISTINCT tag FROM tags WHERE locale = ? ORDER BY tag"
     )
       .bind(locale)
       .all(),
@@ -345,9 +441,24 @@ async function getFilterOptions(env: Env, locale: string = "en") {
       .all(),
   ]);
 
+  // Get unique tags from the JSON field in cards table
+  const cardsWithTags = await env.DB.prepare(
+    "SELECT DISTINCT tags FROM cards WHERE tags IS NOT NULL AND tags != ''"
+  ).all();
+
+  const allTags = new Set<string>();
+  cardsWithTags.results.forEach((row: any) => {
+    const tags = parseJsonArray(row.tags);
+    tags.forEach((tag) => allTags.add(tag));
+  });
+
+  const tags = Array.from(allTags)
+    .sort()
+    .map((tag) => ({ value: tag, label: tag }));
+
   return {
     names: names.results.map((n: any) => ({ value: n.name, label: n.name })),
-    tags: tags.results.map((t: any) => ({ value: t.tag, label: t.tag })),
+    tags,
     sets: sets.results.map((s: any) => ({
       value: s.set_name,
       label: s.set_name,
@@ -436,6 +547,54 @@ export default {
         const options = await getFilterOptions(env, locale);
 
         return new Response(JSON.stringify(options), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      // Route: GET /api/static-filters - Get static filter values from code tables
+      if (path === "/api/static-filters" && request.method === "GET") {
+        const [cardTypes, rarities, bloomLevels] = await Promise.all([
+          env.DB.prepare(
+            "SELECT DISTINCT card_type_code FROM cards ORDER BY card_type_code"
+          ).all(),
+          env.DB.prepare(
+            "SELECT DISTINCT rarity_code FROM cards ORDER BY rarity_code"
+          ).all(),
+          env.DB.prepare(
+            "SELECT DISTINCT bloom_level_code FROM cards WHERE bloom_level_code IS NOT NULL ORDER BY bloom_level_code"
+          ).all(),
+        ]);
+
+        // Get unique color codes from JSON arrays
+        const cardsWithColors = await env.DB.prepare(
+          "SELECT DISTINCT color_codes FROM cards WHERE color_codes IS NOT NULL"
+        ).all();
+
+        const allColors = new Set<string>();
+        cardsWithColors.results.forEach((row: any) => {
+          const colors = parseJsonArray(row.color_codes);
+          colors.forEach((color) => allColors.add(color));
+        });
+
+        const colors = Array.from(allColors).sort();
+
+        const staticFilters = {
+          cardTypes: cardTypes.results.map((ct: any) => ({
+            value: ct.card_type_code,
+            label: ct.card_type_code,
+          })),
+          colors: colors.map((color) => ({ value: color, label: color })),
+          rarities: rarities.results.map((r: any) => ({
+            value: r.rarity_code,
+            label: r.rarity_code,
+          })),
+          bloomLevels: bloomLevels.results.map((bl: any) => ({
+            value: bl.bloom_level_code,
+            label: bl.bloom_level_code,
+          })),
+        };
+
+        return new Response(JSON.stringify(staticFilters), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
