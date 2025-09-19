@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Card } from "@/types/card";
+import { items } from "happy-dom/lib/PropertySymbol.js";
 
-const { locale } = useI18n();
+// const { locale } = useI18n();
 
 defineProps<{
   item: Card;
@@ -13,50 +14,69 @@ defineProps<{
     <div class="border divide-y rounded-lg [&>*:nth-of-type(odd)]:bg-accent/50">
       <!-- cardTypeCode -->
       <CardDataRowsBlockItem
-        v-if="item.cardTypeCode"
+        v-if="item.card_type_code"
         :name="$t('fields.cardType')"
       >
-        {{ $t(`cardTypes.${item.cardTypeCode}`) }}
-        <!-- {{ $t(`cards.${item.id}.cardType`) }} -->
+        {{ $t(`cardTypes.${item.card_type_code}`) }}
       </CardDataRowsBlockItem>
 
       <!-- tags -->
       <CardDataRowsBlockItem v-if="item.tags" :name="$t('fields.tags')">
         <div class="flex flex-wrap gap-1">
-          <template
-            v-for="(tag, index) in $tm(`cards.${item.id}.tags`)"
-            :key="index"
-          >
+          <template v-for="(tag, index) in item.tags" :key="index">
             <Button variant="link" class="p-0 h-auto">
-              {{ $rt(tag) }}
+              {{ tag }}
             </Button>
           </template>
         </div>
       </CardDataRowsBlockItem>
 
       <!-- rarityCode -->
-      <CardDataRowsBlockItem v-if="item.rarityCode" :name="$t('fields.rarity')">
-        {{ $t(`cards.${item.id}.rarity`) }}
+      <CardDataRowsBlockItem
+        v-if="item.rarity_code"
+        :name="$t('fields.rarity')"
+      >
+        {{ item.rarity_code }}
       </CardDataRowsBlockItem>
 
       <!-- set -->
       <CardDataRowsBlockItem
-        v-if="item.translations?.ja?.set"
+        v-if="item?.card_sets && item?.card_sets.length > 0"
         :name="$t('fields.set')"
       >
-        {{ item.translations?.ja?.set }}
+        <div v-for="set in item.card_sets" :key="set">
+          {{ set }}
+        </div>
       </CardDataRowsBlockItem>
 
       <!-- colorCode -->
-      <CardDataRowsBlockItem v-if="item.colorCode" :name="$t('fields.color')">
+      <CardDataRowsBlockItem
+        v-if="item.color_codes && item.color_codes.length > 0"
+        :name="$t('fields.color')"
+      >
         <div class="flex items-center gap-1">
-          <Image
-            :src="`/icons/type_${item.colorCode}.png`"
-            :img-attributes="{ class: 'w-5' }"
-          />
+          <!-- Handle single color (backward compatibility) -->
+          <template v-if="item.color_code && !item.color_codes">
+            <Image
+              :src="`/icons/type_${item.color_code}.png`"
+              :img-attributes="{ class: 'w-5' }"
+            />
+            {{ $t(`colors.${item.color_code}`) }}
+          </template>
 
-          {{ $t(`colors.${item.colorCode}`) }}
-          <!-- {{ $t(`cards.${item.id}.color`) }} -->
+          <!-- Handle multiple colors (new format) -->
+          <template v-else-if="item.color_codes && item.color_codes.length > 0">
+            <template v-for="(color, index) in item.color_codes" :key="index">
+              <Image
+                :src="`/icons/type_${color}.png`"
+                :img-attributes="{ class: 'w-5' }"
+              />
+              <span v-if="index < item.color_codes.length - 1" class="mr-1"
+                >{{ $t(`colors.${color}`) }},</span
+              >
+              <span v-else>{{ $t(`colors.${color}`) }}</span>
+            </template>
+          </template>
         </div>
       </CardDataRowsBlockItem>
 
@@ -72,27 +92,33 @@ defineProps<{
 
       <!-- bloomLevelCode -->
       <CardDataRowsBlockItem
-        v-if="item.bloomLevelCode"
+        v-if="item.bloom_level_code"
         :name="$t('fields.bloomLevel')"
       >
-        {{ $t(`cards.${item.id}.bloomLevel`) }}
+        {{ $t(`bloomLevel.${item.bloom_level_code}`) }}
       </CardDataRowsBlockItem>
 
       <!-- batonTouchCount -->
       <CardDataRowsBlockItem
-        v-if="item.batonTouchCount"
+        v-if="item.baton_touch_count && item.baton_touch_count > 0"
         :name="$t('fields.batonTouchCount')"
       >
         <div class="flex items-center">
-          <template v-for="index in item.batonTouchCount" :key="index">
+          <template
+            v-for="(type, index) in item.baton_touch_types"
+            :key="index"
+          >
             <Image
-              :src="`/icons/arts_null.png`"
+              :src="`/icons/arts_${type}.png`"
               :img-attributes="{ class: 'w-6 h-6' }"
             />
           </template>
-
           <span class="ml-1">
-            ({{ $t(`colors.null`) }} {{ `x${item.batonTouchCount}` }})
+            ({{
+              item.baton_touch_types
+                .map((type: string) => $t(`colors.${type}`))
+                .join(", ")
+            }})
           </span>
         </div>
       </CardDataRowsBlockItem>

@@ -75,42 +75,51 @@ export type QaItem = {
   related_cards: string;
 };
 
-export type Translations = {
-  [L in Locales]?: Translation;
-};
+// export type Translations = {
+//   [L in Locales]?: Translation;
+// };
 
-export type Translation = {
-  abilityText?: string;
-  cardType?: string;
-  color?: string;
-  illustrator?: string;
-  name?: string;
-  rarity?: string;
-  set?: string;
-  tags?: string[];
-  qa_items?: QaItem[];
-};
+// export type Translation = {
+//   abilityText?: string;
+//   cardType?: string;
+//   color?: string;
+//   illustrator?: string;
+//   name?: string;
+//   rarity?: string;
+//   set?: string;
+//   tags?: string[];
+//   qa_items?: QaItem[];
+// };
 
 export type Card = {
-  name: string;
-  arts?: ArtsItem[];
-  batonTouchCount?: number;
-  bloomLevelCode?: BloomLevelCodeType;
-  cardNumber: string;
-  cardTypeCode: CardTypeCodeType;
-  colorCode: ColorCodeType;
-  hp?: number;
   id: string;
-  imagePath: string;
-  imageUrl: string;
-  keyword?: Keyword;
+  card_number: string;
+  card_type_code: string;
+  color_codes: string[]; // Always parsed array
+  rarity_code: string;
+  bloom_level_code?: string;
+  image_path: string;
+  image_url: string;
+  hp?: number;
   life?: number;
-  oshiSkill?: OshiSkill;
-  rarityCode: RarityCodeType;
-  spOshiSkill?: SpOshiSkill;
-  tags: string[];
-  translations: Translations;
-  set: string;
+  baton_touch_count?: number;
+  baton_touch_types?: string[]; // Always parsed array
+  illustrator?: string;
+  card_sets?: string[]; // Always parsed array
+  tags?: string[]; // Always parsed array
+  // Translation fields (from the specified locale)
+  name?: string;
+  card_type?: string;
+  color?: string;
+  rarity?: string;
+  set_name?: string;
+  ability_text?: string;
+  // Related data
+  oshi_skill?: any;
+  sp_oshi_skill?: any;
+  arts?: any[];
+  keyword?: any;
+  qaItems?: any[];
 };
 
 export type CardCollection = Card[];

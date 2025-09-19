@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div v-if="item.translations[locale]?.qa_items?.length" class="">
+  <div v-if="item?.qa_items?.length" class="">
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger class="flex gap-2 p-2 rounded-lg border bg-accent/50">
@@ -22,10 +22,7 @@ defineProps<{
         <AccordionContent
           class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4"
         >
-          <template
-            v-for="(qaItem, index) in item.translations[locale]?.qa_items"
-            :key="index"
-          >
+          <template v-for="(qaItem, index) in item?.qa_items" :key="index">
             <div
               class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50 ml-2 md:ml-4"
             >

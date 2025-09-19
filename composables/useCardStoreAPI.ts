@@ -72,6 +72,27 @@ export const useCardStoreAPI = () => {
     }
   };
 
+  // Helper function to normalize card data from API response
+  const normalizeCard = (card: any): Card => {
+    return {
+      ...card,
+      // // Handle field name mappings from worker response
+      // colorCodes: card.colorCodes || card.color_codes || [],
+      // batonTouchTypes: card.batonTouchTypes || card.baton_touch_types || [],
+      // cardSets: card.cardSets || card.card_sets || [],
+      // tags: card.tags || [],
+      // // Maintain backward compatibility
+      // colorCode:
+      //   card.colorCode ||
+      //   (card.colorCodes && card.colorCodes[0]) ||
+      //   (card.color_codes && card.color_codes[0]),
+      // set:
+      //   card.set ||
+      //   (card.cardSets && card.cardSets[0]) ||
+      //   (card.card_sets && card.card_sets[0]),
+    };
+  };
+
   // Load cards with filtering - now uses API
   const loadCards = async (
     filterOptions?: FilterOptions,
@@ -222,12 +243,16 @@ export const useCardStoreAPI = () => {
       );
 
       // Update state
-      filteredCards.value = response.cards;
+      filteredCards.value = response.cards.map(normalizeCard);
+      console.log("filteredCards.value:", filteredCards.value);
       totalCards.value = response.total;
       currentPage.value = page;
 
-      // Cache the result
-      filterCache.value.set(cacheKey, response);
+      // Cache the result with normalized cards
+      filterCache.value.set(cacheKey, {
+        cards: filteredCards.value,
+        total: response.total,
+      });
 
       return response.cards;
     } catch (error) {
@@ -245,7 +270,7 @@ export const useCardStoreAPI = () => {
   const getCardById = async (id: string): Promise<Card | undefined> => {
     try {
       const response = await apiCall<{ card: Card }>(`/api/cards/${id}`);
-      return response.card;
+      return response.card ? normalizeCard(response.card) : undefined;
     } catch (error) {
       console.error(`Failed to fetch card ${id}:`, error);
       return undefined;
@@ -273,7 +298,7 @@ export const useCardStoreAPI = () => {
         }
       );
 
-      return response.cards;
+      return response.cards.map(normalizeCard);
     } catch (error) {
       console.error("Search failed:", error);
       return [];

@@ -13,9 +13,9 @@ interface FilterOptions {
   tag?: string;
   set?: string;
   colors?: string[];
-  cardTypes?: string[];
+  card_types?: string[];
   rarity?: string[];
-  bloomLevel?: string[];
+  bloom_level?: string[];
   locale?: string;
   page?: number;
   limit?: number;
@@ -23,25 +23,33 @@ interface FilterOptions {
 
 interface Card {
   id: string;
-  cardNumber: string;
-  cardTypeCode: string;
-  colorCodes: string[]; // Always parsed array
-  rarityCode: string;
-  bloomLevelCode?: string;
-  imagePath: string;
-  imageUrl: string;
+  card_number: string;
+  card_type_code: string;
+  color_codes: string[]; // Always parsed array
+  rarity_code: string;
+  bloom_level_code?: string;
+  image_path: string;
+  image_url: string;
   hp?: number;
   life?: number;
-  batonTouchCount?: number;
-  batonTouchTypes?: string[]; // Always parsed array
+  baton_touch_count?: number;
+  baton_touch_types?: string[]; // Always parsed array
   illustrator?: string;
-  cardSets?: string[]; // Always parsed array
+  card_sets?: string[]; // Always parsed array
   tags?: string[]; // Always parsed array
-  translations: Record<string, any>;
-  oshiSkill?: any;
-  spOshiSkill?: any;
+  // Translation fields (from the specified locale)
+  name?: string;
+  card_type?: string;
+  color?: string;
+  rarity?: string;
+  set_name?: string;
+  ability_text?: string;
+  // Related data
+  oshi_skill?: any;
+  sp_oshi_skill?: any;
   arts?: any[];
   keyword?: any;
+  qa_items?: any[];
 }
 
 // CORS headers
@@ -74,11 +82,11 @@ function parseJsonArray(jsonString: string | null | undefined): string[] {
 function parseCardJsonFields(card: any): Card {
   return {
     ...card,
-    colorCodes: parseJsonArray(card.color_codes || card.colorCodes),
-    batonTouchTypes: parseJsonArray(
+    color_codes: parseJsonArray(card.color_codes || card.colorCodes),
+    baton_touch_types: parseJsonArray(
       card.baton_touch_types || card.batonTouchTypes
     ),
-    cardSets: parseJsonArray(card.card_sets || card.cardSets),
+    card_sets: parseJsonArray(card.card_sets || card.cardSets),
     tags: parseJsonArray(card.tags),
   };
 }
@@ -233,10 +241,10 @@ async function filterCards(
   }
 
   // Add card type filters
-  if (filters.cardTypes && filters.cardTypes.length > 0) {
-    const typePlaceholders = filters.cardTypes.map(() => "?").join(",");
+  if (filters.card_types && filters.card_types.length > 0) {
+    const typePlaceholders = filters.card_types.map(() => "?").join(",");
     whereConditions.push(`c.card_type_code IN (${typePlaceholders})`);
-    params.push(...filters.cardTypes);
+    params.push(...filters.card_types);
   }
 
   // Add rarity filters
@@ -247,10 +255,10 @@ async function filterCards(
   }
 
   // Add bloom level filters
-  if (filters.bloomLevel && filters.bloomLevel.length > 0) {
-    const bloomPlaceholders = filters.bloomLevel.map(() => "?").join(",");
+  if (filters.bloom_level && filters.bloom_level.length > 0) {
+    const bloomPlaceholders = filters.bloom_level.map(() => "?").join(",");
     whereConditions.push(`c.bloom_level_code IN (${bloomPlaceholders})`);
-    params.push(...filters.bloomLevel);
+    params.push(...filters.bloom_level);
   }
 
   // Add name filter
@@ -299,37 +307,38 @@ async function filterCards(
   };
 }
 
-// Get card details including all translations
-async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
-  // Get basic card data
-  const cardStmt = env.DB.prepare("SELECT * FROM cards WHERE id = ?");
-  const card = (await cardStmt.bind(cardId).first()) as Card;
+// Get card details for a specific locale (returns same structure as filter API)
+async function getCardDetails(
+  env: Env,
+  cardId: string,
+  locale: string = "tc"
+): Promise<Card | null> {
+  // Get basic card data with translation for the specified locale
+  const cardStmt = env.DB.prepare(`
+    SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+    FROM cards c
+    LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+    WHERE c.id = ?
+  `);
+  const card = (await cardStmt.bind(locale, cardId).first()) as Card;
 
   if (!card) return null;
 
-  // Get all translations
-  const translationsStmt = env.DB.prepare(`
-    SELECT locale, name, card_type, color, rarity, set_name, ability_text, extra
-    FROM card_translations 
-    WHERE card_id = ?
-  `);
-  const translations = await translationsStmt.bind(cardId).all();
-
-  // Get oshi skills
+  // Get oshi skills for the specified locale
   const oshiSkillsStmt = env.DB.prepare(`
-    SELECT skill_type, locale, cost, timing_code, name, effect
+    SELECT skill_type, cost, timing_code, name, effect
     FROM oshi_skills 
-    WHERE card_id = ?
+    WHERE card_id = ? AND locale = ?
   `);
-  const oshiSkills = await oshiSkillsStmt.bind(cardId).all();
+  const oshiSkills = await oshiSkillsStmt.bind(cardId, locale).all();
 
-  // Get arts (now with locale support)
+  // Get arts for the specified locale
   const artsStmt = env.DB.prepare(`
     SELECT *
     FROM arts 
-    WHERE card_id = ?
+    WHERE card_id = ? AND locale = ?
   `);
-  const arts = await artsStmt.bind(cardId).all();
+  const arts = await artsStmt.bind(cardId, locale).all();
 
   // Get keywords
   const keywordStmt = env.DB.prepare(`
@@ -339,91 +348,50 @@ async function getCardDetails(env: Env, cardId: string): Promise<Card | null> {
   `);
   const keywords = await keywordStmt.bind(cardId).all();
 
-  // Get QA items
+  // Get QA items for the specified locale
   const qaStmt = env.DB.prepare(`
-    SELECT locale, title, question, answer, related_cards_html, related_card_numbers
+    SELECT title, question, answer, related_cards_html, related_card_numbers
     FROM qa_items 
-    WHERE card_id = ?
+    WHERE card_id = ? AND locale = ?
   `);
-  const qaItems = await qaStmt.bind(cardId).all();
+  const qaItems = await qaStmt.bind(cardId, locale).all();
 
-  // Structure the response
-  card.translations = {};
-  translations.results.forEach((t: any) => {
-    if (!card.translations[t.locale]) {
-      card.translations[t.locale] = {};
-    }
-    card.translations[t.locale] = {
-      name: t.name,
-      cardType: t.card_type,
-      color: t.color,
-      rarity: t.rarity,
-      set: t.set_name,
-      abilityText: t.ability_text,
-      extra: t.extra,
-      qa_items: [],
-      arts: [],
-    };
-  });
-
-  // Add QA items to translations
-  qaItems.results.forEach((qa: any) => {
-    if (card.translations[qa.locale]) {
-      if (!card.translations[qa.locale].qa_items) {
-        card.translations[qa.locale].qa_items = [];
-      }
-      card.translations[qa.locale].qa_items.push({
-        title: qa.title,
-        question: qa.question,
-        answer: qa.answer,
-        relatedCardsHtml: qa.related_cards_html,
-        relatedCardNumbers: parseJsonArray(qa.related_card_numbers),
-      });
-    }
-  });
-
-  // Add oshi skills
+  // Add oshi skills directly to card object
   oshiSkills.results.forEach((skill: any) => {
-    if (card.translations[skill.locale]) {
-      const skillData = {
-        cost: skill.cost,
-        timingCode: skill.timing_code,
-        name: skill.name,
-        effect: skill.effect,
-      };
+    const skillData = {
+      cost: skill.cost,
+      timingCode: skill.timing_code,
+      name: skill.name,
+      effect: skill.effect,
+    };
 
-      if (skill.skill_type === "oshi") {
-        card.translations[skill.locale].oshiSkill = skillData;
-      } else if (skill.skill_type === "sp_oshi") {
-        card.translations[skill.locale].spOshiSkill = skillData;
-      }
+    if (skill.skill_type === "oshi") {
+      card.oshi_skill = skillData;
+    } else if (skill.skill_type === "sp_oshi") {
+      card.sp_oshi_skill = skillData;
     }
   });
 
-  // Add arts data with locale support
-  const artsByLocale: Record<string, any[]> = {};
-  arts.results.forEach((art: any) => {
-    if (!artsByLocale[art.locale]) {
-      artsByLocale[art.locale] = [];
-    }
-    artsByLocale[art.locale].push({
-      costCount: art.cost_count,
-      costTypes: parseJsonArray(art.cost_types),
-      damage: art.damage,
-      isPlus: art.is_plus,
-      specialTargets: parseJsonArray(art.special_targets),
-      specialValues: parseJsonArray(art.special_values),
-      name: art.name,
-      effect: art.effect,
-    });
-  });
+  // Add arts data directly to card object
+  card.arts = arts.results.map((art: any) => ({
+    costCount: art.cost_count,
+    costTypes: parseJsonArray(art.cost_types),
+    damage: art.damage,
+    isPlus: art.is_plus,
+    specialTargets: parseJsonArray(art.special_targets),
+    specialValues: parseJsonArray(art.special_values),
+    name: art.name,
+    effect: art.effect,
+  }));
 
-  // Add arts to translations
-  Object.keys(artsByLocale).forEach((locale) => {
-    if (card.translations[locale]) {
-      card.translations[locale].arts = artsByLocale[locale];
-    }
-  });
+  // Add QA items directly to card object
+  card.qa_items = qaItems.results.map((qa: any) => ({
+    title: qa.title,
+    question: qa.question,
+    answer: qa.answer,
+    relatedCardsHtml: qa.related_cards_html,
+    relatedCardNumbers: parseJsonArray(qa.related_card_numbers),
+  }));
 
   // Add keyword data
   if (keywords.results.length > 0) {
@@ -510,12 +478,12 @@ export default {
           tag: url.searchParams.get("tag") || undefined,
           set: url.searchParams.get("set") || undefined,
           colors: url.searchParams.get("colors")?.split(",").filter(Boolean),
-          cardTypes: url.searchParams
+          card_types: url.searchParams
             .get("cardTypes")
             ?.split(",")
             .filter(Boolean),
           rarity: url.searchParams.get("rarity")?.split(",").filter(Boolean),
-          bloomLevel: url.searchParams
+          bloom_level: url.searchParams
             .get("bloomLevel")
             ?.split(",")
             .filter(Boolean),
@@ -541,7 +509,8 @@ export default {
           });
         }
 
-        const card = await getCardDetails(env, cardId);
+        const locale = url.searchParams.get("locale") || "en";
+        const card = await getCardDetails(env, cardId, locale);
         if (!card) {
           return new Response(JSON.stringify({ error: "Card not found" }), {
             status: 404,
