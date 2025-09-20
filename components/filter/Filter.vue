@@ -1,27 +1,63 @@
 <script lang="ts" setup>
-import { Funnel, PanelTopClose, RotateCcw } from "lucide-vue-next";
+import { Funnel, PanelTopClose, RotateCcw, Search } from "lucide-vue-next";
 
 const { locale } = useI18n();
 const cardStore = useCardStore();
 
 // filter
 const filter = useFilter();
-const name = computed(() => filter.filter.value.name);
-const tag = computed(() => filter.filter.value.tag);
-const set = computed(() => filter.filter.value.set);
-const colors = computed(() => filter.filter.value.colors);
-const cardTypes = computed(() => filter.filter.value.cardTypes);
-const rarities = computed(() => filter.filter.value.rarity);
-const bloomLevel = computed(() => filter.filter.value.bloomLevel);
+
+// Use draft filters for UI editing
+const name = computed(() => filter.draftFilter.value.name);
+const tag = computed(() => filter.draftFilter.value.tag);
+const set = computed(() => filter.draftFilter.value.set);
+const colors = computed(() => filter.draftFilter.value.colors);
+const cardTypes = computed(() => filter.draftFilter.value.cardTypes);
+const rarities = computed(() => filter.draftFilter.value.rarity);
+const bloomLevel = computed(() => filter.draftFilter.value.bloomLevel);
+
+// Check if applied filters are active (for the red dot indicator)
 const isFiltered = computed(() => filter.isFiltered);
+// Check if there are pending changes
+const hasPendingChanges = computed(() => filter.hasPendingChanges);
 
 // Add loading state
 const isLoading = computed(() => cardStore.isLoading.value);
+
+// Filter application loading state
+const isApplyingFilters = ref(false);
 
 // Toggle states for dropdowns
 const isNameOpen = ref(false);
 const isTagOpen = ref(false);
 const isSetOpen = ref(false);
+
+// Initialize draft filters when component mounts
+onMounted(() => {
+  filter.initializeDraftFilters();
+});
+
+// Handle filter application
+const handleApplyFilters = async () => {
+  isApplyingFilters.value = true;
+  try {
+    filter.applyFilters();
+    // Close the sheet after applying filters
+    // The parent SheetClose will handle this
+  } finally {
+    isApplyingFilters.value = false;
+  }
+};
+
+// Handle cancel (reset draft to applied filters)
+const handleCancel = () => {
+  filter.resetDraft();
+};
+
+// Handle reset all filters
+const handleResetAll = () => {
+  filter.reset();
+};
 
 // Get options from cache instead of computing them in the component
 const nameFilterOptions = computed(() => {
@@ -71,9 +107,14 @@ const setFilterOptions = computed(() => {
       </Button>
     </SheetTrigger>
     <SheetContent side="top" hide-top-right-close>
-      <!-- Add loading overlay -->
+      <DialogHeader class="h-0 overflow-hidden">
+        <DialogTitle>Filter</DialogTitle>
+        <DialogDescription>Filter</DialogDescription>
+      </DialogHeader>
+
+      <!-- Add loading overlay for filter application -->
       <div
-        v-if="isLoading"
+        v-if="isLoading || isApplyingFilters"
         class="absolute inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center"
       >
         <div class="flex flex-col items-center gap-2">
@@ -81,7 +122,7 @@ const setFilterOptions = computed(() => {
             class="animate-spin h-8 w-8 border-4 border-primary rounded-full border-t-transparent"
           ></div>
           <span class="text-sm text-muted-foreground">{{
-            $t("Filtering...")
+            isApplyingFilters ? $t("Applying filters...") : $t("Filtering...")
           }}</span>
         </div>
       </div>
@@ -96,7 +137,7 @@ const setFilterOptions = computed(() => {
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.name") }}
 
-                  <button @click="filter.resetName">
+                  <button @click="filter.resetDraftName">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -129,7 +170,7 @@ const setFilterOptions = computed(() => {
                       />
                       Loading...
                     </div>
-                    <Command v-else v-model="filter.filter.value.name">
+                    <Command v-else v-model="filter.draftFilter.value.name">
                       <CommandInput placeholder="Change name..." />
                       <CommandList>
                         <CommandEmpty>
@@ -160,7 +201,7 @@ const setFilterOptions = computed(() => {
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.tags") }}
 
-                  <button @click="filter.resetTag">
+                  <button @click="filter.resetDraftTag">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -193,7 +234,7 @@ const setFilterOptions = computed(() => {
                       />
                       Loading...
                     </div>
-                    <Command v-else v-model="filter.filter.value.tag">
+                    <Command v-else v-model="filter.draftFilter.value.tag">
                       <CommandInput placeholder="Change tag..." />
                       <CommandList>
                         <CommandEmpty>

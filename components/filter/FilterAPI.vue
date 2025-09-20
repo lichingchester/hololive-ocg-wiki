@@ -5,33 +5,43 @@ const { locale } = useI18n();
 
 // filter
 const filter = useFilter();
-const name = computed(() => filter.filter.value.name);
-const tag = computed(() => filter.filter.value.tag);
-const set = computed(() => filter.filter.value.set);
-const colors = computed(() => filter.filter.value.colors);
-const cardTypes = computed(() => filter.filter.value.cardTypes);
-const rarities = computed(() => filter.filter.value.rarity);
-const bloomLevel = computed(() => filter.filter.value.bloomLevel);
-const isFiltered = computed(() => filter.isFiltered);
+
+// Use draft filters for UI editing
+const name = computed(() => filter.draftFilter.value.name);
+const tag = computed(() => filter.draftFilter.value.tag);
+const set = computed(() => filter.draftFilter.value.set);
+const colors = computed(() => filter.draftFilter.value.colors);
+const cardTypes = computed(() => filter.draftFilter.value.cardTypes);
+const rarities = computed(() => filter.draftFilter.value.rarity);
+const bloomLevel = computed(() => filter.draftFilter.value.bloomLevel);
+
+// Check if applied filters are active (for the red dot indicator)
+const isFiltered = computed(() => filter.isFiltered());
+// Check if there are pending changes
+const hasPendingChanges = computed(() => filter.hasPendingChanges.value);
 
 // For the API version, we'll use the existing filter logic
 // but fetch options from the API when needed
 const isLoading = ref(false);
+
+// Filter application loading state
+const isApplyingFilters = ref(false);
 
 // Toggle states for dropdowns
 const isNameOpen = ref(false);
 const isTagOpen = ref(false);
 const isSetOpen = ref(false);
 
-// Loading states for each dropdown
-const isLoadingNames = ref(false);
-const isLoadingTags = ref(false);
-const isLoadingSets = ref(false);
+// Loading state for all filter options
+const isLoadingFilterOptions = ref(false);
 
 // Options from API
 const nameFilterOptions = ref<{ value: string; label: string }[]>([]);
 const tagFilterOptions = ref<{ value: string; label: string }[]>([]);
 const setFilterOptions = ref<{ value: string; label: string }[]>([]);
+
+// Track if options have been loaded
+const optionsLoaded = ref(false);
 
 // Configuration
 const runtimeConfig = useRuntimeConfig();
@@ -39,8 +49,11 @@ const apiBaseUrl =
   runtimeConfig.public.apiUrl ||
   "https://your-worker.your-subdomain.workers.dev";
 
-// API call helper
-const loadFilterOptions = async (type: "names" | "tags" | "sets") => {
+// Load all filter options with a single API call
+const loadAllFilterOptions = async () => {
+  if (optionsLoaded.value || isLoadingFilterOptions.value) return;
+
+  isLoadingFilterOptions.value = true;
   try {
     const response = await $fetch<{
       names: { value: string; label: string }[];
@@ -48,51 +61,22 @@ const loadFilterOptions = async (type: "names" | "tags" | "sets") => {
       sets: { value: string; label: string }[];
     }>(`${apiBaseUrl}/api/filter-options?locale=${locale.value}`);
 
-    return response[type] || [];
+    nameFilterOptions.value = response.names || [];
+    tagFilterOptions.value = response.tags || [];
+    setFilterOptions.value = response.sets || [];
+    optionsLoaded.value = true;
   } catch (error) {
-    console.error(`Failed to load ${type} options:`, error);
-    return [];
-  }
-};
-
-// Load name options when dropdown opens
-const loadNameOptions = async () => {
-  if (nameFilterOptions.value.length > 0) return;
-
-  isLoadingNames.value = true;
-  try {
-    const options = await loadFilterOptions("names");
-    nameFilterOptions.value = options;
+    console.error("Failed to load filter options:", error);
   } finally {
-    isLoadingNames.value = false;
+    isLoadingFilterOptions.value = false;
   }
 };
+loadAllFilterOptions();
 
-// Load tag options when dropdown opens
-const loadTagOptions = async () => {
-  if (tagFilterOptions.value.length > 0) return;
-
-  isLoadingTags.value = true;
-  try {
-    const options = await loadFilterOptions("tags");
-    tagFilterOptions.value = options;
-  } finally {
-    isLoadingTags.value = false;
-  }
-};
-
-// Load set options when dropdown opens
-const loadSetOptions = async () => {
-  if (setFilterOptions.value.length > 0) return;
-
-  isLoadingSets.value = true;
-  try {
-    const options = await loadFilterOptions("sets");
-    setFilterOptions.value = options;
-  } finally {
-    isLoadingSets.value = false;
-  }
-};
+// Individual loading functions that trigger the shared loader
+// const loadNameOptions = () => loadAllFilterOptions();
+// const loadTagOptions = () => loadAllFilterOptions();
+// const loadSetOptions = () => loadAllFilterOptions();
 
 // Clear options when locale changes
 watch(
@@ -101,8 +85,36 @@ watch(
     nameFilterOptions.value = [];
     tagFilterOptions.value = [];
     setFilterOptions.value = [];
+    optionsLoaded.value = false;
   }
 );
+
+// Initialize draft filters when component mounts
+onMounted(() => {
+  filter.initializeDraftFilters();
+});
+
+// Handle filter application
+const handleApplyFilters = async () => {
+  isApplyingFilters.value = true;
+  try {
+    filter.applyFilters();
+    // Close the sheet after applying filters
+    // The parent SheetClose will handle this
+  } finally {
+    isApplyingFilters.value = false;
+  }
+};
+
+// Handle cancel (reset draft to applied filters)
+const handleCancel = () => {
+  filter.resetDraft();
+};
+
+// Handle reset all filters
+const handleResetAll = () => {
+  filter.reset();
+};
 </script>
 
 <template>
@@ -111,7 +123,7 @@ watch(
       <Button size="icon" class="relative">
         <!-- filtered dot -->
         <div
-          v-if="isFiltered()"
+          v-if="isFiltered"
           class="absolute left-0 top-0 -translate-2/4 size-2.5 bg-red-500 rounded-full"
         ></div>
 
@@ -119,9 +131,14 @@ watch(
       </Button>
     </SheetTrigger>
     <SheetContent side="top" hide-top-right-close>
-      <!-- Add loading overlay -->
+      <DialogHeader class="h-0 overflow-hidden">
+        <DialogTitle>Filter</DialogTitle>
+        <DialogDescription>Filter</DialogDescription>
+      </DialogHeader>
+
+      <!-- Add loading overlay for filter application -->
       <div
-        v-if="isLoading"
+        v-if="isLoading || isApplyingFilters"
         class="absolute inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center"
       >
         <div class="flex flex-col items-center gap-2">
@@ -129,7 +146,7 @@ watch(
             class="animate-spin h-8 w-8 border-4 border-primary rounded-full border-t-transparent"
           ></div>
           <span class="text-sm text-muted-foreground">{{
-            $t("Filtering...")
+            isApplyingFilters ? $t("Applying filters...") : $t("Filtering...")
           }}</span>
         </div>
       </div>
@@ -144,7 +161,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.name") }}
 
-                  <button @click="filter.resetName">
+                  <button @click="filter.resetDraftName">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -155,7 +172,6 @@ watch(
                       variant="outline"
                       size="sm"
                       class="w-max justify-start"
-                      @click="loadNameOptions"
                     >
                       <template v-if="name">
                         {{ name }}
@@ -170,7 +186,7 @@ watch(
                     avoid-collisions
                   >
                     <div
-                      v-if="isLoadingNames || nameFilterOptions.length === 0"
+                      v-if="isLoadingFilterOptions && !optionsLoaded"
                       class="p-2 text-center text-sm text-muted-foreground"
                     >
                       <div
@@ -178,7 +194,10 @@ watch(
                       />
                       Loading...
                     </div>
-                    <Command v-else v-model="filter.filter.value.name">
+                    <Command
+                      v-else-if="optionsLoaded"
+                      v-model="filter.draftFilter.value.name"
+                    >
                       <CommandInput placeholder="Change name..." />
                       <CommandList>
                         <CommandEmpty>
@@ -209,7 +228,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.tags") }}
 
-                  <button @click="filter.resetTag">
+                  <button @click="filter.resetDraftTag">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -220,7 +239,6 @@ watch(
                       variant="outline"
                       size="sm"
                       class="w-max justify-start"
-                      @click="loadTagOptions"
                     >
                       <template v-if="tag">
                         {{ tag }}
@@ -235,7 +253,7 @@ watch(
                     avoid-collisions
                   >
                     <div
-                      v-if="isLoadingTags || tagFilterOptions.length === 0"
+                      v-if="isLoadingFilterOptions && !optionsLoaded"
                       class="p-2 text-center text-sm text-muted-foreground"
                     >
                       <div
@@ -243,7 +261,10 @@ watch(
                       />
                       Loading...
                     </div>
-                    <Command v-else v-model="filter.filter.value.tag">
+                    <Command
+                      v-else-if="optionsLoaded"
+                      v-model="filter.draftFilter.value.tag"
+                    >
                       <CommandInput placeholder="Change tag..." />
                       <CommandList>
                         <CommandEmpty>
@@ -274,7 +295,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.set") }}
 
-                  <button @click="filter.resetSet">
+                  <button @click="filter.resetDraftSet">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -285,7 +306,6 @@ watch(
                       variant="outline"
                       size="sm"
                       class="w-max justify-start"
-                      @click="loadSetOptions"
                     >
                       <template v-if="set">
                         {{ set }}
@@ -300,7 +320,7 @@ watch(
                     avoid-collisions
                   >
                     <div
-                      v-if="isLoadingSets || setFilterOptions.length === 0"
+                      v-if="isLoadingFilterOptions && !optionsLoaded"
                       class="p-2 text-center text-sm text-muted-foreground"
                     >
                       <div
@@ -308,7 +328,10 @@ watch(
                       />
                       Loading...
                     </div>
-                    <Command v-else v-model="filter.filter.value.set">
+                    <Command
+                      v-else-if="optionsLoaded"
+                      v-model="filter.draftFilter.value.set"
+                    >
                       <CommandInput placeholder="Change set..." />
                       <CommandList>
                         <CommandEmpty>
@@ -339,7 +362,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.color") }}
 
-                  <button @click="filter.resetColors">
+                  <button @click="filter.resetDraftColors">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -368,7 +391,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.cardType") }}
 
-                  <button @click="filter.resetCardTypes">
+                  <button @click="filter.resetDraftCardTypes">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -392,7 +415,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.rarity") }}
 
-                  <button @click="filter.resetRarity">
+                  <button @click="filter.resetDraftRarity">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -416,7 +439,7 @@ watch(
                 <div class="flex items-center gap-2 font-semibold mb-2">
                   {{ $t("fields.bloomLevel") }}
 
-                  <button @click="filter.resetBloomLevel">
+                  <button @click="filter.resetDraftBloomLevel">
                     <RotateCcw class="size-4" />
                   </button>
                 </div>
@@ -440,13 +463,26 @@ watch(
       </div>
 
       <SheetFooter class="pt-0 md:pt-4">
-        <div class="flex items-center w-full gap-4">
-          <Button class="grow" variant="outline" @click="filter.reset">
+        <div class="flex items-center w-full gap-2">
+          <Button class="grow" variant="outline" @click="handleResetAll">
             <RotateCcw /> {{ $t("Reset") }}
           </Button>
 
+          <!-- Show filter button only when there are pending changes -->
+          <Button
+            class="grow"
+            @click="handleApplyFilters"
+            :disabled="isApplyingFilters"
+          >
+            <Funnel class="mr-2 h-4 w-4" />
+            Filter
+            <!-- {{ $t("Filter") }} -->
+          </Button>
+
           <SheetClose as-child>
-            <Button class="grow"> <PanelTopClose /> {{ $t("Close") }} </Button>
+            <Button class="grow" variant="outline" @click="handleCancel">
+              <PanelTopClose /> {{ $t("Close") }}
+            </Button>
           </SheetClose>
         </div>
       </SheetFooter>

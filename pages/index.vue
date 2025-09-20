@@ -3,7 +3,7 @@
 <template>
   <AppHeader>
     <!-- filter -->
-    <Filter />
+    <FilterAPI />
 
     <!-- search -->
     <!-- <Input id="search" type="text" placeholder="Search..." /> -->
