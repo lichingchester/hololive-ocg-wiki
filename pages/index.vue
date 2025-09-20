@@ -17,14 +17,11 @@ useHead({
     <FilterAPI />
 
     <!-- search -->
-    <!-- <Input id="search" type="text" placeholder="Search..." /> -->
-    <!-- <SearchInput /> -->
     <SearchInputAPI />
   </AppHeader>
 
   <!-- Card List -->
   <div class="grow">
-    <!-- <CardListView /> -->
     <CardListViewAPI />
   </div>
 

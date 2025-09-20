@@ -11,12 +11,20 @@ const isEditing = computed(() => decks.isEditing.value);
 
 const add = (amount: number = 1) => {
   if (!isEditing.value) return;
-  decks.addCardToDeck({ cardId: props.item.id, amount });
+  decks.addCardToDeck({
+    cardId: props.item.id,
+    amount,
+    cardTypeCode: props.item.card_type_code,
+  });
 };
 
 const remove = (amount: number = 1) => {
   if (!isEditing.value) return;
-  decks.removeCardFromDeck({ cardId: props.item.id, amount });
+  decks.removeCardFromDeck({
+    cardId: props.item.id,
+    amount,
+    cardTypeCode: props.item.card_type_code,
+  });
 };
 
 const count = computed(() => {

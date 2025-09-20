@@ -677,6 +677,58 @@ export default {
         });
       }
 
+      // Route: GET /api/cards-list/:ids - Get multiple cards by comma-separated IDs
+      if (path.startsWith("/api/cards-list/") && request.method === "GET") {
+        const idsParam = path.split("/").pop();
+        if (!idsParam) {
+          return new Response(JSON.stringify({ error: "Card IDs required" }), {
+            status: 400,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+
+        const cardIds = idsParam.split(",").filter(Boolean);
+        if (cardIds.length === 0) {
+          return new Response(
+            JSON.stringify({ error: "At least one Card ID required" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
+
+        // Get basic card data with translations for all requested cards
+        const placeholders = cardIds.map(() => "?").join(",");
+        const cardsStmt = env.DB.prepare(`
+          SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
+          FROM cards c
+          LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+          WHERE c.id IN (${placeholders})
+        `);
+
+        const cardsResult = await cardsStmt.bind(locale, ...cardIds).all();
+
+        if (cardsResult.results.length === 0) {
+          return new Response(JSON.stringify({ cards: [] }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+
+        // Use batch enrichment for all cards
+        const enrichedCards = await enrichCardDataBatch(
+          env,
+          cardsResult.results,
+          locale
+        );
+
+        return new Response(JSON.stringify({ cards: enrichedCards }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
       // Route: GET /api/cards/:id
       if (path.startsWith("/api/cards/") && request.method === "GET") {
         const cardId = path.split("/").pop();

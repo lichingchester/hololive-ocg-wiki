@@ -6,14 +6,6 @@ const { t } = useI18n();
 const localeRoute = useLocaleRoute();
 
 const decks = useDecks();
-const cardStore = useCardStore();
-
-// Load cards when component mounts if needed
-onMounted(async () => {
-  if (cardStore.allCards.value.length === 0) {
-    await cardStore.loadCards();
-  }
-});
 
 const isActive = ref(false);
 const toggleFloatingDeck = () => {

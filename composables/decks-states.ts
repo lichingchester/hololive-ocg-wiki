@@ -112,13 +112,15 @@ export const useDecks = () => {
   const addCardToDeck = ({
     cardId,
     amount,
+    cardTypeCode,
   }: {
     cardId: string;
     amount: number;
+    cardTypeCode: string;
   }) => {
     // Get card from store instead of direct JSON import
-    const card = cardStore.getCardById(cardId);
-    const cardTypeCode = card?.cardTypeCode;
+    // const card = cardStore.getCardById(cardId);
+    // const cardTypeCode = card?.card_type_code;
 
     if (!cardTypeCode || !currentDeckState.value) return;
 
@@ -158,13 +160,15 @@ export const useDecks = () => {
   const removeCardFromDeck = ({
     cardId,
     amount,
+    cardTypeCode,
   }: {
     cardId: string;
     amount: number;
+    cardTypeCode: string;
   }) => {
     // Get card from store instead of direct JSON import
-    const card = cardStore.getCardById(cardId);
-    const cardTypeCode = card?.cardTypeCode;
+    // const card = cardStore.getCardById(cardId);
+    // const cardTypeCode = card?.card_type_code;
 
     if (!cardTypeCode || !currentDeckState.value) return;
 
@@ -248,10 +252,10 @@ export const useDecks = () => {
   };
 
   // Remove all instances of a card from the current deck with performance optimization
-  const removeAllCardFromDeck = (cardId: string) => {
+  const removeAllCardFromDeck = (cardId: string, cardTypeCode: string) => {
     // Get card from store instead of direct JSON import
-    const card = cardStore.getCardById(cardId);
-    const cardTypeCode = card?.cardTypeCode;
+    // const card = cardStore.getCardById(cardId);
+    // const cardTypeCode = card?.card_type_code;
 
     if (!cardTypeCode || !currentDeckState.value) return;
 
@@ -287,7 +291,7 @@ export const useDecks = () => {
   const getCardCount = (cardId: string) => {
     // Get card from store instead of direct JSON import
     const card = cardStore.getCardById(cardId);
-    const cardTypeCode = card?.cardTypeCode;
+    const cardTypeCode = card?.card_type_code;
 
     if (!currentDeckState.value || !cardTypeCode) return 0;
 
@@ -503,15 +507,15 @@ export const useDecks = () => {
     // Sort cards by type, bloom level, and card number
     return cards.sort((a, b) => {
       // First by card type (highest priority)
-      const typePriorityA = cardTypePriority[a.cardTypeCode] || 0;
-      const typePriorityB = cardTypePriority[b.cardTypeCode] || 0;
+      const typePriorityA = cardTypePriority[a.card_type_code] || 0;
+      const typePriorityB = cardTypePriority[b.card_type_code] || 0;
       if (typePriorityA !== typePriorityB) {
         return typePriorityB - typePriorityA; // Descending order (higher priority first)
       }
 
       // Then by bloom level (medium priority)
-      const bloomA = a.bloomLevelCode || "";
-      const bloomB = b.bloomLevelCode || "";
+      const bloomA = a.bloom_level_code || "";
+      const bloomB = b.bloom_level_code || "";
       const bloomPriorityA = bloomLevelPriority[bloomA] || 0;
       const bloomPriorityB = bloomLevelPriority[bloomB] || 0;
       if (bloomPriorityA !== bloomPriorityB) {
@@ -519,7 +523,7 @@ export const useDecks = () => {
       }
 
       // Finally by card number (lowest priority)
-      return a.cardNumber.localeCompare(b.cardNumber, undefined, {
+      return a.card_number.localeCompare(b.card_number, undefined, {
         numeric: true,
       });
     });

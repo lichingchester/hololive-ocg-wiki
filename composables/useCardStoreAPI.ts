@@ -276,6 +276,24 @@ export const useCardStoreAPI = () => {
     }
   };
 
+  const getCardsByIds = async (
+    ids: string[],
+    locale: Locales = "en"
+  ): Promise<CardCollection> => {
+    if (ids.length === 0) return [];
+
+    try {
+      const response = await apiCall<{ cards: CardCollection }>(
+        `/api/cards-list/${ids.join(",")}`,
+        { locale }
+      );
+      return response.cards.map(normalizeCard);
+    } catch (error) {
+      console.error("Failed to fetch cards by IDs:", error);
+      return [];
+    }
+  };
+
   // Search cards using API
   const searchCards = async (
     query: string,
@@ -494,6 +512,7 @@ export const useCardStoreAPI = () => {
     loadCards,
     getFilteredCards,
     getCardById,
+    getCardsByIds,
     searchCards,
 
     // Filter options
