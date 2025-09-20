@@ -13,6 +13,7 @@ const cardStore = useCardStoreAPI();
 const isLoading = ref(true);
 const cards = ref<Card[]>([]);
 const decks = useDecks();
+const { locale } = useI18n();
 
 const uniqueCardIds = computed(() => {
   const cardCounts = props.cardIds.reduce((acc, cardId) => {
@@ -26,7 +27,7 @@ const uniqueCardIds = computed(() => {
 watch(
   () => props.cardIds,
   async (newCardIds) => {
-    console.log("Card IDs changed, fetching cards...");
+    // console.log("Card IDs changed, fetching cards...");
 
     isLoading.value = true;
     if (newCardIds.length === 0) {
@@ -35,10 +36,11 @@ watch(
       return;
     }
 
-    // Fetch cards by IDs using the new batch method
+    // Fetch cards by IDs using the new batch method with locale
     const fetchedCards =
       (await cardStore.getCardsByIds(
-        uniqueCardIds.value.map((item) => item.id)
+        uniqueCardIds.value.map((item) => item.id),
+        locale.value
       )) || [];
     cards.value = fetchedCards;
     isLoading.value = false;

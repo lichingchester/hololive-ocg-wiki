@@ -38,6 +38,9 @@ export const useCardStoreAPI = () => {
     () => new Map()
   );
 
+  // Cache for individual cards by ID and locale
+  const cardsCache = useState<Map<string, Card>>("cardsCache", () => new Map());
+
   // Configuration
   const runtimeConfig = useRuntimeConfig();
   const apiBaseUrl =
@@ -266,10 +269,29 @@ export const useCardStoreAPI = () => {
   };
 
   // Get card by ID from API
-  const getCardById = async (id: string): Promise<Card | undefined> => {
+  const getCardById = async (
+    id: string,
+    locale: Locales = "en"
+  ): Promise<Card | undefined> => {
+    // Create cache key with locale
+    const cacheKey = `${id}_${locale}`;
+
+    // Return cached card if available
+    if (cardsCache.value.has(cacheKey)) {
+      return cardsCache.value.get(cacheKey);
+    }
+
     try {
-      const response = await apiCall<{ card: Card }>(`/api/cards/${id}`);
-      return response.card ? normalizeCard(response.card) : undefined;
+      const response = await apiCall<{ card: Card }>(`/api/cards/${id}`, {
+        locale,
+      });
+      if (response.card) {
+        const normalizedCard = normalizeCard(response.card);
+        // Cache the card
+        cardsCache.value.set(cacheKey, normalizedCard);
+        return normalizedCard;
+      }
+      return undefined;
     } catch (error) {
       console.error(`Failed to fetch card ${id}:`, error);
       return undefined;
@@ -282,15 +304,64 @@ export const useCardStoreAPI = () => {
   ): Promise<CardCollection> => {
     if (ids.length === 0) return [];
 
+    // Check cache for existing cards
+    const cachedCards: Card[] = [];
+    const missingIds: string[] = [];
+
+    ids.forEach((id) => {
+      const cacheKey = `${id}_${locale}`;
+      const cachedCard = cardsCache.value.get(cacheKey);
+      if (cachedCard) {
+        cachedCards.push(cachedCard);
+      } else {
+        missingIds.push(id);
+      }
+    });
+
+    // If all cards are cached, return them immediately
+    if (missingIds.length === 0) {
+      // console.log(`All ${ids.length} cards found in cache`);
+      // Return cards in the same order as requested IDs
+      return ids
+        .map((id) => {
+          const cacheKey = `${id}_${locale}`;
+          return cardsCache.value.get(cacheKey)!;
+        })
+        .filter(Boolean);
+    }
+
+    // console.log(
+    //   `Found ${cachedCards.length} cached cards, fetching ${missingIds.length} new cards`
+    // );
+
     try {
+      // Fetch only missing cards
       const response = await apiCall<{ cards: CardCollection }>(
-        `/api/cards-list/${ids.join(",")}`,
+        `/api/cards-list/${missingIds.join(",")}`,
         { locale }
       );
-      return response.cards.map(normalizeCard);
+
+      const newCards = response.cards.map(normalizeCard);
+
+      // Cache the newly fetched cards
+      newCards.forEach((card) => {
+        const cacheKey = `${card.id}_${locale}`;
+        cardsCache.value.set(cacheKey, card);
+      });
+
+      // Combine cached and new cards, maintaining the order of requested IDs
+      const allCards = ids
+        .map((id) => {
+          const cacheKey = `${id}_${locale}`;
+          return cardsCache.value.get(cacheKey);
+        })
+        .filter(Boolean) as Card[];
+
+      return allCards;
     } catch (error) {
       console.error("Failed to fetch cards by IDs:", error);
-      return [];
+      // Return cached cards even if API call fails
+      return cachedCards;
     }
   };
 
@@ -371,6 +442,7 @@ export const useCardStoreAPI = () => {
   const clearCache = () => {
     filterCache.value.clear();
     filterOptionsCache.value.clear();
+    cardsCache.value.clear();
   };
 
   // Load more cards for pagination
@@ -500,6 +572,15 @@ export const useCardStoreAPI = () => {
     }, 100);
   };
 
+  // Get cache statistics for debugging
+  const getCacheStats = () => {
+    return {
+      filterCacheSize: filterCache.value.size,
+      filterOptionsCacheSize: filterOptionsCache.value.size,
+      cardsCacheSize: cardsCache.value.size,
+    };
+  };
+
   return {
     // State
     allCards,
@@ -526,6 +607,7 @@ export const useCardStoreAPI = () => {
 
     // Cache management
     clearCache,
+    getCacheStats,
     precomputeFilterOptions,
   };
 };
