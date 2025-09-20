@@ -243,6 +243,7 @@ const shouldRenderScroller = computed(() => {
           :item-size="itemSize"
           :item-secondary-size="itemSecondarySize"
           :grid-items="gridColCount"
+          :buffer="600"
           key-field="id"
           @scroll-end="handleScrollEnd"
           v-resize-observer="onResizeObserver"

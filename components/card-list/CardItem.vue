@@ -36,7 +36,7 @@ const count = computed(() => {
   <div class="relative flex aspect-400/559">
     <Dialog>
       <DialogTrigger class="w-full">
-        <Image
+        <SimpleImage
           class="rounded-lg overflow-hidden"
           :src="`/${item.image_path}`"
           :img-attributes="{ class: 'w-full' }"
