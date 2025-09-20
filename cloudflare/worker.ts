@@ -580,14 +580,9 @@ async function getCardDetails(
 
 // Get filter options (unique values for dropdowns)
 async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
-  const [names, sets] = await Promise.all([
+  const [names] = await Promise.all([
     env.DB.prepare(
       "SELECT DISTINCT name FROM card_translations WHERE locale = ? ORDER BY name"
-    )
-      .bind(locale)
-      .all(),
-    env.DB.prepare(
-      "SELECT DISTINCT set_name FROM card_translations WHERE locale = ? AND set_name IS NOT NULL ORDER BY set_name"
     )
       .bind(locale)
       .all(),
@@ -598,23 +593,35 @@ async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
     "SELECT DISTINCT tags FROM cards WHERE tags IS NOT NULL AND tags != ''"
   ).all();
 
+  // Get unique sets from the JSON field in cards table
+  const cardsWithSets = await env.DB.prepare(
+    "SELECT DISTINCT card_sets FROM cards WHERE card_sets IS NOT NULL AND card_sets != ''"
+  ).all();
+
   const allTags = new Set<string>();
   cardsWithTags.results.forEach((row: any) => {
     const tags = parseJsonArray(row.tags);
     tags.forEach((tag) => allTags.add(tag));
   });
 
+  const allSets = new Set<string>();
+  cardsWithSets.results.forEach((row: any) => {
+    const sets = parseJsonArray(row.card_sets);
+    sets.forEach((set) => allSets.add(set));
+  });
+
   const tags = Array.from(allTags)
     .sort()
     .map((tag) => ({ value: tag, label: tag }));
 
+  const sets = Array.from(allSets)
+    .sort()
+    .map((set) => ({ value: set, label: set }));
+
   return {
     names: names.results.map((n: any) => ({ value: n.name, label: n.name })),
     tags,
-    sets: sets.results.map((s: any) => ({
-      value: s.set_name,
-      label: s.set_name,
-    })),
+    sets,
   };
 }
 

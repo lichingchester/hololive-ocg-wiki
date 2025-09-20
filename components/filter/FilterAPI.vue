@@ -469,15 +469,17 @@ const handleResetAll = () => {
           </Button>
 
           <!-- Show filter button only when there are pending changes -->
-          <Button
-            class="grow"
-            @click="handleApplyFilters"
-            :disabled="isApplyingFilters"
-          >
-            <Funnel class="mr-2 h-4 w-4" />
-            Filter
-            <!-- {{ $t("Filter") }} -->
-          </Button>
+          <SheetClose as-child>
+            <Button
+              class="grow"
+              @click="handleApplyFilters"
+              :disabled="isApplyingFilters"
+            >
+              <Funnel class="mr-2 h-4 w-4" />
+              Filter
+              <!-- {{ $t("Filter") }} -->
+            </Button>
+          </SheetClose>
 
           <SheetClose as-child>
             <Button class="grow" variant="outline" @click="handleCancel">
