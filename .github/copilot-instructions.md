@@ -134,10 +134,20 @@ const response = await apiCall<FilterResponse>("/api/cards/filter", {
 
 ### Database Operations
 
-- **Migration**: `node cloudflare/migrate.js` → execute batches via `./run-migration.sh`
+### Database Operations
+
+- **Schema updates**: `cd cloudflare && npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql`
+- **Data re-migration**: After schema changes, run `node migrate.js` then execute `migration.sql`
+- **Migration batches**: Use `./run-migration.sh` for production deployments
 - **FTS setup**: `./setup-fts.sh hololive-ocg-db` for optimal search performance
 - **Testing queries**: `wrangler d1 execute DB_NAME --command="SELECT..."`
 - **View logs**: `wrangler tail` for real-time Worker debugging
+
+### Worker API Testing
+
+- **Local worker runs automatically** - no need to manually start `npx wrangler dev`
+- **Test API directly**: Use curl commands against `http://localhost:8787`
+- **Example**: `curl "http://localhost:8787/api/cards/filter?locale=en&limit=10"`
 
 ### Performance Debugging
 
