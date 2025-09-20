@@ -244,7 +244,6 @@ export const useCardStoreAPI = () => {
 
       // Update state
       filteredCards.value = response.cards.map(normalizeCard);
-      console.log("filteredCards.value:", filteredCards.value);
       totalCards.value = response.total;
       currentPage.value = page;
 
@@ -360,16 +359,117 @@ export const useCardStoreAPI = () => {
   const loadMoreCards = async (
     filterOptions: FilterOptions,
     locale: Locales,
-    nextPage: number
+    nextPage: number,
+    limit: number = 50
   ): Promise<CardCollection> => {
-    const newCards = await getFilteredCards(filterOptions, locale, nextPage);
+    // Store existing cards before making the API call
+    const existingCards = [...filteredCards.value];
 
-    // Append to existing cards if this is page > 1
-    if (nextPage > 1) {
-      filteredCards.value = [...filteredCards.value, ...newCards];
+    // Create cache key for this specific page
+    const cacheKey = JSON.stringify({
+      ...filterOptions,
+      locale,
+      page: nextPage,
+      limit,
+    });
+
+    // Check if this specific page is already cached
+    if (filterCache.value.has(cacheKey)) {
+      const cached = filterCache.value.get(cacheKey)!;
+      // Append cached cards to existing ones
+      filteredCards.value = [...existingCards, ...cached.cards];
+      return cached.cards;
     }
 
-    return newCards;
+    isLoading.value = true;
+
+    try {
+      // Convert filter options to API parameters (same as getFilteredCards)
+      const apiParams: Record<string, any> = {
+        locale,
+        page: nextPage,
+        limit,
+      };
+
+      // Add search parameters
+      if (filterOptions.search?.trim()) {
+        apiParams.search = filterOptions.search.trim();
+      }
+      if (filterOptions.name?.trim()) {
+        apiParams.name = filterOptions.name.trim();
+      }
+      if (filterOptions.tag?.trim()) {
+        apiParams.tag = filterOptions.tag.trim();
+      }
+      if (filterOptions.set?.trim()) {
+        apiParams.set = filterOptions.set.trim();
+      }
+
+      // Add array filters (only include active ones)
+      const activeColors = Object.keys(filterOptions.colors).filter(
+        (color) =>
+          filterOptions.colors[color as keyof typeof filterOptions.colors]
+      );
+      if (activeColors.length > 0) {
+        apiParams.colors = activeColors;
+      }
+
+      const activeCardTypes = Object.keys(filterOptions.cardTypes).filter(
+        (type) =>
+          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
+      );
+      if (activeCardTypes.length > 0) {
+        apiParams.cardTypes = activeCardTypes;
+      }
+
+      const activeRarities = Object.keys(filterOptions.rarity).filter(
+        (rarity) =>
+          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
+      );
+      if (activeRarities.length > 0) {
+        apiParams.rarity = activeRarities;
+      }
+
+      const activeBloomLevels = Object.keys(filterOptions.bloomLevel).filter(
+        (level) =>
+          filterOptions.bloomLevel[
+            level as keyof typeof filterOptions.bloomLevel
+          ]
+      );
+      if (activeBloomLevels.length > 0) {
+        apiParams.bloomLevel = activeBloomLevels;
+      }
+
+      // Make API call directly (don't use getFilteredCards to avoid overwriting)
+      const response = await apiCall<FilterResponse>(
+        "/api/cards/filter",
+        apiParams
+      );
+
+      const newCards = response.cards.map(normalizeCard);
+
+      // Append new cards to existing ones
+      filteredCards.value = [...existingCards, ...newCards];
+
+      // Update total cards count
+      totalCards.value = response.total;
+      currentPage.value = nextPage;
+
+      // Cache this specific page
+      filterCache.value.set(cacheKey, {
+        cards: newCards,
+        total: response.total,
+      });
+
+      return newCards;
+    } catch (error) {
+      console.error("Failed to load more cards:", error);
+      // Restore existing cards on error
+      filteredCards.value = existingCards;
+      return [];
+    } finally {
+      isLoading.value = false;
+    }
   };
 
   // Precompute filter options - now async

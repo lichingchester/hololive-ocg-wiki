@@ -6,7 +6,7 @@ const filter = useFilter();
 const cardStore = useCardStoreAPI(); // Use the new API-based store
 
 // Pagination state
-const pageSize = ref(250); // Reduced for better API performance
+const pageSize = ref(500); // Reduced for better API performance
 const currentPage = ref(1);
 const hasMore = computed(() => {
   return cardStore.filteredCards.value.length < cardStore.totalCards.value;
@@ -31,8 +31,7 @@ const loadMore = async () => {
   await cardStore.loadMoreCards(
     filter.filter.value,
     locale.value,
-    currentPage.value,
-    pageSize.value
+    currentPage.value
   );
 };
 
@@ -56,44 +55,12 @@ onMounted(() => {
 // Use the filtered cards from the store
 const displayedCards = computed(() => cardStore.filteredCards.value);
 
-// Window size tracking for responsive trigger distance
-const windowHeight = ref(0);
-
-// Update window height on resize
-const updateWindowHeight = () => {
-  windowHeight.value = window.innerHeight;
-};
-
-// Reactive trigger distance based on window height
-const triggerDistance = computed(() => {
-  const spacingHeight = windowHeight.value * 0.65; // 65vh in pixels
-  return spacingHeight + 50; // 65vh + 50px
-});
-
 // Infinite scroll
 onMounted(() => {
-  // Initialize window height
-  updateWindowHeight();
-
   const { reset } = useInfiniteScroll(window, loadMore, {
-    distance: triggerDistance.value,
+    distance: 10,
     canLoadMore: () => hasMore.value && !cardStore.isLoading.value,
   });
-
-  // Handle window resize and recreate infinite scroll with new distance
-  const handleResize = () => {
-    updateWindowHeight();
-    // Reset and recreate with new distance
-    reset();
-    nextTick(() => {
-      useInfiniteScroll(window, loadMore, {
-        distance: triggerDistance.value,
-        canLoadMore: () => hasMore.value && !cardStore.isLoading.value,
-      });
-    });
-  };
-
-  window.addEventListener("resize", handleResize);
 
   // Reset pagination when filters change
   watch(
@@ -104,11 +71,6 @@ onMounted(() => {
     },
     { deep: true }
   );
-
-  // Cleanup resize listener
-  onUnmounted(() => {
-    window.removeEventListener("resize", handleResize);
-  });
 });
 
 // Loading state for better UX
