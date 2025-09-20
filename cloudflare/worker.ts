@@ -44,12 +44,40 @@ interface Card {
   rarity?: string;
   set_name?: string;
   ability_text?: string;
-  // Related data
-  oshi_skill?: any;
-  sp_oshi_skill?: any;
-  arts?: any[];
-  keyword?: any;
-  qa_items?: any[];
+  // Related data - now properly typed
+  oshi_skill?: {
+    cost?: string;
+    timing_code?: string;
+    name?: string;
+    effect?: string;
+  };
+  sp_oshi_skill?: {
+    cost?: string;
+    timing_code?: string;
+    name?: string;
+    effect?: string;
+  };
+  arts?: {
+    cost_count?: number;
+    cost_types?: string[];
+    damage?: number;
+    is_plus?: boolean;
+    special_targets?: string[];
+    special_values?: string[];
+    name?: string;
+    effect?: string;
+  }[];
+  keyword?: {
+    type?: string;
+    type_code?: string;
+  };
+  qa_items?: {
+    title?: string;
+    question?: string;
+    answer?: string;
+    related_cards_html?: string;
+    related_card_numbers?: string[];
+  }[];
 }
 
 // CORS headers
@@ -58,6 +86,9 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+
+// Default locale
+const DEFAULT_LOCALE = "tc";
 
 // Helper function to handle CORS
 function handleCORS(request: Request): Response | null {
@@ -91,11 +122,100 @@ function parseCardJsonFields(card: any): Card {
   };
 }
 
+// Helper function to enrich card data with related information (oshi skills, arts, keywords, qa)
+async function enrichCardData(
+  env: Env,
+  card: any,
+  locale: string
+): Promise<Card> {
+  const cardId = card.id;
+
+  // Get oshi skills for the specified locale
+  const oshiSkillsStmt = env.DB.prepare(`
+    SELECT skill_type, cost, timing_code, name, effect
+    FROM oshi_skills 
+    WHERE card_id = ? AND locale = ?
+  `);
+  const oshiSkills = await oshiSkillsStmt.bind(cardId, locale).all();
+
+  // Get arts for the specified locale
+  const artsStmt = env.DB.prepare(`
+    SELECT *
+    FROM arts 
+    WHERE card_id = ? AND locale = ?
+  `);
+  const arts = await artsStmt.bind(cardId, locale).all();
+
+  // Get keywords
+  const keywordStmt = env.DB.prepare(`
+    SELECT *
+    FROM keywords 
+    WHERE card_id = ?
+  `);
+  const keywords = await keywordStmt.bind(cardId).all();
+
+  // Get QA items for the specified locale
+  const qaStmt = env.DB.prepare(`
+    SELECT title, question, answer, related_cards_html, related_card_numbers
+    FROM qa_items 
+    WHERE card_id = ? AND locale = ?
+  `);
+  const qaItems = await qaStmt.bind(cardId, locale).all();
+
+  // Add oshi skills directly to card object
+  oshiSkills.results.forEach((skill: any) => {
+    const skillData = {
+      cost: skill.cost,
+      timing_code: skill.timing_code,
+      name: skill.name,
+      effect: skill.effect,
+    };
+
+    if (skill.skill_type === "oshi") {
+      card.oshi_skill = skillData;
+    } else if (skill.skill_type === "sp_oshi") {
+      card.sp_oshi_skill = skillData;
+    }
+  });
+
+  // Add arts data directly to card object
+  card.arts = arts.results.map((art: any) => ({
+    cost_count: art.cost_count,
+    cost_types: parseJsonArray(art.cost_types),
+    damage: art.damage,
+    is_plus: art.is_plus,
+    special_targets: parseJsonArray(art.special_targets),
+    special_values: parseJsonArray(art.special_values),
+    name: art.name,
+    effect: art.effect,
+  }));
+
+  // Add QA items directly to card object
+  card.qa_items = qaItems.results.map((qa: any) => ({
+    title: qa.title,
+    question: qa.question,
+    answer: qa.answer,
+    related_cards_html: qa.related_cards_html,
+    related_card_numbers: parseJsonArray(qa.related_card_numbers),
+  }));
+
+  // Add keyword data
+  if (keywords.results.length > 0) {
+    card.keyword = {
+      type: keywords.results[0].type,
+      type_code: keywords.results[0].type_code,
+    };
+  }
+
+  // Parse JSON fields using helper function
+  return parseCardJsonFields(card);
+}
+
 // Search cards with fallback for when FTS is not available
 async function searchCards(
   env: Env,
   query: string,
-  locale: string = "en",
+  locale: string = DEFAULT_LOCALE,
   limit: number = 100
 ): Promise<Card[]> {
   // Return empty results for empty or whitespace-only queries
@@ -115,7 +235,13 @@ async function searchCards(
     `);
 
     const ftsResults = await ftsStmt.bind(locale, query, locale, limit).all();
-    return ftsResults.results.map((card: any) => parseCardJsonFields(card));
+
+    // Enrich each card with complete data
+    const enrichedCards = await Promise.all(
+      ftsResults.results.map((card: any) => enrichCardData(env, card, locale))
+    );
+
+    return enrichedCards;
   } catch (error) {
     // Fallback to regular search if FTS table doesn't exist
     console.log("FTS search failed, falling back to regular search:", error);
@@ -159,9 +285,14 @@ async function searchCards(
       )
       .all();
 
-    return fallbackResults.results.map((card: any) =>
-      parseCardJsonFields(card)
+    // Enrich each card with complete data
+    const enrichedCards = await Promise.all(
+      fallbackResults.results.map((card: any) =>
+        enrichCardData(env, card, locale)
+      )
     );
+
+    return enrichedCards;
   }
 }
 
@@ -170,7 +301,7 @@ async function filterCards(
   env: Env,
   filters: FilterOptions
 ): Promise<{ cards: Card[]; total: number }> {
-  const locale = filters.locale || "en";
+  const locale = filters.locale || DEFAULT_LOCALE;
   const page = filters.page || 1;
   const limit = filters.limit || 50;
   const offset = (page - 1) * limit;
@@ -301,8 +432,13 @@ async function filterCards(
   const cardsStmt = env.DB.prepare(cardsQuery);
   const cardsResult = await cardsStmt.bind(...params, limit, offset).all();
 
+  // Enrich each card with complete data
+  const enrichedCards = await Promise.all(
+    cardsResult.results.map((card: any) => enrichCardData(env, card, locale))
+  );
+
   return {
-    cards: cardsResult.results.map((card: any) => parseCardJsonFields(card)),
+    cards: enrichedCards,
     total: total as number,
   };
 }
@@ -311,7 +447,7 @@ async function filterCards(
 async function getCardDetails(
   env: Env,
   cardId: string,
-  locale: string = "tc"
+  locale: string = DEFAULT_LOCALE
 ): Promise<Card | null> {
   // Get basic card data with translation for the specified locale
   const cardStmt = env.DB.prepare(`
@@ -324,91 +460,12 @@ async function getCardDetails(
 
   if (!card) return null;
 
-  // Get oshi skills for the specified locale
-  const oshiSkillsStmt = env.DB.prepare(`
-    SELECT skill_type, cost, timing_code, name, effect
-    FROM oshi_skills 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const oshiSkills = await oshiSkillsStmt.bind(cardId, locale).all();
-
-  // Get arts for the specified locale
-  const artsStmt = env.DB.prepare(`
-    SELECT *
-    FROM arts 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const arts = await artsStmt.bind(cardId, locale).all();
-
-  // Get keywords
-  const keywordStmt = env.DB.prepare(`
-    SELECT *
-    FROM keywords 
-    WHERE card_id = ?
-  `);
-  const keywords = await keywordStmt.bind(cardId).all();
-
-  // Get QA items for the specified locale
-  const qaStmt = env.DB.prepare(`
-    SELECT title, question, answer, related_cards_html, related_card_numbers
-    FROM qa_items 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const qaItems = await qaStmt.bind(cardId, locale).all();
-
-  // Add oshi skills directly to card object
-  oshiSkills.results.forEach((skill: any) => {
-    const skillData = {
-      cost: skill.cost,
-      timingCode: skill.timing_code,
-      name: skill.name,
-      effect: skill.effect,
-    };
-
-    if (skill.skill_type === "oshi") {
-      card.oshi_skill = skillData;
-    } else if (skill.skill_type === "sp_oshi") {
-      card.sp_oshi_skill = skillData;
-    }
-  });
-
-  // Add arts data directly to card object
-  card.arts = arts.results.map((art: any) => ({
-    costCount: art.cost_count,
-    costTypes: parseJsonArray(art.cost_types),
-    damage: art.damage,
-    isPlus: art.is_plus,
-    specialTargets: parseJsonArray(art.special_targets),
-    specialValues: parseJsonArray(art.special_values),
-    name: art.name,
-    effect: art.effect,
-  }));
-
-  // Add QA items directly to card object
-  card.qa_items = qaItems.results.map((qa: any) => ({
-    title: qa.title,
-    question: qa.question,
-    answer: qa.answer,
-    relatedCardsHtml: qa.related_cards_html,
-    relatedCardNumbers: parseJsonArray(qa.related_card_numbers),
-  }));
-
-  // Add keyword data
-  if (keywords.results.length > 0) {
-    card.keyword = {
-      type: keywords.results[0].type,
-      typeCode: keywords.results[0].type_code,
-    };
-  }
-
-  // Parse JSON fields using helper function
-  const parsedCard = parseCardJsonFields(card);
-
-  return parsedCard;
+  // Use the enrichCardData helper to get complete card data
+  return await enrichCardData(env, card, locale);
 }
 
 // Get filter options (unique values for dropdowns)
-async function getFilterOptions(env: Env, locale: string = "en") {
+async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
   const [names, sets] = await Promise.all([
     env.DB.prepare(
       "SELECT DISTINCT name FROM card_translations WHERE locale = ? ORDER BY name"
@@ -460,7 +517,7 @@ export default {
       // Route: GET /api/cards/search
       if (path === "/api/cards/search" && request.method === "GET") {
         const query = url.searchParams.get("q") || "";
-        const locale = url.searchParams.get("locale") || "en";
+        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
         const limit = parseInt(url.searchParams.get("limit") || "100");
 
         const cards = await searchCards(env, query, locale, limit);
@@ -487,7 +544,7 @@ export default {
             .get("bloomLevel")
             ?.split(",")
             .filter(Boolean),
-          locale: url.searchParams.get("locale") || "en",
+          locale: url.searchParams.get("locale") || DEFAULT_LOCALE,
           page: parseInt(url.searchParams.get("page") || "1"),
           limit: parseInt(url.searchParams.get("limit") || "50"),
         };
@@ -509,7 +566,7 @@ export default {
           });
         }
 
-        const locale = url.searchParams.get("locale") || "en";
+        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
         const card = await getCardDetails(env, cardId, locale);
         if (!card) {
           return new Response(JSON.stringify({ error: "Card not found" }), {
@@ -525,7 +582,7 @@ export default {
 
       // Route: GET /api/filter-options
       if (path === "/api/filter-options" && request.method === "GET") {
-        const locale = url.searchParams.get("locale") || "en";
+        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
         const options = await getFilterOptions(env, locale);
 
         return new Response(JSON.stringify(options), {
