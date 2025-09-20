@@ -1,49 +1,91 @@
 <script setup lang="ts">
+import type { Card } from "~/types/card";
+
 const props = defineProps<{
   cardIds: string[];
   isCompactMode: Boolean;
 }>();
 
-// const cardStore = useCardStore();
-const decksStore = useDecks();
+const cardStore = useCardStoreAPI();
+const isLoading = ref(true);
+const cards = ref<Card[]>([]);
+const { locale } = useI18n();
+
+const uniqueCardIds = computed(() => {
+  const cardCounts = props.cardIds.reduce((acc, cardId) => {
+    acc[cardId] = (acc[cardId] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  return Object.keys(cardCounts).map((id) => ({ id, count: cardCounts[id] }));
+});
 
 // Group cards by ID and count occurrences
 const uniqueCards = computed(() => {
-  const cardMap = new Map();
+  if (!cards.value.length) return [];
 
-  // Skip processing if there are no card IDs
-  if (!props.cardIds.length) return [];
-
-  // Collect card IDs and count occurrences
-  props.cardIds.forEach((cardId) => {
-    if (!cardMap.has(cardId)) {
-      cardMap.set(cardId, { cardId, count: 0 });
-    }
-    cardMap.get(cardId).count++;
-  });
-
-  // Get unique card IDs for efficient lookup
-  const uniqueCardIds = Array.from(cardMap.keys());
-
-  // Use the optimized getCardsByIds method which now returns sorted cards
-  const sortedCards = decksStore.getCardsByIds(uniqueCardIds);
-
-  // Create a result array that preserves the sorting from getCardsByIds
-  const cards = sortedCards.map((card) => {
-    const count = cardMap.get(card.id).count;
-    return {
-      cardId: card.id,
-      count,
-      card,
-    };
-  });
-
-  return cards;
+  // Create a result array with card data and counts
+  return uniqueCardIds.value
+    .map((item) => {
+      const card = cards.value.find((c) => c.id === item.id);
+      if (!card) return null;
+      return {
+        cardId: card.id,
+        count: item.count,
+        card,
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
 });
+
+watch(
+  () => props.cardIds,
+  async (newCardIds) => {
+    isLoading.value = true;
+    if (newCardIds.length === 0) {
+      cards.value = [];
+      isLoading.value = false;
+      return;
+    }
+
+    // Fetch cards by IDs using the new batch method with locale
+    const fetchedCards =
+      (await cardStore.getCardsByIds(
+        uniqueCardIds.value.map((item) => item.id),
+        locale.value
+      )) || [];
+    cards.value = fetchedCards;
+    isLoading.value = false;
+  },
+  { immediate: true, deep: true }
+);
+
+// Simplified function that doesn't create unnecessary card variable
+const getImagePath = (cardId: string) => {
+  if (!cards.value.length || !cardId) {
+    return "";
+  }
+  const card = cards.value.find((c) => c.id === cardId);
+  return card?.image_path || "";
+};
 </script>
 
 <template>
+  <div v-if="isLoading" class="p-4 flex justify-center items-center">
+    <div
+      class="animate-spin h-6 w-6 border-2 border-primary rounded-full border-t-transparent"
+    ></div>
+  </div>
+
   <div
+    v-else-if="uniqueCards.length === 0"
+    class="p-4 text-center text-sm text-gray-500"
+  >
+    {{ $t("No cards to display") }}
+  </div>
+
+  <div
+    v-else
     class="grid"
     :class="
       isCompactMode
@@ -56,14 +98,13 @@ const uniqueCards = computed(() => {
         <Dialog>
           <DialogTrigger class="w-full">
             <Image
-              v-if="item.card.imagePath"
               class="flex-[0_0_400px] aspect-400/559"
-              :src="`/${item.card.imagePath}`"
+              :src="`/${getImagePath(item.card.id)}`"
               :img-attributes="{ class: '' }"
             />
           </DialogTrigger>
 
-          <CardItemDialogContent v-if="item.card" :item="item.card" />
+          <CardItemDialogContent :item="item.card" />
         </Dialog>
 
         <CardCountBadge :count="item.count" :size="'large'" />
