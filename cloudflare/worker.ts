@@ -231,6 +231,196 @@ async function enrichCardData(
   return parseCardJsonFields(card);
 }
 
+// Optimized batch enrichment function with chunking to avoid SQLite variable limits
+async function enrichCardDataBatch(
+  env: Env,
+  cards: any[],
+  locale: string
+): Promise<Card[]> {
+  if (cards.length === 0) return [];
+
+  const cardIds = cards.map((card) => card.id);
+
+  // SQLite has a limit of ~999 variables, so we need to chunk large requests
+  // Use chunks of 50 to be very safe (each query might have additional variables for locale)
+  const CHUNK_SIZE = 50;
+  const chunks: string[][] = [];
+  for (let i = 0; i < cardIds.length; i += CHUNK_SIZE) {
+    chunks.push(cardIds.slice(i, i + CHUNK_SIZE));
+  }
+
+  // Helper function to execute chunked queries
+  async function executeChunkedQuery(
+    query: string,
+    bindParams: (chunkIds: string[]) => any[]
+  ) {
+    const allResults: any[] = [];
+
+    for (const chunk of chunks) {
+      const placeholders = chunk.map(() => "?").join(",");
+      const finalQuery = query.replace("CHUNK_PLACEHOLDERS", placeholders);
+      const params = bindParams(chunk);
+
+      const result = await env.DB.prepare(finalQuery)
+        .bind(...params)
+        .all();
+      allResults.push(...result.results);
+    }
+
+    return { results: allResults };
+  }
+
+  // Batch query all related data with chunked queries
+  const [oshiSkills, arts, keywords, keywordTranslations, qaItems] =
+    await Promise.all([
+      // Get all oshi skills for all cards
+      executeChunkedQuery(
+        `SELECT card_id, skill_type, cost, timing_code, name, effect
+         FROM oshi_skills 
+         WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
+        (chunkIds) => [...chunkIds, locale]
+      ),
+
+      // Get all arts with translations for all cards
+      executeChunkedQuery(
+        `SELECT a.card_id, a.*, at.name, at.effect
+         FROM arts a
+         LEFT JOIN art_translations at ON a.id = at.art_id AND at.locale = ?
+         WHERE a.card_id IN (CHUNK_PLACEHOLDERS)`,
+        (chunkIds) => [locale, ...chunkIds]
+      ),
+
+      // Get all keywords for all cards
+      executeChunkedQuery(
+        `SELECT card_id, type, type_code
+         FROM keywords 
+         WHERE card_id IN (CHUNK_PLACEHOLDERS)`,
+        (chunkIds) => chunkIds
+      ),
+
+      // Get all keyword translations for all cards
+      executeChunkedQuery(
+        `SELECT card_id, name, effect
+         FROM keyword_translations 
+         WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
+        (chunkIds) => [...chunkIds, locale]
+      ),
+
+      // Get all QA items for all cards
+      executeChunkedQuery(
+        `SELECT card_id, title, question, answer, related_cards_html, related_card_numbers
+         FROM qa_items 
+         WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
+        (chunkIds) => [...chunkIds, locale]
+      ),
+    ]);
+
+  // Group related data by card_id for efficient lookup
+  const oshiSkillsMap = new Map<string, any[]>();
+  const artsMap = new Map<string, any[]>();
+  const keywordsMap = new Map<string, any[]>();
+  const keywordTranslationsMap = new Map<string, any[]>();
+  const qaItemsMap = new Map<string, any[]>();
+
+  oshiSkills.results.forEach((skill: any) => {
+    if (!oshiSkillsMap.has(skill.card_id)) {
+      oshiSkillsMap.set(skill.card_id, []);
+    }
+    oshiSkillsMap.get(skill.card_id)!.push(skill);
+  });
+
+  arts.results.forEach((art: any) => {
+    if (!artsMap.has(art.card_id)) {
+      artsMap.set(art.card_id, []);
+    }
+    artsMap.get(art.card_id)!.push(art);
+  });
+
+  keywords.results.forEach((keyword: any) => {
+    if (!keywordsMap.has(keyword.card_id)) {
+      keywordsMap.set(keyword.card_id, []);
+    }
+    keywordsMap.get(keyword.card_id)!.push(keyword);
+  });
+
+  keywordTranslations.results.forEach((trans: any) => {
+    if (!keywordTranslationsMap.has(trans.card_id)) {
+      keywordTranslationsMap.set(trans.card_id, []);
+    }
+    keywordTranslationsMap.get(trans.card_id)!.push(trans);
+  });
+
+  qaItems.results.forEach((qa: any) => {
+    if (!qaItemsMap.has(qa.card_id)) {
+      qaItemsMap.set(qa.card_id, []);
+    }
+    qaItemsMap.get(qa.card_id)!.push(qa);
+  });
+
+  // Enrich each card using the pre-loaded data
+  return cards.map((card) => {
+    const cardId = card.id;
+    const enrichedCard = { ...card };
+
+    // Add oshi skills
+    const cardOshiSkills = oshiSkillsMap.get(cardId) || [];
+    cardOshiSkills.forEach((skill: any) => {
+      const skillData = {
+        cost: skill.cost,
+        timing_code: skill.timing_code,
+        name: skill.name,
+        effect: skill.effect,
+      };
+
+      if (skill.skill_type === "oshi") {
+        enrichedCard.oshi_skill = skillData;
+      } else if (skill.skill_type === "sp_oshi") {
+        enrichedCard.sp_oshi_skill = skillData;
+      }
+    });
+
+    // Add arts
+    const cardArts = artsMap.get(cardId) || [];
+    enrichedCard.arts = cardArts.map((art: any) => ({
+      cost_count: art.cost_count,
+      cost_types: parseJsonArray(art.cost_types),
+      damage: art.damage,
+      is_plus: art.is_plus,
+      special_targets: parseJsonArray(art.special_targets),
+      special_values: parseJsonArray(art.special_values),
+      name: art.name,
+      effect: art.effect,
+    }));
+
+    // Add keywords
+    const cardKeywords = keywordsMap.get(cardId) || [];
+    const cardKeywordTranslations = keywordTranslationsMap.get(cardId) || [];
+    if (cardKeywords.length > 0) {
+      enrichedCard.keyword = {
+        type: cardKeywords[0].type,
+        type_code: cardKeywords[0].type_code,
+      };
+
+      if (cardKeywordTranslations.length > 0) {
+        enrichedCard.keyword.name = cardKeywordTranslations[0].name;
+        enrichedCard.keyword.effect = cardKeywordTranslations[0].effect;
+      }
+    }
+
+    // Add QA items
+    const cardQaItems = qaItemsMap.get(cardId) || [];
+    enrichedCard.qa_items = cardQaItems.map((qa: any) => ({
+      title: qa.title,
+      question: qa.question,
+      answer: qa.answer,
+      related_cards_html: qa.related_cards_html,
+      related_card_numbers: parseJsonArray(qa.related_card_numbers),
+    }));
+
+    return parseCardJsonFields(enrichedCard);
+  });
+}
+
 // Search cards with fallback for when FTS is not available
 async function searchCards(
   env: Env,
@@ -256,9 +446,11 @@ async function searchCards(
 
     const ftsResults = await ftsStmt.bind(locale, query, locale, limit).all();
 
-    // Enrich each card with complete data
-    const enrichedCards = await Promise.all(
-      ftsResults.results.map((card: any) => enrichCardData(env, card, locale))
+    // Enrich cards using batch function
+    const enrichedCards = await enrichCardDataBatch(
+      env,
+      ftsResults.results,
+      locale
     );
 
     return enrichedCards;
@@ -305,11 +497,11 @@ async function searchCards(
       )
       .all();
 
-    // Enrich each card with complete data
-    const enrichedCards = await Promise.all(
-      fallbackResults.results.map((card: any) =>
-        enrichCardData(env, card, locale)
-      )
+    // Enrich cards using batch function
+    const enrichedCards = await enrichCardDataBatch(
+      env,
+      fallbackResults.results,
+      locale
     );
 
     return enrichedCards;
@@ -452,9 +644,11 @@ async function filterCards(
   const cardsStmt = env.DB.prepare(cardsQuery);
   const cardsResult = await cardsStmt.bind(...params, limit, offset).all();
 
-  // Enrich each card with complete data
-  const enrichedCards = await Promise.all(
-    cardsResult.results.map((card: any) => enrichCardData(env, card, locale))
+  // Enrich cards using batch function
+  const enrichedCards = await enrichCardDataBatch(
+    env,
+    cardsResult.results,
+    locale
   );
 
   return {
@@ -476,12 +670,13 @@ async function getCardDetails(
     LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
     WHERE c.id = ?
   `);
-  const card = (await cardStmt.bind(locale, cardId).first()) as Card;
+  const card = await cardStmt.bind(locale, cardId).first();
 
   if (!card) return null;
 
-  // Use the enrichCardData helper to get complete card data
-  return await enrichCardData(env, card, locale);
+  // Use batch enrichment for consistency (even for single card)
+  const enrichedCards = await enrichCardDataBatch(env, [card], locale);
+  return enrichedCards[0] || null;
 }
 
 // Get filter options (unique values for dropdowns)

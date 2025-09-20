@@ -152,6 +152,10 @@ CREATE INDEX idx_art_translations_art_locale ON art_translations(art_id, locale)
 
 CREATE INDEX idx_keyword_translations_card_locale ON keyword_translations(card_id, locale);
 
+CREATE INDEX idx_keywords_card_id ON keywords(card_id);
+
+CREATE INDEX idx_qa_items_card_locale ON qa_items(card_id, locale);
+
 -- Note: Full-text search (FTS) is set up separately using setup-fts.sql
 -- This allows for better control and optional setup of FTS functionality
 
