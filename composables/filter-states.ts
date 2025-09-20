@@ -121,7 +121,9 @@ export const useFilter = () => {
   };
 
   // Apply draft filters to actual filters (this triggers filtering)
-  const applyFilters = () => {
+  const applyFilters = async () => {
+    // Use nextTick to ensure DOM updates don't block the UI
+    await nextTick();
     filterState.value = JSON.parse(JSON.stringify(draftFilterState.value));
   };
 

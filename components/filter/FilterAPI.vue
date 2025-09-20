@@ -98,7 +98,7 @@ onMounted(() => {
 const handleApplyFilters = async () => {
   isApplyingFilters.value = true;
   try {
-    filter.applyFilters();
+    await filter.applyFilters();
     // Close the sheet after applying filters
     // The parent SheetClose will handle this
   } finally {

@@ -14,7 +14,13 @@ const hasMore = computed(() => {
 
 // Debounced filter application
 const applyFilters = useDebounceFn(async () => {
+  // Reset pagination first
   currentPage.value = 1;
+
+  // Use nextTick to ensure UI doesn't block
+  await nextTick();
+
+  // Make the API call
   await cardStore.getFilteredCards(
     filter.filter.value,
     locale.value,
@@ -36,21 +42,39 @@ const loadMore = async () => {
   );
 };
 
-// Apply filters when filter changes
-watch(() => filter.filter.value, applyFilters, { deep: true });
+// Apply filters when filter changes - use immediate: false to prevent sync execution
+watch(
+  () => filter.filter.value,
+  () => {
+    // Use setTimeout to move execution out of current tick and prevent UI blocking
+    setTimeout(() => {
+      applyFiltersWithLoading();
+    }, 0);
+  },
+  {
+    deep: true,
+    immediate: false, // Prevent immediate execution on mount
+  }
+);
 
 // Also update when locale changes
 watch(
   () => locale.value,
   () => {
-    cardStore.clearCache();
-    applyFilters();
+    // Use setTimeout to prevent blocking
+    setTimeout(() => {
+      cardStore.clearCache();
+      applyFiltersWithLoading();
+    }, 0);
   }
 );
 
 // Initial filter application
 onMounted(() => {
-  applyFilters();
+  // Use setTimeout to prevent blocking initial render
+  setTimeout(() => {
+    applyFiltersWithLoading();
+  }, 0);
 });
 
 // Use the filtered cards from the store
@@ -119,10 +143,39 @@ const showLoadingIndicator = computed(() => {
 const showLoadMoreIndicator = computed(() => {
   return cardStore.isLoading.value && displayedCards.value.length > 0;
 });
+
+// Add a filtering state to show overlay during filter changes
+const isFiltering = ref(false);
+
+// Enhanced apply filters with better loading states
+const applyFiltersWithLoading = async () => {
+  isFiltering.value = true;
+  try {
+    await applyFilters();
+  } finally {
+    // Small delay to ensure smooth transition
+    setTimeout(() => {
+      isFiltering.value = false;
+    }, 100);
+  }
+};
 </script>
 
 <template>
   <div>
+    <!-- Filtering overlay -->
+    <div
+      v-if="isFiltering"
+      class="fixed inset-0 bg-background/50 backdrop-blur-sm z-40 flex items-center justify-center"
+    >
+      <div class="flex flex-col items-center gap-2">
+        <div
+          class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
+        ></div>
+        <p class="text-sm text-muted-foreground">Applying filters...</p>
+      </div>
+    </div>
+
     <!-- Loading indicator for initial load -->
     <div
       v-if="showLoadingIndicator"
