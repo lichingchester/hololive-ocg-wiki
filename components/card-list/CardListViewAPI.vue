@@ -22,12 +22,15 @@ let cardPadding = 8;
 const cardImageRatio =
   (558 + cardPadding + cardPadding) / (400 + cardPadding + cardPadding); // Ratio of card height to width
 const gridColCount = shallowRef(6);
-const itemSize = shallowRef(400);
-const itemSecondarySize = shallowRef(558);
+const itemSize = shallowRef(574); // Default calculated size (400 + padding)
+const itemSecondarySize = shallowRef(416); // Default calculated secondary size (558 + padding)
 
 function onResizeObserver(entries: ResizeObserverEntry[]) {
   const [entry] = entries;
+  if (!entry) return;
+
   const { width } = entry.contentRect;
+  if (!width || width <= 0) return;
 
   if (width < 640) {
     cardPadding = 4; // Adjust ratio for smaller screens
@@ -51,8 +54,12 @@ function onResizeObserver(entries: ResizeObserverEntry[]) {
     gridColCount.value = 12;
   }
 
-  itemSecondarySize.value = width / gridColCount.value; // Adjust item size based on the width of the container
-  itemSize.value = itemSecondarySize.value * cardImageRatio; // Adjust secondary size based on the item size
+  // Ensure we have valid dimensions
+  const newSecondarySize = Math.max(100, width / gridColCount.value); // Min 100px width
+  const newSize = Math.max(140, newSecondarySize * cardImageRatio); // Min 140px height
+
+  itemSecondarySize.value = newSecondarySize;
+  itemSize.value = newSize;
 }
 
 // Debounced filter application - simplified
@@ -121,17 +128,22 @@ watch(
 
 // Initial filter application
 onMounted(() => {
+  // Initialize window height tracking
+  updateWindowHeight();
+  window.addEventListener("resize", updateWindowHeight);
+
   // Use setTimeout to prevent blocking initial render
   setTimeout(() => {
     applyFiltersWithPreciseLoading();
   }, 0);
 });
 
+onUnmounted(() => {
+  window.removeEventListener("resize", updateWindowHeight);
+});
+
 // Use the filtered cards from the store
 const displayedCards = computed(() => cardStore.filteredCards.value);
-
-// Remove the old infinite scroll setup as virtual scroller handles this differently
-// Virtual scroller will handle the scrolling and we'll trigger loadMore at scroll end
 
 // Window size tracking for responsive design (simplified for virtual scroller)
 const windowHeight = ref(0);
@@ -139,15 +151,6 @@ const windowHeight = ref(0);
 const updateWindowHeight = () => {
   windowHeight.value = window.innerHeight;
 };
-
-onMounted(() => {
-  updateWindowHeight();
-  window.addEventListener("resize", updateWindowHeight);
-
-  onUnmounted(() => {
-    window.removeEventListener("resize", updateWindowHeight);
-  });
-});
 
 // Loading state for better UX
 const showLoadingIndicator = computed(() => {
@@ -189,6 +192,16 @@ const applyFiltersWithPreciseLoading = () => {
     stopWatching();
   }, 5000);
 };
+
+// Computed property to check if virtual scroller should be rendered
+const shouldRenderScroller = computed(() => {
+  return (
+    displayedCards.value.length > 0 &&
+    itemSize.value > 0 &&
+    itemSecondarySize.value > 0 &&
+    gridColCount.value > 0
+  );
+});
 </script>
 
 <template>
@@ -223,6 +236,8 @@ const applyFiltersWithPreciseLoading = () => {
     <div v-else-if="displayedCards.length > 0" class="">
       <div class="">
         <RecycleScroller
+          v-if="shouldRenderScroller"
+          :key="`scroller-${displayedCards.length}-${gridColCount}-${locale}`"
           class="scroller p-2 pb-[65vh]"
           :items="displayedCards"
           :item-size="itemSize"
@@ -238,6 +253,20 @@ const applyFiltersWithPreciseLoading = () => {
             </div>
           </template>
         </RecycleScroller>
+
+        <!-- Fallback grid when virtual scroller can't render -->
+        <div
+          v-else
+          class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-2 p-2"
+        >
+          <div
+            v-for="item in displayedCards"
+            :key="item.id"
+            class="aspect-400/559"
+          >
+            <CardItem :item="item" class="aspect-400/559" />
+          </div>
+        </div>
       </div>
 
       <!-- Load more indicator for virtual scroller -->

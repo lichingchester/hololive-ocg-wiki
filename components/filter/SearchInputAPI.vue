@@ -21,7 +21,7 @@ const debouncedSearch = useDebounceFn(async () => {
   } finally {
     isSearching.value = false;
   }
-}, 300);
+}, 500);
 
 // Watch search input changes
 watch(() => filter.filter.value.search, debouncedSearch);
