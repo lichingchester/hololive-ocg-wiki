@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// useSeoMeta({
+//   title: 'Hololive OCG Wiki',
+//   description: 'Fan-made web application for the Hololive Official Card Game'
+// })
+
+useHead({
+  bodyAttrs: {
+    class: "overflow-hidden",
+  },
+});
+</script>
 
 <template>
   <AppHeader>

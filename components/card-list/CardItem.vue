@@ -29,6 +29,7 @@ const count = computed(() => {
     <Dialog>
       <DialogTrigger class="w-full">
         <Image
+          class="rounded-lg overflow-hidden"
           :src="`/${item.image_path}`"
           :img-attributes="{ class: 'w-full' }"
         />

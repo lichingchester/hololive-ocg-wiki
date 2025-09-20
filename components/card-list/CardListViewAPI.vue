@@ -1,16 +1,59 @@
 <script setup lang="ts">
+import { vResizeObserver } from "@vueuse/components";
 import { useDebounceFn } from "@vueuse/core";
+import { RecycleScroller } from "vue-virtual-scroller";
+import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 
 const { locale } = useI18n();
 const filter = useFilter();
 const cardStore = useCardStoreAPI(); // Use the new API-based store
 
 // Pagination state
-const pageSize = ref(10); // Reduced for better API performance
+const pageSize = ref(250); // Increased for virtual scrolling
 const currentPage = ref(1);
 const hasMore = computed(() => {
   return cardStore.filteredCards.value.length < cardStore.totalCards.value;
 });
+
+/**
+ * Virtual scroller card size and padding configuration
+ */
+let cardPadding = 8;
+const cardImageRatio =
+  (558 + cardPadding + cardPadding) / (400 + cardPadding + cardPadding); // Ratio of card height to width
+const gridColCount = shallowRef(6);
+const itemSize = shallowRef(400);
+const itemSecondarySize = shallowRef(558);
+
+function onResizeObserver(entries: ResizeObserverEntry[]) {
+  const [entry] = entries;
+  const { width } = entry.contentRect;
+
+  if (width < 640) {
+    cardPadding = 4; // Adjust ratio for smaller screens
+  } else {
+    cardPadding = 8; // Default padding for larger screens
+  }
+
+  if (width < 640) {
+    gridColCount.value = 3;
+  } else if (width < 768) {
+    gridColCount.value = 4;
+  } else if (width < 1024) {
+    gridColCount.value = 5;
+  } else if (width < 1280) {
+    gridColCount.value = 6;
+  } else if (width < 1536) {
+    gridColCount.value = 8;
+  } else if (width < 2000) {
+    gridColCount.value = 10;
+  } else {
+    gridColCount.value = 12;
+  }
+
+  itemSecondarySize.value = width / gridColCount.value; // Adjust item size based on the width of the container
+  itemSize.value = itemSecondarySize.value * cardImageRatio; // Adjust secondary size based on the item size
+}
 
 // Debounced filter application - simplified
 const applyFilters = useDebounceFn(async () => {
@@ -24,7 +67,7 @@ const applyFilters = useDebounceFn(async () => {
     1,
     pageSize.value
   );
-}, 300); // Slightly increased debounce for API calls// Load more cards for infinite scroll
+}, 300); // Slightly increased debounce for API calls// Load more cards for infinite scroll with virtual scroller
 const loadMore = async () => {
   if (cardStore.isLoading.value || !hasMore.value) return;
 
@@ -37,10 +80,20 @@ const loadMore = async () => {
   );
 };
 
+// Virtual scroller infinite loading
+const handleScrollEnd = () => {
+  // Load more when reaching the end of virtual scroller
+  if (hasMore.value && !cardStore.isLoading.value) {
+    loadMore();
+  }
+};
+
 // Apply filters when filter changes - simplified
 watch(
   () => filter.filter.value,
   () => {
+    // Reset pagination when filters change
+    currentPage.value = 1;
     // Use setTimeout to move execution out of current tick and prevent UI blocking
     setTimeout(() => {
       applyFiltersWithPreciseLoading();
@@ -56,6 +109,8 @@ watch(
 watch(
   () => locale.value,
   () => {
+    // Reset pagination when locale changes
+    currentPage.value = 1;
     // Use setTimeout to prevent blocking
     setTimeout(() => {
       cardStore.clearCache();
@@ -75,58 +130,22 @@ onMounted(() => {
 // Use the filtered cards from the store
 const displayedCards = computed(() => cardStore.filteredCards.value);
 
-// Window size tracking for responsive trigger distance
+// Remove the old infinite scroll setup as virtual scroller handles this differently
+// Virtual scroller will handle the scrolling and we'll trigger loadMore at scroll end
+
+// Window size tracking for responsive design (simplified for virtual scroller)
 const windowHeight = ref(0);
 
-// Update window height on resize
 const updateWindowHeight = () => {
   windowHeight.value = window.innerHeight;
 };
 
-// Reactive trigger distance based on window height
-const triggerDistance = computed(() => {
-  const spacingHeight = windowHeight.value * 0.65; // 65vh in pixels
-  return spacingHeight + 50; // 65vh + 50px
-});
-
-// Infinite scroll
 onMounted(() => {
-  // Initialize window height
   updateWindowHeight();
+  window.addEventListener("resize", updateWindowHeight);
 
-  const { reset } = useInfiniteScroll(window, loadMore, {
-    distance: triggerDistance.value,
-    canLoadMore: () => hasMore.value && !cardStore.isLoading.value,
-  });
-
-  // Handle window resize and recreate infinite scroll with new distance
-  const handleResize = () => {
-    updateWindowHeight();
-    // Reset and recreate with new distance
-    reset();
-    nextTick(() => {
-      useInfiniteScroll(window, loadMore, {
-        distance: triggerDistance.value,
-        canLoadMore: () => hasMore.value && !cardStore.isLoading.value,
-      });
-    });
-  };
-
-  window.addEventListener("resize", handleResize);
-
-  // Reset pagination when filters change
-  watch(
-    () => filter.filter.value,
-    () => {
-      reset();
-      currentPage.value = 1;
-    },
-    { deep: true }
-  );
-
-  // Cleanup resize listener
   onUnmounted(() => {
-    window.removeEventListener("resize", handleResize);
+    window.removeEventListener("resize", updateWindowHeight);
   });
 });
 
@@ -200,41 +219,44 @@ const applyFiltersWithPreciseLoading = () => {
       </div>
     </div>
 
-    <!-- Cards grid -->
-    <div
-      v-else
-      class="p-1 sm:p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-1 sm:gap-2"
-    >
-      <template v-for="(item, index) in displayedCards" :key="item.id || index">
-        <CardItem :item="item" class="aspect-400/559" />
-      </template>
-    </div>
-
-    <!-- Load more indicator -->
-    <div
-      v-if="showLoadMoreIndicator"
-      class="flex justify-center items-center py-8"
-    >
-      <div class="flex items-center gap-2">
-        <div
-          class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"
-        ></div>
-        <p class="text-sm text-muted-foreground">Loading more cards...</p>
+    <!-- Virtual Scroller for cards grid -->
+    <div v-else-if="displayedCards.length > 0" class="">
+      <div class="">
+        <RecycleScroller
+          class="scroller p-2 pb-[65vh]"
+          :items="displayedCards"
+          :item-size="itemSize"
+          :item-secondary-size="itemSecondarySize"
+          :grid-items="gridColCount"
+          key-field="id"
+          @scroll-end="handleScrollEnd"
+          v-resize-observer="onResizeObserver"
+        >
+          <template #default="{ item }">
+            <div class="p-1">
+              <CardItem :item="item" class="aspect-400/559" />
+            </div>
+          </template>
+        </RecycleScroller>
       </div>
-    </div>
 
-    <!-- Results summary -->
-    <div v-if="!showLoadingIndicator" class="flex justify-center py-4">
-      <p class="text-sm text-muted-foreground">
-        Showing {{ displayedCards.length }} of
-        {{ cardStore.totalCards.value }} cards
-        <span v-if="hasMore">(scroll for more)</span>
-      </p>
+      <!-- Load more indicator for virtual scroller -->
+      <div
+        v-if="showLoadMoreIndicator"
+        class="flex justify-center items-center py-8"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"
+          ></div>
+          <p class="text-sm text-muted-foreground">Loading more cards...</p>
+        </div>
+      </div>
     </div>
 
     <!-- No results message -->
     <div
-      v-if="!showLoadingIndicator && displayedCards.length === 0"
+      v-else-if="!showLoadingIndicator && displayedCards.length === 0"
       class="flex justify-center items-center min-h-[200px]"
     >
       <div class="text-center">
@@ -245,8 +267,46 @@ const applyFiltersWithPreciseLoading = () => {
       </div>
     </div>
 
-    <div class="h-[65vh]"></div>
+    <!-- Results summary -->
+    <!-- <div v-if="displayedCards.length > 0" class="flex justify-center py-4">
+      <p class="text-sm text-muted-foreground">
+        Showing {{ displayedCards.length }} of
+        {{ cardStore.totalCards.value }} cards
+        <span v-if="hasMore">(scroll for more)</span>
+      </p>
+    </div> -->
+
+    <!-- Spacer for bottom padding -->
+    <!-- <div class="h-[65vh]"></div> -->
   </div>
 </template>
 
-<style scoped></style>
+<style lang="css" scoped>
+.scroller {
+  height: 100dvh;
+}
+
+/* Responsive heights for virtual scroller */
+/* @media (min-height: 500px) {
+  .scroller {
+    height: 50vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .scroller {
+    height: 60vh;
+  }
+}
+
+@media (min-height: 1000px) {
+  .scroller {
+    height: 70vh;
+  }
+} */
+
+/* Ensure virtual scroller items maintain proper aspect ratio */
+/* .scroller :deep(.vue-recycle-scroller__item-wrapper) {
+  overflow: visible;
+} */
+</style>
