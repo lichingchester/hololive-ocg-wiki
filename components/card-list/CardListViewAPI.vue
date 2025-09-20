@@ -6,30 +6,25 @@ const filter = useFilter();
 const cardStore = useCardStoreAPI(); // Use the new API-based store
 
 // Pagination state
-const pageSize = ref(250); // Reduced for better API performance
+const pageSize = ref(10); // Reduced for better API performance
 const currentPage = ref(1);
 const hasMore = computed(() => {
   return cardStore.filteredCards.value.length < cardStore.totalCards.value;
 });
 
-// Debounced filter application
+// Debounced filter application - simplified
 const applyFilters = useDebounceFn(async () => {
   // Reset pagination first
   currentPage.value = 1;
 
-  // Use nextTick to ensure UI doesn't block
-  await nextTick();
-
-  // Make the API call
+  // Make the API call directly - the cardStore will handle loading states
   await cardStore.getFilteredCards(
     filter.filter.value,
     locale.value,
     1,
     pageSize.value
   );
-}, 300); // Slightly increased debounce for API calls
-
-// Load more cards for infinite scroll
+}, 300); // Slightly increased debounce for API calls// Load more cards for infinite scroll
 const loadMore = async () => {
   if (cardStore.isLoading.value || !hasMore.value) return;
 
@@ -42,13 +37,13 @@ const loadMore = async () => {
   );
 };
 
-// Apply filters when filter changes - use immediate: false to prevent sync execution
+// Apply filters when filter changes - simplified
 watch(
   () => filter.filter.value,
   () => {
     // Use setTimeout to move execution out of current tick and prevent UI blocking
     setTimeout(() => {
-      applyFiltersWithLoading();
+      applyFiltersWithPreciseLoading();
     }, 0);
   },
   {
@@ -64,7 +59,7 @@ watch(
     // Use setTimeout to prevent blocking
     setTimeout(() => {
       cardStore.clearCache();
-      applyFiltersWithLoading();
+      applyFiltersWithPreciseLoading();
     }, 0);
   }
 );
@@ -73,7 +68,7 @@ watch(
 onMounted(() => {
   // Use setTimeout to prevent blocking initial render
   setTimeout(() => {
-    applyFiltersWithLoading();
+    applyFiltersWithPreciseLoading();
   }, 0);
 });
 
@@ -144,29 +139,45 @@ const showLoadMoreIndicator = computed(() => {
   return cardStore.isLoading.value && displayedCards.value.length > 0;
 });
 
-// Add a filtering state to show overlay during filter changes
+// Track if we're filtering (not just loading more)
 const isFiltering = ref(false);
 
-// Enhanced apply filters with better loading states
-const applyFiltersWithLoading = async () => {
+// Enhanced apply filters with precise loading control
+const applyFiltersWithPreciseLoading = () => {
   isFiltering.value = true;
-  try {
-    await applyFilters();
-  } finally {
-    // Small delay to ensure smooth transition
-    setTimeout(() => {
-      isFiltering.value = false;
-    }, 100);
-  }
+
+  // Call the debounced function
+  applyFilters();
+
+  // Watch for the loading state to change to track when API call completes
+  const stopWatching = watch(
+    () => cardStore.isLoading.value,
+    (isLoading, wasLoading) => {
+      // When loading goes from true to false, the API call is done
+      if (wasLoading && !isLoading) {
+        // Add a small delay to ensure DOM has updated
+        nextTick(() => {
+          isFiltering.value = false;
+          stopWatching(); // Stop watching
+        });
+      }
+    }
+  );
+
+  // Safety timeout in case something goes wrong
+  setTimeout(() => {
+    isFiltering.value = false;
+    stopWatching();
+  }, 5000);
 };
 </script>
 
 <template>
   <div>
-    <!-- Filtering overlay -->
+    <!-- Filtering overlay - only when filtering, not when loading more -->
     <div
       v-if="isFiltering"
-      class="fixed inset-0 bg-background/50 backdrop-blur-sm z-40 flex items-center justify-center"
+      class="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 flex items-center justify-center"
     >
       <div class="flex flex-col items-center gap-2">
         <div
@@ -178,7 +189,7 @@ const applyFiltersWithLoading = async () => {
 
     <!-- Loading indicator for initial load -->
     <div
-      v-if="showLoadingIndicator"
+      v-if="showLoadingIndicator && !isFiltering"
       class="flex justify-center items-center min-h-[400px]"
     >
       <div class="flex flex-col items-center gap-2">
