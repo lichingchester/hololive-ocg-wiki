@@ -8,6 +8,13 @@ const { locale } = useI18n();
 const filter = useFilter();
 const cardStore = useCardStoreAPI(); // Use the new API-based store
 
+// Ref to the virtual scroller
+const virtualScroller = ref();
+
+// Scroll position tracking
+const scrollPosition = ref(0);
+const shouldPreserveScroll = ref(false);
+
 // Pagination state
 const pageSize = ref(250); // Increased for virtual scrolling
 const currentPage = ref(1);
@@ -78,6 +85,12 @@ const applyFilters = useDebounceFn(async () => {
 const loadMore = async () => {
   if (cardStore.isLoading.value || !hasMore.value) return;
 
+  // Save current scroll position before loading
+  if (virtualScroller.value && virtualScroller.value.$el) {
+    scrollPosition.value = virtualScroller.value.$el.scrollTop;
+    shouldPreserveScroll.value = true;
+  }
+
   currentPage.value++;
   await cardStore.loadMoreCards(
     filter.filter.value,
@@ -87,13 +100,13 @@ const loadMore = async () => {
   );
 };
 
-// Virtual scroller infinite loading
-const handleScrollEnd = () => {
+// Virtual scroller infinite loading with improved scroll handling
+const handleScrollEnd = useDebounceFn(() => {
   // Load more when reaching the end of virtual scroller
   if (hasMore.value && !cardStore.isLoading.value) {
     loadMore();
   }
-};
+}, 100); // Debounce to prevent multiple rapid calls
 
 // Apply filters when filter changes - simplified
 watch(
@@ -202,6 +215,21 @@ const shouldRenderScroller = computed(() => {
     gridColCount.value > 0
   );
 });
+
+// Watch for changes in displayed cards to preserve scroll position
+watch(
+  () => displayedCards.value.length,
+  async (newLength, oldLength) => {
+    // Only preserve scroll when cards are added (not when filtering)
+    if (newLength > oldLength && shouldPreserveScroll.value) {
+      await nextTick();
+      if (virtualScroller.value && virtualScroller.value.$el) {
+        virtualScroller.value.$el.scrollTop = scrollPosition.value;
+        shouldPreserveScroll.value = false;
+      }
+    }
+  }
+);
 </script>
 
 <template>
@@ -237,7 +265,8 @@ const shouldRenderScroller = computed(() => {
       <div class="">
         <RecycleScroller
           v-if="shouldRenderScroller"
-          :key="`scroller-${displayedCards.length}-${gridColCount}-${locale}`"
+          ref="virtualScroller"
+          :key="`scroller-${gridColCount}-${locale}`"
           class="scroller p-2 pb-[65vh]"
           :items="displayedCards"
           :item-size="itemSize"
