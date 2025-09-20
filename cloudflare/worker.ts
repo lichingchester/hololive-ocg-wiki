@@ -125,112 +125,6 @@ function parseCardJsonFields(card: any): Card {
   };
 }
 
-// Helper function to enrich card data with related information (oshi skills, arts, keywords, qa)
-async function enrichCardData(
-  env: Env,
-  card: any,
-  locale: string
-): Promise<Card> {
-  const cardId = card.id;
-
-  // Get oshi skills for the specified locale
-  const oshiSkillsStmt = env.DB.prepare(`
-    SELECT skill_type, cost, timing_code, name, effect
-    FROM oshi_skills 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const oshiSkills = await oshiSkillsStmt.bind(cardId, locale).all();
-
-  // Get arts for the specified locale (with translations)
-  const artsStmt = env.DB.prepare(`
-    SELECT a.*, at.name, at.effect
-    FROM arts a
-    LEFT JOIN art_translations at ON a.id = at.art_id AND at.locale = ?
-    WHERE a.card_id = ?
-  `);
-  const arts = await artsStmt.bind(locale, cardId).all();
-
-  // Get keywords
-  const keywordStmt = env.DB.prepare(`
-    SELECT *
-    FROM keywords 
-    WHERE card_id = ?
-  `);
-  const keywords = await keywordStmt.bind(cardId).all();
-
-  // Get keyword translations for the specified locale
-  const keywordTranslationsStmt = env.DB.prepare(`
-    SELECT name, effect
-    FROM keyword_translations 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const keywordTranslations = await keywordTranslationsStmt
-    .bind(cardId, locale)
-    .all();
-
-  // Get QA items for the specified locale
-  const qaStmt = env.DB.prepare(`
-    SELECT title, question, answer, related_cards_html, related_card_numbers
-    FROM qa_items 
-    WHERE card_id = ? AND locale = ?
-  `);
-  const qaItems = await qaStmt.bind(cardId, locale).all();
-
-  // Add oshi skills directly to card object
-  oshiSkills.results.forEach((skill: any) => {
-    const skillData = {
-      cost: skill.cost,
-      timing_code: skill.timing_code,
-      name: skill.name,
-      effect: skill.effect,
-    };
-
-    if (skill.skill_type === "oshi") {
-      card.oshi_skill = skillData;
-    } else if (skill.skill_type === "sp_oshi") {
-      card.sp_oshi_skill = skillData;
-    }
-  });
-
-  // Add arts data directly to card object
-  card.arts = arts.results.map((art: any) => ({
-    cost_count: art.cost_count,
-    cost_types: parseJsonArray(art.cost_types),
-    damage: art.damage,
-    is_plus: art.is_plus,
-    special_targets: parseJsonArray(art.special_targets),
-    special_values: parseJsonArray(art.special_values),
-    name: art.name,
-    effect: art.effect,
-  }));
-
-  // Add QA items directly to card object
-  card.qa_items = qaItems.results.map((qa: any) => ({
-    title: qa.title,
-    question: qa.question,
-    answer: qa.answer,
-    related_cards_html: qa.related_cards_html,
-    related_card_numbers: parseJsonArray(qa.related_card_numbers),
-  }));
-
-  // Add keyword data
-  if (keywords.results.length > 0) {
-    card.keyword = {
-      type: keywords.results[0].type,
-      type_code: keywords.results[0].type_code,
-    };
-
-    // Add keyword translations if available
-    if (keywordTranslations.results.length > 0) {
-      card.keyword.name = keywordTranslations.results[0].name;
-      card.keyword.effect = keywordTranslations.results[0].effect;
-    }
-  }
-
-  // Parse JSON fields using helper function
-  return parseCardJsonFields(card);
-}
-
 // Optimized batch enrichment function with chunking to avoid SQLite variable limits
 async function enrichCardDataBatch(
   env: Env,
@@ -434,17 +328,18 @@ async function searchCards(
   }
 
   try {
-    // Try FTS search first
+    // Try FTS search first - search across ALL locales but return results in requested locale
     const ftsStmt = env.DB.prepare(`
       SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
       FROM cards_fts cf
       JOIN cards c ON cf.card_id = c.id
       LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
-      WHERE cards_fts MATCH ? AND cf.locale = ?
+      WHERE cards_fts MATCH ?
+      ORDER BY cf.rank
       LIMIT ?
     `);
 
-    const ftsResults = await ftsStmt.bind(locale, query, locale, limit).all();
+    const ftsResults = await ftsStmt.bind(locale, query, limit).all();
 
     // Enrich cards using batch function
     const enrichedCards = await enrichCardDataBatch(
@@ -455,13 +350,14 @@ async function searchCards(
 
     return enrichedCards;
   } catch (error) {
-    // Fallback to regular search if FTS table doesn't exist
+    // Fallback to regular search if FTS table doesn't exist - also search across all locales
     console.log("FTS search failed, falling back to regular search:", error);
 
     const fallbackStmt = env.DB.prepare(`
-      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
+      SELECT DISTINCT c.*, ct_target.name, ct_target.card_type, ct_target.color, ct_target.rarity, ct_target.set_name, ct_target.ability_text, ct_target.extra
       FROM cards c
-      LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+      LEFT JOIN card_translations ct ON c.id = ct.card_id
+      LEFT JOIN card_translations ct_target ON c.id = ct_target.card_id AND ct_target.locale = ?
       WHERE (
         ct.name LIKE ? OR
         ct.card_type LIKE ? OR
@@ -471,11 +367,11 @@ async function searchCards(
       )
       ORDER BY 
         CASE 
-          WHEN ct.name LIKE ? THEN 1
-          WHEN ct.name LIKE ? THEN 2
+          WHEN ct_target.name LIKE ? THEN 1
+          WHEN ct_target.name LIKE ? THEN 2
           ELSE 3
         END,
-        ct.name
+        ct_target.name
       LIMIT ?
     `);
 
@@ -536,26 +432,29 @@ async function filterCards(
       // Test if FTS table exists and FTS search works by trying the actual query structure
       const testStmt = env.DB.prepare(`
         SELECT card_id FROM cards_fts cf 
-        WHERE cards_fts MATCH ? AND cf.locale = ? 
+        WHERE cards_fts MATCH ? 
         LIMIT 1
       `);
-      await testStmt.bind(filters.search, locale).first();
+      await testStmt.bind(filters.search).first();
 
-      // FTS table exists and works, use FTS search
-      query += ` JOIN cards_fts cf ON c.id = cf.card_id AND cf.locale = ?`;
-      params.push(locale);
+      // FTS table exists and works, use FTS search across all locales
+      query += ` JOIN cards_fts cf ON c.id = cf.card_id`;
       whereConditions.push(`cards_fts MATCH ?`);
       params.push(filters.search);
       useFTS = true;
     } catch (error) {
-      // FTS table doesn't exist or FTS search failed, use regular LIKE search
+      // FTS table doesn't exist or FTS search failed, use regular LIKE search across all locales
       console.log("FTS search failed, falling back to regular search:", error);
       useFTS = false;
+
+      // Join with all card translations to search across all locales
+      query += ` LEFT JOIN card_translations ct_search ON c.id = ct_search.card_id`;
+
       const searchPattern = `%${filters.search}%`;
       whereConditions.push(`(
-        ct.name LIKE ? OR
-        ct.card_type LIKE ? OR
-        ct.ability_text LIKE ? OR
+        ct_search.name LIKE ? OR
+        ct_search.card_type LIKE ? OR
+        ct_search.ability_text LIKE ? OR
         c.card_number LIKE ? OR
         c.tags LIKE ?
       )`);
