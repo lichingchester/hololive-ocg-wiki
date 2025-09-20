@@ -140,13 +140,14 @@ async function enrichCardData(
   `);
   const oshiSkills = await oshiSkillsStmt.bind(cardId, locale).all();
 
-  // Get arts for the specified locale
+  // Get arts for the specified locale (with translations)
   const artsStmt = env.DB.prepare(`
-    SELECT *
-    FROM arts 
-    WHERE card_id = ? AND locale = ?
+    SELECT a.*, at.name, at.effect
+    FROM arts a
+    LEFT JOIN art_translations at ON a.id = at.art_id AND at.locale = ?
+    WHERE a.card_id = ?
   `);
-  const arts = await artsStmt.bind(cardId, locale).all();
+  const arts = await artsStmt.bind(locale, cardId).all();
 
   // Get keywords
   const keywordStmt = env.DB.prepare(`

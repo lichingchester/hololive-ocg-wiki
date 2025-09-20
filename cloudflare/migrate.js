@@ -54,7 +54,9 @@ function generateSQLStatements(cards) {
 
   // Clear existing data
   statements.push("DELETE FROM qa_items;");
+  statements.push("DELETE FROM keyword_translations;");
   statements.push("DELETE FROM keywords;");
+  statements.push("DELETE FROM art_translations;");
   statements.push("DELETE FROM arts;");
   statements.push("DELETE FROM oshi_skills;");
   statements.push("DELETE FROM card_translations;");
@@ -101,6 +103,56 @@ function generateSQLStatements(cards) {
         }
       );
     `);
+
+    // Insert arts core data first (from main card object if available, or derive from first translation)
+    let cardArtsData = [];
+
+    if (card.arts && Array.isArray(card.arts)) {
+      // Use arts from main card object (preferred)
+      cardArtsData = card.arts;
+    } else {
+      // Derive arts structure from first available translation
+      const firstTranslation = Object.values(card.translations || {})[0];
+      if (firstTranslation?.arts && Array.isArray(firstTranslation.arts)) {
+        cardArtsData = firstTranslation.arts.map((art) => ({
+          costCount: art.costCount,
+          costTypes: art.costTypes,
+          damage: art.damage,
+          isPlus: art.isPlus,
+          specialTargets: art.specialTargets,
+          specialValues: art.specialValues,
+        }));
+      }
+    }
+
+    // Insert arts core data
+    cardArtsData.forEach((art, artIndex) => {
+      statements.push(`
+        INSERT INTO arts (
+          card_id, cost_count, cost_types, damage, is_plus, special_targets, special_values
+        ) VALUES (
+          '${card.id}',
+          ${art.costCount || "NULL"},
+          ${
+            art.costTypes
+              ? `'${JSON.stringify(art.costTypes).replace(/'/g, "''")}'`
+              : "NULL"
+          },
+          ${art.damage || "NULL"},
+          ${art.isPlus ? "TRUE" : "FALSE"},
+          ${
+            art.specialTargets
+              ? `'${JSON.stringify(art.specialTargets).replace(/'/g, "''")}'`
+              : "NULL"
+          },
+          ${
+            art.specialValues
+              ? `'${JSON.stringify(art.specialValues).replace(/'/g, "''")}'`
+              : "NULL"
+          }
+        );
+      `);
+    });
 
     // Insert translations
     Object.entries(card.translations || {}).forEach(([locale, translation]) => {
@@ -270,80 +322,32 @@ function generateSQLStatements(cards) {
           `);
         }
 
-        // Insert arts (from translation)
-        if (translation.arts && Array.isArray(translation.arts)) {
-          translation.arts.forEach((art) => {
-            statements.push(`
-              INSERT INTO arts (
-                card_id, locale, cost_count, cost_types, damage, is_plus, 
-                special_targets, special_values, name, effect
-              ) VALUES (
-                '${card.id}',
-                '${locale}',
-                ${art.costCount || "NULL"},
-                ${
-                  art.costTypes
-                    ? `'${JSON.stringify(art.costTypes).replace(/'/g, "''")}'`
-                    : "NULL"
-                },
-                ${art.damage || "NULL"},
-                ${art.isPlus ? "TRUE" : "FALSE"},
-                ${
-                  art.specialTargets
-                    ? `'${JSON.stringify(art.specialTargets).replace(
-                        /'/g,
-                        "''"
-                      )}'`
-                    : "NULL"
-                },
-                ${
-                  art.specialValues
-                    ? `'${JSON.stringify(art.specialValues).replace(
-                        /'/g,
-                        "''"
-                      )}'`
-                    : "NULL"
-                },
-                ${art.name ? `'${art.name.replace(/'/g, "''")}'` : "NULL"},
-                ${art.effect ? `'${art.effect.replace(/'/g, "''")}'` : "NULL"}
-              );
-            `);
+        // Insert art translations (from translation) - only translations, not core data
+        if (
+          translation.arts &&
+          Array.isArray(translation.arts) &&
+          cardArtsData.length > 0
+        ) {
+          translation.arts.forEach((art, artIndex) => {
+            // Only insert translation if we have a corresponding art record and translation data
+            if (artIndex < cardArtsData.length && (art.name || art.effect)) {
+              statements.push(`
+                INSERT INTO art_translations (
+                  art_id, locale, name, effect
+                ) VALUES (
+                  (SELECT id FROM arts WHERE card_id = '${
+                    card.id
+                  }' ORDER BY id LIMIT 1 OFFSET ${artIndex}),
+                  '${locale}',
+                  ${art.name ? `'${art.name.replace(/'/g, "''")}'` : "NULL"},
+                  ${art.effect ? `'${art.effect.replace(/'/g, "''")}'` : "NULL"}
+                );
+              `);
+            }
           });
         }
       }
     });
-
-    // Insert arts (from main card object)
-    if (card.arts && Array.isArray(card.arts)) {
-      card.arts.forEach((art) => {
-        statements.push(`
-          INSERT INTO arts (
-            card_id, locale, cost_count, cost_types, damage, is_plus, special_targets, special_values
-          ) VALUES (
-            '${card.id}',
-            'main',
-            ${art.costCount || "NULL"},
-            ${
-              art.costTypes
-                ? `'${JSON.stringify(art.costTypes).replace(/'/g, "''")}'`
-                : "NULL"
-            },
-            ${art.damage || "NULL"},
-            ${art.isPlus ? "TRUE" : "FALSE"},
-            ${
-              art.specialTargets
-                ? `'${JSON.stringify(art.specialTargets).replace(/'/g, "''")}'`
-                : "NULL"
-            },
-            ${
-              art.specialValues
-                ? `'${JSON.stringify(art.specialValues).replace(/'/g, "''")}'`
-                : "NULL"
-            }
-          );
-        `);
-      });
-    }
 
     // Insert keyword
     if (card.keyword) {

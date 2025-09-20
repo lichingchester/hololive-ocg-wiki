@@ -170,22 +170,22 @@ const getCostTypesString = (costTypes: string[]): string => {
           </span> -->
 
           <!-- cost -->
-          <template v-if="art.costTypes">
+          <template v-if="art.cost_types">
             <div class="flex items-center flex-wrap">
               <template
-                v-for="(costType, costTypeIndex) in art.costTypes"
+                v-for="(costType, costTypeIndex) in art.cost_types"
                 :key="costTypeIndex"
               >
                 <Image
                   :class="
-                    costTypeIndex === art.costTypes.length - 1 ? 'mr-1' : ''
+                    costTypeIndex === art.cost_types.length - 1 ? 'mr-1' : ''
                   "
                   :src="`/icons/arts_${costType}.png`"
                   :img-attributes="{ class: 'size-6 min-w-6 min-h-6' }"
                 />
               </template>
 
-              <span class=""> ({{ getCostTypesString(art.costTypes) }}) </span>
+              <span class=""> ({{ getCostTypesString(art.cost_types) }}) </span>
             </div>
           </template>
 
@@ -193,15 +193,15 @@ const getCostTypesString = (costTypes: string[]): string => {
             <!-- damage -->
             <Badge variant="outline" class="text-xs">
               {{ $t("fields.damage") }}:
-              {{ `${art.damage}${art.isPlus ? "+" : ""}` }}
+              {{ `${art.damage}${art.is_plus ? "+" : ""}` }}
             </Badge>
 
             <!-- specialTargets -->
-            <template v-if="art.specialTargets">
+            <template v-if="art.special_targets">
               <template
                 v-for="(
                   specialTarget, specialTargetIndex
-                ) in art.specialTargets"
+                ) in art.special_targets"
                 :key="specialTargetIndex"
               >
                 <Badge variant="outline" class="text-xs">

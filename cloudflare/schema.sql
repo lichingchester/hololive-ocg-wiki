@@ -5,6 +5,8 @@
 DROP VIEW IF EXISTS card_details;
 DROP TABLE IF EXISTS cards_fts;
 DROP TABLE IF EXISTS qa_items;
+DROP TABLE IF EXISTS art_translations;
+DROP TABLE IF EXISTS keyword_translations;
 DROP TABLE IF EXISTS keywords;
 DROP TABLE IF EXISTS arts;
 DROP TABLE IF EXISTS oshi_skills;
@@ -62,21 +64,29 @@ CREATE TABLE oshi_skills (
     FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE
 );
 
--- Arts table for card arts data
+-- Arts table for card arts data (core data only)
 CREATE TABLE arts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     card_id TEXT NOT NULL,
-    locale TEXT NOT NULL,
     cost_count INTEGER,
     cost_types TEXT, -- JSON string of cost types array
     damage INTEGER,
     is_plus BOOLEAN DEFAULT FALSE,
     special_targets TEXT, -- JSON string of special targets array
     special_values TEXT, -- JSON string of special values array
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE
+);
+
+-- Art translations table for localized art names and effects
+CREATE TABLE art_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    art_id INTEGER NOT NULL,
+    locale TEXT NOT NULL,
     name TEXT,
     effect TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE
+    FOREIGN KEY (art_id) REFERENCES arts(id) ON DELETE CASCADE
 );
 
 -- Keywords table
@@ -136,7 +146,9 @@ CREATE INDEX idx_translations_name ON card_translations(name);
 
 CREATE INDEX idx_oshi_skills_card_locale ON oshi_skills(card_id, locale);
 
-CREATE INDEX idx_arts_card_locale ON arts(card_id, locale);
+CREATE INDEX idx_arts_card_id ON arts(card_id);
+
+CREATE INDEX idx_art_translations_art_locale ON art_translations(art_id, locale);
 
 CREATE INDEX idx_keyword_translations_card_locale ON keyword_translations(card_id, locale);
 
