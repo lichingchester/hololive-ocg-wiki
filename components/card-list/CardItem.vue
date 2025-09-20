@@ -28,7 +28,7 @@ const remove = (amount: number = 1) => {
 };
 
 const count = computed(() => {
-  return decks.getCardCount(props.item.id);
+  return decks.getCardCount(props.item.id, props.item.card_type_code);
 });
 </script>
 

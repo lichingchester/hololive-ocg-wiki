@@ -15,17 +15,7 @@ export const useDecks = () => {
   const isEditingState = useState<boolean>("isEditing", () => false);
   const localStorageKey = "hololive-ocg-wiki-decks";
 
-  // Use card store instead of direct JSON import
-  const cardStore = useCardStore();
-
   const { t } = useI18n();
-
-  // Ensure cards are loaded
-  onMounted(async () => {
-    if (cardStore.allCards.value.length === 0) {
-      await cardStore.loadCards();
-    }
-  });
 
   // Load decks from localStorage on init
   onMounted(() => {
@@ -288,10 +278,10 @@ export const useDecks = () => {
     }
   };
 
-  const getCardCount = (cardId: string) => {
+  const getCardCount = (cardId: string, cardTypeCode: string) => {
     // Get card from store instead of direct JSON import
-    const card = cardStore.getCardById(cardId);
-    const cardTypeCode = card?.card_type_code;
+    // const card = cardStore.getCardById(cardId);
+    // const cardTypeCode = card?.card_type_code;
 
     if (!currentDeckState.value || !cardTypeCode) return 0;
 
@@ -467,68 +457,6 @@ export const useDecks = () => {
     return JSON.stringify(decksState.value);
   };
 
-  // Get cards by IDs in an optimized way (for displaying deck contents)
-  const getCardsByIds = (cardIds: string[]): Card[] => {
-    if (!cardIds.length) return [];
-
-    // Use a Set for faster lookups with large datasets
-    const uniqueIds = [...new Set(cardIds)];
-
-    // Get cards from the store
-    const cards = uniqueIds
-      .map((id) => cardStore.getCardById(id))
-      .filter((card): card is Card => card !== undefined);
-
-    // Define card type priority order (highest to lowest)
-    const cardTypePriority: Record<string, number> = {
-      oshiCharacter: 12, // Should be highest priority based on requested sort order
-      buzzCharacter: 11,
-      character: 10,
-      supportCheer: 9,
-      supportEvent: 8,
-      supportEventLimited: 7,
-      supportFan: 6,
-      supportTool: 5,
-      supportItem: 4,
-      supportItemLimited: 3,
-      supportMascot: 2,
-      supportStaffLimited: 1,
-    };
-
-    // Define bloom level priority order (highest to lowest)
-    const bloomLevelPriority: Record<string, number> = {
-      debut: 3,
-      first: 2,
-      second: 1,
-      spot: 0,
-      "": -1, // Fallback for cards without bloom level
-    };
-
-    // Sort cards by type, bloom level, and card number
-    return cards.sort((a, b) => {
-      // First by card type (highest priority)
-      const typePriorityA = cardTypePriority[a.card_type_code] || 0;
-      const typePriorityB = cardTypePriority[b.card_type_code] || 0;
-      if (typePriorityA !== typePriorityB) {
-        return typePriorityB - typePriorityA; // Descending order (higher priority first)
-      }
-
-      // Then by bloom level (medium priority)
-      const bloomA = a.bloom_level_code || "";
-      const bloomB = b.bloom_level_code || "";
-      const bloomPriorityA = bloomLevelPriority[bloomA] || 0;
-      const bloomPriorityB = bloomLevelPriority[bloomB] || 0;
-      if (bloomPriorityA !== bloomPriorityB) {
-        return bloomPriorityB - bloomPriorityA; // Descending order (higher priority first)
-      }
-
-      // Finally by card number (lowest priority)
-      return a.card_number.localeCompare(b.card_number, undefined, {
-        numeric: true,
-      });
-    });
-  };
-
   return {
     decks: decksState,
     currentDeck: currentDeckState,
@@ -552,6 +480,5 @@ export const useDecks = () => {
     importDecks,
     checkForDeckCode,
     importDeckByCode,
-    getCardsByIds,
   };
 };

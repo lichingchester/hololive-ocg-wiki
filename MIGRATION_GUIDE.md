@@ -10,6 +10,8 @@ The new architecture consists of:
 - **Cloudflare Worker**: REST API for card filtering, search, and pagination
 - **Nuxt Frontend**: Updated to use API calls instead of local data processing
 
+(Updates: Removed local i18n data card implementation.)
+
 ## Migration Steps
 
 ### 1. Set up Cloudflare Worker and D1 Database
