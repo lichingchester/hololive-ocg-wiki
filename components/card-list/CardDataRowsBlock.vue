@@ -21,7 +21,7 @@ defineProps<{
       </CardDataRowsBlockItem>
 
       <!-- tags -->
-      <CardDataRowsBlockItem v-if="item.tags" :name="$t('fields.tags')">
+      <CardDataRowsBlockItem v-if="item.tags.length" :name="$t('fields.tags')">
         <div class="flex flex-wrap gap-1">
           <template v-for="(tag, index) in item.tags" :key="index">
             <Button variant="link" class="p-0 h-auto">

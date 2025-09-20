@@ -159,7 +159,7 @@ const getCostTypesString = (costTypes: string[]): string => {
   </template>
 
   <!-- arts -->
-  <template v-if="item.arts">
+  <template v-if="item.arts.length">
     <template v-for="(art, index) in item.arts" :key="index">
       <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
         <div class="flex items-center justify-between gap-2">
@@ -226,19 +226,19 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <!-- name -->
         <div class="font-semibold">
-          {{ $t(`cards.${item.id}.arts[${index}].name`) }}
+          {{ art.name }}
         </div>
 
         <!-- effect -->
-        <div v-if="$te(`cards.${item.id}.arts[${index}].effect`)">
-          {{ $t(`cards.${item.id}.arts[${index}].effect`) }}
+        <div v-if="art.effect">
+          {{ art.effect }}
         </div>
       </div>
     </template>
   </template>
 
   <!-- extra -->
-  <template v-if="$te(`cards.${item.id}.extra`)">
+  <template v-if="item.extra">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -248,12 +248,12 @@ const getCostTypesString = (costTypes: string[]): string => {
         </span>
       </div>
 
-      {{ $t(`cards.${item.id}.extra`) }}
+      {{ item.extra }}
     </div>
   </template>
 
   <!-- abilityText -->
-  <template v-if="$te(`cards.${item.id}.abilityText`)">
+  <template v-if="item.ability_text">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -263,14 +263,15 @@ const getCostTypesString = (costTypes: string[]): string => {
         </span>
       </div>
 
-      <div
+      <div v-html="item.ability_text.replaceAll('\n', '<br>')" />
+      <!-- <div
         v-html="$t(`cards.${item.id}.abilityText`).replaceAll('\n', '<br>')"
-      />
+      /> -->
     </div>
   </template>
 
   <!-- illustrator -->
-  <template v-if="$te(`cards.${item.id}.illustrator`)">
+  <template v-if="item.illustrator">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <Badge variant="outline" class="text-xs">
@@ -278,7 +279,7 @@ const getCostTypesString = (costTypes: string[]): string => {
         </Badge>
 
         <div class="text-xs">
-          {{ $t(`cards.${item.id}.illustrator`) }}
+          {{ item.illustrator }}
         </div>
       </div>
     </div>

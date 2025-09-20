@@ -3,7 +3,7 @@ import { MessagesSquare, Copy } from "lucide-vue-next";
 import type { Card } from "@/types/card";
 import { UseClipboard } from "@vueuse/components";
 
-const { locale } = useI18n();
+// const { locale } = useI18n();
 
 defineProps<{
   item: Card;
@@ -42,46 +42,19 @@ defineProps<{
               </div>
 
               <div class="flex flex-wrap gap-2">
-                <template v-if="qaItem.related_cards.includes('\n')">
-                  <template
-                    v-for="(card, cardIndex) in qaItem.related_cards.split(
-                      '\n'
-                    )"
-                  >
-                    <UseClipboard v-slot="{ copy, copied }" source="copy">
-                      <div class="relative">
-                        <Badge
-                          :index="cardIndex"
-                          variant="outline"
-                          class="cursor-pointer"
-                          @click="copy()"
-                        >
-                          <Copy />
-                          {{ card }}
-                        </Badge>
-                        <Transition name="copied">
-                          <span
-                            v-if="copied"
-                            class="absolute bottom-full md:top-auto md:bottom-[calc(100%+0rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
-                          >
-                            {{ $t("Copied") }}
-                          </span>
-                        </Transition>
-                      </div>
-                    </UseClipboard>
-                  </template>
-                </template>
-
-                <template v-else>
+                <template
+                  v-for="(cardNumber, cardIndex) in qaItem.related_card_numbers"
+                >
                   <UseClipboard v-slot="{ copy, copied }" source="copy">
                     <div class="relative">
                       <Badge
+                        :index="cardIndex"
                         variant="outline"
                         class="cursor-pointer"
                         @click="copy()"
                       >
                         <Copy />
-                        {{ qaItem.related_cards }}
+                        {{ cardNumber }}
                       </Badge>
                       <Transition name="copied">
                         <span

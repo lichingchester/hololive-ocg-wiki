@@ -44,6 +44,7 @@ interface Card {
   rarity?: string;
   set_name?: string;
   ability_text?: string;
+  extra?: string;
   // Related data - now properly typed
   oshi_skill?: {
     cost?: string;
@@ -245,7 +246,7 @@ async function searchCards(
   try {
     // Try FTS search first
     const ftsStmt = env.DB.prepare(`
-      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
       FROM cards_fts cf
       JOIN cards c ON cf.card_id = c.id
       LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
@@ -266,7 +267,7 @@ async function searchCards(
     console.log("FTS search failed, falling back to regular search:", error);
 
     const fallbackStmt = env.DB.prepare(`
-      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+      SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
       FROM cards c
       LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
       WHERE (
@@ -441,7 +442,7 @@ async function filterCards(
 
   // Get paginated results
   const cardsQuery = `
-    SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+    SELECT DISTINCT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
     ${query}
     ${whereClause}
     ORDER BY c.card_number
@@ -470,7 +471,7 @@ async function getCardDetails(
 ): Promise<Card | null> {
   // Get basic card data with translation for the specified locale
   const cardStmt = env.DB.prepare(`
-    SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text
+    SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
     FROM cards c
     LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
     WHERE c.id = ?
