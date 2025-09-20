@@ -191,6 +191,64 @@ export const useFilter = () => {
     initializeDraftFilters();
   };
 
+  // Reset all draft filters to default values (without affecting applied filters)
+  const resetDraftAll = () => {
+    const defaultFilters = {
+      search: "",
+      name: "",
+      tag: "",
+      set: "",
+      colors: {
+        white: false,
+        green: false,
+        red: false,
+        blue: false,
+        purple: false,
+        yellow: false,
+        blue_red: false,
+        white_green: false,
+        null: false,
+      },
+      cardTypes: {
+        buzzCharacter: false,
+        character: false,
+        oshiCharacter: false,
+        supportCheer: false,
+        supportEvent: false,
+        supportEventLimited: false,
+        supportFan: false,
+        supportTool: false,
+        supportItem: false,
+        supportItemLimited: false,
+        supportMascot: false,
+        supportStaffLimited: false,
+      },
+      rarity: {
+        C: false,
+        OC: false,
+        OSR: false,
+        OUR: false,
+        P: false,
+        R: false,
+        RR: false,
+        S: false,
+        SEC: false,
+        SR: false,
+        SY: false,
+        U: false,
+        UR: false,
+      },
+      bloomLevel: {
+        debut: false,
+        first: false,
+        second: false,
+        spot: false,
+      },
+    };
+
+    draftFilterState.value = JSON.parse(JSON.stringify(defaultFilters));
+  };
+
   // Check if draft has changes compared to applied filters
   const hasPendingChanges = computed(() => {
     return (
@@ -284,6 +342,7 @@ export const useFilter = () => {
     applyFilters,
     reset,
     resetDraft,
+    resetDraftAll,
     initializeDraftFilters,
 
     // Draft field resets

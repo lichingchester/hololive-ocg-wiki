@@ -111,9 +111,9 @@ const handleCancel = () => {
   filter.resetDraft();
 };
 
-// Handle reset all filters
+// Handle reset all filters (only reset draft, not applied filters)
 const handleResetAll = () => {
-  filter.reset();
+  filter.resetDraftAll();
 };
 </script>
 

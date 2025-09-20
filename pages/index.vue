@@ -19,7 +19,7 @@ useHead({
     <!-- search -->
     <!-- <Input id="search" type="text" placeholder="Search..." /> -->
     <!-- <SearchInput /> -->
-    <!-- <SearchInputAPI /> -->
+    <SearchInputAPI />
   </AppHeader>
 
   <!-- Card List -->
