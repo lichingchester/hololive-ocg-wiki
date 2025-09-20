@@ -70,6 +70,8 @@ interface Card {
   keyword?: {
     type?: string;
     type_code?: string;
+    name?: string;
+    effect?: string;
   };
   qa_items?: {
     title?: string;
@@ -154,6 +156,16 @@ async function enrichCardData(
   `);
   const keywords = await keywordStmt.bind(cardId).all();
 
+  // Get keyword translations for the specified locale
+  const keywordTranslationsStmt = env.DB.prepare(`
+    SELECT name, effect
+    FROM keyword_translations 
+    WHERE card_id = ? AND locale = ?
+  `);
+  const keywordTranslations = await keywordTranslationsStmt
+    .bind(cardId, locale)
+    .all();
+
   // Get QA items for the specified locale
   const qaStmt = env.DB.prepare(`
     SELECT title, question, answer, related_cards_html, related_card_numbers
@@ -205,6 +217,12 @@ async function enrichCardData(
       type: keywords.results[0].type,
       type_code: keywords.results[0].type_code,
     };
+
+    // Add keyword translations if available
+    if (keywordTranslations.results.length > 0) {
+      card.keyword.name = keywordTranslations.results[0].name;
+      card.keyword.effect = keywordTranslations.results[0].effect;
+    }
   }
 
   // Parse JSON fields using helper function

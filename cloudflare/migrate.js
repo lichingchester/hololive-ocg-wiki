@@ -248,6 +248,28 @@ function generateSQLStatements(cards) {
           });
         }
 
+        // Insert keyword translations
+        if (translation.keyword) {
+          statements.push(`
+            INSERT INTO keyword_translations (
+              card_id, locale, name, effect
+            ) VALUES (
+              '${card.id}',
+              '${locale}',
+              ${
+                translation.keyword.name
+                  ? `'${translation.keyword.name.replace(/'/g, "''")}'`
+                  : "NULL"
+              },
+              ${
+                translation.keyword.effect
+                  ? `'${translation.keyword.effect.replace(/'/g, "''")}'`
+                  : "NULL"
+              }
+            );
+          `);
+        }
+
         // Insert arts (from translation)
         if (translation.arts && Array.isArray(translation.arts)) {
           translation.arts.forEach((art) => {

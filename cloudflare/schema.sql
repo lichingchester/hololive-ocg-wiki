@@ -89,6 +89,17 @@ CREATE TABLE keywords (
     FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE
 );
 
+-- Keyword translations table for localized keyword names and effects
+CREATE TABLE keyword_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    card_id TEXT NOT NULL,
+    locale TEXT NOT NULL,
+    name TEXT,
+    effect TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE
+);
+
 -- Tags table for searchable tags (moved to main cards table as JSON)
 -- CREATE TABLE tags (
 --     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -126,6 +137,8 @@ CREATE INDEX idx_translations_name ON card_translations(name);
 CREATE INDEX idx_oshi_skills_card_locale ON oshi_skills(card_id, locale);
 
 CREATE INDEX idx_arts_card_locale ON arts(card_id, locale);
+
+CREATE INDEX idx_keyword_translations_card_locale ON keyword_translations(card_id, locale);
 
 -- Note: Full-text search (FTS) is set up separately using setup-fts.sql
 -- This allows for better control and optional setup of FTS functionality
