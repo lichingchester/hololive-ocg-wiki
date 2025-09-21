@@ -515,10 +515,10 @@ async function filterCards(
     params.push(`%"${filters.tag}"%`);
   }
 
-  // Add set filter
+  // Add set filter - now searching in JSON array
   if (filters.set) {
-    whereConditions.push(`ct.set_name = ?`);
-    params.push(filters.set);
+    whereConditions.push(`c.card_sets LIKE ?`);
+    params.push(`%"${filters.set}"%`);
   }
 
   // Build WHERE clause
