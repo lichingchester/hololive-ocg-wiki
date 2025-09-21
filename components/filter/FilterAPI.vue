@@ -164,7 +164,7 @@ const handleResetAll = () => {
 
       <div class="flex grow">
         <ScrollArea>
-          <div class="w-full max-h-[calc(100dvh-68px)]">
+          <div class="w-full max-h-[calc(100dvh-96px-16px-16px)]">
             <!-- quick filters -->
             <div class="flex flex-col gap-4 pt-4 px-4">
               <!-- name -->
