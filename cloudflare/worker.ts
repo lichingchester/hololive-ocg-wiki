@@ -4,6 +4,7 @@
 export interface Env {
   DB: D1Database;
   CORS_ORIGIN?: string;
+  ALLOWED_ORIGINS?: string;
 }
 
 // Types matching the frontend
@@ -83,9 +84,8 @@ interface Card {
   }[];
 }
 
-// CORS headers
+// CORS headers - will be dynamically set based on request origin
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
@@ -93,12 +93,60 @@ const corsHeaders = {
 // Default locale
 const DEFAULT_LOCALE = "tc";
 
+// Helper function to get allowed origins
+function getAllowedOrigins(env: Env): string[] {
+  // Default allowed origins for development and production
+  const defaultOrigins = [
+    // "http://localhost:3000", // Nuxt dev server
+    // "http://127.0.0.1:3000", // Alternative localhost
+    "https://hololive-ocg-wiki.pages.dev", // Cloudflare Pages (adjust to your domain)
+    // "https://your-production-domain.com", // Replace with your actual domain
+  ];
+
+  // If ALLOWED_ORIGINS is set in environment, use it (comma-separated)
+  if (env.ALLOWED_ORIGINS) {
+    return env.ALLOWED_ORIGINS.split(",").map((origin) => origin.trim());
+  }
+
+  return defaultOrigins;
+}
+
+// Helper function to check if origin is allowed
+function isOriginAllowed(origin: string | null, env: Env): boolean {
+  if (!origin) return false;
+
+  const allowedOrigins = getAllowedOrigins(env);
+  return allowedOrigins.includes(origin);
+}
+
 // Helper function to handle CORS
-function handleCORS(request: Request): Response | null {
+function handleCORS(request: Request, env: Env): Response | null {
+  const origin = request.headers.get("Origin");
+
   if (request.method === "OPTIONS") {
-    return new Response(null, { status: 200, headers: corsHeaders });
+    const responseHeaders: Record<string, string> = { ...corsHeaders };
+
+    // Set origin if it's allowed
+    if (isOriginAllowed(origin, env)) {
+      responseHeaders["Access-Control-Allow-Origin"] = origin!;
+    }
+
+    return new Response(null, { status: 200, headers: responseHeaders });
   }
   return null;
+}
+
+// Helper function to get CORS headers for regular responses
+function getCORSHeaders(request: Request, env: Env): Record<string, string> {
+  const origin = request.headers.get("Origin");
+  const headers: Record<string, string> = { ...corsHeaders };
+
+  // Set origin if it's allowed
+  if (isOriginAllowed(origin, env)) {
+    headers["Access-Control-Allow-Origin"] = origin!;
+  }
+
+  return headers;
 }
 
 // Security: Input validation and sanitization helpers
@@ -724,14 +772,17 @@ async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     // Handle CORS preflight
-    const corsResponse = handleCORS(request);
+    const corsResponse = handleCORS(request, env);
     if (corsResponse) return corsResponse;
 
     // Security: Basic rate limiting check
     if (!checkRateLimit(request)) {
       return new Response(JSON.stringify({ error: "Too many requests" }), {
         status: 429,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        headers: {
+          ...getCORSHeaders(request, env),
+          "Content-Type": "application/json",
+        },
       });
     }
 
@@ -750,7 +801,10 @@ export default {
         const cards = await searchCards(env, query, locale, limit);
 
         return new Response(JSON.stringify({ cards }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -789,7 +843,10 @@ export default {
         const result = await filterCards(env, filters);
 
         return new Response(JSON.stringify(result), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -799,7 +856,10 @@ export default {
         if (!idsParam) {
           return new Response(JSON.stringify({ error: "Card IDs required" }), {
             status: 400,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
@@ -819,7 +879,10 @@ export default {
             JSON.stringify({ error: "At least one valid Card ID required" }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -839,7 +902,10 @@ export default {
 
         if (cardsResult.results.length === 0) {
           return new Response(JSON.stringify({ cards: [] }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
@@ -851,7 +917,10 @@ export default {
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -866,7 +935,10 @@ export default {
             JSON.stringify({ error: "Card number required" }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -881,7 +953,10 @@ export default {
             JSON.stringify({ error: "Invalid card number format" }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -903,7 +978,10 @@ export default {
 
         if (cardsResult.results.length === 0) {
           return new Response(JSON.stringify({ cards: [] }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
@@ -915,7 +993,10 @@ export default {
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -930,7 +1011,10 @@ export default {
             JSON.stringify({ error: "Card numbers required" }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -953,7 +1037,10 @@ export default {
             }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -980,7 +1067,10 @@ export default {
 
         if (cardsResult.results.length === 0) {
           return new Response(JSON.stringify({ cards: [] }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
@@ -992,7 +1082,10 @@ export default {
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -1002,7 +1095,10 @@ export default {
         if (!cardId) {
           return new Response(JSON.stringify({ error: "Card ID required" }), {
             status: 400,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
@@ -1013,7 +1109,10 @@ export default {
             JSON.stringify({ error: "Invalid Card ID format" }),
             {
               status: 400,
-              headers: { ...corsHeaders, "Content-Type": "application/json" },
+              headers: {
+                ...getCORSHeaders(request, env),
+                "Content-Type": "application/json",
+              },
             }
           );
         }
@@ -1023,12 +1122,18 @@ export default {
         if (!card) {
           return new Response(JSON.stringify({ error: "Card not found" }), {
             status: 404,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
+            headers: {
+              ...getCORSHeaders(request, env),
+              "Content-Type": "application/json",
+            },
           });
         }
 
         return new Response(JSON.stringify({ card }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -1038,7 +1143,10 @@ export default {
         const options = await getFilterOptions(env, locale);
 
         return new Response(JSON.stringify(options), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
@@ -1086,14 +1194,20 @@ export default {
         };
 
         return new Response(JSON.stringify(staticFilters), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: {
+            ...getCORSHeaders(request, env),
+            "Content-Type": "application/json",
+          },
         });
       }
 
       // 404 for unknown routes
       return new Response(JSON.stringify({ error: "Not found" }), {
         status: 404,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        headers: {
+          ...getCORSHeaders(request, env),
+          "Content-Type": "application/json",
+        },
       });
     } catch (error) {
       // Security: Log full error details server-side but return sanitized message to client
@@ -1102,7 +1216,10 @@ export default {
 
       return new Response(JSON.stringify({ error: sanitizedMessage }), {
         status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        headers: {
+          ...getCORSHeaders(request, env),
+          "Content-Type": "application/json",
+        },
       });
     }
   },

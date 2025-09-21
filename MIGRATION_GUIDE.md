@@ -138,7 +138,7 @@ npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_ft
 
 ```bash
 # Deploy to Cloudflare
-npx wrangler deploy
+npx wrangler deploy --env production
 
 # Note the deployed URL (e.g., https://hololive-ocg-worker.your-subdomain.workers.dev)
 
