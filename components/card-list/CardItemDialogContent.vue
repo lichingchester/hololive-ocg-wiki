@@ -45,7 +45,7 @@ defineProps<{
           <CardDataSameNumberBlock :item="item" />
 
           <!-- links -->
-          <div class="flex justify-between">
+          <!-- <div class="flex justify-between">
             <Button variant="link" class="p-0! text-xs" as-child>
               <a
                 :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
@@ -62,15 +62,33 @@ defineProps<{
                 {{ $t("Close") }}
               </Button>
             </DialogClose>
-          </div>
+          </div> -->
         </div>
       </div>
     </ScrollArea>
-    <!-- <DialogFooter class="p-4 pt-0">
-      <DialogClose as-child>
-        <Button type="button" variant="secondary"> {{ $t("Close") }} </Button>
-      </DialogClose>
-    </DialogFooter> -->
+    <DialogFooter class="px-4 pb-4 md:p-4 md:pt-0">
+      <div class="flex gap-2 md:gap-4 grow">
+        <div class="hidden md:flex-[0_0_300px] lg:flex-[0_0_400px]"></div>
+        <div class="flex justify-between grow">
+          <Button variant="link" class="p-0! text-xs" as-child>
+            <a
+              :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1"
+            >
+              <ExternalLink /> {{ $t("Official Site") }}
+            </a>
+          </Button>
+
+          <DialogClose as-child>
+            <Button type="button" variant="secondary">
+              {{ $t("Close") }}
+            </Button>
+          </DialogClose>
+        </div>
+      </div>
+    </DialogFooter>
   </DialogContent>
 </template>
 

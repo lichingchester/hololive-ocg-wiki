@@ -40,8 +40,8 @@ watch(
       v-model="localSearchValue"
       id="search"
       type="text"
-      placeholder="Search cards..."
-      class="pr-8 w-full sm:w-100"
+      :placeholder="$t('Search cards') + '...'"
+      class="pr-8 w-full"
     />
     <div
       v-if="cardStore.isLoading.value"
