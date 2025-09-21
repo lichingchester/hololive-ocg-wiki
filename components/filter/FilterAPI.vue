@@ -1,10 +1,13 @@
 <script lang="ts" setup>
 import { Funnel, PanelTopClose, RotateCcw } from "lucide-vue-next";
 
-const { locale, t, rt, tm } = useI18n();
+const { locale, t } = useI18n();
 
 // filter
 const filter = useFilter();
+
+// Use translation composable
+const { getTranslatedText } = useTranslation();
 
 // Use draft filters for UI editing
 const name = computed(() => filter.draftFilter.value.name);
@@ -121,11 +124,6 @@ const handleCancel = () => {
 const handleResetAll = () => {
   filter.resetDraftAll();
 };
-
-Object.keys(tm(`names`) as Record<string, string>).forEach((key) => {
-  console.log(rt((tm(`names`) as Record<string, string>)[key]));
-});
-console.log((tm(`names`) as string[]));
 </script>
 
 <template>
@@ -187,7 +185,7 @@ console.log((tm(`names`) as string[]));
                       class="w-max justify-start"
                     >
                       <template v-if="name">
-                        {{ $rt(($tm(`names`) as Record<string, string>)[name]) || name }}
+                        {{ getTranslatedText("names", name, name) }}
                       </template>
                       <template v-else> + {{ $t("fields.name") }} </template>
                     </Button>
@@ -211,7 +209,7 @@ console.log((tm(`names`) as string[]));
                       v-else-if="optionsLoaded"
                       v-model="filter.draftFilter.value.name"
                     >
-                      <CommandInput placeholder="Change name..." />
+                      <CommandInput :placeholder="$t('Change name') + '...'" />
                       <CommandList>
                         <CommandEmpty>
                           {{ $t("No results found.") }}
@@ -227,8 +225,13 @@ console.log((tm(`names`) as string[]));
                               }
                             "
                           >
-                          {{ $rt(($tm(`names`) as Record<string, string>)[nameOption.value]) }}
-                            <!-- {{ $rt(($tm(`names`) as Record<string, string>)[nameOption.value]) || nameOption.label }} -->
+                            {{
+                              getTranslatedText(
+                                "names",
+                                nameOption.value,
+                                nameOption.label
+                              )
+                            }}
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -255,7 +258,7 @@ console.log((tm(`names`) as string[]));
                       class="w-max justify-start"
                     >
                       <template v-if="tag">
-                        {{ $rt(($tm(`tags`) as Record<string, string>)[tag]) || tag }}
+                        {{ getTranslatedText("tags", tag, tag) }}
                       </template>
                       <template v-else> + {{ $t("fields.tags") }} </template>
                     </Button>
@@ -279,7 +282,7 @@ console.log((tm(`names`) as string[]));
                       v-else-if="optionsLoaded"
                       v-model="filter.draftFilter.value.tag"
                     >
-                      <CommandInput placeholder="Change tag..." />
+                      <CommandInput :placeholder="$t('Change tag') + '...'" />
                       <CommandList>
                         <CommandEmpty>
                           {{ $t("No results found.") }}
@@ -295,7 +298,14 @@ console.log((tm(`names`) as string[]));
                               }
                             "
                           >
-                            {{ $rt(($tm(`tags`) as Record<string, string>)[tagOption.value]) || tagOption.label }} ({{ tagOption.label }})
+                            {{
+                              getTranslatedText(
+                                "tags",
+                                tagOption.value,
+                                tagOption.label
+                              )
+                            }}
+                            ({{ tagOption.label }})
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -322,7 +332,7 @@ console.log((tm(`names`) as string[]));
                       class="w-max justify-start"
                     >
                       <template v-if="set">
-                        {{ $rt(($tm(`sets`) as Record<string, string>)[set]) || set }}
+                        {{ getTranslatedText("sets", set, set) }}
                       </template>
                       <template v-else> + {{ $t("fields.set") }} </template>
                     </Button>
@@ -346,7 +356,7 @@ console.log((tm(`names`) as string[]));
                       v-else-if="optionsLoaded"
                       v-model="filter.draftFilter.value.set"
                     >
-                      <CommandInput placeholder="Change set..." />
+                      <CommandInput :placeholder="$t('Change set') + '...'" />
                       <CommandList>
                         <CommandEmpty>
                           {{ $t("No results found.") }}
@@ -362,7 +372,13 @@ console.log((tm(`names`) as string[]));
                               }
                             "
                           >
-                            {{ $rt(($tm(`sets`) as Record<string, string>)[setOption.value]) || setOption.label }}
+                            {{
+                              getTranslatedText(
+                                "sets",
+                                setOption.value,
+                                setOption.label
+                              )
+                            }}
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -485,9 +501,11 @@ console.log((tm(`names`) as string[]));
               @click="handleApplyFilters"
               :disabled="isApplyingFilters || !hasPendingChanges"
             >
-              <Funnel class="mr-2 h-4 w-4" />
-              <template v-if="hasPendingChanges"> Apply Filters </template>
-              <template v-else> No Changes </template>
+              <Funnel />
+              <template v-if="hasPendingChanges">
+                {{ $t("Apply Filters") }}
+              </template>
+              <template v-else> {{ $t("No Changes") }} </template>
             </Button>
           </SheetClose>
 

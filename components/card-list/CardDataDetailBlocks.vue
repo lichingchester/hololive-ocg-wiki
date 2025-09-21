@@ -31,19 +31,19 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex gap-2">
           <!-- timing -->
-          <Badge
+          <!-- <Badge
             v-if="item.oshi_skill.timing_code"
             variant="outline"
             class="text-xs font-semibold"
           >
             {{ item.oshi_skill.timing_code }}
-          </Badge>
+          </Badge> -->
 
           <!-- cost -->
           <Badge
             v-if="item.oshi_skill.cost"
             variant="outline"
-            class="text-xs font-semibold"
+            class="text-sm font-semibold"
           >
             {{ $t(`fields.cost`) }}: {{ item.oshi_skill.cost }}
           </Badge>
@@ -74,19 +74,19 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex gap-2">
           <!-- timing -->
-          <Badge
+          <!-- <Badge
             v-if="item.sp_oshi_skill.timing_code"
             variant="outline"
             class="text-xs"
           >
             {{ item.sp_oshi_skill.timing_code }}
-          </Badge>
+          </Badge> -->
 
           <!-- cost -->
           <Badge
             v-if="item.sp_oshi_skill.cost"
             variant="outline"
-            class="text-xs"
+            class="text-sm font-semibold"
           >
             {{ $t(`fields.cost`) }}: {{ item.sp_oshi_skill.cost }}
           </Badge>
@@ -159,7 +159,7 @@ const getCostTypesString = (costTypes: string[]): string => {
   </template>
 
   <!-- arts -->
-  <template v-if="item.arts.length">
+  <template v-if="item.arts?.length">
     <template v-for="(art, index) in item.arts" :key="index">
       <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
         <div class="flex items-center justify-between gap-2">

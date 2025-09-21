@@ -4,6 +4,9 @@ import type { Card } from "@/types/card";
 defineProps<{
   item: Card;
 }>();
+
+// Use translation composable
+const { getTranslatedText } = useTranslation();
 </script>
 
 <template>
@@ -25,7 +28,7 @@ defineProps<{
         <div class="flex flex-wrap gap-1">
           <template v-for="(tag, index) in item.tags" :key="index">
             <Button variant="link" class="p-0 h-auto">
-              {{ tag }}
+              #{{ getTranslatedText("tags", tag, tag) }}
             </Button>
           </template>
         </div>
@@ -51,7 +54,7 @@ defineProps<{
             :key="set"
             class="text-wrap whitespace-normal"
           >
-            {{ $rt(($tm(`sets`) as Record<string, string>)[set]) || set }}
+            {{ getTranslatedText("sets", set, set) }}
           </Badge>
         </div>
       </CardDataRowsBlockItem>

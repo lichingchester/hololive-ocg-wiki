@@ -72,7 +72,8 @@ export type QaItem = {
   title: string;
   question: string;
   answer: string;
-  related_cards: string;
+  related_cards_html: string;
+  related_card_numbers: string[];
 };
 
 // export type Translations = {
@@ -120,6 +121,8 @@ export type Card = {
   arts?: any[];
   keyword?: any;
   qaItems?: any[];
+  extra?: string;
+  qa_items?: QaItem[];
 };
 
 export type CardCollection = Card[];

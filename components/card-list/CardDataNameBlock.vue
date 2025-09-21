@@ -7,6 +7,9 @@ const props = defineProps<{
   number: string;
 }>();
 
+// Use translation composable
+const { getTranslatedText } = useTranslation();
+
 // id
 const {
   copy: copyId,
@@ -36,7 +39,7 @@ const {
     <div class="relative">
       <button class="flex items-center gap-1 font-semibold" @click="copyName()">
         <Copy class="size-3" />
-        {{ name }}
+        {{ getTranslatedText("names", name, name) }}
       </button>
       <Transition name="copied">
         <span

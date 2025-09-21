@@ -55,6 +55,12 @@
   "Filter": "篩選器",
   "Filtering": "正在篩選",
   "Loading": "載入中",
+  "Change name": "更改名稱",
+  "Change tag": "更改標籤",
+  "Change set": "更改卡包",
+  "Apply Filters": "套用篩選器",
+  "No Changes": "無變更",
+  "Same Number Cards": "同號卡片",
 
   "fields": {
     "name": "名稱",

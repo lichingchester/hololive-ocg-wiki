@@ -42,6 +42,8 @@ defineProps<{
 
           <CardDataQnaBlocks :item="item" />
 
+          <CardDataSameNumberBlock :item="item" />
+
           <!-- links -->
           <div class="flex justify-end">
             <Button variant="link" class="px-0 text-xs" as-child>
