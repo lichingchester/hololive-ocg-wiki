@@ -30,7 +30,7 @@ npx wrangler d1 create hololive-ocg-db
 
 # Create database schema
 npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql
-npx wrangler d1 execute hololive-ocg-db --file=./schema.sql  # For production
+npx wrangler d1 execute hololive-ocg-db --remote --file=./schema.sql  # For production
 ```
 
 ### 2. Migrate Data to D1

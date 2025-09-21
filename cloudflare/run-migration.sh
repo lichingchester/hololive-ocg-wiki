@@ -16,6 +16,7 @@ NC='\033[0m' # No Color
 ENVIRONMENT="local"
 DATABASE_NAME="hololive-ocg-db"
 DRY_RUN=false
+START_BATCH=1
 
 # Function to print colored output
 print_status() {
@@ -42,6 +43,7 @@ Usage: $0 [OPTIONS]
 OPTIONS:
     -e, --env ENVIRONMENT    Target environment: 'local' or 'production' (default: local)
     -d, --database NAME      Database name (default: hololive-ocg-db)
+    -s, --start BATCH        Start from specific batch number (default: 1)
     -n, --dry-run           Show commands that would be executed without running them
     -h, --help              Show this help message
 
@@ -50,6 +52,7 @@ EXAMPLES:
     $0 --env production                   # Run migration for production
     $0 --env local --dry-run             # Show what would be executed locally
     $0 --env production --database my-db # Use custom database name for production
+    $0 --env production --start 50       # Resume migration from batch 50
 
 EOF
 }
@@ -63,6 +66,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         -d|--database)
             DATABASE_NAME="$2"
+            shift 2
+            ;;
+        -s|--start)
+            START_BATCH="$2"
             shift 2
             ;;
         -n|--dry-run)
@@ -84,6 +91,12 @@ done
 # Validate environment
 if [[ "$ENVIRONMENT" != "local" && "$ENVIRONMENT" != "production" ]]; then
     print_error "Environment must be 'local' or 'production'"
+    exit 1
+fi
+
+# Validate start batch number
+if ! [[ "$START_BATCH" =~ ^[0-9]+$ ]] || [[ "$START_BATCH" -lt 1 ]]; then
+    print_error "Start batch must be a positive integer"
     exit 1
 fi
 
@@ -112,14 +125,18 @@ print_status "Found $MIGRATION_COUNT migration batch files"
 
 # Build base command
 if [[ "$ENVIRONMENT" == "local" ]]; then
-    BASE_CMD="npx wrangler d1 execute $DATABASE_NAME --local"
+    BASE_CMD="npx wrangler d1 execute $DATABASE_NAME --local --yes"
     print_status "Running migration for LOCAL environment"
 else
-    BASE_CMD="npx wrangler d1 execute $DATABASE_NAME"
+    BASE_CMD="npx wrangler d1 execute $DATABASE_NAME --remote --yes"
     print_status "Running migration for PRODUCTION environment"
 fi
 
 print_status "Database: $DATABASE_NAME"
+
+if [[ $START_BATCH -gt 1 ]]; then
+    print_warning "Starting from batch $START_BATCH (skipping batches 1-$((START_BATCH-1)))"
+fi
 
 if [[ "$DRY_RUN" == true ]]; then
     print_warning "DRY RUN MODE - Commands will be shown but not executed"
@@ -128,7 +145,7 @@ fi
 echo ""
 
 # Run initial migration.sql if it exists
-if [[ -f "migration.sql" ]]; then
+if [[ -f "migration.sql" && $START_BATCH -eq 1 ]]; then
     CMD="$BASE_CMD --file=./migration.sql"
     
     if [[ "$DRY_RUN" == true ]]; then
@@ -142,6 +159,9 @@ if [[ -f "migration.sql" ]]; then
             exit 1
         fi
     fi
+    echo ""
+elif [[ -f "migration.sql" && $START_BATCH -gt 1 ]]; then
+    print_warning "Skipping initial migration.sql (starting from batch $START_BATCH)"
     echo ""
 fi
 
@@ -177,6 +197,13 @@ FAILED=0
 
 # Run all migration batches
 for batch_file in "${MIGRATION_FILES[@]}"; do
+    batch_number=$(echo "$batch_file" | grep -o '[0-9]\+')
+    
+    # Skip batches before the start batch
+    if [[ $batch_number -lt $START_BATCH ]]; then
+        continue
+    fi
+    
     if run_migration_batch "$batch_file"; then
         ((COMPLETED++))
     else
@@ -191,7 +218,16 @@ done
 echo ""
 
 if [[ "$DRY_RUN" == true ]]; then
-    print_warning "DRY RUN completed. $MIGRATION_COUNT commands would be executed."
+    # Count how many batches would be executed
+    BATCHES_TO_RUN=0
+    for batch_file in "${MIGRATION_FILES[@]}"; do
+        batch_number=$(echo "$batch_file" | grep -o '[0-9]\+')
+        if [[ $batch_number -ge $START_BATCH ]]; then
+            ((BATCHES_TO_RUN++))
+        fi
+    done
+    
+    print_warning "DRY RUN completed. $BATCHES_TO_RUN commands would be executed (starting from batch $START_BATCH)."
     print_warning "Run without --dry-run to execute the migration."
 else
     if [[ $FAILED -eq 0 ]]; then
