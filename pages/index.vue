@@ -3,20 +3,20 @@ const { t, locale } = useI18n();
 
 // SEO Meta tags for the main page
 useSeoMeta({
-  title: t("nuxtSiteConfig.cardList"),
+  title: t("Card List"),
   description: t("nuxtSiteConfig.description"),
   keywords:
     "Hololive, OCG, Official Card Game, trading cards, card database, deck builder, VTuber, virtual YouTuber, card search, game wiki",
   author: "Hololive OCG Wiki Contributors",
   robots: "index, follow",
-  ogTitle: t("nuxtSiteConfig.cardList"),
+  ogTitle: t("Card List"),
   ogDescription: t("nuxtSiteConfig.description"),
   ogType: "website",
   ogUrl: "https://hololive-ocg-wiki.lichingchester.dev",
   ogImage: "https://hololive-ocg-wiki.lichingchester.dev/icon.png",
-  ogSiteName: t("nuxtSiteConfig.cardList"),
+  ogSiteName: t("Card List"),
   twitterCard: "summary_large_image",
-  twitterTitle: t("nuxtSiteConfig.cardList"),
+  twitterTitle: t("Card List"),
   twitterDescription: t("nuxtSiteConfig.description"),
   twitterImage: "https://hololive-ocg-wiki.lichingchester.dev/icon.png",
 });

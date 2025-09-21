@@ -68,7 +68,9 @@ defineProps<{
     </ScrollArea>
     <DialogFooter class="px-4 pb-4 md:p-4 md:pt-0">
       <div class="flex gap-2 md:gap-4 grow">
-        <div class="hidden md:flex-[0_0_300px] lg:flex-[0_0_400px]"></div>
+        <div
+          class="hidden md:block md:flex-[0_0_300px] lg:flex-[0_0_400px]"
+        ></div>
         <div class="flex justify-between grow">
           <Button variant="link" class="p-0! text-xs" as-child>
             <a
