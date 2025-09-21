@@ -6,7 +6,7 @@ Hololive OCG Wiki is a fan-made resource for the Hololive Official Card Game. Th
 
 ## Our Discord Community
 
-Welcome to join our [Discord community](https://discord.gg/USMgkeYujz) to discuss, share, and collaborate on all things related to the Hololive OCG project!
+Welcome to join our [Discord community](https://discord.gg/qTuMPeuEN2) to report issues and track the latest updates of this project!
 
 ## Contributing
 

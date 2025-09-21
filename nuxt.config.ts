@@ -22,6 +22,9 @@ export default defineNuxtConfig({
       apiUrl:
         process.env.NUXT_PUBLIC_API_URL ||
         "https://your-worker.your-subdomain.workers.dev",
+      infoUrl:
+        process.env.NUXT_PUBLIC_INFO_URL ||
+        "https://raw.githubusercontent.com/lichingchester/hololive-ocg-wiki/refs/heads/main/public/info.json",
     },
   },
 
