@@ -46,6 +46,8 @@
   "Deck imported successfully": "Deck imported successfully",
   "Failed to import deck from code": "Failed to import deck from code",
   "Compact Mode": "Compact Mode",
+  "Same Number Cards": "Same Number Cards",
+  "No other cards found with the same number": "No other cards found with the same number",
   "fields": {
     "name": "Name",
     "cardType": "Card Type",

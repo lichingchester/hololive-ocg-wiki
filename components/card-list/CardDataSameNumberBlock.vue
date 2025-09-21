@@ -1,75 +1,136 @@
 <script lang="ts" setup>
-import { Copy, SwatchBook } from "lucide-vue-next";
-import type { Card } from "@/types/card";
-import { UseClipboard } from "@vueuse/components";
+import { SwatchBook } from "lucide-vue-next";
+import type { Card, CardCollection } from "@/types/card";
 
-// const { locale } = useI18n();
+const { locale } = useI18n();
+const { getCardsByCardNumber } = useCardStoreAPI();
 
-defineProps<{
+const props = defineProps<{
   item: Card;
 }>();
+
+// State for same number cards
+const sameNumberCards = ref<CardCollection>([]);
+const isLoading = ref(false);
+const error = ref<string | null>(null);
+const accordionValue = ref<string>("");
+const hasDataLoaded = ref(false);
+
+// Fetch cards with same card number
+const fetchSameNumberCards = async () => {
+  if (!props.item?.card_number || hasDataLoaded.value) return;
+
+  isLoading.value = true;
+  error.value = null;
+
+  try {
+    const cards = await getCardsByCardNumber(
+      props.item.card_number,
+      locale.value as any
+    );
+    // Filter out the current card to avoid showing duplicates
+    sameNumberCards.value = cards.filter((card) => card.id !== props.item.id);
+    hasDataLoaded.value = true;
+  } catch (err) {
+    console.error("Failed to fetch same number cards:", err);
+    error.value = "Failed to load cards";
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+// Watch for accordion open state and fetch data when opened
+watch(accordionValue, (newValue) => {
+  if (newValue === "item-1" && !hasDataLoaded.value) {
+    fetchSameNumberCards();
+  }
+});
+
+// Watch for changes in card number or locale and reset data
+watch([() => props.item?.card_number, locale], () => {
+  hasDataLoaded.value = false;
+  sameNumberCards.value = [];
+  error.value = null;
+  if (accordionValue.value === "item-1") {
+    fetchSameNumberCards();
+  }
+});
+
+// Computed property to check if we should show the component
+const shouldShowComponent = computed(() => {
+  return props.item?.card_number; // Show if there's a card number
+});
 </script>
 
 <template>
-  <div v-if="item?.qa_items?.length" class="">
-    <Accordion type="single" collapsible>
+  <div v-if="shouldShowComponent" class="">
+    <Accordion type="single" collapsible v-model="accordionValue">
       <AccordionItem value="item-1">
         <AccordionTrigger class="flex gap-2 p-2 rounded-lg border bg-accent/50">
           <div class="flex text-sm gap-2">
             <SwatchBook class="size-5" /> {{ $t("Same Number Cards") }}
+            <span
+              v-if="!isLoading && sameNumberCards.length > 0"
+              class="text-muted-foreground"
+            >
+              ({{ sameNumberCards.length }})
+            </span>
           </div>
         </AccordionTrigger>
         <AccordionContent
           class="pb-0 pt-2 md:pt-4 flex flex-col gap-2 md:gap-4"
         >
-          <template v-for="(qaItem, index) in item?.qa_items" :key="index">
-            <div
-              class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50 ml-2 md:ml-4"
-            >
-              <div class="font-semibold">
-                {{ qaItem.title }}
-              </div>
-
-              <div class="grid grid-cols-[auto_1fr] gap-2">
-                <div class="">Q:</div>
-                <div class="">
-                  {{ qaItem.question }}
-                </div>
-                <div class="">A:</div>
-                <div class="">
-                  {{ qaItem.answer }}
-                </div>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <template
-                  v-for="(cardNumber, cardIndex) in qaItem.related_card_numbers"
-                >
-                  <UseClipboard v-slot="{ copy, copied }" source="copy">
-                    <div class="relative">
-                      <Badge
-                        :index="cardIndex"
-                        variant="outline"
-                        class="cursor-pointer"
-                        @click="copy()"
-                      >
-                        <Copy />
-                        {{ cardNumber }}
-                      </Badge>
-                      <Transition name="copied">
-                        <span
-                          v-if="copied"
-                          class="absolute bottom-full md:top-auto md:bottom-[calc(100%+0rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap"
-                        >
-                          {{ $t("Copied") }}
-                        </span>
-                      </Transition>
-                    </div>
-                  </UseClipboard>
-                </template>
-              </div>
+          <!-- Loading state -->
+          <div v-if="isLoading" class="flex justify-center p-4">
+            <div class="text-sm text-muted-foreground">
+              {{ $t("Loading") }}...
             </div>
-          </template>
+          </div>
+
+          <!-- Error state -->
+          <div v-else-if="error" class="flex justify-center p-4">
+            <div class="text-sm text-destructive">{{ error }}</div>
+          </div>
+
+          <!-- Cards grid -->
+          <div
+            v-else-if="sameNumberCards.length > 0"
+            class="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-4"
+          >
+            <template v-for="card in sameNumberCards" :key="card.id">
+              <div class="relative flex aspect-400/559">
+                <Dialog>
+                  <DialogTrigger class="w-full">
+                    <SimpleImage
+                      class="rounded-lg overflow-hidden"
+                      :src="`/${card.image_path}`"
+                      :img-attributes="{ class: 'w-full h-full object-cover' }"
+                    />
+                  </DialogTrigger>
+                  <CardItemDialogContent :item="card" />
+                </Dialog>
+
+                <!-- Card info overlay -->
+                <!-- <div
+                  class="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-1 rounded-b-lg"
+                >
+                  <div class="text-xs truncate font-medium">
+                    {{ card.name }}
+                  </div>
+                  <div class="text-xs text-gray-300">
+                    {{ card.card_number }}
+                  </div>
+                </div> -->
+              </div>
+            </template>
+          </div>
+
+          <!-- No cards found (shouldn't happen due to shouldShowComponent) -->
+          <div v-else class="flex justify-center p-4">
+            <div class="text-sm text-muted-foreground">
+              {{ $t("No other cards found with the same number") }}
+            </div>
+          </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

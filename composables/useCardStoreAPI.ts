@@ -41,6 +41,12 @@ export const useCardStoreAPI = () => {
   // Cache for individual cards by ID and locale
   const cardsCache = useState<Map<string, Card>>("cardsCache", () => new Map());
 
+  // Cache for cards by card number
+  const cardsByNumberCache = useState<Map<string, CardCollection>>(
+    "cardsByNumberCache",
+    () => new Map()
+  );
+
   // Configuration
   const runtimeConfig = useRuntimeConfig();
   const apiBaseUrl =
@@ -298,6 +304,50 @@ export const useCardStoreAPI = () => {
     }
   };
 
+  // Get cards by card number from API
+  const getCardsByCardNumber = async (
+    cardNumber: string,
+    locale: Locales = "en"
+  ): Promise<CardCollection> => {
+    if (!cardNumber.trim()) return [];
+
+    // Create cache key with locale
+    const cacheKey = `${cardNumber.trim()}_${locale}`;
+
+    // Return cached cards if available
+    if (cardsByNumberCache.value.has(cacheKey)) {
+      return cardsByNumberCache.value.get(cacheKey)!;
+    }
+
+    try {
+      const response = await apiCall<{ cards: CardCollection }>(
+        `/api/cards/filter-by-card-number/${encodeURIComponent(
+          cardNumber.trim()
+        )}`,
+        { locale }
+      );
+
+      const normalizedCards = response.cards.map(normalizeCard);
+
+      // Cache the cards
+      cardsByNumberCache.value.set(cacheKey, normalizedCards);
+
+      // Also cache individual cards for other operations
+      normalizedCards.forEach((card) => {
+        const cardCacheKey = `${card.id}_${locale}`;
+        cardsCache.value.set(cardCacheKey, card);
+      });
+
+      return normalizedCards;
+    } catch (error) {
+      console.error(
+        `Failed to fetch cards with card number ${cardNumber}:`,
+        error
+      );
+      return [];
+    }
+  };
+
   const getCardsByIds = async (
     ids: string[],
     locale: Locales = "en"
@@ -443,6 +493,7 @@ export const useCardStoreAPI = () => {
     filterCache.value.clear();
     filterOptionsCache.value.clear();
     cardsCache.value.clear();
+    cardsByNumberCache.value.clear();
   };
 
   // Load more cards for pagination
@@ -578,6 +629,7 @@ export const useCardStoreAPI = () => {
       filterCacheSize: filterCache.value.size,
       filterOptionsCacheSize: filterOptionsCache.value.size,
       cardsCacheSize: cardsCache.value.size,
+      cardsByNumberCacheSize: cardsByNumberCache.value.size,
     };
   };
 
@@ -594,6 +646,7 @@ export const useCardStoreAPI = () => {
     getFilteredCards,
     getCardById,
     getCardsByIds,
+    getCardsByCardNumber,
     searchCards,
 
     // Filter options
