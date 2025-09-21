@@ -2,10 +2,13 @@
 -- This script creates and populates the FTS table for better search performance
 
 -- Drop existing FTS table and triggers to start fresh
+-- Note: Use individual commands for better compatibility with D1
 DROP TABLE IF EXISTS cards_fts;
 DROP TRIGGER IF EXISTS cards_fts_insert;
 DROP TRIGGER IF EXISTS cards_fts_update;
 DROP TRIGGER IF EXISTS cards_fts_delete;
+DROP TRIGGER IF EXISTS cards_fts_oshi_skills_update;
+DROP TRIGGER IF EXISTS cards_fts_tags_update;
 
 -- Create the FTS virtual table
 CREATE VIRTUAL TABLE cards_fts USING fts5(
