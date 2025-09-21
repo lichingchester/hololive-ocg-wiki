@@ -143,7 +143,7 @@ npx wrangler deploy --env production
 # Note the deployed URL (e.g., https://hololive-ocg-worker.your-subdomain.workers.dev)
 
 # Local Test
-npx wrangler dev
+npx wrangler dev --env development
 ```
 
 ### 5. Update Frontend Configuration
