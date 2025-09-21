@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Funnel, PanelTopClose, RotateCcw } from "lucide-vue-next";
 
-const { locale } = useI18n();
+const { locale, t, rt, tm } = useI18n();
 
 // filter
 const filter = useFilter();
@@ -98,7 +98,7 @@ onMounted(() => {
 const handleApplyFilters = async () => {
   // Check if there are any pending changes before applying
   if (!hasPendingChanges.value) {
-    console.log("No filter changes detected, skipping filter application");
+    console.log(t("No filter changes detected, skipping filter application"));
     return;
   }
 
@@ -121,6 +121,11 @@ const handleCancel = () => {
 const handleResetAll = () => {
   filter.resetDraftAll();
 };
+
+Object.keys(tm(`names`) as Record<string, string>).forEach((key) => {
+  console.log(rt((tm(`names`) as Record<string, string>)[key]));
+});
+console.log((tm(`names`) as string[]));
 </script>
 
 <template>
@@ -138,8 +143,8 @@ const handleResetAll = () => {
     </SheetTrigger>
     <SheetContent side="top" hide-top-right-close>
       <DialogHeader class="h-0 overflow-hidden">
-        <DialogTitle>Filter</DialogTitle>
-        <DialogDescription>Filter</DialogDescription>
+        <DialogTitle>{{ $t("Filter") }}</DialogTitle>
+        <DialogDescription>{{ $t("Filter") }}</DialogDescription>
       </DialogHeader>
 
       <!-- Add loading overlay for filter application -->
@@ -152,7 +157,9 @@ const handleResetAll = () => {
             class="animate-spin h-8 w-8 border-4 border-primary rounded-full border-t-transparent"
           ></div>
           <span class="text-sm text-muted-foreground">{{
-            isApplyingFilters ? $t("Applying filters...") : $t("Filtering...")
+            isApplyingFilters
+              ? `${$t("Applying filters")}...`
+              : `${$t("Filtering")}...`
           }}</span>
         </div>
       </div>
@@ -180,7 +187,7 @@ const handleResetAll = () => {
                       class="w-max justify-start"
                     >
                       <template v-if="name">
-                        {{ name }}
+                        {{ $rt(($tm(`names`) as Record<string, string>)[name]) || name }}
                       </template>
                       <template v-else> + {{ $t("fields.name") }} </template>
                     </Button>
@@ -198,7 +205,7 @@ const handleResetAll = () => {
                       <div
                         class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
                       />
-                      Loading...
+                      {{ $t("Loading") }}...
                     </div>
                     <Command
                       v-else-if="optionsLoaded"
@@ -220,7 +227,8 @@ const handleResetAll = () => {
                               }
                             "
                           >
-                            {{ nameOption.label }}
+                          {{ $rt(($tm(`names`) as Record<string, string>)[nameOption.value]) }}
+                            <!-- {{ $rt(($tm(`names`) as Record<string, string>)[nameOption.value]) || nameOption.label }} -->
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -247,7 +255,7 @@ const handleResetAll = () => {
                       class="w-max justify-start"
                     >
                       <template v-if="tag">
-                        {{ tag }}
+                        {{ $rt(($tm(`tags`) as Record<string, string>)[tag]) || tag }}
                       </template>
                       <template v-else> + {{ $t("fields.tags") }} </template>
                     </Button>
@@ -265,7 +273,7 @@ const handleResetAll = () => {
                       <div
                         class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
                       />
-                      Loading...
+                      {{ $t("Loading") }}...
                     </div>
                     <Command
                       v-else-if="optionsLoaded"
@@ -287,7 +295,7 @@ const handleResetAll = () => {
                               }
                             "
                           >
-                            {{ tagOption.label }}
+                            {{ $rt(($tm(`tags`) as Record<string, string>)[tagOption.value]) || tagOption.label }} ({{ tagOption.label }})
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -314,7 +322,7 @@ const handleResetAll = () => {
                       class="w-max justify-start"
                     >
                       <template v-if="set">
-                        {{ set }}
+                        {{ $rt(($tm(`sets`) as Record<string, string>)[set]) || set }}
                       </template>
                       <template v-else> + {{ $t("fields.set") }} </template>
                     </Button>
@@ -332,7 +340,7 @@ const handleResetAll = () => {
                       <div
                         class="animate-spin h-4 w-4 border border-primary rounded-full inline-block mr-2 border-t-transparent"
                       />
-                      Loading...
+                      {{ $t("Loading") }}...
                     </div>
                     <Command
                       v-else-if="optionsLoaded"
@@ -354,7 +362,7 @@ const handleResetAll = () => {
                               }
                             "
                           >
-                            {{ $t(`sets.${setOption.label}`) }}
+                            {{ $rt(($tm(`sets`) as Record<string, string>)[setOption.value]) || setOption.label }}
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>

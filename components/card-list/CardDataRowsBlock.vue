@@ -45,8 +45,13 @@ defineProps<{
         :name="$t('fields.set')"
       >
         <div class="flex flex-wrap justify-end gap-2">
-          <Badge variant="outline" v-for="set in item.card_sets" :key="set">
-            {{ $t(`sets.${set}`) }}
+          <Badge
+            variant="outline"
+            v-for="set in item.card_sets"
+            :key="set"
+            class="text-wrap whitespace-normal"
+          >
+            {{ $rt(($tm(`sets`) as Record<string, string>)[set]) || set }}
           </Badge>
         </div>
       </CardDataRowsBlockItem>
