@@ -82,14 +82,19 @@ After migrating your data, set up FTS for lightning-fast search performance:
 # Navigate to cloudflare directory
 cd cloudflare
 
-# Make the FTS setup script executable
+# Make the FTS setup scripts executable
 chmod +x setup-fts.sh
+chmod +x reset-fts.sh
 
-# Set up FTS for local development
+# Set up FTS for local development (fresh setup)
 ./setup-fts.sh hololive-ocg-db
+
+# If you get "already exists" errors, use the reset script instead
+./reset-fts.sh hololive-ocg-db
 
 # For production, specify the production database name
 ./setup-fts.sh your-production-database-name
+./reset-fts.sh your-production-database-name  # If resetting existing FTS
 ```
 
 The FTS setup will:
@@ -106,7 +111,7 @@ The FTS setup will:
 - **Multi-language support** - works with Japanese, English, and other locales
 - **Automatic fallback** - gracefully degrades to LIKE queries if FTS unavailable
 
-**Manual FTS setup (if script doesn't work):**
+**Manual FTS setup (if scripts don't work):**
 
 ```bash
 # Apply FTS setup manually
@@ -114,6 +119,16 @@ npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
 
 # For production
 npx wrangler d1 execute your-production-db --file=./setup-fts.sql
+
+# If you get "already exists" errors, manually drop existing components first
+npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_insert;"
+npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_update;"
+npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_delete;"
+npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_oshi_skills_update;"
+npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_tags_update;"
+npx wrangler d1 execute hololive-ocg-db --command="DROP TABLE IF EXISTS cards_fts;"
+# Then run the setup file
+npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
 
 # Verify FTS is working
 npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
@@ -323,11 +338,14 @@ If you need to rollback to the original frontend-only implementation:
 The FTS table automatically stays in sync with changes through database triggers. However, if you notice search performance issues or missing results:
 
 ```bash
-# Rebuild FTS index from scratch
+# Rebuild FTS index from scratch (recommended method)
 cd cloudflare
+./reset-fts.sh hololive-ocg-db
+
+# Or use the regular setup script if no conflicts
 ./setup-fts.sh hololive-ocg-db
 
-# Or manually drop and recreate
+# Manual cleanup if scripts fail
 npx wrangler d1 execute hololive-ocg-db --command="DROP TABLE IF EXISTS cards_fts;"
 npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
 ```
@@ -351,6 +369,21 @@ cd cloudflare
 ./setup-fts.sh hololive-ocg-db
 ```
 
+**"trigger already exists" or "table already exists" errors:**
+
+This happens when FTS components were previously created. Use the reset script instead:
+
+```bash
+cd cloudflare
+./reset-fts.sh hololive-ocg-db
+```
+
+The reset script will:
+
+1. Drop all existing FTS triggers individually
+2. Drop the existing FTS table
+3. Recreate everything from scratch
+
 **Search returns no results:**
 
 1. Verify FTS table exists and has data:
@@ -367,16 +400,35 @@ cd cloudflare
 
 3. If no results, rebuild FTS:
    ```bash
-   ./setup-fts.sh hololive-ocg-db
+   ./reset-fts.sh hololive-ocg-db
    ```
 
 **"no such column: cf" errors:**
 
-This indicates the FTS table structure doesn't match the query. Rebuild FTS:
+This indicates the FTS table structure doesn't match the query. Rebuild FTS using the reset script:
 
 ```bash
 cd cloudflare
-./setup-fts.sh hololive-ocg-db
+./reset-fts.sh hololive-ocg-db
+```
+
+**Common FTS Setup Issues:**
+
+1. **Components already exist**: Use `./reset-fts.sh` instead of `./setup-fts.sh`
+2. **Partial setup**: If setup was interrupted, always use reset script to ensure clean state
+3. **D1 quirks**: The `IF EXISTS` clause in SQL sometimes doesn't work as expected with triggers in D1, which is why the reset script drops components individually
+
+**Verification Commands:**
+
+```bash
+# Check if FTS table exists and record count
+npx wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+
+# Check if all triggers exist
+npx wrangler d1 execute hololive-ocg-db --command="SELECT name FROM sqlite_master WHERE type='trigger' AND name LIKE '%fts%';"
+
+# Test FTS search functionality
+npx wrangler d1 execute hololive-ocg-db --command="SELECT card_id, name FROM cards_fts WHERE cards_fts MATCH 'luna' LIMIT 5;"
 ```
 
 ### General Issues
