@@ -919,6 +919,83 @@ export default {
         });
       }
 
+      // Route: GET /api/cards/by-card-numbers/:card_numbers - Get first card for each card number
+      if (
+        path.startsWith("/api/cards/by-card-numbers/") &&
+        request.method === "GET"
+      ) {
+        const cardNumbersParam = path.split("/").pop();
+        if (!cardNumbersParam) {
+          return new Response(
+            JSON.stringify({ error: "Card numbers required" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        // Security: Validate card numbers - should be alphanumeric with limited length
+        const cardNumbers = cardNumbersParam
+          .split(",")
+          .filter(Boolean)
+          .slice(0, 50) // Limit number of card numbers that can be requested at once
+          .map((cardNumber) => validateAndSanitizeString(cardNumber, 50))
+          .filter(
+            (cardNumber): cardNumber is string =>
+              cardNumber !== undefined && /^[a-zA-Z0-9_-]+$/.test(cardNumber)
+          );
+
+        if (cardNumbers.length === 0) {
+          return new Response(
+            JSON.stringify({
+              error: "At least one valid card number required",
+            }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        const locale = validateLocale(url.searchParams.get("locale"));
+
+        // Get first card for each card number (using DISTINCT ON or GROUP BY)
+        // We'll use a subquery to get the first card ID for each card number
+        const placeholders = cardNumbers.map(() => "?").join(",");
+        const cardsStmt = env.DB.prepare(`
+          SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
+          FROM cards c
+          LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+          WHERE c.id IN (
+            SELECT MIN(id) as id
+            FROM cards
+            WHERE card_number IN (${placeholders})
+            GROUP BY card_number
+          )
+          ORDER BY c.card_number
+        `);
+
+        const cardsResult = await cardsStmt.bind(locale, ...cardNumbers).all();
+
+        if (cardsResult.results.length === 0) {
+          return new Response(JSON.stringify({ cards: [] }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+
+        // Use batch enrichment for all matching cards
+        const enrichedCards = await enrichCardDataBatch(
+          env,
+          cardsResult.results,
+          locale
+        );
+
+        return new Response(JSON.stringify({ cards: enrichedCards }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
       // Route: GET /api/cards/:id
       if (path.startsWith("/api/cards/") && request.method === "GET") {
         const cardId = path.split("/").pop();

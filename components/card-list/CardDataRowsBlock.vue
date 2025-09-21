@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { UseClipboard } from "@vueuse/components";
 import type { Card } from "@/types/card";
 
 defineProps<{
@@ -27,9 +28,22 @@ const { getTranslatedText } = useTranslation();
       >
         <div class="flex flex-wrap gap-1">
           <template v-for="(tag, index) in item.tags" :key="index">
-            <Button variant="link" class="p-0 h-auto">
-              #{{ getTranslatedText("tags", tag, tag) }}
-            </Button>
+            <UseClipboard v-slot="{ copy, copied }" :source="tag">
+              <div class="relative">
+                <Button variant="link" class="p-0 h-auto" @click="copy()">
+                  #{{ getTranslatedText("tags", tag, tag) }}
+                </Button>
+                <!-- Copied indicator -->
+                <Transition name="copied">
+                  <span
+                    v-if="copied"
+                    class="absolute bottom-full md:top-auto md:bottom-[calc(100%+0rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap z-10"
+                  >
+                    {{ $t("Copied") }}
+                  </span>
+                </Transition>
+              </div>
+            </UseClipboard>
           </template>
         </div>
       </CardDataRowsBlockItem>

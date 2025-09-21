@@ -45,8 +45,8 @@ defineProps<{
           <CardDataSameNumberBlock :item="item" />
 
           <!-- links -->
-          <div class="flex justify-end">
-            <Button variant="link" class="px-0 text-xs" as-child>
+          <div class="flex justify-between">
+            <Button variant="link" class="p-0! text-xs" as-child>
               <a
                 :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
                 target="_blank"
@@ -56,15 +56,21 @@ defineProps<{
                 <ExternalLink /> {{ $t("Official Site") }}
               </a>
             </Button>
+
+            <DialogClose as-child>
+              <Button type="button" variant="secondary">
+                {{ $t("Close") }}
+              </Button>
+            </DialogClose>
           </div>
         </div>
       </div>
     </ScrollArea>
-    <DialogFooter class="p-4 pt-0">
+    <!-- <DialogFooter class="p-4 pt-0">
       <DialogClose as-child>
         <Button type="button" variant="secondary"> {{ $t("Close") }} </Button>
       </DialogClose>
-    </DialogFooter>
+    </DialogFooter> -->
   </DialogContent>
 </template>
 

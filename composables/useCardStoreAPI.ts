@@ -47,6 +47,12 @@ export const useCardStoreAPI = () => {
     () => new Map()
   );
 
+  // Cache for cards by multiple card numbers
+  const cardsByNumbersCache = useState<Map<string, CardCollection>>(
+    "cardsByNumbersCache",
+    () => new Map()
+  );
+
   // Configuration
   const runtimeConfig = useRuntimeConfig();
   const apiBaseUrl =
@@ -348,6 +354,60 @@ export const useCardStoreAPI = () => {
     }
   };
 
+  // Get cards by multiple card numbers from API (first match for each number)
+  const getCardsByCardNumbers = async (
+    cardNumbers: string[],
+    locale: Locales = "en"
+  ): Promise<CardCollection> => {
+    if (cardNumbers.length === 0) return [];
+
+    // Filter and sanitize card numbers
+    const validCardNumbers = cardNumbers
+      .map((num) => num.trim())
+      .filter((num) => num.length > 0);
+
+    if (validCardNumbers.length === 0) return [];
+
+    // Create cache key with locale and sorted card numbers for consistent caching
+    const sortedNumbers = [...validCardNumbers].sort();
+    const cacheKey = `${sortedNumbers.join(",")}_${locale}`;
+
+    // Return cached cards if available
+    if (cardsByNumbersCache.value.has(cacheKey)) {
+      return cardsByNumbersCache.value.get(cacheKey)!;
+    }
+
+    try {
+      const response = await apiCall<{ cards: CardCollection }>(
+        `/api/cards/by-card-numbers/${encodeURIComponent(
+          validCardNumbers.join(",")
+        )}`,
+        { locale }
+      );
+
+      const normalizedCards = response.cards.map(normalizeCard);
+
+      // Cache the cards
+      cardsByNumbersCache.value.set(cacheKey, normalizedCards);
+
+      // Also cache individual cards for other operations
+      normalizedCards.forEach((card) => {
+        const cardCacheKey = `${card.id}_${locale}`;
+        cardsCache.value.set(cardCacheKey, card);
+      });
+
+      return normalizedCards;
+    } catch (error) {
+      console.error(
+        `Failed to fetch cards with card numbers ${validCardNumbers.join(
+          ","
+        )}:`,
+        error
+      );
+      return [];
+    }
+  };
+
   const getCardsByIds = async (
     ids: string[],
     locale: Locales = "en"
@@ -494,6 +554,7 @@ export const useCardStoreAPI = () => {
     filterOptionsCache.value.clear();
     cardsCache.value.clear();
     cardsByNumberCache.value.clear();
+    cardsByNumbersCache.value.clear();
   };
 
   // Load more cards for pagination
@@ -630,6 +691,7 @@ export const useCardStoreAPI = () => {
       filterOptionsCacheSize: filterOptionsCache.value.size,
       cardsCacheSize: cardsCache.value.size,
       cardsByNumberCacheSize: cardsByNumberCache.value.size,
+      cardsByNumbersCacheSize: cardsByNumbersCache.value.size,
     };
   };
 
@@ -647,6 +709,7 @@ export const useCardStoreAPI = () => {
     getCardById,
     getCardsByIds,
     getCardsByCardNumber,
+    getCardsByCardNumbers,
     searchCards,
 
     // Filter options

@@ -66,7 +66,9 @@ const shouldShowComponent = computed(() => {
   <div v-if="shouldShowComponent" class="">
     <Accordion type="single" collapsible v-model="accordionValue">
       <AccordionItem value="item-1">
-        <AccordionTrigger class="flex gap-2 p-2 rounded-lg border bg-accent/50">
+        <AccordionTrigger
+          class="flex gap-2 p-2 rounded-lg border bg-accent/50 hover:no-underline"
+        >
           <div class="flex text-sm gap-2">
             <SwatchBook class="size-5" /> {{ $t("Same Number Cards") }}
             <span
