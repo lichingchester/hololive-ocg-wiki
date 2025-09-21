@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import type { Card } from "@/types/card";
-import { items } from "happy-dom/lib/PropertySymbol.js";
-
-// const { locale } = useI18n();
 
 defineProps<{
   item: Card;
@@ -21,7 +18,10 @@ defineProps<{
       </CardDataRowsBlockItem>
 
       <!-- tags -->
-      <CardDataRowsBlockItem v-if="item.tags.length" :name="$t('fields.tags')">
+      <CardDataRowsBlockItem
+        v-if="item?.tags?.length"
+        :name="$t('fields.tags')"
+      >
         <div class="flex flex-wrap gap-1">
           <template v-for="(tag, index) in item.tags" :key="index">
             <Button variant="link" class="p-0 h-auto">
@@ -44,8 +44,10 @@ defineProps<{
         v-if="item?.card_sets && item?.card_sets.length > 0"
         :name="$t('fields.set')"
       >
-        <div v-for="set in item.card_sets" :key="set">
-          {{ set }}
+        <div class="flex flex-wrap justify-end gap-2">
+          <Badge variant="outline" v-for="set in item.card_sets" :key="set">
+            {{ $t(`sets.${set}`) }}
+          </Badge>
         </div>
       </CardDataRowsBlockItem>
 
@@ -55,17 +57,8 @@ defineProps<{
         :name="$t('fields.color')"
       >
         <div class="flex items-center gap-1">
-          <!-- Handle single color (backward compatibility) -->
-          <template v-if="item.color_code && !item.color_codes">
-            <Image
-              :src="`/icons/type_${item.color_code}.png`"
-              :img-attributes="{ class: 'w-5' }"
-            />
-            {{ $t(`colors.${item.color_code}`) }}
-          </template>
-
           <!-- Handle multiple colors (new format) -->
-          <template v-else-if="item.color_codes && item.color_codes.length > 0">
+          <template v-if="item.color_codes && item.color_codes.length > 0">
             <template v-for="(color, index) in item.color_codes" :key="index">
               <Image
                 :src="`/icons/type_${color}.png`"
@@ -116,7 +109,7 @@ defineProps<{
           <span class="ml-1">
             ({{
               item.baton_touch_types
-                .map((type: string) => $t(`colors.${type}`))
+                ?.map((type: string) => $t(`colors.${type}`))
                 .join(", ")
             }})
           </span>

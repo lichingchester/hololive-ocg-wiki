@@ -39,6 +39,12 @@ onMounted(() => {
 
 // Handle filter application
 const handleApplyFilters = async () => {
+  // Check if there are any pending changes before applying
+  if (!hasPendingChanges.value) {
+    console.log("No filter changes detected, skipping filter application");
+    return;
+  }
+
   isApplyingFilters.value = true;
   try {
     filter.applyFilters();

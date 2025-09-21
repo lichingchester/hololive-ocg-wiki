@@ -16,7 +16,7 @@ const scrollPosition = ref(0);
 const shouldPreserveScroll = ref(false);
 
 // Pagination state
-const pageSize = ref(250); // Increased for virtual scrolling
+const pageSize = ref(200); // Increased for virtual scrolling
 const currentPage = ref(1);
 const hasMore = computed(() => {
   return cardStore.filteredCards.value.length < cardStore.totalCards.value;
@@ -243,7 +243,9 @@ watch(
         <div
           class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
         ></div>
-        <p class="text-sm text-muted-foreground">Applying filters...</p>
+        <p class="text-sm text-muted-foreground">
+          {{ $t("Applying filters") }}...
+        </p>
       </div>
     </div>
 
@@ -256,7 +258,9 @@ watch(
         <div
           class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
         ></div>
-        <p class="text-sm text-muted-foreground">Loading cards...</p>
+        <p class="text-sm text-muted-foreground">
+          {{ $t("Loading cards") }}...
+        </p>
       </div>
     </div>
 
@@ -308,7 +312,9 @@ watch(
           <div
             class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"
           ></div>
-          <p class="text-sm text-muted-foreground">Loading more cards...</p>
+          <p class="text-sm text-muted-foreground">
+            {{ $t("Loading more cards") }}...
+          </p>
         </div>
       </div>
     </div>
@@ -319,9 +325,11 @@ watch(
       class="flex justify-center items-center min-h-[200px]"
     >
       <div class="text-center">
-        <p class="text-lg font-medium text-muted-foreground">No cards found</p>
+        <p class="text-lg font-medium text-muted-foreground">
+          {{ $t("No cards found") }}
+        </p>
         <p class="text-sm text-muted-foreground mt-1">
-          Try adjusting your filters
+          {{ $t("Try adjusting your filters") }}
         </p>
       </div>
     </div>

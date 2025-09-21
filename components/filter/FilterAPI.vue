@@ -96,6 +96,12 @@ onMounted(() => {
 
 // Handle filter application
 const handleApplyFilters = async () => {
+  // Check if there are any pending changes before applying
+  if (!hasPendingChanges.value) {
+    console.log("No filter changes detected, skipping filter application");
+    return;
+  }
+
   isApplyingFilters.value = true;
   try {
     await filter.applyFilters();
@@ -348,7 +354,7 @@ const handleResetAll = () => {
                               }
                             "
                           >
-                            {{ setOption.label }}
+                            {{ $t(`sets.${setOption.label}`) }}
                           </CommandItem>
                         </CommandGroup>
                       </CommandList>
@@ -463,23 +469,23 @@ const handleResetAll = () => {
       </div>
 
       <SheetFooter class="pt-0 md:pt-4">
-        <div class="flex items-center w-full gap-2">
-          <Button class="grow" variant="outline" @click="handleResetAll">
-            <RotateCcw /> {{ $t("Reset") }}
-          </Button>
-
+        <div class="flex flex-wrap items-center w-full gap-2">
           <!-- Show filter button only when there are pending changes -->
           <SheetClose as-child>
             <Button
-              class="grow"
+              class="grow w-full"
               @click="handleApplyFilters"
-              :disabled="isApplyingFilters"
+              :disabled="isApplyingFilters || !hasPendingChanges"
             >
               <Funnel class="mr-2 h-4 w-4" />
-              Filter
-              <!-- {{ $t("Filter") }} -->
+              <template v-if="hasPendingChanges"> Apply Filters </template>
+              <template v-else> No Changes </template>
             </Button>
           </SheetClose>
+
+          <Button class="grow" variant="outline" @click="handleResetAll">
+            <RotateCcw /> {{ $t("Reset") }}
+          </Button>
 
           <SheetClose as-child>
             <Button class="grow" variant="outline" @click="handleCancel">

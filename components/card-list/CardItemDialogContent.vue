@@ -1,26 +1,12 @@
 <script setup lang="ts">
-// import { VisuallyHidden } from "reka-ui";
 import { ExternalLink } from "lucide-vue-next";
 import type { Card } from "@/types/card";
-// import { Badge } from "@/components/ui/badge";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-const { t } = useI18n();
 
 defineProps<{
   item: Card;
 }>();
-
-// const getCostTypesString = (costTypes: string[]): string => {
-//   const counts: Record<string, number> = {};
-//   for (const type of costTypes) {
-//     counts[type] = (counts[type] || 0) + 1;
-//   }
-//   return Object.entries(counts)
-//     .map(([type, count]) => `${t(`colors.${type}`)} x${count}`)
-//     .join(", ");
-// };
 </script>
 
 <template>
@@ -29,8 +15,8 @@ defineProps<{
     class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
   >
     <DialogHeader class="h-0 overflow-hidden">
-      <DialogTitle>{{ item.name }}</DialogTitle>
-      <DialogDescription> {{ item.name }} </DialogDescription>
+      <DialogTitle>{{ item.name || "" }}</DialogTitle>
+      <DialogDescription> {{ item.name || "" }} </DialogDescription>
     </DialogHeader>
 
     <ScrollArea class="py-0 px-4">
@@ -45,7 +31,7 @@ defineProps<{
 
         <div class="flex flex-col grow gap-2 md:gap-4">
           <CardDataNameBlock
-            :name="item.name"
+            :name="item.name || ''"
             :id="item.id"
             :number="item.card_number"
           />

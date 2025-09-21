@@ -46,6 +46,12 @@
   "Deck imported successfully": "牌組已成功匯入",
   "Failed to import deck from code": "從代碼匯入牌組失敗",
   "Compact Mode": "精簡模式",
+  "Applying filters": "正在套用篩選器",
+  "Loading cards": "正在載入卡片",
+  "Loading more cards": "正在載入更多卡片",
+  "No cards found": "找不到卡片",
+  "Try adjusting your filters": "請嘗試調整篩選器",
+
   "fields": {
     "name": "名稱",
     "cardType": "卡片類型",
@@ -118,5 +124,31 @@
     "first": "1st",
     "second": "2nd",
     "spot": "Spot"
+  },
+  "sets": {
+    "PROMO CARDS": "PROMO CARDS",
+    "PRカード": "PR卡",
+    "【hololive production OFFICIAL SHOP限定】hololive OFFICIAL CARD GAME 1st Anniversary Celebration Set": "【hololive production OFFICIAL SHOP限定】hololive OFFICIAL CARD GAME 1週年紀念套組",
+    "【イベント物販限定商品】スタートデッキセット-2025 ホロナツパラダイスver.": "【活動販售限定商品】起始牌組套組-2025 Holo夏日樂園ver.",
+    "【イベント物販／hololive production OFFICIAL SHOP限定商品】オフィシャルホロカコレクション-PCセット-": "【活動販售／hololive production OFFICIAL SHOP限定商品】官方HoloCa收藏 -PC套組-",
+    "【使用可能カード】エントリーカップ「エリートスパーク」": "【可使用卡片】新手盃「Elite Spark」",
+    "【使用可能カード】エントリーカップ「キュリアスユニバース」": "【可使用卡片】新手盃「Curious Universe」",
+    "【使用可能カード】エントリーカップ「クインテットスペクトラム」": "【可使用卡片】新手盃「Quintet Spectrum」",
+    "【使用可能カード】エントリーカップ「ブルーミングレディアンス」": "【可使用卡片】新手盃「Blooming Radiance」",
+    "スタートエールセット": "起始應援套組",
+    "スタートデッキ 白 天音かなた": "起始牌組 白 天音彼方",
+    "スタートデッキ 白 轟はじめ": "起始牌組 白 轟初芽",
+    "スタートデッキ 紫 癒月ちょこ": "起始牌組 紫 癒月巧可",
+    "スタートデッキ 緑 風真いろは": "起始牌組 綠 風真伊呂波",
+    "スタートデッキ 赤 宝鐘マリン": "起始牌組 紅 寶鐘瑪琳",
+    "スタートデッキ 赤 百鬼あやめ": "起始牌組 紅 百鬼綾目",
+    "スタートデッキ 青 猫又おかゆ": "起始牌組 藍 貓又小粥",
+    "スタートデッキ 黄 不知火フレア": "起始牌組 黃 不知火芙蕾雅",
+    "スタートデッキ「ときのそら＆AZKi」": "起始牌組「時乃空＆AZKi」",
+    "ブースターパック「エリートスパーク」": "擴充包「Elite Spark」",
+    "ブースターパック「エンチャントレガリア」": "擴充包「Enchant Regalia」",
+    "ブースターパック「キュリアスユニバース」": "擴充包「Curious Universe」",
+    "ブースターパック「クインテットスペクトラム」": "擴充包「Quintet Spectrum」",
+    "ブースターパック「ブルーミングレディアンス」": "擴充包「Blooming Radiance」"
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+// const { locale } = useI18n();
 const filter = useFilter();
 
 // Use API-based store instead of local processing
@@ -35,13 +35,13 @@ watch(
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative grow">
     <Input
       v-model="localSearchValue"
       id="search"
       type="text"
       placeholder="Search cards..."
-      class="pr-8"
+      class="pr-8 w-full sm:w-100"
     />
     <div
       v-if="cardStore.isLoading.value"
