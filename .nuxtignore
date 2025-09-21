@@ -1,2 +1,4 @@
 .venv
 data-grab-scripts
+
+pages/how-to-use/index.vue

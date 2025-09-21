@@ -4,6 +4,7 @@ import { Info } from "lucide-vue-next";
 const runtimeConfig = useRuntimeConfig();
 
 const releaseImgUrl = ref("");
+const discordInviteUrl = ref("");
 const contents = ref<string[]>([]);
 const disclaimer = ref("");
 
@@ -14,6 +15,9 @@ const infoData = typeof info === "string" ? safeJsonParse(info) : info;
 
 if (infoData?.["release-shields-url"]) {
   releaseImgUrl.value = infoData["release-shields-url"];
+}
+if (infoData?.["discord-invite-url"]) {
+  discordInviteUrl.value = infoData["discord-invite-url"];
 }
 if (infoData?.["contents"]) {
   contents.value = infoData["contents"];
@@ -31,10 +35,6 @@ function safeJsonParse(jsonString: string) {
     return ""; // Return empty string if parsing fails
   }
 }
-
-if (infoData?.["release-shields-url"]) {
-  releaseImgUrl.value = infoData["release-shields-url"];
-}
 </script>
 
 <template>
@@ -46,7 +46,7 @@ if (infoData?.["release-shields-url"]) {
     </DialogTrigger>
     <DialogScrollContent class="sm:max-w-[425px]">
       <DialogHeader class="text-start">
-        <DialogTitle class="flex gap-2">
+        <DialogTitle class="flex gap-2 items-center">
           Hololive OCG Wiki
           <img alt="Release" :src="releaseImgUrl" />
         </DialogTitle>
@@ -54,14 +54,17 @@ if (infoData?.["release-shields-url"]) {
           <div class="flex gap-2">
             <Button variant="outline" size="icon" as-child>
               <a
-                href="https://gitlab.com/lichingchester/hololive-ocg-wiki"
+                href="https://github.com/lichingchester/hololive-ocg-wiki"
                 target="_blank"
               >
-                <IconGitlab />
+                <IconGithub />
               </a>
             </Button>
             <Button variant="outline" size="icon" as-child>
-              <a href="https://discord.gg/USMgkeYujz" target="_blank">
+              <a
+                :href="`https://discord.gg/${discordInviteUrl}`"
+                target="_blank"
+              >
                 <IconDiscord />
               </a>
             </Button>

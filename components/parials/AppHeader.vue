@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import { HelpCircle } from "lucide-vue-next";
+</script>
 
 <template>
   <header class="border-solid sticky top-0 z-50 w-full border-b bg-background">
@@ -6,6 +8,17 @@
       <slot />
 
       <div class="flex ml-auto">
+        <!-- <Button
+          variant="ghost"
+          size="icon"
+          as-child
+          class="hidden sm:inline-flex"
+          :title="$t('howToUse.title')"
+        >
+          <NuxtLink to="/how-to-use">
+            <HelpCircle class="w-5 h-5" />
+          </NuxtLink>
+        </Button> -->
         <AppLanguageSwitcher />
         <AppColorModeSwitcher />
         <Button
