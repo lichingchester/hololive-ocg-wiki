@@ -9,7 +9,7 @@ import { Info } from "lucide-vue-next";
         <Info />
       </Button>
     </DialogTrigger>
-    <DialogContent>
+    <DialogScrollContent class="sm:max-w-[425px]">
       <DialogHeader class="text-start">
         <DialogTitle class="flex gap-2">
           Hololive OCG Wiki
@@ -67,6 +67,6 @@ import { Info } from "lucide-vue-next";
           </p>
         </DialogDescription>
       </DialogHeader>
-    </DialogContent>
+    </DialogScrollContent>
   </Dialog>
 </template>
