@@ -511,14 +511,22 @@ async function filterCards(
 
   // Add tag filter - now searching in JSON array
   if (filters.tag) {
-    whereConditions.push(`c.tags LIKE ?`);
-    params.push(`%"${filters.tag}"%`);
+    // Use JSON_EXTRACT to search for exact matches in the JSON array
+    whereConditions.push(`EXISTS (
+      SELECT 1 FROM json_each(c.tags) 
+      WHERE json_each.value = ?
+    )`);
+    params.push(filters.tag);
   }
 
   // Add set filter - now searching in JSON array
   if (filters.set) {
-    whereConditions.push(`c.card_sets LIKE ?`);
-    params.push(`%"${filters.set}"%`);
+    // Use JSON_EXTRACT to search for exact matches in the JSON array
+    whereConditions.push(`EXISTS (
+      SELECT 1 FROM json_each(c.card_sets) 
+      WHERE json_each.value = ?
+    )`);
+    params.push(filters.set);
   }
 
   // Build WHERE clause
