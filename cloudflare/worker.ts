@@ -101,6 +101,94 @@ function handleCORS(request: Request): Response | null {
   return null;
 }
 
+// Security: Input validation and sanitization helpers
+function validateAndSanitizeString(
+  input: string | null,
+  maxLength: number = 1000
+): string | undefined {
+  if (!input) return undefined;
+
+  // Trim whitespace
+  const trimmed = input.trim();
+
+  // Check length
+  if (trimmed.length === 0 || trimmed.length > maxLength) return undefined;
+
+  // Remove or escape potentially dangerous characters
+  // Allow alphanumeric, spaces, and common punctuation for card names/sets
+  const sanitized = trimmed.replace(/[<>'";&\\]/g, "");
+
+  return sanitized.length > 0 ? sanitized : undefined;
+}
+
+function validateStringArray(
+  input: string[] | undefined,
+  maxItems: number = 20
+): string[] {
+  if (!input || !Array.isArray(input)) return [];
+
+  return input
+    .slice(0, maxItems) // Limit array size
+    .map((item) => validateAndSanitizeString(item, 100)) // Shorter limit for array items
+    .filter((item): item is string => item !== undefined);
+}
+
+function validateInteger(
+  input: string | number | null,
+  min: number = 1,
+  max: number = 1000
+): number {
+  if (input === null || input === undefined) return min;
+
+  const num = typeof input === "string" ? parseInt(input, 10) : input;
+
+  if (isNaN(num) || num < min || num > max) return min;
+
+  return num;
+}
+
+function validateLocale(locale: string | null): string {
+  const allowedLocales = ["tc", "sc", "ja", "en", "id", "ko", "th"];
+
+  if (!locale || !allowedLocales.includes(locale)) {
+    return DEFAULT_LOCALE;
+  }
+
+  return locale;
+}
+
+// Security: Rate limiting helper (basic implementation)
+function checkRateLimit(request: Request): boolean {
+  // Get client IP from CF-Connecting-IP header or fallback
+  const clientIP =
+    request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("X-Forwarded-For") ||
+    "unknown";
+
+  // In a production environment, you'd want to use Workers KV or Durable Objects
+  // to track rate limits across requests. For now, this is a basic check.
+  // You could implement proper rate limiting using Cloudflare's built-in rate limiting
+
+  return true; // Allow all requests for now, but structure is here for future implementation
+}
+
+// Security: Sanitize error messages to prevent information leakage
+function sanitizeErrorMessage(error: unknown): string {
+  if (error instanceof Error) {
+    // Only return generic error messages, log full details server-side
+    if (
+      error.message.includes("D1_ERROR") ||
+      error.message.includes("SQLITE")
+    ) {
+      return "Database query failed";
+    }
+    if (error.message.includes("syntax") || error.message.includes("SQL")) {
+      return "Invalid query format";
+    }
+  }
+  return "Internal server error";
+}
+
 // Helper function to safely parse JSON arrays
 function parseJsonArray(jsonString: string | null | undefined): string[] {
   if (!jsonString) return [];
@@ -639,15 +727,25 @@ export default {
     const corsResponse = handleCORS(request);
     if (corsResponse) return corsResponse;
 
+    // Security: Basic rate limiting check
+    if (!checkRateLimit(request)) {
+      return new Response(JSON.stringify({ error: "Too many requests" }), {
+        status: 429,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const url = new URL(request.url);
     const path = url.pathname;
 
     try {
       // Route: GET /api/cards/search
       if (path === "/api/cards/search" && request.method === "GET") {
-        const query = url.searchParams.get("q") || "";
-        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
-        const limit = parseInt(url.searchParams.get("limit") || "100");
+        // Security: Validate and sanitize search parameters
+        const query =
+          validateAndSanitizeString(url.searchParams.get("q"), 500) || "";
+        const locale = validateLocale(url.searchParams.get("locale"));
+        const limit = validateInteger(url.searchParams.get("limit"), 1, 200);
 
         const cards = await searchCards(env, query, locale, limit);
 
@@ -658,24 +756,34 @@ export default {
 
       // Route: GET /api/cards/filter
       if (path === "/api/cards/filter" && request.method === "GET") {
+        // Security: Validate and sanitize all input parameters
         const filters: FilterOptions = {
-          search: url.searchParams.get("search") || undefined,
-          name: url.searchParams.get("name") || undefined,
-          tag: url.searchParams.get("tag") || undefined,
-          set: url.searchParams.get("set") || undefined,
-          colors: url.searchParams.get("colors")?.split(",").filter(Boolean),
-          card_types: url.searchParams
-            .get("cardTypes")
-            ?.split(",")
-            .filter(Boolean),
-          rarity: url.searchParams.get("rarity")?.split(",").filter(Boolean),
-          bloom_level: url.searchParams
-            .get("bloomLevel")
-            ?.split(",")
-            .filter(Boolean),
-          locale: url.searchParams.get("locale") || DEFAULT_LOCALE,
-          page: parseInt(url.searchParams.get("page") || "1"),
-          limit: parseInt(url.searchParams.get("limit") || "50"),
+          search: validateAndSanitizeString(
+            url.searchParams.get("search"),
+            500
+          ),
+          name: validateAndSanitizeString(url.searchParams.get("name"), 200),
+          tag: validateAndSanitizeString(url.searchParams.get("tag"), 100),
+          set: validateAndSanitizeString(url.searchParams.get("set"), 500),
+          colors: validateStringArray(
+            url.searchParams.get("colors")?.split(",").filter(Boolean),
+            10
+          ),
+          card_types: validateStringArray(
+            url.searchParams.get("cardTypes")?.split(",").filter(Boolean),
+            10
+          ),
+          rarity: validateStringArray(
+            url.searchParams.get("rarity")?.split(",").filter(Boolean),
+            10
+          ),
+          bloom_level: validateStringArray(
+            url.searchParams.get("bloomLevel")?.split(",").filter(Boolean),
+            10
+          ),
+          locale: validateLocale(url.searchParams.get("locale")),
+          page: validateInteger(url.searchParams.get("page"), 1, 1000),
+          limit: validateInteger(url.searchParams.get("limit"), 1, 200), // Limit max results per page
         };
 
         const result = await filterCards(env, filters);
@@ -695,10 +803,20 @@ export default {
           });
         }
 
-        const cardIds = idsParam.split(",").filter(Boolean);
+        // Security: Validate card IDs - should be alphanumeric with limited length
+        const cardIds = idsParam
+          .split(",")
+          .filter(Boolean)
+          .slice(0, 50) // Limit number of cards that can be requested at once
+          .map((id) => validateAndSanitizeString(id, 50))
+          .filter(
+            (id): id is string =>
+              id !== undefined && /^[a-zA-Z0-9_-]+$/.test(id)
+          );
+
         if (cardIds.length === 0) {
           return new Response(
-            JSON.stringify({ error: "At least one Card ID required" }),
+            JSON.stringify({ error: "At least one valid Card ID required" }),
             {
               status: 400,
               headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -706,7 +824,7 @@ export default {
           );
         }
 
-        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
+        const locale = validateLocale(url.searchParams.get("locale"));
 
         // Get basic card data with translations for all requested cards
         const placeholders = cardIds.map(() => "?").join(",");
@@ -747,8 +865,20 @@ export default {
           });
         }
 
-        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
-        const card = await getCardDetails(env, cardId, locale);
+        // Security: Validate card ID format - should be alphanumeric
+        const sanitizedCardId = validateAndSanitizeString(cardId, 50);
+        if (!sanitizedCardId || !/^[a-zA-Z0-9_-]+$/.test(sanitizedCardId)) {
+          return new Response(
+            JSON.stringify({ error: "Invalid Card ID format" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        const locale = validateLocale(url.searchParams.get("locale"));
+        const card = await getCardDetails(env, sanitizedCardId, locale);
         if (!card) {
           return new Response(JSON.stringify({ error: "Card not found" }), {
             status: 404,
@@ -763,7 +893,7 @@ export default {
 
       // Route: GET /api/filter-options
       if (path === "/api/filter-options" && request.method === "GET") {
-        const locale = url.searchParams.get("locale") || DEFAULT_LOCALE;
+        const locale = validateLocale(url.searchParams.get("locale"));
         const options = await getFilterOptions(env, locale);
 
         return new Response(JSON.stringify(options), {
@@ -825,8 +955,11 @@ export default {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     } catch (error) {
+      // Security: Log full error details server-side but return sanitized message to client
       console.error("API Error:", error);
-      return new Response(JSON.stringify({ error: "Internal server error" }), {
+      const sanitizedMessage = sanitizeErrorMessage(error);
+
+      return new Response(JSON.stringify({ error: sanitizedMessage }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
