@@ -855,6 +855,70 @@ export default {
         });
       }
 
+      // Route: GET /api/cards/filter-by-card-number/:card_number
+      if (
+        path.startsWith("/api/cards/filter-by-card-number/") &&
+        request.method === "GET"
+      ) {
+        const cardNumber = path.split("/").pop();
+        if (!cardNumber) {
+          return new Response(
+            JSON.stringify({ error: "Card number required" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        // Security: Validate card number format - allow alphanumeric and common card number characters
+        const sanitizedCardNumber = validateAndSanitizeString(cardNumber, 50);
+        if (
+          !sanitizedCardNumber ||
+          !/^[a-zA-Z0-9_-]+$/.test(sanitizedCardNumber)
+        ) {
+          return new Response(
+            JSON.stringify({ error: "Invalid card number format" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        const locale = validateLocale(url.searchParams.get("locale"));
+
+        // Get all cards with the matching card number
+        const cardsStmt = env.DB.prepare(`
+          SELECT c.*, ct.name, ct.card_type, ct.color, ct.rarity, ct.set_name, ct.ability_text, ct.extra
+          FROM cards c
+          LEFT JOIN card_translations ct ON c.id = ct.card_id AND ct.locale = ?
+          WHERE c.card_number = ?
+          ORDER BY c.id
+        `);
+
+        const cardsResult = await cardsStmt
+          .bind(locale, sanitizedCardNumber)
+          .all();
+
+        if (cardsResult.results.length === 0) {
+          return new Response(JSON.stringify({ cards: [] }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+
+        // Use batch enrichment for all matching cards
+        const enrichedCards = await enrichCardDataBatch(
+          env,
+          cardsResult.results,
+          locale
+        );
+
+        return new Response(JSON.stringify({ cards: enrichedCards }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
       // Route: GET /api/cards/:id
       if (path.startsWith("/api/cards/") && request.method === "GET") {
         const cardId = path.split("/").pop();
