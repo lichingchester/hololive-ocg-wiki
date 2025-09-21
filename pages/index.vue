@@ -1,12 +1,32 @@
 <script setup lang="ts">
-// useSeoMeta({
-//   title: 'Hololive OCG Wiki',
-//   description: 'Fan-made web application for the Hololive Official Card Game'
-// })
-//
+const { t, locale } = useI18n();
+
+// SEO Meta tags for the main page
+useSeoMeta({
+  title: t("nuxtSiteConfig.cardList"),
+  description: t("nuxtSiteConfig.description"),
+  keywords:
+    "Hololive, OCG, Official Card Game, trading cards, card database, deck builder, VTuber, virtual YouTuber, card search, game wiki",
+  author: "Hololive OCG Wiki Contributors",
+  robots: "index, follow",
+  ogTitle: t("nuxtSiteConfig.cardList"),
+  ogDescription: t("nuxtSiteConfig.description"),
+  ogType: "website",
+  ogUrl: "https://hololive-ocg-wiki.lichingchester.dev",
+  ogImage: "https://hololive-ocg-wiki.lichingchester.dev/icon.png",
+  ogSiteName: t("nuxtSiteConfig.cardList"),
+  twitterCard: "summary_large_image",
+  twitterTitle: t("nuxtSiteConfig.cardList"),
+  twitterDescription: t("nuxtSiteConfig.description"),
+  twitterImage: "https://hololive-ocg-wiki.lichingchester.dev/icon.png",
+});
+
 useHead({
   bodyAttrs: {
     class: "overflow-hidden",
+  },
+  htmlAttrs: {
+    lang: locale.value,
   },
 });
 </script>

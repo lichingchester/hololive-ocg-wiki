@@ -3,15 +3,18 @@ import { toast } from "vue-sonner";
 import type { Deck } from "~/types/deck";
 import { Database, Scaling } from "lucide-vue-next";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const route = useRoute();
 const decks = useDecks();
 const deck = ref<Deck | null>(null);
 
 const compactModeState = ref(false);
 
-// seo
+// SEO meta tags
 const title = ref("Deck Detail Page");
+const description = ref(
+  "View and manage your Hololive OCG deck configuration."
+);
 
 onMounted(() => {
   if (!route.params.code) {
@@ -20,7 +23,6 @@ onMounted(() => {
   }
 
   const code = route.params.code as string;
-  // console.log("Deck code:", code);
 
   const checked = decks.checkForDeckCode(code);
 
@@ -29,9 +31,22 @@ onMounted(() => {
 
     if (checked.name) {
       if (checked.author) {
-        title.value = checked.name + " by " + checked.author;
+        title.value = `${checked.name} by ${checked.author}`;
+        description.value = t("deck.seo.descriptionWithAuthor", {
+          deckName: checked.name,
+          author: checked.author,
+          mainCount: checked.mainCardIds.length,
+          yellCount: checked.yellCardIds.length,
+          oshiCount: checked.oshiCardIds.length,
+        });
       } else {
         title.value = checked.name;
+        description.value = t("deck.seo.description", {
+          deckName: checked.name,
+          mainCount: checked.mainCardIds.length,
+          yellCount: checked.yellCardIds.length,
+          oshiCount: checked.oshiCardIds.length,
+        });
       }
     }
   } else {
@@ -43,6 +58,20 @@ onMounted(() => {
 
 useSeoMeta({
   title,
+  description,
+  robots: "noindex, nofollow", // Don't index dynamic deck pages
+  ogTitle: title,
+  ogDescription: description,
+  ogType: "website",
+  twitterCard: "summary",
+  twitterTitle: title,
+  twitterDescription: description,
+});
+
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
+  },
 });
 </script>
 

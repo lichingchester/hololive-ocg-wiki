@@ -4,16 +4,24 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   ssr: false,
 
   site: {
     url: "https://hololive-ocg-wiki.lichingchester.dev",
+    name: "Hololive OCG Wiki",
+    description:
+      "A fan-made wiki for Hololive OCG, featuring card information, deck builder, and more.",
+    defaultLocale: "tc",
   },
 
   seo: {
     fallbackTitle: false,
+  },
+
+  sitemap: {
+    autoLastmod: true,
   },
 
   // Runtime configuration for API endpoints
@@ -30,15 +38,27 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: "Hololive OCG Wiki",
+      titleTemplate: "%s | Hololive OCG Wiki",
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { charset: "utf-8" },
+        { name: "format-detection", content: "telephone=no" },
+        { name: "application-name", content: "Hololive OCG Wiki" },
+        { name: "apple-mobile-web-app-title", content: "Hololive OCG Wiki" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+        { name: "mobile-web-app-capable", content: "yes" },
       ],
       link: [
         {
           rel: "icon",
           type: "image/x-icon",
           href: "/favicon.ico",
+        },
+        {
+          rel: "manifest",
+          href: "/manifest.json",
         },
       ],
     },
@@ -65,11 +85,16 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "nuxt-gtag",
-    // "@nuxtjs/seo",
+    "@nuxtjs/seo",
   ],
 
   ogImage: {
-    enabled: false,
+    enabled: true,
+    defaults: {
+      width: 1200,
+      height: 630,
+      extension: "png",
+    },
   },
 
   gtag: {
@@ -89,7 +114,7 @@ export default defineNuxtConfig({
       { code: "en", name: "English", file: "en.json" },
       { code: "id", name: "Bahasa Indonesia", file: "id.json" },
       { code: "ko", name: "한국어", file: "ko.json" },
-      { code: "th", name: "ภาษาไทย", file: "th.json" },
+      { code: "th", name: "ภaษาไทย", file: "th.json" },
     ],
     defaultLocale: "tc",
     strategy: "prefix",

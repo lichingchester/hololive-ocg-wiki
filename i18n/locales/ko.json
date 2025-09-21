@@ -249,5 +249,11 @@
       "description": "이제 위키 사용법을 알았으니 Hololive OCG의 놀라운 세계를 탐험하기 시작하세요!",
       "startUsing": "위키 사용 시작하기"
     }
+  },
+  "deck": {
+    "seo": {
+      "descriptionWithAuthor": "Hololive OCG 덱 \"{deckName}\"이(가) {author}에 의해 생성되었습니다. 메인 덱 카드 {mainCount}장, 옐 카드 {yellCount}장, 오시 카드 {oshiCount}장의 덱 구성을 확인하세요.",
+      "description": "Hololive OCG 덱 \"{deckName}\". 메인 덱 카드 {mainCount}장, 옐 카드 {yellCount}장, 오시 카드 {oshiCount}장의 덱 구성을 확인하세요."
+    }
   }
 }

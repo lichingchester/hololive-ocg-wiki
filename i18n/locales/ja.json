@@ -249,5 +249,11 @@
       "description": "wikiの使い方がわかったので、Hololive OCGの素晴らしい世界を探索し始めましょう！",
       "startUsing": "Wikiを使い始める"
     }
+  },
+  "deck": {
+    "seo": {
+      "descriptionWithAuthor": "ホロライブOCGデッキ「{deckName}」（作成者：{author}）。メインデッキカード{mainCount}枚、エールカード{yellCount}枚、推しカード{oshiCount}枚のデッキ構成をご覧ください。",
+      "description": "ホロライブOCGデッキ「{deckName}」。メインデッキカード{mainCount}枚、エールカード{yellCount}枚、推しカード{oshiCount}枚のデッキ構成をご覧ください。"
+    }
   }
 }

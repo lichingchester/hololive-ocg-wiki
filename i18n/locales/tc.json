@@ -1,7 +1,8 @@
 {
   "nuxtSiteConfig": {
     "name": "Hololive OCG Wiki",
-    "description": "一個由粉絲製作的 Hololive OCG Wiki，提供卡片資訊、牌組制作等功能。"
+    "description": "一個由粉絲製作的 Hololive OCG Wiki，提供卡片資訊、牌組制作等功能。",
+    "cardList": "卡片列表"
   },
   "No results found.": "查無結果。",
   "Reset": "重設",
@@ -551,6 +552,12 @@
       "title": "準備開始了嗎？",
       "description": "現在您知道如何使用 wiki，開始探索令人驚艷的 Hololive OCG 世界吧！",
       "startUsing": "開始使用 Wiki"
+    }
+  },
+  "deck": {
+    "seo": {
+      "descriptionWithAuthor": "Hololive OCG牌組「{deckName}」由{author}製作。查看牌組構成：主牌組{mainCount}張卡片，應援牌組{yellCount}張卡片，推し{oshiCount}張卡片。",
+      "description": "Hololive OCG牌組「{deckName}」。查看牌組構成：主牌組{mainCount}張卡片，應援牌組{yellCount}張卡片，推し{oshiCount}張卡片。"
     }
   }
 }

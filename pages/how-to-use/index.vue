@@ -1,17 +1,95 @@
 <script setup lang="ts">
 import { Database } from "lucide-vue-next";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 useSeoMeta({
   title: t("howToUse.title"),
   description: t("howToUse.description"),
+  keywords:
+    "Hololive OCG guide, how to use, card game tutorial, deck builder guide, search cards, filter cards",
+  robots: "index, follow",
+  ogTitle: t("howToUse.title"),
+  ogDescription: t("howToUse.description"),
+  ogType: "article",
+  twitterCard: "summary",
+  twitterTitle: t("howToUse.title"),
+  twitterDescription: t("howToUse.description"),
 });
 
 useHead({
   bodyAttrs: {
     class: "bg-background",
   },
+  htmlAttrs: {
+    lang: locale.value,
+  },
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: "How to Use Hololive OCG Wiki",
+        description:
+          "Complete guide on how to use the Hololive OCG Wiki for searching cards, building decks, and more.",
+        image:
+          "https://hololive-ocg-wiki.lichingchester.dev/icons/icon-512x512.png",
+        totalTime: "PT10M",
+        estimatedCost: {
+          "@type": "MonetaryAmount",
+          currency: "USD",
+          value: "0",
+        },
+        supply: [
+          {
+            "@type": "HowToSupply",
+            name: "Web Browser",
+          },
+          {
+            "@type": "HowToSupply",
+            name: "Internet Connection",
+          },
+        ],
+        tool: [
+          {
+            "@type": "HowToTool",
+            name: "Hololive OCG Wiki",
+          },
+        ],
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Search for Cards",
+            text: "Use the search functionality to find specific cards by name, type, or other attributes.",
+            image:
+              "https://hololive-ocg-wiki.lichingchester.dev/how-to-use/search.png",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Filter Cards",
+            text: "Apply filters to narrow down card results by color, rarity, card type, and more.",
+            image:
+              "https://hololive-ocg-wiki.lichingchester.dev/how-to-use/filter.png",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Build Decks",
+            text: "Create and manage your Oshi, Main, and Yell decks using the deck builder feature.",
+            image:
+              "https://hololive-ocg-wiki.lichingchester.dev/how-to-use/deck-builder.png",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Share Decks",
+            text: "Share your deck configurations with others using deck codes.",
+            image:
+              "https://hololive-ocg-wiki.lichingchester.dev/how-to-use/share.png",
+          },
+        ],
+      }),
+    },
+  ],
 });
 </script>
 

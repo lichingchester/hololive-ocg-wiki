@@ -249,5 +249,11 @@
       "description": "ตอนนี้คุณรู้วิธีใช้วิกิแล้ว เริ่มสำรวจโลกที่น่าตื่นตาตื่นใจของ Hololive OCG กันเลย!",
       "startUsing": "เริ่มใช้วิกิ"
     }
+  },
+  "deck": {
+    "seo": {
+      "descriptionWithAuthor": "เด็ค Hololive OCG \"{deckName}\" สร้างโดย {author} ดูองค์ประกอบเด็คด้วยการ์ดเมนเด็ค {mainCount} ใบ การ์ดเยล {yellCount} ใบ และการ์ดโอชิ {oshiCount} ใบ",
+      "description": "เด็ค Hololive OCG \"{deckName}\" ดูองค์ประกอบเด็คด้วยการ์ดเมนเด็ค {mainCount} ใบ การ์ดเยล {yellCount} ใบ และการ์ดโอชิ {oshiCount} ใบ"
+    }
   }
 }

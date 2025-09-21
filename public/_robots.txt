@@ -1,2 +1,14 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hololive-ocg-wiki.lichingchester.dev/sitemap.xml
+
+# Allow specific important paths
+Allow: /
+Allow: /tc/
+Allow: /en/
+Allow: /ja/
+Allow: /id/
+Allow: /ko/
+Allow: /th/
