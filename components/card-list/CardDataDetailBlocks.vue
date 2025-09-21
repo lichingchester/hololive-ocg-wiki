@@ -20,7 +20,7 @@ const getCostTypesString = (costTypes: string[]): string => {
 
 <template>
   <!-- oshiSkill -->
-  <template v-if="item.oshiSkill">
+  <template v-if="item.oshi_skill">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -31,39 +31,39 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex gap-2">
           <!-- timing -->
-          <Badge
-            v-if="item.oshiSkill.timingCode"
+          <!-- <Badge
+            v-if="item.oshi_skill.timing_code"
             variant="outline"
             class="text-xs font-semibold"
           >
-            {{ $t(`cards.${item.id}.oshiSkill.timing`) }}
-          </Badge>
+            {{ item.oshi_skill.timing_code }}
+          </Badge> -->
 
           <!-- cost -->
           <Badge
-            v-if="item.oshiSkill.cost"
+            v-if="item.oshi_skill.cost"
             variant="outline"
-            class="text-xs font-semibold"
+            class="text-sm font-semibold"
           >
-            {{ $t(`fields.cost`) }}: {{ item.oshiSkill.cost }}
+            {{ $t(`fields.cost`) }}: {{ item.oshi_skill.cost }}
           </Badge>
         </div>
       </div>
 
       <!-- name -->
       <div class="font-semibold">
-        {{ $t(`cards.${item.id}.oshiSkill.name`) }}
+        {{ item.oshi_skill.name }}
       </div>
 
       <!-- effect -->
       <div class="">
-        {{ $t(`cards.${item.id}.oshiSkill.effect`) }}
+        {{ item.oshi_skill.effect }}
       </div>
     </div>
   </template>
 
   <!-- spOshiSkill -->
-  <template v-if="item.spOshiSkill">
+  <template v-if="item.sp_oshi_skill">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -74,29 +74,33 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex gap-2">
           <!-- timing -->
-          <Badge
-            v-if="item.spOshiSkill.timingCode"
+          <!-- <Badge
+            v-if="item.sp_oshi_skill.timing_code"
             variant="outline"
             class="text-xs"
           >
-            {{ $t(`cards.${item.id}.spOshiSkill.timing`) }}
-          </Badge>
+            {{ item.sp_oshi_skill.timing_code }}
+          </Badge> -->
 
           <!-- cost -->
-          <Badge v-if="item.spOshiSkill.cost" variant="outline" class="text-xs">
-            {{ $t(`fields.cost`) }}: {{ item.spOshiSkill.cost }}
+          <Badge
+            v-if="item.sp_oshi_skill.cost"
+            variant="outline"
+            class="text-sm font-semibold"
+          >
+            {{ $t(`fields.cost`) }}: {{ item.sp_oshi_skill.cost }}
           </Badge>
         </div>
       </div>
 
       <!-- name -->
       <div class="font-semibold">
-        {{ $t(`cards.${item.id}.spOshiSkill.name`) }}
+        {{ item.sp_oshi_skill.name }}
       </div>
 
       <!-- effect -->
       <div class="">
-        {{ $t(`cards.${item.id}.spOshiSkill.effect`) }}
+        {{ item.sp_oshi_skill.effect }}
       </div>
     </div>
   </template>
@@ -105,37 +109,37 @@ const getCostTypesString = (costTypes: string[]): string => {
   <template v-if="item.keyword">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
-        <template v-if="item.keyword.typeCode === 'collab_effect'">
+        <template v-if="item.keyword.type_code === 'collab_effect'">
           <span class="text-red-500 bg-red-500/20 text-xs rounded-lg px-2 py-1">
-            {{ $t(`keywordType.${item.keyword.typeCode}`) }}
+            {{ $t(`keywordType.${item.keyword.type_code}`) }}
           </span>
         </template>
-        <template v-if="item.keyword.typeCode === 'bloom_effect'">
+        <template v-if="item.keyword.type_code === 'bloom_effect'">
           <span class="text-sky-600 bg-sky-600/20 text-xs rounded-lg px-2 py-1">
-            {{ $t(`keywordType.${item.keyword.typeCode}`) }}
+            {{ $t(`keywordType.${item.keyword.type_code}`) }}
           </span>
         </template>
-        <template v-if="item.keyword.typeCode === 'gift'">
+        <template v-if="item.keyword.type_code === 'gift'">
           <span
             class="text-lime-600 bg-lime-600/20 text-xs rounded-lg px-2 py-1"
           >
-            {{ $t(`keywordType.${item.keyword.typeCode}`) }}
+            {{ $t(`keywordType.${item.keyword.type_code}`) }}
           </span>
         </template>
 
         <div class="flex gap-2">
           <Image
-            v-if="item.keyword.typeCode === 'collab_effect'"
+            v-if="item.keyword.type_code === 'collab_effect'"
             src="/icons/collabEF.png"
             :img-attributes="{ class: 'w-28' }"
           />
           <Image
-            v-if="item.keyword.typeCode === 'bloom_effect'"
+            v-if="item.keyword.type_code === 'bloom_effect'"
             src="/icons/bloomEF.png"
             :img-attributes="{ class: 'w-28' }"
           />
           <Image
-            v-if="item.keyword.typeCode === 'gift'"
+            v-if="item.keyword.type_code === 'gift'"
             src="/icons/gift.png"
             :img-attributes="{ class: 'w-14' }"
           />
@@ -144,18 +148,18 @@ const getCostTypesString = (costTypes: string[]): string => {
 
       <!-- name -->
       <div class="font-semibold">
-        {{ $t(`cards.${item.id}.keyword.name`) }}
+        {{ item.keyword.name }}
       </div>
 
       <!-- effect -->
       <div class="">
-        {{ $t(`cards.${item.id}.keyword.effect`) }}
+        {{ item.keyword.effect }}
       </div>
     </div>
   </template>
 
   <!-- arts -->
-  <template v-if="item.arts">
+  <template v-if="item.arts?.length">
     <template v-for="(art, index) in item.arts" :key="index">
       <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
         <div class="flex items-center justify-between gap-2">
@@ -166,22 +170,22 @@ const getCostTypesString = (costTypes: string[]): string => {
           </span> -->
 
           <!-- cost -->
-          <template v-if="art.costTypes">
+          <template v-if="art.cost_types">
             <div class="flex items-center flex-wrap">
               <template
-                v-for="(costType, costTypeIndex) in art.costTypes"
+                v-for="(costType, costTypeIndex) in art.cost_types"
                 :key="costTypeIndex"
               >
                 <Image
                   :class="
-                    costTypeIndex === art.costTypes.length - 1 ? 'mr-1' : ''
+                    costTypeIndex === art.cost_types.length - 1 ? 'mr-1' : ''
                   "
                   :src="`/icons/arts_${costType}.png`"
                   :img-attributes="{ class: 'size-6 min-w-6 min-h-6' }"
                 />
               </template>
 
-              <span class=""> ({{ getCostTypesString(art.costTypes) }}) </span>
+              <span class=""> ({{ getCostTypesString(art.cost_types) }}) </span>
             </div>
           </template>
 
@@ -189,15 +193,15 @@ const getCostTypesString = (costTypes: string[]): string => {
             <!-- damage -->
             <Badge variant="outline" class="text-xs">
               {{ $t("fields.damage") }}:
-              {{ `${art.damage}${art.isPlus ? "+" : ""}` }}
+              {{ `${art.damage}${art.is_plus ? "+" : ""}` }}
             </Badge>
 
             <!-- specialTargets -->
-            <template v-if="art.specialTargets">
+            <template v-if="art.special_targets">
               <template
                 v-for="(
                   specialTarget, specialTargetIndex
-                ) in art.specialTargets"
+                ) in art.special_targets"
                 :key="specialTargetIndex"
               >
                 <Badge variant="outline" class="text-xs">
@@ -222,19 +226,19 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <!-- name -->
         <div class="font-semibold">
-          {{ $t(`cards.${item.id}.arts[${index}].name`) }}
+          {{ art.name }}
         </div>
 
         <!-- effect -->
-        <div v-if="$te(`cards.${item.id}.arts[${index}].effect`)">
-          {{ $t(`cards.${item.id}.arts[${index}].effect`) }}
+        <div v-if="art.effect">
+          {{ art.effect }}
         </div>
       </div>
     </template>
   </template>
 
   <!-- extra -->
-  <template v-if="$te(`cards.${item.id}.extra`)">
+  <template v-if="item.extra">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -244,12 +248,12 @@ const getCostTypesString = (costTypes: string[]): string => {
         </span>
       </div>
 
-      {{ $t(`cards.${item.id}.extra`) }}
+      {{ item.extra }}
     </div>
   </template>
 
   <!-- abilityText -->
-  <template v-if="$te(`cards.${item.id}.abilityText`)">
+  <template v-if="item.ability_text">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <span
@@ -259,14 +263,15 @@ const getCostTypesString = (costTypes: string[]): string => {
         </span>
       </div>
 
-      <div
+      <div v-html="item.ability_text.replaceAll('\n', '<br>')" />
+      <!-- <div
         v-html="$t(`cards.${item.id}.abilityText`).replaceAll('\n', '<br>')"
-      />
+      /> -->
     </div>
   </template>
 
   <!-- illustrator -->
-  <template v-if="$te(`cards.${item.id}.illustrator`)">
+  <template v-if="item.illustrator">
     <div class="flex flex-col gap-2 p-2 rounded-lg border bg-accent/50">
       <div class="flex items-center justify-between gap-2">
         <Badge variant="outline" class="text-xs">
@@ -274,7 +279,7 @@ const getCostTypesString = (costTypes: string[]): string => {
         </Badge>
 
         <div class="text-xs">
-          {{ $t(`cards.${item.id}.illustrator`) }}
+          {{ item.illustrator }}
         </div>
       </div>
     </div>

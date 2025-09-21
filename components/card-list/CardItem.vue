@@ -11,16 +11,24 @@ const isEditing = computed(() => decks.isEditing.value);
 
 const add = (amount: number = 1) => {
   if (!isEditing.value) return;
-  decks.addCardToDeck({ cardId: props.item.id, amount });
+  decks.addCardToDeck({
+    cardId: props.item.id,
+    amount,
+    cardTypeCode: props.item.card_type_code,
+  });
 };
 
 const remove = (amount: number = 1) => {
   if (!isEditing.value) return;
-  decks.removeCardFromDeck({ cardId: props.item.id, amount });
+  decks.removeCardFromDeck({
+    cardId: props.item.id,
+    amount,
+    cardTypeCode: props.item.card_type_code,
+  });
 };
 
 const count = computed(() => {
-  return decks.getCardCount(props.item.id);
+  return decks.getCardCount(props.item.id, props.item.card_type_code);
 });
 </script>
 
@@ -28,8 +36,9 @@ const count = computed(() => {
   <div class="relative flex aspect-400/559">
     <Dialog>
       <DialogTrigger class="w-full">
-        <Image
-          :src="`/${item.imagePath}`"
+        <SimpleImage
+          class="rounded-lg overflow-hidden"
+          :src="`/${item.image_path}`"
           :img-attributes="{ class: 'w-full' }"
         />
       </DialogTrigger>

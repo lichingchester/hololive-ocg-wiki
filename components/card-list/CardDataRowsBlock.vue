@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { UseClipboard } from "@vueuse/components";
 import type { Card } from "@/types/card";
-
-const { locale } = useI18n();
 
 defineProps<{
   item: Card;
 }>();
+
+// Use translation composable
+const { getTranslatedText } = useTranslation();
 </script>
 
 <template>
@@ -13,50 +15,83 @@ defineProps<{
     <div class="border divide-y rounded-lg [&>*:nth-of-type(odd)]:bg-accent/50">
       <!-- cardTypeCode -->
       <CardDataRowsBlockItem
-        v-if="item.cardTypeCode"
+        v-if="item.card_type_code"
         :name="$t('fields.cardType')"
       >
-        {{ $t(`cardTypes.${item.cardTypeCode}`) }}
-        <!-- {{ $t(`cards.${item.id}.cardType`) }} -->
+        {{ $t(`cardTypes.${item.card_type_code}`) }}
       </CardDataRowsBlockItem>
 
       <!-- tags -->
-      <CardDataRowsBlockItem v-if="item.tags" :name="$t('fields.tags')">
+      <CardDataRowsBlockItem
+        v-if="item?.tags?.length"
+        :name="$t('fields.tags')"
+      >
         <div class="flex flex-wrap gap-1">
-          <template
-            v-for="(tag, index) in $tm(`cards.${item.id}.tags`)"
-            :key="index"
-          >
-            <Button variant="link" class="p-0 h-auto">
-              {{ $rt(tag) }}
-            </Button>
+          <template v-for="(tag, index) in item.tags" :key="index">
+            <UseClipboard v-slot="{ copy, copied }" :source="tag">
+              <div class="relative">
+                <Button variant="link" class="p-0 h-auto" @click="copy()">
+                  #{{ getTranslatedText("tags", tag, tag) }}
+                </Button>
+                <!-- Copied indicator -->
+                <Transition name="copied">
+                  <span
+                    v-if="copied"
+                    class="absolute bottom-full md:top-auto md:bottom-[calc(100%+0rem)] left-2/4 -translate-x-2/4 -translate-y-1 rounded-lg bg-green-400 text-slate-800 text-xs py-1 px-2 whitespace-nowrap z-10"
+                  >
+                    {{ $t("Copied") }}
+                  </span>
+                </Transition>
+              </div>
+            </UseClipboard>
           </template>
         </div>
       </CardDataRowsBlockItem>
 
       <!-- rarityCode -->
-      <CardDataRowsBlockItem v-if="item.rarityCode" :name="$t('fields.rarity')">
-        {{ $t(`cards.${item.id}.rarity`) }}
+      <CardDataRowsBlockItem
+        v-if="item.rarity_code"
+        :name="$t('fields.rarity')"
+      >
+        {{ item.rarity_code }}
       </CardDataRowsBlockItem>
 
       <!-- set -->
       <CardDataRowsBlockItem
-        v-if="item.translations?.ja?.set"
+        v-if="item?.card_sets && item?.card_sets.length > 0"
         :name="$t('fields.set')"
       >
-        {{ item.translations?.ja?.set }}
+        <div class="flex flex-wrap justify-end gap-2">
+          <Badge
+            variant="outline"
+            v-for="set in item.card_sets"
+            :key="set"
+            class="text-wrap whitespace-normal"
+          >
+            {{ getTranslatedText("sets", set, set) }}
+          </Badge>
+        </div>
       </CardDataRowsBlockItem>
 
       <!-- colorCode -->
-      <CardDataRowsBlockItem v-if="item.colorCode" :name="$t('fields.color')">
+      <CardDataRowsBlockItem
+        v-if="item.color_codes && item.color_codes.length > 0"
+        :name="$t('fields.color')"
+      >
         <div class="flex items-center gap-1">
-          <Image
-            :src="`/icons/type_${item.colorCode}.png`"
-            :img-attributes="{ class: 'w-5' }"
-          />
-
-          {{ $t(`colors.${item.colorCode}`) }}
-          <!-- {{ $t(`cards.${item.id}.color`) }} -->
+          <!-- Handle multiple colors (new format) -->
+          <template v-if="item.color_codes && item.color_codes.length > 0">
+            <template v-for="(color, index) in item.color_codes" :key="index">
+              <Image
+                :src="`/icons/type_${color}.png`"
+                :img-attributes="{ class: 'w-5' }"
+              />
+              <span v-if="index < item.color_codes.length - 1" class="mr-1"
+                >{{ $t(`colors.${color}`) }},</span
+              >
+              <span v-else>{{ $t(`colors.${color}`) }}</span>
+            </template>
+          </template>
         </div>
       </CardDataRowsBlockItem>
 
@@ -72,27 +107,33 @@ defineProps<{
 
       <!-- bloomLevelCode -->
       <CardDataRowsBlockItem
-        v-if="item.bloomLevelCode"
+        v-if="item.bloom_level_code"
         :name="$t('fields.bloomLevel')"
       >
-        {{ $t(`cards.${item.id}.bloomLevel`) }}
+        {{ $t(`bloomLevel.${item.bloom_level_code}`) }}
       </CardDataRowsBlockItem>
 
       <!-- batonTouchCount -->
       <CardDataRowsBlockItem
-        v-if="item.batonTouchCount"
+        v-if="item.baton_touch_count && item.baton_touch_count > 0"
         :name="$t('fields.batonTouchCount')"
       >
         <div class="flex items-center">
-          <template v-for="index in item.batonTouchCount" :key="index">
+          <template
+            v-for="(type, index) in item.baton_touch_types"
+            :key="index"
+          >
             <Image
-              :src="`/icons/arts_null.png`"
+              :src="`/icons/arts_${type}.png`"
               :img-attributes="{ class: 'w-6 h-6' }"
             />
           </template>
-
           <span class="ml-1">
-            ({{ $t(`colors.null`) }} {{ `x${item.batonTouchCount}` }})
+            ({{
+              item.baton_touch_types
+                ?.map((type: string) => $t(`colors.${type}`))
+                .join(", ")
+            }})
           </span>
         </div>
       </CardDataRowsBlockItem>

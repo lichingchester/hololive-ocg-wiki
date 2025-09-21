@@ -1,0 +1,17 @@
+{
+  "name": "hololive-ocg-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker API for Hololive OCG Wiki",
+  "main": "worker.ts",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "prepare": "wrangler d1 execute hololive-ocg-db --local --file=./schema.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^4.37.1"
+  }
+}

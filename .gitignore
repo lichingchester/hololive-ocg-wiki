@@ -28,3 +28,8 @@ logs
 
 # live test
 .live-test
+
+cloudflare/.wrangler
+cloudflare/wrangler.toml
+cloudflare/migration.sql
+cloudflare/migrations

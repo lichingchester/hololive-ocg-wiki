@@ -1,26 +1,12 @@
 <script setup lang="ts">
-import { VisuallyHidden } from "reka-ui";
 import { ExternalLink } from "lucide-vue-next";
 import type { Card } from "@/types/card";
-import { Badge } from "@/components/ui/badge";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-const { t } = useI18n();
 
 defineProps<{
   item: Card;
 }>();
-
-const getCostTypesString = (costTypes: string[]): string => {
-  const counts: Record<string, number> = {};
-  for (const type of costTypes) {
-    counts[type] = (counts[type] || 0) + 1;
-  }
-  return Object.entries(counts)
-    .map(([type, count]) => `${t(`colors.${type}`)} x${count}`)
-    .join(", ");
-};
 </script>
 
 <template>
@@ -29,15 +15,15 @@ const getCostTypesString = (costTypes: string[]): string => {
     class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
   >
     <DialogHeader class="h-0 overflow-hidden">
-      <DialogTitle>{{ $t(`cards.${item.id}.name`) }}</DialogTitle>
-      <DialogDescription> {{ $t(`cards.${item.id}.name`) }} </DialogDescription>
+      <DialogTitle>{{ item.name || "" }}</DialogTitle>
+      <DialogDescription> {{ item.name || "" }} </DialogDescription>
     </DialogHeader>
 
     <ScrollArea class="py-0 px-4">
       <div class="flex flex-col md:flex-row gap-2 md:gap-4">
         <Image
           class="flex-[0_0_300px] lg:flex-[0_0_400px]"
-          :src="`/${item.imagePath}`"
+          :src="`/${item.image_path}`"
           :img-attributes="{
             class: 'mx-auto w-full max-w-[400px]',
           }"
@@ -45,9 +31,9 @@ const getCostTypesString = (costTypes: string[]): string => {
 
         <div class="flex flex-col grow gap-2 md:gap-4">
           <CardDataNameBlock
-            :name="$t(`cards.${item.id}.name`)"
+            :name="item.name || ''"
             :id="item.id"
-            :number="item.cardNumber"
+            :number="item.card_number"
           />
 
           <CardDataRowsBlock :item="item" />
@@ -56,9 +42,11 @@ const getCostTypesString = (costTypes: string[]): string => {
 
           <CardDataQnaBlocks :item="item" />
 
+          <CardDataSameNumberBlock :item="item" />
+
           <!-- links -->
-          <div class="flex justify-end">
-            <Button variant="link" class="px-0 text-xs" as-child>
+          <!-- <div class="flex justify-between">
+            <Button variant="link" class="p-0! text-xs" as-child>
               <a
                 :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
                 target="_blank"
@@ -68,14 +56,40 @@ const getCostTypesString = (costTypes: string[]): string => {
                 <ExternalLink /> {{ $t("Official Site") }}
               </a>
             </Button>
-          </div>
+
+            <DialogClose as-child>
+              <Button type="button" variant="secondary">
+                {{ $t("Close") }}
+              </Button>
+            </DialogClose>
+          </div> -->
         </div>
       </div>
     </ScrollArea>
-    <DialogFooter class="p-4 pt-0">
-      <DialogClose as-child>
-        <Button type="button" variant="secondary"> {{ $t("Close") }} </Button>
-      </DialogClose>
+    <DialogFooter class="px-4 pb-4 md:p-4 md:pt-0">
+      <div class="flex gap-2 md:gap-4 grow">
+        <div
+          class="hidden md:block md:flex-[0_0_300px] lg:flex-[0_0_400px]"
+        ></div>
+        <div class="flex justify-between grow">
+          <Button variant="link" class="p-0! text-xs" as-child>
+            <a
+              :href="`https://hololive-official-cardgame.com/cardlist/?id=${item.id}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1"
+            >
+              <ExternalLink /> {{ $t("Official Site") }}
+            </a>
+          </Button>
+
+          <DialogClose as-child>
+            <Button type="button" variant="secondary">
+              {{ $t("Close") }}
+            </Button>
+          </DialogClose>
+        </div>
+      </div>
     </DialogFooter>
   </DialogContent>
 </template>

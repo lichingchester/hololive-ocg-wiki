@@ -1,0 +1,18 @@
+name = "hololive-ocg-worker"
+main = "worker.ts"
+compatibility_date = "2024-11-27"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = ""
+database_id = ""
+
+# Environment variables
+[env.production.vars]
+CORS_ORIGIN = "https://your-domain.com"
+ALLOWED_ORIGINS = "https://your-production-domain.com,https://domain.com"
+
+[env.development.vars] 
+CORS_ORIGIN = "http://localhost:3000"
+ALLOWED_ORIGINS = "http://localhost:3000,http://127.0.0.1:3000"

@@ -14,7 +14,7 @@ const props = defineProps({
 
 <template>
   <span
-    class="absolute top-0 left-0 -translate-1/5 bg-primary/95 rounded-full flex items-center justify-center"
+    class="absolute top-[1px] left-[1px] -translate-1/5 bg-primary/95 rounded-full flex items-center justify-center"
     :class="{
       'size-4.5 md:size-6.5': size === 'small',
       'size-5 md:size-6.5': size === 'normal',
