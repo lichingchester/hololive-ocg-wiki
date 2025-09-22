@@ -27,9 +27,11 @@ export default defineNuxtConfig({
   // Runtime configuration for API endpoints
   runtimeConfig: {
     public: {
-      apiUrl:
-        process.env.NUXT_PUBLIC_API_URL ||
-        "https://your-worker.your-subdomain.workers.dev",
+      appUrl:
+        process.env.NUXT_PUBLIC_APP_URL ||
+        (process.env.NODE_ENV === "production"
+          ? "https://hololive-ocg-wiki.lichingchester.dev"
+          : "http://localhost:3000"), // Local development URL
       infoUrl:
         process.env.NUXT_PUBLIC_INFO_URL ||
         "https://raw.githubusercontent.com/lichingchester/hololive-ocg-wiki/refs/heads/main/public/info.json",
@@ -59,6 +61,14 @@ export default defineNuxtConfig({
         {
           rel: "manifest",
           href: "/manifest.json",
+        },
+        {
+          rel: "canonical",
+          href:
+            process.env.NUXT_PUBLIC_APP_URL ||
+            (process.env.NODE_ENV === "production"
+              ? "https://hololive-ocg-wiki.lichingchester.dev"
+              : "http://localhost:3000"), // Local development URL
         },
       ],
     },
@@ -91,8 +101,8 @@ export default defineNuxtConfig({
   ogImage: {
     enabled: true,
     defaults: {
-      width: 1200,
-      height: 630,
+      width: 230,
+      height: 224,
       extension: "png",
     },
   },
