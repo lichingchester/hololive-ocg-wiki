@@ -43,9 +43,9 @@ npx wrangler tail
 ### Key Environment Setup
 
 - **Node.js ≥22** required
-- **Frontend config**: `nuxt.config.ts` sets `apiUrl` via `runtimeConfig.public`
+- **Frontend config**: Uses relative URLs for API calls (same-origin requests)
 - **Backend config**: Copy `wrangler.toml.example` → `wrangler.toml` with D1 credentials
-- **Environment variables**: Set `NUXT_PUBLIC_API_URL` for API endpoint (local: `http://localhost:8787`)
+- **Environment variables**: `NUXT_PUBLIC_API_URL` no longer needed (API on same domain)
 
 ### Database Management
 

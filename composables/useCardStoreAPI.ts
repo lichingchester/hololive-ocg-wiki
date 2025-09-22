@@ -53,34 +53,32 @@ export const useCardStoreAPI = () => {
     () => new Map()
   );
 
-  // Configuration
-  const runtimeConfig = useRuntimeConfig();
-  const apiBaseUrl =
-    runtimeConfig.public.apiUrl ||
-    "https://your-worker.your-subdomain.workers.dev";
-
   // API call helper with error handling
   const apiCall = async <T>(
     endpoint: string,
     params?: Record<string, any>
   ): Promise<T> => {
     try {
-      const url = new URL(`${apiBaseUrl}${endpoint}`);
-
+      // Build query string for parameters
+      const searchParams = new URLSearchParams();
       if (params) {
         Object.entries(params).forEach(([key, value]) => {
           if (value !== undefined && value !== null) {
             if (Array.isArray(value)) {
-              url.searchParams.set(key, value.join(","));
+              searchParams.set(key, value.join(","));
             } else {
-              url.searchParams.set(key, String(value));
+              searchParams.set(key, String(value));
             }
           }
         });
       }
 
-      const response = await $fetch<T>(url.toString());
-      return response;
+      // Construct the URL with query parameters
+      const url =
+        endpoint +
+        (searchParams.toString() ? "?" + searchParams.toString() : "");
+
+      return (await $fetch<T>(url)) as T;
     } catch (error) {
       console.error(`API call failed for ${endpoint}:`, error);
       throw error;

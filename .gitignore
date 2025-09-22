@@ -31,5 +31,6 @@ logs
 
 cloudflare/.wrangler
 cloudflare/wrangler.toml
+cloudflare/wrangler.service.toml
 cloudflare/migration.sql
 cloudflare/migrations

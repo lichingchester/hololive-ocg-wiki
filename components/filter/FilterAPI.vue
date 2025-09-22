@@ -46,12 +46,6 @@ const setFilterOptions = ref<{ value: string; label: string }[]>([]);
 // Track if options have been loaded
 const optionsLoaded = ref(false);
 
-// Configuration
-const runtimeConfig = useRuntimeConfig();
-const apiBaseUrl =
-  runtimeConfig.public.apiUrl ||
-  "https://your-worker.your-subdomain.workers.dev";
-
 // Load all filter options with a single API call
 const loadAllFilterOptions = async () => {
   if (optionsLoaded.value || isLoadingFilterOptions.value) return;
@@ -62,7 +56,7 @@ const loadAllFilterOptions = async () => {
       names: { value: string; label: string }[];
       tags: { value: string; label: string }[];
       sets: { value: string; label: string }[];
-    }>(`${apiBaseUrl}/api/filter-options?locale=${locale.value}`);
+    }>(`/api/filter-options?locale=${locale.value}`);
 
     nameFilterOptions.value = response.names || [];
     tagFilterOptions.value = response.tags || [];

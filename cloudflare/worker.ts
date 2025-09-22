@@ -99,7 +99,7 @@ function getAllowedOrigins(env: Env): string[] {
   const defaultOrigins = [
     // "http://localhost:3000", // Nuxt dev server
     // "http://127.0.0.1:3000", // Alternative localhost
-    "https://hololive-ocg-wiki.pages.dev", // Cloudflare Pages (adjust to your domain)
+    "https://hololive-ocg-wiki.lichingchester.dev", // Cloudflare Pages (adjust to your domain)
     // "https://your-production-domain.com", // Replace with your actual domain
   ];
 
