@@ -2,16 +2,7 @@
 
 This guide helps you migrate from the current standalone Cloudflare Worker setup to Cloudflare Pages with Worker service binding.
 
-## Current vs New Architecture
-
-### Current (Standalone Worker)
-
-```
-Frontend (Pages) ←→ API (Worker) ←→ Database (D1)
-https://site.pages.dev   https://worker.workers.dev
-```
-
-### New (Pages + Service Binding)
+## Architecture (Pages + Service Binding)
 
 ```
 Frontend + API (Pages + Bound Worker) ←→ Database (D1)
@@ -47,10 +38,10 @@ Verify:
 
 ### 3. Deploy New Setup
 
-```bash
+<!-- ```bash
 # Deploy the new Pages + Service setup
 ./deploy-pages.sh
-```
+``` -->
 
 ### 4. Verify Deployment
 

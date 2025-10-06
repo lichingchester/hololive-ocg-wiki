@@ -79,8 +79,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       { name: "MobileOptimized", content: "320" },
       { name: "apple-mobile-web-app-title", content: "Hololive OCG Wiki" },
       { name: "application-name", content: "Hololive OCG Wiki" },
-      { name: "msapplication-TileColor", content: "#6366f1" },
-      { name: "theme-color", content: "#6366f1" },
+      // { name: "msapplication-TileColor", content: "#6366f1" },
+      // { name: "theme-color", content: "#6366f1" },
       // Prevent unwanted social media crawling issues
       { property: "og:locale", content: "zh_TW" },
       { property: "og:locale:alternate", content: "en_US" },
