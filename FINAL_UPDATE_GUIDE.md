@@ -9,6 +9,7 @@
 4. Deploy Web
 
    ```bash
+   # ensure .env set production value
    npm run generate
 
    cd cloudflare
