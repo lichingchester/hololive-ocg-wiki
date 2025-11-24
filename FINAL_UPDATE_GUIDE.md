@@ -4,6 +4,11 @@
 
 2. Update card images from data grab
 
+   1. Compress to webp
+      ```bash
+      imagemin ./source --out-dir=webp --plugin.webp.quality=95
+      ```
+
 3. Update fields, names translations from data grab
 
 4. Deploy Web

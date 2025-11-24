@@ -4,7 +4,7 @@
   "contents": [
     "This is an open-source project—pull requests are welcome!",
     "Join our <a target=\"_blank\" class=\"underline\" href=\"https://discord.gg/qTuMPeuEN2\">Discord community</a> to report issues, share feedback, and keep track of the latest project updates.",
-    "DB has 1406 cards (November 10, 2025) 🔗 pulled from official <a target=\"_blank\" class=\"underline\" href=\"https://hololive-official-cardgame.com/cardlist/cardsearch/?keyword=&attribute%5B%5D=all&expansion_name=&card_kind%5B%5D=all&rare%5B%5D=all&bloom_level%5B%5D=all&parallel%5B%5D=all\">Hololive OCG</a> site + auto trans in 6 langs via LLM 🤖"
+    "Our database has 1470 cards (November 24, 2025) 🔗 pulled from official Hololive OCG (<a target=\"_blank\" class=\"underline\" href=\"https://hololive-official-cardgame.com/cardlist/cardsearch/?keyword=&attribute%5B%5D=all&expansion_name=&card_kind%5B%5D=all&rare%5B%5D=all&bloom_level%5B%5D=all&parallel%5B%5D=all\">JP</a> & <a target=\"_blank\" class=\"underline\" href=\"https://en.hololive-official-cardgame.com/cardlist/cardsearch/?keyword=&attribute%5B%5D=all&expansion_name=&card_kind%5B%5D=all&rare%5B%5D=all&bloom_level%5B%5D=all&parallel%5B%5D=all\">EN</a>) sites + auto trans in 6 langs via LLM 🤖"
   ],
   "disclaimer": "This wiki is a fan-made, non-official project. All content is created by the community and follows <a target=\"_blank\" class=\"underline\" href=\"https://hololivepro.com/en/terms/\">Cover Corp.'s Derivative Works Guidelines</a>. Hololive names, images, and related content are the property of Cover Corp. This site is not affiliated with or endorsed by Cover Corp. or hololive production."
 }
