@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Migration script to populate D1 database from cards_i18n.json
+ * Migration script to populate D1 database from cards.json
  * Usage: node migrate.js
  */
 
