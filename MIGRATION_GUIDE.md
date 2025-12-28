@@ -327,7 +327,7 @@ If you need to rollback to the original frontend-only implementation:
 
 ### Update Card Data
 
-1. Update `data/cards_i18n.json`
+1. Update `data/cards.json`
 2. Run the migration script: `node cloudflare/migrate.js`
 3. Execute the new migration SQL files in D1
 4. **Rebuild FTS index**: `./cloudflare/setup-fts.sh hololive-ocg-db`
