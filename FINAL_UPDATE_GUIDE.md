@@ -39,6 +39,9 @@
 
    # Run migration SQL on production
    npx wrangler d1 execute hololive-ocg-db --remote --file=./migration.sql
+
+   # Run batch migrations on production when the migration.sql is too large
+   ./run-migration.sh --env production
    ```
 
 # TODOs
