@@ -1,13 +1,15 @@
 # Final update new data patch steps
 
-1. Update `cards.json` from data grab
+1. Update `data/cards.json` from data grab
 
 2. Update card images from data grab
-
    1. Compress to webp
+
       ```bash
       imagemin ./source --out-dir=webp --plugin.webp.quality=95
       ```
+
+   2. Copy PNG, Webp
 
 3. Update fields, names translations from data grab
 
