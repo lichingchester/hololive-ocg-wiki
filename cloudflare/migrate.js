@@ -52,15 +52,13 @@ console.log(`Loading ${cardsData.length} cards...`);
 function generateSQLStatements(cards) {
   const statements = [];
 
-  // Clear existing data
-  statements.push("DELETE FROM qa_items;");
-  statements.push("DELETE FROM keyword_translations;");
-  statements.push("DELETE FROM keywords;");
-  statements.push("DELETE FROM art_translations;");
-  statements.push("DELETE FROM arts;");
-  statements.push("DELETE FROM oshi_skills;");
-  statements.push("DELETE FROM card_translations;");
-  statements.push("DELETE FROM cards;");
+  // NOTE: No DELETE statements here. Table cleanup is handled by running
+  // schema.sql (DROP TABLE + CREATE TABLE) before migration batches.
+  // This is instant vs. DELETE which scans every row and exceeds D1 CPU limits.
+
+  // Track the next art ID ourselves so we can reference it directly
+  // in art_translations without expensive subqueries
+  let nextArtId = 1;
 
   cards.forEach((card) => {
     // Insert main card data
@@ -108,10 +106,8 @@ function generateSQLStatements(cards) {
     let cardArtsData = [];
 
     if (card.arts && Array.isArray(card.arts)) {
-      // Use arts from main card object (preferred)
       cardArtsData = card.arts;
     } else {
-      // Derive arts structure from first available translation
       const firstTranslation = Object.values(card.translations || {})[0];
       if (firstTranslation?.arts && Array.isArray(firstTranslation.arts)) {
         cardArtsData = firstTranslation.arts.map((art) => ({
@@ -125,12 +121,18 @@ function generateSQLStatements(cards) {
       }
     }
 
-    // Insert arts core data
-    cardArtsData.forEach((art, artIndex) => {
+    // Track art IDs for this card so art_translations can reference them directly
+    const cardArtIds = [];
+
+    cardArtsData.forEach((art) => {
+      const artId = nextArtId++;
+      cardArtIds.push(artId);
+
       statements.push(`
         INSERT INTO arts (
-          card_id, cost_count, cost_types, damage, is_plus, special_targets, special_values
+          id, card_id, cost_count, cost_types, damage, is_plus, special_targets, special_values
         ) VALUES (
+          ${artId},
           '${card.id}',
           ${art.costCount || "NULL"},
           ${
@@ -200,8 +202,6 @@ function generateSQLStatements(cards) {
             }
           );
         `);
-
-        // Insert tags (removed individual tags table, now stored as JSON in main cards table)
 
         // Insert oshi skills
         if (translation.oshiSkill) {
@@ -291,7 +291,7 @@ function generateSQLStatements(cards) {
                   qa.related_cards?.card_number
                     ? `'${JSON.stringify(qa.related_cards.card_number).replace(
                         /'/g,
-                        "''"
+                        "''",
                       )}'`
                     : "NULL"
                 }
@@ -322,22 +322,19 @@ function generateSQLStatements(cards) {
           `);
         }
 
-        // Insert art translations (from translation) - only translations, not core data
+        // Insert art translations using pre-tracked art IDs (no subqueries)
         if (
           translation.arts &&
           Array.isArray(translation.arts) &&
-          cardArtsData.length > 0
+          cardArtIds.length > 0
         ) {
           translation.arts.forEach((art, artIndex) => {
-            // Only insert translation if we have a corresponding art record and translation data
-            if (artIndex < cardArtsData.length && (art.name || art.effect)) {
+            if (artIndex < cardArtIds.length && (art.name || art.effect)) {
               statements.push(`
                 INSERT INTO art_translations (
                   art_id, locale, name, effect
                 ) VALUES (
-                  (SELECT id FROM arts WHERE card_id = '${
-                    card.id
-                  }' ORDER BY id LIMIT 1 OFFSET ${artIndex}),
+                  ${cardArtIds[artIndex]},
                   '${locale}',
                   ${art.name ? `'${art.name.replace(/'/g, "''")}'` : "NULL"},
                   ${art.effect ? `'${art.effect.replace(/'/g, "''")}'` : "NULL"}
@@ -368,17 +365,19 @@ function generateSQLStatements(cards) {
 const sqlStatements = generateSQLStatements(cardsData);
 const migrationSQL = sqlStatements.join("\n");
 
-// Save to file
+// Save to file (for local dev convenience only — too large for remote D1)
 fs.writeFileSync(path.join(process.cwd(), "migration.sql"), migrationSQL);
 
 console.log(`Generated migration.sql with ${sqlStatements.length} statements`);
 console.log(
-  "Run: wrangler d1 execute hololive-ocg-db --local --file=./migration.sql"
+  "Run: wrangler d1 execute hololive-ocg-db --local --file=./migration.sql",
 );
 
-// Also create a batch file for Cloudflare D1 execution
-const batchSize = 100;
-let batchCount = 1;
+// Create batch files for Cloudflare D1 execution
+// Table cleanup is handled by schema.sql (DROP + CREATE) which is run
+// by run-migration.sh before these batches. These are pure INSERT files.
+const batchSize = 500;
+let batchCount = 0;
 const migrationsDir = path.join(process.cwd(), "migrations");
 
 for (let i = 0; i < sqlStatements.length; i += batchSize) {
@@ -386,16 +385,15 @@ for (let i = 0; i < sqlStatements.length; i += batchSize) {
   const batchSQL = batch.join("\n");
   fs.writeFileSync(
     path.join(migrationsDir, `migration_batch_${batchCount}.sql`),
-    batchSQL
+    batchSQL,
   );
   batchCount++;
 }
 
 console.log(
-  `Created ${
-    batchCount - 1
-  } batch files in migrations/ folder for easier execution`
+  `Created ${batchCount} batch files in migrations/ folder (batch size: ${batchSize} statements)`,
 );
 console.log(
-  "Execute each batch with: wrangler d1 execute hololive-ocg-db --local --file=./migrations/migration_batch_X.sql"
+  "IMPORTANT: run-migration.sh will execute schema.sql first (DROP+CREATE tables), then these batches.",
 );
+console.log("Execute with: ./run-migration.sh --env production");

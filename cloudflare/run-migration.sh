@@ -16,7 +16,7 @@ NC='\033[0m' # No Color
 ENVIRONMENT="local"
 DATABASE_NAME="hololive-ocg-db"
 DRY_RUN=false
-START_BATCH=1
+START_BATCH=0
 
 # Function to print colored output
 print_status() {
@@ -43,7 +43,7 @@ Usage: $0 [OPTIONS]
 OPTIONS:
     -e, --env ENVIRONMENT    Target environment: 'local' or 'production' (default: local)
     -d, --database NAME      Database name (default: hololive-ocg-db)
-    -s, --start BATCH        Start from specific batch number (default: 1)
+    -s, --start BATCH        Start from specific batch number (default: 0)
     -n, --dry-run           Show commands that would be executed without running them
     -h, --help              Show this help message
 
@@ -95,8 +95,8 @@ if [[ "$ENVIRONMENT" != "local" && "$ENVIRONMENT" != "production" ]]; then
 fi
 
 # Validate start batch number
-if ! [[ "$START_BATCH" =~ ^[0-9]+$ ]] || [[ "$START_BATCH" -lt 1 ]]; then
-    print_error "Start batch must be a positive integer"
+if ! [[ "$START_BATCH" =~ ^[0-9]+$ ]]; then
+    print_error "Start batch must be a non-negative integer"
     exit 1
 fi
 
@@ -144,24 +144,30 @@ fi
 
 echo ""
 
-# Run initial migration.sql if it exists
-if [[ -f "migration.sql" && $START_BATCH -eq 1 ]]; then
-    CMD="$BASE_CMD --file=./migration.sql"
-    
+# Step 1: Reset schema (DROP + CREATE tables) — instant, avoids slow DELETEs
+# Only run when starting from batch 0 (full migration)
+if [[ $START_BATCH -eq 0 ]]; then
+    if [[ ! -f "schema.sql" ]]; then
+        print_error "schema.sql not found. Cannot reset database schema."
+        exit 1
+    fi
+
+    CMD="$BASE_CMD --file=./schema.sql"
+
     if [[ "$DRY_RUN" == true ]]; then
-        echo "$CMD"
+        echo "[SCHEMA RESET] $CMD"
     else
-        print_status "Running initial migration.sql..."
+        print_status "Resetting schema (DROP + CREATE tables)..."
         if eval "$CMD"; then
-            print_success "Initial migration completed"
+            print_success "Schema reset completed"
         else
-            print_error "Initial migration failed"
+            print_error "Schema reset failed"
             exit 1
         fi
     fi
     echo ""
-elif [[ -f "migration.sql" && $START_BATCH -gt 1 ]]; then
-    print_warning "Skipping initial migration.sql (starting from batch $START_BATCH)"
+else
+    print_warning "Resuming from batch $START_BATCH (skipping schema reset)"
     echo ""
 fi
 
@@ -206,10 +212,16 @@ for batch_file in "${MIGRATION_FILES[@]}"; do
     
     if run_migration_batch "$batch_file"; then
         ((COMPLETED++))
+        # Show progress
+        if [[ "$DRY_RUN" != true ]]; then
+            TOTAL_TO_RUN=$((MIGRATION_COUNT - START_BATCH))
+            echo -e "  ${BLUE}Progress: $COMPLETED/$TOTAL_TO_RUN${NC}"
+        fi
     else
         ((FAILED++))
         if [[ "$DRY_RUN" != true ]]; then
             print_error "Migration failed at batch $batch_file"
+            print_status "You can resume from this batch with: $0 --env $ENVIRONMENT --start $batch_number"
             break
         fi
     fi
