@@ -37,11 +37,14 @@
    # Generate migration SQL from cards.json
    node migrate.js
 
-   # Run migration SQL on production
-   npx wrangler d1 execute hololive-ocg-db --remote --file=./migration.sql
+   # Run migration SQL on production (Deprecated)
+   # npx wrangler d1 execute hololive-ocg-db --remote --file=./migration.sql
 
    # Run batch migrations on production when the migration.sql is too large
    ./run-migration.sh --env production
+
+   # Resume batch migrations from specific batch if failed.
+   ./run-migration.sh --env production --start 76
    ```
 
 # TODOs
