@@ -42,6 +42,9 @@
 
    # Run batch migrations on production when the migration.sql is too large
    ./run-migration.sh --env production
+
+   # Resume batch migrations from specific batch if failed.
+   ./run-migration.sh --env production --start 76
    ```
 
 # TODOs
