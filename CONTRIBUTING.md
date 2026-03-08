@@ -12,6 +12,7 @@ Thank you for your interest in contributing to the Hololive OCG Wiki project! Th
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setting Up the Development Environment](#setting-up-the-development-environment)
+    - [Setting Up the Local D1 Database (Backend)](#setting-up-the-local-d1-database-backend)
   - [Development Workflow](#development-workflow)
     - [Branch Guidelines](#branch-guidelines)
     - [Commit Guidelines](#commit-guidelines)
@@ -49,6 +50,53 @@ Hololive OCG Wiki is a fan-made resource for the Hololive Official Card Game. Th
    npm run dev
    ```
 4. The site should now be running at `http://localhost:3000/hololive-ocg-wiki`
+
+### Setting Up the Local D1 Database (Backend)
+
+The card data is served from a Cloudflare D1 database via a Worker API. To run the backend locally:
+
+1. Install cloudflare worker dependencies:
+   ```bash
+   cd cloudflare
+   npm install
+   ```
+2. Generate migration SQL batches from the card data:
+   ```bash
+   node migrate.js
+   ```
+3. Run schema and migrations against the local D1 database:
+   ```bash
+   ./run-migration.sh --env local
+   ```
+   You can preview with `--dry-run` first, or resume from a specific batch with `--start <batch_number>`.
+4. (Optional) Set up full-text search for faster queries:
+   ```bash
+   ./setup-fts.sh --local hololive-ocg-db
+   ```
+5. Start the local Worker API server:
+   ```bash
+   npx wrangler dev
+   ```
+   The API will be available at `http://localhost:8787`. Test it with:
+   ```bash
+   curl "http://localhost:8787/api/cards/filter?locale=en&limit=5"
+   ```
+6. In a separate terminal, start the Nuxt frontend from the project root:
+   ```bash
+   cd ..
+   npm run dev
+   ```
+
+#### Useful Database Commands
+
+| Task                          | Command                                                                                   |
+| ----------------------------- | ----------------------------------------------------------------------------------------- |
+| Query local DB                | `npx wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"` |
+| Re-apply schema only          | `npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql`                     |
+| Resume migration from batch N | `./run-migration.sh --env local --start N`                                                |
+| View worker logs              | `npx wrangler tail`                                                                       |
+
+The local D1 data is persisted in `cloudflare/.wrangler/state/` and survives restarts.
 
 ## Development Workflow
 
