@@ -397,19 +397,16 @@
     "魔法": "Magic"
   },
   "sets": {
-    "PROMO CARDS": "PROMO CARDS",
     "PRカード": "PR Cards",
     "【hololive production OFFICIAL SHOP限定】hololive OFFICIAL CARD GAME 1st Anniversary Celebration Set": "[hololive production OFFICIAL SHOP Exclusive] hololive OFFICIAL CARD GAME 1st Anniversary Celebration Set",
-    "【イベント物販限定商品】スタートデッキセット-2025 ホロナツパラダイスver.": "[Event Merchandise Exclusive] Start Deck Set-2025 Holo Summer Paradise ver.",
+    "【イベント物販限定商品】スタートデッキセット-2025 ホロナツパラダイスver.": "[Event Merchandise Exclusive] Start Deck Set - 2025 Holo Summer Paradise ver.",
     "【イベント物販／hololive production OFFICIAL SHOP限定商品】オフィシャルホロカコレクション-PCセット-": "[Event Merchandise/hololive production OFFICIAL SHOP Exclusive] Official HoloCa Collection -PC Set-",
-    "【使用可能カード】エントリーカップ「エリートスパーク」": "[Usable Cards] Entry Cup \"Elite Spark\"",
-    "【使用可能カード】エントリーカップ「キュリアスユニバース」": "[Usable Cards] Entry Cup \"Curious Universe\"",
-    "【使用可能カード】エントリーカップ「クインテットスペクトラム\"": "[Usable Cards] Entry Cup \"Quintet Spectrum\"",
-    "【使用可能カード】エントリーカップ「ブルーミングレディアンス」": "[Usable Cards] Entry Cup \"Blooming Radiance\"",
-    "【使用可能カード】エントリーカップ「エンチャントレガリア」": "[Usable Cards] Entry Cup \"Enchant Regalia\"",
+    "【使用可能カード】エントリーカップ「アヤカシヴァーミリオン」": "[Usable Cards] Entry Cup \"Ayakashi Vermillion\"",
     "スタートエールセット": "Start Cheer Set",
     "スタートデッキ FLOW GLOW 推し 虎金妃笑虎": "Start Deck FLOW GLOW Oshi Tokane Hisatora",
     "スタートデッキ FLOW GLOW 推し 輪堂千速": "Start Deck FLOW GLOW Oshi Rindou Chihaya",
+    "スタートデッキ 推し Advent": "Start Deck Oshi Advent",
+    "スタートデッキ 推し Justice": "Start Deck Oshi Justice",
     "スタートデッキ 白 天音かなた": "Start Deck White Amane Kanata",
     "スタートデッキ 白 轟はじめ": "Start Deck White Todoroki Hajime",
     "スタートデッキ 紫 癒月ちょこ": "Start Deck Purple Yuzuki Choco",
@@ -419,11 +416,13 @@
     "スタートデッキ 青 猫又おかゆ": "Start Deck Blue Nekomata Okayu",
     "スタートデッキ 黄 不知火フレア": "Start Deck Yellow Shiranui Flare",
     "スタートデッキ「ときのそら＆AZKi」": "Start Deck \"Tokino Sora & AZKi\"",
+    "ブースターパック「アヤカシヴァーミリオン」": "Booster Pack \"Ayakashi Vermillion\"",
     "ブースターパック「エリートスパーク」": "Booster Pack \"Elite Spark\"",
     "ブースターパック「エンチャントレガリア」": "Booster Pack \"Enchant Regalia\"",
     "ブースターパック「キュリアスユニバース」": "Booster Pack \"Curious Universe\"",
     "ブースターパック「クインテットスペクトラム」": "Booster Pack \"Quintet Spectrum\"",
-    "ブースターパック「ブルーミングレディアンス\"": "Booster Pack \"Blooming Radiance\""
+    "ブースターパック「ディーヴァフィーバー」": "Booster Pack \"Diva Fever\"",
+    "ブースターパック「ブルーミングレディアンス」": "Booster Pack \"Blooming Radiance\""
   },
   "howToUse": {
     "title": "How to Use",
