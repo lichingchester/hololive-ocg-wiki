@@ -1,4 +1,4 @@
-export type Locales = "ja" | "tc" | "en" | "id" | "ko" | "th";
+export type Locales = "ja" | "tc" | "en" | "id" | "ko" | "th" | "es";
 
 export type CardTypeCodeType =
   | "buzzCharacter"

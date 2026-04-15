@@ -125,6 +125,7 @@ export default defineNuxtConfig({
       { code: "id", name: "Bahasa Indonesia", file: "id.json" },
       { code: "ko", name: "한국어", file: "ko.json" },
       { code: "th", name: "ภaษาไทย", file: "th.json" },
+      { code: "es", name: "Español", file: "es.json" },
     ],
     defaultLocale: "tc",
     strategy: "prefix",
