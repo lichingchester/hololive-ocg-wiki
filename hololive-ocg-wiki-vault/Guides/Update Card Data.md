@@ -1,0 +1,78 @@
+# Update Card Data
+
+Step-by-step process for updating card data and deploying changes.
+
+## Steps
+
+### 1. Update Source Data
+
+- Update `data/cards.json` from data grab
+- Update card images from data grab
+
+### 2. Compress Card Images
+
+```bash
+imagemin ./source --out-dir=webp --plugin.webp.quality=95
+```
+
+Copy both PNG and WebP versions to `public/card_images/`.
+
+### 3. Update Translations
+
+Update field/name translations from data grab into `data/cards_i18n.json` and locale files in `i18n/locales/`.
+
+### 4. Deploy Frontend
+
+```bash
+# Ensure .env has production values
+npm run generate
+
+cd cloudflare
+
+# Preview deployment
+npx wrangler pages deploy ../.output/public --project-name=hololive-ocg-wiki
+
+# Production deployment
+npx wrangler pages deploy ../.output/public --project-name=hololive-ocg-wiki --branch main
+```
+
+### 5. Migrate Data to D1
+
+```bash
+cd cloudflare
+
+# Generate migration SQL from cards.json
+node migrate.js
+
+# Run batch migrations on production
+./run-migration.sh --env production
+
+# Resume from specific batch if interrupted
+./run-migration.sh --env production --start 76
+```
+
+### 6. Rebuild Full-Text Search
+
+```bash
+cd cloudflare
+./reset-fts.sh hololive-ocg-db
+```
+
+### 7. Verify
+
+```bash
+# Test API
+curl "https://hololive-ocg-wiki.lichingchester.dev/api/cards/filter?locale=en&limit=5"
+
+# Check card count
+wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards;"
+
+# Check FTS count
+wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+```
+
+## Related
+
+- [[Database/Schema & Migrations|Schema & Migrations]] — Migration system details
+- [[Database/Full-Text Search|Full-Text Search]] — FTS rebuild process
+- [[Deployment/Deploy to Production|Deploy to Production]] — Full deployment workflow

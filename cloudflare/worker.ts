@@ -152,7 +152,7 @@ function getCORSHeaders(request: Request, env: Env): Record<string, string> {
 // Security: Input validation and sanitization helpers
 function validateAndSanitizeString(
   input: string | null,
-  maxLength: number = 1000
+  maxLength: number = 1000,
 ): string | undefined {
   if (!input) return undefined;
 
@@ -171,7 +171,7 @@ function validateAndSanitizeString(
 
 function validateStringArray(
   input: string[] | undefined,
-  maxItems: number = 20
+  maxItems: number = 20,
 ): string[] {
   if (!input || !Array.isArray(input)) return [];
 
@@ -184,7 +184,7 @@ function validateStringArray(
 function validateInteger(
   input: string | number | null,
   min: number = 1,
-  max: number = 1000
+  max: number = 1000,
 ): number {
   if (input === null || input === undefined) return min;
 
@@ -196,7 +196,7 @@ function validateInteger(
 }
 
 function validateLocale(locale: string | null): string {
-  const allowedLocales = ["tc", "sc", "ja", "en", "id", "ko", "th"];
+  const allowedLocales = ["tc", "sc", "ja", "en", "id", "ko", "th", "es"];
 
   if (!locale || !allowedLocales.includes(locale)) {
     return DEFAULT_LOCALE;
@@ -254,7 +254,7 @@ function parseCardJsonFields(card: any): Card {
     ...card,
     color_codes: parseJsonArray(card.color_codes || card.colorCodes),
     baton_touch_types: parseJsonArray(
-      card.baton_touch_types || card.batonTouchTypes
+      card.baton_touch_types || card.batonTouchTypes,
     ),
     card_sets: parseJsonArray(card.card_sets || card.cardSets),
     tags: parseJsonArray(card.tags),
@@ -265,7 +265,7 @@ function parseCardJsonFields(card: any): Card {
 async function enrichCardDataBatch(
   env: Env,
   cards: any[],
-  locale: string
+  locale: string,
 ): Promise<Card[]> {
   if (cards.length === 0) return [];
 
@@ -282,7 +282,7 @@ async function enrichCardDataBatch(
   // Helper function to execute chunked queries
   async function executeChunkedQuery(
     query: string,
-    bindParams: (chunkIds: string[]) => any[]
+    bindParams: (chunkIds: string[]) => any[],
   ) {
     const allResults: any[] = [];
 
@@ -308,7 +308,7 @@ async function enrichCardDataBatch(
         `SELECT card_id, skill_type, cost, timing_code, name, effect
          FROM oshi_skills 
          WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
-        (chunkIds) => [...chunkIds, locale]
+        (chunkIds) => [...chunkIds, locale],
       ),
 
       // Get all arts with translations for all cards
@@ -317,7 +317,7 @@ async function enrichCardDataBatch(
          FROM arts a
          LEFT JOIN art_translations at ON a.id = at.art_id AND at.locale = ?
          WHERE a.card_id IN (CHUNK_PLACEHOLDERS)`,
-        (chunkIds) => [locale, ...chunkIds]
+        (chunkIds) => [locale, ...chunkIds],
       ),
 
       // Get all keywords for all cards
@@ -325,7 +325,7 @@ async function enrichCardDataBatch(
         `SELECT card_id, type, type_code
          FROM keywords 
          WHERE card_id IN (CHUNK_PLACEHOLDERS)`,
-        (chunkIds) => chunkIds
+        (chunkIds) => chunkIds,
       ),
 
       // Get all keyword translations for all cards
@@ -333,7 +333,7 @@ async function enrichCardDataBatch(
         `SELECT card_id, name, effect
          FROM keyword_translations 
          WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
-        (chunkIds) => [...chunkIds, locale]
+        (chunkIds) => [...chunkIds, locale],
       ),
 
       // Get all QA items for all cards
@@ -341,7 +341,7 @@ async function enrichCardDataBatch(
         `SELECT card_id, title, question, answer, related_cards_html, related_card_numbers
          FROM qa_items 
          WHERE card_id IN (CHUNK_PLACEHOLDERS) AND locale = ?`,
-        (chunkIds) => [...chunkIds, locale]
+        (chunkIds) => [...chunkIds, locale],
       ),
     ]);
 
@@ -456,7 +456,7 @@ async function searchCards(
   env: Env,
   query: string,
   locale: string = DEFAULT_LOCALE,
-  limit: number = 100
+  limit: number = 100,
 ): Promise<Card[]> {
   // Return empty results for empty or whitespace-only queries
   if (!query || query.trim().length === 0) {
@@ -481,7 +481,7 @@ async function searchCards(
     const enrichedCards = await enrichCardDataBatch(
       env,
       ftsResults.results,
-      locale
+      locale,
     );
 
     return enrichedCards;
@@ -525,7 +525,7 @@ async function searchCards(
         searchPattern,
         exactPattern,
         startPattern,
-        limit
+        limit,
       )
       .all();
 
@@ -533,7 +533,7 @@ async function searchCards(
     const enrichedCards = await enrichCardDataBatch(
       env,
       fallbackResults.results,
-      locale
+      locale,
     );
 
     return enrichedCards;
@@ -543,7 +543,7 @@ async function searchCards(
 // Filter cards with multiple criteria
 async function filterCards(
   env: Env,
-  filters: FilterOptions
+  filters: FilterOptions,
 ): Promise<{ cards: Card[]; total: number }> {
   const locale = filters.locale || DEFAULT_LOCALE;
   const page = filters.page || 1;
@@ -599,7 +599,7 @@ async function filterCards(
         searchPattern,
         searchPattern,
         searchPattern,
-        searchPattern
+        searchPattern,
       );
     }
   }
@@ -691,7 +691,7 @@ async function filterCards(
   const enrichedCards = await enrichCardDataBatch(
     env,
     cardsResult.results,
-    locale
+    locale,
   );
 
   return {
@@ -704,7 +704,7 @@ async function filterCards(
 async function getCardDetails(
   env: Env,
   cardId: string,
-  locale: string = DEFAULT_LOCALE
+  locale: string = DEFAULT_LOCALE,
 ): Promise<Card | null> {
   // Get basic card data with translation for the specified locale
   const cardStmt = env.DB.prepare(`
@@ -726,7 +726,7 @@ async function getCardDetails(
 async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
   const [names] = await Promise.all([
     env.DB.prepare(
-      "SELECT DISTINCT name FROM card_translations WHERE locale = ? ORDER BY name"
+      "SELECT DISTINCT name FROM card_translations WHERE locale = ? ORDER BY name",
     )
       .bind(locale)
       .all(),
@@ -734,12 +734,12 @@ async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
 
   // Get unique tags from the JSON field in cards table
   const cardsWithTags = await env.DB.prepare(
-    "SELECT DISTINCT tags FROM cards WHERE tags IS NOT NULL AND tags != ''"
+    "SELECT DISTINCT tags FROM cards WHERE tags IS NOT NULL AND tags != ''",
   ).all();
 
   // Get unique sets from the JSON field in cards table
   const cardsWithSets = await env.DB.prepare(
-    "SELECT DISTINCT card_sets FROM cards WHERE card_sets IS NOT NULL AND card_sets != ''"
+    "SELECT DISTINCT card_sets FROM cards WHERE card_sets IS NOT NULL AND card_sets != ''",
   ).all();
 
   const allTags = new Set<string>();
@@ -814,26 +814,26 @@ export default {
         const filters: FilterOptions = {
           search: validateAndSanitizeString(
             url.searchParams.get("search"),
-            500
+            500,
           ),
           name: validateAndSanitizeString(url.searchParams.get("name"), 200),
           tag: validateAndSanitizeString(url.searchParams.get("tag"), 100),
           set: validateAndSanitizeString(url.searchParams.get("set"), 500),
           colors: validateStringArray(
             url.searchParams.get("colors")?.split(",").filter(Boolean),
-            10
+            10,
           ),
           card_types: validateStringArray(
             url.searchParams.get("cardTypes")?.split(",").filter(Boolean),
-            10
+            10,
           ),
           rarity: validateStringArray(
             url.searchParams.get("rarity")?.split(",").filter(Boolean),
-            10
+            10,
           ),
           bloom_level: validateStringArray(
             url.searchParams.get("bloomLevel")?.split(",").filter(Boolean),
-            10
+            10,
           ),
           locale: validateLocale(url.searchParams.get("locale")),
           page: validateInteger(url.searchParams.get("page"), 1, 1000),
@@ -871,7 +871,7 @@ export default {
           .map((id) => validateAndSanitizeString(id, 50))
           .filter(
             (id): id is string =>
-              id !== undefined && /^[a-zA-Z0-9_-]+$/.test(id)
+              id !== undefined && /^[a-zA-Z0-9_-]+$/.test(id),
           );
 
         if (cardIds.length === 0) {
@@ -883,7 +883,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -913,7 +913,7 @@ export default {
         const enrichedCards = await enrichCardDataBatch(
           env,
           cardsResult.results,
-          locale
+          locale,
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
@@ -939,7 +939,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -957,7 +957,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -989,7 +989,7 @@ export default {
         const enrichedCards = await enrichCardDataBatch(
           env,
           cardsResult.results,
-          locale
+          locale,
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
@@ -1015,7 +1015,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -1027,7 +1027,7 @@ export default {
           .map((cardNumber) => validateAndSanitizeString(cardNumber, 50))
           .filter(
             (cardNumber): cardNumber is string =>
-              cardNumber !== undefined && /^[a-zA-Z0-9_-]+$/.test(cardNumber)
+              cardNumber !== undefined && /^[a-zA-Z0-9_-]+$/.test(cardNumber),
           );
 
         if (cardNumbers.length === 0) {
@@ -1041,7 +1041,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -1078,7 +1078,7 @@ export default {
         const enrichedCards = await enrichCardDataBatch(
           env,
           cardsResult.results,
-          locale
+          locale,
         );
 
         return new Response(JSON.stringify({ cards: enrichedCards }), {
@@ -1113,7 +1113,7 @@ export default {
                 ...getCORSHeaders(request, env),
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         }
 
@@ -1154,19 +1154,19 @@ export default {
       if (path === "/api/static-filters" && request.method === "GET") {
         const [cardTypes, rarities, bloomLevels] = await Promise.all([
           env.DB.prepare(
-            "SELECT DISTINCT card_type_code FROM cards ORDER BY card_type_code"
+            "SELECT DISTINCT card_type_code FROM cards ORDER BY card_type_code",
           ).all(),
           env.DB.prepare(
-            "SELECT DISTINCT rarity_code FROM cards ORDER BY rarity_code"
+            "SELECT DISTINCT rarity_code FROM cards ORDER BY rarity_code",
           ).all(),
           env.DB.prepare(
-            "SELECT DISTINCT bloom_level_code FROM cards WHERE bloom_level_code IS NOT NULL ORDER BY bloom_level_code"
+            "SELECT DISTINCT bloom_level_code FROM cards WHERE bloom_level_code IS NOT NULL ORDER BY bloom_level_code",
           ).all(),
         ]);
 
         // Get unique color codes from JSON arrays
         const cardsWithColors = await env.DB.prepare(
-          "SELECT DISTINCT color_codes FROM cards WHERE color_codes IS NOT NULL"
+          "SELECT DISTINCT color_codes FROM cards WHERE color_codes IS NOT NULL",
         ).all();
 
         const allColors = new Set<string>();
