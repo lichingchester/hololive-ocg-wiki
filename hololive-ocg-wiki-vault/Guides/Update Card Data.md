@@ -41,15 +41,27 @@ npx wrangler pages deploy ../.output/public --project-name=hololive-ocg-wiki --b
 ```bash
 cd cloudflare
 
-# Generate migration SQL from cards.json
+# Generate migration SQL (diff — only changed cards)
 node migrate.js
 
-# Run batch migrations on production
+# Run locally first to verify
+./run-migration.sh
+
+# Verify locally
+npx wrangler d1 execute hololive-ocg-db --local --yes \
+  --command="SELECT COUNT(*) as total_cards FROM cards;"
+
+npx wrangler d1 execute hololive-ocg-db --local --yes \
+  --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
+
+# Deploy to production (batched)
 ./run-migration.sh --env production
 
 # Resume from specific batch if interrupted
 ./run-migration.sh --env production --start 76
 ```
+
+> **Tip:** For typical updates (5–10 cards), diff mode generates ~1 batch instead of 128+. Check the `migrate.js` output for the estimated write count.
 
 ### 6. Rebuild Full-Text Search
 
@@ -61,14 +73,24 @@ cd cloudflare
 ### 7. Verify
 
 ```bash
-# Test API
+# Test API locally
+curl "http://localhost:8787/api/cards/filter?locale=en&limit=5"
+
+# Test API production
 curl "https://hololive-ocg-wiki.lichingchester.dev/api/cards/filter?locale=en&limit=5"
 
-# Check card count
-wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards;"
+# Check card count (local)
+wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"
+
+# Check card count (production)
+wrangler d1 execute hololive-ocg-db --remote --command="SELECT COUNT(*) FROM cards;"
 
 # Check FTS count
-wrangler d1 execute hololive-ocg-db --command="SELECT COUNT(*) FROM cards_fts;"
+wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards_fts;"
+
+# Check translations per locale
+wrangler d1 execute hololive-ocg-db --local \
+  --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
 ```
 
 ## Related
