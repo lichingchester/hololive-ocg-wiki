@@ -28,25 +28,49 @@ The card data is served from a Cloudflare D1 database via a Worker API.
    cd cloudflare
    npm install
    ```
-2. Generate migration SQL batches from card data:
+2. Generate migration SQL from card data:
+
    ```bash
+   # First-time setup: generate all cards
+   node migrate.js --full
+
+   # Subsequent updates: only changed cards
    node migrate.js
    ```
+
 3. Run schema and migrations against local D1:
 
    ```bash
-   ./run-migration.sh --env local
+   # First-time: reset schema + migrate (single fast command locally)
+   ./run-migration.sh --reset
+
+   # Subsequent updates: upsert only changed data
+   ./run-migration.sh
    ```
 
-   Options: `--dry-run` to preview, `--start <N>` to resume from batch N.
+   > **Local fast mode:** For local environment, all SQL is executed in a single `wrangler` command (~40s) instead of running 128+ batches separately (~6min).
 
-4. _(Optional)_ Set up full-text search for faster queries:
+   Options: `--dry-run` to preview, `--start <N>` to resume from batch N, `--reset` to drop and recreate schema.
+
+4. Verify the migration:
+
+   ```bash
+   # Check card count (expect 2053)
+   npx wrangler d1 execute hololive-ocg-db --local --yes \
+     --command="SELECT COUNT(*) as total_cards FROM cards;"
+
+   # Check translations per locale (expect 2053 per locale)
+   npx wrangler d1 execute hololive-ocg-db --local --yes \
+     --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
+   ```
+
+5. _(Optional)_ Set up full-text search for faster queries:
 
    ```bash
    ./setup-fts.sh --local hololive-ocg-db
    ```
 
-5. Start the local Worker API:
+6. Start the local Worker API:
 
    ```bash
    npx wrangler dev
@@ -58,11 +82,28 @@ The card data is served from a Cloudflare D1 database via a Worker API.
    curl "http://localhost:8787/api/cards/filter?locale=en&limit=5"
    ```
 
-6. In a separate terminal, start the Nuxt frontend:
+7. In a separate terminal, start the Nuxt frontend:
    ```bash
    cd ..
    npm run dev
    ```
+
+## Running the Full Application Locally
+
+To run the complete application (frontend + API + database):
+
+1. **Terminal 1 — Worker API:**
+   ```bash
+   cd cloudflare
+   npx wrangler dev
+   ```
+2. **Terminal 2 — Nuxt frontend:**
+   ```bash
+   npm run dev
+   ```
+3. Open `http://localhost:3000/hololive-ocg-wiki` in the browser.
+
+The frontend makes API calls to the worker at `http://localhost:8787`. Card search, filtering, and detail pages all use the D1 database through the worker.
 
 ## Useful Database Commands
 
@@ -70,7 +111,9 @@ The card data is served from a Cloudflare D1 database via a Worker API.
 | ----------------------------- | ----------------------------------------------------------------------------------------- |
 | Query local DB                | `npx wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"` |
 | Re-apply schema only          | `npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql`                     |
-| Resume migration from batch N | `./run-migration.sh --env local --start N`                                                |
+| Full migration (all cards)    | `node migrate.js --full && ./run-migration.sh --reset`                                    |
+| Diff migration (changed only) | `node migrate.js && ./run-migration.sh`                                                   |
+| Resume migration from batch N | `./run-migration.sh --start N`                                                            |
 | View worker logs              | `npx wrangler tail`                                                                       |
 
 Local D1 data is persisted in `cloudflare/.wrangler/state/` and survives restarts.

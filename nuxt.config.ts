@@ -151,4 +151,13 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  nitro: {
+    devProxy: {
+      "/api": {
+        target: "http://localhost:8787/api",
+        changeOrigin: true,
+      },
+    },
+  },
 });

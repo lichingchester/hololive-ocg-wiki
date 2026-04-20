@@ -17,6 +17,7 @@ ENVIRONMENT="local"
 DATABASE_NAME="hololive-ocg-db"
 DRY_RUN=false
 START_BATCH=0
+RESET_SCHEMA=false
 
 # Function to print colored output
 print_status() {
@@ -44,12 +45,16 @@ OPTIONS:
     -e, --env ENVIRONMENT    Target environment: 'local' or 'production' (default: local)
     -d, --database NAME      Database name (default: hololive-ocg-db)
     -s, --start BATCH        Start from specific batch number (default: 0)
+    -r, --reset             Reset schema (DROP + CREATE tables) before migration.
+                            Only needed for schema changes or first-time setup.
     -n, --dry-run           Show commands that would be executed without running them
     -h, --help              Show this help message
 
 EXAMPLES:
-    $0                                    # Run migration for local environment
-    $0 --env production                   # Run migration for production
+    $0                                    # Run upsert migration for local environment
+    $0 --env production                   # Run upsert migration for production
+    $0 --reset                            # Reset schema + full migration (local)
+    $0 --env production --reset           # Reset schema + full migration (production)
     $0 --env local --dry-run             # Show what would be executed locally
     $0 --env production --database my-db # Use custom database name for production
     $0 --env production --start 50       # Resume migration from batch 50
@@ -71,6 +76,10 @@ while [[ $# -gt 0 ]]; do
         -s|--start)
             START_BATCH="$2"
             shift 2
+            ;;
+        -r|--reset)
+            RESET_SCHEMA=true
+            shift
             ;;
         -n|--dry-run)
             DRY_RUN=true
@@ -144,9 +153,9 @@ fi
 
 echo ""
 
-# Step 1: Reset schema (DROP + CREATE tables) — instant, avoids slow DELETEs
-# Only run when starting from batch 0 (full migration)
-if [[ $START_BATCH -eq 0 ]]; then
+# Step 1: Optionally reset schema (DROP + CREATE tables)
+# Only when --reset flag is used (for schema changes or first-time setup)
+if [[ "$RESET_SCHEMA" == true ]]; then
     if [[ ! -f "schema.sql" ]]; then
         print_error "schema.sql not found. Cannot reset database schema."
         exit 1
@@ -166,8 +175,8 @@ if [[ $START_BATCH -eq 0 ]]; then
         fi
     fi
     echo ""
-else
-    print_warning "Resuming from batch $START_BATCH (skipping schema reset)"
+elif [[ $START_BATCH -gt 0 ]]; then
+    print_warning "Resuming from batch $START_BATCH"
     echo ""
 fi
 
@@ -190,6 +199,31 @@ run_migration_batch() {
         fi
     fi
 }
+
+# ── Local fast mode: execute migration.sql in a single command ──────────────
+# Local D1 is just SQLite — no API batch limits, no need for 128 separate
+# wrangler invocations. This is ~50x faster than the batched approach.
+if [[ "$ENVIRONMENT" == "local" && "$DRY_RUN" != true && $START_BATCH -eq 0 ]]; then
+    if [[ -f "migration.sql" ]]; then
+        print_status "Local fast mode: executing migration.sql in a single command..."
+        CMD="$BASE_CMD --file=./migration.sql"
+        if eval "$CMD"; then
+            print_success "All migrations completed successfully!"
+            print_success "Executed migration.sql ($MIGRATION_COUNT batches worth of statements)"
+        else
+            print_error "Single-file migration failed. Falling back to batch mode..."
+            FALLBACK_TO_BATCH=true
+        fi
+    else
+        print_warning "migration.sql not found, using batch mode"
+        FALLBACK_TO_BATCH=true
+    fi
+else
+    FALLBACK_TO_BATCH=true
+fi
+
+# ── Batch mode: for production or fallback ──────────────────────────────────
+if [[ "${FALLBACK_TO_BATCH:-false}" == true ]]; then
 
 # Get sorted list of migration files
 MIGRATION_FILES=($(find migrations -name "migration_batch_*.sql" -exec basename {} \; | sort -V))
@@ -245,20 +279,23 @@ else
     if [[ $FAILED -eq 0 ]]; then
         print_success "All migrations completed successfully!"
         print_success "Completed: $COMPLETED/$MIGRATION_COUNT batches"
-        
-        # Verify data was inserted
-        echo ""
-        print_status "Verifying migration..."
-        VERIFY_CMD="$BASE_CMD --command=\"SELECT COUNT(*) as total_cards FROM cards;\""
-        print_status "Running: $VERIFY_CMD"
-        eval "$VERIFY_CMD"
-        
     else
         print_error "Migration completed with errors."
         print_error "Completed: $COMPLETED/$MIGRATION_COUNT batches"
         print_error "Failed: $FAILED batches"
         exit 1
     fi
+fi
+
+fi  # end FALLBACK_TO_BATCH
+
+# ── Verify ──────────────────────────────────────────────────────────────────
+if [[ "$DRY_RUN" != true ]]; then
+    echo ""
+    print_status "Verifying migration..."
+    VERIFY_CMD="$BASE_CMD --command=\"SELECT COUNT(*) as total_cards FROM cards;\""
+    print_status "Running: $VERIFY_CMD"
+    eval "$VERIFY_CMD"
 fi
 
 echo ""

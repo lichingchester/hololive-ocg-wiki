@@ -39,13 +39,23 @@ Resume from the failed batch:
 ./run-migration.sh --env production --start <batch_number>
 ```
 
+### Diff migration shows "No changes detected" but data is wrong
+
+The hash file may be out of sync. Force a full migration:
+
+```bash
+node migrate.js --full
+./run-migration.sh --reset   # local
+./run-migration.sh --env production --reset  # production
+```
+
 ### "table already exists" on schema apply
 
 This is expected when re-applying schema. The schema uses `CREATE TABLE IF NOT EXISTS`. If you need a clean reset:
 
 ```bash
-# WARNING: This drops all data
-npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql
+# Reset schema + full migration
+./run-migration.sh --reset
 ```
 
 ### Card count mismatch between locales
@@ -53,10 +63,15 @@ npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql
 Check per-locale counts:
 
 ```bash
-wrangler d1 execute hololive-ocg-db --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
+wrangler d1 execute hololive-ocg-db --local --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
 ```
 
-If mismatched, re-run the full migration pipeline.
+If mismatched, re-run the full migration:
+
+```bash
+node migrate.js --full
+./run-migration.sh --reset
+```
 
 ## FTS Issues
 
