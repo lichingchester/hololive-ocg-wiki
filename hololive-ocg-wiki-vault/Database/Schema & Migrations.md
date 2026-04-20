@@ -32,16 +32,45 @@ The project uses **Cloudflare D1** (SQLite-based) with a normalized schema.
 ## Data Pipeline
 
 ```
-data/cards.json → migrate.js → migrations/migration_batch_*.sql → D1
+data/cards.json → migrate.js → migration.sql + migrations/*.sql → D1
 ```
 
 1. **Source:** `data/cards.json` contains all card data with translations
-2. **Generate:** `node cloudflare/migrate.js` reads the JSON and generates batched SQL
-3. **Execute:** `./run-migration.sh` runs all batch files against D1
+2. **Generate:** `node cloudflare/migrate.js` reads the JSON and generates SQL
+3. **Execute:** `./run-migration.sh` runs the SQL against D1
+
+### Migration Modes
+
+| Mode       | Command                    | When to use                                                                                                  |
+| ---------- | -------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Diff**   | `node migrate.js`          | Default. Only generates SQL for new/changed/removed cards using SHA-256 hash comparison (`cards_hash.json`). |
+| **Full**   | `node migrate.js --full`   | Generates SQL for all cards. Use for first-time setup or when `cards_hash.json` is missing.                  |
+| **Strict** | `node migrate.js --strict` | Aborts if estimated writes exceed 80% of D1 daily limit (100k writes).                                       |
+
+### Execution Modes
+
+| Environment    | Behavior                                                       | Speed                    |
+| -------------- | -------------------------------------------------------------- | ------------------------ |
+| **Local**      | Executes entire `migration.sql` in a single `wrangler` command | ~40s for full migration  |
+| **Production** | Executes in batches of 500 statements (D1 API limits)          | ~6min for full migration |
+
+### How Diff Detection Works
+
+1. `migrate.js` computes a SHA-256 hash for each card in `cards.json`
+2. Compares against previously saved hashes in `cards_hash.json`
+3. Only generates SQL for cards whose hash changed, are new, or were removed
+4. Updates `cards_hash.json` after generation
+
+This reduces a typical update (5–10 cards changed) from **63,610 writes** to **~70–140 writes** — a ~450x reduction.
+
+### Upsert Strategy
+
+- **`cards` table:** `INSERT ... ON CONFLICT(id) DO UPDATE` — true upsert
+- **Child tables** (translations, arts, skills, etc.): `DELETE` per card + re-`INSERT` — ensures clean state per card without dropping all data
 
 ### Why Batches?
 
-D1 has query limits per execution. The migration system splits large datasets into batch files (`migration_batch_0.sql`, `migration_batch_1.sql`, etc.) to stay within limits.
+D1 has query limits per API execution. The migration system splits large datasets into batch files (`migration_batch_0.sql`, `migration_batch_1.sql`, etc.) for production. Locally, the full `migration.sql` is used directly since there are no API limits.
 
 ## Common Operations
 
@@ -50,29 +79,68 @@ D1 has query limits per execution. The migration system splits large datasets in
 ```bash
 cd cloudflare
 
-# Apply schema
-npx wrangler d1 execute hololive-ocg-db --local --file=./schema.sql
+# Generate full migration (all cards)
+node migrate.js --full
 
-# Generate migrations from card data
-node migrate.js
-
-# Run all batches
-./run-migration.sh --env local
+# Reset schema + run migration
+./run-migration.sh --reset
 ```
 
-### Update Card Data
+### Update Card Data (Diff)
 
 ```bash
 cd cloudflare
 
-# Regenerate migrations after updating cards.json
+# Regenerate only changed cards
 node migrate.js
 
-# Run on production (resets schema with --start 0)
+# Apply changes
+./run-migration.sh
+```
+
+### Update Card Data (Production)
+
+```bash
+cd cloudflare
+
+# Generate diff migration
+node migrate.js
+
+# Run batched migration on production
 ./run-migration.sh --env production
 
 # Resume from a specific batch if interrupted
 ./run-migration.sh --env production --start 76
+```
+
+### Full Reset (Local)
+
+```bash
+cd cloudflare
+
+# Force full migration of all cards
+node migrate.js --full
+
+# Reset schema and run
+./run-migration.sh --reset
+```
+
+### Verify Migration
+
+```bash
+cd cloudflare
+
+# Card count (expect 2053)
+wrangler d1 execute hololive-ocg-db --local \
+  --command="SELECT COUNT(*) as total FROM cards;"
+
+# Translations per locale (expect 2053 each)
+wrangler d1 execute hololive-ocg-db --local \
+  --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
+
+# Child table counts
+wrangler d1 execute hololive-ocg-db --local \
+  --command="SELECT 'arts' as tbl, COUNT(*) as cnt FROM arts UNION ALL SELECT 'oshi_skills', COUNT(*) FROM oshi_skills UNION ALL SELECT 'art_translations', COUNT(*) FROM art_translations;"
 ```
 
 ### Direct Queries

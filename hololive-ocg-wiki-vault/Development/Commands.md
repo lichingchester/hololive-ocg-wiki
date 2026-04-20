@@ -45,20 +45,36 @@ wrangler d1 create hololive-ocg-db
 # Apply schema
 wrangler d1 execute hololive-ocg-db --local --file=./schema.sql
 
-# Generate migration SQL from cards.json
+# ── Migration ──
+
+# Generate migration SQL (diff — only changed cards)
 node migrate.js
 
-# Run migrations (local)
-./run-migration.sh --env local
+# Generate migration SQL (full — all cards, use for first-time or reset)
+node migrate.js --full
 
-# Run migrations (production)
+# Run migrations (local — fast mode, single command)
+./run-migration.sh
+
+# Reset schema + full migration (local, first-time setup)
+./run-migration.sh --reset
+
+# Run migrations (production — batched)
 ./run-migration.sh --env production
 
-# Resume from specific batch
+# Resume from specific batch (production)
 ./run-migration.sh --env production --start 76
 
-# Query database
+# ── Verification ──
+
+# Count cards
 wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"
+
+# Count translations per locale
+wrangler d1 execute hololive-ocg-db --local --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
+
+# Count all child tables
+wrangler d1 execute hololive-ocg-db --local --command="SELECT 'arts' as tbl, COUNT(*) as cnt FROM arts UNION ALL SELECT 'oshi_skills', COUNT(*) FROM oshi_skills UNION ALL SELECT 'art_translations', COUNT(*) FROM art_translations;"
 ```
 
 ## Full-Text Search
