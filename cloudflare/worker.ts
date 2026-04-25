@@ -20,6 +20,7 @@ interface FilterOptions {
   locale?: string;
   page?: number;
   limit?: number;
+  skip_count?: boolean; // Skip COUNT query on page 2+ to save row reads
 }
 
 interface Card {
@@ -669,11 +670,16 @@ async function filterCards(
   const whereClause =
     whereConditions.length > 0 ? `WHERE ${whereConditions.join(" AND ")}` : "";
 
-  // Count total results
-  const countQuery = `SELECT COUNT(DISTINCT c.id) as total ${query} ${whereClause}`;
-  const countStmt = env.DB.prepare(countQuery);
-  const countResult = await countStmt.bind(...params).first();
-  const total = countResult?.total || 0;
+  // Count total results (skip on page 2+ when client already has the total)
+  let total: number;
+  if (filters.skip_count) {
+    total = -1;
+  } else {
+    const countQuery = `SELECT COUNT(DISTINCT c.id) as total ${query} ${whereClause}`;
+    const countStmt = env.DB.prepare(countQuery);
+    const countResult = await countStmt.bind(...params).first();
+    total = (countResult?.total as number) || 0;
+  }
 
   // Get paginated results
   const cardsQuery = `
@@ -770,7 +776,11 @@ async function getFilterOptions(env: Env, locale: string = DEFAULT_LOCALE) {
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(
+    request: Request,
+    env: Env,
+    ctx: ExecutionContext,
+  ): Promise<Response> {
     // Handle CORS preflight
     const corsResponse = handleCORS(request, env);
     if (corsResponse) return corsResponse;
@@ -792,6 +802,11 @@ export default {
     try {
       // Route: GET /api/cards/search
       if (path === "/api/cards/search" && request.method === "GET") {
+        // Check cache first (5 min TTL)
+        const cache = caches.default;
+        const cachedSearch = await cache.match(request);
+        if (cachedSearch) return cachedSearch;
+
         // Security: Validate and sanitize search parameters
         const query =
           validateAndSanitizeString(url.searchParams.get("q"), 500) || "";
@@ -800,16 +815,24 @@ export default {
 
         const cards = await searchCards(env, query, locale, limit);
 
-        return new Response(JSON.stringify({ cards }), {
+        const searchResponse = new Response(JSON.stringify({ cards }), {
           headers: {
             ...getCORSHeaders(request, env),
             "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=300",
           },
         });
+        ctx.waitUntil(cache.put(request, searchResponse.clone()));
+        return searchResponse;
       }
 
       // Route: GET /api/cards/filter
       if (path === "/api/cards/filter" && request.method === "GET") {
+        // Check cache first (5 min TTL)
+        const cache = caches.default;
+        const cachedFilter = await cache.match(request);
+        if (cachedFilter) return cachedFilter;
+
         // Security: Validate and sanitize all input parameters
         const filters: FilterOptions = {
           search: validateAndSanitizeString(
@@ -837,17 +860,21 @@ export default {
           ),
           locale: validateLocale(url.searchParams.get("locale")),
           page: validateInteger(url.searchParams.get("page"), 1, 1000),
-          limit: validateInteger(url.searchParams.get("limit"), 1, 200), // Limit max results per page
+          limit: validateInteger(url.searchParams.get("limit"), 1, 200),
+          skip_count: url.searchParams.get("skip_count") === "true",
         };
 
         const result = await filterCards(env, filters);
 
-        return new Response(JSON.stringify(result), {
+        const filterResponse = new Response(JSON.stringify(result), {
           headers: {
             ...getCORSHeaders(request, env),
             "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=300",
           },
         });
+        ctx.waitUntil(cache.put(request, filterResponse.clone()));
+        return filterResponse;
       }
 
       // Route: GET /api/cards-list/:ids - Get multiple cards by comma-separated IDs
@@ -1139,19 +1166,32 @@ export default {
 
       // Route: GET /api/filter-options
       if (path === "/api/filter-options" && request.method === "GET") {
+        // Check cache first (30 min TTL — changes only on weekly card updates)
+        const cache = caches.default;
+        const cachedOptions = await cache.match(request);
+        if (cachedOptions) return cachedOptions;
+
         const locale = validateLocale(url.searchParams.get("locale"));
         const options = await getFilterOptions(env, locale);
 
-        return new Response(JSON.stringify(options), {
+        const optionsResponse = new Response(JSON.stringify(options), {
           headers: {
             ...getCORSHeaders(request, env),
             "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=1800",
           },
         });
+        ctx.waitUntil(cache.put(request, optionsResponse.clone()));
+        return optionsResponse;
       }
 
       // Route: GET /api/static-filters - Get static filter values from code tables
       if (path === "/api/static-filters" && request.method === "GET") {
+        // Check cache first (30 min TTL — changes only on weekly card updates)
+        const cache = caches.default;
+        const cachedStatic = await cache.match(request);
+        if (cachedStatic) return cachedStatic;
+
         const [cardTypes, rarities, bloomLevels] = await Promise.all([
           env.DB.prepare(
             "SELECT DISTINCT card_type_code FROM cards ORDER BY card_type_code",
@@ -1193,12 +1233,15 @@ export default {
           })),
         };
 
-        return new Response(JSON.stringify(staticFilters), {
+        const staticResponse = new Response(JSON.stringify(staticFilters), {
           headers: {
             ...getCORSHeaders(request, env),
             "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=1800",
           },
         });
+        ctx.waitUntil(cache.put(request, staticResponse.clone()));
+        return staticResponse;
       }
 
       // 404 for unknown routes

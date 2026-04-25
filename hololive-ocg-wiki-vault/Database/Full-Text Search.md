@@ -22,41 +22,31 @@ The API uses **SQLite FTS5** for fast card search with relevance ranking.
 
 ```bash
 cd cloudflare
+chmod +x setup-fts.sh
 
-# Make scripts executable
-chmod +x setup-fts.sh reset-fts.sh
+# Local
+./setup-fts.sh --local hololive-ocg-db
 
-# Set up FTS (local)
-./setup-fts.sh hololive-ocg-db
-
-# Set up FTS (production)
-./setup-fts.sh your-production-database-name
+# Production (requires API credentials)
+# Copy .env.example → .env and fill in your credentials, then:
+./setup-fts.sh --remote hololive-ocg-db
 ```
+
+The script delegates to `setup-fts.js` (Node 22 `node:sqlite` for local, Cloudflare D1 REST API for remote). This bypasses wrangler's statement splitter which incorrectly breaks `CREATE TRIGGER … BEGIN … END` blocks on every `;`.
 
 ### Reset / Rebuild
 
-If you get "already exists" errors, use the reset script:
+`setup-fts.sh` always drops and recreates everything — re-run it instead of using `reset-fts.sh`:
 
 ```bash
-./reset-fts.sh hololive-ocg-db
+# Local
+./setup-fts.sh --local hololive-ocg-db
+
+# Production — copy .env.example → .env, fill in credentials, then:
+./setup-fts.sh --remote hololive-ocg-db
 ```
 
-### Manual Setup
-
-```bash
-# Apply FTS SQL directly
-npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
-
-# If tables/triggers already exist, drop them first:
-npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_insert;"
-npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_update;"
-npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_delete;"
-npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_oshi_skills_update;"
-npx wrangler d1 execute hololive-ocg-db --command="DROP TRIGGER IF EXISTS cards_fts_tags_update;"
-npx wrangler d1 execute hololive-ocg-db --command="DROP TABLE IF EXISTS cards_fts;"
-# Then re-apply
-npx wrangler d1 execute hololive-ocg-db --file=./setup-fts.sql
-```
+> **Do not use** `reset-fts.sh`, `--file=setup-fts.sql`, or `wrangler d1 execute --command` for trigger creation — these all fail due to the wrangler semicolon-splitting bug.
 
 ## Verification
 
@@ -78,23 +68,24 @@ wrangler d1 execute hololive-ocg-db --command="SELECT name FROM sqlite_master WH
 Normal when FTS isn't set up yet. The API auto-falls back to LIKE queries. Fix:
 
 ```bash
-cd cloudflare && ./setup-fts.sh hololive-ocg-db
+# Copy cloudflare/.env.example → cloudflare/.env and fill in credentials, then:
+cd cloudflare && ./setup-fts.sh --remote hololive-ocg-db
 ```
 
 ### "trigger already exists" / "table already exists"
 
-Use reset script instead of setup:
+`setup-fts.sh` runs `DROP IF EXISTS` on all FTS components first — just re-run it:
 
 ```bash
-cd cloudflare && ./reset-fts.sh hololive-ocg-db
+cd cloudflare && ./setup-fts.sh --local hololive-ocg-db   # or --remote
 ```
 
 ### Search returning stale results
 
-Rebuild the FTS index:
+Rebuild the FTS index by re-running the setup script:
 
 ```bash
-cd cloudflare && ./reset-fts.sh hololive-ocg-db
+cd cloudflare && ./setup-fts.sh --local hololive-ocg-db   # or --remote
 ```
 
 ## Maintenance
@@ -103,7 +94,7 @@ FTS auto-syncs via triggers for normal CRUD operations. After bulk data migratio
 
 ```bash
 cd cloudflare
-./reset-fts.sh hololive-ocg-db
+./setup-fts.sh --remote hololive-ocg-db
 ```
 
 ## Related

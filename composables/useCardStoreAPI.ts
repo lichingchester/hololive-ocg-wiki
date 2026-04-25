@@ -29,13 +29,13 @@ export const useCardStoreAPI = () => {
   // Cache for API responses
   const filterCache = useState<Map<string, FilterResponse>>(
     "filterCache",
-    () => new Map()
+    () => new Map(),
   );
 
   // Cache for filter options
   const filterOptionsCache = useState<Map<string, FilterOptionsResponse>>(
     "filterOptionsCache",
-    () => new Map()
+    () => new Map(),
   );
 
   // Cache for individual cards by ID and locale
@@ -44,19 +44,19 @@ export const useCardStoreAPI = () => {
   // Cache for cards by card number
   const cardsByNumberCache = useState<Map<string, CardCollection>>(
     "cardsByNumberCache",
-    () => new Map()
+    () => new Map(),
   );
 
   // Cache for cards by multiple card numbers
   const cardsByNumbersCache = useState<Map<string, CardCollection>>(
     "cardsByNumbersCache",
-    () => new Map()
+    () => new Map(),
   );
 
   // API call helper with error handling
   const apiCall = async <T>(
     endpoint: string,
-    params?: Record<string, any>
+    params?: Record<string, any>,
   ): Promise<T> => {
     try {
       // Build query string for parameters
@@ -109,7 +109,7 @@ export const useCardStoreAPI = () => {
   // Load cards with filtering - now uses API
   const loadCards = async (
     filterOptions?: FilterOptions,
-    locale: Locales = "en"
+    locale: Locales = "en",
   ) => {
     // For compatibility, if no filters provided, load first page
     if (!filterOptions) {
@@ -176,7 +176,7 @@ export const useCardStoreAPI = () => {
     filterOptions: FilterOptions,
     locale: Locales,
     page: number = 1,
-    limit: number = 50
+    limit: number = 50,
   ): Promise<CardCollection> => {
     // Create cache key
     const cacheKey = JSON.stringify({ ...filterOptions, locale, page, limit });
@@ -217,7 +217,7 @@ export const useCardStoreAPI = () => {
       // Add array filters (only include active ones)
       const activeColors = Object.keys(filterOptions.colors).filter(
         (color) =>
-          filterOptions.colors[color as keyof typeof filterOptions.colors]
+          filterOptions.colors[color as keyof typeof filterOptions.colors],
       );
       if (activeColors.length > 0) {
         apiParams.colors = activeColors;
@@ -225,7 +225,7 @@ export const useCardStoreAPI = () => {
 
       const activeCardTypes = Object.keys(filterOptions.cardTypes).filter(
         (type) =>
-          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
+          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes],
       );
       if (activeCardTypes.length > 0) {
         apiParams.cardTypes = activeCardTypes;
@@ -233,7 +233,7 @@ export const useCardStoreAPI = () => {
 
       const activeRarities = Object.keys(filterOptions.rarity).filter(
         (rarity) =>
-          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
+          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity],
       );
       if (activeRarities.length > 0) {
         apiParams.rarity = activeRarities;
@@ -243,7 +243,7 @@ export const useCardStoreAPI = () => {
         (level) =>
           filterOptions.bloomLevel[
             level as keyof typeof filterOptions.bloomLevel
-          ]
+          ],
       );
       if (activeBloomLevels.length > 0) {
         apiParams.bloomLevel = activeBloomLevels;
@@ -252,7 +252,7 @@ export const useCardStoreAPI = () => {
       // Make API call
       const response = await apiCall<FilterResponse>(
         "/api/cards/filter",
-        apiParams
+        apiParams,
       );
 
       // Update state
@@ -281,7 +281,7 @@ export const useCardStoreAPI = () => {
   // Get card by ID from API
   const getCardById = async (
     id: string,
-    locale: Locales = "en"
+    locale: Locales = "en",
   ): Promise<Card | undefined> => {
     // Create cache key with locale
     const cacheKey = `${id}_${locale}`;
@@ -311,7 +311,7 @@ export const useCardStoreAPI = () => {
   // Get cards by card number from API
   const getCardsByCardNumber = async (
     cardNumber: string,
-    locale: Locales = "en"
+    locale: Locales = "en",
   ): Promise<CardCollection> => {
     if (!cardNumber.trim()) return [];
 
@@ -326,9 +326,9 @@ export const useCardStoreAPI = () => {
     try {
       const response = await apiCall<{ cards: CardCollection }>(
         `/api/cards/filter-by-card-number/${encodeURIComponent(
-          cardNumber.trim()
+          cardNumber.trim(),
         )}`,
-        { locale }
+        { locale },
       );
 
       const normalizedCards = response.cards.map(normalizeCard);
@@ -346,7 +346,7 @@ export const useCardStoreAPI = () => {
     } catch (error) {
       console.error(
         `Failed to fetch cards with card number ${cardNumber}:`,
-        error
+        error,
       );
       return [];
     }
@@ -355,7 +355,7 @@ export const useCardStoreAPI = () => {
   // Get cards by multiple card numbers from API (first match for each number)
   const getCardsByCardNumbers = async (
     cardNumbers: string[],
-    locale: Locales = "en"
+    locale: Locales = "en",
   ): Promise<CardCollection> => {
     if (cardNumbers.length === 0) return [];
 
@@ -378,9 +378,9 @@ export const useCardStoreAPI = () => {
     try {
       const response = await apiCall<{ cards: CardCollection }>(
         `/api/cards/by-card-numbers/${encodeURIComponent(
-          validCardNumbers.join(",")
+          validCardNumbers.join(","),
         )}`,
-        { locale }
+        { locale },
       );
 
       const normalizedCards = response.cards.map(normalizeCard);
@@ -398,9 +398,9 @@ export const useCardStoreAPI = () => {
     } catch (error) {
       console.error(
         `Failed to fetch cards with card numbers ${validCardNumbers.join(
-          ","
+          ",",
         )}:`,
-        error
+        error,
       );
       return [];
     }
@@ -408,7 +408,7 @@ export const useCardStoreAPI = () => {
 
   const getCardsByIds = async (
     ids: string[],
-    locale: Locales = "en"
+    locale: Locales = "en",
   ): Promise<CardCollection> => {
     if (ids.length === 0) return [];
 
@@ -446,7 +446,7 @@ export const useCardStoreAPI = () => {
       // Fetch only missing cards
       const response = await apiCall<{ cards: CardCollection }>(
         `/api/cards-list/${missingIds.join(",")}`,
-        { locale }
+        { locale },
       );
 
       const newCards = response.cards.map(normalizeCard);
@@ -477,7 +477,7 @@ export const useCardStoreAPI = () => {
   const searchCards = async (
     query: string,
     locale: Locales = "en",
-    limit: number = 100
+    limit: number = 100,
   ): Promise<CardCollection> => {
     if (!query.trim()) {
       return [];
@@ -491,7 +491,7 @@ export const useCardStoreAPI = () => {
           q: query.trim(),
           locale,
           limit,
-        }
+        },
       );
 
       return response.cards.map(normalizeCard);
@@ -505,7 +505,7 @@ export const useCardStoreAPI = () => {
 
   // Get filter options from API
   const getFilterOptions = async (
-    locale: Locales
+    locale: Locales,
   ): Promise<FilterOptionsResponse> => {
     // Check cache first
     if (filterOptionsCache.value.has(locale)) {
@@ -515,7 +515,7 @@ export const useCardStoreAPI = () => {
     try {
       const response = await apiCall<FilterOptionsResponse>(
         "/api/filter-options",
-        { locale }
+        { locale },
       );
 
       // Cache the result
@@ -560,7 +560,7 @@ export const useCardStoreAPI = () => {
     filterOptions: FilterOptions,
     locale: Locales,
     nextPage: number,
-    limit: number = 50
+    limit: number = 50,
   ): Promise<CardCollection> => {
     // Store existing cards before making the API call
     const existingCards = [...filteredCards.value];
@@ -608,7 +608,7 @@ export const useCardStoreAPI = () => {
       // Add array filters (only include active ones)
       const activeColors = Object.keys(filterOptions.colors).filter(
         (color) =>
-          filterOptions.colors[color as keyof typeof filterOptions.colors]
+          filterOptions.colors[color as keyof typeof filterOptions.colors],
       );
       if (activeColors.length > 0) {
         apiParams.colors = activeColors;
@@ -616,7 +616,7 @@ export const useCardStoreAPI = () => {
 
       const activeCardTypes = Object.keys(filterOptions.cardTypes).filter(
         (type) =>
-          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes]
+          filterOptions.cardTypes[type as keyof typeof filterOptions.cardTypes],
       );
       if (activeCardTypes.length > 0) {
         apiParams.cardTypes = activeCardTypes;
@@ -624,7 +624,7 @@ export const useCardStoreAPI = () => {
 
       const activeRarities = Object.keys(filterOptions.rarity).filter(
         (rarity) =>
-          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity]
+          filterOptions.rarity[rarity as keyof typeof filterOptions.rarity],
       );
       if (activeRarities.length > 0) {
         apiParams.rarity = activeRarities;
@@ -634,16 +634,19 @@ export const useCardStoreAPI = () => {
         (level) =>
           filterOptions.bloomLevel[
             level as keyof typeof filterOptions.bloomLevel
-          ]
+          ],
       );
       if (activeBloomLevels.length > 0) {
         apiParams.bloomLevel = activeBloomLevels;
       }
 
+      // Skip the COUNT query on page 2+ — client already has the total from page 1
+      apiParams.skip_count = true;
+
       // Make API call directly (don't use getFilteredCards to avoid overwriting)
       const response = await apiCall<FilterResponse>(
         "/api/cards/filter",
-        apiParams
+        apiParams,
       );
 
       const newCards = response.cards.map(normalizeCard);
@@ -651,14 +654,13 @@ export const useCardStoreAPI = () => {
       // Append new cards to existing ones
       filteredCards.value = [...existingCards, ...newCards];
 
-      // Update total cards count
-      totalCards.value = response.total;
+      // Keep the total from page 1 (response.total is -1 when skip_count=true)
       currentPage.value = nextPage;
 
-      // Cache this specific page
+      // Cache this specific page using the known total
       filterCache.value.set(cacheKey, {
         cards: newCards,
-        total: response.total,
+        total: totalCards.value,
       });
 
       return newCards;

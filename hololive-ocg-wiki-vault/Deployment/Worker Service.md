@@ -42,6 +42,25 @@ The worker handles:
 - `GET /api/filter-options` — Dynamic filter options per locale
 - `GET /api/static-filters` — Static filter values (colors, types, rarities)
 
+### Edge Caching
+
+All read endpoints use the **Cloudflare Cache API** (`caches.default`) to cache responses at the edge, keyed by the full request URL. This eliminates repeated D1 reads for identical requests.
+
+| Endpoint              | TTL    | Rationale                                     |
+| --------------------- | ------ | --------------------------------------------- |
+| `/api/filter-options` | 30 min | Changes only on weekly card data updates      |
+| `/api/static-filters` | 30 min | Same — types, rarities, colors rarely change  |
+| `/api/cards/filter`   | 5 min  | Repeated filter states (navigation, debounce) |
+| `/api/cards/search`   | 5 min  | Same search query repeated via debounce       |
+
+Cache is stored with `Cache-Control: public, max-age=<TTL>` and written via `ctx.waitUntil(cache.put(...))` so the first request is not blocked.
+
+> **Note:** `caches.default` is a no-op in local `wrangler dev` — caching only activates on Cloudflare's edge in production.
+
+### Skip COUNT optimisation
+
+`/api/cards/filter` accepts a `skip_count=true` query parameter. When set, the `SELECT COUNT(DISTINCT c.id)` full-table-scan query is skipped and `total: -1` is returned. The frontend (`useCardStoreAPI.ts`) passes this on page 2+ and retains the total from page 1, halving D1 row reads for paginated/infinite-scroll usage.
+
 ### Key Constants
 
 - **DEFAULT_LOCALE:** `"tc"` (Traditional Chinese)
