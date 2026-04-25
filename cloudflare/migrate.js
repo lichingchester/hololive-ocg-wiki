@@ -191,7 +191,7 @@ function generateCardStatements(card, artIdBase) {
     cardArtIds.push(artId);
 
     statements.push(`
-      INSERT INTO arts (
+      INSERT OR REPLACE INTO arts (
         id, card_id, cost_count, cost_types, damage, is_plus, special_targets, special_values
       ) VALUES (
         ${artId},

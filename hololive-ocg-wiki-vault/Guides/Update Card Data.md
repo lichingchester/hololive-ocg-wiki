@@ -80,16 +80,16 @@ curl "http://localhost:8787/api/cards/filter?locale=en&limit=5"
 curl "https://hololive-ocg-wiki.lichingchester.dev/api/cards/filter?locale=en&limit=5"
 
 # Check card count (local)
-wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"
+npx wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards;"
 
 # Check card count (production)
-wrangler d1 execute hololive-ocg-db --remote --command="SELECT COUNT(*) FROM cards;"
+npx wrangler d1 execute hololive-ocg-db --remote --command="SELECT COUNT(*) FROM cards;"
 
 # Check FTS count
-wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards_fts;"
+npx wrangler d1 execute hololive-ocg-db --local --command="SELECT COUNT(*) FROM cards_fts;"
 
 # Check translations per locale
-wrangler d1 execute hololive-ocg-db --local \
+npx wrangler d1 execute hololive-ocg-db --local \
   --command="SELECT locale, COUNT(*) FROM card_translations GROUP BY locale;"
 ```
 
