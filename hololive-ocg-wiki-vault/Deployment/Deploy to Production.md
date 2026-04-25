@@ -30,6 +30,8 @@ wrangler deploy --config wrangler.service.toml
 
 > Always deploy the worker **before** Pages if both have changes.
 
+> **Authentication:** The `CLOUDFLARE_API_TOKEN` in `.env` was created for FTS setup (D1 access only). For worker deployment you need a token with **Workers Scripts: Edit** permission. Use `npx wrangler login` (browser OAuth, easiest) or create a new token at Cloudflare Dashboard → My Profile → API Tokens using the **"Edit Cloudflare Workers"** template.
+
 ### 2. Build and Deploy Pages
 
 ```bash
@@ -61,6 +63,13 @@ curl "$DOMAIN/api/cards/[CARD_ID]?locale=en"
 
 # Test filter options
 curl "$DOMAIN/api/filter-options?locale=en"
+
+# Verify cache headers are present
+curl -sI "$DOMAIN/api/filter-options?locale=en" | grep Cache-Control
+# Expected: Cache-Control: public, max-age=1800
+
+curl -sI "$DOMAIN/api/cards/filter?locale=en&limit=5" | grep Cache-Control
+# Expected: Cache-Control: public, max-age=300
 ```
 
 ## Production Checklist
@@ -70,9 +79,10 @@ curl "$DOMAIN/api/filter-options?locale=en"
 - [ ] Database schema and migrations applied
 - [ ] FTS rebuilt after migration (`./setup-fts.sh --remote hololive-ocg-db`)
 - [ ] API endpoints responding correctly
+- [ ] Cache-Control headers present on filter/search/static endpoints
 - [ ] Frontend loads and functions properly
 - [ ] All locales working (tc, ja, en, id, ko, th, es)
-- [ ] Search functionality operational
+- [ ] Search functionality operational (FTS, not LIKE fallback)
 - [ ] No console errors in browser
 
 ## Environment Variables
