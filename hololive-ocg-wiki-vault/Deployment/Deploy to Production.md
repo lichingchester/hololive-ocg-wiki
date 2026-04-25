@@ -68,6 +68,7 @@ curl "$DOMAIN/api/filter-options?locale=en"
 - [ ] Worker service deployed successfully
 - [ ] Pages deployed with correct service binding
 - [ ] Database schema and migrations applied
+- [ ] FTS rebuilt after migration (`./setup-fts.sh --remote hololive-ocg-db`)
 - [ ] API endpoints responding correctly
 - [ ] Frontend loads and functions properly
 - [ ] All locales working (tc, ja, en, id, ko, th, es)

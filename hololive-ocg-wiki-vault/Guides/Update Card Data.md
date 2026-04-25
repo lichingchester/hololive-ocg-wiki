@@ -66,9 +66,12 @@ npx wrangler d1 execute hololive-ocg-db --local --yes \
 ### 6. Rebuild Full-Text Search
 
 ```bash
+# Copy cloudflare/.env.example → cloudflare/.env and fill in credentials (first time only)
 cd cloudflare
-./reset-fts.sh hololive-ocg-db
+./setup-fts.sh --remote hololive-ocg-db
 ```
+
+> **Note:** The script uses the Cloudflare D1 REST API directly (`setup-fts.js`) to work around a wrangler limitation where `CREATE TRIGGER … BEGIN … END` blocks are incorrectly split on `;`. Do not use `reset-fts.sh` or `--file=setup-fts.sql` — these are broken for trigger creation.
 
 ### 7. Verify
 
