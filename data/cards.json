@@ -1,5 +1,948 @@
 [
   {
+    "id": "2138",
+    "translations": {
+      "ja": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "自分の推しホロメンが〈星街すいせい〉の時、このホロメンの青エール1枚を、自分のバックホロメンの〈星街すいせい〉に付け替えられる。"
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "自分のデッキの上から4枚を見る。その中から、〈星街すいせい〉1枚を公開し、手札に加える。そして残ったカードを好きな順でデッキの下に戻す。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Virtual Ghost",
+            "effect": "If your oshimen Holomen is 〈星街すいせい〉, you may move 1 blue Yell card from this Holomen to your backline Holomen 〈星街すいせい〉."
+          }
+        ],
+        "keyword": {
+          "name": "Planet Stage",
+          "effect": "Look at the top 4 cards of your deck. You may reveal 1 〈星街すいせい〉 card from among them and add it to your hand. Then, put the remaining cards on the bottom of your deck in any order."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "當你的應援成員是〈星街すいせい〉時，可以將此成員的1張藍色應援卡，改附加到你後場成員中的〈星街すいせい〉上。"
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "從自己的牌庫上方查看4張牌，公開其中1張〈星街すいせい〉並加入手牌。然後將剩下的牌以任意順序放回牌庫底。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "Jika oshi Holomen-mu adalah 〈星街すいせい〉, kamu dapat memindahkan 1 kartu Aerial biru dari Holomen ini ke 〈星街すいせい〉 yang ada di Holomen belakangmu."
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "Lihat 4 kartu teratas dari dekmu. Perlihatkan 1 kartu 〈星街すいせい〉 dari antara kartu tersebut, lalu tambahkan ke tanganmu. Kemudian, kembalikan sisa kartu ke bagian bawah dek dalam urutan yang kamu pilih."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "내 오시 홀로멘이 〈星街すいせい〉일 때, 이 홀로멘의 파란 응원 1장을 내 백 홀로멘인 〈星街すいせい〉에게 옮겨 붙일 수 있다."
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "내 덱 위에서 카드 4장을 본다. 그중에서 〈星街すいせい〉 1장을 공개하고 패에 넣는다. 남은 카드는 원하는 순서로 덱 아래에 되돌린다."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "ถ้าโฮโลเมนที่เชียร์อยู่เป็น〈星街すいせい〉 สามารถย้ายการ์ดเอลสีน้ำเงิน 1 ใบจาก〈星街すいせい〉ที่อยู่ด้านหน้า ไปติดกับ〈星街すいせい〉ที่อยู่ในโฮโลเมนหลังของตัวเองได้"
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "ดูการ์ด 4 ใบจากด้านบนสุดของเด็คของตนเอง เผย〈星街すいせい〉 1 ใบจากในนั้นแล้วเพิ่มเข้ามือ จากนั้นนำการ์ดที่เหลือใส่กลับไปใต้เด็คในลำดับที่ต้องการ"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "バーチャルゴースト",
+            "effect": "Si tu Holomen favorita es 〈星街すいせい〉, puedes transferir una carta de Aplauso Azul de esta Holomen a tu Holomen de respaldo 〈星街すいせい〉."
+          }
+        ],
+        "keyword": {
+          "name": "プラネットステージ",
+          "effect": "Mira las 4 cartas superiores de tu mazo. Revela una carta de 〈星街すいせい〉 entre ellas y añádela a tu mano. Coloca el resto de las cartas en la parte inferior del mazo en el orden que prefieras."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP03-044",
+    "imagePath": "card_images/default/hBP03-044_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP03-044_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "blue"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 150,
+    "tags": [
+      "JP",
+      "0期生",
+      "歌"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "Mika Pikazo",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 2,
+        "costTypes": [
+          "blue",
+          "null"
+        ],
+        "damage": 40
+      }
+    ],
+    "keyword": {
+      "type": "ブルームエフェクト",
+      "typeCode": "bloom_effect"
+    }
+  },
+  {
+    "id": "2139",
+    "translations": {
+      "ja": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "トワとお家デートしたっていい"
+          },
+          {
+            "name": "てんQ",
+            "effect": "自分の#歌を持つバックホロメンがいる時、相手のコラボホロメンに特殊ダメージ20を与える。"
+          }
+        ],
+        "qa_items": []
+      },
+      "en": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "トワとお家デートしたっていい"
+          },
+          {
+            "name": "てんQ",
+            "effect": "If you have a backup Holomem with #歌, deal 20 special damage to an opponent’s collab Holomem."
+          }
+        ],
+        "qa_items": []
+      },
+      "tc": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "能和トワ來場在家的約會也沒問題"
+          },
+          {
+            "name": "てんQ",
+            "effect": "當自己的備援區有持有#歌的Holomen時，對對手的合作Holomen造成20點特殊傷害。"
+          }
+        ],
+        "qa_items": []
+      },
+      "id": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "トワとお家デートしたっていい"
+          },
+          {
+            "name": "てんQ",
+            "effect": "Kalau ada anggota holo pendukung milikmu yang punya tag #歌, berikan 20 damage khusus ke anggota holo kolaborasi lawan."
+          }
+        ],
+        "qa_items": []
+      },
+      "ko": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "トワとお家デートしたっていい"
+          },
+          {
+            "name": "てんQ",
+            "effect": "자신의 #노래를 가진 백업 홀로멘이 있을 때, 상대 콜라보 홀로멘에게 특수 데미지 20을 준다."
+          }
+        ],
+        "qa_items": []
+      },
+      "th": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "トワとお家デートしたっていい"
+          },
+          {
+            "name": "てんQ",
+            "effect": "ถ้ามีแบ็คโฮโลเมมเบอร์ที่มีแท็ก #歌 อยู่ฝ่ายตน จะสร้างความเสียหายพิเศษ 20 แก่โฮโลเมมเบอร์คอลแลปของฝั่งตรงข้าม"
+          }
+        ],
+        "qa_items": []
+      },
+      "es": {
+        "name": "常闇トワ",
+        "tags": [
+          "#JP",
+          "#4期生",
+          "#歌",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "Trato de cita en casa con Towa está bien"
+          },
+          {
+            "name": "てんQ",
+            "effect": "Cuando tienes un holo compañero de respaldo con #歌, inflige 20 de daño especial al holo colaborador del oponente."
+          }
+        ],
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP03-055",
+    "imagePath": "card_images/default/hBP03-055_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP03-055_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "purple"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 130,
+    "tags": [
+      "JP",
+      "4期生",
+      "歌",
+      "シューター"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "花澤明",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "purple"
+        ],
+        "damage": 40
+      },
+      {
+        "costCount": 2,
+        "costTypes": [
+          "purple",
+          "null"
+        ],
+        "damage": 50
+      }
+    ]
+  },
+  {
+    "id": "2134",
+    "translations": {
+      "ja": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "自分のエールデッキの上から1枚をこのホロメンに送れる。"
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[バックポジション限定]このホロメンは相手からダメージを受けない。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "You can send the top card of your Cheer Deck to this Holomen."
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[Back Position only] This Holomen does not take damage from your opponent."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "滿分啦！",
+            "effect": "可以從自己應援牌庫頂的一張牌送到這位Holomen。"
+          }
+        ],
+        "keyword": {
+          "name": "燦爛的笑容",
+          "effect": "【僅限後排位置】這位Holomen不會受到對手的傷害。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "Kamu bisa kirim 1 kartu dari atas dek sorakanmu ke holomen ini."
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[Hanya di posisi belakang] Holomen ini tidak menerima damage dari lawan."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "자신의 응원 덱 위에서 카드 1장을 이 홀로멘에게 보낼 수 있다."
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[백 포지션 한정] 이 홀로멘은 상대에게서 피해를 받지 않는다."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "สามารถส่งการ์ด 1 ใบจากด้านบนของเด็คเอลของตัวเองให้กับโฮโลเมンนี้ได้"
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[จำกัดตำแหน่งแบ็ก] โฮโลเมนนี้จะไม่รับความเสียหายจากฝ่ายตรงข้าม"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "白上フブキ",
+        "tags": [
+          "#JP",
+          "#1期生",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#絵"
+        ],
+        "arts": [
+          {
+            "name": "満点じゃい！",
+            "effect": "Puedes enviar la carta superior de tu mazo de apoyo a esta Holomen."
+          }
+        ],
+        "keyword": {
+          "name": "とびきりの笑顔",
+          "effect": "[Solo en posición trasera] Esta Holomen no recibe daño del oponente."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP05-069",
+    "imagePath": "card_images/default/hBP05-069_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP05-069_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "yellow"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 160,
+    "tags": [
+      "JP",
+      "1期生",
+      "ゲーマーズ",
+      "ケモミミ",
+      "絵"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "LAL!ROLE",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 2,
+        "costTypes": [
+          "null",
+          "null"
+        ],
+        "damage": 40
+      }
+    ],
+    "keyword": {
+      "type": "ギフト",
+      "typeCode": "gift"
+    }
+  },
+  {
+    "id": "2140",
+    "translations": {
+      "ja": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "このホロメンに紫エールが付いているなら、自分のデッキを1枚引く。その後、自分のデッキの上から2枚をアーカイブする。"
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "自分のデッキを3枚引いた後、手札2枚をアーカイブする。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "If this Holomen has a Purple Ale attached, draw 1 card from your deck. Then, archive the top 2 cards of your deck."
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "Draw 3 cards from your deck, then archive 2 cards from your hand."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "若此Holomen附有紫色應援，抽取自己牌庫1張卡。之後，將自己牌庫上方2張卡存檔。"
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "抽取自己牌庫3張卡後，將手牌中2張卡存檔。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "Jika holomem ini memiliki Aleman Ungu yang terpasang, ambil 1 kartu dari dekmu. Setelah itu, arsipkan 2 kartu teratas dari dekmu."
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "Setelah menarik 3 kartu dari dekmu, arsipkan 2 kartu dari tanganmu."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "이 홀로멤버에게 보라색 에일이 부착되어 있다면, 자신의 덱에서 카드 1장을 뽑는다. 그 후, 자신의 덱 맨 위에서 카드 2장을 아카이브한다."
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "자신의 덱에서 카드 3장을 뽑은 후, 손패 2장을 아카이브한다."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "ถ้าโฮโลเม็มนี้มีพลังสีม่วงอยู่ จั่วการ์ดจากเด็คของตัวเอง 1 ใบ จากนั้นนำการ์ด 2 ใบบนสุดของเด็คตนเองไปเก็บไว้ในพื้นที่เก็บไฟล์ (Archive)"
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "หลังจากจั่วการ์ดจากเด็คตนเอง 3 ใบแล้ว ให้นำการ์ด 2 ใบจากมือไปเก็บไว้ในพื้นที่เก็บไฟล์ (Archive)"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "森カリオペ",
+        "tags": [
+          "#EN",
+          "#Myth",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "a chef’s journey’s end.",
+            "effect": "Si este Holomen tiene una Cerveza Púrpura equipada, roba 1 carta de tu mazo. Luego, archiva las 2 cartas superiores de tu mazo."
+          }
+        ],
+        "keyword": {
+          "name": "Yes, Chef.",
+          "effect": "Roba 3 cartas de tu mazo y luego archiva 2 cartas de tu mano."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP06-058",
+    "imagePath": "card_images/default/hBP06-058_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP06-058_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "blue"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 160,
+    "tags": [
+      "EN",
+      "Myth",
+      "歌"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "タイキ",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 30
+      }
+    ],
+    "keyword": {
+      "type": "コラボエフェクト",
+      "typeCode": "collab_effect"
+    }
+  },
+  {
+    "id": "2133",
+    "translations": {
+      "ja": {
+        "name": "ブルームステージ",
+        "abilityText": "自分のデッキを2枚引く。その後、自分のライフが4以下なら、自分のこのターンにDebutホロメンからBloomした1stホロメン1人を、自分の手札のホロメンを使ってもう1回Bloomできる。\n\nLIMITED:ターンに1枚しか使えない。",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "自分のステージのDebutホロメンの〈宝鐘マリン〉をhBP02-032〈宝鐘マリン〉にBloomさせました。このとき、ブルームエフェクト「宝鐘の海賊団」を使用しませんでした。その後、同ターン中にhBP06-090〈ブルームステージ〉を使用して、hBP02-032〈宝鐘マリン〉をもう一度hBP02-032〈宝鐘マリン〉にBloomさせました。この2度目のBloomで、ブルームエフェクト「宝鐘の海賊団」を使用することはできますか？",
+            "answer": "いいえ、使用できません。ブルームエフェクトはすべて強制発揮のため、すでに1度目のBloomで、ブルームエフェクト「宝鐘の海賊団」を使用している扱いとなります。そのため『自分のブルームエフェクト「宝鐘の海賊団」はターンに1回しか使えない。』が有効となっており、同じターンの間、ブルームエフェクト「宝鐘の海賊団」は使用できません。",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "自分のステージのDebutホロメンを1stホロメンにBloomさせました。その後、hBP06-090〈ブルームステージ〉を使用し、この1stホロメンを別の1stホロメンにBloomさせました。このターンにhBP06-008〈夏色まつり〉のSP推しスキル「絶対勝ちたい！！！！！！！」を使用した場合、hBP06-090〈ブルームステージ〉を使用して、この1stホロメンをもう一度Bloomできますか？",
+            "answer": "いいえ、できません。hBP06-090〈ブルームステージ〉は、真下にあるカードがDebutホロメンである1stホロメンをもう1回Bloomさせることができます。",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "en": {
+        "name": "ブルームステージ",
+        "abilityText": "Draw 2 cards from your deck. Then, if your Life is 4 or less, you may use a Holomen from your hand to Bloom one of your 1st Holomen that Bloomed from a Debut Holomen this turn, one more time.\n\nLIMITED: You can only use 1 of this card per turn.",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "I Bloomed my Debut Holomen 〈宝鐘マリン〉 on my stage into hBP02-032 〈宝鐘マリン〉. At that time, I didn't activate the Bloom Effect “宝鐘の海賊団”. Later in the same turn, I used hBP06-090 〈ブルームステージ〉 to Bloom hBP02-032 〈宝鐘マリン〉 into hBP02-032 〈宝鐘マリン〉 again. When performing this second Bloom, can I use the Bloom Effect “宝鐘の海賊団”?",
+            "answer": "No, you cannot. Since all Bloom Effects are mandatory activations, it is considered that the Bloom Effect “宝鐘の海賊団” has already been used during the first Bloom. Therefore, the rule “You can only use your Bloom Effect ‘宝鐘の海賊団’ once per turn” applies, and the Bloom Effect “宝鐘の海賊団” cannot be used again during the same turn.",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "I Bloomed a Debut Holomen on my stage into a 1st Holomen. Then I used hBP06-090 〈ブルームステージ〉 to Bloom that 1st Holomen into another 1st Holomen. If during this turn I also used the SP Support Skill “絶対勝ちたい！！！！！！！” of hBP06-008 〈夏色まつり〉, can I use hBP06-090 〈ブルームステージ〉 again to Bloom that 1st Holomen once more?",
+            "answer": "No, you cannot. The hBP06-090 〈ブルームステージ〉 can only Bloom again a 1st Holomen that has a Debut Holomen directly underneath it.",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "tc": {
+        "name": "ブルームステージ",
+        "abilityText": "抽2張自己的牌。之後，若自己的生命值在4以下，則可以使用自己手牌中的ホロメン，再讓本回合從Debutホロメン Bloom而成的1stホロメン其中1位再進行1次Bloom。\n\nLIMITED：每回合只能使用1張。",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "我讓自己舞台上的Debutホロメン〈宝鐘マリン〉Bloom成hBP02-032〈宝鐘マリン〉。此時未使用Bloom效果「宝鐘の海賊団」。之後，在同一回合中使用了hBP06-090〈ブルームステージ〉，再讓hBP02-032〈宝鐘マリン〉再次Bloom成hBP02-032〈宝鐘マリン〉。那麼在第二次Bloom時，可以使用Bloom效果「宝鐘の海賊団」嗎？",
+            "answer": "不行，無法使用。由於Bloom效果全為強制發動，因此在第一次Bloom時，就已視為使用過Bloom效果「宝鐘の海賊団」。因此『自己的Bloom效果「宝鐘の海賊団」每回合只能使用一次。』的限制條件已經生效，在同一回合中無法再次使用Bloom效果「宝鐘の海賊団」。",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "我讓自己舞台上的Debutホロメン Bloom成1stホロメン。之後，使用了hBP06-090〈ブルームステージ〉，再讓該1stホロメン Bloom成另一位1stホロメン。若本回合曾使用hBP06-008〈夏色まつり〉的SP推し技能「絶対勝ちたい！！！！！！！」，那能否再使用hBP06-090〈ブルームステージ〉讓這位1stホロメン再次Bloom？",
+            "answer": "不行，無法再Bloom。hBP06-090〈ブルームステージ〉僅能讓下方卡片為Debutホロメン的1stホロメン再進行一次Bloom。",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "id": {
+        "name": "ブルームステージ",
+        "abilityText": "Ambil 2 kartu dari dek sendiri. Setelah itu, jika Life-mu 4 atau kurang, kamu dapat menggunakan satu 1st Holomen yang Bloom dari Holomen Debut pada giliran ini, lalu Bloom sekali lagi dengan menggunakan Holomen dari tanganmu.\n\nLIMITED: Hanya bisa digunakan 1 kali per giliran.",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "Aku melakukan Bloom pada 〈宝鐘マリン〉 Holomen Debut di stage-ku menjadi hBP02-032〈宝鐘マリン〉. Pada saat itu, aku tidak menggunakan Bloom Effect “宝鐘の海賊団”. Setelah itu, di giliran yang sama, aku menggunakan hBP06-090〈ブルームステージ〉 untuk melakukan Bloom lagi pada hBP02-032〈宝鐘マリン〉 menjadi hBP02-032〈宝鐘マリン〉 sekali lagi. Apakah aku bisa menggunakan Bloom Effect “宝鐘の海賊団” pada Bloom kedua ini?",
+            "answer": "Tidak, tidak bisa. Bloom Effect semuanya bersifat wajib diaktifkan, jadi dianggap bahwa kamu sudah menggunakan Bloom Effect “宝鐘の海賊団” pada Bloom pertama. Karena itu, efek ‘Bloom Effect “宝鐘の海賊団” milikmu hanya bisa digunakan sekali per giliran.’ tetap berlaku, sehingga kamu tidak bisa menggunakan Bloom Effect “宝鐘の海賊団” lagi di giliran yang sama.",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "Aku melakukan Bloom Holomen Debut di stage-ku menjadi 1st Holomen. Setelah itu, aku menggunakan hBP06-090〈ブルームステージ〉 untuk Bloom 1st Holomen tersebut menjadi 1st Holomen lain. Jika aku menggunakan skill SP Oshi “絶対勝ちたい！！！！！！！” dari hBP06-008〈夏色まつり〉 pada giliran ini, apakah aku bisa menggunakan hBP06-090〈ブルームステージ〉 untuk Bloom lagi 1st Holomen tersebut?",
+            "answer": "Tidak, tidak bisa. hBP06-090〈ブルームステージ〉 hanya dapat melakukan Bloom sekali lagi untuk 1st Holomen yang di bawahnya terdapat kartu Holomen Debut.",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "ko": {
+        "name": "ブルームステージ",
+        "abilityText": "자신의 덱에서 카드 2장을 뽑는다. 그 후, 자신의 라이프가 4 이하라면, 이번 턴에 Debut 홀로멘에서 Bloom한 1st 홀로멘 1명을, 자신의 손패에 있는 홀로멘을 사용하여 한 번 더 Bloom할 수 있다.\n\nLIMITED: 턴당 1장만 사용할 수 있다.",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "자신의 스테이지에 있는 Debut 홀로멘 〈宝鐘マリン〉을 hBP02-032〈宝鐘マリン〉으로 Bloom했다. 이때 블룸 이펙트 「宝鐘の海賊団」을 사용하지 않았다. 그 후, 같은 턴 중에 hBP06-090〈ブルームステージ〉를 사용해, hBP02-032〈宝鐘マリン〉을 다시 한 번 hBP02-032〈宝鐘マリン〉으로 Bloom했다. 이 두 번째 Bloom 때, 블룸 이펙트 「宝鐘の海賊団」을 사용할 수 있나요?",
+            "answer": "아니요, 사용할 수 없습니다. 블룸 이펙트는 모두 강제 발동이기 때문에 이미 첫 번째 Bloom에서 블룸 이펙트 「宝鐘の海賊団」을 사용한 것으로 간주됩니다. 따라서 『자신의 블룸 이펙트 「宝鐘の海賊団」은 턴당 1번만 사용할 수 있다.』가 적용되며, 같은 턴 동안 블룸 이펙트 「宝鐘の海賊団」은 사용할 수 없습니다.",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "자신의 스테이지에 있는 Debut 홀로멘을 1st 홀로멘으로 Bloom했다. 그 후, hBP06-090〈ブルームステージ〉를 사용해, 이 1st 홀로멘을 다른 1st 홀로멘으로 Bloom했다. 이 턴에 hBP06-008〈夏色まつり〉의 SP 오시 스킬 「絶対勝ちたい！！！！！！！」를 사용한 경우, hBP06-090〈ブルームステージ〉를 사용해 이 1st 홀로멘을 한 번 더 Bloom할 수 있나요?",
+            "answer": "아니요, 할 수 없습니다. hBP06-090〈ブルームステージ〉는 바로 아래에 있는 카드가 Debut 홀로멘인 1st 홀로멘만 한 번 더 Bloom할 수 있습니다.",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "th": {
+        "name": "ブルームステージ",
+        "abilityText": "จั่วการ์ดจากเด็คของตัวเอง 2 ใบ หลังจากนั้น ถ้าชีวิตของตัวเองเหลือ 4 หรือน้อยกว่า สามารถทำให้ 1st โฮโลเมน 1 คนที่ Bloom จากโฮโลเมน Debut ในเทิร์นนี้ Bloom อีกครั้งได้ โดยใช้โฮโลเมนจากมือของตัวเอง\n\nLIMITED: ใช้ได้เพียง 1 ใบต่อเทิร์นเท่านั้น",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "ฉันได้ทำให้〈宝鐘マリン〉โฮโลเมน Debut บนสเตจของฉัน Bloom ไปเป็น hBP02-032〈宝鐘マリン〉 ในตอนนั้นไม่ได้ใช้ Bloom Effect “宝鐘の海賊団” หลังจากนั้น ในเทิร์นเดียวกันได้ใช้ hBP06-090〈ブルームステージ〉 แล้วทำให้ hBP02-032〈宝鐘マリン〉 Bloom ไปเป็น hBP02-032〈宝鐘マリン〉 อีกครั้ง ในการ Bloom ครั้งที่สองนี้ จะสามารถใช้ Bloom Effect “宝鐘の海賊団” ได้หรือไม่？",
+            "answer": "ไม่ได้ ไม่สามารถใช้ได้ เพราะ Bloom Effect เป็นการแสดงผลแบบบังคับทั้งหมด ดังนั้นใน Bloom ครั้งแรกถือว่าได้ใช้ Bloom Effect “宝鐘の海賊団” ไปแล้ว ทำให้เงื่อนไข『Bloom Effect “宝鐘の海賊団” ของตัวเอง ใช้ได้เพียง 1 ครั้งต่อเทิร์น』มีผลอยู่ ดังนั้นภายในเทิร์นเดียวกันจะไม่สามารถใช้ Bloom Effect “宝鐘の海賊団” ได้อีก",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "ฉันได้ทำให้โฮโลเมน Debut บนสเตจของฉัน Bloom ไปเป็นโฮโลเมน 1st หลังจากนั้นใช้ hBP06-090〈ブルームステージ〉 ทำให้โฮโลเมน 1st นี้ Bloom ไปเป็นโฮโลเมน 1st ตัวอื่น ถ้าในเทิร์นนี้ได้ใช้สกิล SP 推し ของ hBP06-008〈夏色まつり〉 “絶対勝ちたい！！！！！！！” แล้ว จะสามารถใช้ hBP06-090〈ブルームステージ〉 เพื่อทำให้โฮโลเมน 1st นี้ Bloom อีกครั้งได้หรือไม่？",
+            "answer": "ไม่ได้ ไม่สามารถทำได้ hBP06-090〈ブルームステージ〉 สามารถทำให้โฮโลเมน 1st Bloom อีกครั้งได้เฉพาะในกรณีที่การ์ดที่อยู่ด้านล่างสุดเป็นโฮโลเมน Debut เท่านั้น",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      },
+      "es": {
+        "name": "ブルームステージ",
+        "abilityText": "Roba 2 cartas de tu mazo. Después, si tu vida es 4 o menos, puedes hacer que uno de tus Holomen de 1ra que hizo Bloom desde un Holomen Debut en este turno haga Bloom otra vez usando un Holomen de tu mano.\n\nLIMITED: Solo puedes usar 1 por turno.",
+        "qa_items": [
+          {
+            "title": "Q560（2026.01.16）",
+            "question": "Hice que mi〈宝鐘マリン〉 Holomen Debut en el escenario hiciera Bloom hacia hBP02-032〈宝鐘マリン〉. En ese momento, no usé el Bloom Effect “宝鐘の海賊団”. Luego, durante el mismo turno, usé hBP06-090〈ブルームステージ〉 para hacer que hBP02-032〈宝鐘マリン〉 hiciera Bloom de nuevo hacia hBP02-032〈宝鐘マリン〉. ¿Puedo usar el Bloom Effect “宝鐘の海賊団” en este segundo Bloom?",
+            "answer": "No, no puedes. Los Bloom Effects se activan obligatoriamente, por lo que en el primer Bloom ya se considera que usaste el Bloom Effect “宝鐘の海賊団”. Por lo tanto, el efecto “Tu Bloom Effect ‘宝鐘の海賊団’ solo puede usarse una vez por turno.” está activo, y no puedes usar el Bloom Effect “宝鐘の海賊団” nuevamente durante el mismo turno.",
+            "related_cards": {
+              "raw_html": "[hBP02-032 ： 宝鐘マリン]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP02-032",
+                "hBP06-090"
+              ]
+            }
+          },
+          {
+            "title": "Q559（2026.01.16）",
+            "question": "Hice que mi Holomen Debut en el escenario hiciera Bloom hacia un Holomen de 1ra. Luego usé hBP06-090〈ブルームステージ〉 para hacer que este Holomen de 1ra hiciera Bloom hacia otro Holomen de 1ra. Si durante este turno usé la habilidad SP推し “絶対勝ちたい！！！！！！！” de hBP06-008〈夏色まつり〉, ¿puedo usar hBP06-090〈ブルームステージ〉 para hacer que este Holomen de 1ra haga Bloom nuevamente?",
+            "answer": "No, no puedes. hBP06-090〈ブルームステージ〉 solo puede hacer que un Holomen de 1ra, cuyo Holomen directamente debajo sea un Holomen Debut, haga Bloom otra vez.",
+            "related_cards": {
+              "raw_html": "[hBP06-008 ： 夏色まつり]\n[hBP06-090 ： ブルームステージ]",
+              "card_number": [
+                "hBP06-008",
+                "hBP06-090"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "cardNumber": "hBP06-090",
+    "imagePath": "card_images/default/hBP06-090_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP06-090_SR.png",
+    "cardTypeCode": "supportEventLimited",
+    "rarityCode": "SR",
+    "cardSets": [
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "おるだん"
+  },
+  {
     "id": "2129",
     "translations": {
       "ja": {
@@ -107344,6 +108287,450 @@
     }
   },
   {
+    "id": "2131",
+    "translations": {
+      "ja": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "笑顔になーーれっ"
+          }
+        ],
+        "keyword": {
+          "name": "PONしたらその分",
+          "effect": "自分のデッキの上から3枚を見る。その中から、#0期生を持つホロメン1枚を公開し、手札に加える。そして残ったカードを好きな順でデッキの下に戻す。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "Turn That Frown Upside Down!"
+          }
+        ],
+        "keyword": {
+          "name": "For Each PON",
+          "effect": "Look at the top 3 cards of your deck. Reveal 1 Holomen with #0期生 from among them and add it to your hand. Then, place the remaining cards on the bottom of your deck in any order."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "變得笑容滿滿——吧！"
+          }
+        ],
+        "keyword": {
+          "name": "PONしたらその分",
+          "effect": "從自己的牌庫上方查看3張牌，從中公開1張具有#0期生的Holomen，加入手牌。然後將剩下的卡以任意順序放回牌庫底。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "Tersenyumlahーー!"
+          }
+        ],
+        "keyword": {
+          "name": "Untuk setiap kali PON",
+          "effect": "Lihat 3 kartu teratas dari dek sendiri. Dari antara kartu-kartu itu, ungkapkan 1 Holomen yang memiliki #0期生 dan tambahkan ke tanganmu. Lalu, kembalikan sisa kartu ke bagian bawah dek dalam urutan sesukamu."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "웃는 얼굴이 되ーー라!"
+          }
+        ],
+        "keyword": {
+          "name": "PON하면 그만큼",
+          "effect": "자신의 덱 위에서 카드 3장을 본다. 그중에서 #0期生을 가진 홀로멘 1장을 공개하고, 패에 넣는다. 나머지 카드는 원하는 순서로 덱 아래로 돌려보낸다."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "ยิ้มเข้าไว้ーーนะっ"
+          }
+        ],
+        "keyword": {
+          "name": "เมื่อ PON แล้วตามจำนวนนั้น",
+          "effect": "ดูไพ่ 3 ใบจากด้านบนของเด็คของตัวเอง จากนั้นเปิดเผยการ์ดโฮโลเม็มที่มี #0期生 1 ใบแล้วเพิ่มเข้ามือ และนำการ์ดที่เหลือใส่กลับไปใต้เด็คในลำดับที่ต้องการ"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "ロボ子さん",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#シューター"
+        ],
+        "arts": [
+          {
+            "name": "¡Sonríe mucho!"
+          }
+        ],
+        "keyword": {
+          "name": "PONしたらその分",
+          "effect": "Mira las 3 cartas superiores de tu mazo. Revela 1 carta de Holomem con #0期生 de entre ellas y añádela a tu mano. Luego coloca las cartas restantes en la parte inferior del mazo en el orden que prefieras."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP03-059",
+    "imagePath": "card_images/default/hBP03-059_P.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hBP03-059_P.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "purple"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 130,
+    "tags": [
+      "JP",
+      "0期生",
+      "シューター"
+    ],
+    "rarityCode": "P",
+    "cardSets": [
+      "PRカード"
+    ],
+    "illustrator": "兎未枝",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 40
+      }
+    ],
+    "keyword": {
+      "type": "ブルームエフェクト",
+      "typeCode": "bloom_effect"
+    }
+  },
+  {
+    "id": "2132",
+    "translations": {
+      "ja": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "このホロメンに赤エールと青エールが付いているなら、自分のアーカイブのエール2枚をこのホロメンに送れる。どちらか1色しか付いていないなら、自分のアーカイブのエール1枚をこのホロメンに送れる。"
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "このホロメンのエールすべてをアーカイブする。"
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "自分の赤エールが1枚付いているhBP05-037〈星街すいせい〉がアーツ「Non-Limit Boost」を使い、アーカイブから青エールを送りました。この場合、赤エールと青エールが付いていることにより、hBP05-037〈星街すいせい〉にアーカイブからエールを2枚送ることはできますか？",
+            "answer": "いいえ、できません。",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "en": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "If this Holomen has both a Red Cheer and a Blue Cheer attached, you may send 2 Cheers from your Archive to this Holomen. If it only has one color attached, you may send 1 Cheer from your Archive to this Holomen."
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "Archive all Cheers attached to this Holomen."
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454 (2025.09.12)",
+            "question": "If your hBP05-037〈星街すいせい〉 with 1 Red Cheer attached uses the Arts “Non-Limit Boost” and sends a Blue Cheer from the Archive, can you send 2 Cheers from the Archive to hBP05-037〈星街すいせい〉 because it now has both a Red Cheer and a Blue Cheer attached?",
+            "answer": "No, you cannot.",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "tc": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "如果這位Holo成員同時附有紅色應援與藍色應援，則可以從自己的檔案區域將2張應援送給這位Holo成員；若只附有其中一種顏色，則可以從自己的檔案區域將1張應援送給這位Holo成員。"
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "將這位Holo成員所有的應援放入檔案區域。"
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "自己附有1張紅色應援的 hBP05-037〈星街すいせい〉使用了藝術「Non-Limit Boost」，並從檔案區域送出藍色應援。在這種情況下，因為附有紅色與藍色應援，是否可以從檔案區域再送出2張應援給 hBP05-037〈星街すいせい〉？",
+            "answer": "不，可以。",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "id": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "Jika holomen ini memiliki Cheer merah dan Cheer biru, kamu dapat mengirim 2 kartu Cheer dari arsipmu ke holomen ini. Jika hanya memiliki salah satu warna, kamu dapat mengirim 1 kartu Cheer dari arsipmu ke holomen ini."
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "Arsip semua Cheer yang terpasang pada holomen ini."
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "〈星街すいせい〉 (hBP05-037) milikku memiliki 1 Cheer merah terpasang dan menggunakan Arts “Non-Limit Boost” untuk mengirim Cheer biru dari arsip. Dalam situasi ini, karena ia memiliki Cheer merah dan biru, apakah bisa mengirim total 2 kartu Cheer dari arsip ke 〈星街すいせい〉 (hBP05-037)?",
+            "answer": "Tidak, tidak bisa.",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "ko": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "이 홀로멘에게 빨강 에일과 파랑 에일이 모두 붙어 있다면, 자신의 아카이브에서 에일 2장을 이 홀로멘에게 보낼 수 있다. 한쪽 색만 붙어 있다면, 자신의 아카이브에서 에일 1장을 이 홀로멘에게 보낼 수 있다."
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "이 홀로멘의 모든 에일을 아카이브한다."
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "자신의 빨강 에일 1장이 붙어 있는 hBP05-037〈星街すいせい〉가 아츠 「Non-Limit Boost」를 사용하여 아카이브에서 파랑 에일을 보냈습니다. 이 경우, 빨강 에일과 파랑 에일이 붙어 있게 되어, hBP05-037〈星街すいせい〉에게 아카이브에서 에일을 2장 보낼 수 있습니까?",
+            "answer": "아니요, 할 수 없습니다.",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "th": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "ถ้าโฮโลเมมเบอร์นี้มีเอลสีแดงและเอลสีน้ำเงินติดอยู่ คุณสามารถส่งเอล 2 ใบจากโซนจดหมายเหตุของคุณไปให้โฮโลเมมเบอร์นี้ได้ ถ้ามีเอลเพียงสีใดสีหนึ่งเท่านั้น คุณสามารถส่งเอล 1 ใบจากโซนจดหมายเหตุของคุณไปให้โฮโลเมมเบอร์นี้ได้"
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "เก็บเอลทั้งหมดที่ติดอยู่กับโฮโลเมมเบอร์นี้เข้าโซนจดหมายเหตุ"
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "〈星街すいせい〉 hBP05-037 ของคุณมีเอลสีแดงติดอยู่ 1 ใบ ใช้สกิลอาร์ต “Non-Limit Boost” เพื่อส่งเอลสีน้ำเงินจากโซนจดหมายเหตุมา ในกรณีนี้ เนื่องจากมีเอลสีแดงและเอลสีน้ำเงินติดอยู่ คุณสามารถส่งเอล 2 ใบจากโซนจดหมายเหตุมายัง〈星街すいせい〉 hBP05-037 ได้หรือไม่？",
+            "answer": "ไม่สามารถทำได้",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      },
+      "es": {
+        "name": "星街すいせい",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Non-Limit Boost",
+            "effect": "Si esta Holomen tiene tanto Efecto Rojo como Efecto Azul, puedes enviar 2 cartas de Efecto desde tu zona de Archivo a esta Holomen. Si solo tiene uno de los dos colores, puedes enviar 1 carta de Efecto desde tu Archivo a esta Holomen."
+          },
+          {
+            "name": "Shout in Crisis",
+            "effect": "Archiva todos los Efectos de esta Holomen."
+          }
+        ],
+        "qa_items": [
+          {
+            "title": "Q454（2025.09.12）",
+            "question": "Tienes una carta hBP05-037〈星街すいせい〉 con un Efecto Rojo y activas el arte «Non-Limit Boost» para enviar un Efecto Azul desde tu Archivo. En este caso, ¿puedes enviar 2 Efectos desde el Archivo a hBP05-037〈星街すいせい〉 por tener ambos colores, rojo y azul?",
+            "answer": "No, no puedes hacerlo.",
+            "related_cards": {
+              "raw_html": "[hBP05-037 ： 星街すいせい]",
+              "card_number": [
+                "hBP05-037"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "cardNumber": "hBP05-037",
+    "imagePath": "card_images/default/hBP05-037_P.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hPR/hBP05-037_P.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "red"
+    ],
+    "bloomLevelCode": "second",
+    "hp": 210,
+    "tags": [
+      "JP",
+      "0期生",
+      "歌"
+    ],
+    "rarityCode": "P",
+    "cardSets": [
+      "PRカード"
+    ],
+    "illustrator": "胡宮",
+    "batonTouchCount": 2,
+    "batonTouchTypes": [
+      "null",
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 2,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 50,
+        "specialTargets": [
+          "purple"
+        ],
+        "specialValues": [
+          50
+        ]
+      },
+      {
+        "costCount": 5,
+        "costTypes": [
+          "null",
+          "null",
+          "null",
+          "null"
+        ],
+        "damage": 220,
+        "specialTargets": [
+          "purple"
+        ],
+        "specialValues": [
+          50
+        ]
+      }
+    ]
+  },
+  {
     "id": "22",
     "translations": {
       "ja": {
@@ -148214,6 +149601,266 @@
     }
   },
   {
+    "id": "2136",
+    "translations": {
+      "ja": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "今年も見守っててね！"
+          }
+        ],
+        "keyword": {
+          "name": "アイドルとして成長した姿",
+          "effect": "自分のエールデッキから、自分のステージの#ゲーマーズを持つホロメン1人と同色のエール1枚を公開し、自分のホロメンに送る。そしてエールデッキをシャッフルする。"
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "hBP02-026〈大神ミオ〉の《ブルームエフェクト》〈アイドルとして成長した姿〉を使った時、#ゲーマーズを持つホロメン1人と同色ではないホロメンにエールを送ることはできますか？",
+            "answer": "はい、可能です。エールデッキから公開するエールは#ゲーマーズを持つホロメン1人と同色のエールでなければいけませんが、送る対象は自由に選ぶことができます。",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "en": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "Keep watching over me this year too!"
+          }
+        ],
+        "keyword": {
+          "name": "The figure who has grown as an idol",
+          "effect": "Reveal 1 Cheer from your Cheer Deck that shares the same color as a Holomen on your stage with #ゲーマーズ, then send it to one of your Holomen. Then, shuffle your Cheer Deck."
+        },
+        "qa_items": [
+          {
+            "title": "Q241 (2024.12.12)",
+            "question": "When using the 《Bloom Effect》〈The figure who has grown as an idol〉 of hBP02-026〈大神ミオ〉, can you send the Cheer to a Holomen that is not the same color as the #ゲーマーズ Holomen you revealed for the effect?",
+            "answer": "Yes, you can. The Cheer you reveal from your Cheer Deck must match the color of a Holomen with #ゲーマーズ on your stage, but you can freely choose which Holomen to send it to.",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "tc": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "今年也請多多守護我喔！"
+          }
+        ],
+        "keyword": {
+          "name": "作為偶像而成長的姿態",
+          "effect": "從自己的應援牌庫中，公開一張與自己舞台上擁有#ゲーマーズ標籤的其中一位Holomen相同顏色的應援，並將該應援送給自己的Holomen。然後將應援牌庫洗牌。"
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "使用 hBP02-026〈大神ミオ〉的《綻放效果》〈作為偶像而成長的姿態〉時，可以把應援送給與#ゲーマーズ Holomen 顏色不同的Holomen嗎？",
+            "answer": "可以。從應援牌庫中公開的應援，必須是與舞台上持有#ゲーマーズ標籤的Holomen其中一位相同顏色的應援，但送出的對象可以自由選擇。",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "id": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "Tahun ini juga, tolong awasi aku ya!"
+          }
+        ],
+        "keyword": {
+          "name": "Wujud yang telah tumbuh sebagai idol",
+          "effect": "Perlihatkan 1 kartu Cheer dari dek Cheers milikmu yang memiliki warna yang sama dengan salah satu Holomen di panggungmu yang memiliki #ゲーマーズ, lalu kirimkan kartu itu ke Holomen milikmu. Setelah itu, kocok kembali dek Cheer-mu."
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "Ketika menggunakan 《Bloom Effect》〈Wujud yang telah tumbuh sebagai idol〉 dari hBP02-026〈大神ミオ〉, apakah bisa mengirim Cheer ke Holomen yang tidak memiliki warna yang sama dengan Holomen yang memiliki #ゲーマーズ?",
+            "answer": "Ya, bisa. Cheer yang diungkap dari dek Cheer harus memiliki warna yang sama dengan salah satu Holomen yang memiliki #ゲーマーズ, tetapi kamu bebas memilih kepada siapa Cheer itu akan dikirim.",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "ko": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "올해도 지켜봐 줘!"
+          }
+        ],
+        "keyword": {
+          "name": "아이돌로서 성장한 모습",
+          "effect": "자신의 응원 덱에서, 자신의 스테이지에 있는 #ゲーマーズ를 가진 홀로멘 1명과 같은 색의 응원 카드 1장을 공개하고, 자신의 홀로멘에게 보낸다. 그런 다음 응원 덱을 셔플한다."
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "hBP02-026〈大神ミオ〉의 《블룸 이펙트》〈아이돌로서 성장한 모습〉을 사용할 때, #ゲーマーズ를 가진 홀로멘 1명과 같은 색이 아닌 홀로멘에게 응원을 보낼 수 있나요?",
+            "answer": "네, 가능합니다. 응원 덱에서 공개하는 응원 카드는 #ゲーマーズ를 가진 홀로멘 1명과 같은 색의 응원 카드여야 하지만, 보낼 대상은 자유롭게 선택할 수 있습니다.",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "th": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "ปีนี้ก็ดูแลกันอีกนะ!"
+          }
+        ],
+        "keyword": {
+          "name": "รูปลักษณ์ที่เติบโตขึ้นในฐานะไอดอล",
+          "effect": "เปิดเผยการ์ดเอิร์ลจำนวน 1 ใบจากกองเอิร์ลของตัวเองที่มีสีเดียวกับโฮโลเมมเบอร์ 1 คนบนสเตจของตัวเองที่มี #ゲーマーズ จากนั้นส่งเอิร์ลนั้นให้กับโฮโลเมมเบอร์ของตัวเอง และสับกองเอิร์ลของตัวเอง"
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "เมื่อใช้《บลูมเอฟเฟกต์》〈รูปลักษณ์ที่เติบโตขึ้นในฐานะไอดอล〉ของ hBP02-026〈大神ミオ〉 สามารถส่งเอิร์ลให้กับโฮโลเมมเบอร์ที่ไม่ได้มีสีเดียวกับโฮโลเมมเบอร์ที่มี #ゲーマーズ ได้ไหม?",
+            "answer": "ได้ค่ะ เอิร์ลที่เปิดจากกองเอิร์ลต้องเป็นเอิร์ลที่มีสีเดียวกับโฮโลเมมเบอร์ที่มี #ゲーマーズ แต่เป้าหมายที่จะส่งเอิร์ลให้สามารถเลือกได้อย่างอิสระ",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      },
+      "es": {
+        "name": "大神ミオ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ",
+          "#料理"
+        ],
+        "arts": [
+          {
+            "name": "¡Cuida de mí también este año!"
+          }
+        ],
+        "keyword": {
+          "name": "Figura que ha crecido como ídolo",
+          "effect": "Revela desde tu mazo de Ánimos una carta de Ánimo del mismo color que una Holomen con #ゲーマーズ en tu escenario, y envíala a una de tus Holomen. Luego baraja tu mazo de Ánimos."
+        },
+        "qa_items": [
+          {
+            "title": "Q241（2024.12.12）",
+            "question": "Cuando usas el 《Bloom Effect》〈Figura que ha crecido como ídolo〉 de hBP02-026〈大神ミオ〉, ¿puedes enviar el Ánimo a una Holomen que no sea del mismo color que la Holomen con #ゲーマーズ?",
+            "answer": "Sí, es posible. El Ánimo que reveles desde tu mazo de Ánimos debe ser del mismo color que una Holomen con #ゲーマーズ en tu escenario, pero puedes elegir libremente a cuál Holomen enviarlo.",
+            "related_cards": {
+              "raw_html": "[hBP02-026 ： 大神ミオ]",
+              "card_number": [
+                "hBP02-026"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "cardNumber": "hBP02-026",
+    "imagePath": "card_images/default/hBP02-026_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP02-026_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "green"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 100,
+    "tags": [
+      "JP",
+      "ゲーマーズ",
+      "ケモミミ",
+      "料理"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "【使用可能カード】エントリーカップ「ディーヴァフィーバー」",
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "ゆゆはる",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 20
+      }
+    ],
+    "keyword": {
+      "type": "ブルームエフェクト",
+      "typeCode": "bloom_effect"
+    }
+  },
+  {
     "id": "294",
     "translations": {
       "ja": {
@@ -171023,6 +172670,181 @@
       "ブースターパック「エンチャントレガリア」"
     ],
     "illustrator": "81",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 30
+      }
+    ],
+    "keyword": {
+      "type": "ギフト",
+      "typeCode": "gift"
+    }
+  },
+  {
+    "id": "2137",
+    "translations": {
+      "ja": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "まだまだ遊べるよね～？",
+            "effect": "このホロメンの青エール1枚をアーカイブできる:相手のセンターホロメンとバックホロメン1人に特殊ダメージ10を与える。"
+          }
+        ],
+        "keyword": {
+          "name": "僕でよくな～い？",
+          "effect": "[コラボポジション限定]自分の#ゲーマーズを持つセンターホロメンがいる間、相手のホロメンのアーツは、自分のコラボホロメンしか対象にできない。ただし、特殊ダメージは除く。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "まだまだ遊べるよね～？",
+            "effect": "Archive 1 blue Cheer from this Holomem: Deal 10 special damage to 1 of your opponent's Center Holomems and 1 of their Back Holomems."
+          }
+        ],
+        "keyword": {
+          "name": "僕でよくな～い？",
+          "effect": "[Collab Position Only] While you have a Center Holomem with #ゲーマーズ, your opponent’s Holomems’ Arts can only target your Collab Holomems. However, this does not apply to special damage."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "還能再玩一下吧～？",
+            "effect": "將這位ホロメン的一張藍色應援牌存入檔案區域：對手的我方中心ホロメン與後衛ホロメン各1人造成10點特殊傷害。"
+          }
+        ],
+        "keyword": {
+          "name": "用我不就好了～？",
+          "effect": "[合作位置限定] 當自己的中心ホロメン具有#ゲーマーズ標籤時，對手的ホロメン的Arts只能以自己的合作ホロメン為對象，但特殊傷害除外。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "まだまだ遊べるよね～？",
+            "effect": "Arsip 1 kartu biru Yell dari Holomen ini: berikan 10 damage spesial kepada 1 Holomen pusat dan 1 Holomen belakang milik lawan."
+          }
+        ],
+        "keyword": {
+          "name": "僕でよくな～い？",
+          "effect": "[Terbatas pada posisi kolaborasi] Selama kamu memiliki Holomen pusat dengan tag #ゲーマーズ, Art Holomen lawan hanya bisa menargetkan Holomen kolaborasi milikmu saja. Namun, damage spesial tidak termasuk dalam batasan ini."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "まだまだ遊べるよね～？",
+            "effect": "이 홀로멘의 파란색 응원 1장을 아카이브할 수 있다: 상대의 센터 홀로멘과 백 홀로멘 1명에게 특수 데미지 10을 준다."
+          }
+        ],
+        "keyword": {
+          "name": "僕でよくな～い？",
+          "effect": "[콜라보 포지션 한정] 자신의 #ゲーマーズ 태그를 가진 센터 홀로멘이 있는 동안, 상대 홀로멘의 아츠는 자신의 콜라보 홀로멘만을 대상으로 할 수 있다. 단, 특수 데미지는 제외한다."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "まだまだ遊べるよね～？",
+            "effect": "สามารถเก็บบลูเอล์ 1 ใบของโฮโลเมมเบอร์นี้ไว้ในพื้นที่เก็บถาวร: สร้างความเสียหายพิเศษ 10 แก่โฮโลเมมเบอร์เซ็นเตอร์และโฮโลเมมเบอร์แบ็กของคู่ต่อสู้ฝั่งละ 1 คน"
+          }
+        ],
+        "keyword": {
+          "name": "僕でよくな～い？",
+          "effect": "[จำกัดตำแหน่งคอลแลบ] ขณะมีโฮโลเมมเบอร์เซ็นเตอร์ที่มีแท็ก #ゲーマーズ อยู่ ฝ่ายตรงข้ามจะสามารถเลือกเป้าหมายของอาร์ตได้เฉพาะโฮโลเมมเบอร์คอลแลบของตนเองเท่านั้น ยกเว้นความเสียหายพิเศษ"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "猫又おかゆ",
+        "tags": [
+          "#JP",
+          "#ゲーマーズ",
+          "#ケモミミ"
+        ],
+        "arts": [
+          {
+            "name": "Todavía podemos seguir jugando, ¿verdad～?",
+            "effect": "Puedes archivar 1 carta de apoyo azul de este Holomen: inflige 10 de daño especial al Holomen central y a un Holomen de respaldo del oponente."
+          }
+        ],
+        "keyword": {
+          "name": "¿No estaría bien que fuera yo～?",
+          "effect": "[Limitado a posición de colaboración] Mientras tengas un Holomen central con #ゲーマーズ, los Artes de los Holomen del oponente solo pueden elegir como objetivo a tus Holomen de colaboración. Sin embargo, el daño especial no se ve afectado por esta restricción."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP05-043",
+    "imagePath": "card_images/default/hBP05-043_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP05-043_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "blue"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 140,
+    "tags": [
+      "JP",
+      "ゲーマーズ",
+      "ケモミミ"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "【使用可能カード】エントリーカップ「ディーヴァフィーバー」",
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "神岡ちろる",
     "batonTouchCount": 1,
     "batonTouchTypes": [
       "null"
@@ -194880,6 +196702,174 @@
       "ブースターパック「ディーヴァフィーバー」"
     ],
     "illustrator": "古弥月",
+    "batonTouchCount": 1,
+    "batonTouchTypes": [
+      "null"
+    ],
+    "arts": [
+      {
+        "costCount": 1,
+        "costTypes": [
+          "null"
+        ],
+        "damage": 40
+      }
+    ],
+    "keyword": {
+      "type": "コラボエフェクト",
+      "typeCode": "collab_effect"
+    }
+  },
+  {
+    "id": "2135",
+    "translations": {
+      "ja": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "音楽と歌うことが大好き！"
+          }
+        ],
+        "keyword": {
+          "name": "仮想世界の伴走する歌姫",
+          "effect": "自分のホロメン1人のHP30回復。その後、自分のステージのホロメン1人を選ぶ。このターンの間、選んだホロメンのアーツ+10。"
+        },
+        "qa_items": []
+      },
+      "en": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Loves music and singing!"
+          }
+        ],
+        "keyword": {
+          "name": "The Songstress Who Runs Beside the Virtual World",
+          "effect": "Restore 30 HP to one of your Holomems. Then choose one Holomem on your stage. That Holomem gets +10 Arts this turn."
+        },
+        "qa_items": []
+      },
+      "tc": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "最喜歡音樂與唱歌！"
+          }
+        ],
+        "keyword": {
+          "name": "虛擬世界中並肩前行的歌姬",
+          "effect": "回復我方1位holomen 30點HP。之後，選擇我方舞台上的1位holomen。本回合中，該holomen的藝術值+10。"
+        },
+        "qa_items": []
+      },
+      "id": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "Sangat suka musik dan bernyanyi!"
+          }
+        ],
+        "keyword": {
+          "name": "Diva yang berlari bersama di dunia virtual",
+          "effect": "Pulihkan 30 HP dari 1 holomen milikmu. Setelah itu, pilih 1 holomen di panggungmu. Selama giliran ini, Arts dari holomen yang dipilih bertambah +10."
+        },
+        "qa_items": []
+      },
+      "ko": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "음악과 노래하는 걸 정말 좋아해!"
+          }
+        ],
+        "keyword": {
+          "name": "가상 세계를 함께 달리는 노래의 여신",
+          "effect": "자신의 홀로맨 한 명의 HP를 30 회복한다. 그 후, 자신의 스테이지에 있는 홀로맨 한 명을 선택한다. 이번 턴 동안, 선택한 홀로맨의 아츠 +10."
+        },
+        "qa_items": []
+      },
+      "th": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "ชอบร้องเพลงและดนตรีมาก!"
+          }
+        ],
+        "keyword": {
+          "name": "นักร้องสาวผู้ร่วมเดินทางในโลกเสมือนจริง",
+          "effect": "ฟื้นฟู HP ของโฮโลเมンฝ่ายเราคนหนึ่ง 30 จากนั้นเลือกโฮโลเมนบนสเตจของฝ่ายเรา 1 คน โฮโลเมนที่เลือกจะได้รับค่า Arts +10 จนจบเทิร์นนี้"
+        },
+        "qa_items": []
+      },
+      "es": {
+        "name": "AZKi",
+        "tags": [
+          "#JP",
+          "#0期生",
+          "#歌"
+        ],
+        "arts": [
+          {
+            "name": "¡Ama cantar y la música!"
+          }
+        ],
+        "keyword": {
+          "name": "La diva que acompaña en el mundo virtual",
+          "effect": "Recupera 30 HP de uno de tus Holomen. Luego elige a un Holomen en tu escenario. Durante este turno, el Arte del Holomen elegido obtiene +10."
+        },
+        "qa_items": []
+      }
+    },
+    "cardNumber": "hBP07-066",
+    "imagePath": "card_images/default/hBP07-066_SR.png",
+    "imageUrl": "https://hololive-official-cardgame.com/wp-content/images/cardlist/hCO01/hBP07-066_SR.png",
+    "cardTypeCode": "character",
+    "colorCodes": [
+      "purple"
+    ],
+    "bloomLevelCode": "first",
+    "hp": 170,
+    "tags": [
+      "JP",
+      "0期生",
+      "歌"
+    ],
+    "rarityCode": "SR",
+    "cardSets": [
+      "【使用可能カード】エントリーカップ「ディーヴァフィーバー」",
+      "オフィシャルホロカコレクション-2025ライブセット-"
+    ],
+    "illustrator": "無糖。",
     "batonTouchCount": 1,
     "batonTouchTypes": [
       "null"
@@ -221655,7 +223645,8 @@
       "ブースターパック「エリートスパーク」",
       "スタートデッキ 黄 不知火フレア",
       "スタートデッキ FLOW GLOW 推し 虎金妃笑虎",
-      "スタートデッキ 推し Justice"
+      "スタートデッキ 推し Justice",
+      "ライブスタートデッキ 大空スバル"
     ],
     "illustrator": "はずき"
   },
