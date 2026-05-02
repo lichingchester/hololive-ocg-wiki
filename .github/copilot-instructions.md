@@ -164,3 +164,7 @@ const response = await apiCall<FilterResponse>("/api/cards/filter", {
 4. Modify Worker response formatting
 
 This project emphasizes **multilingual support**, **performance optimization**, and **dual data strategies** (local vs API) for flexibility.
+
+## General Guidelines
+
+- When making code updates, suggest the git commit message for the updates too.

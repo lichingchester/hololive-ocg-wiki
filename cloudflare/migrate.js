@@ -45,6 +45,29 @@ function hashCard(card) {
   return crypto.createHash("sha256").update(json).digest("hex");
 }
 
+/** Hash card with qa_items stripped — to detect FAQ-only changes */
+function hashCardWithoutQA(card) {
+  const stripped = {
+    ...card,
+    translations: Object.fromEntries(
+      Object.entries(card.translations || {}).map(([locale, t]) => {
+        if (!t) return [locale, t];
+        const { qa_items: _qa, ...rest } = t;
+        return [locale, rest];
+      }),
+    ),
+  };
+  return crypto
+    .createHash("sha256")
+    .update(JSON.stringify(stripped))
+    .digest("hex");
+}
+
+/** Extract best display name from translations */
+function getCardName(card) {
+  return card.translations?.en?.name || card.translations?.ja?.name || null;
+}
+
 // ── File paths ─────────────────────────────────────────────────────────────
 const cloudflareDir = process.cwd();
 const cardsPath = path.join(cloudflareDir, "..", "data", "cards.json");
@@ -79,7 +102,9 @@ function loadPreviousHashes() {
   try {
     return JSON.parse(fs.readFileSync(hashPath, "utf8"));
   } catch {
-    console.warn("Warning: Could not parse cards_hash.json, falling back to full migration.");
+    console.warn(
+      "Warning: Could not parse cards_hash.json, falling back to full migration.",
+    );
     return null;
   }
 }
@@ -87,30 +112,63 @@ function loadPreviousHashes() {
 function saveHashes(cards) {
   const hashes = {};
   cards.forEach((card) => {
-    hashes[card.id] = hashCard(card);
+    hashes[card.id] = {
+      fullHash: hashCard(card),
+      noQaHash: hashCardWithoutQA(card),
+      cardNumber: card.cardNumber || null,
+      imagePath: card.imagePath || null,
+    };
   });
   fs.writeFileSync(hashPath, JSON.stringify(hashes, null, 2));
   return hashes;
 }
 
+/**
+ * Read a hash entry from cards_hash.json.
+ * Supports both old string format and new object format.
+ */
+function readHashEntry(entry) {
+  if (!entry) return null;
+  if (typeof entry === "string") {
+    // Old format: backward compat — noQaHash unknown, treat as changed
+    return {
+      fullHash: entry,
+      noQaHash: null,
+      cardNumber: null,
+      imagePath: null,
+    };
+  }
+  return entry;
+}
+
 function diffCards(cards, prevHashes) {
   const newCards = [];
   const changedCards = [];
+  const qaUpdatedCards = [];
   const currentIds = new Set();
 
   cards.forEach((card) => {
     currentIds.add(card.id);
-    const currentHash = hashCard(card);
-    if (!prevHashes[card.id]) {
+    const currentFullHash = hashCard(card);
+    const prev = readHashEntry(prevHashes[card.id]);
+    if (!prev) {
       newCards.push(card);
-    } else if (prevHashes[card.id] !== currentHash) {
-      changedCards.push(card);
+    } else if (prev.fullHash !== currentFullHash) {
+      const currentNoQaHash = hashCardWithoutQA(card);
+      // If noQaHash is unknown (old format) or actually changed → treat as changed
+      if (!prev.noQaHash || prev.noQaHash !== currentNoQaHash) {
+        changedCards.push(card);
+      } else {
+        qaUpdatedCards.push(card);
+      }
     }
   });
 
-  const removedIds = Object.keys(prevHashes).filter((id) => !currentIds.has(id));
+  const removedIds = Object.keys(prevHashes).filter(
+    (id) => !currentIds.has(id),
+  );
 
-  return { newCards, changedCards, removedIds };
+  return { newCards, changedCards, qaUpdatedCards, removedIds };
 }
 
 // ── SQL generation for a single card ───────────────────────────────────────
@@ -159,12 +217,22 @@ function generateCardStatements(card, artIdBase) {
 
   // Delete child rows for this card (CASCADE from arts handles art_translations,
   // CASCADE from keywords handles keyword_translations)
-  statements.push(`DELETE FROM card_translations WHERE card_id = ${escapeSQL(card.id)};`);
-  statements.push(`DELETE FROM oshi_skills WHERE card_id = ${escapeSQL(card.id)};`);
+  statements.push(
+    `DELETE FROM card_translations WHERE card_id = ${escapeSQL(card.id)};`,
+  );
+  statements.push(
+    `DELETE FROM oshi_skills WHERE card_id = ${escapeSQL(card.id)};`,
+  );
   statements.push(`DELETE FROM arts WHERE card_id = ${escapeSQL(card.id)};`);
-  statements.push(`DELETE FROM keywords WHERE card_id = ${escapeSQL(card.id)};`);
-  statements.push(`DELETE FROM keyword_translations WHERE card_id = ${escapeSQL(card.id)};`);
-  statements.push(`DELETE FROM qa_items WHERE card_id = ${escapeSQL(card.id)};`);
+  statements.push(
+    `DELETE FROM keywords WHERE card_id = ${escapeSQL(card.id)};`,
+  );
+  statements.push(
+    `DELETE FROM keyword_translations WHERE card_id = ${escapeSQL(card.id)};`,
+  );
+  statements.push(
+    `DELETE FROM qa_items WHERE card_id = ${escapeSQL(card.id)};`,
+  );
 
   // ── Arts (core data) ──
   let cardArtsData = [];
@@ -239,7 +307,10 @@ function generateCardStatements(card, artIdBase) {
           ${translation.oshiSkill.cost || card.oshiSkill?.cost || "NULL"},
           ${
             translation.oshiSkill.timingCode || card.oshiSkill?.timingCode
-              ? escapeSQL(translation.oshiSkill.timingCode || card.oshiSkill?.timingCode)
+              ? escapeSQL(
+                  translation.oshiSkill.timingCode ||
+                    card.oshiSkill?.timingCode,
+                )
               : "NULL"
           },
           ${translation.oshiSkill.name ? escapeSQL(translation.oshiSkill.name) : "NULL"},
@@ -260,7 +331,10 @@ function generateCardStatements(card, artIdBase) {
           ${translation.spOshiSkill.cost || card.spOshiSkill?.cost || "NULL"},
           ${
             translation.spOshiSkill.timingCode || card.spOshiSkill?.timingCode
-              ? escapeSQL(translation.spOshiSkill.timingCode || card.spOshiSkill?.timingCode)
+              ? escapeSQL(
+                  translation.spOshiSkill.timingCode ||
+                    card.spOshiSkill?.timingCode,
+                )
               : "NULL"
           },
           ${translation.spOshiSkill.name ? escapeSQL(translation.spOshiSkill.name) : "NULL"},
@@ -303,7 +377,11 @@ function generateCardStatements(card, artIdBase) {
     }
 
     // Art translations
-    if (translation.arts && Array.isArray(translation.arts) && cardArtIds.length > 0) {
+    if (
+      translation.arts &&
+      Array.isArray(translation.arts) &&
+      cardArtIds.length > 0
+    ) {
       translation.arts.forEach((art, artIndex) => {
         if (artIndex < cardArtIds.length && (art.name || art.effect)) {
           statements.push(`
@@ -380,20 +458,25 @@ function getArtIdBase(cardId) {
 let cardsToProcess = [];
 let removedIds = [];
 let mode = "full";
+let diffResult = null;
 
 const prevHashes = FULL_MODE ? null : loadPreviousHashes();
 
 if (prevHashes && !FULL_MODE) {
-  const diff = diffCards(cardsData, prevHashes);
-  cardsToProcess = [...diff.newCards, ...diff.changedCards];
-  removedIds = diff.removedIds;
+  diffResult = diffCards(cardsData, prevHashes);
+  const { newCards, changedCards, qaUpdatedCards } = diffResult;
+  cardsToProcess = [...newCards, ...changedCards, ...qaUpdatedCards];
+  removedIds = diffResult.removedIds;
   mode = "diff";
 
   console.log(`\nDiff mode:`);
-  console.log(`  New cards:     ${diff.newCards.length}`);
-  console.log(`  Changed cards: ${diff.changedCards.length}`);
-  console.log(`  Removed cards: ${removedIds.length}`);
-  console.log(`  Unchanged:     ${cardsData.length - diff.newCards.length - diff.changedCards.length}`);
+  console.log(`  New cards:         ${newCards.length}`);
+  console.log(`  Changed cards:     ${changedCards.length}`);
+  console.log(`  FAQ-only updates:  ${qaUpdatedCards.length}`);
+  console.log(`  Removed cards:     ${removedIds.length}`);
+  console.log(
+    `  Unchanged:         ${cardsData.length - newCards.length - changedCards.length - qaUpdatedCards.length}`,
+  );
 
   if (cardsToProcess.length === 0 && removedIds.length === 0) {
     console.log("\nNo changes detected. Nothing to migrate.");
@@ -415,13 +498,17 @@ if (prevHashes && !FULL_MODE) {
 const estimatedWrites = estimateWrites(cardsToProcess) + removedIds.length;
 const writePercent = ((estimatedWrites / D1_WRITE_LIMIT) * 100).toFixed(1);
 
-console.log(`\nEstimated writes: ${estimatedWrites.toLocaleString()} rows (${writePercent}% of ${D1_WRITE_LIMIT.toLocaleString()} daily limit)`);
+console.log(
+  `\nEstimated writes: ${estimatedWrites.toLocaleString()} rows (${writePercent}% of ${D1_WRITE_LIMIT.toLocaleString()} daily limit)`,
+);
 
 if (estimatedWrites > D1_WRITE_LIMIT * WRITE_WARN_THRESHOLD) {
   const msg = `WARNING: Estimated writes exceed ${(WRITE_WARN_THRESHOLD * 100).toFixed(0)}% of D1 daily limit!`;
   if (STRICT_MODE) {
     console.error(`\n${msg}`);
-    console.error("Aborting due to --strict mode. Use --full without --strict to override.");
+    console.error(
+      "Aborting due to --strict mode. Use --full without --strict to override.",
+    );
     process.exit(1);
   } else {
     console.warn(`\n${msg}`);
@@ -440,10 +527,30 @@ removedIds.forEach((id) => {
 });
 
 // Generate upsert statements for each card
+const skippedCards = [];
 cardsToProcess.forEach((card) => {
+  const requiredFields = [
+    "cardTypeCode",
+    "rarityCode",
+    "imagePath",
+    "imageUrl",
+  ];
+  const missingFields = requiredFields.filter((f) => card[f] == null);
+  if (missingFields.length > 0) {
+    skippedCards.push({ id: card.id, missingFields });
+    return;
+  }
   const artIdBase = getArtIdBase(card.id);
   statements.push(...generateCardStatements(card, artIdBase));
 });
+if (skippedCards.length > 0) {
+  console.warn(
+    `\n⚠️  Skipped ${skippedCards.length} card(s) with missing required fields:`,
+  );
+  skippedCards.forEach(({ id, missingFields }) =>
+    console.warn(`   Card ${id}: missing ${missingFields.join(", ")}`),
+  );
+}
 
 // ── Write output files ─────────────────────────────────────────────────────
 const migrationSQL = statements.join("\n");
@@ -463,11 +570,70 @@ for (let i = 0; i < statements.length; i += batchSize) {
   batchCount++;
 }
 
-console.log(`Created ${batchCount} batch files in migrations/ (batch size: ${batchSize})`);
+console.log(
+  `Created ${batchCount} batch files in migrations/ (batch size: ${batchSize})`,
+);
 
 // ── Save hash file ─────────────────────────────────────────────────────────
 saveHashes(cardsData);
 console.log(`Updated cards_hash.json with ${cardsData.length} card hashes`);
+
+// ── Write public/status.json ───────────────────────────────────────────────
+// Compute all-time skipped (regardless of diff mode) for accurate source stats
+const requiredFieldsList = [
+  "cardTypeCode",
+  "rarityCode",
+  "imagePath",
+  "imageUrl",
+];
+const allSkipped = cardsData.filter((card) =>
+  requiredFieldsList.some((f) => card[f] == null),
+);
+
+function toStatusEntry(card) {
+  return {
+    id: card.id,
+    cardNumber: card.cardNumber || null,
+    imagePath: card.imagePath || null,
+    name: getCardName(card),
+  };
+}
+
+const statusNew = diffResult?.newCards.map(toStatusEntry) ?? [];
+const statusChanged = diffResult?.changedCards.map(toStatusEntry) ?? [];
+const statusQaUpdated = diffResult?.qaUpdatedCards.map(toStatusEntry) ?? [];
+const statusRemoved = (diffResult?.removedIds ?? removedIds).map((id) => {
+  const prev = readHashEntry(prevHashes?.[id]);
+  return {
+    id,
+    cardNumber: prev?.cardNumber ?? null,
+    imagePath: prev?.imagePath ?? null,
+  };
+});
+
+const statusJson = {
+  generatedAt: new Date().toISOString(),
+  mode,
+  source: {
+    total: cardsData.length,
+    valid: cardsData.length - allSkipped.length,
+  },
+  skipped: allSkipped.map((card) => ({
+    id: card.id,
+    cardNumber: card.cardNumber || null,
+    missingFields: requiredFieldsList.filter((f) => card[f] == null),
+  })),
+  diff: {
+    new: statusNew,
+    changed: statusChanged,
+    qaUpdated: statusQaUpdated,
+    removed: statusRemoved,
+  },
+};
+
+const statusPath = path.join(cloudflareDir, "..", "public", "status.json");
+fs.writeFileSync(statusPath, JSON.stringify(statusJson, null, 2));
+console.log(`Written public/status.json`);
 
 // ── Summary ────────────────────────────────────────────────────────────────
 console.log(`\n── Summary ──`);
@@ -476,6 +642,8 @@ console.log(`Cards processed: ${cardsToProcess.length}`);
 console.log(`Cards removed:   ${removedIds.length}`);
 console.log(`SQL statements:  ${statements.length}`);
 console.log(`Batch files:     ${batchCount}`);
-console.log(`Est. writes:     ${estimatedWrites.toLocaleString()} (${writePercent}% of daily limit)`);
+console.log(
+  `Est. writes:     ${estimatedWrites.toLocaleString()} (${writePercent}% of daily limit)`,
+);
 console.log(`\nExecute with: ./run-migration.sh`);
 console.log(`For production:  ./run-migration.sh --env production`);

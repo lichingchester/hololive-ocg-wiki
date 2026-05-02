@@ -562,5 +562,45 @@
       "descriptionWithAuthor": "Hololive OCG牌組「{deckName}」由{author}製作。查看牌組構成：主牌組{mainCount}張卡片，應援牌組{yellCount}張卡片，推し{oshiCount}張卡片。",
       "description": "Hololive OCG牌組「{deckName}」。查看牌組構成：主牌組{mainCount}張卡片，應援牌組{yellCount}張卡片，推し{oshiCount}張卡片。"
     }
+  },
+  "status": {
+    "title": "資料狀態",
+    "description": "卡牌資料庫狀態 — 哪些卡牌是新增、更新或在官方來源中缺失的。",
+    "sourceTotal": "來源總計",
+    "validInDB": "已收錄",
+    "skippedCount": "已跳過",
+    "lastUpdated": "最後更新",
+    "tabs": {
+      "new": "新增",
+      "changed": "已更新",
+      "qaUpdated": "FAQ更新",
+      "removed": "已移除",
+      "skipped": "已跳過"
+    },
+    "badges": {
+      "new": "新增",
+      "changed": "已更新",
+      "qaUpdated": "FAQ",
+      "removed": "已移除",
+      "skipped": "已跳過"
+    },
+    "views": {
+      "list": "列表",
+      "table": "表格"
+    },
+    "sort": {
+      "label": "排序方式",
+      "cardNumber": "卡牌編號",
+      "name": "名稱"
+    },
+    "noChanges": "此分類無變更。",
+    "skippedReason": "缺少欄位",
+    "removedNote": "這些卡牌存在於前一個資料集中，但已不在來源中。",
+    "skippedNote": "這些卡牌存在於來源資料中，但缺少必要欄位，無法加入資料庫。",
+    "fullModeNote": "此報告以完整模式生成。新增／已更新／FAQ／已移除欄位反映來源間的差異，在下次增量遷移執行前可能為空。",
+    "officialTotal": "官方網站共有 {total} 張卡牌",
+    "dbTotal": "我們的資料庫有 {valid} 張有效卡牌（{skipped} 張因資料不完整而跳過）",
+    "loadMore": "載入更多（{loaded} / {total}）",
+    "viewDetail": "查看卡牌詳情"
   }
 }
