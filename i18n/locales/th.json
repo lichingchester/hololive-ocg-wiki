@@ -562,43 +562,43 @@
     }
   },
   "status": {
-    "title": "Data Status",
-    "description": "Card database status — which cards are new, updated, or missing from the official source.",
-    "sourceTotal": "Source Total",
-    "validInDB": "In Database",
-    "skippedCount": "Skipped",
-    "lastUpdated": "Last Updated",
+    "title": "สถานะข้อมูล",
+    "description": "สถานะฐานข้อมูลการ์ด — การ์ดที่เพิ่มใหม่ อัปเดต หรือขาดหายจากแหล่งข้อมูลอย่างเป็นทางการ",
+    "sourceTotal": "ยอดรวมแหล่งข้อมูล",
+    "validInDB": "อยู่ในฐานข้อมูล",
+    "skippedCount": "ข้ามแล้ว",
+    "lastUpdated": "อัปเดตล่าสุด",
     "tabs": {
-      "new": "New",
-      "changed": "Updated",
-      "qaUpdated": "FAQ Updated",
-      "removed": "Removed",
-      "skipped": "Skipped"
+      "new": "ใหม่",
+      "changed": "อัปเดตแล้ว",
+      "qaUpdated": "FAQ อัปเดต",
+      "removed": "ลบแล้ว",
+      "skipped": "ข้ามแล้ว"
     },
     "badges": {
-      "new": "New",
-      "changed": "Updated",
+      "new": "ใหม่",
+      "changed": "อัปเดตแล้ว",
       "qaUpdated": "FAQ",
-      "removed": "Removed",
-      "skipped": "Skipped"
+      "removed": "ลบแล้ว",
+      "skipped": "ข้ามแล้ว"
     },
     "views": {
-      "list": "List",
-      "table": "Table"
+      "list": "รายการ",
+      "table": "ตาราง"
     },
     "sort": {
-      "label": "Sort by",
-      "cardNumber": "Card Number",
-      "name": "Name"
+      "label": "เรียงตาม",
+      "cardNumber": "หมายเลขการ์ด",
+      "name": "ชื่อ"
     },
-    "noChanges": "No changes in this category.",
-    "skippedReason": "Missing fields",
-    "removedNote": "These cards were in the previous dataset but are no longer present in the source.",
-    "skippedNote": "These cards exist in the source data but are missing required fields and cannot be added to the database.",
-    "fullModeNote": "This report was generated in full mode. The New / Updated / FAQ / Removed columns reflect source-to-source diff and may be empty until the next incremental migration run.",
-    "officialTotal": "Official site reports {total} cards",
-    "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)",
-    "loadMore": "Load more ({loaded} / {total})",
-    "viewDetail": "View card detail"
+    "noChanges": "ไม่มีการเปลี่ยนแปลงในหมวดหมู่นี้",
+    "skippedReason": "ข้อมูลไม่ครบ",
+    "removedNote": "การ์ดเหล่านี้มีอยู่ในชุดข้อมูลก่อนหน้า แต่ปัจจุบันไม่มีในแหล่งข้อมูลแล้ว",
+    "skippedNote": "การ์ดเหล่านี้มีอยู่ในข้อมูลต้นฉบับ แต่ขาดฟิลด์ที่จำเป็นจึงไม่สามารถเพิ่มลงในฐานข้อมูลได้",
+    "fullModeNote": "รายงานนี้สร้างขึ้นในโหมดเต็ม คอลัมน์ใหม่ / อัปเดตแล้ว / FAQ / ลบแล้ว สะท้อนความแตกต่างระหว่างแหล่งข้อมูล และอาจว่างเปล่าจนกว่าจะมีการรันการโยกย้ายข้อมูลแบบเพิ่มขึ้นครั้งถัดไป",
+    "officialTotal": "เว็บไซต์อย่างเป็นทางการรายงาน {total} ใบ",
+    "dbTotal": "ฐานข้อมูลของเรามีการ์ดที่ถูกต้อง {valid} ใบ ({skipped} ใบถูกข้ามเนื่องจากข้อมูลไม่สมบูรณ์)",
+    "loadMore": "โหลดเพิ่มเติม ({loaded} / {total})",
+    "viewDetail": "ดูรายละเอียดการ์ด"
   }
 }

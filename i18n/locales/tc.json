@@ -564,43 +564,43 @@
     }
   },
   "status": {
-    "title": "Data Status",
-    "description": "Card database status — which cards are new, updated, or missing from the official source.",
-    "sourceTotal": "Source Total",
-    "validInDB": "In Database",
-    "skippedCount": "Skipped",
-    "lastUpdated": "Last Updated",
+    "title": "資料狀態",
+    "description": "卡牌資料庫狀態 — 哪些卡牌是新增、更新或在官方來源中缺失的。",
+    "sourceTotal": "來源總計",
+    "validInDB": "已收錄",
+    "skippedCount": "已跳過",
+    "lastUpdated": "最後更新",
     "tabs": {
-      "new": "New",
-      "changed": "Updated",
-      "qaUpdated": "FAQ Updated",
-      "removed": "Removed",
-      "skipped": "Skipped"
+      "new": "新增",
+      "changed": "已更新",
+      "qaUpdated": "FAQ更新",
+      "removed": "已移除",
+      "skipped": "已跳過"
     },
     "badges": {
-      "new": "New",
-      "changed": "Updated",
+      "new": "新增",
+      "changed": "已更新",
       "qaUpdated": "FAQ",
-      "removed": "Removed",
-      "skipped": "Skipped"
+      "removed": "已移除",
+      "skipped": "已跳過"
     },
     "views": {
-      "list": "List",
-      "table": "Table"
+      "list": "列表",
+      "table": "表格"
     },
     "sort": {
-      "label": "Sort by",
-      "cardNumber": "Card Number",
-      "name": "Name"
+      "label": "排序方式",
+      "cardNumber": "卡牌編號",
+      "name": "名稱"
     },
-    "noChanges": "No changes in this category.",
-    "skippedReason": "Missing fields",
-    "removedNote": "These cards were in the previous dataset but are no longer present in the source.",
-    "skippedNote": "These cards exist in the source data but are missing required fields and cannot be added to the database.",
-    "fullModeNote": "This report was generated in full mode. The New / Updated / FAQ / Removed columns reflect source-to-source diff and may be empty until the next incremental migration run.",
-    "officialTotal": "Official site reports {total} cards",
-    "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)",
-    "loadMore": "Load more ({loaded} / {total})",
-    "viewDetail": "View card detail"
+    "noChanges": "此分類無變更。",
+    "skippedReason": "缺少欄位",
+    "removedNote": "這些卡牌存在於前一個資料集中，但已不在來源中。",
+    "skippedNote": "這些卡牌存在於來源資料中，但缺少必要欄位，無法加入資料庫。",
+    "fullModeNote": "此報告以完整模式生成。新增／已更新／FAQ／已移除欄位反映來源間的差異，在下次增量遷移執行前可能為空。",
+    "officialTotal": "官方網站共有 {total} 張卡牌",
+    "dbTotal": "我們的資料庫有 {valid} 張有效卡牌（{skipped} 張因資料不完整而跳過）",
+    "loadMore": "載入更多（{loaded} / {total}）",
+    "viewDetail": "查看卡牌詳情"
   }
 }
