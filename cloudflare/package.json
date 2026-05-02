@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --config wrangler.service.toml",
     "prepare": "wrangler d1 execute hololive-ocg-db --local --file=./schema.sql"
   },
   "devDependencies": {

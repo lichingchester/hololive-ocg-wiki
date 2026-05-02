@@ -73,7 +73,7 @@ The card data is served from a Cloudflare D1 database via a Worker API.
 6. Start the local Worker API:
 
    ```bash
-   npx wrangler dev
+   npx wrangler dev --config wrangler.service.toml
    ```
 
    API available at `http://localhost:8787`. Test:
@@ -95,7 +95,7 @@ To run the complete application (frontend + API + database):
 1. **Terminal 1 — Worker API:**
    ```bash
    cd cloudflare
-   npx wrangler dev
+   npx wrangler dev --config wrangler.service.toml
    ```
 2. **Terminal 2 — Nuxt frontend:**
    ```bash
@@ -114,6 +114,7 @@ The frontend makes API calls to the worker at `http://localhost:8787`. Card sear
 | Full migration (all cards)    | `node migrate.js --full && ./run-migration.sh --reset`                                    |
 | Diff migration (changed only) | `node migrate.js && ./run-migration.sh`                                                   |
 | Resume migration from batch N | `./run-migration.sh --start N`                                                            |
+| Start local Worker API        | `npx wrangler dev --config wrangler.service.toml`                                         |
 | View worker logs              | `npx wrangler tail`                                                                       |
 
 Local D1 data is persisted in `cloudflare/.wrangler/state/` and survives restarts.
