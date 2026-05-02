@@ -560,5 +560,44 @@
       "descriptionWithAuthor": "Mazo de Hololive OCG \"{deckName}\" creado por {author}. Ver composición del mazo con {mainCount} cartas del mazo principal, {yellCount} cartas yell y {oshiCount} carta(s) oshi.",
       "description": "Mazo de Hololive OCG \"{deckName}\". Ver composición del mazo con {mainCount} cartas del mazo principal, {yellCount} cartas yell y {oshiCount} carta(s) oshi."
     }
+  },
+  "status": {
+    "title": "Data Status",
+    "description": "Card database status — which cards are new, updated, or missing from the official source.",
+    "sourceTotal": "Source Total",
+    "validInDB": "In Database",
+    "skippedCount": "Skipped",
+    "lastUpdated": "Last Updated",
+    "tabs": {
+      "new": "New",
+      "changed": "Updated",
+      "qaUpdated": "FAQ Updated",
+      "removed": "Removed",
+      "skipped": "Skipped"
+    },
+    "badges": {
+      "new": "New",
+      "changed": "Updated",
+      "qaUpdated": "FAQ",
+      "removed": "Removed",
+      "skipped": "Skipped"
+    },
+    "views": {
+      "grid": "Grid",
+      "list": "List",
+      "table": "Table"
+    },
+    "sort": {
+      "label": "Sort by",
+      "cardNumber": "Card Number",
+      "name": "Name"
+    },
+    "noChanges": "No changes in this category.",
+    "skippedReason": "Missing fields",
+    "removedNote": "These cards were in the previous dataset but are no longer present in the source.",
+    "skippedNote": "These cards exist in the source data but are missing required fields and cannot be added to the database.",
+    "fullModeNote": "This report was generated in full mode. The New / Updated / FAQ / Removed columns reflect source-to-source diff and may be empty until the next incremental migration run.",
+    "officialTotal": "Official site reports {total} cards",
+    "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)"
   }
 }
