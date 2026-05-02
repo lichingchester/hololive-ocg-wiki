@@ -584,7 +584,6 @@
       "skipped": "Skipped"
     },
     "views": {
-      "grid": "Grid",
       "list": "List",
       "table": "Table"
     },
@@ -599,6 +598,7 @@
     "skippedNote": "These cards exist in the source data but are missing required fields and cannot be added to the database.",
     "fullModeNote": "This report was generated in full mode. The New / Updated / FAQ / Removed columns reflect source-to-source diff and may be empty until the next incremental migration run.",
     "officialTotal": "Official site reports {total} cards",
-    "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)"
+    "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)",
+    "loadMore": "Load more ({loaded} / {total})"
   }
 }

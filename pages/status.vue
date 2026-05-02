@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft, LayoutGrid, List, Table2 } from "lucide-vue-next";
+import { ArrowLeft, List, Table2 } from "lucide-vue-next";
 import type { StatusEntry } from "@/components/status/StatusCardGrid.vue";
 
 const { t, locale } = useI18n();
@@ -34,15 +34,23 @@ const { data: status } = await useAsyncData<StatusData>("status", () =>
 );
 
 // ── View mode & sort ──────────────────────────────────────────────────────
-type ViewMode = "grid" | "list" | "table";
+type ViewMode = "list" | "table";
 type SortMode = "cardNumber" | "name";
 type TabKey = "new" | "changed" | "qaUpdated" | "removed" | "skipped";
 
-const viewMode = ref<ViewMode>("grid");
+const viewMode = ref<ViewMode>("table");
 const sortMode = ref<SortMode>("cardNumber");
 const activeTab = ref<TabKey>("new");
 
 const tabs: TabKey[] = ["new", "changed", "qaUpdated", "removed", "skipped"];
+
+// ── Pagination ────────────────────────────────────────────────────────────
+const PAGE_SIZE = 100;
+const visibleCount = ref(PAGE_SIZE);
+
+watch([activeTab, sortMode], () => {
+  visibleCount.value = PAGE_SIZE;
+});
 
 function naturalSort(a: StatusEntry, b: StatusEntry, mode: SortMode): number {
   if (mode === "name") {
@@ -63,7 +71,8 @@ function sorted(items: StatusEntry[]): StatusEntry[] {
   return [...items].sort((a, b) => naturalSort(a, b, sortMode.value));
 }
 
-const tabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
+// Full sorted lists per tab
+const allTabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
   if (!status.value)
     return { new: [], changed: [], qaUpdated: [], removed: [], skipped: [] };
   return {
@@ -75,8 +84,27 @@ const tabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
   };
 });
 
+// Sliced to visible window — prevents mounting thousands of rows at once
+const tabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
+  const all = allTabItems.value;
+  return {
+    new: all.new.slice(0, visibleCount.value),
+    changed: all.changed.slice(0, visibleCount.value),
+    qaUpdated: all.qaUpdated.slice(0, visibleCount.value),
+    removed: all.removed.slice(0, visibleCount.value),
+    skipped: all.skipped.slice(0, visibleCount.value),
+  };
+});
+
 function tabCount(key: TabKey): number {
-  return tabItems.value[key]?.length ?? 0;
+  return allTabItems.value[key]?.length ?? 0;
+}
+
+const activeTotal = computed(() => tabCount(activeTab.value));
+const hasMore = computed(() => visibleCount.value < activeTotal.value);
+
+function loadMore() {
+  visibleCount.value += PAGE_SIZE;
 }
 
 const formattedDate = computed(() => {
@@ -90,7 +118,7 @@ const formattedDate = computed(() => {
   });
 });
 
-const viewIcons = { grid: LayoutGrid, list: List, table: Table2 };
+const viewIcons = { list: List, table: Table2 };
 </script>
 
 <template>
@@ -247,13 +275,6 @@ const viewIcons = { grid: LayoutGrid, list: List, table: Table2 };
             {{ $t("status.noChanges") }}
           </p>
 
-          <!-- Grid view -->
-          <StatusCardGrid
-            v-else-if="viewMode === 'grid'"
-            :items="tabItems[activeTab]"
-            :status="activeTab"
-          />
-
           <!-- List view -->
           <StatusCardList
             v-else-if="viewMode === 'list'"
@@ -267,6 +288,18 @@ const viewIcons = { grid: LayoutGrid, list: List, table: Table2 };
             :items="tabItems[activeTab]"
             :status="activeTab"
           />
+
+          <!-- Load more -->
+          <div v-if="hasMore" class="mt-6 flex flex-col items-center gap-1">
+            <Button variant="outline" @click="loadMore">
+              {{
+                $t("status.loadMore", {
+                  loaded: tabItems[activeTab].length,
+                  total: activeTotal,
+                })
+              }}
+            </Button>
+          </div>
         </div>
       </div>
 
