@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Eye } from "lucide-vue-next";
 import type { StatusEntry } from "./StatusCardGrid.vue";
 
 defineProps<{
@@ -13,6 +14,12 @@ const badgeClass: Record<string, string> = {
   removed: "bg-red-500 text-white",
   skipped: "bg-muted text-muted-foreground",
 };
+
+const { open, card, loading, openCard } = useCardDetail();
+
+function canOpen(item: StatusEntry, status: string) {
+  return !!item.imagePath && status !== "removed" && status !== "skipped";
+}
 </script>
 
 <template>
@@ -58,6 +65,33 @@ const badgeClass: Record<string, string> = {
       >
         {{ $t(`status.badges.${status}`) }}
       </span>
+
+      <!-- View detail button -->
+      <button
+        v-if="canOpen(item, status)"
+        class="flex-shrink-0 p-1 rounded text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        :title="$t('status.viewDetail')"
+        @click="openCard(item.id)"
+      >
+        <Eye class="w-4 h-4" />
+      </button>
     </div>
   </div>
+
+  <!-- Shared card detail dialog -->
+  <Dialog v-model:open="open">
+    <DialogContent
+      hide-top-right-close
+      class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
+    >
+      <DialogHeader class="h-0 overflow-hidden">
+        <DialogTitle>{{ card?.name || "" }}</DialogTitle>
+        <DialogDescription>{{ card?.name || "" }}</DialogDescription>
+      </DialogHeader>
+      <div v-if="loading" class="flex items-center justify-center h-64">
+        <span class="text-muted-foreground text-sm">{{ $t("Loading") }}</span>
+      </div>
+      <CardItemDialogContent v-else-if="card" :item="card" />
+    </DialogContent>
+  </Dialog>
 </template>

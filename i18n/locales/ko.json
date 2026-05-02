@@ -598,6 +598,7 @@
     "fullModeNote": "This report was generated in full mode. The New / Updated / FAQ / Removed columns reflect source-to-source diff and may be empty until the next incremental migration run.",
     "officialTotal": "Official site reports {total} cards",
     "dbTotal": "Our database has {valid} valid cards ({skipped} skipped due to incomplete data)",
-    "loadMore": "Load more ({loaded} / {total})"
+    "loadMore": "Load more ({loaded} / {total})",
+    "viewDetail": "View card detail"
   }
 }

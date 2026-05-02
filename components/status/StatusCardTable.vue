@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Eye } from "lucide-vue-next";
 import type { StatusEntry } from "./StatusCardGrid.vue";
 
 const props = defineProps<{
@@ -15,6 +16,14 @@ const badgeClass: Record<string, string> = {
   removed: "bg-red-500 text-white",
   skipped: "bg-muted text-muted-foreground",
 };
+
+const { open, card, loading, openCard } = useCardDetail();
+
+function canOpen(item: StatusEntry) {
+  return (
+    !!item.imagePath && props.status !== "removed" && props.status !== "skipped"
+  );
+}
 </script>
 
 <template>
@@ -42,6 +51,7 @@ const badgeClass: Record<string, string> = {
           <th class="px-4 py-2 text-left font-medium text-muted-foreground">
             {{ $t("status.sort.label") }}
           </th>
+          <th class="px-2 py-2 w-8" />
         </tr>
       </thead>
       <tbody>
@@ -82,8 +92,35 @@ const badgeClass: Record<string, string> = {
               {{ $t(`status.badges.${status}`) }}
             </span>
           </td>
+          <td class="px-2 py-2">
+            <button
+              v-if="canOpen(item)"
+              class="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              :title="$t('status.viewDetail')"
+              @click="openCard(item.id)"
+            >
+              <Eye class="w-4 h-4" />
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <!-- Shared card detail dialog -->
+  <Dialog v-model:open="open">
+    <DialogContent
+      hide-top-right-close
+      class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh] sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
+    >
+      <DialogHeader class="h-0 overflow-hidden">
+        <DialogTitle>{{ card?.name || "" }}</DialogTitle>
+        <DialogDescription>{{ card?.name || "" }}</DialogDescription>
+      </DialogHeader>
+      <div v-if="loading" class="flex items-center justify-center h-64">
+        <span class="text-muted-foreground text-sm">{{ $t("Loading") }}</span>
+      </div>
+      <CardItemDialogContent v-else-if="card" :item="card" />
+    </DialogContent>
+  </Dialog>
 </template>
