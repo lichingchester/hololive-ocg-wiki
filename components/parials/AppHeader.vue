@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Database } from "lucide-vue-next";
 // import { HelpCircle } from "lucide-vue-next";
 
 const runtimeConfig = useRuntimeConfig();
@@ -42,6 +43,17 @@ function safeJsonParse(jsonString: string) {
             <HelpCircle class="w-5 h-5" />
           </NuxtLink>
         </Button> -->
+        <Button
+          variant="ghost"
+          size="icon"
+          as-child
+          class="hidden sm:inline-flex"
+          :title="$t('status.title')"
+        >
+          <NuxtLink to="/status">
+            <Database class="w-5 h-5" />
+          </NuxtLink>
+        </Button>
         <AppLanguageSwitcher />
         <AppColorModeSwitcher />
         <Button

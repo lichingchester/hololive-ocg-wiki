@@ -560,5 +560,45 @@
       "descriptionWithAuthor": "Deck Hololive OCG \"{deckName}\" dibuat oleh {author}. Lihat komposisi deck dengan {mainCount} kartu main deck, {yellCount} kartu yell, dan {oshiCount} kartu oshi.",
       "description": "Deck Hololive OCG \"{deckName}\". Lihat komposisi deck dengan {mainCount} kartu main deck, {yellCount} kartu yell, dan {oshiCount} kartu oshi."
     }
+  },
+  "status": {
+    "title": "Status Data",
+    "description": "Status basis data kartu — kartu mana yang baru, diperbarui, atau tidak ada dari sumber resmi.",
+    "sourceTotal": "Total Sumber",
+    "validInDB": "Dalam Database",
+    "skippedCount": "Dilewati",
+    "lastUpdated": "Terakhir Diperbarui",
+    "tabs": {
+      "new": "Baru",
+      "changed": "Diperbarui",
+      "qaUpdated": "FAQ Diperbarui",
+      "removed": "Dihapus",
+      "skipped": "Dilewati"
+    },
+    "badges": {
+      "new": "Baru",
+      "changed": "Diperbarui",
+      "qaUpdated": "FAQ",
+      "removed": "Dihapus",
+      "skipped": "Dilewati"
+    },
+    "views": {
+      "list": "Daftar",
+      "table": "Tabel"
+    },
+    "sort": {
+      "label": "Urutkan berdasarkan",
+      "cardNumber": "Nomor Kartu",
+      "name": "Nama"
+    },
+    "noChanges": "Tidak ada perubahan dalam kategori ini.",
+    "skippedReason": "Field tidak lengkap",
+    "removedNote": "Kartu-kartu ini ada di dataset sebelumnya tetapi tidak lagi ada di sumber.",
+    "skippedNote": "Kartu-kartu ini ada di data sumber tetapi kekurangan field yang diperlukan dan tidak dapat ditambahkan ke database.",
+    "fullModeNote": "Laporan ini dibuat dalam mode penuh. Kolom Baru / Diperbarui / FAQ / Dihapus mencerminkan perbedaan sumber-ke-sumber dan mungkin kosong hingga proses migrasi inkremental berikutnya.",
+    "officialTotal": "Situs resmi melaporkan {total} kartu",
+    "dbTotal": "Database kami memiliki {valid} kartu valid ({skipped} dilewati karena data tidak lengkap)",
+    "loadMore": "Muat lebih banyak ({loaded} / {total})",
+    "viewDetail": "Lihat detail kartu"
   }
 }

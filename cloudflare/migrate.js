@@ -45,6 +45,29 @@ function hashCard(card) {
   return crypto.createHash("sha256").update(json).digest("hex");
 }
 
+/** Hash card with qa_items stripped — to detect FAQ-only changes */
+function hashCardWithoutQA(card) {
+  const stripped = {
+    ...card,
+    translations: Object.fromEntries(
+      Object.entries(card.translations || {}).map(([locale, t]) => {
+        if (!t) return [locale, t];
+        const { qa_items: _qa, ...rest } = t;
+        return [locale, rest];
+      }),
+    ),
+  };
+  return crypto
+    .createHash("sha256")
+    .update(JSON.stringify(stripped))
+    .digest("hex");
+}
+
+/** Extract best display name from translations */
+function getCardName(card) {
+  return card.translations?.en?.name || card.translations?.ja?.name || null;
+}
+
 // ── File paths ─────────────────────────────────────────────────────────────
 const cloudflareDir = process.cwd();
 const cardsPath = path.join(cloudflareDir, "..", "data", "cards.json");
@@ -89,24 +112,55 @@ function loadPreviousHashes() {
 function saveHashes(cards) {
   const hashes = {};
   cards.forEach((card) => {
-    hashes[card.id] = hashCard(card);
+    hashes[card.id] = {
+      fullHash: hashCard(card),
+      noQaHash: hashCardWithoutQA(card),
+      cardNumber: card.cardNumber || null,
+      imagePath: card.imagePath || null,
+    };
   });
   fs.writeFileSync(hashPath, JSON.stringify(hashes, null, 2));
   return hashes;
 }
 
+/**
+ * Read a hash entry from cards_hash.json.
+ * Supports both old string format and new object format.
+ */
+function readHashEntry(entry) {
+  if (!entry) return null;
+  if (typeof entry === "string") {
+    // Old format: backward compat — noQaHash unknown, treat as changed
+    return {
+      fullHash: entry,
+      noQaHash: null,
+      cardNumber: null,
+      imagePath: null,
+    };
+  }
+  return entry;
+}
+
 function diffCards(cards, prevHashes) {
   const newCards = [];
   const changedCards = [];
+  const qaUpdatedCards = [];
   const currentIds = new Set();
 
   cards.forEach((card) => {
     currentIds.add(card.id);
-    const currentHash = hashCard(card);
-    if (!prevHashes[card.id]) {
+    const currentFullHash = hashCard(card);
+    const prev = readHashEntry(prevHashes[card.id]);
+    if (!prev) {
       newCards.push(card);
-    } else if (prevHashes[card.id] !== currentHash) {
-      changedCards.push(card);
+    } else if (prev.fullHash !== currentFullHash) {
+      const currentNoQaHash = hashCardWithoutQA(card);
+      // If noQaHash is unknown (old format) or actually changed → treat as changed
+      if (!prev.noQaHash || prev.noQaHash !== currentNoQaHash) {
+        changedCards.push(card);
+      } else {
+        qaUpdatedCards.push(card);
+      }
     }
   });
 
@@ -114,7 +168,7 @@ function diffCards(cards, prevHashes) {
     (id) => !currentIds.has(id),
   );
 
-  return { newCards, changedCards, removedIds };
+  return { newCards, changedCards, qaUpdatedCards, removedIds };
 }
 
 // ── SQL generation for a single card ───────────────────────────────────────
@@ -404,21 +458,24 @@ function getArtIdBase(cardId) {
 let cardsToProcess = [];
 let removedIds = [];
 let mode = "full";
+let diffResult = null;
 
 const prevHashes = FULL_MODE ? null : loadPreviousHashes();
 
 if (prevHashes && !FULL_MODE) {
-  const diff = diffCards(cardsData, prevHashes);
-  cardsToProcess = [...diff.newCards, ...diff.changedCards];
-  removedIds = diff.removedIds;
+  diffResult = diffCards(cardsData, prevHashes);
+  const { newCards, changedCards, qaUpdatedCards } = diffResult;
+  cardsToProcess = [...newCards, ...changedCards, ...qaUpdatedCards];
+  removedIds = diffResult.removedIds;
   mode = "diff";
 
   console.log(`\nDiff mode:`);
-  console.log(`  New cards:     ${diff.newCards.length}`);
-  console.log(`  Changed cards: ${diff.changedCards.length}`);
-  console.log(`  Removed cards: ${removedIds.length}`);
+  console.log(`  New cards:         ${newCards.length}`);
+  console.log(`  Changed cards:     ${changedCards.length}`);
+  console.log(`  FAQ-only updates:  ${qaUpdatedCards.length}`);
+  console.log(`  Removed cards:     ${removedIds.length}`);
   console.log(
-    `  Unchanged:     ${cardsData.length - diff.newCards.length - diff.changedCards.length}`,
+    `  Unchanged:         ${cardsData.length - newCards.length - changedCards.length - qaUpdatedCards.length}`,
   );
 
   if (cardsToProcess.length === 0 && removedIds.length === 0) {
@@ -520,6 +577,63 @@ console.log(
 // ── Save hash file ─────────────────────────────────────────────────────────
 saveHashes(cardsData);
 console.log(`Updated cards_hash.json with ${cardsData.length} card hashes`);
+
+// ── Write public/status.json ───────────────────────────────────────────────
+// Compute all-time skipped (regardless of diff mode) for accurate source stats
+const requiredFieldsList = [
+  "cardTypeCode",
+  "rarityCode",
+  "imagePath",
+  "imageUrl",
+];
+const allSkipped = cardsData.filter((card) =>
+  requiredFieldsList.some((f) => card[f] == null),
+);
+
+function toStatusEntry(card) {
+  return {
+    id: card.id,
+    cardNumber: card.cardNumber || null,
+    imagePath: card.imagePath || null,
+    name: getCardName(card),
+  };
+}
+
+const statusNew = diffResult?.newCards.map(toStatusEntry) ?? [];
+const statusChanged = diffResult?.changedCards.map(toStatusEntry) ?? [];
+const statusQaUpdated = diffResult?.qaUpdatedCards.map(toStatusEntry) ?? [];
+const statusRemoved = (diffResult?.removedIds ?? removedIds).map((id) => {
+  const prev = readHashEntry(prevHashes?.[id]);
+  return {
+    id,
+    cardNumber: prev?.cardNumber ?? null,
+    imagePath: prev?.imagePath ?? null,
+  };
+});
+
+const statusJson = {
+  generatedAt: new Date().toISOString(),
+  mode,
+  source: {
+    total: cardsData.length,
+    valid: cardsData.length - allSkipped.length,
+  },
+  skipped: allSkipped.map((card) => ({
+    id: card.id,
+    cardNumber: card.cardNumber || null,
+    missingFields: requiredFieldsList.filter((f) => card[f] == null),
+  })),
+  diff: {
+    new: statusNew,
+    changed: statusChanged,
+    qaUpdated: statusQaUpdated,
+    removed: statusRemoved,
+  },
+};
+
+const statusPath = path.join(cloudflareDir, "..", "public", "status.json");
+fs.writeFileSync(statusPath, JSON.stringify(statusJson, null, 2));
+console.log(`Written public/status.json`);
 
 // ── Summary ────────────────────────────────────────────────────────────────
 console.log(`\n── Summary ──`);
