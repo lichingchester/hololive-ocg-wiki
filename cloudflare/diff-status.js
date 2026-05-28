@@ -34,15 +34,39 @@ const newCardsPath = path.join(__dirname, "..", "data", "cards.json");
 const statusOutputPath = path.join(__dirname, "..", "public", "status.json");
 
 // ── Hashing (same as migrate.js) ───────────────────────────────────────────
+function stripTranslationMeta(t) {
+  if (!t) return t;
+  return Object.fromEntries(
+    Object.entries(t).filter(([k]) => !k.startsWith("_")),
+  );
+}
+
+function normalizeTranslations(card) {
+  if (!card.translations) return card;
+  return {
+    ...card,
+    translations: Object.fromEntries(
+      Object.entries(card.translations).map(([locale, t]) => [
+        locale,
+        stripTranslationMeta(t),
+      ]),
+    ),
+  };
+}
+
 function hashCard(card) {
-  return crypto.createHash("sha256").update(JSON.stringify(card)).digest("hex");
+  return crypto
+    .createHash("sha256")
+    .update(JSON.stringify(normalizeTranslations(card)))
+    .digest("hex");
 }
 
 function hashCardWithoutQA(card) {
+  const normalized = normalizeTranslations(card);
   const stripped = {
-    ...card,
+    ...normalized,
     translations: Object.fromEntries(
-      Object.entries(card.translations || {}).map(([locale, t]) => {
+      Object.entries(normalized.translations || {}).map(([locale, t]) => {
         if (!t) return [locale, t];
         const { qa_items: _qa, ...rest } = t;
         return [locale, rest];
