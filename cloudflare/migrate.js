@@ -40,17 +40,40 @@ function escapeJSONArray(arr) {
   return escapeSQL(JSON.stringify(arr));
 }
 
+/** Strip translation pipeline metadata fields (e.g. _source_hash) that are
+ * not stored in D1 and should not affect diff detection. */
+function stripTranslationMeta(t) {
+  if (!t) return t;
+  return Object.fromEntries(
+    Object.entries(t).filter(([k]) => !k.startsWith("_")),
+  );
+}
+
+function normalizeTranslations(card) {
+  if (!card.translations) return card;
+  return {
+    ...card,
+    translations: Object.fromEntries(
+      Object.entries(card.translations).map(([locale, t]) => [
+        locale,
+        stripTranslationMeta(t),
+      ]),
+    ),
+  };
+}
+
 function hashCard(card) {
-  const json = JSON.stringify(card);
+  const json = JSON.stringify(normalizeTranslations(card));
   return crypto.createHash("sha256").update(json).digest("hex");
 }
 
 /** Hash card with qa_items stripped — to detect FAQ-only changes */
 function hashCardWithoutQA(card) {
+  const normalized = normalizeTranslations(card);
   const stripped = {
-    ...card,
+    ...normalized,
     translations: Object.fromEntries(
-      Object.entries(card.translations || {}).map(([locale, t]) => {
+      Object.entries(normalized.translations || {}).map(([locale, t]) => {
         if (!t) return [locale, t];
         const { qa_items: _qa, ...rest } = t;
         return [locale, rest];
