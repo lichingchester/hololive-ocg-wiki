@@ -36,13 +36,13 @@ const { data: status } = await useAsyncData<StatusData>("status", () =>
 // ── View mode & sort ──────────────────────────────────────────────────────
 type ViewMode = "list" | "table";
 type SortMode = "cardNumber" | "name";
-type TabKey = "new" | "changed" | "qaUpdated" | "removed" | "skipped";
+type TabKey = "new" | "changed";
 
 const viewMode = ref<ViewMode>("table");
 const sortMode = ref<SortMode>("cardNumber");
 const activeTab = ref<TabKey>("new");
 
-const tabs: TabKey[] = ["new", "changed", "qaUpdated", "removed", "skipped"];
+const tabs: TabKey[] = ["new", "changed"];
 
 // ── Pagination ────────────────────────────────────────────────────────────
 const PAGE_SIZE = 100;
@@ -73,14 +73,15 @@ function sorted(items: StatusEntry[]): StatusEntry[] {
 
 // Full sorted lists per tab
 const allTabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
-  if (!status.value)
-    return { new: [], changed: [], qaUpdated: [], removed: [], skipped: [] };
+  if (!status.value) return { new: [], changed: [] };
   return {
     new: sorted(status.value.diff.new),
-    changed: sorted(status.value.diff.changed),
-    qaUpdated: sorted(status.value.diff.qaUpdated),
-    removed: sorted(status.value.diff.removed),
-    skipped: sorted(status.value.skipped),
+    changed: sorted([
+      ...status.value.diff.changed,
+      ...status.value.diff.qaUpdated,
+      ...status.value.diff.removed,
+      ...status.value.skipped,
+    ]),
   };
 });
 
@@ -90,9 +91,6 @@ const tabItems = computed<Record<TabKey, StatusEntry[]>>(() => {
   return {
     new: all.new.slice(0, visibleCount.value),
     changed: all.changed.slice(0, visibleCount.value),
-    qaUpdated: all.qaUpdated.slice(0, visibleCount.value),
-    removed: all.removed.slice(0, visibleCount.value),
-    skipped: all.skipped.slice(0, visibleCount.value),
   };
 });
 
@@ -175,7 +173,7 @@ const viewIcons = { list: List, table: Table2 };
 
     <div class="mx-auto max-w-7xl px-4 py-6 flex flex-col gap-6">
       <!-- Stats bar -->
-      <div v-if="status" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div v-if="status" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <div class="rounded-lg border bg-card p-4 flex flex-col gap-1">
           <span class="text-xs text-muted-foreground">{{
             $t("status.sourceTotal")
@@ -195,32 +193,10 @@ const viewIcons = { list: List, table: Table2 };
         </div>
         <div class="rounded-lg border bg-card p-4 flex flex-col gap-1">
           <span class="text-xs text-muted-foreground">{{
-            $t("status.skippedCount")
-          }}</span>
-          <span
-            class="text-2xl font-bold text-amber-600 dark:text-amber-400 tabular-nums"
-            >{{ status.skipped.length }}</span
-          >
-        </div>
-        <div class="rounded-lg border bg-card p-4 flex flex-col gap-1">
-          <span class="text-xs text-muted-foreground">{{
             $t("status.lastUpdated")
           }}</span>
           <span class="text-sm font-medium">{{ formattedDate }}</span>
         </div>
-      </div>
-
-      <!-- Explanation note -->
-      <div
-        v-if="status && status.skipped.length > 0"
-        class="rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 px-4 py-3 text-sm text-amber-800 dark:text-amber-200"
-      >
-        {{
-          $t("status.dbTotal", {
-            valid: status.source.valid,
-            skipped: status.skipped.length,
-          })
-        }}
       </div>
 
       <!-- Full-mode note -->
@@ -253,20 +229,6 @@ const viewIcons = { list: List, table: Table2 };
 
         <!-- Tab content -->
         <div class="mt-4">
-          <!-- Notes per tab -->
-          <p
-            v-if="activeTab === 'removed'"
-            class="text-sm text-muted-foreground mb-4"
-          >
-            {{ $t("status.removedNote") }}
-          </p>
-          <p
-            v-if="activeTab === 'skipped'"
-            class="text-sm text-muted-foreground mb-4"
-          >
-            {{ $t("status.skippedNote") }}
-          </p>
-
           <!-- Empty state -->
           <p
             v-if="tabCount(activeTab) === 0"
