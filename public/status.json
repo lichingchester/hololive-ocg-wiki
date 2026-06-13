@@ -1,392 +1,1028 @@
 {
-  "generatedAt": "2026-05-28T05:38:54.303Z",
+  "generatedAt": "2026-06-13T08:22:09.708Z",
   "mode": "diff",
   "source": {
-    "total": 2193,
-    "valid": 2193
+    "total": 2316,
+    "valid": 2316
   },
   "skipped": [],
   "diff": {
     "new": [
       {
-        "id": "2153",
-        "cardNumber": "hBP01-034",
-        "imagePath": "card_images/default/hBP01-034_P.png",
-        "name": "アキ・ローゼンタール"
+        "id": "2314",
+        "cardNumber": "hBP01-028",
+        "imagePath": "card_images/default/hBP01-028_C_02.png",
+        "name": "IRyS"
       },
       {
-        "id": "2154",
-        "cardNumber": "hBP01-040",
-        "imagePath": "card_images/default/hBP01-040_P.png",
-        "name": "兎田ぺこら"
-      },
-      {
-        "id": "2155",
-        "cardNumber": "hBP01-058",
-        "imagePath": "card_images/default/hBP01-058_P.png",
+        "id": "2317",
+        "cardNumber": "hBP01-056",
+        "imagePath": "card_images/default/hBP01-056_C_02.png",
         "name": "鷹嶺ルイ"
       },
       {
-        "id": "2156",
-        "cardNumber": "hBP01-069",
-        "imagePath": "card_images/default/hBP01-069_P.png",
-        "name": "尾丸ポルカ"
+        "id": "2318",
+        "cardNumber": "hBP01-062",
+        "imagePath": "card_images/default/hBP01-062_C_02.png",
+        "name": "小鳥遊キアラ"
       },
       {
-        "id": "2157",
-        "cardNumber": "hBP01-078",
-        "imagePath": "card_images/default/hBP01-078_P.png",
-        "name": "星街すいせい"
+        "id": "2315",
+        "cardNumber": "hBP02-018",
+        "imagePath": "card_images/default/hBP02-018_C_02.png",
+        "name": "パヴォリア・レイネ"
       },
       {
-        "id": "2158",
-        "cardNumber": "hBP02-010",
-        "imagePath": "card_images/default/hBP02-010_P.png",
-        "name": "白上フブキ"
+        "id": "2322",
+        "cardNumber": "hBP02-061",
+        "imagePath": "card_images/default/hBP02-061_C_02.png",
+        "name": "一伊那尓栖"
       },
       {
-        "id": "2159",
-        "cardNumber": "hBP02-011",
-        "imagePath": "card_images/default/hBP02-011_P.png",
-        "name": "白上フブキ"
-      },
-      {
-        "id": "2160",
-        "cardNumber": "hBP02-015",
-        "imagePath": "card_images/default/hBP02-015_P.png",
-        "name": "白銀ノエル"
-      },
-      {
-        "id": "2161",
-        "cardNumber": "hBP02-025",
-        "imagePath": "card_images/default/hBP02-025_P.png",
-        "name": "大神ミオ"
-      },
-      {
-        "id": "2162",
-        "cardNumber": "hBP02-030",
-        "imagePath": "card_images/default/hBP02-030_P.png",
-        "name": "宝鐘マリン"
-      },
-      {
-        "id": "2163",
-        "cardNumber": "hBP03-010",
-        "imagePath": "card_images/default/hBP03-010_P.png",
-        "name": "姫森ルーナ"
-      },
-      {
-        "id": "2164",
-        "cardNumber": "hBP03-011",
-        "imagePath": "card_images/default/hBP03-011_P.png",
-        "name": "姫森ルーナ"
-      },
-      {
-        "id": "2165",
-        "cardNumber": "hBP03-018",
-        "imagePath": "card_images/default/hBP03-018_P.png",
-        "name": "獅白ぼたん"
-      },
-      {
-        "id": "2166",
-        "cardNumber": "hBP03-027",
-        "imagePath": "card_images/default/hBP03-027_P.png",
-        "name": "さくらみこ"
-      },
-      {
-        "id": "2167",
-        "cardNumber": "hBP03-053",
-        "imagePath": "card_images/default/hBP03-053_P.png",
-        "name": "常闇トワ"
-      },
-      {
-        "id": "2168",
-        "cardNumber": "hBP03-058",
-        "imagePath": "card_images/default/hBP03-058_P.png",
-        "name": "ロボ子さん"
-      },
-      {
-        "id": "2169",
-        "cardNumber": "hBP03-063",
-        "imagePath": "card_images/default/hBP03-063_P.png",
-        "name": "戌神ころね"
-      },
-      {
-        "id": "2170",
-        "cardNumber": "hBP03-069",
-        "imagePath": "card_images/default/hBP03-069_P.png",
-        "name": "角巻わため"
-      },
-      {
-        "id": "2171",
-        "cardNumber": "hBP04-010",
-        "imagePath": "card_images/default/hBP04-010_P.png",
-        "name": "博衣こより"
-      },
-      {
-        "id": "2172",
-        "cardNumber": "hBP04-045",
-        "imagePath": "card_images/default/hBP04-045_P.png",
-        "name": "雪花ラミィ"
-      },
-      {
-        "id": "2173",
-        "cardNumber": "hBP04-046",
-        "imagePath": "card_images/default/hBP04-046_P.png",
-        "name": "雪花ラミィ"
-      },
-      {
-        "id": "2174",
-        "cardNumber": "hBP04-055",
-        "imagePath": "card_images/default/hBP04-055_P.png",
-        "name": "ラプラス・ダークネス"
-      },
-      {
-        "id": "2175",
-        "cardNumber": "hBP04-056",
-        "imagePath": "card_images/default/hBP04-056_P.png",
-        "name": "ラプラス・ダークネス"
-      },
-      {
-        "id": "2176",
-        "cardNumber": "hBP04-069",
-        "imagePath": "card_images/default/hBP04-069_P.png",
-        "name": "大空スバル"
-      },
-      {
-        "id": "2177",
-        "cardNumber": "hBP04-070",
-        "imagePath": "card_images/default/hBP04-070_P.png",
-        "name": "大空スバル"
-      },
-      {
-        "id": "2178",
-        "cardNumber": "hBP04-080",
-        "imagePath": "card_images/default/hBP04-080_P.png",
-        "name": "夏色まつり"
-      },
-      {
-        "id": "2179",
-        "cardNumber": "hBP04-084",
-        "imagePath": "card_images/default/hBP04-084_P.png",
-        "name": "桃鈴ねね"
-      },
-      {
-        "id": "2180",
-        "cardNumber": "hBP06-024",
-        "imagePath": "card_images/default/hBP06-024_P.png",
-        "name": "風真いろは"
-      },
-      {
-        "id": "2181",
-        "cardNumber": "hSD01-005",
-        "imagePath": "card_images/default/hSD01-005_P.png",
-        "name": "ときのそら"
-      },
-      {
-        "id": "2182",
-        "cardNumber": "hSD01-010",
-        "imagePath": "card_images/default/hSD01-010_P.png",
-        "name": "AZKi"
-      },
-      {
-        "id": "2183",
-        "cardNumber": "hSD02-005",
-        "imagePath": "card_images/default/hSD02-005_P.png",
-        "name": "百鬼あやめ"
-      },
-      {
-        "id": "2184",
-        "cardNumber": "hSD03-005",
-        "imagePath": "card_images/default/hSD03-005_P.png",
-        "name": "猫又おかゆ"
-      },
-      {
-        "id": "2185",
-        "cardNumber": "hSD04-005",
-        "imagePath": "card_images/default/hSD04-005_P.png",
-        "name": "癒月ちょこ"
-      },
-      {
-        "id": "2186",
-        "cardNumber": "hSD07-005",
-        "imagePath": "card_images/default/hSD07-005_P.png",
-        "name": "不知火フレア"
-      },
-      {
-        "id": "2187",
-        "cardNumber": "hBP06-010",
-        "imagePath": "card_images/default/hBP06-010_P.png",
-        "name": "ラオーラ・パンテーラ"
-      },
-      {
-        "id": "2195",
-        "cardNumber": "hBP06-018",
-        "imagePath": "card_images/default/hBP06-018_P.png",
-        "name": "響咲リオナ"
-      },
-      {
-        "id": "2199",
-        "cardNumber": "hBP06-095",
-        "imagePath": "card_images/default/hBP06-095_P.png",
-        "name": "IDENTIFY -AREA 15-"
-      },
-      {
-        "id": "2188",
-        "cardNumber": "hBP07-008",
-        "imagePath": "card_images/default/hBP07-008_P.png",
-        "name": "角巻わため"
-      },
-      {
-        "id": "2189",
-        "cardNumber": "hBP07-023",
-        "imagePath": "card_images/default/hBP07-023_P.png",
-        "name": "大神ミオ"
-      },
-      {
-        "id": "2190",
-        "cardNumber": "hBP07-050",
-        "imagePath": "card_images/default/hBP07-050_P.png",
-        "name": "オーロ・クロニー"
-      },
-      {
-        "id": "2196",
-        "cardNumber": "hBP07-055",
-        "imagePath": "card_images/default/hBP07-055_P.png",
-        "name": "オーロ・クロニー"
-      },
-      {
-        "id": "2191",
-        "cardNumber": "hBP07-059",
-        "imagePath": "card_images/default/hBP07-059_P.png",
-        "name": "シオリ・ノヴェラ"
-      },
-      {
-        "id": "2192",
-        "cardNumber": "hBP07-063",
-        "imagePath": "card_images/default/hBP07-063_P.png",
-        "name": "AZKi"
-      },
-      {
-        "id": "2193",
-        "cardNumber": "hBP07-077",
-        "imagePath": "card_images/default/hBP07-077_P.png",
-        "name": "桃鈴ねね"
-      },
-      {
-        "id": "2200",
-        "cardNumber": "hBP07-094",
-        "imagePath": "card_images/default/hBP07-094_P.png",
-        "name": "ギリわるロボ"
-      },
-      {
-        "id": "2201",
-        "cardNumber": "hBP07-097",
-        "imagePath": "card_images/default/hBP07-097_P.png",
-        "name": "時の支配者 -Promise-"
-      },
-      {
-        "id": "2197",
-        "cardNumber": "hSD12-013",
-        "imagePath": "card_images/default/hSD12-013_P.png",
+        "id": "2319",
+        "cardNumber": "hBP03-037",
+        "imagePath": "card_images/default/hBP03-037_C_02.png",
         "name": "モココ・アビスガード"
       },
       {
-        "id": "2198",
-        "cardNumber": "hSD12-014",
-        "imagePath": "card_images/default/hSD12-014_P.png",
+        "id": "2320",
+        "cardNumber": "hBP03-040",
+        "imagePath": "card_images/default/hBP03-040_C_02.png",
         "name": "フワワ・アビスガード"
       },
       {
-        "id": "2194",
-        "cardNumber": "hSD13-009",
-        "imagePath": "card_images/default/hSD13-009_P.png",
+        "id": "2323",
+        "cardNumber": "hBP03-080",
+        "imagePath": "card_images/default/hBP03-080_C_02.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2316",
+        "cardNumber": "hBP04-028",
+        "imagePath": "card_images/default/hBP04-028_C_02.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2204",
+        "cardNumber": "hBP08-001",
+        "imagePath": "card_images/default/hBP08-001_OSR.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2205",
+        "cardNumber": "hBP08-002",
+        "imagePath": "card_images/default/hBP08-002_OSR.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2206",
+        "cardNumber": "hBP08-003",
+        "imagePath": "card_images/default/hBP08-003_OSR.png",
+        "name": "FUWAMOCO"
+      },
+      {
+        "id": "2207",
+        "cardNumber": "hBP08-004",
+        "imagePath": "card_images/default/hBP08-004_OSR.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2208",
+        "cardNumber": "hBP08-005",
+        "imagePath": "card_images/default/hBP08-005_OSR.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2209",
+        "cardNumber": "hBP08-006",
+        "imagePath": "card_images/default/hBP08-006_OSR.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2210",
+        "cardNumber": "hBP08-007",
+        "imagePath": "card_images/default/hBP08-007_OSR.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2211",
+        "cardNumber": "hBP08-008",
+        "imagePath": "card_images/default/hBP08-008_C.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2212",
+        "cardNumber": "hBP08-009",
+        "imagePath": "card_images/default/hBP08-009_U.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2213",
+        "cardNumber": "hBP08-010",
+        "imagePath": "card_images/default/hBP08-010_C.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2214",
+        "cardNumber": "hBP08-011",
+        "imagePath": "card_images/default/hBP08-011_C.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2215",
+        "cardNumber": "hBP08-012",
+        "imagePath": "card_images/default/hBP08-012_R.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2216",
+        "cardNumber": "hBP08-013",
+        "imagePath": "card_images/default/hBP08-013_U.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2217",
+        "cardNumber": "hBP08-014",
+        "imagePath": "card_images/default/hBP08-014_RR.png",
+        "name": "IRyS"
+      },
+      {
+        "id": "2218",
+        "cardNumber": "hBP08-015",
+        "imagePath": "card_images/default/hBP08-015_C.png",
+        "name": "ときのそら"
+      },
+      {
+        "id": "2219",
+        "cardNumber": "hBP08-016",
+        "imagePath": "card_images/default/hBP08-016_U.png",
+        "name": "ときのそら"
+      },
+      {
+        "id": "2220",
+        "cardNumber": "hBP08-017",
+        "imagePath": "card_images/default/hBP08-017_R.png",
+        "name": "ときのそら"
+      },
+      {
+        "id": "2221",
+        "cardNumber": "hBP08-018",
+        "imagePath": "card_images/default/hBP08-018_RR.png",
+        "name": "ときのそら"
+      },
+      {
+        "id": "2222",
+        "cardNumber": "hBP08-019",
+        "imagePath": "card_images/default/hBP08-019_U.png",
+        "name": "ラオーラ・パンテーラ"
+      },
+      {
+        "id": "2223",
+        "cardNumber": "hBP08-020",
+        "imagePath": "card_images/default/hBP08-020_R.png",
+        "name": "響咲リオナ"
+      },
+      {
+        "id": "2224",
+        "cardNumber": "hBP08-021",
+        "imagePath": "card_images/default/hBP08-021_C.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2225",
+        "cardNumber": "hBP08-022",
+        "imagePath": "card_images/default/hBP08-022_U.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2226",
+        "cardNumber": "hBP08-023",
+        "imagePath": "card_images/default/hBP08-023_C.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2227",
+        "cardNumber": "hBP08-024",
+        "imagePath": "card_images/default/hBP08-024_C.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2228",
+        "cardNumber": "hBP08-025",
+        "imagePath": "card_images/default/hBP08-025_R.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2229",
+        "cardNumber": "hBP08-026",
+        "imagePath": "card_images/default/hBP08-026_U.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2230",
+        "cardNumber": "hBP08-027",
+        "imagePath": "card_images/default/hBP08-027_RR.png",
+        "name": "セシリア・イマーグリーン"
+      },
+      {
+        "id": "2231",
+        "cardNumber": "hBP08-028",
+        "imagePath": "card_images/default/hBP08-028_R.png",
+        "name": "アキ・ローゼンタール"
+      },
+      {
+        "id": "2232",
+        "cardNumber": "hBP08-029",
+        "imagePath": "card_images/default/hBP08-029_U.png",
+        "name": "風真いろは"
+      },
+      {
+        "id": "2233",
+        "cardNumber": "hBP08-030",
+        "imagePath": "card_images/default/hBP08-030_C.png",
+        "name": "パヴォリア・レイネ"
+      },
+      {
+        "id": "2234",
+        "cardNumber": "hBP08-031",
+        "imagePath": "card_images/default/hBP08-031_R.png",
+        "name": "パヴォリア・レイネ"
+      },
+      {
+        "id": "2235",
+        "cardNumber": "hBP08-032",
+        "imagePath": "card_images/default/hBP08-032_U.png",
+        "name": "パヴォリア・レイネ"
+      },
+      {
+        "id": "2236",
+        "cardNumber": "hBP08-033",
+        "imagePath": "card_images/default/hBP08-033_RR.png",
+        "name": "パヴォリア・レイネ"
+      },
+      {
+        "id": "2237",
+        "cardNumber": "hBP08-034",
+        "imagePath": "card_images/default/hBP08-034_C.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2238",
+        "cardNumber": "hBP08-035",
+        "imagePath": "card_images/default/hBP08-035_U.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2239",
+        "cardNumber": "hBP08-036",
+        "imagePath": "card_images/default/hBP08-036_C.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2240",
+        "cardNumber": "hBP08-037",
+        "imagePath": "card_images/default/hBP08-037_R.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2241",
+        "cardNumber": "hBP08-038",
+        "imagePath": "card_images/default/hBP08-038_R.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2242",
+        "cardNumber": "hBP08-039",
+        "imagePath": "card_images/default/hBP08-039_RR.png",
+        "name": "モココ・アビスガード"
+      },
+      {
+        "id": "2243",
+        "cardNumber": "hBP08-040",
+        "imagePath": "card_images/default/hBP08-040_R.png",
+        "name": "百鬼あやめ"
+      },
+      {
+        "id": "2244",
+        "cardNumber": "hBP08-041",
+        "imagePath": "card_images/default/hBP08-041_C.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "2245",
+        "cardNumber": "hBP08-042",
+        "imagePath": "card_images/default/hBP08-042_U.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "2246",
+        "cardNumber": "hBP08-043",
+        "imagePath": "card_images/default/hBP08-043_R.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "2247",
+        "cardNumber": "hBP08-044",
+        "imagePath": "card_images/default/hBP08-044_RR.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "2248",
+        "cardNumber": "hBP08-045",
+        "imagePath": "card_images/default/hBP08-045_R.png",
+        "name": "ハコス・ベールズ"
+      },
+      {
+        "id": "2249",
+        "cardNumber": "hBP08-046",
+        "imagePath": "card_images/default/hBP08-046_R.png",
+        "name": "エリザベス・ローズ・ブラッドフレイム"
+      },
+      {
+        "id": "2250",
+        "cardNumber": "hBP08-047",
+        "imagePath": "card_images/default/hBP08-047_C.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2251",
+        "cardNumber": "hBP08-048",
+        "imagePath": "card_images/default/hBP08-048_U.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2252",
+        "cardNumber": "hBP08-049",
+        "imagePath": "card_images/default/hBP08-049_C.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2253",
+        "cardNumber": "hBP08-050",
+        "imagePath": "card_images/default/hBP08-050_C.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2254",
+        "cardNumber": "hBP08-051",
+        "imagePath": "card_images/default/hBP08-051_R.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2255",
+        "cardNumber": "hBP08-052",
+        "imagePath": "card_images/default/hBP08-052_U.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2256",
+        "cardNumber": "hBP08-053",
+        "imagePath": "card_images/default/hBP08-053_RR.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2257",
+        "cardNumber": "hBP08-054",
+        "imagePath": "card_images/default/hBP08-054_R.png",
+        "name": "ムーナ・ホシノヴァ"
+      },
+      {
+        "id": "2258",
+        "cardNumber": "hBP08-055",
+        "imagePath": "card_images/default/hBP08-055_C.png",
+        "name": "フワワ・アビスガード"
+      },
+      {
+        "id": "2259",
+        "cardNumber": "hBP08-056",
+        "imagePath": "card_images/default/hBP08-056_U.png",
+        "name": "フワワ・アビスガード"
+      },
+      {
+        "id": "2260",
+        "cardNumber": "hBP08-057",
+        "imagePath": "card_images/default/hBP08-057_R.png",
+        "name": "フワワ・アビスガード"
+      },
+      {
+        "id": "2261",
+        "cardNumber": "hBP08-058",
+        "imagePath": "card_images/default/hBP08-058_R.png",
+        "name": "フワワ・アビスガード"
+      },
+      {
+        "id": "2262",
+        "cardNumber": "hBP08-059",
+        "imagePath": "card_images/default/hBP08-059_RR.png",
+        "name": "フワワ・アビスガード"
+      },
+      {
+        "id": "2263",
+        "cardNumber": "hBP08-060",
+        "imagePath": "card_images/default/hBP08-060_R.png",
+        "name": "FUWAMOCO"
+      },
+      {
+        "id": "2264",
+        "cardNumber": "hBP08-061",
+        "imagePath": "card_images/default/hBP08-061_C.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2265",
+        "cardNumber": "hBP08-062",
+        "imagePath": "card_images/default/hBP08-062_U.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2266",
+        "cardNumber": "hBP08-063",
+        "imagePath": "card_images/default/hBP08-063_C.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2267",
+        "cardNumber": "hBP08-064",
+        "imagePath": "card_images/default/hBP08-064_C.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2268",
+        "cardNumber": "hBP08-065",
+        "imagePath": "card_images/default/hBP08-065_R.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2269",
+        "cardNumber": "hBP08-066",
+        "imagePath": "card_images/default/hBP08-066_U.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2270",
+        "cardNumber": "hBP08-067",
+        "imagePath": "card_images/default/hBP08-067_RR.png",
+        "name": "鷹嶺ルイ"
+      },
+      {
+        "id": "2271",
+        "cardNumber": "hBP08-068",
+        "imagePath": "card_images/default/hBP08-068_C.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2272",
+        "cardNumber": "hBP08-069",
+        "imagePath": "card_images/default/hBP08-069_U.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2273",
+        "cardNumber": "hBP08-070",
+        "imagePath": "card_images/default/hBP08-070_C.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2274",
+        "cardNumber": "hBP08-071",
+        "imagePath": "card_images/default/hBP08-071_C.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2275",
+        "cardNumber": "hBP08-072",
+        "imagePath": "card_images/default/hBP08-072_R.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2276",
+        "cardNumber": "hBP08-073",
+        "imagePath": "card_images/default/hBP08-073_U.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2277",
+        "cardNumber": "hBP08-074",
+        "imagePath": "card_images/default/hBP08-074_RR.png",
+        "name": "一伊那尓栖"
+      },
+      {
+        "id": "2278",
+        "cardNumber": "hBP08-075",
+        "imagePath": "card_images/default/hBP08-075_R.png",
+        "name": "ロボ子さん"
+      },
+      {
+        "id": "2279",
+        "cardNumber": "hBP08-076",
+        "imagePath": "card_images/default/hBP08-076_R.png",
+        "name": "癒月ちょこ"
+      },
+      {
+        "id": "2280",
+        "cardNumber": "hBP08-077",
+        "imagePath": "card_images/default/hBP08-077_C.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2281",
+        "cardNumber": "hBP08-078",
+        "imagePath": "card_images/default/hBP08-078_U.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2282",
+        "cardNumber": "hBP08-079",
+        "imagePath": "card_images/default/hBP08-079_C.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2283",
+        "cardNumber": "hBP08-080",
+        "imagePath": "card_images/default/hBP08-080_C.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2284",
+        "cardNumber": "hBP08-081",
+        "imagePath": "card_images/default/hBP08-081_R.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2285",
+        "cardNumber": "hBP08-082",
+        "imagePath": "card_images/default/hBP08-082_U.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2286",
+        "cardNumber": "hBP08-083",
+        "imagePath": "card_images/default/hBP08-083_RR.png",
+        "name": "音乃瀬奏"
+      },
+      {
+        "id": "2287",
+        "cardNumber": "hBP08-084",
+        "imagePath": "card_images/default/hBP08-084_R.png",
+        "name": "夏色まつり"
+      },
+      {
+        "id": "2288",
+        "cardNumber": "hBP08-085",
+        "imagePath": "card_images/default/hBP08-085_C.png",
+        "name": "不知火フレア"
+      },
+      {
+        "id": "2289",
+        "cardNumber": "hBP08-086",
+        "imagePath": "card_images/default/hBP08-086_U.png",
+        "name": "不知火フレア"
+      },
+      {
+        "id": "2290",
+        "cardNumber": "hBP08-087",
+        "imagePath": "card_images/default/hBP08-087_R.png",
+        "name": "不知火フレア"
+      },
+      {
+        "id": "2291",
+        "cardNumber": "hBP08-088",
+        "imagePath": "card_images/default/hBP08-088_RR.png",
+        "name": "不知火フレア"
+      },
+      {
+        "id": "2292",
+        "cardNumber": "hBP08-089",
+        "imagePath": "card_images/default/hBP08-089_R.png",
         "name": "ジジ・ムリン"
       },
       {
-        "id": "2202",
+        "id": "2293",
+        "cardNumber": "hBP08-090",
+        "imagePath": "card_images/default/hBP08-090_C.png",
+        "name": "エレガントパソコン"
+      },
+      {
+        "id": "2294",
+        "cardNumber": "hBP08-091",
+        "imagePath": "card_images/default/hBP08-091_U.png",
+        "name": "クリエイターパソコン"
+      },
+      {
+        "id": "2295",
+        "cardNumber": "hBP08-092",
+        "imagePath": "card_images/default/hBP08-092_U.png",
+        "name": "思い出のドーナツショップ"
+      },
+      {
+        "id": "2296",
+        "cardNumber": "hBP08-093",
+        "imagePath": "card_images/default/hBP08-093_U.png",
+        "name": "ちょこのなすユッケ"
+      },
+      {
+        "id": "2297",
+        "cardNumber": "hBP08-094",
+        "imagePath": "card_images/default/hBP08-094_U.png",
+        "name": "パパは仕事を辞める"
+      },
+      {
+        "id": "2298",
+        "cardNumber": "hBP08-095",
+        "imagePath": "card_images/default/hBP08-095_C.png",
+        "name": "破滅の呪文"
+      },
+      {
+        "id": "2299",
+        "cardNumber": "hBP08-096",
+        "imagePath": "card_images/default/hBP08-096_U.png",
+        "name": "優しいモンスター"
+      },
+      {
+        "id": "2300",
+        "cardNumber": "hBP08-097",
+        "imagePath": "card_images/default/hBP08-097_C.png",
+        "name": "りっちしょこらのハンバーグ"
+      },
+      {
+        "id": "2301",
+        "cardNumber": "hBP08-098",
+        "imagePath": "card_images/default/hBP08-098_U.png",
+        "name": "hololive Mythology"
+      },
+      {
+        "id": "2302",
+        "cardNumber": "hBP08-099",
+        "imagePath": "card_images/default/hBP08-099_U.png",
+        "name": "HOLOTORI"
+      },
+      {
+        "id": "2303",
+        "cardNumber": "hBP08-100",
+        "imagePath": "card_images/default/hBP08-100_U.png",
+        "name": "Myth"
+      },
+      {
+        "id": "2304",
+        "cardNumber": "hBP08-101",
+        "imagePath": "card_images/default/hBP08-101_U.png",
+        "name": "We are ReGLOSS"
+      },
+      {
+        "id": "2305",
+        "cardNumber": "hBP08-102",
+        "imagePath": "card_images/default/hBP08-102_C.png",
+        "name": "クールなパーカー"
+      },
+      {
+        "id": "2306",
+        "cardNumber": "hBP08-103",
+        "imagePath": "card_images/default/hBP08-103_U.png",
+        "name": "ホロマント"
+      },
+      {
+        "id": "2307",
+        "cardNumber": "hBP08-104",
+        "imagePath": "card_images/default/hBP08-104_C.png",
+        "name": "けはい"
+      },
+      {
+        "id": "2308",
+        "cardNumber": "hBP08-105",
+        "imagePath": "card_images/default/hBP08-105_C.png",
+        "name": "Bloom＆Gloom"
+      },
+      {
+        "id": "2309",
+        "cardNumber": "hBP08-106",
+        "imagePath": "card_images/default/hBP08-106_C.png",
+        "name": "GuyRyS"
+      },
+      {
+        "id": "2310",
+        "cardNumber": "hBP08-107",
+        "imagePath": "card_images/default/hBP08-107_C.png",
+        "name": "Otomo"
+      },
+      {
+        "id": "2311",
+        "cardNumber": "hBP08-108",
+        "imagePath": "card_images/default/hBP08-108_C.png",
+        "name": "いたずらなRuffians"
+      },
+      {
+        "id": "2312",
+        "cardNumber": "hBP08-109",
+        "imagePath": "card_images/default/hBP08-109_C.png",
+        "name": "ルイ友"
+      },
+      {
+        "id": "2313",
+        "cardNumber": "hBP08-110",
+        "imagePath": "card_images/default/hBP08-110_C.png",
+        "name": "Takodachi"
+      },
+      {
+        "id": "2321",
+        "cardNumber": "hSD11-007",
+        "imagePath": "card_images/default/hSD11-007_C_02.png",
+        "name": "水宮枢"
+      },
+      {
+        "id": "2324",
         "cardNumber": "hSD14-010",
-        "imagePath": "card_images/default/hSD14-010_P.png",
+        "imagePath": "card_images/default/hSD14-010_C_02.png",
         "name": "holoAN"
+      },
+      {
+        "id": "2203",
+        "cardNumber": "hBP05-040",
+        "imagePath": "card_images/default/hBP05-040_P.png",
+        "name": "miComet"
+      },
+      {
+        "id": "2325",
+        "cardNumber": "hBP08-060",
+        "imagePath": "card_images/default/hBP08-060_P.png",
+        "name": "FUWAMOCO"
       }
     ],
     "changed": [
       {
-        "id": "2072",
-        "cardNumber": "hSD14-008",
-        "imagePath": "card_images/default/hSD14-008_R.png",
-        "name": "白上フブキ"
+        "id": "1830",
+        "cardNumber": "hBP07-044",
+        "imagePath": "card_images/default/hBP07-044_R.png",
+        "name": "尾丸ポルカ"
       },
       {
-        "id": "2141",
-        "cardNumber": "hBP06-039",
-        "imagePath": "card_images/default/hBP06-039_P.png",
-        "name": "百鬼あやめ"
-      },
-      {
-        "id": "2143",
-        "cardNumber": "hBP07-001",
-        "imagePath": "card_images/default/hBP07-001_P.png",
-        "name": "角巻わため"
-      },
-      {
-        "id": "2142",
-        "cardNumber": "hBP07-028",
-        "imagePath": "card_images/default/hBP07-028_P.png",
-        "name": "大神ミオ"
-      },
-      {
-        "id": "2144",
-        "cardNumber": "hSD10-006",
-        "imagePath": "card_images/default/hSD10-006_P.png",
-        "name": "輪堂千速"
-      },
-      {
-        "id": "2145",
-        "cardNumber": "hSD10-009",
-        "imagePath": "card_images/default/hSD10-009_P.png",
-        "name": "綺々羅々ヴィヴィ"
-      },
-      {
-        "id": "2146",
-        "cardNumber": "hSD10-010",
-        "imagePath": "card_images/default/hSD10-010_P.png",
-        "name": "響咲リオナ"
-      },
-      {
-        "id": "2147",
-        "cardNumber": "hSD11-006",
-        "imagePath": "card_images/default/hSD11-006_P.png",
-        "name": "虎金妃笑虎"
-      },
-      {
-        "id": "2148",
-        "cardNumber": "hSD11-009",
-        "imagePath": "card_images/default/hSD11-009_P.png",
-        "name": "水宮枢"
-      },
-      {
-        "id": "2149",
-        "cardNumber": "hSD12-007",
-        "imagePath": "card_images/default/hSD12-007_P.png",
-        "name": "シオリ・ノヴェラ"
-      },
-      {
-        "id": "2150",
-        "cardNumber": "hSD12-011",
-        "imagePath": "card_images/default/hSD12-011_P.png",
-        "name": "古石ビジュー"
-      },
-      {
-        "id": "2151",
-        "cardNumber": "hSD13-007",
-        "imagePath": "card_images/default/hSD13-007_P.png",
+        "id": "1769",
+        "cardNumber": "hSD13-001",
+        "imagePath": "card_images/default/hSD13-001_OSR.png",
         "name": "エリザベス・ローズ・ブラッドフレイム"
       },
       {
-        "id": "2152",
-        "cardNumber": "hSD13-013",
-        "imagePath": "card_images/default/hSD13-013_P.png",
+        "id": "1779",
+        "cardNumber": "hSD13-011",
+        "imagePath": "card_images/default/hSD13-011_U.png",
         "name": "ジジ・ムリン"
+      },
+      {
+        "id": "1482",
+        "cardNumber": "hBP06-005",
+        "imagePath": "card_images/default/hBP06-005_OSR.png",
+        "name": "ハコス・ベールズ"
+      },
+      {
+        "id": "1485",
+        "cardNumber": "hBP06-008",
+        "imagePath": "card_images/default/hBP06-008_OSR.png",
+        "name": "夏色まつり"
+      },
+      {
+        "id": "1567",
+        "cardNumber": "hBP06-090",
+        "imagePath": "card_images/default/hBP06-090_U.png",
+        "name": "ブルームステージ"
+      },
+      {
+        "id": "1577",
+        "cardNumber": "hBP06-100",
+        "imagePath": "card_images/default/hBP06-100_C.png",
+        "name": "Chattino"
+      },
+      {
+        "id": "954",
+        "cardNumber": "hBP04-091",
+        "imagePath": "card_images/default/hBP04-091_U.png",
+        "name": "限界飯"
+      },
+      {
+        "id": "570",
+        "cardNumber": "hBP03-006",
+        "imagePath": "card_images/default/hBP03-006_OSR.png",
+        "name": "戌神ころね"
+      },
+      {
+        "id": "268",
+        "cardNumber": "hBP02-001",
+        "imagePath": "card_images/default/hBP02-001_OSR.png",
+        "name": "白上フブキ"
+      },
+      {
+        "id": "32",
+        "cardNumber": "hBP01-006",
+        "imagePath": "card_images/default/hBP01-006_OSR.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "35",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_OSR.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "60",
+        "cardNumber": "hBP01-027",
+        "imagePath": "card_images/default/hBP01-027_RR.png",
+        "name": "ベスティア・ゼータ"
+      },
+      {
+        "id": "149",
+        "cardNumber": "hBP01-108",
+        "imagePath": "card_images/default/hBP01-108_U.png",
+        "name": "じゃあ敵だね"
+      },
+      {
+        "id": "1278",
+        "cardNumber": "hBP01-114",
+        "imagePath": "card_images/default/hBP01-114_C.png",
+        "name": "Stone Axe"
+      },
+      {
+        "id": "167",
+        "cardNumber": "hBP01-126",
+        "imagePath": "card_images/default/hBP01-126_C.png",
+        "name": "座員"
+      },
+      {
+        "id": "2133",
+        "cardNumber": "hBP06-090",
+        "imagePath": "card_images/default/hBP06-090_SR.png",
+        "name": "ブルームステージ"
+      },
+      {
+        "id": "1955",
+        "cardNumber": "hBP07-044",
+        "imagePath": "card_images/default/hBP07-044_SR.png",
+        "name": "尾丸ポルカ"
+      },
+      {
+        "id": "1598",
+        "cardNumber": "hBP06-005",
+        "imagePath": "card_images/default/hBP06-005_OUR.png",
+        "name": "ハコス・ベールズ"
+      },
+      {
+        "id": "1601",
+        "cardNumber": "hBP06-008",
+        "imagePath": "card_images/default/hBP06-008_OUR.png",
+        "name": "夏色まつり"
+      },
+      {
+        "id": "1605",
+        "cardNumber": "hBP06-008",
+        "imagePath": "card_images/default/hBP06-008_SEC.png",
+        "name": "夏色まつり"
+      },
+      {
+        "id": "1690",
+        "cardNumber": "hBP06-090",
+        "imagePath": "card_images/default/hBP06-090_S.png",
+        "name": "ブルームステージ"
+      },
+      {
+        "id": "1697",
+        "cardNumber": "hBP06-100",
+        "imagePath": "card_images/default/hBP06-100_S.png",
+        "name": "Chattino"
+      },
+      {
+        "id": "1061",
+        "cardNumber": "hBP04-091",
+        "imagePath": "card_images/default/hBP04-091_S.png",
+        "name": "限界飯"
+      },
+      {
+        "id": "686",
+        "cardNumber": "hBP03-006",
+        "imagePath": "card_images/default/hBP03-006_OUR.png",
+        "name": "戌神ころね"
+      },
+      {
+        "id": "370",
+        "cardNumber": "hBP02-001",
+        "imagePath": "card_images/default/hBP02-001_OUR.png",
+        "name": "白上フブキ"
+      },
+      {
+        "id": "371",
+        "cardNumber": "hBP02-001",
+        "imagePath": "card_images/default/hBP02-001_SEC.png",
+        "name": "白上フブキ"
+      },
+      {
+        "id": "1445",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_P_01.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "1446",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_P_02.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "1447",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_P_03.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "1448",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_P_04.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "834",
+        "cardNumber": "hBP01-108",
+        "imagePath": "card_images/default/hBP01-108_P.png",
+        "name": "じゃあ敵だね"
+      },
+      {
+        "id": "1105",
+        "cardNumber": "hBP01-114",
+        "imagePath": "card_images/default/hBP01-114_P.png",
+        "name": "Stone Axe"
+      },
+      {
+        "id": "857",
+        "cardNumber": "hBP01-126",
+        "imagePath": "card_images/default/hBP01-126_P_02.png",
+        "name": "座員"
+      },
+      {
+        "id": "835",
+        "cardNumber": "hBP03-006",
+        "imagePath": "card_images/default/hBP03-006_P.png",
+        "name": "戌神ころね"
+      },
+      {
+        "id": "2058",
+        "cardNumber": "hBP06-034",
+        "imagePath": "card_images/default/hBP06-034_P.png",
+        "name": "百鬼あやめ"
+      },
+      {
+        "id": "2059",
+        "cardNumber": "hBP06-057",
+        "imagePath": "card_images/default/hBP06-057_P.png",
+        "name": "森カリオペ"
+      },
+      {
+        "id": "1746",
+        "cardNumber": "hBP06-090",
+        "imagePath": "card_images/default/hBP06-090_P.png",
+        "name": "ブルームステージ"
+      },
+      {
+        "id": "2060",
+        "cardNumber": "hBP07-068",
+        "imagePath": "card_images/default/hBP07-068_P.png",
+        "name": "AZKi"
+      },
+      {
+        "id": "2061",
+        "cardNumber": "hBP07-071",
+        "imagePath": "card_images/default/hBP07-071_P.png",
+        "name": "ラプラス・ダークネス"
+      },
+      {
+        "id": "2062",
+        "cardNumber": "hBP07-100",
+        "imagePath": "card_images/default/hBP07-100_P.png",
+        "name": "Frontier Spirit"
+      },
+      {
+        "id": "33",
+        "cardNumber": "hBP01-006",
+        "imagePath": "card_images/default/hBP01-006_OUR.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "34",
+        "cardNumber": "hBP01-006",
+        "imagePath": "card_images/default/hBP01-006_SEC.png",
+        "name": "小鳥遊キアラ"
+      },
+      {
+        "id": "36",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_OUR.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "37",
+        "cardNumber": "hBP01-007",
+        "imagePath": "card_images/default/hBP01-007_SEC.png",
+        "name": "星街すいせい"
+      },
+      {
+        "id": "61",
+        "cardNumber": "hBP01-027",
+        "imagePath": "card_images/default/hBP01-027_UR.png",
+        "name": "ベスティア・ゼータ"
       }
     ],
     "qaUpdated": [],
