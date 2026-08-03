@@ -47,11 +47,11 @@ function go() {
       <DialogHeader>
         <DialogTitle>The wiki has moved to v2</DialogTitle>
         <DialogDescription>
-          v2 is a ground-up rebuild — new structure, reworked translation logic,
+          v2 is a ground-up rebuild: new structure, reworked translation logic,
           and now part of the tskr/labs family. New cards and fixes only land
-          there —
+          there.
           <strong class="font-medium text-foreground"
-            >this one is no longer updated.</strong
+            >This one is no longer updated.</strong
           >
         </DialogDescription>
       </DialogHeader>
