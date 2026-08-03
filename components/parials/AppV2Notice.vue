@@ -45,9 +45,11 @@ function go() {
       @pointer-down-outside="dismiss"
     >
       <DialogHeader>
-        <DialogTitle>The wiki has moved</DialogTitle>
+        <DialogTitle>The wiki has moved to v2</DialogTitle>
         <DialogDescription>
-          New cards and fixes only land on the new site —
+          v2 is a ground-up rebuild — new structure, reworked translation logic,
+          and now part of the tskr/labs family. New cards and fixes only land
+          there —
           <strong class="font-medium text-foreground"
             >this one is no longer updated.</strong
           >

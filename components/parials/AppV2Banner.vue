@@ -16,7 +16,11 @@ const v2Url = useV2Url();
   <div
     class="w-full border-b bg-muted/60 px-3 py-1.5 text-center text-xs text-muted-foreground sm:text-sm"
   >
-    <span>You're on the old wiki — no longer updated. </span>
+    <span
+      >You're on the old wiki — the new
+      <span class="font-medium text-foreground">v2</span> site (tskr/labs) is
+      where updates land now. </span
+    >
     <a
       :href="v2Url"
       class="font-medium text-foreground underline underline-offset-2 hover:no-underline"
