@@ -7,7 +7,9 @@
  * to dismiss. It is deliberately not dismissible: a banner someone closed months ago is
  * invisible to the person who most needs it.
  */
-const V2_URL = "https://hololive-ocg-wiki.tskrlabs.com";
+// Resolves to the v2 equivalent of the current page (e.g. the same deck), falling back to the
+// v2 home for v1-only routes.
+const v2Url = useV2Url();
 </script>
 
 <template>
@@ -16,7 +18,7 @@ const V2_URL = "https://hololive-ocg-wiki.tskrlabs.com";
   >
     <span>You're on the old wiki — no longer updated. </span>
     <a
-      :href="V2_URL"
+      :href="v2Url"
       class="font-medium text-foreground underline underline-offset-2 hover:no-underline"
     >
       Go to the new site →

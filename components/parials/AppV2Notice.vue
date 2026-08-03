@@ -9,7 +9,9 @@
  * The key is versioned (`v2-notice-dismissed`) so a future, different announcement can use
  * its own key rather than being silenced by a dismissal of this one.
  */
-const V2_URL = "https://hololive-ocg-wiki.tskrlabs.com";
+// Resolves to the v2 equivalent of the current page — so clicking through from a shared deck
+// link lands on that same deck on v2, not the homepage.
+const v2Url = useV2Url();
 
 const dismissed = useLocalStorage("v2-notice-dismissed", false);
 
@@ -31,7 +33,7 @@ function dismiss() {
  */
 function go() {
   dismissed.value = true;
-  window.location.href = V2_URL;
+  window.location.href = v2Url.value;
 }
 </script>
 
